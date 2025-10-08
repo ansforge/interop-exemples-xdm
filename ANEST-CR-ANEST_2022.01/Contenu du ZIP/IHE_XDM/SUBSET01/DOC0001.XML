@@ -693,10 +693,10 @@
                   <text><reference value="#CHIR-scoreASA"/></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NA"/>
-                  <!-- score ASA : valeur issue du JDV_ScoreASA_CISIS (1.2.250.1.213.1.1.5.501) -->
-                  <value xsi:type="CD" code="MED-614"
-                    displayName="2 - Patient avec anomalie systémique modérée"
-                    codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <!-- score ASA : valeur issue du jdv-score-asa-cisis (1.2.250.1.213.1.1.5.501) -->
+                  <value xsi:type="CD" code="413496000"
+                    displayName="classe II du système de classification de l'état physique de l'American Society of Anesthesiologists"
+                    codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                     <originalText><reference value="#CHIR-scoreASA"/></originalText>
                   </value>
                 </observation>
@@ -720,7 +720,7 @@
               <text><reference value="#ANEST-typeAnestesie-01"/></text>
               <statusCode code="completed"/>
               <effectiveTime value="20200319"/>
-              <!-- [0..1] Localisation anatomique : valeur issue du JDV_LocalisationAnesthesie_CISIS (1.2.250.1.213.1.1.5.641) -->
+              <!-- [0..1] Localisation anatomique : valeur issue du jdv-localisation-anesthesie-cisis (1.2.250.1.213.1.1.5.641) -->
               <!-- <targetSiteCode>  </targetSiteCode> -->
               <!-- [0..1] Entrée FR-Simple-Observation : Difficulté -->
               <entryRelationship typeCode="COMP" inversionInd="false">
@@ -730,12 +730,12 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id nullFlavor="UNK"/>
-                  <code code="GEN-023" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"
+                  <code code="GEN-023" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"
                     displayName="Précision difficulté"/>
                   <text><reference value="#ANEST-difficulte-01"/></text>
                   <statusCode code="completed"/>
                   <effectiveTime value="20200319"/>
-                  <!-- Difficulté : valeur issue du JDV_Difficulte_CISIS (1.2.250.1.213.1.1.5.494) -->
+                  <!-- Difficulté : valeur issue du jdv-difficulte-cisis (1.2.250.1.213.1.1.5.494) -->
                   <value xsi:type="CD" code="36203004" displayName="facile"
                     codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                 </observation>
@@ -753,17 +753,17 @@
               <templateId root="1.2.250.1.213.1.1.3.62"/>
               <id root="0F6596E2-B68C-449D-A992-B5A9967E054C"/>
               <code code="MED-582" displayName="Anesthésie locorégionale péridurale ou épidurale"
-                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                 <originalText><reference value="#ANEST-typeAnestesie-02"/></originalText>
               </code>
               <text><reference value="#ANEST-typeAnestesie-02"/></text>
               <statusCode code="completed"/>
               <effectiveTime value="20200319"/>
-              <!-- [0..1] Localisation anatomique : valeur issue du JDV_LocalisationAnesthesie_CISIS (1.2.250.1.213.1.1.5.641) -->
+              <!-- [0..1] Localisation anatomique : valeur issue du jdv-localisation-anesthesie-cisis (1.2.250.1.213.1.1.5.641) -->
               <targetSiteCode code="182245002" displayName="membre supérieur entier"
                 codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                 <originalText><reference value="#ANEST-localisation-02"/></originalText>
-                <!-- [0..1] Latéralité : JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) -->
+                <!-- [0..1] Latéralité : jdv-lateralite-cisis (1.2.250.1.213.1.1.5.160) -->
                 <qualifier>
                   <name code="20228-3" displayName="Latéralité" codeSystem="2.16.840.1.113883.6.1"
                     codeSystemName="LOINC"/>
@@ -781,12 +781,12 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id nullFlavor="UNK"/>
-                  <code code="GEN-023" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"
+                  <code code="GEN-023" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"
                     displayName="Précision difficulté"/>
                   <text><reference value="#ANEST-difficulte-02"/></text>
                   <statusCode code="completed"/>
                   <effectiveTime value="20200319"/>
-                  <!-- Difficulté : valeur issue du JDV_Difficulte_CISIS (1.2.250.1.213.1.1.5.494) -->                  
+                  <!-- Difficulté : valeur issue du jdv-difficulte-cisis (1.2.250.1.213.1.1.5.494) -->                  
                   <value xsi:type="CD" code="36203004" displayName="facile"
                     codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                 </observation>
@@ -818,17 +818,17 @@
               <templateId root="1.2.250.1.213.1.1.3.62"/>
               <id root="D1E1D926-C275-42E1-BD84-356661ECE788"/>
               <code code="MED-658" displayName="Pose d'un cathéter veineux périphérique"
-                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                 <originalText><reference value="acces-veineux-peripherique"/></originalText>
               </code>
               <text><reference value="#acces-veineux-peripherique"/></text>
               <statusCode code="completed"/>
               <effectiveTime value="20200319"/>
-              <!-- [0..1] Localisation anatomique : valeur issue du JDV_AbordVeineuxPeripherique_CISIS (1.2.250.1.213.1.1.5.495) -->
+              <!-- [0..1] Localisation anatomique : valeur issue du jdv-abord-veineux-peripherique-cisis (1.2.250.1.213.1.1.5.495) -->
               <targetSiteCode code="181387000" displayName="veines du membre supérieur entier"
                 codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                 <originalText><reference value="#acces-veineux-peripherique-abord"/></originalText>
-                <!-- [0..1] Latéralité : JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) -->
+                <!-- [0..1] Latéralité : jdv-lateralite-cisis (1.2.250.1.213.1.1.5.160) -->
                 <qualifier>
                   <name code="20228-3" displayName="Latéralité" codeSystem="2.16.840.1.113883.6.1"
                     codeSystemName="LOINC"/>
@@ -846,12 +846,12 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id nullFlavor="UNK"/>
-                  <code code="GEN-023" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"
+                  <code code="GEN-023" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"
                     displayName="Précision difficulté"/>
                   <text><reference value="#acces-veineux-peripherique-difficulte"/></text>
                   <statusCode code="completed"/>
                   <effectiveTime value="20200319"/>
-                  <!-- Difficulté : valeur issue du JDV_Difficulte_CISIS (1.2.250.1.213.1.1.5.494) -->
+                  <!-- Difficulté : valeur issue du jdv-difficulte-cisis (1.2.250.1.213.1.1.5.494) -->
                   <value xsi:type="CD" code="36203004" displayName="facile"
                     codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                 </observation>
@@ -890,11 +890,11 @@
               <text><reference value="#acces-veineux-central"/></text>
               <statusCode code="completed"/>
               <effectiveTime value="20200319"/>
-              <!-- [0..1] Localisation anatomique : valeur issue du JDV_AbordVeineuxCentral_CISIS (1.2.250.1.213.1.1.5.496) -->
+              <!-- [0..1] Localisation anatomique : valeur issue du jdv-abord-veineux-central-cisis (1.2.250.1.213.1.1.5.496) -->
               <targetSiteCode xsi:type="CD" code="362071002" displayName="veine fémorale entière"
                 codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                 <originalText><reference value="#acces-veineux-central-abord"/></originalText>
-                <!-- [0..1] Latéralité : JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) -->
+                <!-- [0..1] Latéralité : jdv-lateralite-cisis (1.2.250.1.213.1.1.5.160) -->
                 <qualifier>
                   <name code="20228-3" displayName="Latéralité" codeSystem="2.16.840.1.113883.6.1"
                     codeSystemName="LOINC"/>
@@ -912,12 +912,12 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id nullFlavor="UNK"/>
-                  <code code="GEN-023" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"
+                  <code code="GEN-023" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"
                     displayName="Précision difficulté"/>
                   <text><reference value="#acces-veineux-central-difficulte"/></text>
                   <statusCode code="completed"/>
                   <effectiveTime value="20200319"/>
-                  <!-- Difficulté : valeur issue du JDV_Difficulte_CISIS (1.2.250.1.213.1.1.5.494) -->
+                  <!-- Difficulté : valeur issue du jdv-difficulte-cisis (1.2.250.1.213.1.1.5.494) -->
                   <value xsi:type="CD" code="36203004" displayName="facile"
                     codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                 </observation>
@@ -965,16 +965,16 @@
               <id root="31E2E35D-65AA-4032-81B6-EFFB23DA60B4"/>
               <!-- Code et libellé de l'acte -->
               <code code="MED-632" displayName="Pose d'un cathéter intra-artériel"
-                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
               <text><reference value="#catheter"/></text>
               <statusCode code="completed"/>
               <!-- Date de l'acte -->
               <effectiveTime value="20200319"/>
-              <!-- [0..1] Localisation anatomique : JDV_AccesArtere_CISIS (1.2.250.1.213.1.1.5.516) -->
+              <!-- [0..1] Localisation anatomique : jdv-acces-artere-cisis (1.2.250.1.213.1.1.5.516) -->
               <targetSiteCode code="244332003" displayName="artère fémorale entière"
                 codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                 <originalText><reference value="#catheter-abord"/></originalText>
-                <!-- [0..1] Latéralité : JDV_Lateralite_CISIS(1.2.250.1.213.1.1.5.160) -->
+                <!-- [0..1] Latéralité : jdv-lateralite-cisis(1.2.250.1.213.1.1.5.160) -->
                 <qualifier>
                   <name code="20228-3" displayName="Latéralité" codeSystem="2.16.840.1.113883.6.1"
                     codeSystemName="LOINC"/>
@@ -992,12 +992,12 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id nullFlavor="UNK"/>
-                  <code code="GEN-023" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"
+                  <code code="GEN-023" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"
                     displayName="Précision difficulté"/>
                   <text><reference value="#catheter-difficulte"/></text>
                   <statusCode code="completed"/>
                   <effectiveTime value="20200319"/>
-                  <!-- Difficulté : valeur issue du JDV_Difficulte_CISIS (1.2.250.1.213.1.1.5.494) -->
+                  <!-- Difficulté : valeur issue du jdv-difficulte-cisis (1.2.250.1.213.1.1.5.494) -->
                   <value xsi:type="CD" code="36203004" displayName="facile"
                     codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                 </observation>
@@ -1030,7 +1030,7 @@
               <id root="8F3CE6C6-3950-428C-8683-87C8BEA1DEBD"/>
               <!-- Code et libellé de l'acte -->
               <code code="MED-671" displayName="Ventilation au masque"
-                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
               <text><reference value="#ventilation-masque"/></text>
               <statusCode code="completed"/>
               <!-- Date de l'acte -->
@@ -1046,11 +1046,11 @@
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id nullFlavor="UNK"/>
                   <code code="GEN-023" displayName="Précisions difficultés"
-                    codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                    codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
                   <text><reference value="#ventilation-masque-difficulte"/></text>
                   <statusCode code="completed"/>
                   <effectiveTime value="20200319"/>
-                  <!-- Difficulté : valeur issue du JDV_Difficulte_CISIS (1.2.250.1.213.1.1.5.494) -->
+                  <!-- Difficulté : valeur issue du jdv-difficulte-cisis (1.2.250.1.213.1.1.5.494) -->
                   <value xsi:type="CD" code="36203004" displayName="facile"
                     codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                 </observation>
@@ -1099,11 +1099,11 @@
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id nullFlavor="UNK"/>
                   <code code="GEN-023" displayName="Précisions difficultés"
-                    codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                    codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
                   <text><reference value="#ventilation-dispositif-supraglottique-difficulte"/></text>
                   <statusCode code="completed"/>
                   <effectiveTime value="20200319"/>
-                  <!-- Difficulté : valeur issue du JDV_Difficulte_CISIS (1.2.250.1.213.1.1.5.494) -->
+                  <!-- Difficulté : valeur issue du jdv-difficulte-cisis (1.2.250.1.213.1.1.5.494) -->
                   <value xsi:type="CD" code="36203004" displayName="facile"
                     codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                 </observation>
@@ -1143,9 +1143,9 @@
               <statusCode code="completed"/>
               <!-- Date de l'acte -->
               <effectiveTime value="20200319"/>
-              <!-- [0..1] Localisation anatomique : JDV_TypeIntubation_CISIS (1.2.250.1.213.1.1.5.524) -->
-              <targetSiteCode code="MED-655" displayName="Intubation orotrachéale"
-                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+              <!-- [0..1] Localisation anatomique : jdv-type-intubation-cisis (1.2.250.1.213.1.1.5.524) -->
+              <targetSiteCode code="232674004" displayName="Intubation orotrachéale"
+                codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                 <originalText><reference value="#intubation-abord"/></originalText>
               </targetSiteCode>
               <!-- [0..1] Entrée FR-Simple-Observation : Difficulté -->
@@ -1157,11 +1157,11 @@
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id nullFlavor="UNK"/>
                   <code code="GEN-023" displayName="Précisions difficultés"
-                    codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                    codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
                   <text><reference value="#intubation-difficulte"/></text>
                   <statusCode code="completed"/>
                   <effectiveTime value="20200319"/>
-                  <!-- Difficulté : valeur issue du JDV_Difficulte_CISIS (1.2.250.1.213.1.1.5.494) -->
+                  <!-- Difficulté : valeur issue du jdv-difficulte-cisis (1.2.250.1.213.1.1.5.494) -->
                   <value xsi:type="CD" code="52925006" displayName="difficile"
                     codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                 </observation>
@@ -1174,15 +1174,15 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="3DAC7355-184B-4FC8-95E3-03146498F3DA"/>
-                  <code code="MED-594" displayName="Score de Cormack"
-                    codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                  <code code="417149000" displayName="constatation concernant la classification de Cormack et Lehane"
+                    codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                   <text><reference value="#scoreCormack1"/></text>
                   <statusCode code="completed"/>
                   <effectiveTime value="20200319"/>
-                  <!-- Score de Cormak : valeur issue du JDV_ScoreCormack_CISIS (1.2.250.1.213.1.1.5.502) -->
-                  <value xsi:type="CD" code="MED-621"
-                    displayName="Grade 3 : Seule une infime partie de la glotte est vue"
-                    codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <!-- Score de Cormak : valeur issue du jdv-score-cormack-cisis (1.2.250.1.213.1.1.5.502) -->
+                  <value xsi:type="CD" code="416876007"
+                    displayName="Cormack et Lehane grade 3"
+                    codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                     <originalText><reference value="#scoreCormack"/></originalText>
                   </value>
                 </observation>
@@ -1301,11 +1301,11 @@
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id nullFlavor="UNK"/>
                   <code code="GEN-023" displayName="Précisions difficultés"
-                    codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                    codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
                   <text><reference value="#Tracheotomie-par-cervicotomie-difficulte"/></text>
                   <statusCode code="completed"/>
                   <effectiveTime value="20200319"/>
-                  <!-- Difficulté : valeur issue du JDV_Difficulte_CISIS (1.2.250.1.213.1.1.5.494) -->
+                  <!-- Difficulté : valeur issue du jdv-difficulte-cisis (1.2.250.1.213.1.1.5.494) -->
                   <value xsi:type="CD" code="36203004" displayName="facile"
                     codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                 </observation>
@@ -1352,7 +1352,7 @@
               <id root="11E2E35D-65AA-4032-81B6-EFFB23DA50B6"/>
               <!-- Code et libellé de l'acte -->
               <code code="MED-876" displayName="Pose d'une sonde nasogastrique"
-                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
               <text><reference value="#sondeGastrique"/></text>
               <statusCode code="completed"/>
               <!-- Date de l'acte -->
@@ -1365,12 +1365,12 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id nullFlavor="UNK"/>
-                  <code code="GEN-023" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"
+                  <code code="GEN-023" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"
                     displayName="Précision difficulté"/>
                   <text><reference value="#sondeGastrique-difficulte"/></text>
                   <statusCode code="completed"/>
                   <effectiveTime value="20200319"/>
-                  <!-- Difficulté : valeur issue du JDV_Difficulte_CISIS (1.2.250.1.213.1.1.5.494) -->
+                  <!-- Difficulté : valeur issue du jdv-difficulte-cisis (1.2.250.1.213.1.1.5.494) -->
                   <value xsi:type="CD" code="36203004" displayName="facile"
                     codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                 </observation>
@@ -1403,18 +1403,18 @@
               <id root="00E2E35D-65AA-4035-81B6-EFFB11DA50F8"/>
               <!-- Code et libellé de l'acte -->
               <code code="MED-885" displayName="Utilisation d’un DM préalablement posé"
-                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
               <text><reference value="#DM-prealablement-pose"/></text>
               <statusCode code="completed"/>
               <!-- Date de l'acte -->
               <effectiveTime value="20200319"/>
-              <!-- [0..1] Localisation anatomique : JDV_AbordVeineuxPeripherique_CISIS (1.2.250.1.213.1.1.5.495) ou     
-                JDV_AbordVeineuxCentral_CISIS  (1.2.250.1.213.1.1.5.496) ou JDV_AccesArtere_CISIS(1.2.250.1.213.1.1.5.516) ou 
-                JDV_TypeIntubation_CISIS (1.2.250.1.213.1.1.5.524) -->
+              <!-- [0..1] Localisation anatomique : jdv-abord-veineux-peripherique-cisis (1.2.250.1.213.1.1.5.495) ou     
+                jdv-abord-veineux-central-cisis (1.2.250.1.213.1.1.5.496) ou jdv-acces-artere-cisis(1.2.250.1.213.1.1.5.516) ou 
+                jdv-type-intubation-cisis (1.2.250.1.213.1.1.5.524) -->
               <targetSiteCode xsi:type="CD" code="362071002" displayName="veine fémorale entière"
                 codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                 <originalText><reference value="#DM-prealablement-pose-localisationAnatomique"/></originalText>
-                <!-- [0..1] Latéralité : JDV_Lateralite_CISIS(1.2.250.1.213.1.1.5.160) -->
+                <!-- [0..1] Latéralité : jdv-lateralite-cisis(1.2.250.1.213.1.1.5.160) -->
                 <qualifier>
                   <name code="20228-3" displayName="Latéralité" codeSystem="2.16.840.1.113883.6.1"
                     codeSystemName="LOINC"/>
@@ -1432,12 +1432,12 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id nullFlavor="UNK"/>
-                  <code code="GEN-023" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"
+                  <code code="GEN-023" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"
                     displayName="Précision difficulté"/>
                   <text><reference value="#sondeGastrique-difficulte"/></text>
                   <statusCode code="completed"/>
                   <effectiveTime value="20200319"/>
-                  <!-- Difficulté : valeur issue du JDV_Difficulte_CISIS (1.2.250.1.213.1.1.5.494) -->
+                  <!-- Difficulté : valeur issue du jdv-difficulte-cisis (1.2.250.1.213.1.1.5.494) -->
                   <value xsi:type="CD" code="36203004" displayName="facile"
                     codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                 </observation>
@@ -1772,7 +1772,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id nullFlavor="UNK"/>
                   <code code="GEN-234" displayName="Taille" codeSystem="1.2.250.1.213.1.1.4.322"
-                    codeSystemName="TA_ASIP"/>
+                    codeSystemName="terminologie-cisis-fr"/>
                   <text><reference value="#DM-06-taille"/></text>
                   <statusCode code="completed"/>
                   <effectiveTime value="20200319"/>
@@ -1818,7 +1818,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id nullFlavor="UNK"/>
                   <code code="GEN-234" displayName="Taille" codeSystem="1.2.250.1.213.1.1.4.322"
-                    codeSystemName="TA_ASIP"/>
+                    codeSystemName="terminologie-cisis-fr"/>
                   <text><reference value="#DM-07-taille"/></text>
                   <statusCode code="completed"/>
                   <effectiveTime value="20200319"/>
@@ -1893,8 +1893,8 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id nullFlavor="UNK"/>
-                  <code code="L0033" displayName="Diamètre" codeSystem="1.2.250.1.213.1.1.4.322"
-                    codeSystemName="TA_ASIP"/>
+                  <code code="GEN-402" displayName="Diamètre" codeSystem="1.2.250.1.213.1.1.4.322"
+                    codeSystemName="terminologie-cisis-fr"/>
                   <text><reference value="#DM-09-diametre"/></text>
                   <statusCode code="completed"/>
                   <effectiveTime value="20200319"/>
@@ -2321,7 +2321,7 @@
                       <!-- Cause du décès -->
                       <text><reference value="#cause_deces_01"/></text>
                       <statusCode code="completed"/>
-                      <!-- Valeur provenant du JDV_HealthStatusCodes_CISIS (1.2.250.1.213.1.1.4.2.283.1) -->
+                      <!-- Valeur provenant du jdv-health-status-code-cisis (1.2.250.1.213.1.1.4.2.283.1) -->
                       <value xsi:type="CE" code="419620001" displayName="mort"
                         codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                     </observation>
@@ -2395,7 +2395,7 @@
                       <templateId root="1.2.250.1.213.1.1.3.48"/>
                       <id root="EEE09996-3DF3-47DE-A963-CD1AB5F257E3"/>
                       <code code="GEN-167" displayName="Quantité"
-                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
                       <text><reference value="#quantite-saignement"/></text>
                       <statusCode code="completed"/>
                       <effectiveTime>
@@ -2458,7 +2458,7 @@
                       <effectiveTime>
                         <low value="20200319"/>
                       </effectiveTime>
-                      <!-- valeur provenant de JDV_TypeProduitSanguinLabile_CISIS (1.2.250.1.213.1.1.5.587) -->
+                      <!-- valeur provenant de jdv-type-produit-sanguin-labile-cisis (1.2.250.1.213.1.1.5.587) -->
                       <value xsi:type="CD" code="C15366" codeSystem="2.16.840.1.113883.3.26.1.1"
                         codeSystemName="NCIT" displayName="Transfusion de plaquettes">
                         <originalText><reference value="#type-produit-sanguin-labile"/></originalText>
@@ -2474,7 +2474,7 @@
                       <templateId root="1.2.250.1.213.1.1.3.48"/>
                       <id root="EEE09996-3DF3-47DE-A963-CD1AB5F257E3"/>
                       <code code="GEN-167" displayName="Quantité"
-                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
                       <text><reference value="#quantite-transfusion"/></text>
                       <statusCode code="completed"/>
                       <effectiveTime>
@@ -3260,9 +3260,9 @@
                         codeSystemName="HL7:ActCode"/>
                       <text><reference value="#NVPO-severite"/></text>
                       <statusCode code="completed"/>
-                      <!-- Valeur issue du JDV_NVPO_CISIS (1.2.250.1.213.1.1.5.498) -->
+                      <!-- Valeur issue du jdv-nvpo-cisis (1.2.250.1.213.1.1.5.498) -->
                       <value xsi:type="CD" code="MED-628" displayName="2 - Nausées modéréés"
-                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
                     </observation>
                   </entryRelationship>
                 </observation>
@@ -3300,9 +3300,9 @@
                         codeSystemName="HL7:ActCode"/>
                       <text><reference value="#douleur-severite"/></text>
                       <statusCode code="completed"/>
-                      <!-- Valeur issue du JDV_EvaluationDouleur_CISIS (1.2.250.1.213.1.1.5.499) -->
+                      <!-- Valeur issue du jdv-evaluation-douleur-cisis (1.2.250.1.213.1.1.5.499) -->
                       <value xsi:type="CD" code="MED-602" displayName="Douleur faible (1-3)"
-                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
                     </observation>
                   </entryRelationship>
                 </observation>
@@ -3527,10 +3527,10 @@
                     codeSystemName="HL7:ActCode"/>
                   <text><reference value="#complication-medicament-01-severite"/></text>
                   <statusCode code="completed"/>
-                  <!-- Valeur issue du JDV_ClassificationRingMessmer_CISIS (1.2.250.1.213.1.1.5.497) -->
+                  <!-- Valeur issue du jdv-classification-ring-messmer-cisis (1.2.250.1.213.1.1.5.497) -->
                   <value xsi:type="CD" code="MED-624"
                     displayName="Grade II : Symptômes quantifiables mais ne menaçant pas la vie : signes cutanés, hypotension, tachycardie, difficultés ventilatoires, toux, difficultés à gonfler les poumons"
-                    codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                    codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <originalText><reference value="#complication-medicament-01-severite"/></originalText>
                   </value>
                 </observation>
@@ -3587,10 +3587,10 @@
                     codeSystemName="HL7:ActCode"/>
                   <text><reference value="#complication-medicament-02-severite"/></text>
                   <statusCode code="completed"/>
-                  <!-- Valeur issue du JDV_ClassificationRingMessmer_CISIS (1.2.250.1.213.1.1.5.497) -->
+                  <!-- Valeur issue du jdv-classification-ring-messmer-cisis (1.2.250.1.213.1.1.5.497) -->
                   <value xsi:type="CD" code="MED-623"
                     displayName="Grade I : Signes cutanés, érythème généralisé, urticaire, angiœdème"
-                    codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                    codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <originalText><reference value="#complication-medicament-02-severite"/></originalText>
                   </value>
                 </observation>
@@ -3606,7 +3606,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48"/>
               <id root="E494FB3A-DE0A-4701-B011-9ABFE159882C"/>
-              <!-- valeur issue du JDV_DefaillanceMaterielle_CISIS (1.2.250.1.213.1.1.5.526) -->
+              <!-- valeur issue du jdv-defaillance-materielle-cisis (1.2.250.1.213.1.1.5.526) -->
               <code code="A150000"
                 displayName="Problème lié au dispositif de transfert des liquides ou des gaz (p. ex., problème de dosage, d'alimentation, etc…)"
                 codeSystem="1.2.250.1.213.2.64" codeSystemName="IMDRF"> </code>
@@ -3639,7 +3639,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48"/>
               <id root="E494FB3A-DE0A-4701-B011-9ABFE159882C"/>
-              <!-- valeur issue du JDV_DefaillanceMaterielle_CISIS (1.2.250.1.213.1.1.5.526) -->
+              <!-- valeur issue du jdv-defaillance-materielle-cisis (1.2.250.1.213.1.1.5.526) -->
               <code code="Z1203019001" displayName="ÉQUIPEMENTS DE SURVEILLANCE DE LA RELAXATION NEUROMUSCULAIRE"
                 codeSystem="1.2.250.1.213.2.68" codeSystemName="EMDN"> </code>
               <text><reference value="#def-materielle-02"/></text>

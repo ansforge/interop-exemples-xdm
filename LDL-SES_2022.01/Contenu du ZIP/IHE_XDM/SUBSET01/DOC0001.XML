@@ -10,7 +10,7 @@
 <!-- 
       **************************************************************************************************************
       Document Lettre de liaison à la sortie d'un établissement de soins (LDL-SES_2022.01)
-      Auteur : ANS / PML
+      Auteur : ANS
 	  **************************************************************************************************************
       format HL7 - CDA Release 2 - selon schéma XML (CDA.xsd) du standard ANSI/HL7 CDA, R2-2005 4/21/2005
       **************************************************************************************************************
@@ -33,6 +33,7 @@
       09/02/2022 : Mise à jour de la codification d'un DM avec EMDN
       11/04/2022 : Migration des terminologies et JDVs en SNOMED CT et mise en conformité LDL-EES_2022.01
       28/08/2023 : MAJ des JDV
+      21/08/2025 : MAJ de l'entrée FR-Allergie-ou-hypersensibilite (value)
       **************************************************************************************************************
    -->
 
@@ -200,7 +201,7 @@
     </informant>
     
     <!-- Organisation chargée de la conservation du document -->   
-    <custodian typeCode="CST">
+    <custodian>
         <assignedCustodian>
             <representedCustodianOrganization>
                 <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
@@ -326,8 +327,8 @@
     </participant> 
    
     <!-- Actes documentés-->
-    <documentationOf typeCode="DOC">
-        <serviceEvent classCode="ACT" moodCode="EVN">
+    <documentationOf>
+        <serviceEvent>
             <code code="IMP" displayName="Hospitalisation (établissement, y compris HAD)" 
                 codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7:ActCode"/>
             <effectiveTime>
@@ -420,7 +421,7 @@
                             <templateId root="1.2.250.1.213.1.1.3.48.16.1"/>
                             <id root="402F3A79-F829-4572-8B65-65BC43367B70"/>
                             <code code="GEN-065" displayName="Statut du document"
-                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
                             <text><reference value="#statutDoc"/></text>
                             <statusCode code="completed"/>
                             <effectiveTime value="20181203"/>
@@ -526,7 +527,7 @@
                             <templateId root="1.2.250.1.213.1.1.3.48.6"/>
                             <id root="F597BFD5-2BD0-4163-892A-7C51830E2BA6"/>
                             <code code="ORG-070" displayName="Modalité d'entrée"
-                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
                             <text><reference value="modaliteE"/></text>
                             <statusCode code="completed"/>
                             <effectiveTime value="20181029"/>
@@ -584,12 +585,12 @@
                             <templateId root="1.2.250.1.213.1.1.3.48.7"/>
                             <id root="1E384EA2-2083-4F17-B825-6A088D2A0E6E"/>
                             <code code="ORG-074" displayName="Modalité de sortie"
-                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
                             <text><reference value="modaliteS"/></text>
                             <statusCode code="completed"/>
                             <effectiveTime value="20181203"/>
                             <value xsi:type="CE" code="GEN-092.06.01" displayName="Autre établissement de santé"
-                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                         </observation>
                     </entry>
                     
@@ -662,7 +663,7 @@
                             <id root="D1DFF1EF-CCE0-40DE-8C78-1827B31208EE"/>
                             <code code="MED-143"
                                 displayName="Evènements indésirables survenus pendant l'hospitalisation"
-                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
                             <text><reference value="EvenementIndesirable"/></text>
                             <statusCode code="completed"/>
                             <effectiveTime value="20181203"/>
@@ -682,7 +683,7 @@
                             <id root="D1DFF1EF-CCE0-40DE-8C78-1827B31208AA"/>
                             <code code="MED-309"
                                 displayName="Recherche de microorganismes multi-résistants ou émergents effectuée"
-                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
                             <text><reference value="RechercheMicroMulti"/></text>
                             <statusCode code="completed"/>
                             <effectiveTime value="20181203"/>
@@ -701,7 +702,7 @@
                             <templateId root="1.2.250.1.213.1.1.3.48.5"/>
                             <id root="53C6C420-96EF-47D4-8ECA-B25460140B8F"/>
                             <code code="MED-144" displayName="Identification de micro-organismes multirésistants"
-                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
                             <text><reference value="identMicroOrg"/></text>
                             <statusCode code="completed"/>
                             <effectiveTime value="20181203"/>
@@ -720,7 +721,7 @@
                             <templateId root="1.2.250.1.213.1.1.3.48.10"/>
                             <id root="53C6C420-96EF-47D4-8ECA-B25460140B8F"/>
                             <code code="MED-145" displayName="Transfusion de produits sanguins"
-                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
                             <text><reference value="transfu"/></text>
                             <statusCode code="completed"/>
                             <effectiveTime value="20181203"/>
@@ -739,7 +740,7 @@
                             <templateId root="1.2.250.1.213.1.1.3.48.1"/>
                             <id root="12DA3A06-18E7-40B7-9397-1FA5B1552456"/>
                             <code code="MED-146" displayName="Accidents transfusionnels"
-                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
                             <text><reference value="AccidentsTransfusionnels"/></text>
                             <statusCode code="completed"/>
                             <effectiveTime value="20181203"/>
@@ -758,7 +759,7 @@
                             <templateId root="1.2.250.1.213.1.1.3.48.2"/>
                             <id root="12DA3A06-18E7-40B7-9397-1FA5B1552472"/>
                             <code code="MED-147" displayName="Administration de dérivés du sang"
-                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
                             <text><reference value="admiSang"/></text>
                             <statusCode code="completed"/>
                             <effectiveTime value="20181203"/>
@@ -777,7 +778,7 @@
                             <templateId root="1.2.250.1.213.1.1.3.48.4"/>
                             <id root="12DA3A06-18E7-40B7-9397-1FA5B1552433"/>
                             <code code="MED-148" displayName="Evènements indésirables suite à l'administration de dérivés du sang"
-                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
                             <text><reference value="admiSang-evenement-indesirable"/></text>
                             <statusCode code="completed"/>
                             <effectiveTime value="20181203"/>
@@ -1128,7 +1129,7 @@
                             <id root='F83D3DB2-C511-4CFA-B216-773F6DEADB4D'/>
                             <!-- Type d'examen -->
                             <code code="ORG-064" displayName="Demande d'examen ou de suivi"
-                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
                             <text><reference value='#EXAM01'/></text>
                             <!-- Statut de l'entrée -->
                             <statusCode code='active'/>
@@ -1249,7 +1250,7 @@
                         codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
                     <title>Allergies identifiées pendant le séjour</title>
                     <!-- Bloc narratif de la section -->
-                    <text>Aucune allergie / intolérance identifiée pendant le séjour</text>
+                    <text ID="NO-ALL">Aucune allergie / hypersensibilité non allergiques, intolérances, idiosyncrasie identifiée pendant le séjour</text>
                     <!-- [1..1] Entrée FR-Liste-des-allergies-et-hypersensibilites -->
                     <entry>
                         <act classCode="ACT" moodCode="EVN">
@@ -1284,7 +1285,7 @@
                                     <templateId root="1.2.250.1.213.1.1.3.41" />
                                     <id root="C64C6013-C8AF-4938-AD10-1B7D26DEE2A0"/>
                                     <!-- Type d'allergie / intolérance -->
-                                    <!-- Valeur issue du JDV_TypeEvenementIndesirablePrevisible_CISIS(1.2.250.1.213.1.1.5.794)-->
+                                    <!-- Valeur issue du jdv-type-evenement-indesirable-previsible-cisis(1.2.250.1.213.1.1.5.794)-->
                                     <code code="416098002" displayName="allergie médicamenteuse"
                                         codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                                     <text><reference value="#NO-ALL"/></text>
@@ -1294,9 +1295,10 @@
                                         <low nullFlavor="UNK"/>
                                     </effectiveTime>
                                     <!-- Description clinique de l'allergie -->
-                                    <value xsi:type="CD">  
-                                        <originalText><reference value="#"/></originalText>
-                                    </value>
+                                    <value xsi:type="CD" code="no-known-allergies" displayName="Pas d'allergie/hypersensibilité connue"
+                                           codeSystem="2.16.840.1.113883.5.1150.1" codeSystemName="AbsentAndUnknownDataUvIps">
+                                        <originalText><reference value="#NO-ALL"/></originalText>                                        
+                                    </value>                                        
                                 </observation>
                             </entryRelationship>
                         </act>

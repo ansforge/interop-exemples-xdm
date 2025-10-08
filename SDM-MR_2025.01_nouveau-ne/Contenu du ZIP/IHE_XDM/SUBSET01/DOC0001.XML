@@ -1,0 +1,1671 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../FeuilleDeStyle/CDA-FO.xsl"?>
+
+<?oxygen SCHSchema="../schematrons/profils/IHE.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/structurationMinimale/ASIP-STRUCT-MIN-StrucMin.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/CI-SIS_ModelesDeContenusCDA.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/CI-SIS_Modeles_ANS.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/terminologies/schematron/terminologie.sch"?> 
+<?oxygen SCHSchema="../schematrons/CI-SIS_SDM-MR_2025.01.sch"?>
+<!-- 
+		**********************************************************************************************************
+		Document : Set de Données de Maladies Rares (SDM-MR_2025.01)
+		Auteur : ANS
+		**********************************************************************************************************
+		format HL7 - CDA Release 2 - selon schéma XML (CDA.xsd) du standard ANSI/HL7 CDA, R2-2005 4/21/2005
+		**********************************************************************************************************
+		Historique :
+		03/04/2019 : correction des codes LOINC dans l'entrée Signe vital observé
+		19/06/2019 : correction codes commune (COG INSEE) et codes pays (ISO 3166)
+		20/01/2020 : entrée Statut clinique du patient (1.3.6.1.4.1.19376.1.5.3.1.4.1.2), le nullFlavor est autorisé
+		29/05/2020 : ajout du numéro de version (extension) dans l'OID de conformité du document au modèle SDM-MR
+		16/03/2021 : remplacerment du libellé « Techniques sur lesquelles repose le diagnostic » par « Précision de(s) technique(s) génétique(s) utilisée(s) »
+		15/07/2021 : Correction de l'unité en "mo" (au lieu de "mois")
+		15/07/2021 : correction de l'unité en "wk" (au lieu de "semaines")
+		05/11/2021 : version 2021.01
+		24/10/2022 : version 2022.01
+		28/08/2023 : modification terminologies et JDV
+		18/10/2024 : version 2024.01
+		03/04/2025 : version 2025.01
+		25/06/2025 : ajout d'une observation pour Diagnostic néonatal
+		             mise à jour des codeSystemName
+		             remplacement du codeSystem de HGNC
+		**********************************************************************************************************
+	-->
+
+<ClinicalDocument xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 ../infrastructure/cda/CDA_extended.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdtc="urn:hl7-org:sdtc">
+  <!-- 
+		************************
+		Entête du document
+		************************
+	-->
+  <realmCode code="FR"/>
+  <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+  <!-- Conformité spécifications HL7 France -->
+  <templateId root="2.16.840.1.113883.2.8.2.1"/>
+  <!-- Conformité spécifications au CI-SIS -->
+  <templateId root="1.2.250.1.213.1.1.1.1"/>
+  <!-- Conformité au modèle SDM-MR (Set de Données Minimum Maladies Rares) + numéro de version -->
+  <templateId root="1.2.250.1.213.1.1.1.30" extension="2025.01"/>
+  <!-- Identifiant du document -->
+  <id root="1.2.250.1.213.1.1.1.30.2024.1.1"/>
+  <!-- Type de document -->
+  <code code="34133-9" displayName="Synthèse d'épisode de soins" codeSystem="2.16.840.1.113883.6.1"/>
+  <!-- Titre du document -->
+  <title>Set de données minimum maladies rares (SDM-MR)</title>
+  <!-- Date de création du dossier -->
+  <effectiveTime value="20240228160000+0100"/>
+  <!-- Niveau de confidentialité du document -->
+  <confidentialityCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.25"/>
+  <!-- Langue du document -->
+  <languageCode code="fr-FR"/>
+  <!-- Identifiant commun à toutes les versions successives du document -->
+  <setId root="1.2.250.1.213.1.1.1.30.2024.1"/>
+  <!-- Numéro de la version du présent document (entier positif) -->
+  <versionNumber value="2"/>
+
+  <!-- Patient -->
+  <recordTarget>
+    <patientRole classCode="PAT">
+      <!-- INS-NIR de test : 1.2.250.1.213.1.4.10 -->
+      <id extension="224027511583555" root="1.2.250.1.213.1.4.10"/>
+      <!-- IPP du patient dans l'établissement avec root = OID de l'IPP patient -->
+      <id extension="9ec5518caaab70962222" root="1.2.3.4.567.8.9.10"/>
+      <!-- IPP du foetus dans l'établissement avec root = OID de l'IPP foetus -->
+      <id extension="8ec5518caaab70961082" root="1.2.3.4.567.8.9.11"/>
+      <!-- Adresse du patient -->
+      <addr>
+        <houseNumber>28</houseNumber>
+        <streetName>Avenue de Breteuil</streetName>
+        <unitID>Escalier A</unitID>
+        <postalCode>75007</postalCode>
+        <county>75056</county>
+        <city>PARIS</city>
+        <state>FR</state>
+        <country>FRANCE</country>
+      </addr>
+      <!-- Coordonnées télécom du patient -->
+      <telecom value="tel:0144534551" use="H"/>
+      <telecom value="tel:0647151010" use="MC"/>
+      <telecom value="mailto:224027511583555@patient.mssante.fr"/>
+      <!-- Identité du patient -->
+      <patient classCode="PSN">
+        <name>
+          <!-- Nom de naissance -->
+          <family qualifier="BR">DECOURCY</family>
+          <!-- Prénoms de l’acte de naissance -->
+          <given>Léa Marie</given>
+          <!-- Premier prénom de l’acte de naissance -->
+          <given qualifier="BR">Léa</given>
+          <!-- Nom et prénom utilisés -->
+          <family qualifier="CL">DECOURCY</family>
+        </name>
+        <administrativeGenderCode code="F" displayName="Féminin" codeSystem="2.16.840.1.113883.5.1"/>
+        <!-- date de naissance -->
+        <birthTime value="20240228"/>
+        <!-- patient issu d'une naissance multiple -->
+        <sdtc:multipleBirthInd value="true"/>
+        <sdtc:multipleBirthOrderNumber value="1"/>
+        <!-- Représentant du patient -->
+        <guardian>
+          <addr>
+            <houseNumber>28</houseNumber>
+            <streetName>Avenue de Breteuil</streetName>
+            <unitID>Escalier A</unitID>
+            <postalCode>75007</postalCode>
+            <city>PARIS</city>
+            <country>FRANCE</country>
+          </addr>
+          <telecom value="tel:0144534551" use="H"/>
+          <telecom value="tel:0647151010" use="MC"/>
+          <guardianPerson>
+            <name>
+              <!-- Nom de naissance -->
+              <family qualifier="BR">NESSI</family>
+              <!-- Prénoms de l’acte de naissance -->
+              <given>Ruth Isabelle</given>
+              <!-- Premier prénom de l’acte de naissance -->
+              <given qualifier="BR">Ruth</given>
+              <!-- Nom et prénom utilisés -->
+              <family qualifier="CL">DECOURCY</family>
+              <given qualifier="CL">Ruth</given>
+            </name>
+          </guardianPerson>
+        </guardian>
+        <!-- Lieu de naissance du patient -->
+        <birthplace>
+          <place>
+            <addr>
+              <county>75115</county>
+              <city>PARIS</city>
+              <state>FR</state>
+            </addr>
+          </place>
+        </birthplace>           
+      </patient>      
+    </patientRole>    
+  </recordTarget>
+
+  <!-- Auteur du document - Clinicien ayant suivi le malade -->
+  <author>
+    <time value="20240228160000+0100"/>
+    <assignedAuthor>
+      <id root="1.2.250.1.71.4.2.1" extension="801234567897"/>
+      <code code="G15_10" displayName="Médecin"
+        codeSystem="1.2.250.1.213.1.1.4.5"/>
+      <addr>
+        <houseNumber>48</houseNumber>
+        <streetName>Boulevard SERURIER</streetName>
+        <postalCode>75019</postalCode>
+        <city>PARIS</city>
+      </addr>
+      <telecom value="tel:0131931902" use="WP"/>
+      <assignedPerson>
+        <name>
+          <suffix>DR</suffix>
+          <given>Charles </given>
+          <family>BOILEAU</family>
+        </name>
+      </assignedPerson>
+    </assignedAuthor>
+  </author>
+
+  <!-- Informateur : la mère de l'enfant (nom de naissance et premier prénom) -->
+  <informant>
+    <relatedEntity classCode="CON">
+      <code code="MTH" displayName="Mère" codeSystem="2.16.840.1.113883.5.111"/>      
+      <relatedPerson>
+        <name>
+          <!-- Nom de naissance -->
+          <family qualifier="BR">NESSI</family>
+          <!-- Premier prénom de l’acte de naissance -->
+          <given qualifier="BR">Ruth</given>
+        </name>
+      </relatedPerson>
+    </relatedEntity>
+  </informant>
+
+  <!-- Organisation de santé responsable du document -->
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id root="1.2.250.1.71.4.2.2" extension="1750803454"/>
+        <name>GHU APHP NUP SITE ROBERT DEBRE</name>
+        <telecom value="tel:0131931902" use="WP"/>
+        <addr>
+          <houseNumber>48</houseNumber>
+          <streetName>Bouvelard SERURIER</streetName>
+          <postalCode>75019</postalCode>
+          <city>PARIS</city>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+
+  <!-- Signataire du document -->
+  <legalAuthenticator>
+    <time value="20240228160000+0100"/>
+    <signatureCode code="S"/>
+    <assignedEntity>
+      <id root="1.2.250.1.71.4.2.1" extension="801234567897"/>
+      <code code="G15_10" displayName="Médecin"
+        codeSystem="1.2.250.1.213.1.1.4.5"/>
+      <addr>
+        <houseNumber>48</houseNumber>
+        <streetName>Boulevard SERURIER</streetName>
+        <postalCode>75019</postalCode>
+        <city>PARIS</city>
+      </addr>
+      <telecom value="tel:0131931902" use="WP"/>
+      <assignedPerson>
+        <name>
+          <suffix>DR</suffix>
+          <given>Charles</given>
+          <family>BOILEAU</family>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id root="1.2.250.1.71.4.2.2" extension="1750803454"/>
+        <name>GHU APHP NUP SITE ROBERT DEBRE</name>
+        <telecom value="tel:0131931902" use="EC"/>
+        <addr>
+          <houseNumber>48</houseNumber>
+          <streetName>Boulevard SERURIER</streetName>
+          <postalCode>75019</postalCode>
+          <city>PARIS</city>
+        </addr>
+        <standardIndustryClassCode code="ETABLISSEMENT" displayName="Etablissement de santé"
+          codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="TRE_A01_CadreExercice"/>
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+
+  <!-- Médecin traitant -->
+  <participant typeCode="INF">
+    <functionCode code="PCP" codeSystem="2.16.840.1.113883.5.88" displayName="Médecin Traitant"/>
+    <time xsi:type="IVL_TS">
+      <low value="20240402"/>
+    </time>
+    <associatedEntity classCode="PROV">
+      <id root="1.2.250.1.71.4.2.1" extension="801234567897"/>
+      <!-- Adresse du PS-->
+      <addr>
+        <houseNumber>3</houseNumber>
+        <streetName>Rue Petit Pont</streetName>
+        <postalCode>75005</postalCode>
+        <city>PARIS</city>
+      </addr>
+      <!-- Coordonnées télécom du PS-->
+      <telecom value="tel:0147150000" use="WP"/>
+      <telecom value="mailto:stephane.medioni@mssante.fr"/>
+      <!-- Identité du PS -->
+      <associatedPerson>
+        <name>
+          <prefix>M</prefix>
+          <given>Stéphane</given>
+          <family>MEDIONI</family>
+          <suffix>DR</suffix>
+        </name>
+      </associatedPerson>
+      <!-- Etablissement de rattachement du PS -->
+      <scopingOrganization>
+        <id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
+        <name>Centre de soins le Belvédère</name>
+        <addr>
+          <houseNumber>3</houseNumber>
+          <streetName>Rue Petit Pont</streetName>
+          <postalCode>75005</postalCode>
+          <city>PARIS</city>
+        </addr>
+        <standardIndustryClassCode code="ETABLISSEMENT" displayName="Etablissement de santé"
+          codeSystem="1.2.250.1.213.1.1.4.9"/>
+      </scopingOrganization>
+    </associatedEntity>
+  </participant>
+  
+  <!-- Acte documenté par le document -->
+  <documentationOf>
+    <serviceEvent>
+      <code code="11429006" displayName="consultation" codeSystem="2.16.840.1.113883.6.96"
+        codeSystemName="SNOMED_CT"/>
+      <effectiveTime>
+        <low value="20240228160000+0100"/>
+      </effectiveTime>
+      <performer typeCode="PRF">
+        <assignedEntity>
+          <id root="1.2.250.1.71.4.2.1" extension="801234567897"/>
+          <addr nullFlavor="NASK"/>
+          <telecom nullFlavor="NASK"/>
+          <assignedPerson>
+            <name>
+              <given>Charles </given>
+              <family>BOILEAU</family>
+              <suffix>DR</suffix>
+            </name>
+          </assignedPerson>
+          <representedOrganization>
+            <id root="1.2.250.1.71.4.2.2" extension="1750803454"/>
+            <name>GHU APHP NUP SITE ROBERT DEBRE</name>
+            <telecom value="tel:0131931902" use="WP"/>
+            <addr>
+              <houseNumber>48</houseNumber>
+              <streetName>Boulevard SERURIER</streetName>
+              <postalCode>75019</postalCode>
+              <city>PARIS</city>
+            </addr>
+            <standardIndustryClassCode code="ETABLISSEMENT" displayName="Etablissement de santé"
+              codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="TRE_A01_CadreExercice"/>
+          </representedOrganization>
+        </assignedEntity>
+      </performer>
+    </serviceEvent>
+  </documentationOf>
+
+  <!-- [0..*] Consentement du patient -->
+  <authorization typeCode="AUTH">
+    <consent classCode="CONS" moodCode="EVN">
+      <code code="GEN-315"
+        displayName="Le patient (ou son représentant légal) s'oppose à la réutilisation de ses données dans l’entrepôt de données de santé BNDMR."
+        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+      <statusCode code="completed"/>
+    </consent>
+  </authorization>
+  <authorization typeCode="AUTH">
+    <consent classCode="CONS" moodCode="EVN">
+      <code code="GEN-320"
+        displayName="Le patient a signé son consentement à la transmission des données au registre ERN EuRREB"
+        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>      
+      <statusCode code="completed"/>      
+    </consent>
+  </authorization>
+
+  <!-- Informations sur la prise en charge -->
+  <componentOf>
+    <encompassingEncounter>
+      <effectiveTime>
+        <low value="20240228160000+0100"/>
+      </effectiveTime>
+      <location>
+        <healthCareFacility>
+          <code code="SA01" codeSystem="1.2.250.1.71.4.2.4"
+            displayName="Etablissement public de santé"/>
+          <location>
+            <name>GHU APHP NUP SITE ROBERT DEBRE</name>
+            <addr>
+              <houseNumber>48</houseNumber>
+              <streetName>Boulevard SERURIER</streetName>
+              <postalCode>75019</postalCode>
+              <city>PARIS</city>
+            </addr>
+          </location>
+        </healthCareFacility>
+      </location>
+    </encompassingEncounter>
+  </componentOf>
+  <!-- 
+		********************************************************
+		Corps du document
+		********************************************************
+	-->
+  <component>
+    <structuredBody>
+
+      <!-- [1..1] Section FR-Dossier -->
+      <component>
+        <section>
+          <!-- Conformité FR-Dossier (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.66"/>
+          <id root="63B2E483-AB9B-478A-A4E9-EEFF83C74858"/>
+          <code code="GEN-168" displayName="Dossier" codeSystem="1.2.250.1.213.1.1.4.322"
+            codeSystemName="TerminologieCISIS"/>
+          <title>Dossier MR du patient</title>
+          <text>
+            <table border="0">
+              <tbody>
+                <tr>
+                  <td>Identifiant du dossier</td>
+                  <td colspan="2"><content ID="dossier">33341B85-96D9-4FFC-A165-37152FEA4ZA5</content></td>
+                </tr>
+                <tr>
+                  <td>Date de création du dossier</td>
+                  <td colspan="2">28/02/2024</td>
+                </tr>
+                <tr>
+                  <td>Date de la dernière mise à jour du dossier</td>
+                  <td colspan="2"><content ID="dossier_date_maj">28/02/2024 à 16h00</content></td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <!-- [1..1] Entrée FR-Simple-Observation : Identifiant du dossier + Date de création du dossier -->
+          <entry>
+            <observation classCode="OBS" moodCode="EVN" negationInd="false">
+              <!-- Conformité Simple Observation (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+              <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.48"/>
+              <!-- Identifiant du dossier -->
+              <id root="CB255EB8-E064-4EFF-A62A-C25B0922893A"/>
+              <code code="GEN-164" displayName="Date de création"
+                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+              <text><reference value="#dossier"/></text>
+              <statusCode code="completed"/>
+              <effectiveTime value="20240228"/>
+              <!-- date de création du dossier -->
+              <value xsi:type="TS" value="20240228"/>
+            </observation>
+          </entry>
+          <!-- [1..1] Entrée FR-Simple-Observation : Date de la dernière mise à jour du dossier -->
+          <entry>
+            <observation classCode="OBS" moodCode="EVN" negationInd="false">
+              <!-- Conformité Simple Observation (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+              <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.48"/>
+              <id root="C57578D1-D2B7-44EA-9C00-BE653E3D0D10"/>
+              <code code="GEN-165" displayName="Date de mise à jour"
+                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+              <text><reference value="#dossier_date_maj"/></text>
+              <statusCode code="completed"/>
+              <effectiveTime value="20240228160000"/>
+              <!-- date de la dernière maj du dossier -->
+              <value xsi:type="TS" value="20240228160000"/>
+            </observation>
+          </entry>
+        </section>
+      </component>
+
+      <!-- [0..1] Section FR-Antecedents-familiaux : Premier cas diagnostiqué de la famille dans l'établissement (cette section est créée si le patient n'est pas le premier cas) -->
+      <component>
+        <section>
+          <!-- Conformité Family History Section (CCD) -->
+          <templateId root="2.16.840.1.113883.10.20.1.4"/>
+          <!-- Conformité Family Medical History Section (IHE PCC) -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.14"/>
+          <!-- Conformité Coded Family Medical History Section (IHE PCC) -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.15"/>
+          <!-- Conformité FR-Antecedents-familiaux (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.139"/>
+          <id root="90989FFE-CFC7-4FDA-A2BE-979801B81600"/>
+          <code code="10157-6" displayName="Historique des pathologies familiales"
+            codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>Premier cas diagnostiqué de la famille dans l'établissement</title>
+          <text>
+            <table border="0">
+              <tbody>
+                <tr>
+                  <td>Identifiant du premier cas diagnostiqué de la famille dans l'établissement</td>
+                  <td>1234567890112345678902 (1.2.3.4.5.6.7.8.9.10)</td>
+                </tr>
+                <tr>
+                  <td>Lien de parenté</td>
+                  <td><content ID="lien-parente">Cousin</content></td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <!-- [1..1] Entrée FR-Antecedents-familiaux -->
+          <entry>
+            <organizer classCode="CLUSTER" moodCode="EVN">
+              <!-- Conformité Family history organizer (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.23"/>
+              <!-- Conformité Family History Organizer (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.15"/>
+              <!-- Conformité FR-Antecedents-familiaux (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.59"/>
+              <statusCode code="completed"/>
+              <!-- identifiant du sujet -->
+              <subject typeCode="SBJ">
+                <!-- Conformité Subject participation (IHE PCC) -->
+                <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.15.2"/>
+                <!-- Conformité FR-Sujet (CI-SIS) -->
+                <templateId root="1.2.250.1.213.1.1.3.60"/>
+                <relatedSubject classCode="PRS">
+                  <!-- Lien de parenté : valeur issue du jdv-hl7-v3-PersonalRelationshipRoleType-cisis (2.16.840.1.113883.1.11.19563) -->
+                  <code code="PCOUSN" displayName="Cousin" codeSystem="2.16.840.1.113883.5.111" codeSystemName="HL7_RoleCode">
+                    <originalText><reference value="#lien-parente"/></originalText>
+                  </code>
+                  <subject classCode="PSN">
+                    <!-- Identifiant du premier cas diagnostiqué de la famille dans l'établissement -->
+                    <sdtc:id root="1.2.3.4.5.6.7.8.9.10" extension="1234567890112345678902"/>
+                    <!-- Sexe du Premier cas diagnostiqué de la famille dans l'établissement : valeur issue du jdv-hl7-v3-AdministrativeGender-cisis (2.16.840.1.113883.1.11.1) -->
+                    <administrativeGenderCode code="M" displayName="Masculin"
+                      codeSystem="2.16.840.1.113883.5.1" codeSystemName="HL7_AdministrativeGender"/>
+                  </subject>
+                </relatedSubject>
+              </subject>
+              <!-- [1..*] Entrée FR-Antecedent-familial-observe : maladie rare du premier cas diagnostiqué de la famille dans l'établissement -->
+              <component typeCode="COMP">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité Family history observation (CCD) -->
+                  <templateId root="2.16.840.1.113883.10.20.1.22"/>
+                  <!-- Conformité Simple Observation (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                  <!-- Conformité Family History Observation (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.3"/>
+                  <!-- Conformité FR-Antecedent-familial-observe (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.51"/>
+                  <id root="4F052078-E014-40A2-B6D9-BA76159C6A5D"/>
+                  <code code="404684003" displayName="constatation clinique"
+                    codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
+                  <text><reference value="#propositus-commentaire"/></text>
+                  <statusCode code="completed"/>
+                  <effectiveTime nullFlavor="NA"/>
+                  <value xsi:type="CD" code="513" displayName="Leucémie lymphoblastique aigüe"
+                    codeSystem="1.2.250.1.213.2.49.1" codeSystemName="JDV_Orpha_Maladies"/>
+                </observation>
+              </component>
+            </organizer>
+          </entry>
+        </section>
+      </component>
+
+      <!-- [1..1] Section FR-Problemes-actifs : Patient issu d’une union consanguine -->
+      <component>
+        <section>
+          <!-- Conformité Problems Section (CCD) -->
+          <templateId root="2.16.840.1.113883.10.20.1.11"/>
+          <!-- Conformité Active Problems Section (IHE PCC) -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
+          <!-- Conformité FR-Problemes-actifs (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.132"/>
+          <code code="11450-4" displayName="Liste des problèmes actifs"
+            codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>Problèmes</title>
+          <text>
+            <table border="0">
+              <tbody>
+                <tr>
+                  <td>Patient issu d’une union consanguine</td>
+                  <td><content ID="consanguinite">non</content></td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <!-- [1..1] Entrée FR-Liste-des-problemes -->
+          <entry>
+            <act classCode="ACT" moodCode="EVN">
+              <!-- Conformité Problem Act (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <!-- Conformité Concern Entry (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <!-- Conformité Problem Concern (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+              <!-- Conformité FR-Liste-des-problemes (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.39"/>
+              <id root="BED5BF7F-714C-40DC-94FD-A047ABC11281"/>
+              <code nullFlavor="NA"/>
+              <statusCode code="completed"/>
+              <effectiveTime>
+                <low value="20240228160000"/>
+                <high value="20240228160001"/>
+              </effectiveTime>
+
+              <!-- [1..1] Entrée FR-Probleme / Patient issu d’une union consanguine -->
+              <entryRelationship typeCode="SUBJ" inversionInd="false">
+                <observation classCode="OBS" moodCode="EVN" negationInd="true">
+                  <!-- Conformité Problem observation (CCD) -->
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <!-- Conformité Problem Entry (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <!-- Conformité FR-Probleme (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.37"/>
+                  <id root="B920A6A0-3162-4B98-8BBA-665923EEEB11"/>
+                  <code code="55607006" displayName="problème" codeSystem="2.16.840.1.113883.6.96"
+                    codeSystemName="SNOMED_CT"/>
+                  <text>
+                    <reference value="#consanguinite"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime xsi:type="IVL_TS">
+                    <low value="20240112"/>
+                  </effectiveTime>
+                  <value xsi:type="CD" code="842009" displayName="consanguinité"
+                    codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT">
+                    <originalText>
+                      <reference value="#consanguinite"/>
+                    </originalText>
+                  </value>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+
+        </section>
+      </component>
+
+      <!-- [0..1] Section FR-Plan-de-soins : Prises en charge -->
+      <component>
+        <section>
+          <!-- Conformité Plan of care Section (CCD) -->
+          <templateId root="2.16.840.1.113883.10.20.1.10"/>
+          <!-- Conformité Coded Care Plan Section (IHE PCC) -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.36"/>
+          <!-- Conformité FR-Plan-de-soins (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.158"/>
+          <id root="CE73FBA7-5AC9-4E1F-936B-DA74E9C8609C"/>
+          <code code="18776-5" displayName="Plan de soins" codeSystem="2.16.840.1.113883.6.1"
+            codeSystemName="LOINC"/>
+          <title>Prises en charges MR</title>
+          <!-- Partie narrative de la section -->
+          <text>
+            <table border="0">
+              <thead>
+                <tr>
+                  <th>Identifiant de la prise en charge</th>
+                  <th>Sujet lié à la prise en charge</th>
+                  <th>Date d'inclusion</th>
+                  <th>Site MR</th>
+                  <th>Médecin référent</th>
+                  <th>Hors labélisation</th>
+                  <th>Patient adressé par</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ID="PEC-01">
+                  <td>12da3a06-18e7-40b7-9397-1fa5b1552472</td>
+                  <td>Mère</td>
+                  <td>13/12/2018</td>
+                  <td>ADIdF [COO] VERLOES (S001)</td>
+                  <td>Dr Charles BOILEAU (801234567897)</td>
+                  <td>Oui</td>
+                  <td>Association de patients</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <!-- [1..*] Entrée FR-Rencontre (1 entrée par Site MR) -->
+          <entry>
+            <encounter classCode="ENC" moodCode="EVN">
+              <!-- Conformité Encounter activity (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.21"/>
+              <!-- Conformité Encounter (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
+              <!-- Conformité FR-Rencontre (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.58"/>
+              <!-- Identifiant de la prise en charge -->
+              <id root="6917FE7A-2F04-458E-8224-D273C6B643E7"/>
+              <!-- Type de prise en charge : valeur issue du jdv-hl7-v3-ActEncounterCode-cisis (2.16.840.1.113883.1.11.13955) -->
+              <code code="IMP" displayName="Hospitalisation" codeSystem="2.16.840.1.113883.5.4"/>
+              <text><reference value="#PEC-01"/></text>
+              <!-- Date d'inclusion dans le site -->
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20181213"/>
+              </effectiveTime>
+              <!-- [1..1] Médecin référent du site maladie rare -->
+              <performer typeCode="PRF">
+                <time nullFlavor="NA"/>
+                <assignedEntity>
+                  <id root="1.2.250.1.71.4.2.1" extension="801234567897"/>
+                  <code code="G15_10" displayName="Médecin"
+                    codeSystem="1.2.250.1.213.1.1.4.5"/>
+                  <addr nullFlavor="NASK"/>
+                  <telecom nullFlavor="NASK"/>
+                  <assignedPerson>
+                    <name>
+                      <given>Charles</given>
+                      <family>BOILEAU</family>
+                      <suffix>DR</suffix>
+                    </name>
+                  </assignedPerson>
+                  <representedOrganization>
+                    <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
+                    <name>HU ROBERT DEBRE APHP</name>
+                    <telecom value="tel:0131931902" use="EC"/>
+                    <addr>
+                      <houseNumber>48</houseNumber>
+                      <streetName>Bd Sérurier</streetName>
+                      <postalCode>75019</postalCode>
+                      <city>PARIS</city>
+                    </addr>
+                    <standardIndustryClassCode code="ETABLISSEMENT"
+                      displayName="Etablissement de santé" codeSystem="1.2.250.1.213.1.1.4.9"
+                      codeSystemName="TRE_A01_CadreExercice"/>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>
+              <!-- [1..*] Patient adressé par -->
+              <informant>
+                <assignedEntity>
+                  <id nullFlavor="NA"/>
+                  <!-- valeur issue du jdv-patient-adresse-par-cisis (1.2.250.1.213.1.1.5.38) -->
+                  <code code="ORG-020" displayName="Association de patients"
+                    codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                  <addr>
+                    <streetAddressLine>3 rue de Londres</streetAddressLine>
+                    <streetAddressLine>75005 PARIS</streetAddressLine>
+                  </addr>
+                  <telecom value="tel:0142110000" use="WP"/>
+                  <assignedPerson>
+                    <name>
+                      <prefix>M</prefix>
+                      <given>Stéphane</given>
+                      <family>PETIT</family>
+                    </name>
+                  </assignedPerson>
+                  <representedOrganization>
+                    <name>Association des patients MR1</name>
+                  </representedOrganization>
+                </assignedEntity>
+              </informant>
+              <!-- [1..1] Site MR pour lequel la prise en charge est déclarée -->
+              <participant typeCode="LOC">
+                <participantRole classCode="SDLOC">
+                  <id extension="S001" root="1.2.250.1.213.2.61"/>
+                  <code code="ORG-025" displayName="Site de prise en charge"
+                    codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                  <addr>
+                    <houseNumber>48</houseNumber>
+                    <streetName>Bd Sérurier</streetName>
+                    <postalCode>75019</postalCode>
+                    <city>PARIS</city>
+                  </addr>
+                  <telecom value="tel:0131931902" use="EC"/>
+                  <playingEntity classCode="PLC" determinerCode="INSTANCE">
+                    <code code="S001" displayName="ADIdF [COO] VERLOES"
+                      codeSystem="1.2.250.1.213.2.61"/>
+                    <name>HU ROBERT DEBRE APHP - 75019 PARIS - Anomalies Du Développement Et
+                      Syndromes Malformatif d'Ile-De-France - [COO] - Alain VERLOES</name>
+                  </playingEntity>
+                </participantRole>
+              </participant>
+              <!-- [1..1] Indicateur Prise en charge en dehors de la labellisation du site maladie rare -->
+              <entryRelationship typeCode="REFR">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité Simple Observation (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                  <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.48"/>
+                  <id root="490392D8-C59D-4CF9-A3E4-D85033E7D6CC"/>
+                  <code code="GEN-368" displayName="Prise en charge en dehors de la labellisation du site maladie rare"
+                    codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                  <text>
+                    <reference value="#indHorsLab"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime value="20181213"/>
+                  <value xsi:type="BL" value="true"/>
+                </observation>
+              </entryRelationship>
+            </encounter>
+          </entry>
+        </section>
+      </component>
+
+      <!-- [0..1] Section FR-Historique-prises-en-charge-medicales : Activités -->
+      <component>
+        <section>
+          <!-- Conformité Encounters section (CCD) -->
+          <templateId root="2.16.840.1.113883.10.20.1.3"/>
+          <!-- Conformité Encounter Histories Section (IHE PCC) -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.3"/>
+          <!-- Conformité FR-Historique-prises-en-charge-medicales (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.76"/>
+          <id root="A048B2A1-B0F2-4B45-9895-1514EB8911FF"/>
+          <code code="46240-8" displayName="Historique des rencontres"
+            codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>Activités MR</title>
+          <text>
+            <table border="0">
+              <thead>
+                <tr>
+                  <th>Identifiant de l'activité</th>
+                  <th>Sujet lié à l'activité</th>
+                  <th>Date</th>
+                  <th>Site MR</th>
+                  <th>Responsable de l'activité</th>
+                  <th>Contexte</th>
+                  <th>Objectif(s)</th>
+                  <th>Lieu de consultation</th>
+                </tr>
+              </thead>
+              <tbody>                
+                <tr>
+                  <td>C38D726B-6DE0-43A0-B309-96FF1D525588</td>
+                  <td>Léa</td>
+                  <td>28/02/2024</td>
+                  <td>ADIdF [COO] VERLOES (S001)</td>
+                  <td>Dr Charles BOILEAU (801234567897)</td>
+                  <td><content ID="activite-01">(autre contexte : texte libre)</content></td>
+                  <td><content ID="objectifActiv-01">Suivi</content></td>
+                  <td>FINESS : 750803454<br/>PARIS<br/>FRANCE<br/>tel : 0131931902</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+
+          <!-- [1..*] Entrée FR-Rencontre (1 rencontre = 1 activité) -->
+          <entry>
+            <encounter classCode="ENC" moodCode="EVN">
+              <!-- Conformité Encounter activity (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.21"/>
+              <!-- Conformité Encounter (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
+              <!-- Conformité FR-Rencontre (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.58"/>
+              <!-- Identifiant de l'activité -->
+              <id root="C38D726B-6DE0-43A0-B309-96FF1D525588"/>
+              <!-- Contexte de l'activité : valeur issue du jdv-contexte-activite-cisis (1.2.250.1.213.1.1.5.40) -->              
+              <code code="GEN-092.05.04" displayName="Autre contexte"
+                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
+                <originalText><reference value="#activite-02"/></originalText>
+              </code>
+              <text>
+                <reference value="#activite-02"/>
+              </text>
+              <!-- Date de l'activité -->
+              <effectiveTime value="20240228"/>
+              <!-- Personne ayant réalisé l'activité -->
+              <performer typeCode="PRF">
+                <time nullFlavor="NA"/>
+                <assignedEntity>
+                  <id root="1.2.250.1.71.4.2.1" extension="801234567897"/>
+                  <code code="G15_10" displayName="Médecin"
+                    codeSystem="1.2.250.1.213.1.1.4.5"/>
+                  <addr>
+                    <houseNumber>48</houseNumber>
+                    <streetName>Bd Sérurier</streetName>
+                    <postalCode>75019</postalCode>
+                    <city>PARIS</city>
+                  </addr>
+                  <telecom value="tel:0131931902" use="EC"/>
+                  <assignedPerson>
+                    <name>
+                      <given>Charles </given>
+                      <family>BOILEAU</family>
+                      <suffix>DR</suffix>
+                    </name>
+                  </assignedPerson>
+                  <representedOrganization>
+                    <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
+                    <name>HU ROBERT DEBRE APHP</name>
+                    <telecom value="tel:0131931902" use="EC"/>
+                    <addr>
+                      <houseNumber>48</houseNumber>
+                      <streetName>Bd Sérurier</streetName>
+                      <postalCode>75019</postalCode>
+                      <city>PARIS</city>
+                    </addr>
+                    <standardIndustryClassCode code="ETABLISSEMENT"
+                      displayName="Etablissement de santé" codeSystem="1.2.250.1.213.1.1.4.9"
+                      codeSystemName="TRE_A01_CadreExercice"/>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>
+              <!-- Site MR pour lequel l'activité est déclarée et lieu de consultation -->
+              <participant typeCode="LOC">
+                <participantRole classCode="SDLOC">
+                  <!-- Identifiant du site pour lequelle l'activité est déclarée -->
+                  <id extension="S001" root="1.2.250.1.213.2.61"/>
+                  <!-- Identifiant FINESS du lieu de consultation -->
+                  <id root="1.2.250.1.71.4.2.2" extension="1750803454"/>
+                  <code code="ORG-070" displayName="Site Maladie rare"
+                    codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                  <!-- Lieu de consultation uniquement si différent du site pour lequel l'activité est déclarée -->
+                  <addr>
+                    <houseNumber>54</houseNumber>
+                    <streetName>Rue Compans</streetName>
+                    <postalCode>75019</postalCode>
+                    <county>75056</county>
+                    <city>PARIS</city>
+                    <state>FR</state>
+                    <country>FRANCE</country>
+                  </addr>
+                  <telecom value="tel:0131931902" use="WP"/>
+                  <!-- Site MR pour lequel l'activité est déclarée -->
+                  <playingEntity classCode="PLC" determinerCode="INSTANCE">
+                    <code code="S001" displayName="ADIdF [COO] VERLOES"
+                      codeSystem="1.2.250.1.213.2.61"/>
+                    <name>HU ROBERT DEBRE APHP - 75019 PARIS - Anomalies Du Développement Et
+                      Syndromes Malformatif d'Ile-De-France - [COO] - Alain VERLOES</name>
+                  </playingEntity>
+                </participantRole>
+              </participant>
+              <!-- [1..*] Entrée FR-Simple-Observation : Objectif de l'activité MR -->
+              <entryRelationship typeCode="REFR">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité Simple Observation (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                  <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.48"/>
+                  <id root="098A0F48-BEA0-46DA-B192-5973005E9963"/>
+                  <code code="ORG-034" displayName="Objectifs de l'activité MR"
+                    codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                  <text>
+                    <reference value="#objectifActiv-02"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime nullFlavor="NA"/>
+                  <!-- Objectif de l’activité MR : valeur issue du jdv-objectif-activite-cisis (1.2.250.1.213.1.1.5.41) -->
+                  <value xsi:type="CD" code="390906007" displayName="rendez-vous de suivi"
+                    codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
+                </observation>
+              </entryRelationship>
+            </encounter>
+          </entry>
+        </section>
+      </component>
+
+      <!-- [0..1] Section FR-Diagnostic-admission-hopital : Diagnostics -->
+      <component>
+        <section>
+          <!-- Conformité Hospital Admission Diagnosis Section (IHE PCC) -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.3"/>
+          <!-- Conformité FR-Diagnostic-admission-hopital (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.129"/>
+          <id root="133359E6-1C2B-4EB4-BD33-552CAD44B3CB"/>
+          <code code="46241-6" displayName="Diagnostic d'admission à l'hôpital"
+            codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>Diagnostics MR</title>
+          <!-- Partie narrative de la section -->
+          <text>
+            <!-- Faire 1 tableau par diagnostic -->
+            <table border="0">
+              <thead>
+                <tr>
+                  <th>Diagnostic (mère)</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Identifiant du diagnostic</td>
+                  <td>5F7B8B9A-83D6-4B26-BB30-1D7B95F9FF71</td>
+                </tr>
+                <tr>
+                  <td>Date du diagnostic</td>
+                  <td>12/01/2024</td>
+                </tr>                
+                <tr>
+                  <td>Site maladie rare qui a posé le diagnostic</td>
+                  <td>ADIdF [COO] VERLOES (S001)</td>
+                </tr>
+                <tr>
+                  <td>Maladie rare ou Maladie complexe non rare</td>
+                  <td><content ID="maladie">Leucémie lymphoblastique aigüe (code ORPHA : 513)</content></td>
+                </tr>
+                <tr>
+                  <td>Statut actuel du diagnostic</td>
+                  <td><content ID="statut_actuel_diagnostic">En cours</content></td>
+                </tr>
+                <tr>
+                  <td>Description clinique</td>
+                  <td><content ID="description_clinique">Maladie neurologique rare (code ORPHA : 98006)</content></td>
+                </tr>
+                <tr>
+                  <td>Cas sporadique ou familial</td>
+                  <td><content ID="sporadique_familial">Sporadique</content></td>
+                </tr>
+                <tr>
+                  <td>Age aux premiers signes</td>
+                  <td><content ID="age_premiers_signes">à l'âge de </content><content ID="precision_age_premiers_signes">1 mois</content></td>
+                </tr>
+                <tr>
+                  <td>Appréciation diagnostic à l'entrée du centre</td>
+                  <td><content ID="appreciation_diagnostic">Absent</content></td>
+                </tr> 
+                <tr>
+                  <td>Age au diagnostic clinique</td>
+                  <td><content ID="age_diagnostic_clinique">à la naissance</content></td>
+                </tr>
+                <tr>
+                  <td>Age au diagnostic génétique</td>
+                  <td><content ID="age_diagnostic_genetique">à l'âge de </content><content ID="precision_age_diagnostic_genetique">1 mois </content></td>
+                </tr>               
+                <tr>
+                  <td>Dépistage néonatal</td>
+                  <td><content ID="depistage-neonatal">négatif</content></td>
+                </tr>
+                <tr>
+                  <td>Technique sur laquelle repose le diagnostic génétique</td>
+                  <td><content ID="technique_genetique">Autre technique diagnostic</content> : <content ID="technique_genetique_precision">(texte libre)</content></td>
+                </tr>
+                <tr>
+                  <td>Gène</td>
+                  <td><content ID="gene">ABCA9 antisense RNA 1</content></td>
+                </tr>
+                <tr>
+                  <td>Autres descriptions génétiques</td>
+                  <td><content ID="autres_descriptions_genetiques">(texte libre)</content></td>
+                </tr>     
+                <tr>
+                  <td>Commentaire</td>
+                  <td><content ID="diagnostic-01-commentaire">(texte libre)</content></td>
+                </tr>                
+              </tbody>
+            </table>
+          </text>
+          <!-- [1..*] Entrée FR-Liste-des-problemes (1 entrée par MR) -->
+          <entry>
+            <act classCode="ACT" moodCode="EVN">
+              <!-- Conformité Problem Act (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <!-- Conformité Concern Entry (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <!-- Conformité Problem Concern (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+              <!-- Conformité FR-Liste-des-problemes (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.39"/>
+              <id root="E33021FA-1388-4C0E-8200-4BC2DDF9EDC9"/>
+              <code nullFlavor="NA"/>
+              <statusCode code="active"/>
+              <effectiveTime>
+                <low nullFlavor="NA"/>
+              </effectiveTime>              
+              <!-- [1..*] Entrée FR-Probleme = Diagnostic MR -->
+              <entryRelationship typeCode="SUBJ" inversionInd="false">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité Problem observation (CCD) -->
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <!-- Conformité Problem Entry (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <!-- Conformité FR-Probleme (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.37"/>
+                  <!-- Identifiant du diagnostic -->
+                  <id root="5F7B8B9A-83D6-4B26-BB30-1D7B95F9FF71"/>
+                  <code code="282291009" displayName="interprétation diagnostique"
+                    codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
+                  <text><reference value="#maladie"/></text>
+                  <statusCode code="completed"/>
+                  <!-- Date du diagnostic MR -->
+                  <effectiveTime>
+                    <low nullFlavor="UNK"/>
+                  </effectiveTime>           
+                  <!-- Maladie rare du JDV_Orpha_Maladies (1.2.250.1.213.2.49.1) ou Maladie complexe non rare de la CIM-10 (2.16.840.1.113883.6.3) -->
+                  <value xsi:type="CD" code="513" displayName="Leucémie lymphoblastique aigüe"
+                    codeSystem="1.2.250.1.213.2.49.1" codeSystemName="JDV_Orpha_Maladies">
+                    <originalText><reference value="#maladie"/></originalText>
+                  </value>                      
+                  <!-- Site maladie rare qui a posé le diagnostic -->
+                  <participant typeCode="LOC">
+                    <participantRole classCode="SDLOC">
+                      <!-- Identifiant du site -->
+                      <id extension="S001" root="1.2.250.1.213.2.61"/>
+                      <code code="ORG-070" displayName="Site Maladie rare"
+                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                      <addr>
+                        <houseNumber>54</houseNumber>
+                        <streetName>Rue Compans</streetName>
+                        <postalCode>75019</postalCode>
+                        <city>PARIS</city>
+                        <country>FRANCE</country>
+                      </addr>
+                      <playingEntity classCode="PLC" determinerCode="INSTANCE">
+                        <code code="S001" displayName="ADIdF [COO] VERLOES"
+                          codeSystem="1.2.250.1.213.2.61"/>
+                        <name>HU ROBERT DEBRE APHP - 75019 PARIS - Anomalies Du Développement Et
+                          Syndromes Malformatif d'Ile-De-France - [COO] - Alain VERLOES</name>
+                      </playingEntity>
+                    </participantRole>
+                  </participant>
+                  <!-- [1..1] FR-Simple-Observation : Statut actuel du diagnostic -->
+                  <entryRelationship typeCode="REFR" inversionInd="true">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <!-- Conformité Simple Observation (IHE PCC) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                      <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.48"/>
+                      <id root="E31D4A1D-9D9D-4EEF-B1B7-C6D209B459DB"/>
+                      <code code="MED-072" displayName="Statut actuel du diagnostic"
+                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                      <text>
+                        <reference value="#statut_actuel_diagnostic"/>
+                      </text>
+                      <statusCode code="completed"/>
+                      <effectiveTime nullFlavor="NA"/>
+                      <!-- valeur issue du jdv-statut-actuel-diagnostic-cisis (1.2.250.1.213.1.1.5.45) -->
+                      <value xsi:type="CD" code="385651009" displayName="en cours d'exécution"
+                        codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
+                    </observation>
+                  </entryRelationship>
+                  <!-- [0..*] FR-Simple-Observation : Description clinique -->
+                  <entryRelationship typeCode="REFR">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <!-- Conformité Simple Observation (IHE PCC) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                      <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.48"/>
+                      <id root="78FCC344-92BE-4C1A-A253-780EE60F00CF"/>
+                      <code code="MED-1284" displayName="Description clinique"
+                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>                    
+                      <text><reference value="#description_clinique"/></text>
+                      <statusCode code="completed"/>
+                      <effectiveTime value="20181213"/>
+                      <!-- valeur issue du JDV_Orpha_Groupes-Maladies (1.2.250.1.213.2.49.2) ou HPO (2.16.840.1.113883.6.339) ou CIM-10 (2.16.840.1.113883.6.3) -->
+                      <value xsi:type="CD" code="98006" displayName="Maladie neurologique rare"
+                        codeSystem="1.2.250.1.213.2.49.2" codeSystemName="JDV_Orpha_Groupes-Maladies"/>
+                    </observation>
+                  </entryRelationship>
+                  <!-- [0..1] FR-Simple-Observation : Cas sporadique ou familial -->
+                  <entryRelationship typeCode="REFR" inversionInd="true">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <!-- Conformité Simple Observation (IHE PCC) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                      <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.48"/>
+                      <id root="F769E135-6907-443A-8E4F-A6E431A02573"/>
+                      <code code="MED-073" displayName="Cas sporadique ou familial"
+                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                      <text><reference value="#sporadique_familial"/></text>
+                      <statusCode code="completed"/>
+                      <effectiveTime nullFlavor="NA"/>
+                      <!-- Valeur issue du jdv-cas-sporadique-familial-cisis (1.2.250.1.213.1.1.5.46) -->
+                      <value xsi:type="CD" code="75741005" displayName="sporadique"
+                        codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
+                    </observation>
+                  </entryRelationship>
+                  <!-- [1..1] FR-Simple-Observation : Age aux premiers signes -->
+                  <entryRelationship typeCode="REFR">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <!-- Conformité IHE PCC Simple Observation -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                      <!-- Conformité CI-SIS FR-Simple-Observation-->
+                      <templateId root="1.2.250.1.213.1.1.3.48"/>
+                      <id root="87B88A38-8DF6-4198-9995-0B3D20472D05"/>
+                      <code code="PAT-013" displayName="Age aux premiers signes"
+                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                      <text><reference value="#age_premiers_signes"/></text>
+                      <statusCode code="completed"/>
+                      <effectiveTime nullFlavor="NA"/>
+                      <!-- valeur issue du jdv-age-cisis (1.2.250.1.213.1.1.5.43) -->
+                      <value xsi:type="CD" code="767023003"
+                        displayName="période de la vie entre la naissance et la mort"
+                        codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
+                    </observation>
+                  </entryRelationship>
+                  <!-- [0..1] FR-Simple-Observation : Précision de l'âge premiers signes -->
+                  <entryRelationship typeCode="REFR" inversionInd="true">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <!-- Conformité Simple Observation (IHE PCC) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                      <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.48"/>
+                      <id root="11C6F145-CF8B-4358-A68C-83EFD8E65507"/>
+                      <code code="PAT-014" displayName="Précision de l'âge aux premiers signes"
+                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                      <text><reference value="#precision_age_premiers_signes"/></text>
+                      <statusCode code="completed"/>
+                      <effectiveTime nullFlavor="NA"/>
+                      <value xsi:type="PQ" value="1" unit="mo"/>
+                    </observation>
+                  </entryRelationship>                  
+                  <!-- [0..1] FR-Simple-Observation : Appréciation du diagnostic à l'entrée du centre -->
+                  <entryRelationship typeCode="REFR">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <!-- Conformité Simple Observation (IHE PCC) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                      <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.48"/>
+                      <id root="B4988088-E848-465C-819D-39C6266B5A57"/>
+                      <code code="MED-071" displayName="Appréciation du diagnostic à l'entrée du centre"
+                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                      <text><reference value="#appreciation_diagnostic"/></text>
+                      <statusCode code="completed"/>
+                      <effectiveTime value="20240112"/>
+                      <!-- valeur issue du jdv-appreciation-diagnostic-centre-cisis (1.2.250.1.213.1.1.5.44) -->
+                      <value xsi:type="CD" code="2667000" displayName="absent"
+                        codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
+                    </observation>
+                  </entryRelationship>
+                  <!-- [1..1] FR-Simple-Observation : Age au diagnostic clinique -->
+                  <entryRelationship typeCode="REFR">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <!-- Conformité Simple Observation (IHE PCC) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                      <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.48"/>
+                      <id root="7867E08B-D92F-49CF-9026-B9E1C8275C9E"/>
+                      <code code="PAT-062" displayName="Age au diagnostic clinique"
+                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                      <text><reference value="#age_diagnostic_clinique "/></text>
+                      <statusCode code="completed"/>
+                      <effectiveTime nullFlavor="NA"/>
+                      <!-- valeur issue du jdv-age-cisis (1.2.250.1.213.1.1.5.43) -->
+                      <value xsi:type="CD" code="255407002" displayName="néonatal"
+                        codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
+                    </observation>
+                  </entryRelationship>
+                  <!-- [1..1] FR-Simple-Observation : Age au diagnostic génétique -->
+                  <entryRelationship typeCode="REFR">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <!-- Conformité Simple Observation (IHE PCC) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                      <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.48"/>
+                      <id root="7867E08B-D92F-49CF-9026-B9E1C8275C9E"/>
+                      <code code="PAT-064" displayName="Age au diagnostic génétique"
+                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                      <text><reference value="#age_diagnostic_genetique "/></text>
+                      <statusCode code="completed"/>
+                      <effectiveTime nullFlavor="NA"/>
+                      <!-- valeur issue du jdv-age-cisis (1.2.250.1.213.1.1.5.43) -->
+                      <value xsi:type="CD" code="767023003"
+                        displayName="période de la vie entre la naissance et la mort"
+                        codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
+                    </observation>
+                  </entryRelationship>
+                  <!-- [0..1] FR-Simple-Observation : Précision sur l'âge au diagnostic génétique -->
+                  <entryRelationship typeCode="REFR" inversionInd="true">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <!-- Conformité Simple Observation (IHE PCC) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                      <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.48"/>
+                      <id root="DF8953BE-F761-4F62-885D-9C5D15DFEB5B"/>
+                      <code code="PAT-065" displayName="Précision de l'âge au diagnostic génétique"
+                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                      <text><reference value="#precision_age_diagnostic_genetique"/></text>
+                      <statusCode code="completed"/>
+                      <effectiveTime nullFlavor="NA"/>
+                      <value xsi:type="PQ" value="1" unit="mo"/>
+                    </observation>
+                  </entryRelationship>
+                  <!-- [0..1] FR-Simple-Observation : Dépistage néonatal -->
+                  <entryRelationship typeCode="REFR" inversionInd="true">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <!-- Conformité Simple Observation (IHE PCC) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                      <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.48"/>
+                      <id root="11C6F145-CF8B-4358-A68C-83EFD8D58961"/>
+                      <code code="60151004" displayName="dépistage néonatal"
+                        codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
+                      <text><reference value="#depistage-neonatal"/></text>
+                      <statusCode code="completed"/>
+                      <effectiveTime nullFlavor="NA"/>
+                      <!-- valeur issue du jdv-depistage-neonatal-cisis (1.2.250.1.213.1.1.5.827) -->
+                      <value xsi:type="CD" code="260385009" displayName="négatif(-ive)" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
+                    </observation>
+                  </entryRelationship>
+                  <!-- [0..*] FR-Simple-Observation : Technique sur laquelle repose le diagnostic génétique -->
+                  <entryRelationship typeCode="REFR">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <!-- Conformité Simple Observation (IHE PCC) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                      <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.48"/>
+                      <id root="8A4AC9D5-BFEC-4470-BC4B-3A8D2A231E1E"/>
+                      <code code="MED-1286"
+                        displayName="Technique sur laquelle repose le diagnostic génétique"
+                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                      <text><reference value="#technique_genetique"/></text>
+                      <statusCode code="completed"/>
+                      <effectiveTime nullFlavor="NA"/>
+                      <!-- Valeur issue du jdv-technique-diagnostic-cisis (1.2.250.1.213.1.1.5.48) -->
+                      <value xsi:type="CD" code="GEN-092.04.17" displayName="Autre technique diagnostic"
+                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">                        
+                        <originalText><reference value="#technique_genetique_precision"/></originalText>
+                      </value>
+                    </observation>
+                  </entryRelationship>
+                  <!-- [0..*] FR-Simple-Observation : Gène -->
+                  <entryRelationship typeCode="REFR">
+                    <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                      <!-- Conformité Simple Observation (IHE PCC) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                      <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.48"/>
+                      <id root="A1FDA6D4-FC8C-47AD-98C4-A36977EFC8DF"/>
+                      <code code="MED-552" displayName="Gène" codeSystem="1.2.250.1.213.1.1.4.322"
+                        codeSystemName="TerminologieCISIS"/>
+                      <text>
+                        <reference value="#gene"/>
+                      </text>
+                      <statusCode code="completed"/>
+                      <effectiveTime nullFlavor="NA"/>
+                      <!-- valeur issue d'HGNC -->
+                      <value xsi:type="CD" code="HGNC:39983" displayName="ABCA9 antisense RNA 1"
+                        codeSystem="2.16.840.1.113883.6.281" codeSystemName="HGNC"/>
+                    </observation>
+                  </entryRelationship>
+                  <!-- [0..1] FR-Simple-Observation : Autres descriptions génétiques (texte) -->
+                  <entryRelationship typeCode="REFR">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <!-- Conformité Simple Observation (IHE PCC) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                      <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.48"/>
+                      <id root="6B54CA53-F7F6-42C1-94FF-09F505AE41C5"/>
+                      <code code="MED-1287" displayName="Autres descriptions génétiques"
+                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                      <text><reference value="#autres_descriptions_genetiques"/></text>
+                      <statusCode code="completed"/>
+                      <effectiveTime nullFlavor="NA"/>
+                      <value xsi:type="ST">(texte libre)</value>
+                    </observation>
+                  </entryRelationship>
+                  <!-- [0..1] FR-Commentaire-ER : Commentaire -->
+                  <entryRelationship typeCode="SUBJ" inversionInd="true">
+                    <act classCode="ACT" moodCode="EVN">
+                      <!-- Conformité Comment (CCD) -->
+                      <templateId root="2.16.840.1.113883.10.20.1.40"/>
+                      <!-- Conformité Comment Entry (IHE PCC) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+                      <!-- Conformité FR-Commentaire-ER (CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.32"/>
+                      <code code="48767-8" displayName="Commentaire"
+                        codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                      <text><reference value="#diagnostic-01-commentaire"/></text>
+                      <statusCode code="completed"/>
+                    </act>
+                  </entryRelationship>
+
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+        </section>
+      </component>
+
+      <!-- [0..1] Section FR-Informations-sur-l-accouchement : Informations anténatales et néonatales du patient -->
+      <component>
+        <section>
+          <!-- Conformité Newborn Delivery Information Section (IHE PCC) -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.21.2.4"/>
+          <!-- Conformité FR-Informations-sur-l-accouchement (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.124"/>
+          <id root="6554933B-73F7-4704-962F-5505684E8EC9"/>
+          <code code="57075-4" displayName="Informations sur l'accouchement et le nouveau-né"
+            codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>Informations anténatales et néonatales</title>
+          <text/>
+
+          <!-- [0..1] Sous-section FR-Actes-et-interventions : Assistance médicale de la procréation -->
+          <component>
+            <section>
+              <!-- Conformité Procedures and Interventions (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.13.2.11"/>
+              <!-- Conformité FR-Actes-et-interventions (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.2.118"/>
+              <id root="B2BD9B52-3D08-436E-8E32-6EB1B0978E5D"/>
+              <code code="29554-3" codeSystem="2.16.840.1.113883.6.1" displayName="Actes"
+                codeSystemName="LOINC"/>
+              <title>Assistance médicale de la procréation</title>
+              <text>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>Assistance médicale à la procréation</td>
+                      <td><content ID="assistance_procreation">Oui</content></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </text>
+              <!-- [1..1] Entrée FR-Acte : Assistance médicale à la procréation -->
+              <entry>
+                <procedure classCode="PROC" moodCode="EVN">
+                  <!-- Conformité Procedure activity (CCD) -->
+                  <templateId root="2.16.840.1.113883.10.20.1.29"/>
+                  <!-- Conformité Procedure Entry (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+                  <!-- Conformité FR-Acte (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.62"/>
+                  <id root="3E43DBF8-DCC3-4EF1-B60C-E3506E697935"/>
+                  <code code="09.02" displayName="09.02 ASSISTANCE MÉDICALE À LA PROCRÉATION" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM"/>
+                  <text>
+                    <reference value="#assistance_procreation"/>
+                  </text>
+                  <statusCode code="active"/>
+                  <effectiveTime nullFlavor="UNK"/>
+                </procedure>
+              </entry>
+            </section>
+          </component>
+
+          <!-- [0..1] Sous-section FR-Resultats-evenements : Age gestationnel -->
+          <component>
+            <section>
+              <!-- Conformité IHE PCC Event Outcomes -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.21.2.9"/>
+              <!-- Conformité IHE PCC Coded Event Outcomes -->
+              <templateId root="1.3.6.1.4.1.19376.1.7.3.1.1.13.7"/>
+              <!-- Conformité CI-SIS FR-Resultats-evenements -->
+              <templateId root="1.2.250.1.213.1.1.2.163"/>
+              <id root="5F2649BE-0BED-4AD2-897A-2A4324BEA2FE"/>
+              <code code="42545-4" displayName="Evènements observés"
+                codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+              <title>Evènements observés</title>
+              <text>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>Age gestationnel (nb de semaines de grossesse)</td>
+                      <td><content ID="age_gestationnel">37</content></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </text>              
+              <!-- [1..1] Entrée FR-Simple-Observation : Age gestationnel (nombre de semaines de grossesse) si le patient n'est pas né à terme -->
+              <entry>
+                <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                  <!-- Conformité Simple Observation (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                  <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.48"/>
+                  <id root="C0345C97-FEC3-4863-BBEB-CBF99886B0EF"/>
+                  <code code="11884-4" displayName="Age gestationnel du fœtus (estimation clinique)"
+                    codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                  <text>
+                    <reference value="#age_gestationnel"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <effectiveTime value="20090812"/>
+                  <value xsi:type="PQ" value="37" unit="wk"/>
+                </observation>
+              </entry>
+            </section>
+          </component>
+
+          <!-- [1..1] Sous-section FR-Examen-physique-detaille-code : poids, taille, périmètre crânien -->
+          <component>
+            <section>
+              <!-- Conformité  IHE PCC Physical Examination Section -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.24"/>
+              <!-- Conformité IHE PCC parent Detailed Physical Examination Section -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.9.15"/>
+              <!-- Conformité IHE PCC Coded Detailed Physical Examination Section -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.9.15.1"/>
+              <!-- Conformité CI-SIS FR-Examen-physique-detaille-code -->
+              <templateId root="1.2.250.1.213.1.1.2.84"/>
+              <id root="80A8EF39-0156-4D49-8C66-B5DC55D488EA"/>
+              <code code="29545-1" displayName="Examen physique" codeSystem="2.16.840.1.113883.6.1"
+                codeSystemName="LOINC"/>
+              <title>Informations physiques</title>
+              <text/>
+              <!-- [0..1] Sous-section Signes vitaux -->
+              <component>
+                <section>
+                  <!-- Conformité CCD -->
+                  <templateId root="2.16.840.1.113883.10.20.1.16"/>
+                  <!-- Conformité IHE PCC Vital Signs Section -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.25"/>
+                  <!-- Conformité IHE PCC Coded Vital Signs Section -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.2"/>
+                  <!-- Conformité CI-SIS FR-Signes-vitaux -->
+                  <templateId root="1.2.250.1.213.1.1.2.75"/>
+                  <id root="0D5E6476-E8FC-4475-A6C7-56ACFC2EF60C"/>
+                  <code code="8716-3" displayName="Signes vitaux" codeSystem="2.16.840.1.113883.6.1"
+                    codeSystemName="LOINC"/>
+                  <title>Précisions sur la naissance</title>
+                  <text>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td>Poids</td>
+                          <td><content ID="poids">2850 g</content></td>
+                        </tr>
+                        <tr>
+                          <td>Taille</td>
+                          <td><content ID="taille">45 cm</content></td>
+                        </tr>
+                        <tr>
+                          <td>Périmètre cranien</td>
+                          <td><content ID="perimetre_cranien">19 cm</content></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </text>
+                  <!-- [1..1] Entrée Signes vitaux -->
+                  <entry>
+                    <organizer classCode="CLUSTER" moodCode="EVN">
+                      <!-- Conformité CCD -->
+                      <templateId root="2.16.840.1.113883.10.20.1.32"/>
+                      <!-- Conformité CCD -->
+                      <templateId root="2.16.840.1.113883.10.20.1.35"/>
+                      <!-- Conformité IHE PCC Vital Signs Organizer -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.1"/>
+                      <!-- Conformité CI-SIS FR-Signes-vitaux -->
+                      <templateId root="1.2.250.1.213.1.1.3.49"/>
+                      <id root="B801D560-7E1B-457A-A1FD-62359F4A24B5"/>
+                      <code code="85353-1" displayName="Signes vitaux"
+                        codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                      <statusCode code="completed"/>
+                      <effectiveTime nullFlavor="NA"/>
+                      <!--Poids(kg) -->
+                      <component typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN">
+                          <!-- Conformité CCD -->
+                          <templateId root="2.16.840.1.113883.10.20.1.31"/>
+                          <!-- Conformité IHE PCC parent Simple Observation -->
+                          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                          <!-- Conformité IHE PCC Vital Signs Observation -->
+                          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+                          <!-- Conformité CI-SIS FR-Signe-vital-observe -->
+                          <templateId root="1.2.250.1.213.1.1.3.50"/>
+                          <id root="61CD147E-CB7A-4B1C-9850-BDAB9ACC2A7D"/>
+                          <code code="29463-7" codeSystem="2.16.840.1.113883.6.1"
+                            displayName="Poids (mesuré)" codeSystemName="LOINC"/>
+                          <text><reference value="#poids"/></text>
+                          <statusCode code="completed"/>
+                          <effectiveTime nullFlavor="NA"/>
+                          <value xsi:type="PQ" value="2850" unit="g"/>
+                        </observation>
+                      </component>
+                      <!-- Taille(cm) -->
+                      <component typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN">
+                          <!-- Conformité CCD -->
+                          <templateId root="2.16.840.1.113883.10.20.1.31"/>
+                          <!-- Conformité IHE PCC parent Simple Observation -->
+                          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                          <!-- Conformité IHE PCC Vital Signs Observation -->
+                          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+                          <!-- Conformité CI-SIS FR-Signe-vital-observe -->
+                          <templateId root="1.2.250.1.213.1.1.3.50"/>
+                          <id root="D26F6FC2-F711-4816-A0A8-841838451BBD"/>
+                          <code code="8302-2" codeSystem="2.16.840.1.113883.6.1"
+                            displayName="Taille" codeSystemName="LOINC"/>
+                          <text><reference value="#taille"/></text>
+                          <statusCode code="completed"/>
+                          <effectiveTime nullFlavor="NA"/>
+                          <value xsi:type="PQ" value="45" unit="cm"/>
+                        </observation>
+                      </component>
+                      <!-- Périmètre crânien -->
+                      <component typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN">
+                          <!-- Conformité CCD -->
+                          <templateId root="2.16.840.1.113883.10.20.1.31"/>
+                          <!-- Conformité IHE PCC parent Simple Observation -->
+                          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                          <!-- Conformité IHE PCC Vital Signs Observation -->
+                          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+                          <!-- Conformité CI-SIS FR-Signe-vital-observe -->
+                          <templateId root="1.2.250.1.213.1.1.3.50"/>
+                          <id root="226B2352-710D-48BD-8F83-2C221BC00F09"/>
+                          <code code="8287-5" displayName="Périmètre crânien"
+                            codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                          <text><reference value="#perimetre_cranien"/></text>
+                          <statusCode code="completed"/>
+                          <effectiveTime nullFlavor="NA"/>
+                          <value xsi:type="PQ" value="19" unit="cm"/>
+                        </observation>
+                      </component>
+                    </organizer>
+                  </entry>
+                </section>
+              </component>
+            </section>
+          </component>
+
+        </section>
+      </component>
+      
+      <!-- [0..1] Section FR-Recherche : Protocole de recherche -->
+      <component>
+        <section>          
+          <!-- Conformité FR-Recherche (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.250"/>
+          <code code="GEN-369" displayName="Recherche" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+          <title>Recherche</title>
+          <text>
+            <table border="0">
+              <tbody>                
+                <tr>
+                  <td>Accord du patient pour être contacté pour un protocole</td>
+                  <td><content ID="accord_contact_protocole">Oui</content></td>
+                  <td>Foetus : Léa</td>
+                </tr>
+                <tr>
+                  <td>Patient ayant précédemment donné un échantillon biologique pour la recherche MR</td>
+                  <td><content ID="don_recherche_mr">Non</content></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Patient ayant précédemment donné un échantillon biologique pour le diagnostic moléculaire</td>
+                  <td><content ID="don_diagnostic_moleculaire">Oui</content></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Bio-banque(s)</td>
+                  <td><content ID="bio_banque">(texte libre)</content>
+                  </td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+                    
+          <!-- [0..1] Entrée FR-Simple-Observation : Accord du patient pour être contacté pour un protocole (O/N) -->
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Conformité Simple Observation (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+              <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.48"/>
+              <id root="5610E17B-1CC7-4A53-85CF-E38879EC32CB"/>
+              <code code="PAT-012" displayName="Accord du patient pour contact protocole"
+                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+              <text><reference value="#accord_contact_protocole"/></text>
+              <statusCode code="completed"/>
+              <effectiveTime nullFlavor="NA"/>
+              <value xsi:type="BL" value="true"/>              
+            </observation>
+          </entry>
+          
+          <!-- [0..1] Entrée FR-Simple-Observation : Patient ayant précédemment donné un échantillon biologique pour la recherche MR (O/N) -->
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Conformité Simple Observation (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+              <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.48"/>
+              <id root="3E40E2A4-6FC1-448F-AACB-EEB12386F8C1"/>
+              <code code="MED-065"
+                displayName="Patient ayant précédemment donné un échantillon biologique pour la recherche MR"
+                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+              <text>
+                <reference value="#recherche_mr"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime nullFlavor="NA"/>
+              <value xsi:type="BL" value="false"/>
+            </observation>
+          </entry>
+          
+          <!-- [0..1] Entrée FR-Simple-Observation : Patient ayant précédemment donné un échantillon biologique pour le diagnostic moléculaire (O/N) -->
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Conformité Simple Observation (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+              <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.48"/>
+              <id root="62BCFD5C-1332-4BC8-8D4B-377B24E6AA71"/>
+              <code code="MED-066"
+                displayName="Patient ayant précédemment donné un échantillon biologique pour le diagnostic moléculaire"
+                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+              <text>
+                <reference value="#diagnostic_moleculaire"/>
+              </text>
+              <statusCode code="completed"/>
+              <effectiveTime nullFlavor="NA"/>
+              <value xsi:type="BL" value="true"/>
+            </observation>
+          </entry>
+          
+          <!-- [0..1] Entrée FR-Simple-Observation : Bio-banque(s) -->
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Conformité Simple Observation (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+              <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.48"/>
+              <id root="62BCFD5C-1332-4BC8-8D4B-377B24E6AA71"/>
+              <code code="GEN-344" displayName="Bio-banque(s)"
+                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+              <text><reference value="#bio_banque"/></text>
+              <statusCode code="completed"/>
+              <effectiveTime nullFlavor="NA"/>
+              <value xsi:type="CD">
+                <originalText><reference value="#bio_banque"/></originalText>
+              </value>
+            </observation>
+          </entry>
+          
+        </section>
+      </component>
+      
+    </structuredBody>
+  </component>
+</ClinicalDocument>

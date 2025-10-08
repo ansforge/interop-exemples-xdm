@@ -1,7 +1,7 @@
 Emetteur :
 =============
     . Nom : DR MULLER Charles 
-    . Organisme : Clinique du Belvédère(1120456789)
+    . Organisme : Centre de santé du Belvédère(1120456791)
     . Adresse : 142 Rue Belvédère 92100 BOULOGNE-BILLANCOURT
     . Téléphone: tel:0140404022
 

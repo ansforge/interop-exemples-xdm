@@ -637,11 +637,11 @@
   <!-- Acte documenté (Topographie de la tumeur primitive) -->
   <documentationOf>
     <serviceEvent classCode="ACT">
-      <!-- Topographie : JDV_Tumeur_CISIS (1.2.250.1.213.1.1.4.2.281.21) -->
+      <!-- Topographie : jdv-tumeur-cisis (1.2.250.1.213.1.1.4.2.281.21) -->
       <code code="C50.2" displayName="Tumeur maligne du quadrant supéro-interne du sein" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10" />
-      <!-- si Topographie ne peut être codée avec le JDV_Tumeur_CISIS : texte libre dans <originalText> 
+      <!-- si Topographie ne peut être codée avec le jdv-tumeur-cisis : texte libre dans <originalText> 
          <code code="GEN-243" displayName="Topographie"
-            codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+            codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
             <originalText>(texte libre)</originalText>
          </code> -->
     </serviceEvent>
@@ -722,13 +722,13 @@
                 <tr>
                   <td>Appareil</td>
                   <td>
-                    <content ID="appareil">Sein [JDV_ANRCPAppareil_CISIS]</content>
+                    <content ID="appareil">Sein [jdv-rcp-appareil-cisis]</content>
                   </td>
                 </tr>
                 <tr>
                   <td>Organe</td>
                   <td>
-                    <content ID="organe">Sein [JDV_ANRCPOrgane_CISIS]</content>
+                    <content ID="organe">Sein [jdv-rcp-organe-cisis]</content>
                   </td>
                 </tr>
                 <tr>
@@ -806,12 +806,12 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48"/>
               <id root="287C665A-B129-409A-B231-01A8FF70CC1D" />
-              <code code="GEN-098" displayName="Nature de la discussion" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <code code="GEN-098" displayName="Nature de la discussion" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
               <text><reference value="#nature-discussion" /></text>
               <statusCode code="completed" />
               <effectiveTime nullFlavor="NAV" />
-              <!-- Nature de la RCP : JDV_NatureDiscussion_CISIS (1.2.250.1.213.1.1.4.2.281.8) -->
-              <value xsi:type="CD" code="ORG-117" displayName="RCP Appareil - Organes" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <!-- Nature de la RCP : jdv-nature-discussion-cisis (1.2.250.1.213.1.1.4.2.281.8) -->
+              <value xsi:type="CD" code="ORG-117" displayName="RCP Appareil - Organes" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
               <!-- Entrée FR-Simple-Observation [1..1] : Type de RCP (Appareil / Organe) + RCP-recours + RCP-Pédiatrique + Commentaire sur le type de RCP -->
               <entryRelationship typeCode="SUBJ">
                 <observation classCode="OBS" moodCode="EVN">
@@ -820,11 +820,11 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="91688420-D829-47A4-9D2A-B22897867353" />
-                  <code code="ORG-118" displayName="Appareil concerné" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="ORG-118" displayName="Appareil concerné" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#appareil" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NAV" />
-                  <!-- Appareil : JDV_RCP_Appareil_CISIS (1.2.250.1.213.1.1.5.597) -->
+                  <!-- Appareil : jdv-rcp-appareil-cisis (1.2.250.1.213.1.1.5.597) -->
                   <value xsi:type="CD" code="76752008" displayName="sein" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
                   <!-- Entrée FR-Simple-Observation [1..*] : Organe -->
                   <entryRelationship typeCode="REFR">
@@ -834,11 +834,11 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.48"/>
                       <id root="DAB13486-B7C7-419B-B2BA-15A2CFE43DF8" />
-                      <code code="ORG-119" displayName="Organe" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                      <code code="ORG-119" displayName="Organe" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                       <text><reference value="#organe" /></text>
                       <statusCode code="completed" />
                       <effectiveTime nullFlavor="NAV" />
-                      <!-- Organe : JDV_RCP_Organe_CISIS (1.2.250.1.213.1.1.5.598) -->
+                      <!-- Organe : jdv-rcp-organe-cisis (1.2.250.1.213.1.1.5.598) -->
                       <value xsi:type="CD" code="76752008" displayName="sein" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
                     </observation>
                   </entryRelationship>
@@ -850,7 +850,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.48"/>
                       <id root="AFAE9365-CE24-4E27-A98A-555E9BC2AEEC" />
-                      <code code="ORG-184" displayName="RCP de recours" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                      <code code="ORG-184" displayName="RCP de recours" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                       <text><reference value="#RCPrecours" /></text>
                       <statusCode code="completed" />
                       <effectiveTime>
@@ -867,7 +867,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.48"/>
                       <id root="B95156E1-B262-40DA-A4BB-3C9C71D19F4F" />
-                      <code code="ORG-185" displayName="RCP pédiatrique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                      <code code="ORG-185" displayName="RCP pédiatrique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                       <text><reference value="#RCPpediatrique" /></text>
                       <statusCode code="completed" />
                       <effectiveTime nullFlavor="NAV" />
@@ -898,7 +898,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="91688420-D829-47A4-9D2A-B22897867353" />
-                  <code code="ORG-186" displayName="Motif de la RCP" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="ORG-186" displayName="Motif de la RCP" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#motifRCP" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NAV" />
@@ -911,7 +911,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.48"/>
                       <id root="E094FF03-798E-4D13-AC95-80FDC5E09A72" />
-                      <code code="MED-235" displayName="Avis diagnostique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                      <code code="MED-235" displayName="Avis diagnostique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                       <text><reference value="#avisDiagnostic" /></text>
                       <statusCode code="completed" />
                       <effectiveTime>
@@ -928,7 +928,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.48"/>
                       <id root="B95156E1-B262-40DA-A4BB-3C9C71D19F4F" />
-                      <code code="ORG-114" displayName="Proposition de traitement (dont ajustement et surveillance)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                      <code code="ORG-114" displayName="Proposition de traitement (dont ajustement et surveillance)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                       <text><reference value="#propositionTherapeutique" /></text>
                       <statusCode code="completed" />
                       <effectiveTime>
@@ -945,7 +945,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.48"/>
                       <id root="AFAE9365-CE24-4E27-A98A-555E9BC2AEEC" />
-                      <code code="ORG-115" displayName="Recours" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                      <code code="ORG-115" displayName="Recours" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                       <text><reference value="#recours" /></text>
                       <statusCode code="completed" />
                       <effectiveTime>
@@ -962,7 +962,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.48"/>
                       <id root="B95156E1-B262-40DA-A4BB-3C9C71D19F4F" />
-                      <code code="ORG-116" displayName="Pédiatrie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                      <code code="ORG-116" displayName="Pédiatrie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                       <text><reference value="#pédiatrique" /></text>
                       <statusCode code="completed" />
                       <effectiveTime nullFlavor="NAV" />
@@ -977,12 +977,12 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.48"/>
                       <id root="989F9A50-2F28-48D3-881D-48551708914C" />
-                      <code code="ORG-127" displayName="Statut du cas présenté" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                      <code code="ORG-127" displayName="Statut du cas présenté" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                       <text><reference value="#statut-cas-presente" /></text>
                       <statusCode code="completed" />
                       <effectiveTime nullFlavor="NA" />
-                      <!-- Statut du cas présenté : issue du JDV_StatutCasPresente_CISIS (1.2.250.1.213.1.1.4.2.281.17) -->
-                      <value xsi:type="CD" code="ORG-128" displayName="Cas enregistré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                      <!-- Statut du cas présenté : issue du jdv-statut-cas-presente-cisis (1.2.250.1.213.1.1.4.2.281.17) -->
+                      <value xsi:type="CD" code="ORG-128" displayName="Cas enregistré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                     </observation>
                   </entryRelationship>
                   <!-- Entrée FR-Commentaire-ER [0..1] : Commentaire sur le motif de RCP -->
@@ -1198,27 +1198,27 @@
                     <low value="20190129" />
                   </effectiveTime>
                   <!-- <effectiveTime><low nullFlavor="UNK"/></effectiveTime> : nullFlavor autorisé -->
-                  <!-- [1..1] Morphologie : JDV_Morphologie_CISIS (1.2.250.1.213.1.1.5.585) -->
+                  <!-- [1..1] Morphologie : jdv-morphologie-cisis (1.2.250.1.213.1.1.5.585) -->
                   <value xsi:type="CD" code="8000/3" displayName="Tumeur maligne, SAI" codeSystem="2.16.840.1.113883.6.43.1" codeSystemName="CIM-O">
                     <originalText><reference value="#morphologie-1" /></originalText>
                   </value>
-                  <!-- si JDV_Morphologie_CISIS non applicable : précision dans la partie narrative -->
+                  <!-- si jdv-morphologie-cisis non applicable : précision dans la partie narrative -->
                   <!-- <value xsi:type="CD" nullFlavor="OTH">
                                     <originalText><reference value="#morphologie-1"/></originalText>
                                 </value> -->
-                  <!-- [0..1] Topographie : JDV_Tumeur_CISIS (1.2.250.1.213.1.1.4.2.281.21) -->
+                  <!-- [0..1] Topographie : jdv-tumeur-cisis (1.2.250.1.213.1.1.4.2.281.21) -->
                   <targetSiteCode code="C50.2" displayName="Tumeur maligne du quadrant supéro-interne du sein" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
                     <originalText><reference value="#topographie-1" /></originalText>
                     <!-- Latéralité -->
                     <qualifier>
                       <name code="20228-3" displayName="Latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <!-- code latéralité : JDV_ModificateurTopographique_CISIS (1.2.250.1.213.1.1.5.688) -->
+                      <!-- code latéralité : jdv-modificateur-topographique-cisis (1.2.250.1.213.1.1.5.688) -->
                       <value code="24028007" displayName="droit" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                         <originalText><reference value="#lateralite-1" /></originalText>
                       </value>
                     </qualifier>
                   </targetSiteCode>
-                  <!-- Si JDV_Tumeur_CISIS non applicable : précision dans la partie narrative -->
+                  <!-- Si jdv-tumeur-cisis non applicable : précision dans la partie narrative -->
                   <!-- <targetSiteCode nullFlavor="OTH">
                                     <originalText><reference value="#topographie-1"/></originalText>
                                 </targetSiteCode> 
@@ -1316,7 +1316,7 @@
                           <!-- Conformité CI-SIS -->
                           <templateId root="1.2.250.1.213.1.1.3.48"/>
                           <id root="02DF6527-DEF2-45CB-BB8C-D9A9E5AB6851" />
-                          <code code="GEN-101" displayName="Nom de la classification" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                          <code code="GEN-101" displayName="Nom de la classification" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                           <text><reference value="#autre-classification-nom" /></text>
                           <statusCode code="completed" />
                           <effectiveTime nullFlavor="NA" />
@@ -1333,7 +1333,7 @@
                           <!-- Conformité CI-SIS -->
                           <templateId root="1.2.250.1.213.1.1.3.48"/>
                           <id root="02DF6527-DEF2-45CB-BB8C-D9A9E5AB6851" />
-                          <code code="GEN-102" displayName="Version de la classification" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                          <code code="GEN-102" displayName="Version de la classification" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                           <text><reference value="#autre-classification-version" /></text>
                           <statusCode code="completed" />
                           <effectiveTime nullFlavor="NA" />
@@ -1517,14 +1517,12 @@
                   <!-- Conformité CI-SIS-->
                   <templateId root="1.2.250.1.213.1.1.3.25"/>
                   <id root="8BD1C820-95A6-44ED-80C3-4399F97E5D37" />
-                  <code code="MED-239" displayName="Echelle de performance OMS" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-239" displayName="Echelle de performance OMS" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#performance-OMS" /></text>
                   <statusCode code="completed" />
                   <effectiveTime value="20190215" />
-                  <!-- Valeur issue du JDV_OMSEchPerf_CISIS -->
-                  <value xsi:type="CD" code="MED-240" displayName="Stade 0" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <!-- Valeur issue du JDV_OMSInterpret_CISIS -->
-                  <interpretationCode code="LA9622-7" displayName="Capable d'une activité identique à celle précédant la maladie sans aucune restriction." codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                  <!-- Valeur issue du jdv-indice-performance-ecog-cisis -->
+                  <value xsi:type="CD" code="LA9622-7" displayName="0. Capable d'une activité identique à celle précédant la maladie sans aucune restriction." codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                 </observation>
               </entry>
             </section>
@@ -1711,13 +1709,13 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48"/>
               <id root="B1D68C8E-4A83-4ED5-A5E3-60B55B54B016" />
-              <code code="MED-243" displayName="Phase du cancer" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <code code="MED-243" displayName="Phase du cancer" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
               <text><reference value="#phase" /></text>
               <statusCode code="completed" />
               <!-- Date de l'observation si phase initiale ou Date de la rechute si rechute -->
               <effectiveTime value="20190215" />
               <!-- <effectiveTime nullFlavor="UNK"/> : nullFlavor autorisé -->
-              <value xsi:type="CD" code="MED-244" displayName="Rechute du cancer" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <value xsi:type="CD" code="MED-244" displayName="Rechute du cancer" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
               <!-- Commentaire sur la phase du cancer -->
               <entryRelationship typeCode="SUBJ" inversionInd="true">
                 <act classCode="ACT" moodCode="EVN">
@@ -1743,7 +1741,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48"/>
               <id root="0E68CDF8-A1D4-4CE0-9029-7FBB6C10599A" />
-              <code code="MED-245" displayName="Progression du cancer" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <code code="MED-245" displayName="Progression du cancer" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
               <text><reference value="#" /></text>
               <statusCode code="completed" />
               <effectiveTime value="20190215" />
@@ -1756,7 +1754,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="01E2F991-A70D-474A-B0C1-5A13B7838981" />
-                  <code code="MED-246" displayName="Progression locale du cancer" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-246" displayName="Progression locale du cancer" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#progression-locale" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NAV" />
@@ -1771,7 +1769,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="A8B56C5E-EC4D-40AA-92DA-C0040A1A1054" />
-                  <code code="MED-247" displayName="Progression régionale du cancer" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-247" displayName="Progression régionale du cancer" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#progression-regionale" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NAV" />
@@ -1786,7 +1784,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="BC37A3A6-BAB3-4EA4-9583-23C89FC16D76" />
-                  <code code="MED-248" displayName="Progression à distance du cancer" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-248" displayName="Progression à distance du cancer" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#progression-distance" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NAV" />
@@ -1851,8 +1849,8 @@
               <!-- Conformité CI-SIS FR-Acte -->
               <templateId root="1.2.250.1.213.1.1.3.62" />
               <id root="75C517FE-D623-4B2E-AADF-22A906371428" />
-              <!-- Type de traitement JDV_TypeTraitement_CISIS (1.2.250.1.213.1.1.4.2.281.9) -->
-              <code code="MED-227" displayName="Surveillance active" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <!-- Type de traitement jdv-type-traitement-frcp-cisis (1.2.250.1.213.1.1.4.2.281.9) -->
+              <code code="424313000" displayName="Surveillance active" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
               <!-- Précision si type de traitement = 'Autre' -->
               <text><reference value="#autre-traitement-01" /></text>
               <!-- Statut de l'acte : Déjà réalisé (completed), En cours (active), Non réalisé (cancelled) -->
@@ -1887,8 +1885,8 @@
               <!-- Conformité CI-SIS FR-Acte -->
               <templateId root="1.2.250.1.213.1.1.3.62" />
               <id root="8804F37A-8D1B-46C1-B139-774C2AAC584B" />
-              <!-- Type de traitement JDV_TypeTraitement_CISIS (1.2.250.1.213.1.1.4.2.281.9) -->
-              <code code="GEN-092.03.01" displayName="Autres traitements (à préciser)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <!-- Type de traitement jdv-type-traitement-frcp-cisis (1.2.250.1.213.1.1.4.2.281.9) -->
+              <code code="GEN-092.03.01" displayName="Autres traitements (à préciser)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
               <!-- Précision si type de traitement = 'Autre' -->
               <text><reference value="#autre-traitement-02" /></text>
               <!-- Statut de l'acte : Déjà réalisé (completed), En cours (active), Non réalisé (cancelled) -->
@@ -2014,7 +2012,9 @@
               <performer>
                 <assignedEntity>
                   <id root="1.2.250.1.71.4.2.1" extension="801234568875" />
-                  <code code="G15_10/SCH10" displayName="Médecin - Chirurgie générale (SCH)" codeSystem="1.2.250.1.213.1.1.4.5" />
+                  <code code="G15_10/SM05"
+                    codeSystem="1.2.250.1.213.1.1.4.5"
+                    displayName="Médecin - Chirurgie générale (SM)"/>
                   <addr>
                     <streetName>Rue Larrey</streetName>
                     <houseNumber>4</houseNumber>
@@ -2048,7 +2048,9 @@
                 <time value="20190115094914+0100" />
                 <assignedAuthor>
                   <id root="1.2.250.1.71.4.2.1" extension="801234568875" />
-                  <code code="G15_10/SCH10" displayName="Médecin - Chirurgie générale (SCH)" codeSystem="1.2.250.1.213.1.1.4.5" />
+                  <code code="G15_10/SM05"
+                    codeSystem="1.2.250.1.213.1.1.4.5"
+                    displayName="Médecin - Chirurgie générale (SM)"/>
                   <addr>
                     <streetName>Rue Larrey</streetName>
                     <houseNumber>4</houseNumber>
@@ -2670,7 +2672,7 @@
             <organizer classCode="CLUSTER" moodCode="EVN">
               <!-- Conformité CI-SIS FR-Statut-du-dossier-presente-en-RCP -->
               <templateId root="1.2.250.1.213.1.1.3.7" />
-              <code code="GEN-099" displayName="Information RCP" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <code code="GEN-099" displayName="Information RCP" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
               <statusCode code="completed" />
               <!-- Dossier complet O/N -->
               <component>
@@ -2680,7 +2682,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="79404234-CE6B-43E1-8DED-49B94C332ACD" />
-                  <code code="GEN-100" displayName="Dossier complet" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="GEN-100" displayName="Dossier complet" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#dossier-complet" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
@@ -2695,7 +2697,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="FA08B7EF-A920-4C73-8B1B-077B41C8FC91" />
-                  <code code="ORG-125" displayName="Quorum RCP" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="ORG-125" displayName="Quorum RCP" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#quorum-atteint" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
@@ -2854,7 +2856,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.58"/>
               <id root="DE0D1EE6-F3E3-45DA-92DA-3606F912A51E" />
-              <code code="ORG-120" displayName="Passage en RCP recours" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <code code="ORG-120" displayName="Passage en RCP recours" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
               <text mediaType="text/xml">
                 <reference value="#demande-RCP-recours" /></text>
               <priorityCode code='CS' displayName="recontacter pour fixer RDV"
@@ -2871,7 +2873,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27"/>
               <id root="5042333E-F929-4B07-BB09-B65ED98BFAF0" />
-              <code code="ORG-064" displayName="Demande d'examen ou de suivi" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <code code="ORG-064" displayName="Demande d'examen ou de suivi" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
               <text><reference value="#demande-expertise-01" /></text>
               <statusCode code="active" />
               <effectiveTime>
@@ -2890,7 +2892,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27"/>
               <id root="5042333E-F929-4B07-BB09-B65ED98BFAF0" />
-              <code code="ORG-064" displayName="Demande d'examen ou de suivi" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <code code="ORG-064" displayName="Demande d'examen ou de suivi" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
               <text mediaType="text/xml">
                 <reference value="#demande-expertise-02" /></text>
               <statusCode code="active" />
@@ -2910,7 +2912,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27"/>
               <id root="5042333E-F929-4B07-BB09-B65ED98BFAF0" />
-              <code code="ORG-064" displayName="Demande d'examen ou de suivi" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <code code="ORG-064" displayName="Demande d'examen ou de suivi" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
               <text><reference value="#demande-expertise-03" /></text>
               <statusCode code="active" />
               <effectiveTime>
@@ -2929,7 +2931,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.58"/>
               <id root="1F798E84-D899-48CE-A9BF-D80F732E5B2F" />
-              <code code="MED-226" displayName="Surveillance seule" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <code code="MED-226" displayName="Surveillance seule" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
               <text mediaType="text/xml">
                 <reference value="#surveillance" /></text>
               <priorityCode code='CS' displayName="recontacter pour fixer RDV"
@@ -2947,7 +2949,7 @@
               <templateId root="1.2.250.1.213.1.1.3.62"/>
               <id root="a6bc7fd2-ec3f-4e01-b567-854b087d1d9b"/>
               <id root="194AE3B0-FA7D-49D6-8C90-86139E9AF5BE" />
-              <!-- Code du traitement : JDV_TypeTraitement_FRCP_CISIS (1.2.250.1.213.1.1.5.595) -->
+              <!-- Code du traitement : jdv-type-traitement-frcp-cisis (1.2.250.1.213.1.1.5.595) -->
               <code code="C15313" displayName="Radiothérapie" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCIT">
                 <originalText><reference value="#traitement-1-01" /></originalText>
                   <!-- numéro séquentiel du traitement --><!--
@@ -2975,8 +2977,8 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.62"/>
               <id root="194AE3B0-FA7D-49D6-8C90-86139E9AF5BE" />
-              <!-- Code du traitement : JDV_TypeTraitement_FRCP_CISIS (1.2.250.1.213.1.1.5.595) -->
-              <code code="GEN-092.03.01" displayName="Autres traitements (à préciser)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+              <!-- Code du traitement : jdv-type-traitement-frcp-cisis (1.2.250.1.213.1.1.5.595) -->
+              <code code="GEN-092.03.01" displayName="Autres traitements (à préciser)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                 <originalText><reference value="#traitement-2-01" /></originalText>
                   <!-- numéro séquentiel du traitement --><!--
                   <priorityNumber xmlns="urn:hl7-org:sdtc" value="2" />-->
@@ -3003,7 +3005,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.62"/>
               <id root="194AE3B0-FA7D-49D6-8C90-86139E9AF5BE" />
-              <!-- Code du traitement : JDV_TypeTraitement_FRCP_CISIS (1.2.250.1.213.1.1.5.595) -->
+              <!-- Code du traitement : jdv-type-traitement-frcp-cisis (1.2.250.1.213.1.1.5.595) -->
               <code code="C15632" displayName="Chimiothérapie conventionnelle" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCIT">
                 <originalText><reference value="#traitement-2-02" /></originalText>
                   <!-- numéro séquentiel du traitement --><!--
@@ -3094,7 +3096,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48"/>
               <id root="1A8E2BE6-E115-4ECA-90CA-CE4A1ADEEE8E" />
-              <code code="MED-249" displayName="Recommandation/référentiel de pratique clinique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+              <code code="MED-249" displayName="Recommandation/référentiel de pratique clinique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                 <translation>
                   <originalText><reference value="#nom-referentiel" /></originalText>
                 </translation>
@@ -3117,7 +3119,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48"/>
               <id root="534329A4-AAAC-4D2C-A135-190C8986C0CA" />
-              <code code="MED-250" displayName="Proposition d'inclusion dans un essai clinique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <code code="MED-250" displayName="Proposition d'inclusion dans un essai clinique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
               <text><reference value="#essai-clinique" /></text>
               <statusCode code="completed" />
               <effectiveTime nullFlavor="NA" />
@@ -3208,7 +3210,7 @@
               <!-- Conformité CI-SIS FR-Statut-document -->
               <templateId root="1.2.250.1.213.1.1.3.48.16" />
               <id root="878F54EB-D561-4F90-855C-71BF3D97FE1D" />
-              <code code="GEN-065" displayName="Statut du document" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <code code="GEN-065" displayName="Statut du document" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
               <text><reference value="#" /></text>
               <statusCode code="completed" />
               <effectiveTime value="20190314" />

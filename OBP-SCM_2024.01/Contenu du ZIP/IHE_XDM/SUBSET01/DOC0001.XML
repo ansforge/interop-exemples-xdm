@@ -378,7 +378,7 @@
   <documentationOf>
     <serviceEvent classCode="ACT">
       <id root="5A931FFC-E3D3-4153-953F-4C314500A410" />
-      <code code="MED-1176" displayName="Suites de couches" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+      <code code="MED-1176" displayName="Suites de couches" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
       <effectiveTime>
         <low value="20210328111700+0100" />
         <high value="20210330111700+0100" />
@@ -615,12 +615,12 @@
               <!-- Conformité FR-Simple-Observation (CI-SIS) -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="A59E0EBD-018D-4289-B879-0A8D55F64D02" />
-              <code code="ORG-074" displayName="Mode de sortie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <code code="ORG-074" displayName="Mode de sortie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
               <!-- précision sur la destination -->
               <text><reference value="#sortie" /></text>
               <statusCode code="completed" />
               <effectiveTime value="20230428"/>
-              <!-- Valeur issue du JDV_ModeSortie_OBP_SCM_CISIS (1.2.250.1.213.1.1.5.700) -->
+              <!-- Valeur issue du jdv-mode-sortie-obp-scm-cisis (1.2.250.1.213.1.1.5.700) -->
               <value xsi:type="CD" code="107724000" displayName="transfert du patient" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
             </observation>
           </entry>
@@ -664,8 +664,6 @@
               </participant>              
             </act>
           </entry>
-          
-          
         </section>
       </component>
       
@@ -689,11 +687,11 @@
               <templateId root="1.2.250.1.213.1.1.3.48.16"/>
               <id root="878F54EB-D561-4F90-855C-71BF3D97FE1D"/>
               <code code="GEN-065" displayName="Statut du document"
-                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
               <text><reference value="#statutDocument"/></text>
               <statusCode code="completed"/>
               <effectiveTime value="20230425"/>
-              <!-- Valeur isssue du JDV_StatutDoc_CISIS. (1.2.250.1.213.1.1.5.93) -->
+              <!-- Valeur isssue du jdv-statut-document-cisis (1.2.250.1.213.1.1.5.93) -->
               <value xsi:type="CD" code="9571008" displayName="approuvé" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
             </observation>
           </entry>

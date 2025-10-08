@@ -1,226 +1,46 @@
-                                                             <ns5:SubmitObjectsRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns5="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0">
-                                                                 <RegistryObjectList xmlns="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0">
-                                                                     <!--##################################################################-->
-                                                                     <!--RegistryPackage-->
-                                                                     <!--##################################################################-->
-                                                                     <ns2:RegistryPackage  xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" id="urn:uuid:88a6cc14-34c2-4326-b3ba-cd9912ee5d0d"  status="urn:oasis:names:tc:ebxml-regrep:StatusType:Approved"  >
-                                                                         <!--===================-->
-                                                                         <!--SubmissionTime-->
-                                                                         <!--===================-->
-                                                                         <ns2:Slot name="submissionTime"> 
-                                                                             <ns2:ValueList>
-                                                                                 <ns2:Value>20250218165214</ns2:Value>
-                                                                             </ns2:ValueList>
-                                                                         </ns2:Slot>
-                                                                         <!--===================-->
-                                                                         <!--Name-->
-                                                                         <!--===================-->
-                                                                         <ns2:Name>
-                                                                             <ns2:LocalizedString xml:lang="FR" charset="UTF8" value="Demande d'acte d'imagerie"/>
-                                                                         </ns2:Name>
-                                                                         <!--===================-->
-                                                                         <!--Description (comments)-->
-                                                                         <!--===================-->
-                                                                         <ns2:Description>
-                                                                             <ns2:LocalizedString xml:lang="FR" charset="UTF8" value=""/>
-                                                                         </ns2:Description>
-                                                                         <!--===================-->
-                                                                         <!--Classification-->
-                                                                         <!--===================-->
-                                                                         <ns2:Classification id = "SubmissionSet01_c001"
-                                                                         classificationNode = "urn:uuid:a54d6aa5-d40d-43f9-88c5-b4633d873bdd"	classifiedObject = "urn:uuid:88a6cc14-34c2-4326-b3ba-cd9912ee5d0d" nodeRepresentation = "" />
-                                                                         <!--===================-->
-                                                                         <!--Author attributes-->
-                                                                         <!--===================-->
-                                                                         <ns2:Classification id="urn:uuid:29bc8f72-a159-4fbc-a1fc-d33155c35158" classificationScheme="urn:uuid:a7058bb9-b4e4-4307-ba5b-e3f0ab85e12d" classifiedObject="urn:uuid:88a6cc14-34c2-4326-b3ba-cd9912ee5d0d" nodeRepresentation=""> 
-                                                                         <!--===================-->
-                                                                         <!--AuthorInstitution-->
-                                                                         <!--===================-->
-                                                                             <ns2:Slot name="authorInstitution">
+                                                                 <ns5:SubmitObjectsRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns5="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0">
+                                                                     <RegistryObjectList xmlns="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0">
+                                                                         <!--##################################################################-->
+                                                                         <!--RegistryPackage-->
+                                                                         <!--##################################################################-->
+                                                                         <ns2:RegistryPackage  xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" id="urn:uuid:63d261f8-2855-42cd-b182-6a39b6e6f2a8"  status="urn:oasis:names:tc:ebxml-regrep:StatusType:Approved"  >
+                                                                             <!--===================-->
+                                                                             <!--SubmissionTime-->
+                                                                             <!--===================-->
+                                                                             <ns2:Slot name="submissionTime"> 
                                                                                  <ns2:ValueList>
-                                                                                     <ns2:Value>HU ROBERT DEBRE APHP^^^^^&amp;1.2.250.1.71.4.2.2&amp;ISO^IDNST^^^1120456789</ns2:Value>
+                                                                                     <ns2:Value>20251008151209</ns2:Value>
                                                                                  </ns2:ValueList>
                                                                              </ns2:Slot>
-                                                                         <!--===================-->
-                                                                         <!--AuthorPerson-->
-                                                                         <!--===================-->
-                                                                         <ns2:Slot name="authorPerson">
-                                                                             <ns2:ValueList>
-                                                                             <ns2:Value>801234567897^BOILEAU^Charles^^^^^^&amp;1.2.250.1.71.4.2.1&amp;ISO^D^^^IDNPS</ns2:Value>
-                                                                             </ns2:ValueList>
-                                                                         </ns2:Slot>
-                                                                         <!--===================-->
-                                                                         <!--AuthorSpecialty-->
-                                                                         <!--===================-->
-                                                                         <ns2:Slot name="authorSpecialty">
-                                                                             <ns2:ValueList>
-                                                                                 <ns2:Value>G15_10/SM26^Médecin - Qualifié en Médecine Générale (SM)^1.2.250.1.213.1.1.4.5</ns2:Value>
-                                                                             </ns2:ValueList>
-                                                                         </ns2:Slot>
-                                                                         </ns2:Classification>
-                                                                         <!--===================-->
-                                                                         <!--HealthcareFacility-->
-                                                                         <!--===================-->
-                                                                         <ns2:Classification id="SubmissionSet01_c002" classificationScheme="urn:uuid:aa543740-bdda-424e-8c96-df4873be8500" classifiedObject="urn:uuid:88a6cc14-34c2-4326-b3ba-cd9912ee5d0d" nodeRepresentation="SA01" >
-                                                                             <ns2:Slot name="codingScheme" >
-                                                                                 <ns2:ValueList>
-                                                                                     <ns2:Value>1.2.250.1.71.4.2.4</ns2:Value>
-                                                                                 </ns2:ValueList>
-                                                                             </ns2:Slot>
+                                                                             <!--===================-->
+                                                                             <!--Name-->
+                                                                             <!--===================-->
                                                                              <ns2:Name>
-                                                                                 <ns2:LocalizedString xml:lang="FR" charset="UTF8" value="Etablissement public de santé"/>	
+                                                                                 <ns2:LocalizedString xml:lang="FR" charset="UTF8" value="Demande d'acte d'imagerie"/>
                                                                              </ns2:Name>
-                                                                         </ns2:Classification>
-                                                                         <!--===================-->
-                                                                         <!--PatientId-->
-                                                                         <!--===================-->
-                                                                         <ns2:ExternalIdentifier id="urn:uuid:a1c2f9e5-3325-47e8-98ff-27d6960d55f9" identificationScheme="urn:uuid:6b5aea1a-874d-4603-a4bc-96a0a7b38446" registryObject="urn:uuid:a6e06ca8-0c75-4064-9e5d-88b9045a9ab6" value="279035121518989^^^&amp;1.2.250.1.213.1.4.10&amp;ISO^NH">
-                                                                             <ns2:Name>
-                                                                                 <ns2:LocalizedString value="XDSSubmissionSet.patientId"/>
-                                                                             </ns2:Name>
-                                                                         </ns2:ExternalIdentifier>
-                                                                         <!--===================-->
-                                                                         <!--SourceId-->
-                                                                         <!--===================-->
-                                                                         <ns2:ExternalIdentifier id="urn:uuid:e72ef7ed-8f06-4865-9906-0b692b002efa" identificationScheme="urn:uuid:554ac39e-e3fe-47fe-b233-965d2a147832" registryObject="urn:uuid:a6e06ca8-0c75-4064-9e5d-88b9045a9ab6" value="1.2.250.1.71.4.2.2.101235555">
-                                                                             <ns2:Name>
-                                                                                 <ns2:LocalizedString value="XDSSumissionSet.sourceId"/>
-                                                                             </ns2:Name>
-                                                                         </ns2:ExternalIdentifier>
-                                                                         <!--===================-->
-                                                                         <!--UniqueId-->
-                                                                         <!--===================-->
-                                                                         <ns2:ExternalIdentifier id="urn:uuid:97439396-5648-41f1-8e6a-ac11470bfff5" identificationScheme="urn:uuid:96fdda7c-d067-4183-912e-bf5ee74998a8" registryObject="urn:uuid:a6e06ca8-0c75-4064-9e5d-88b9045a9ab6" value="1.2.250.1.213.1.1.1.1.2025.2.2.638754943343302823">
-                                                                             <ns2:Name>
-                                                                                 <ns2:LocalizedString value="XDSSubmissionSet.uniqueId"/>
-                                                                             </ns2:Name>
-                                                                         </ns2:ExternalIdentifier>
-                                                                     </ns2:RegistryPackage>
-                                                                     <!-- ################################################################## -->
-                                                                     <!--   Extrinsic object - CDA DOC0001.XML-->
-                                                                     <!-- ################################################################## -->
-                                                                     <ns2:ExtrinsicObject mimeType="text/xml" objectType="urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1" id="urn:uuid:urn:uuid:4e13cfc5-898d-4890-8139-524c7ca8f04b" xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" status="urn:oasis:names:tc:ebxml-regrep:StatusType:Approved"	>
-                                                                         <!--===================-->
-                                                                         <!--Hash-->
-                                                                         <!--===================-->
-                                                                         <ns2:Slot name="hash">
-                                                                             <ns2:ValueList>
-                                                                                 <ns2:Value>3B840266646432D337027D843CA3526883F446E5</ns2:Value>
-                                                                             </ns2:ValueList>
-                                                                         </ns2:Slot>
-                                                                         <!--===================-->
-                                                                         <!--Size-->
-                                                                         <!--===================-->
-                                                                         <ns2:Slot name="size">
-                                                                             <ns2:ValueList>
-                                                                                 <ns2:Value>277620</ns2:Value>
-                                                                             </ns2:ValueList>
-                                                                         </ns2:Slot>
-                                                                         <!--===================-->
-                                                                         <!--URI-->
-                                                                         <!--===================-->
-                                                                         <ns2:Slot name="URI">
-                                                                             <ns2:ValueList>
-                                                                                 <ns2:Value>DOC0001.XML</ns2:Value>
-                                                                             </ns2:ValueList>
-                                                                         </ns2:Slot>
-                                                                         <!--===================-->
-                                                                         <!--CreationTime-->
-                                                                         <!--===================-->
-                                                                         <ns2:Slot name="creationTime">
-                                                                             <ns2:ValueList>
-                                                                                 <ns2:Value>20210112101700</ns2:Value>
-                                                                             </ns2:ValueList>
-                                                                         </ns2:Slot>
-                                                                         <!--===================-->
-                                                                         <!--LangageCode-->
-                                                                         <!--===================-->
-                                                                         <ns2:Slot name="languageCode">
-                                                                             <ns2:ValueList>
-                                                                                 <ns2:Value>fr-FR</ns2:Value>
-                                                                             </ns2:ValueList>
-                                                                         </ns2:Slot>
-                                                                         <!--===================-->
-                                                                         <!--LegalAuthenticator-->
-                                                                         <!--===================-->
-                                                                         <ns2:Slot name="legalAuthenticator">
-                                                                             <ns2:ValueList>
-                                                                                 <ns2:Value>801234567897^BOILEAU^Charles^^^^^^&amp;1.2.250.1.71.4.2.1&amp;ISO^D^^^IDNPS</ns2:Value>
-                                                                             </ns2:ValueList>
-                                                                         </ns2:Slot>
-                                                                         <!--===================-->
-                                                                         <!--ServiceStartTime-->
-                                                                         <!--===================-->
-                                                                         <ns2:Slot name="serviceStartTime">
-                                                                             <ns2:ValueList>
-                                                                                 <ns2:Value>20210112092500</ns2:Value>
-                                                                             </ns2:ValueList>
-                                                                         </ns2:Slot>
-                                                                         <!--===================-->
-                                                                         <!--ServiceStopTime-->
-                                                                         <!--===================-->
-                                                                         <ns2:Slot name="serviceStopTime">
-                                                                             <ns2:ValueList>
-                                                                                 <ns2:Value>20210112101700</ns2:Value>
-                                                                             </ns2:ValueList>
-                                                                         </ns2:Slot>
-                                                                         <!--===================-->
-                                                                         <!--SourcePatientId-->
-                                                                         <!--===================-->
-                                                                         <ns2:Slot name="sourcePatientId">
-                                                                             <ns2:ValueList>
-                                                                                 <ns2:Value>1234567890121^^^&amp;1.2.3.4.567.8.9.10&amp;ISO^PI</ns2:Value>
-                                                                             </ns2:ValueList>
-                                                                         </ns2:Slot>
-                                                                         <!--===================-->
-                                                                         <!--SourcePatientInfo-->
-                                                                         <!--===================-->
-                                                                         <ns2:Slot name="sourcePatientInfo">
-                                                                             <ns2:ValueList>
-                                                                                 <ns2:Value>PID-5|PAT-TROIS^DOMINIQUE^DOMINIQUE MARIE-LOUISE^^^^L</ns2:Value>
-                                                                                 <ns2:Value>PID-5|PAT-TROIS^DOMINIQUE^^^^^D</ns2:Value>
-                                                                                 <ns2:Value>PID-7|19790328</ns2:Value>
-                                                                                 <ns2:Value>PID-8|F</ns2:Value>
-                                                                                 <ns2:Value>PID-11|^^^^^^BDL^^51215</ns2:Value>
-                                                                             </ns2:ValueList>
-                                                                         </ns2:Slot>
-                                                                         <!--===================-->
-                                                                         <!--Name-->
-                                                                         <!--===================-->
-                                                                         <ns2:Name>
-                                                                             <ns2:LocalizedString xml:lang="FR" charset="UTF8"                                                                              value="Demande d'acte d'imagerie"/>
-                                                                         </ns2:Name>
-                                                                         <!--===================-->
-                                                                         <!--Description (Comments)-->
-                                                                         <!--===================-->
-                                                                         <ns2:Description>
-                                                                             <ns2:LocalizedString xml:lang="FR" charset="UTF8"                                                                              value=""/>
-                                                                         </ns2:Description>
-                                                                         <!--===================-->
-                                                                         <!--EventCodeList-->
-                                                                         <!--===================-->
-                                                                         <ns2:Classification classificationScheme="urn:uuid:2c6b8cb7-8b2a-4051-b291-b1ae6a575ef4" classifiedObject="urn:uuid:urn:uuid:4e13cfc5-898d-4890-8139-524c7ca8f04b" id="urn:uuid:f1b1cf89-594f-49ee-9e7d-aa9ba2c278f6"                                                                           nodeRepresentation="55115-0" objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification" >
-                                                                             <ns2:Slot name="codingScheme">
-                                                                                 <ns2:ValueList>
-                                                                                     <ns2:Value>2.16.840.1.113883.6.1</ns2:Value>
-                                                                                 </ns2:ValueList>
-                                                                             </ns2:Slot>
-                                                                             <ns2:Name>
-                                                                                 <ns2:LocalizedString xml:lang="FR" charset="UTF8"                                                                                  value="Demande d'acte d'imagerie"/>
-                                                                             </ns2:Name>
-                                                                         </ns2:Classification>
-                                                                         <!--*********************************************************-->
-                                                                         <!--  Authors Attributes -->
-                                                                         <!--*********************************************************-->
-                                                                         <ns2:Classification id="urn:uuid:81d3f6f4-24cb-46ed-b059-dd5ebba12084" classificationScheme="urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d" classifiedObject="urn:uuid:88a6cc14-34c2-4326-b3ba-cd9912ee5d0d" nodeRepresentation=""> 
+                                                                             <!--===================-->
+                                                                             <!--Description (comments)-->
+                                                                             <!--===================-->
+                                                                             <ns2:Description>
+                                                                                 <ns2:LocalizedString xml:lang="FR" charset="UTF8" value=""/>
+                                                                             </ns2:Description>
+                                                                             <!--===================-->
+                                                                             <!--Classification-->
+                                                                             <!--===================-->
+                                                                             <ns2:Classification id = "SubmissionSet01_c001"
+                                                                             classificationNode = "urn:uuid:a54d6aa5-d40d-43f9-88c5-b4633d873bdd"	classifiedObject = "urn:uuid:63d261f8-2855-42cd-b182-6a39b6e6f2a8" nodeRepresentation = "" />
+                                                                             <!--===================-->
+                                                                             <!--Author attributes-->
+                                                                             <!--===================-->
+                                                                             <ns2:Classification id="urn:uuid:b2059d81-1796-406e-9f8d-f29122c5c738" classificationScheme="urn:uuid:a7058bb9-b4e4-4307-ba5b-e3f0ab85e12d" classifiedObject="urn:uuid:63d261f8-2855-42cd-b182-6a39b6e6f2a8" nodeRepresentation=""> 
                                                                              <!--===================-->
                                                                              <!--AuthorInstitution-->
                                                                              <!--===================-->
-                                                                             <ns2:Slot name="authorInstitution">
-                                                                                 <ns2:ValueList>
-                                                                                     <ns2:Value>HU ROBERT DEBRE APHP^^^^^&amp;1.2.250.1.71.4.2.2&amp;ISO^IDNST^^^1120456789</ns2:Value>
-                                                                                 </ns2:ValueList>
-                                                                             </ns2:Slot>
+                                                                                 <ns2:Slot name="authorInstitution">
+                                                                                     <ns2:ValueList>
+                                                                                         <ns2:Value>HU ROBERT DEBRE APHP^^^^^&amp;1.2.250.1.71.4.2.2&amp;ISO^IDNST^^^1120456789</ns2:Value>
+                                                                                     </ns2:ValueList>
+                                                                                 </ns2:Slot>
                                                                              <!--===================-->
                                                                              <!--AuthorPerson-->
                                                                              <!--===================-->
@@ -238,112 +58,292 @@
                                                                                  </ns2:ValueList>
                                                                              </ns2:Slot>
                                                                              </ns2:Classification>
-                                                                             <!--*********************************************************-->
-                                                                             <!--  Class -->
-                                                                             <!--*********************************************************-->
-                                                                             <!--  -->
-                                                                             <ns2:Classification id="urn:uuid:2b111251-2452-4499-a21c-768fdcac1a35" classificationScheme="urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a" classifiedObject="urn:uuid:88a6cc14-34c2-4326-b3ba-cd9912ee5d0d" nodeRepresentation="42">
-                                                                                 <ns2:Slot name="codingScheme">
-                                                                                     <ns2:ValueList>
-                                                                                         <ns2:Value>1.2.250.1.213.1.1.4.1</ns2:Value>
-                                                                                     </ns2:ValueList>
-                                                                                 </ns2:Slot>
-                                                                                 <ns2:Name>
-                                                                                     <ns2:LocalizedString value="Prescription"/>
-                                                                                 </ns2:Name>
-                                                                             </ns2:Classification>
-                                                                             <!-- ***************************************************************************-->
-                                                                             <!--     Confidentiality  -->
-                                                                             <!-- ***************************************************************************-->
-                                                                             <ns2:Classification id="urn:uuid:78fe6707-e759-4b49-9921-b67fabbf5f87" classificationScheme="urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f" classifiedObject="urn:uuid:88a6cc14-34c2-4326-b3ba-cd9912ee5d0d" nodeRepresentation="N">
-                                                                                 <ns2:Slot name="codingScheme">
-                                                                                     <ns2:ValueList>
-                                                                                         <ns2:Value>2.16.840.1.113883.5.25</ns2:Value>
-                                                                                     </ns2:ValueList>
-                                                                                 </ns2:Slot>
-                                                                                 <ns2:Name>
-                                                                                     <ns2:LocalizedString value="Normal"/>
-                                                                                 </ns2:Name>
-                                                                             </ns2:Classification>
-                                                                             <!--***********************************-->
-                                                                             <!--  Format -->
-                                                                             <!--***********************************-->
-                                                                             <ns2:Classification id="urn:uuid:74e185ac-5851-48ad-a7d3-7d3fb5160f35" classificationScheme="urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d" classifiedObject="urn:uuid:88a6cc14-34c2-4326-b3ba-cd9912ee5d0d" nodeRepresentation="urn:ans:ci-sis:img-da:2022"> 
-                                                                                 <ns2:Slot name="codingScheme">
-                                                                                     <ns2:ValueList>
-                                                                                         <ns2:Value>1.2.250.1.213.1.1.4.2.282</ns2:Value>
-                                                                                     </ns2:ValueList>
-                                                                                 </ns2:Slot>
-                                                                                 <ns2:Name>
-                                                                                     <ns2:LocalizedString value="Demande d'actes d'imagerie"/>
-                                                                                 </ns2:Name>
-                                                                             </ns2:Classification>
-                                                                             <!--***********************************-->
-                                                                             <!--  HealthcareFacility -->
-                                                                             <!--***********************************-->
-                                                                             <ns2:Classification id="urn:uuid:cb2dd4f7-5649-48e2-8e02-a8be38f664c4" classificationScheme="urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1" classifiedObject="urn:uuid:88a6cc14-34c2-4326-b3ba-cd9912ee5d0d" nodeRepresentation="SA01">
-                                                                                 <ns2:Slot name="codingScheme">
+                                                                             <!--===================-->
+                                                                             <!--HealthcareFacility-->
+                                                                             <!--===================-->
+                                                                             <ns2:Classification id="SubmissionSet01_c002" classificationScheme="urn:uuid:aa543740-bdda-424e-8c96-df4873be8500" classifiedObject="urn:uuid:63d261f8-2855-42cd-b182-6a39b6e6f2a8" nodeRepresentation="SA01" >
+                                                                                 <ns2:Slot name="codingScheme" >
                                                                                      <ns2:ValueList>
                                                                                          <ns2:Value>1.2.250.1.71.4.2.4</ns2:Value>
                                                                                      </ns2:ValueList>
                                                                                  </ns2:Slot>
                                                                                  <ns2:Name>
-                                                                                     <ns2:LocalizedString value="Etablissement public de santé"/>
+                                                                                     <ns2:LocalizedString xml:lang="FR" charset="UTF8" value="Etablissement public de santé"/>	
                                                                                  </ns2:Name>
                                                                              </ns2:Classification>
-                                                                             <!--********************************-->
-                                                                             <!--  Practice Settings -->
-                                                                             <!--********************************-->
-                                                                             <ns2:Classification id="urn:uuid:ad369ee8-5c74-4973-a087-f23f603d5736" classificationScheme="urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead" classifiedObject="urn:uuid:88a6cc14-34c2-4326-b3ba-cd9912ee5d0d" nodeRepresentation="ETABLISSEMENT">
-                                                                                 <ns2:Slot name="codingScheme">
-                                                                                     <ns2:ValueList>
-                                                                                         <ns2:Value>1.2.250.1.213.1.1.4.9</ns2:Value>
-                                                                                     </ns2:ValueList>
-                                                                                 </ns2:Slot>
+                                                                             <!--===================-->
+                                                                             <!--PatientId-->
+                                                                             <!--===================-->
+                                                                             <ns2:ExternalIdentifier id="urn:uuid:6964f0a5-d50d-4ce9-bd29-2c71158ab072" identificationScheme="urn:uuid:6b5aea1a-874d-4603-a4bc-96a0a7b38446" registryObject="urn:uuid:63d261f8-2855-42cd-b182-6a39b6e6f2a8" value="279035121518989^^^&amp;1.2.250.1.213.1.4.10&amp;ISO^NH">
                                                                                  <ns2:Name>
-                                                                                     <ns2:LocalizedString  xml:lang="FR" charset="UTF8"  value="Etablissement de santé"   />
+                                                                                     <ns2:LocalizedString value="XDSSubmissionSet.patientId"/>
                                                                                  </ns2:Name>
-                                                                             </ns2:Classification>
-                                                                             <!--********************************-->
-                                                                             <!--  Type -->
-                                                                             <!--********************************-->
-                                                                             <ns2:Classification id="urn:uuid:70a3fd2e-ab9e-4ff1-852b-a12574ff0639" classificationScheme="urn:uuid:f0306f51-975f-434e-a61c-c59651d33983" classifiedObject="urn:uuid:88a6cc14-34c2-4326-b3ba-cd9912ee5d0d" nodeRepresentation="55115-0">
+                                                                             </ns2:ExternalIdentifier>
+                                                                             <!--===================-->
+                                                                             <!--SourceId-->
+                                                                             <!--===================-->
+                                                                             <ns2:ExternalIdentifier id="urn:uuid:d48edf0c-7703-4ee4-9668-13ea4d080254" identificationScheme="urn:uuid:554ac39e-e3fe-47fe-b233-965d2a147832" registryObject="urn:uuid:a6e06ca8-0c75-4064-9e5d-88b9045a9ab6" value="1.2.250.1.71.4.2.2.101235555">
+                                                                                 <ns2:Name>
+                                                                                     <ns2:LocalizedString value="XDSSumissionSet.sourceId"/>
+                                                                                 </ns2:Name>
+                                                                             </ns2:ExternalIdentifier>
+                                                                             <!--===================-->
+                                                                             <!--UniqueId-->
+                                                                             <!--===================-->
+                                                                             <ns2:ExternalIdentifier id="urn:uuid:a57bc8d1-2153-42d6-9fe6-08832a0ed705" identificationScheme="urn:uuid:96fdda7c-d067-4183-912e-bf5ee74998a8" registryObject="urn:uuid:a6e06ca8-0c75-4064-9e5d-88b9045a9ab6" value="1.2.250.1.213.1.1.1.1.2025.10.10.638955331295371369">
+                                                                                 <ns2:Name>
+                                                                                     <ns2:LocalizedString value="XDSSubmissionSet.uniqueId"/>
+                                                                                 </ns2:Name>
+                                                                             </ns2:ExternalIdentifier>
+                                                                         </ns2:RegistryPackage>
+                                                                         <!-- ################################################################## -->
+                                                                         <!--   Extrinsic object - CDA DOC0001.XML-->
+                                                                         <!-- ################################################################## -->
+                                                                         <ns2:ExtrinsicObject mimeType="text/xml" objectType="urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1" id="urn:uuid:urn:uuid:1b902dfa-9e22-4246-8fb8-3c78ac9546e0" xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" status="urn:oasis:names:tc:ebxml-regrep:StatusType:Approved"	>
+                                                                             <!--===================-->
+                                                                             <!--Hash-->
+                                                                             <!--===================-->
+                                                                             <ns2:Slot name="hash">
+                                                                                 <ns2:ValueList>
+                                                                                     <ns2:Value>DC21DD63DEEBB7B197FE05379798D6F344120EF4</ns2:Value>
+                                                                                 </ns2:ValueList>
+                                                                             </ns2:Slot>
+                                                                             <!--===================-->
+                                                                             <!--Size-->
+                                                                             <!--===================-->
+                                                                             <ns2:Slot name="size">
+                                                                                 <ns2:ValueList>
+                                                                                     <ns2:Value>277710</ns2:Value>
+                                                                                 </ns2:ValueList>
+                                                                             </ns2:Slot>
+                                                                             <!--===================-->
+                                                                             <!--URI-->
+                                                                             <!--===================-->
+                                                                             <ns2:Slot name="URI">
+                                                                                 <ns2:ValueList>
+                                                                                     <ns2:Value>DOC0001.XML</ns2:Value>
+                                                                                 </ns2:ValueList>
+                                                                             </ns2:Slot>
+                                                                             <!--===================-->
+                                                                             <!--CreationTime-->
+                                                                             <!--===================-->
+                                                                             <ns2:Slot name="creationTime">
+                                                                                 <ns2:ValueList>
+                                                                                     <ns2:Value>20210112101700</ns2:Value>
+                                                                                 </ns2:ValueList>
+                                                                             </ns2:Slot>
+                                                                             <!--===================-->
+                                                                             <!--LangageCode-->
+                                                                             <!--===================-->
+                                                                             <ns2:Slot name="languageCode">
+                                                                                 <ns2:ValueList>
+                                                                                     <ns2:Value>fr-FR</ns2:Value>
+                                                                                 </ns2:ValueList>
+                                                                             </ns2:Slot>
+                                                                             <!--===================-->
+                                                                             <!--LegalAuthenticator-->
+                                                                             <!--===================-->
+                                                                             <ns2:Slot name="legalAuthenticator">
+                                                                                 <ns2:ValueList>
+                                                                                     <ns2:Value>801234567897^BOILEAU^Charles^^^^^^&amp;1.2.250.1.71.4.2.1&amp;ISO^D^^^IDNPS</ns2:Value>
+                                                                                 </ns2:ValueList>
+                                                                             </ns2:Slot>
+                                                                             <!--===================-->
+                                                                             <!--ServiceStartTime-->
+                                                                             <!--===================-->
+                                                                             <ns2:Slot name="serviceStartTime">
+                                                                                 <ns2:ValueList>
+                                                                                     <ns2:Value>20210112092500</ns2:Value>
+                                                                                 </ns2:ValueList>
+                                                                             </ns2:Slot>
+                                                                             <!--===================-->
+                                                                             <!--ServiceStopTime-->
+                                                                             <!--===================-->
+                                                                             <ns2:Slot name="serviceStopTime">
+                                                                                 <ns2:ValueList>
+                                                                                     <ns2:Value>20210112101700</ns2:Value>
+                                                                                 </ns2:ValueList>
+                                                                             </ns2:Slot>
+                                                                             <!--===================-->
+                                                                             <!--SourcePatientId-->
+                                                                             <!--===================-->
+                                                                             <ns2:Slot name="sourcePatientId">
+                                                                                 <ns2:ValueList>
+                                                                                     <ns2:Value>1234567890121^^^&amp;1.2.3.4.567.8.9.10&amp;ISO^PI</ns2:Value>
+                                                                                 </ns2:ValueList>
+                                                                             </ns2:Slot>
+                                                                             <!--===================-->
+                                                                             <!--SourcePatientInfo-->
+                                                                             <!--===================-->
+                                                                             <ns2:Slot name="sourcePatientInfo">
+                                                                                 <ns2:ValueList>
+                                                                                     <ns2:Value>PID-5|PAT-TROIS^DOMINIQUE^DOMINIQUE MARIE-LOUISE^^^^L</ns2:Value>
+                                                                                     <ns2:Value>PID-5|PAT-TROIS^DOMINIQUE^^^^^D</ns2:Value>
+                                                                                     <ns2:Value>PID-7|19790328</ns2:Value>
+                                                                                     <ns2:Value>PID-8|F</ns2:Value>
+                                                                                     <ns2:Value>PID-11|^^^^^^BDL^^51215</ns2:Value>
+                                                                                 </ns2:ValueList>
+                                                                             </ns2:Slot>
+                                                                             <!--===================-->
+                                                                             <!--Name-->
+                                                                             <!--===================-->
+                                                                             <ns2:Name>
+                                                                                 <ns2:LocalizedString xml:lang="FR" charset="UTF8"                                                                                  value="Demande d'acte d'imagerie"/>
+                                                                             </ns2:Name>
+                                                                             <!--===================-->
+                                                                             <!--Description (Comments)-->
+                                                                             <!--===================-->
+                                                                             <ns2:Description>
+                                                                                 <ns2:LocalizedString xml:lang="FR" charset="UTF8"                                                                                  value=""/>
+                                                                             </ns2:Description>
+                                                                             <!--===================-->
+                                                                             <!--EventCodeList-->
+                                                                             <!--===================-->
+                                                                             <ns2:Classification classificationScheme="urn:uuid:2c6b8cb7-8b2a-4051-b291-b1ae6a575ef4" classifiedObject="urn:uuid:urn:uuid:1b902dfa-9e22-4246-8fb8-3c78ac9546e0" id="urn:uuid:d379c8e9-dab3-46ba-8b5c-086dafa280db"                                                                               nodeRepresentation="55115-0" objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification" >
                                                                                  <ns2:Slot name="codingScheme">
                                                                                      <ns2:ValueList>
                                                                                          <ns2:Value>2.16.840.1.113883.6.1</ns2:Value>
                                                                                      </ns2:ValueList>
                                                                                  </ns2:Slot>
                                                                                  <ns2:Name>
-                                                                                     <ns2:LocalizedString  xml:lang="FR" charset="UTF8"  value="Demande d'actes d'imagerie"   />
+                                                                                     <ns2:LocalizedString xml:lang="FR" charset="UTF8"                                                                                      value="Demande d'acte d'imagerie"/>
                                                                                  </ns2:Name>
                                                                              </ns2:Classification>
-                                                                             <!--********************************-->
-                                                                             <!--  PatientId -->
-                                                                             <!--********************************-->
-                                                                             <ns2:ExternalIdentifier id="urn:uuid:3575f30b-dea0-4b09-8c41-b24c33f7404a" identificationScheme="urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427" registryObject="urn:uuid:4a889fd4-012f-4000-e008-12c48372fe64" value="279035121518989^^^&amp;1.2.250.1.213.1.4.10&amp;ISO^NH">
-                                                                                 <ns2:Name>
-                                                                                     <ns2:LocalizedString value="XDSDocumentEntry.patientId"/>
-                                                                                 </ns2:Name>
-                                                                             </ns2:ExternalIdentifier>
-                                                                             <!--********************************-->
-                                                                             <!--  UniqueId -->
-                                                                             <!--********************************-->
-                                                                             <ns2:ExternalIdentifier id="urn:uuid:b0711260-c9d0-4788-b67e-c1d106fc6223" identificationScheme="urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab" registryObject="b576aac4-33be-4875-b875-f8ee50bf66e0" value="1.2.250.1.213.1.1.1.47.2024.7.1">
-                                                                                 <ns2:Name>
-                                                                                     <ns2:LocalizedString xml:lang="FR" charset="UTF8"  value="XDSDocumentEntry.uniqueId"/>
-                                                                                 </ns2:Name>
-                                                                             </ns2:ExternalIdentifier>
-                                                                         </ns2:ExtrinsicObject>
-                                                                         <!--*****************************************-->
-                                                                         <!--*            ASSOCIATIONS -->
-                                                                         <!--*****************************************-->
-                                                                         <ns2:Association id="urn:uuid:5faca1a9-c80d-4348-af22-90c956552908" objectType="Original" associationType="urn:oasis:names:tc:ebxml-regrep:AssociationType:HasMember"                                                                           sourceObject="urn:uuid:88a6cc14-34c2-4326-b3ba-cd9912ee5d0d" targetObject="urn:uuid:urn:uuid:4e13cfc5-898d-4890-8139-524c7ca8f04b"  xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"  >
-                                                                             <ns2:Slot name="SubmissionSetStatus">
-                                                                                 <ns2:ValueList>
-                                                                                     <ns2:Value>Original</ns2:Value>
-                                                                                 </ns2:ValueList>
-                                                                             </ns2:Slot>
-                                                                         </ns2:Association>
-                                                                 </RegistryObjectList>
-                                                             </ns5:SubmitObjectsRequest>
+                                                                             <!--*********************************************************-->
+                                                                             <!--  Authors Attributes -->
+                                                                             <!--*********************************************************-->
+                                                                             <ns2:Classification id="urn:uuid:d6027c95-72f5-47d7-8350-b4c87556db36" classificationScheme="urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d" classifiedObject="urn:uuid:63d261f8-2855-42cd-b182-6a39b6e6f2a8" nodeRepresentation=""> 
+                                                                                 <!--===================-->
+                                                                                 <!--AuthorInstitution-->
+                                                                                 <!--===================-->
+                                                                                 <ns2:Slot name="authorInstitution">
+                                                                                     <ns2:ValueList>
+                                                                                         <ns2:Value>HU ROBERT DEBRE APHP^^^^^&amp;1.2.250.1.71.4.2.2&amp;ISO^IDNST^^^1120456789</ns2:Value>
+                                                                                     </ns2:ValueList>
+                                                                                 </ns2:Slot>
+                                                                                 <!--===================-->
+                                                                                 <!--AuthorPerson-->
+                                                                                 <!--===================-->
+                                                                                 <ns2:Slot name="authorPerson">
+                                                                                     <ns2:ValueList>
+                                                                                     <ns2:Value>801234567897^BOILEAU^Charles^^^^^^&amp;1.2.250.1.71.4.2.1&amp;ISO^D^^^IDNPS</ns2:Value>
+                                                                                     </ns2:ValueList>
+                                                                                 </ns2:Slot>
+                                                                                 <!--===================-->
+                                                                                 <!--AuthorSpecialty-->
+                                                                                 <!--===================-->
+                                                                                 <ns2:Slot name="authorSpecialty">
+                                                                                     <ns2:ValueList>
+                                                                                         <ns2:Value>G15_10/SM26^Médecin - Qualifié en Médecine Générale (SM)^1.2.250.1.213.1.1.4.5</ns2:Value>
+                                                                                     </ns2:ValueList>
+                                                                                 </ns2:Slot>
+                                                                                 </ns2:Classification>
+                                                                                 <!--*********************************************************-->
+                                                                                 <!--  Class -->
+                                                                                 <!--*********************************************************-->
+                                                                                 <!--  -->
+                                                                                 <ns2:Classification id="urn:uuid:4f37434a-e63a-48ca-947a-d9c83550b0e5" classificationScheme="urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a" classifiedObject="urn:uuid:63d261f8-2855-42cd-b182-6a39b6e6f2a8" nodeRepresentation="42">
+                                                                                     <ns2:Slot name="codingScheme">
+                                                                                         <ns2:ValueList>
+                                                                                             <ns2:Value>1.2.250.1.213.1.1.4.1</ns2:Value>
+                                                                                         </ns2:ValueList>
+                                                                                     </ns2:Slot>
+                                                                                     <ns2:Name>
+                                                                                         <ns2:LocalizedString value="Prescription"/>
+                                                                                     </ns2:Name>
+                                                                                 </ns2:Classification>
+                                                                                 <!-- ***************************************************************************-->
+                                                                                 <!--     Confidentiality  -->
+                                                                                 <!-- ***************************************************************************-->
+                                                                                 <ns2:Classification id="urn:uuid:3972a64e-6939-4fbd-b969-cec96577da13" classificationScheme="urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f" classifiedObject="urn:uuid:63d261f8-2855-42cd-b182-6a39b6e6f2a8" nodeRepresentation="N">
+                                                                                     <ns2:Slot name="codingScheme">
+                                                                                         <ns2:ValueList>
+                                                                                             <ns2:Value>2.16.840.1.113883.5.25</ns2:Value>
+                                                                                         </ns2:ValueList>
+                                                                                     </ns2:Slot>
+                                                                                     <ns2:Name>
+                                                                                         <ns2:LocalizedString value="Normal"/>
+                                                                                     </ns2:Name>
+                                                                                 </ns2:Classification>
+                                                                                 <!--***********************************-->
+                                                                                 <!--  Format -->
+                                                                                 <!--***********************************-->
+                                                                                 <ns2:Classification id="urn:uuid:79056cda-ee3b-4cd3-b913-0a26062f4625" classificationScheme="urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d" classifiedObject="urn:uuid:63d261f8-2855-42cd-b182-6a39b6e6f2a8" nodeRepresentation="urn:ans:ci-sis:img-da:2022"> 
+                                                                                     <ns2:Slot name="codingScheme">
+                                                                                         <ns2:ValueList>
+                                                                                             <ns2:Value>1.2.250.1.213.1.1.4.2.282</ns2:Value>
+                                                                                         </ns2:ValueList>
+                                                                                     </ns2:Slot>
+                                                                                     <ns2:Name>
+                                                                                         <ns2:LocalizedString value="Demande d'actes d'imagerie"/>
+                                                                                     </ns2:Name>
+                                                                                 </ns2:Classification>
+                                                                                 <!--***********************************-->
+                                                                                 <!--  HealthcareFacility -->
+                                                                                 <!--***********************************-->
+                                                                                 <ns2:Classification id="urn:uuid:43405dfc-9f4c-4023-8b8c-73845d8201f5" classificationScheme="urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1" classifiedObject="urn:uuid:63d261f8-2855-42cd-b182-6a39b6e6f2a8" nodeRepresentation="SA01">
+                                                                                     <ns2:Slot name="codingScheme">
+                                                                                         <ns2:ValueList>
+                                                                                             <ns2:Value>1.2.250.1.71.4.2.4</ns2:Value>
+                                                                                         </ns2:ValueList>
+                                                                                     </ns2:Slot>
+                                                                                     <ns2:Name>
+                                                                                         <ns2:LocalizedString value="Etablissement public de santé"/>
+                                                                                     </ns2:Name>
+                                                                                 </ns2:Classification>
+                                                                                 <!--********************************-->
+                                                                                 <!--  Practice Settings -->
+                                                                                 <!--********************************-->
+                                                                                 <ns2:Classification id="urn:uuid:8d39e136-f161-4af5-aed7-bb2e0816809f" classificationScheme="urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead" classifiedObject="urn:uuid:63d261f8-2855-42cd-b182-6a39b6e6f2a8" nodeRepresentation="ETABLISSEMENT">
+                                                                                     <ns2:Slot name="codingScheme">
+                                                                                         <ns2:ValueList>
+                                                                                             <ns2:Value>1.2.250.1.213.1.1.4.9</ns2:Value>
+                                                                                         </ns2:ValueList>
+                                                                                     </ns2:Slot>
+                                                                                     <ns2:Name>
+                                                                                         <ns2:LocalizedString  xml:lang="FR" charset="UTF8"  value="Etablissement de santé"   />
+                                                                                     </ns2:Name>
+                                                                                 </ns2:Classification>
+                                                                                 <!--********************************-->
+                                                                                 <!--  Type -->
+                                                                                 <!--********************************-->
+                                                                                 <ns2:Classification id="urn:uuid:6a406497-40df-4b29-adfa-f1db173d974c" classificationScheme="urn:uuid:f0306f51-975f-434e-a61c-c59651d33983" classifiedObject="urn:uuid:63d261f8-2855-42cd-b182-6a39b6e6f2a8" nodeRepresentation="55115-0">
+                                                                                     <ns2:Slot name="codingScheme">
+                                                                                         <ns2:ValueList>
+                                                                                             <ns2:Value>2.16.840.1.113883.6.1</ns2:Value>
+                                                                                         </ns2:ValueList>
+                                                                                     </ns2:Slot>
+                                                                                     <ns2:Name>
+                                                                                         <ns2:LocalizedString  xml:lang="FR" charset="UTF8"  value="Demande d'actes d'imagerie"   />
+                                                                                     </ns2:Name>
+                                                                                 </ns2:Classification>
+                                                                                 <!--********************************-->
+                                                                                 <!--  PatientId (FICHE) -->
+                                                                                 <!--********************************-->
+                                                                                 <ns2:ExternalIdentifier id="urn:uuid:4293d9c3-5db4-4856-8408-4d84954c1189" identificationScheme="urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427" registryObject="urn:uuid:urn:uuid:1b902dfa-9e22-4246-8fb8-3c78ac9546e0" value="279035121518989^^^&amp;1.2.250.1.213.1.4.10&amp;ISO^NH">
+                                                                                     <ns2:Name>
+                                                                                         <ns2:LocalizedString value="XDSDocumentEntry.patientId"/>
+                                                                                     </ns2:Name>
+                                                                                 </ns2:ExternalIdentifier>
+                                                                                 <!--********************************-->
+                                                                                 <!--  UniqueId -->
+                                                                                 <!--********************************-->
+                                                                                 <ns2:ExternalIdentifier id="urn:uuid:acc3eb76-9389-4271-bf91-8aa350aad9ee" identificationScheme="urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab" registryObject="b576aac4-33be-4875-b875-f8ee50bf66e0" value="1.2.250.1.213.1.1.1.47.2024.7.1">
+                                                                                     <ns2:Name>
+                                                                                         <ns2:LocalizedString xml:lang="FR" charset="UTF8"  value="XDSDocumentEntry.uniqueId"/>
+                                                                                     </ns2:Name>
+                                                                                 </ns2:ExternalIdentifier>
+                                                                             </ns2:ExtrinsicObject>
+                                                                             <!--*****************************************-->
+                                                                             <!--*            ASSOCIATIONS -->
+                                                                             <!--*****************************************-->
+                                                                             <ns2:Association id="urn:uuid:a632e69a-ba1b-4cd3-95b9-54690b1c980b" objectType="Original" associationType="urn:oasis:names:tc:ebxml-regrep:AssociationType:HasMember"                                                                               sourceObject="urn:uuid:63d261f8-2855-42cd-b182-6a39b6e6f2a8" targetObject="urn:uuid:urn:uuid:1b902dfa-9e22-4246-8fb8-3c78ac9546e0"  xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"  >
+                                                                                 <ns2:Slot name="SubmissionSetStatus">
+                                                                                     <ns2:ValueList>
+                                                                                         <ns2:Value>Original</ns2:Value>
+                                                                                     </ns2:ValueList>
+                                                                                 </ns2:Slot>
+                                                                             </ns2:Association>
+                                                                     </RegistryObjectList>
+                                                                 </ns5:SubmitObjectsRequest>
 

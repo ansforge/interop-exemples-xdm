@@ -21,6 +21,7 @@
      	28/04/2022 : Nouvelle version 2022.01
      	28/04/2022 : Migration des terminologies et JDV en SNOMED CT
      	25/08/2023 : Migration des terminologies et JDVs après validation
+     	25/03/2025 : Correction participant, documentationOf, componentOf de l'entête
       **********************************************************************************************************
    -->
 <ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:lab="urn:hl7-org:lab" 
@@ -131,15 +132,28 @@
     <time value="20080929094914+0100" />
     <assignedAuthor classCode="ASSIGNED">
       <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+      <!-- [1..1] Profession / spécialité du PS (obligatoire pour les PS) -->
+      <code code="G15_10/C07" displayName="Médecin - Cardiologie (C)" codeSystem="1.2.250.1.213.1.1.4.5" />
+      <!-- Adresse -->
+      <addr>
+        <houseNumber>20</houseNumber>
+        <streetName>Rue Leblanc</streetName>
+        <postalCode>75015</postalCode>
+        <city>PARIS</city>
+      </addr>
+      <!-- Coordonnées télécom -->
+      <telecom value="tel:0647150000" use="MC" />
+      <telecom value="tel:0141291290" use="WP" />
       <assignedPerson>
         <name>
-          <given>Charles </given>
-          <family>DUNANT</family>
           <suffix>DR</suffix>
+          <given>Jacques</given>
+          <family>ANDRE</family>
         </name>
       </assignedPerson>
       <representedOrganization>
         <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+        <name>Hôpital Européen Georges Pompidou</name>
       </representedOrganization>
     </assignedAuthor>
   </author>
@@ -176,49 +190,77 @@
   
   <!-- Organisation de santé responsable du document -->
   <custodian typeCode="CST">
-    <assignedCustodian classCode="ASSIGNED">
-      <representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
-        <id root="1.2.250.1.71.4.2.2" extension="1120456789" />
-        <name>Centre Hospitalier DUNANT</name>
-        <telecom value="tel:0442515151" use="WP" />
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+        <name>Hôpital Européen Georges Pompidou</name>
+        <telecom value="tel:0141297500" use="WP" />
+        <addr>
+          <houseNumber>20</houseNumber>
+          <streetName>Rue Leblanc</streetName>
+          <postalCode>75015</postalCode>
+          <city>PARIS</city>
+        </addr>
       </representedCustodianOrganization>
     </assignedCustodian>
   </custodian>
 
-  <!-- Responsable (signataire) du document -->
+  <!-- Responsable du document -->
   <legalAuthenticator>
     <time value="20060922094914+0100" />
     <signatureCode code="S" />
     <assignedEntity>
-      <id root="1.2.250.1.71" extension="801234567897" />
-      <!-- PS identifié par son N°ADELI -->
+      <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+      <code code="G15_10/C07" displayName="Médecin - Cardiologie (C)" codeSystem="1.2.250.1.213.1.1.4.5" />
+      <addr>
+        <houseNumber>20</houseNumber>
+        <streetName>Rue Leblanc</streetName>
+        <postalCode>75015</postalCode>
+        <city>PARIS</city>
+      </addr>
+      <telecom value="tel:0647150000" use="MC" />
+      <telecom value="tel:0141291290" use="WP" />
       <assignedPerson>
         <name>
-          <given>Charles </given>
-          <family>DUNANT</family>
           <suffix>DR</suffix>
+          <given>Jacques</given>
+          <family>ANDRE</family>
         </name>
       </assignedPerson>
+      <!-- Etablissement de rattachement du PS -->
       <representedOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="1120456789" />
+        <!-- établissement identifié par son N° FINESS -->
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+        <name>Hôpital Européen Georges Pompidou</name>
+        <telecom value="tel:0141297500" use="WP" />
+        <addr>
+          <houseNumber>20</houseNumber>
+          <streetName>Rue Leblanc</streetName>
+          <postalCode>75015</postalCode>
+          <city>PARIS</city>
+        </addr>
+        <standardIndustryClassCode code="ETABLISSEMENT" displayName="Etablissement de santé" codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode" />
       </representedOrganization>
     </assignedEntity>
   </legalAuthenticator>
 
   <!-- Cardiologue Traitant -->
-  <participant typeCode="INF">
+  <participant typeCode="PRF">
     <functionCode code="ATTPHYS" displayName="Référent - Responsable du patient dans la structure de soins" codeSystem="2.16.840.1.113883.5.88" />
     <time xsi:type="IVL_TS">
       <low value="20060922094914+0100" />
     </time>
     <associatedEntity classCode="PROV">
-      <id root="1.2.250.1.71.4.2.1" extension="802926406900" />
+      <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+      <code code="G15_10/C07" displayName="Médecin - Cardiologie (C)" codeSystem="1.2.250.1.213.1.1.4.5" />
       <addr>
-        <city>Orléans</city>
-        <postalCode>45</postalCode>
+        <houseNumber>20</houseNumber>
+        <streetName>Rue Leblanc</streetName>
+        <postalCode>75015</postalCode>
+        <city>PARIS</city>
       </addr>
-      <telecom value="tel:0147150000" use="EC" />
-      <telecom value="mailto:jacques.andre@mssante.fr" />
+      <telecom value="tel:0647150000" use="MC" />
+      <telecom value="tel:0141291290" use="WP" />
       <associatedPerson>
         <name>
           <suffix>DR</suffix>
@@ -226,6 +268,18 @@
           <family>ANDRE</family>
         </name>
       </associatedPerson>
+      <scopingOrganization>
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+        <name>Hôpital Européen Georges Pompidou</name>
+        <telecom value="tel:0141297500" use="WP" />
+        <addr>
+          <houseNumber>20</houseNumber>
+          <streetName>Rue Leblanc</streetName>
+          <postalCode>75015</postalCode>
+          <city>PARIS</city>
+        </addr>
+        <standardIndustryClassCode code="ETABLISSEMENT" displayName="Etablissement de santé" codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode" />
+      </scopingOrganization>
     </associatedEntity>
   </participant>
 
@@ -256,28 +310,44 @@
   <!-- Acte documenté -->
   <documentationOf>
     <serviceEvent>
-      <id root="1.2.250.1.213.1.1.9" extension="123" />
+      <code code="11429006" displayName="consultation" codeSystem="2.16.840.1.113883.6.96"
+        codeSystemName="SNOMED CT"/>
       <effectiveTime>
         <low value="20100104152530+0100" />
         <high value="20100104152530+0100" />
       </effectiveTime>
-      <performer typeCode="PRF">
-        <!--<templateId root="1.3.6.1.4.1.19376.1.3.3.1.7" />
-        <time>
-          <low value="20100104152530+0100" />
-          <high value="20100104152600+0100" />
-        </time>-->
+      <performer typeCode="PRF">        
         <assignedEntity>
-          <id root="1.2.250.1.213.1.1.9" extension="801234567897" />
+          <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+          <code code="G15_10/C07" displayName="Médecin - Cardiologie (C)" codeSystem="1.2.250.1.213.1.1.4.5" />
+          <addr>
+            <houseNumber>20</houseNumber>
+            <streetName>Rue Leblanc</streetName>
+            <postalCode>75015</postalCode>
+            <city>PARIS</city>
+          </addr>
+          <telecom value="tel:0647150000" use="MC" />
+          <telecom value="tel:0141291290" use="WP" />
           <assignedPerson>
             <name>
-              <family>Grandrobert</family>
+              <suffix>DR</suffix>
+              <given>Jacques</given>
+              <family>ANDRE</family>
             </name>
           </assignedPerson>
+          <!-- Etablissement de rattachement du PS -->
           <representedOrganization>
-            <id root="1.2.250.1.71.4.2.2" extension="1120456789" />
-            <name>Cardio du parc</name>
-            <standardIndustryClassCode code="AMBULATOIRE" displayName="Ambulatoire" codeSystem="1.2.250.1.213.1.1.4.9" />
+            <!-- établissement identifié par son N° FINESS -->
+            <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+            <name>Hôpital Européen Georges Pompidou</name>
+            <telecom value="tel:0141297500" use="WP" />
+            <addr>
+              <houseNumber>20</houseNumber>
+              <streetName>Rue Leblanc</streetName>
+              <postalCode>75015</postalCode>
+              <city>PARIS</city>
+            </addr>
+            <standardIndustryClassCode code="ETABLISSEMENT" displayName="Etablissement de santé" codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode" />
           </representedOrganization>
         </assignedEntity>
       </performer>
@@ -287,33 +357,49 @@
   <!-- Contexte de la prise en charge -->
   <componentOf>
     <encompassingEncounter>
-      <id root="1.2.250.1.213.1.1.9" extension="234567890" />
+      <code code="EXTERNE" displayName="Acte et consultation externe (établissement)" codeSystem="1.2.250.1.213.1.1.4.2.291"/>
       <effectiveTime>
         <low value="201001020735+0100" />
         <high value="201001041635+0100" />
       </effectiveTime>
       <responsibleParty>
         <assignedEntity>
-          <id root="1.2.250.1.71.4.2.1" extension="801234567892" />
+          <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+          <code code="G15_10/C07" displayName="Médecin - Cardiologie (C)" codeSystem="1.2.250.1.213.1.1.4.5" />
+          <addr>
+            <houseNumber>20</houseNumber>
+            <streetName>Rue Leblanc</streetName>
+            <postalCode>75015</postalCode>
+            <city>PARIS</city>
+          </addr>
+          <telecom value="tel:0647150000" use="MC" />
+          <telecom value="tel:0141291290" use="WP" />
           <assignedPerson>
             <name>
-              <family nullFlavor="MSK" />
+              <suffix>DR</suffix>
+              <given>Jacques</given>
+              <family>ANDRE</family>
             </name>
           </assignedPerson>
+          <!-- Etablissement de rattachement du PS -->
           <representedOrganization>
-            <name>chirurgie gynécologique</name>
-            <!--<asOrganizationPartOf>
-              <wholeOrganization>
-                <name>Hôpital des papillons</name>
-              </wholeOrganization>
-            </asOrganizationPartOf>-->
+            <!-- établissement identifié par son N° FINESS -->
+            <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+            <name>Hôpital Européen Georges Pompidou</name>
+            <telecom value="tel:0141297500" use="WP" />
+            <addr>
+              <houseNumber>20</houseNumber>
+              <streetName>Rue Leblanc</streetName>
+              <postalCode>75015</postalCode>
+              <city>PARIS</city>
+            </addr>
+            <standardIndustryClassCode code="ETABLISSEMENT" displayName="Etablissement de santé" codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode" />
           </representedOrganization>
         </assignedEntity>
       </responsibleParty>
       <location>
         <healthCareFacility>
-          <id root="1.2.250.1.213.1.1.9" extension="11223344" assigningAuthorityName="Hôpital des papillons" />
-          <code code="SA21" displayName="Etablissement d'hébergement et de réadaptation" codeSystem="1.2.250.1.71.4.2.4" />
+          <code code="SA01" displayName="Etablissement public de santé" codeSystem="1.2.250.1.71.4.2.4" />
         </healthCareFacility>
       </location>
     </encompassingEncounter>
@@ -424,7 +510,7 @@
           
           <!-- Entrée FR-Liste-des-problemes : Angine de poitrine instable -->
           <entry>
-            <act classCode="ACT" moodCode="EVN">              
+            <act classCode="ACT" moodCode="EVN">
               <!-- Conformité CCD Problem Act  -->
               <templateId root="2.16.840.1.113883.10.20.1.27"/>
               <!-- Conformité IHE PCC Concern -->
@@ -545,7 +631,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.62"/>
               <id root="37827497-DF00-4593-8F33-B9D72C7ED225" />
-              <code code="MED-036" displayName="Examen réalisé" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <code code="MED-036" displayName="Examen réalisé" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
               <text><reference value="#exam" /></text>
               <statusCode code="completed" />
               <effectiveTime value="200905121430" />
@@ -914,7 +1000,7 @@
           <templateId root="1.2.250.1.213.1.1.2.137"/>
           <id root="D378469D-E117-4799-A8D0-08934A8053A0" />
           <code code="48765-2" displayName="Allergies et hypersensibilités" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-          <title>Allergies et hypersensibil-ités</title>
+          <title>Allergies et hypersensibilités</title>
           <text>
             <table border="0" width="100%">
               <thead>
@@ -1326,7 +1412,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27"/>
               <id root="AAD2D58E-74CD-4EA6-B27B-1D59B48FA899" />
-              <code code="L0045" codeSystem="1.2.250.1.213.1.1.4.322" displayName="TA_ASIP">
+              <code code="6301-6" displayName="Temps de quick INR:Temps relatif:Ponctuel:Plasma pauvre en plaquettes:Numérique:Coagulation" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                 <originalText><reference value="#avk0026" /></originalText>
               </code>
               <text><reference value="avk0026" /></text>
@@ -1398,13 +1484,9 @@
           <title>Information du patient</title>
           <text>
             <list>
-              <item>Remise Carnet de surveillance: <content ID="avk0034">Oui</content></item>
+              <item>Remise Carnet de surveillance: <content ID="avk0034">Oui</content></item>              
               <item>
-                <linkHtml href="documentsAnnexes/AVK.pdf"></linkHtml>
-                <content ID="avk0035">toto</content>
-              </item>
-              <item>
-                <linkHtml href="documentsAnnexes/AVK.pdf">Documentation Traitement Antivitamine K</linkHtml>
+                <content ID="avk-pdf"><linkHtml href="documentsAnnexes/Brochure de l’accompagnement pharmaceutique du traitement sous AVK.pdf">Brochure de l’accompagnement pharmaceutique du traitement sous AVK</linkHtml></content>
               </item>
             </list>
           </text>
@@ -1416,7 +1498,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48"/>
               <id root="36ECA66E-80CC-4B3F-9C5E-5DAF8CA7FF5E" />
-              <code code="L0047" codeSystem="1.2.250.1.213.1.1.4.322" displayName="Remise Carnet de surveillance AVK">
+              <code code="GEN-411" codeSystem="1.2.250.1.213.1.1.4.322" displayName="Remise Carnet de surveillance AVK">
                 <originalText mediaType="text/xml"><reference value="#avk0034" /></originalText>
               </code>
               <text><reference value="avk0034" /></text>
@@ -1434,7 +1516,7 @@
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.4" />
               <id root="255828D6-C6AC-4E1C-A6CF-09ED128A58C0" />
               <code nullFlavor="NA" />
-              <text><reference value="avk0035"/></text>
+              <text><reference value="avk-pdf"/></text>
               <reference typeCode="REFR">
                 <externalDocument classCode="DOC" moodCode="EVN">
                   <id root="A49FA706-28A1-418E-BC56-94070C9D3681"/>

@@ -353,14 +353,14 @@
               <!-- Conformité FR-Vaccination (CI-SIS) -->
               <templateId root="1.2.250.1.213.1.1.3.45"/>
               <id root="41DAC707-7C96-47B7-B600-AC63D8002142" />
-              <!-- Type d'acte de vaccination : JDV_HL7_ActSubstanceAdministrationImmunizationCode_CISIS (2.16.840.1.113883.1.11.19709) -->
+              <!-- Type d'acte de vaccination : jdv-hl7-v3-ActSubstanceAdministrationImmunizationCode-cisis (2.16.840.1.113883.1.11.19709) -->
               <code code="INITIMMUNIZ" displayName="1ère série vaccinante" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActSubstanceAdministrationImmunizationCode" />
               <text><reference value="#vac-01" /></text>
               <statusCode code="completed" />
               <effectiveTime value="20090928" />
-              <!-- Voie d'administration : valeur issue du JDV_ImmunizationRouteCodes_CISIS (1.2.250.1.213.1.1.5.676) -->
+              <!-- Voie d'administration : valeur issue du jdv-immunization-route-code-cisis (1.2.250.1.213.1.1.5.676) -->
               <routeCode code="20035000" displayName="Voie intramusculaire" codeSystem="0.4.0.127.0.16.1.1.2.1" codeSystemName="EDQM" />
-              <!-- Région d'administration : valeur issue du JDV_ImmunizationApproachSiteCode_CISIS (1.2.250.1.213.1.1.5.621) -->
+              <!-- Région d'administration : valeur issue du jdv-immunization-approach-site-code-cisis (1.2.250.1.213.1.1.5.621) -->
               <approachSiteCode code="16217701000119102" displayName="deltoïde gauche" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" >  
                 <originalText><reference value="#vac-01-approachSite"/></originalText>
               </approachSiteCode>              

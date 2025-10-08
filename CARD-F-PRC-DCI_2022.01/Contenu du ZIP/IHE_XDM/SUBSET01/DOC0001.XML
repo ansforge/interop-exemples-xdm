@@ -21,6 +21,7 @@
      	28/04/2022 : Nouvelle version 2022.01
      	28/04/2022 : Migration des terminologies et JDV en SNOMED CT
      	25/08/2023 : Migration des terminologies et JDVs après validation
+     	25/03/2025 : Correction participant, documentationOf, componentOf de l'entête
       **********************************************************************************************************
    -->
 <ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:lab="urn:hl7-org:lab" 
@@ -132,19 +133,32 @@
     <time value="20080929094914+0100" />
     <assignedAuthor classCode="ASSIGNED">
       <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+      <!-- [1..1] Profession / spécialité du PS (obligatoire pour les PS) -->
+      <code code="G15_10/C07" displayName="Médecin - Cardiologie (C)" codeSystem="1.2.250.1.213.1.1.4.5" />
+      <!-- Adresse -->
+      <addr>
+        <houseNumber>20</houseNumber>
+        <streetName>Rue Leblanc</streetName>
+        <postalCode>75015</postalCode>
+        <city>PARIS</city>
+      </addr>
+      <!-- Coordonnées télécom -->
+      <telecom value="tel:0647150000" use="MC" />
+      <telecom value="tel:0141291290" use="WP" />
       <assignedPerson>
         <name>
-          <given>Charles </given>
-          <family>DUNANT</family>
           <suffix>DR</suffix>
+          <given>Jacques</given>
+          <family>ANDRE</family>
         </name>
       </assignedPerson>
       <representedOrganization>
         <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+        <name>Hôpital Européen Georges Pompidou</name>
       </representedOrganization>
     </assignedAuthor>
   </author>
-
+  
   <!-- Personne à prévenir en cas d'urgence -->
   <informant>
     <relatedEntity classCode="ECON">
@@ -177,54 +191,77 @@
   
   <!-- Organisation de santé responsable du document -->
   <custodian typeCode="CST">
-    <assignedCustodian classCode="ASSIGNED">
-      <representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
-        <id root="1.2.250.1.71.4.2.2" extension="1120456789" />
-        <name>Centre Hospitalier DUNANT</name>
-        <telecom value="tel:0442515151" use="WP" />
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+        <name>Hôpital Européen Georges Pompidou</name>
+        <telecom value="tel:0141297500" use="WP" />
         <addr>
-          <streetAddressLine>25 rue Pasteur</streetAddressLine>
-          <streetAddressLine>91000 EVRY</streetAddressLine>
-          <streetAddressLine>France</streetAddressLine>
+          <houseNumber>20</houseNumber>
+          <streetName>Rue Leblanc</streetName>
+          <postalCode>75015</postalCode>
+          <city>PARIS</city>
         </addr>
       </representedCustodianOrganization>
     </assignedCustodian>
   </custodian>
-
-  <!-- Responsable (signataire) du document -->
+  
+  <!-- Responsable du document -->
   <legalAuthenticator>
-    <time value="20060922152530+0100" />
+    <time value="20060922094914+0100" />
     <signatureCode code="S" />
     <assignedEntity>
-      <id root="1.2.250.1.71" extension="801234567897" />
-      <!-- PS identifié par son N°ADELI -->
+      <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+      <code code="G15_10/C07" displayName="Médecin - Cardiologie (C)" codeSystem="1.2.250.1.213.1.1.4.5" />
+      <addr>
+        <houseNumber>20</houseNumber>
+        <streetName>Rue Leblanc</streetName>
+        <postalCode>75015</postalCode>
+        <city>PARIS</city>
+      </addr>
+      <telecom value="tel:0647150000" use="MC" />
+      <telecom value="tel:0141291290" use="WP" />
       <assignedPerson>
         <name>
-          <given>Charles </given>
-          <family>DUNANT</family>
           <suffix>DR</suffix>
+          <given>Jacques</given>
+          <family>ANDRE</family>
         </name>
       </assignedPerson>
+      <!-- Etablissement de rattachement du PS -->
       <representedOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="1120456789" />
+        <!-- établissement identifié par son N° FINESS -->
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+        <name>Hôpital Européen Georges Pompidou</name>
+        <telecom value="tel:0141297500" use="WP" />
+        <addr>
+          <houseNumber>20</houseNumber>
+          <streetName>Rue Leblanc</streetName>
+          <postalCode>75015</postalCode>
+          <city>PARIS</city>
+        </addr>
+        <standardIndustryClassCode code="ETABLISSEMENT" displayName="Etablissement de santé" codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode" />
       </representedOrganization>
     </assignedEntity>
   </legalAuthenticator>
-
+  
   <!-- Cardiologue Traitant -->
-  <participant typeCode="INF">
+  <participant typeCode="PRF">
     <functionCode code="ATTPHYS" displayName="Référent - Responsable du patient dans la structure de soins" codeSystem="2.16.840.1.113883.5.88" />
     <time xsi:type="IVL_TS">
-      <low value="20060922100000+0100" />
-      <high value="20060922110000+0100" />
+      <low value="20060922094914+0100" />
     </time>
     <associatedEntity classCode="PROV">
-      <id root="1.2.250.1.71.4.2.1" extension="802926406900" />
+      <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+      <code code="G15_10/C07" displayName="Médecin - Cardiologie (C)" codeSystem="1.2.250.1.213.1.1.4.5" />
       <addr>
-        <city>Orléans</city>
+        <houseNumber>20</houseNumber>
+        <streetName>Rue Leblanc</streetName>
+        <postalCode>75015</postalCode>
+        <city>PARIS</city>
       </addr>
-      <telecom value="tel:0147150000" use="EC" />
-      <telecom value="mailto:jacques.andre@mssante.fr" />
+      <telecom value="tel:0647150000" use="MC" />
+      <telecom value="tel:0141291290" use="WP" />
       <associatedPerson>
         <name>
           <suffix>DR</suffix>
@@ -232,20 +269,32 @@
           <family>ANDRE</family>
         </name>
       </associatedPerson>
+      <scopingOrganization>
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+        <name>Hôpital Européen Georges Pompidou</name>
+        <telecom value="tel:0141297500" use="WP" />
+        <addr>
+          <houseNumber>20</houseNumber>
+          <streetName>Rue Leblanc</streetName>
+          <postalCode>75015</postalCode>
+          <city>PARIS</city>
+        </addr>
+        <standardIndustryClassCode code="ETABLISSEMENT" displayName="Etablissement de santé" codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode" />
+      </scopingOrganization>
     </associatedEntity>
   </participant>
-
+  
   <!-- Médecin Traitant -->
   <participant typeCode="INF">
     <functionCode code="PCP" displayName="Médecin traitant" codeSystem="2.16.840.1.113883.5.88" />
     <time xsi:type="IVL_TS">
-      <low value="20060922100000+0100" />
-      <high value="20060922110000+0100" />
+      <low value="20060922094914+0100" />
     </time>
     <associatedEntity classCode="PROV">
       <id root="1.2.250.1.71.4.2.1" extension="802926406900" />
       <addr>
         <city>Paris</city>
+        <postalCode>75</postalCode>
       </addr>
       <telecom value="tel:0147150000" use="EC" />
       <telecom value="mailto:charles.michels@mssante.fr" />
@@ -258,69 +307,100 @@
       </associatedPerson>
     </associatedEntity>
   </participant>
-
+  
   <!-- Acte documenté -->
   <documentationOf>
     <serviceEvent>
-      <id root="1.2.250.1.213.1.1.9" extension="123" />
+      <code code="11429006" displayName="consultation" codeSystem="2.16.840.1.113883.6.96"
+        codeSystemName="SNOMED CT"/>
       <effectiveTime>
-        <low value="20100104152500+0100" />
+        <low value="20100104152530+0100" />
         <high value="20100104152530+0100" />
       </effectiveTime>
-      <performer typeCode="PRF">
-        <!--<templateId root="1.3.6.1.4.1.19376.1.3.3.1.7" />
-        <time>
-          <low value="20100104152500+0100" />
-          <high value="20100104152530+0100" />
-        </time>-->
+      <performer typeCode="PRF">        
         <assignedEntity>
-          <id root="1.2.250.1.213.1.1.9" extension="801234567897" />
+          <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+          <code code="G15_10/C07" displayName="Médecin - Cardiologie (C)" codeSystem="1.2.250.1.213.1.1.4.5" />
+          <addr>
+            <houseNumber>20</houseNumber>
+            <streetName>Rue Leblanc</streetName>
+            <postalCode>75015</postalCode>
+            <city>PARIS</city>
+          </addr>
+          <telecom value="tel:0647150000" use="MC" />
+          <telecom value="tel:0141291290" use="WP" />
           <assignedPerson>
             <name>
-              <family>Grandrobert</family>
+              <suffix>DR</suffix>
+              <given>Jacques</given>
+              <family>ANDRE</family>
             </name>
           </assignedPerson>
+          <!-- Etablissement de rattachement du PS -->
           <representedOrganization>
-            <id root="1.2.250.1.71.4.2.2" extension="1120456789" />
-            <name>Cardio du parc</name>
-            <standardIndustryClassCode code="AMBULATOIRE" displayName="Ambulatoire" codeSystem="1.2.250.1.213.1.1.4.9" />
+            <!-- établissement identifié par son N° FINESS -->
+            <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+            <name>Hôpital Européen Georges Pompidou</name>
+            <telecom value="tel:0141297500" use="WP" />
+            <addr>
+              <houseNumber>20</houseNumber>
+              <streetName>Rue Leblanc</streetName>
+              <postalCode>75015</postalCode>
+              <city>PARIS</city>
+            </addr>
+            <standardIndustryClassCode code="ETABLISSEMENT" displayName="Etablissement de santé" codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode" />
           </representedOrganization>
         </assignedEntity>
       </performer>
     </serviceEvent>
   </documentationOf>
-
+  
   <!-- Contexte de la prise en charge -->
   <componentOf>
     <encompassingEncounter>
-      <id root="1.2.250.1.213.1.1.9" extension="234567890" />
+      <code code="EXTERNE" displayName="Acte et consultation externe (établissement)" codeSystem="1.2.250.1.213.1.1.4.2.291"/>
       <effectiveTime>
         <low value="201001020735+0100" />
         <high value="201001041635+0100" />
       </effectiveTime>
       <responsibleParty>
         <assignedEntity>
-          <id root="1.2.250.1.71.4.2.1" extension="801234567892" />
+          <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+          <code code="G15_10/C07" displayName="Médecin - Cardiologie (C)" codeSystem="1.2.250.1.213.1.1.4.5" />
+          <addr>
+            <houseNumber>20</houseNumber>
+            <streetName>Rue Leblanc</streetName>
+            <postalCode>75015</postalCode>
+            <city>PARIS</city>
+          </addr>
+          <telecom value="tel:0647150000" use="MC" />
+          <telecom value="tel:0141291290" use="WP" />
           <assignedPerson>
             <name>
-              <family nullFlavor="MSK" />
+              <suffix>DR</suffix>
+              <given>Jacques</given>
+              <family>ANDRE</family>
             </name>
           </assignedPerson>
+          <!-- Etablissement de rattachement du PS -->
           <representedOrganization>
-            <name>chirurgie gynécologique</name>
-            <!--<asOrganizationPartOf>
-              <wholeOrganization>
-                <name>Hôpital des papillons</name>
-              </wholeOrganization>
-            </asOrganizationPartOf>-->
+            <!-- établissement identifié par son N° FINESS -->
+            <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+            <name>Hôpital Européen Georges Pompidou</name>
+            <telecom value="tel:0141297500" use="WP" />
+            <addr>
+              <houseNumber>20</houseNumber>
+              <streetName>Rue Leblanc</streetName>
+              <postalCode>75015</postalCode>
+              <city>PARIS</city>
+            </addr>
+            <standardIndustryClassCode code="ETABLISSEMENT" displayName="Etablissement de santé" codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode" />
           </representedOrganization>
         </assignedEntity>
       </responsibleParty>
       <location>
         <healthCareFacility>
-          <id root="1.2.250.1.213.1.1.9" extension="11223344" assigningAuthorityName="Hôpital des papillons" />
-          <code code="SA21" displayName="Etablissement d'hébergement et de réadaptation" codeSystem="1.2.250.1.71.4.2.4">
-          </code>
+          <code code="SA01" displayName="Etablissement public de santé" codeSystem="1.2.250.1.71.4.2.4" />
         </healthCareFacility>
       </location>
     </encompassingEncounter>
@@ -778,7 +858,7 @@
                     <content ID="def0031">Sous-Clavière</content>
                   </td>
                   <td>
-                    <content ID="def0032">Infundibulum</content>
+                    <content ID="def0032">voie efférente du ventricule droit</content>
                   </td>
                 </tr>
                 <tr>
@@ -810,7 +890,7 @@
                     <content ID="def0053">Sous-Clavière</content>
                   </td>
                   <td>
-                    <content ID="def0054">Infundibulum</content>
+                    <content ID="def0054">voie efférente du ventricule droit</content>
                   </td>
                 </tr>
                 <tr>
@@ -842,7 +922,7 @@
                     <content ID="def00074">Sous-Clavière</content>
                   </td>
                   <td>
-                    <content ID="def00075">Infundibulum</content>
+                    <content ID="def00075">voie efférente du ventricule droit</content>
                   </td>
                 </tr>
               </tbody>
@@ -1109,7 +1189,7 @@
                     <templateId root="1.2.250.1.213.1.1.3.48" />
                     <!-- Problem observation template -->
                     <id root="675136D6-6B82-4F79-9772-383EFA30831F" />
-                    <code code="L0001" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Tension de la pile à ERI"/>
+                  <code code="GEN-382" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Tension de la pile à ERI"/>
                       <text><reference value="#def0012" /></text>
                     <statusCode code="completed"/>
                     <effectiveTime nullFlavor="NASK"/>
@@ -1125,7 +1205,7 @@
                    <templateId root="1.2.250.1.213.1.1.3.48" />
                    <!-- Problem observation template -->
                    <id root="42A91250-0335-40B5-9DBE-25C4338BBECF" />
-                   <code code="L0003" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="IRE"/>
+                  <code code="GEN-383" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="IRE"/>
                      <text><reference value="#def0015" /></text>
                    <statusCode code="completed"/>
                    <effectiveTime nullFlavor="NASK"/>
@@ -1158,7 +1238,7 @@
                   <!-- CI-SIS Observation Dispositifs Médicaux -->
                   <templateId root="1.2.250.1.213.1.1.3.1" />
                   <id root="067E3984-7C16-4491-B96C-ECA91105BF9A" />
-                  <code code="L0006" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Asservissement">
+                  <code code="GEN-384" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Asservissement">
                     <originalText mediaType="text/xml"><reference value="#def0017" /></originalText>
                   </code>
                   <text><reference value="#def0017" /></text>
@@ -1175,7 +1255,7 @@
                   <!-- CI-SIS Observation Dispositifs Médicaux -->
                   <templateId root="1.2.250.1.213.1.1.3.1" />
                   <id root="BB9EAA32-AA81-4F4C-829F-BAF9D7E9892B" />
-                  <code code="L0007" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Télésuivi">
+                  <code code="GEN-385" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Télésuivi">
                     <originalText mediaType="text/xml"><reference value="#def0018" /></originalText>
                   </code>
                   <text><reference value="#def0018" /></text>
@@ -1193,7 +1273,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.1" />
                   <id root="CABEA55A-2C80-4BED-82B4-C88699268451" />
                   <!-- [ANS] code à remplacer -->
-                  <code code="L0008" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Télésuivi Activé">
+                  <code code="GEN-386" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Télésuivi Activé">
                     <originalText mediaType="text/xml"><reference value="#def0019" /></originalText>
                   </code>
                   <text><reference value="#def0019" /></text>
@@ -1211,7 +1291,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.1" />
                   <id root="3F075A18-3973-4E69-80A9-F7E282146937" />
                   <!-- [ANS] code à remplacer  -->
-                  <code code="L0009" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Stade NYHA">
+                  <code code="88020-3" displayName="Capacité fonctionnelle NYHA" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" >
                     <originalText mediaType="text/xml"><reference value="#def0020" /></originalText>
                   </code>
                   <text><reference value="#def0020" /></text>
@@ -1231,7 +1311,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.1" />
                   <id root="022BDB78-2E3D-443D-9A04-5ECD1A242B86" />
                   <!-- [ANS] code à remplacer -->
-                  <code code="L0010" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="FEVG">
+                  <code code="10230-1" displayName="Fraction d'éjection:Fraction volumique:Ponctuel:Ventricule gauche:Numérique:" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                     <originalText mediaType="text/xml"><reference value="#def0021" /></originalText>
                   </code>
                   <text><reference value="#def0021" /></text>
@@ -1267,7 +1347,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.1" />
                   <id root="01775B7C-E5FB-4A5B-B222-768EB8A1967C" />
                   <!-- [ANS] Code à remplacer  -->
-                  <code code="L0013" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Mode Programmé">
+                  <code code="GEN-387" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Mode Programmé">
                     <originalText mediaType="text/xml"><reference value="#def0023" /></originalText>
                   </code>
                   <text><reference value="#def0023" /></text>
@@ -1284,7 +1364,7 @@
                   <!-- CI-SIS Observation Dispositifs Médicaux -->
                   <templateId root="1.2.250.1.213.1.1.3.1" />
                   <id root="C3FF41E1-8ADE-4281-9E2F-7115A2909AB8" />
-                  <code code="L0014" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Tension">
+                  <code code="GEN-388" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Tension dernier contrôle">
                     <originalText mediaType="text/xml"><reference value="#def0024" /></originalText>
                   </code>
                   <text><reference value="#def0024" /></text>
@@ -1302,7 +1382,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.1" />
                   <id root="A0EF02B5-6E37-41D3-811B-A08481F47BC4" />
                   <!-- [ANS] Code à remplacer -->
-                  <code code="L0015" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Impédance">
+                  <code code="GEN-389" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Impédance">
                     <originalText mediaType="text/xml"><reference value="#def0025" /></originalText>
                   </code>
                   <text><reference value="#def0025" /></text>
@@ -1320,7 +1400,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.1" />
                   <id root="E38CBFA3-2521-42AC-AF7B-8A087368DED1" />
                   <!-- [ANS] Code à remplacer -->
-                  <code code="L0016" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Temps de Charge">
+                  <code code="GEN-390" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Temps de charge">
                     <originalText mediaType="text/xml"><reference value="#def0026" /></originalText>
                   </code>
                   <text><reference value="#def0026" /></text>
@@ -1376,7 +1456,7 @@
                     <text><reference value="#def0032" /></text>
                     <statusCode code="completed"/>
                     <effectiveTime nullFlavor="NASK"/>
-                  <value xsi:type="CD" code="44627009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="infundibulum" />
+                  <value xsi:type="CD" code="44627009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="voie efférente du ventricule droit" />
                 </observation>
               </entryRelationship>
               <!-- Entrée Simple Observation : Polarité (Sonde A) -->
@@ -1388,7 +1468,7 @@
                     <templateId root="1.2.250.1.213.1.1.3.48" />
                     <id root="2A8352AE-FE40-4898-880B-7DD8CCE0E2BA" />
                   <!-- [ANS] Code à remplacer -->
-                    <code code="L0053" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Polarité"/>
+                  <code code="GEN-407" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Polarité"/>
                     <text><reference value="#def0027" /></text>
                     <statusCode code="completed"/>
                     <effectiveTime nullFlavor="NASK"/>
@@ -1404,13 +1484,13 @@
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="DEFA2A03-3842-42DE-96A0-4C282F9CB3C4" />
                   <!-- [ANS] Code à remplacer par code EMDN -->
-                  <code code="L0017" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Connexions"/>
+                  <code code="GEN-391" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Connexions"/>
                   <text><reference value="#def0029" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
                   <!-- [ANS] Code à remplacer -->
                   <!-- Valeur provenant du JDV_UFCV_Connx_CISIS -->
-                  <value xsi:type="CD" code="D0020-2" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="IS-1" />
+                  <value xsi:type="CD" code="GEN-375" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="IS-1" />
                 </observation>
               </entryRelationship>
               <!-- Entrée Simple Observation : Adapteur (Sonde A) -->
@@ -1422,7 +1502,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="4E23CF76-3469-407E-B50F-DA7FCC391709" />
                   <!-- [ANS] Code à remplacer par code EMDN -->
-                  <code code="L0018" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Adaptateur"/>
+                  <code code="GEN-392" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Adaptateur"/>
                   <text><reference value="#def0030" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -1452,7 +1532,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="BA91FBF1-8A62-4B62-93CF-B89315A46E94" />
-                  <code code="L0021" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Courant"/>
+                  <code code="GEN-393" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Courant"/>
                   <text><reference value="#def0033" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -1467,7 +1547,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="801A4781-D846-4E6D-B2ED-B900F24C5447" />
-                  <code code="L0022" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Détection"/>
+                  <code code="GEN-394" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Détection"/>
                   <text><reference value="#def0034" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -1482,7 +1562,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="59506BB2-626F-4561-BCE8-1D2D7E562442" />
-                  <code code="L0015" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Impédance"/>
+                  <code code="GEN-389" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Impédance"/>
                   <text><reference value="#def0035" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -1498,7 +1578,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="EE3D253F-70CF-47FB-864E-16584D211F36" />
                   <!-- [ANS] Code à remplacer -->
-                  <code code="L0023" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Seuil à ms"/>
+                  <code code="GEN-395" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Seuil à ms"/>
                   <text><reference value="#def0036" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -1514,7 +1594,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="6715845E-97B2-429D-ADF0-C0BE0C01BB87" />
                   <!-- [ANS] Code à remplacer -->
-                  <code code="L0016" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Temps de Charge"/>
+                  <code code="GEN-390" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Temps de charge"/>
                   <text><reference value="#def0039" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -1529,7 +1609,7 @@
                  <!-- Conformité CI-SIS -->
                  <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="1492872E-DE7F-4971-9EE0-7C4D50AD46ED" />
-                  <code code="L0026" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Seuil de stimulation"/>
+                  <code code="GEN-398" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Seuil de stimulation"/>
                   <text><reference value="#def0040" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -1544,7 +1624,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="A75B175F-77A1-4BD0-ADBC-69DBD03097DA" />
-                  <code code="L0027" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Recueil"/>
+                  <code code="GEN-399" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Recueil"/>
                   <text><reference value="#def0041" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -1559,7 +1639,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="6C7F963B-91DF-438B-A8E6-E9D77C7CD6FB" />
-                  <code code="L0015" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Impédance"/>
+                  <code code="GEN-389" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Impédance"/>
                   <text><reference value="#def0042" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -1610,7 +1690,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="524A1AEC-B1DD-49B4-8DBE-39AC281BDB36" />
-                  <code code="L0053" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Polarité"/>
+                  <code code="GEN-407" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Polarité"/>
                   <text><reference value="#def0049" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -1626,11 +1706,11 @@
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="1605E861-B840-466C-BA3B-C9E4155D652C" />
                   <!-- [ANS] Code à remplacer par EMDN -->
-                  <code code="L0017" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Connexions"/>
+                  <code code="GEN-391" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Connexions"/>
                   <text><reference value="#def0051" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
-                   <value xsi:type="CD" code="D0020-2" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="IS-1" />
+                  <value xsi:type="CD" code="GEN-375" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="IS-1" />
                 </observation>
               </entryRelationship>
 			        <!-- Entrée Simple Observation : Adapteur (Sonde VD) -->
@@ -1643,7 +1723,7 @@
                   <id root="93380E6B-EA79-4215-9A4D-E63750A3A825" />
                   <!-- Valeur issue du JDV_UFCV_CodEntree_CISIS -->
                   <!-- [ANS] Code à remplacer par EMDN -->
-                  <code code="L0018" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Adaptateur"/>
+                  <code code="GEN-392" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Adaptateur"/>
                   <text><reference value="#def0052" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -1679,7 +1759,7 @@
                   <text><reference value="#def0054" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
-                  <value xsi:type="CD"  code="44627009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="infundibulum" />
+                  <value xsi:type="CD"  code="44627009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="voie efférente du ventricule droit" />
                 </observation>
               </entryRelationship>
 			        <!-- Entrée Simple Observation : Mesures à l'Implantation Courant (Sonde VD) -->
@@ -1691,7 +1771,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="0E87484F-D870-4BF3-A4EE-EE6C534F2298" />
                   <!-- Valeur issue du JDV_UFCV_CodEntree_CISIS -->
-                  <code code="L0021" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Courant"/>
+                  <code code="GEN-393" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Courant"/>
                   <text><reference value="#def0055" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -1707,7 +1787,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="C41E6767-67E1-49E2-B78D-30F7D84A698F" />
                   <!-- Valeur issue du JDV_UFCV_CodEntree_CISIS -->
-                  <code code="L0022" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Détection"/>
+                  <code code="GEN-394" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Détection"/>
                   <text><reference value="#def0056" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -1723,7 +1803,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="8E0775C6-F3A2-4E04-81FC-E42CBEF7DA5B" />
                   <!-- Valeur issue du JDV_UFCV_CodEntree_CISIS -->
-                  <code code="L0015" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Impédance"/>
+                  <code code="GEN-389" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Impédance"/>
                   <text><reference value="#def0057" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -1738,7 +1818,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="EFA1D8F4-2A2D-4107-A579-5A696E6CE38A" />
-                  <code code="L0023" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Seuil à ms"/>
+                  <code code="GEN-395" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Seuil à ms"/>
                   <text><reference value="#def0058" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -1754,7 +1834,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="E597DE6E-A86F-4BCE-9B30-BF19DD22833B" />
                   <!-- Valeur issue du JDV_UFCV_CodEntree_CISIS -->
-                  <code code="L0024" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Défibrillation efficace à:"/>
+                  <code code="GEN-396" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Défibrillation efficace à"/>
                   <text><reference value="#def0059" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -1770,7 +1850,7 @@
                  <templateId root="1.2.250.1.213.1.1.3.48" />
                  <id root="966226D3-C914-47EF-A456-D9DBB77AE073" />
                   <!-- Valeur issue du JDV_UFCV_CodEntree_CISIS -->
-                  <code code="L0025" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Impédance de choc"/>
+                  <code code="GEN-397" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Impédance de choc"/>
                   <text><reference value="#def0060" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -1786,7 +1866,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="C2F7BF40-F940-4E4C-B159-ED69F0516053" />
                   <!-- Valeur issue du JDV_UFCV_CodEntree_CISIS -->
-                  <code code="L0016" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Temps de Charge"/>
+                  <code code="GEN-390" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Temps de charge"/>
                   <text><reference value="#def0061" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -1802,7 +1882,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="79E97C0C-D133-413F-87AC-75E8806BB0DF" />
                   <!-- Valeur issue du JDV_UFCV_CodEntree_CISIS -->
-                  <code code="L0026" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Seuil de Stimulation"/>
+                  <code code="GEN-398" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Seuil de stimulation"/>
                   <text><reference value="#def0062" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -1818,7 +1898,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="527D82D7-69AB-4E4D-B5F5-2E869674FE71" />
                   <!-- Valeur issue du JDV_UFCV_CodEntree_CISIS -->
-                  <code code="L0027" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Recueil"/>
+                  <code code="GEN-399" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Recueil"/>
                   <text><reference value="#def0063" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -1834,7 +1914,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                  <id root="BC35BC60-4DE6-46CF-9B58-68944A1204CD" />
                   <!-- Valeur issue du JDV_UFCV_CodEntree_CISIS -->
-                  <code code="L0015" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Impédance"/>
+                  <code code="GEN-389" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Impédance"/>
                   <text><reference value="#def0064" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -1850,7 +1930,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="962DF6DC-08C2-460D-B6F1-EFD0D5430F8E" />
                   <!-- Valeur issue du JDV_UFCV_CodEntree_CISIS -->
-                  <code code="L0025" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Impédance de choc"/>
+                  <code code="GEN-397" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Impédance de choc"/>
                   <text><reference value="#def0076" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -1901,7 +1981,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="24ADC0E0-37C8-4845-B9B6-27FC953D2AFD" />
-                  <code code="L0053" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Polarité"/>
+                  <code code="GEN-407" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Polarité"/>
                     <text><reference value="#def00070" /></text>
                     <statusCode code="completed"/>
                     <effectiveTime nullFlavor="NASK"/>
@@ -1917,12 +1997,12 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="24ADC0E0-37C8-4845-B9B6-27FC953D2AFD" />
-                  <code code="L0017" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Connexions"/>
+                  <code code="GEN-391" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Connexions"/>
                     <text><reference value="#def00072" /></text>
                     <statusCode code="completed"/>
                     <effectiveTime nullFlavor="NASK"/>
                   <!-- Valeur issue JDV_UFCV_Connx_CISIS -->
-                    <value xsi:type="CD" code="D0020-2" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="IS-1" />
+                  <value xsi:type="CD" code="GEN-375" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="IS-1" />
                 </observation>
               </entryRelationship>
               <!-- Entrée Simple Observation : Adapteur (Sonde VG) -->
@@ -1934,7 +2014,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="24ADC0E0-37C8-4845-B9B6-27FC953D2AFD" />
                   <!-- [ANS]Code à remplacer par EMDN -->
-                  <code code="L0018" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Adapteur"/>
+                  <code code="GEN-392" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Adapteur"/>
                     <text><reference value="#def00073" /></text>
                     <statusCode code="completed"/>
                     <effectiveTime nullFlavor="NASK"/>
@@ -1953,7 +2033,7 @@
                     <text><reference value="#def00074" /></text>
                     <statusCode code="completed"/>
                     <effectiveTime nullFlavor="NASK"/>
-                  <value xsi:type="CD" code="303578004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="sous-Clavière" />
+                  <value xsi:type="CD" code="303578004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="sous-clavière" />
                 </observation>
               </entryRelationship>
               <!-- Entrée Simple Observation : Localisation (Sonde VG) -->
@@ -1968,7 +2048,7 @@
                   <text><reference value="#def00075" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
-                  <value xsi:type="CD"  code="44627009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="infundibulum" />
+                  <value xsi:type="CD"  code="44627009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="voie efférente du ventricule droit" />
                 </observation>
               </entryRelationship>
               <!-- Entrée Simple Observation : Mesures à l'Implantation Courant (Sonde VG) -->
@@ -1979,7 +2059,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="C82C4C7E-CDFE-4AC8-9128-A9675A9AE162" />
-                  <code code="L0021" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Courant"/>
+                  <code code="GEN-393" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Courant"/>
                   <text><reference value="#def0077" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -1995,7 +2075,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="3B20BDB4-5167-4861-859C-155A2E747B7E" />
                   <!-- [ANS]Code à remplacer par EMDN -->
-                  <code code="L0022" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Détection"/>
+                  <code code="GEN-394" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Détection"/>
                   <text><reference value="#def0078" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -2010,7 +2090,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="0AA2AED7-3CEC-4DD0-A222-4AA8A79FE67C" />
-                  <code code="L0015" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Impédance"/>
+                  <code code="GEN-389" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Impédance"/>
                   <text><reference value="#def0079" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -2025,7 +2105,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="9F1E2A44-E01E-4BE9-BD77-96AF7B7C2D01" />
-                  <code code="L0023" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Seuil à ms"/>
+                  <code code="GEN-395" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Seuil à ms"/>
                   <text><reference value="#def0080" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -2040,7 +2120,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="D5C66DE5-0A99-4D3A-ADD7-0F74B4F5834B" />
-                  <code code="L0016" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Temps de Charge"/>
+                  <code code="GEN-390" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Temps de charge"/>
                   <text><reference value="#def0083" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -2055,7 +2135,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="F7B9C7BB-A4C4-43D4-85EE-7CE1C9103378" />
-                  <code code="L0026" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Seuil de stimulation"/>
+                  <code code="GEN-398" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Seuil de stimulation"/>
                   <text><reference value="#def0084" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -2070,7 +2150,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="A1D200BA-8EEC-4EF4-B72A-CA551BF692D6" />
-                  <code code="L0015" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Impédance"/>
+                  <code code="GEN-389" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Impédance"/>
                   <text><reference value="#def0086" /></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NASK"/>
@@ -2100,9 +2180,8 @@
           <text>
             <list>
               <item>
-                <linkHtml href="Documents/DCI.pdf">Documentation Défibrillateur
-                           Cardiaque</linkHtml>
-              </item>
+                <content ID="dci-pdf"><linkHtml href="documentsAnnexes/Brochure-Defibrillateur-DAI-DEF.pdf">Brochure-Defibrillateur-DAI-DEF</linkHtml></content>
+              </item>              
             </list>
           </text>
           <entry>
@@ -2113,7 +2192,7 @@
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.4" />
               <id root="BF96610C-53C7-44C3-B143-5F05CE075922" />
               <code nullFlavor="NA" />
-              <text><reference value="avk0035"></reference></text>
+              <text><reference value="dci-pdf"></reference></text>
               <reference typeCode="REFR">
                 <externalDocument classCode="DOC" moodCode="EVN">
                   <id root="66DB1312-E27C-4CBF-B7C7-AFFA9073FF37"/>

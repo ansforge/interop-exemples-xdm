@@ -710,7 +710,7 @@
                   <!-- Conformité CI-SIS FR-Simple-Observation-->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="BD8F56CE-DD69-41F4-854E-B645DC0E94AD" />
-                  <code code="MED-052" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" displayName="Arrêt de tous les traitements actifs" />
+                  <code code="MED-052" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" displayName="Arrêt de tous les traitements actifs" />
                   <text><reference value="MED-ARRET-001" /></text>
                   <statusCode code="completed" />
                   <!-- Date d'arrrêt des traitements actifs -->
@@ -789,7 +789,9 @@
                   <!-- Identifiant du prescripteur -->
                   <id root="1.2.250.1.71.4.2.1" extension="10100997245" />
                   <!-- Profession / Spécialité du prescripteur -->
-                  <code code="G15_10/SCH16" codeSystem="1.2.250.1.213.1.1.4.5" displayName="Médecin - Chirurgie thoracique et cardio-vasculaire (SCH)" />
+                  <code code="G15_10/SM11"
+                    displayName="Médecin - Chirurgie thoracique et cardio-vasculaire (SM)"
+                    codeSystem="1.2.250.1.213.1.1.4.5"/>
                   <!-- Nom et prénom prescripteur -->
                   <assignedPerson>
                     <name>
@@ -1178,7 +1180,8 @@
               <!-- Conformité CI-SIS FR-Observation-sur-la-grossesse -->
               <templateId root="1.2.250.1.213.1.1.3.53"/>
               <id root="08A9FB0B-4EF1-4E60-9445-1F6F5D9180FF" />
-              <code code="MED-089" displayName="Grossesse multiple" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+              <code code="45371-2" displayName="Grossesse multiple"
+                codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                 <originalText><reference value="#grossesseMult" /></originalText>
               </code>
               <text><reference value="grossesseMult" /></text>

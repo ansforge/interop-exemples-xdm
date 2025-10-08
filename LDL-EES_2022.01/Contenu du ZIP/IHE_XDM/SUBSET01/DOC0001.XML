@@ -606,7 +606,7 @@
                                     <templateId root="1.2.250.1.213.1.1.3.41" />
                                     <id root="B18197B9-78A0-4DF6-9811-A464D942B063"/>
                                     <!-- Type d'allergie / hypersensibilité -->
-                                    <!-- Valeur issue du JDV_TypeEvenementIndesirablePrevisible_CISIS(1.2.250.1.213.1.1.5.794)-->
+                                    <!-- Valeur issue du jdv-type-evenement-indesirable-previsible-cisis(1.2.250.1.213.1.1.5.794)-->
                                     <code code="416098002" displayName="allergie médicamenteuse"
                                         codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                                     <text><reference value="#allergie-type-001"/></text>
@@ -651,7 +651,7 @@
                                             <effectiveTime>
                                                 <low value='20180221'/>
                                             </effectiveTime>
-                                            <!-- [ANS] à trouver le code CIM-11 provenant du JDV_AllergieReaction_CISIS (1.2.250.1.213.1.1.5.674) -->
+                                            <!-- [ANS] à trouver le code CIM-11 -->
                                             <value xsi:type='CD' code='126485001' displayName='urticaire'
                                                 codeSystem='2.16.840.1.113883.6.96' codeSystemName='SNOMED CT'>
                                                 <originalText><reference value='#allergie-reaction-001'/></originalText>
@@ -672,7 +672,7 @@
                                                 codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7:ActCode"/>
                                             <text><reference value='#allergie-severite-001'/></text>
                                             <statusCode code="completed"/>
-                                            <!-- JDV_SeveriteObservation_CISIS (1.2.250.1.213.1.1.5.675) -->
+                                            <!-- jdv-severite-observation-cisis (1.2.250.1.213.1.1.5.675) -->
                                             <value xsi:type="CD" code="6736007" displayName="modéré"
                                                 codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                                         </observation>

@@ -487,7 +487,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.94"/>
                   <id root="716D9312-E95B-4A5D-AC3C-08C36251E569" />
-                  <code code="GEN-105" displayName="Protection universelle maladie (Puma)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="GEN-105" displayName="Protection universelle maladie (Puma)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <statusCode code="completed" />
                   <!-- Organisme de couverture sociale -->
                   <performer typeCode="PRF">
@@ -583,7 +583,7 @@
               <!-- [0..1] Utilisation d'un système de CAD (à ne créer que si utilisation d'un système de CAD) -->
               <participant typeCode="IND">
                 <participantRole>
-                  <code code="MED-1058" displayName="Système de CAD" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-1058" displayName="Système de CAD" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <playingDevice classCode="DEV">
                     <manufacturerModelName nullFlavor="NA" />
                   </playingDevice>
@@ -603,7 +603,7 @@
               <!-- [0..1] Numérique DR - Mammographe muni de l'option tomosynthèse (à ne créer que si le mammographe est munit de l'option tomosynthèse) -->
               <participant typeCode="IND">
                 <participantRole>
-                  <code code="MED-113" displayName="Tomosynthèse" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="103892-6" displayName="tomosynthèse mammaire numérique dépistage du sein" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                   <playingDevice classCode="DEV">
                     <manufacturerModelName nullFlavor="NA" />
                   </playingDevice>
@@ -779,7 +779,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="B4157D9F-3D33-419E-8A88-0C36B5FFC980" />
-                  <code code="MED-029" displayName="Traitement hormonal substitutif de la ménopause en cours" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-029" displayName="Traitement hormonal substitutif de la ménopause en cours" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="trait-hormo"/></text>
                   <statusCode code="completed" />
                   <effectiveTime>
@@ -796,7 +796,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="B4157D9F-3D33-419E-8A88-0C36B5FFC981" />
-                  <code code="MED-1062" displayName="Contexte évocateur d'un haut risque" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-1062" displayName="Contexte évocateur d'un haut risque" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="contexte-haut-risque"/></text>
                   <statusCode code="completed" />
                   <effectiveTime>
@@ -938,7 +938,7 @@
                   <effectiveTime>
                     <low value="2010" />
                   </effectiveTime>
-                  <value xsi:type="CD" code="MED-1059" displayName="Chirurgie plastie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <value xsi:type="CD" code="MED-1059" displayName="Chirurgie plastie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <originalText><reference value="#chirurgie-plastie-droit"/></originalText>
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
@@ -965,7 +965,7 @@
                   <effectiveTime>
                     <low value="2010" />
                   </effectiveTime>
-                  <value xsi:type="CD" code="MED-1059" displayName="Chirurgie plastie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <value xsi:type="CD" code="MED-1059" displayName="Chirurgie plastie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <originalText><reference value="#chirurgie-plastie-gauche"/></originalText>
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
@@ -1176,7 +1176,7 @@
                     <qualifier>
                       <name code="30525-0" displayName="Age" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                       </name>
-                      <value code="GEN-289" displayName="entre 40 et 49 ans" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                      <value code="GEN-289" displayName="entre 40 et 49 ans" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                       </value>
                     </qualifier>
                   </value>
@@ -1205,7 +1205,7 @@
                     <qualifier>
                       <name code="30525-0" displayName="Age" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                       </name>
-                      <value code="GEN-290" displayName="entre 50 et 59 ans" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                      <value code="GEN-290" displayName="entre 50 et 59 ans" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                       </value>
                     </qualifier>
                   </value>
@@ -1252,7 +1252,7 @@
                   <text><reference value="#mutation-BRCA-pere" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
-                  <value xsi:type="CD" code="MED-1061" displayName="Mutation BRCA 1/2" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <value xsi:type="CD" code="MED-1061" displayName="Mutation BRCA 1/2" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="72143-1" displayName="Sexe" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                       </name>
@@ -1288,7 +1288,7 @@
                     <qualifier>
                       <name code="30525-0" displayName="Age" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                       </name>
-                      <value code="GEN-287" displayName="avant 30 ans" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                      <value code="GEN-287" displayName="avant 30 ans" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                       </value>
                     </qualifier>
                   </value>
@@ -1320,7 +1320,7 @@
                     <qualifier>
                       <name code="30525-0" displayName="Age" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                       </name>
-                      <value code="GEN-288" displayName="entre 30 et 39 ans" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                      <value code="GEN-288" displayName="entre 30 et 39 ans" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                       </value>
                     </qualifier>
                   </value>
@@ -1352,7 +1352,7 @@
                     <qualifier>
                       <name code="30525-0" displayName="Age" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                       </name>
-                      <value code="GEN-289" displayName="entre 40 et 49 ans" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                      <value code="GEN-289" displayName="entre 40 et 49 ans" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                       </value>
                     </qualifier>
                   </value>
@@ -1384,7 +1384,7 @@
                     <qualifier>
                       <name code="30525-0" displayName="Age" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                       </name>
-                      <value code="GEN-290" displayName="entre 50 et 59 ans" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                      <value code="GEN-290" displayName="entre 50 et 59 ans" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                       </value>
                     </qualifier>
                   </value>
@@ -1416,7 +1416,7 @@
                     <qualifier>
                       <name code="30525-0" displayName="Age" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                       </name>
-                      <value code="GEN-291" displayName="avant 70 ans" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                      <value code="GEN-291" displayName="avant 70 ans" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                       </value>
                     </qualifier>
                   </value>
@@ -1488,7 +1488,7 @@
                   <text><reference value="#mutation-BRCA-mere" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
-                  <value xsi:type="CD" code="MED-1061" displayName="Mutation BRCA 1/2" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <value xsi:type="CD" code="MED-1061" displayName="Mutation BRCA 1/2" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="72143-1" displayName="Sexe" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                       </name>
@@ -1524,7 +1524,7 @@
                     <qualifier>
                       <name code="30525-0" displayName="Age" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                       </name>
-                      <value code="GEN-287" displayName="avant 30 ans" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                      <value code="GEN-287" displayName="avant 30 ans" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                       </value>
                     </qualifier>
                   </value>
@@ -1556,7 +1556,7 @@
                     <qualifier>
                       <name code="30525-0" displayName="Age" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                       </name>
-                      <value code="GEN-288" displayName="entre 30 et 39 ans" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                      <value code="GEN-288" displayName="entre 30 et 39 ans" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                       </value>
                     </qualifier>
                   </value>
@@ -1588,7 +1588,7 @@
                     <qualifier>
                       <name code="30525-0" displayName="Age" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                       </name>
-                      <value code="GEN-289" displayName="entre 40 et 49 ans" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                      <value code="GEN-289" displayName="entre 40 et 49 ans" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                       </value>
                     </qualifier>
                   </value>
@@ -1620,7 +1620,7 @@
                     <qualifier>
                       <name code="30525-0" displayName="Age" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                       </name>
-                      <value code="GEN-290" displayName="entre 50 et 59 ans" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                      <value code="GEN-290" displayName="entre 50 et 59 ans" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                       </value>
                     </qualifier>
                   </value>
@@ -1652,7 +1652,7 @@
                     <qualifier>
                       <name code="30525-0" displayName="Age" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                       </name>
-                      <value code="GEN-291" displayName="avant 70 ans" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                      <value code="GEN-291" displayName="avant 70 ans" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                       </value>
                     </qualifier>
                   </value>
@@ -1928,7 +1928,7 @@
                   <templateId root="2.16.840.1.113883.10.20.1.29" />
                   <templateId root="1.2.250.1.213.1.1.3.62" />
                   <id root="B117A7E6-4E0B-46AA-8134-A405631F9C91" />
-                  <code code="MED-022" displayName="Interpretation du lecteur" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-022" displayName="Interpretation du lecteur" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#premiereLect" /></text>
                   <statusCode code="completed" />
                   <!-- Date de l'examen -->
@@ -1941,12 +1941,12 @@
                   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="AF68094D-9495-4A7C-9D23-8E6A63789880" />
-                  <code code="MED-008" displayName="Type de lecture" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-008" displayName="Type de lecture" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#typeLect"/></text>
                   <statusCode code="completed" />
                   <effectiveTime value="20210729" />
                   <!-- Valeur issue du JDV_TypeLecture_CISIS (1.2.250.1.213.1.1.5.29) -->
-                  <value xsi:type="CD" code="MED-024" displayName="Films" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <value xsi:type="CD" code="MED-024" displayName="Films" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                 </observation>
               </entry>
               <!-- [1..1] Entrée FR-Simple-Observation : Examen clinique -->
@@ -1955,12 +1955,12 @@
                   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="4B5C57F1-58DB-4FC9-96B9-5B39D84918B2" />
-                  <code code="MED-1048" displayName="Examen clinique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-1048" displayName="Examen clinique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#examen"/></text>
                   <statusCode code="completed" />
                   <effectiveTime value="20210729" />
                   <!-- Valeur issue du JDV_ExamenClinique_CISIS (1.2.250.1.213.1.1.5.27) -->
-                  <value xsi:type="CD" code="GEN-039" displayName="Suspect" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <value xsi:type="CD" code="GEN-039" displayName="Suspect" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                 </observation>
               </entry>
               <!-- [1..1] Entrée FR-Simple-Observation : Difficulté technique -->
@@ -1969,7 +1969,7 @@
                   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="7D2BE920-7B78-4B8C-8B12-FBB10ACC2910" />
-                  <code code="GEN-005" displayName="Difficultés techniques" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="GEN-005" displayName="Difficultés techniques" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#difficultesTech" /></text>
                   <statusCode code="completed" />
                   <effectiveTime value="20210729" />
@@ -1982,7 +1982,7 @@
                   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="CECADB5F-09C6-470A-929D-4D2B15CC0FCE" />
-                  <code code="GEN-023" displayName="Précision difficulté" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="GEN-023" displayName="Précision difficulté" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#precisiondiff" /></text>
                   <statusCode code="completed" />
                   <effectiveTime value="20210729" />
@@ -1998,7 +1998,7 @@
                   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="674C1F45-4052-43DC-B7E8-B98F8073500E" />
-                  <code code="MED-018" displayName="Comparaison avec clichés antérieurs" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-018" displayName="Comparaison avec clichés antérieurs" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#comparaison"/></text>
                   <statusCode code="completed" />
                   <!-- Date du bilan comparé -->
@@ -2012,12 +2012,12 @@
                   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="D190CDBB-B0B6-4D73-B532-102B219CA71D" />
-                  <code code="MED-019" displayName="Densité glandulaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="C94305" displayName="densité mammaire" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCIT" />
                   <text><reference value="#densite" /></text>
                   <statusCode code="completed" />
                   <effectiveTime value="20210729" />
                   <!-- Valeur issue du JDV_DensiteMammaire_CISIS (1.2.250.1.213.1.1.5.28) -->
-                  <value xsi:type="CD" code="MED-039" displayName="a" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <value xsi:type="CD" code="MED-039" displayName="a" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                 </observation>
               </entry>
               <!-- ========================= -->
@@ -2029,7 +2029,7 @@
                   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="E9B573C2-BAD3-4C7E-87AC-94D86513FE5B" />
-                  <code code="MED-050" displayName="Cliché(s) complémentaire(s)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-050" displayName="Cliché(s) complémentaire(s)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <!-- valeur issue du JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) -->
@@ -2050,7 +2050,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="E9B573C2-BAD3-4C7E-87AC-94D86513FE5B" />
-                  <code code="MED-050" displayName="Cliché(s) complémentaire(s)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-050" displayName="Cliché(s) complémentaire(s)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <!-- valeur issue du JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) -->
@@ -2071,7 +2071,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="8D28B8FC-94E2-48E4-A463-BF21CC89BCC9" />
-                  <code code="MED-1104" displayName="Résultat première lecture" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-1104" displayName="Résultat première lecture" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <!-- valeur issue du JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) -->
@@ -2082,7 +2082,7 @@
                   <statusCode code="completed" />
                   <effectiveTime value="20210729" />
                   <!-- valeur issue du JDV_Classification_ACR_1_CISIS (1.2.250.1.213.1.1.5.658) -->
-                  <value xsi:type="CD" code="MED-129" displayName="Normal BI-RADS ACR 1" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <value xsi:type="CD" code="MED-129" displayName="Normal BI-RADS ACR 1" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                 </observation>
               </entry>
               <!-- [0..1] Entrée FR-Simple-Observation : Résultat Sein gauche (Anormal BI-RADS ACR [0,3,4,5]) -->
@@ -2093,7 +2093,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="4EFE5DBB-FB67-4D57-A4A9-35D7C077B53C" />
-                  <code code="MED-1104" displayName="Résultat première lecture" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-1104" displayName="Résultat première lecture" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" codeSystem="2.16.840.1.113883.6.1" displayName="latéralité" codeSystemName="LOINC" />
                       <!-- valeur issue du JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) -->
@@ -2104,7 +2104,7 @@
                   <statusCode code="completed" />
                   <effectiveTime value="20210729" />
                   <!-- valeur issue du JDV_Classification_ACR_1_CISIS (1.2.250.1.213.1.1.5.658) -->
-                  <value xsi:type="CD" code="MED-048" displayName="Anormal BI-RADS ACR [0,3,4,5]" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <value xsi:type="CD" code="MED-048" displayName="Anormal BI-RADS ACR [0,3,4,5]" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                 </observation>
               </entry>
               <!-- [1..1] Entrée FR-Simple-Observation : Masse (Droit) -->
@@ -2115,7 +2115,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="AA1E0A38-A07E-4437-8EF4-80366AF181E9" />
-                  <code code="MED-118" displayName="Masse" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-118" displayName="Masse" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <!-- valeur issue du JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) -->
@@ -2138,7 +2138,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="AA1E0A38-A07E-4437-8EF4-80366AF181E9" />
-                  <code code="MED-118" displayName="Masse" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-118" displayName="Masse" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <!-- valeur issue du JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) -->
@@ -2161,7 +2161,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="6246B15F-ABAE-4DCA-AAA4-7F13C1BB257A" />
-                  <code code="MED-119" displayName="Calcifications" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-119" displayName="Calcifications" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <!-- valeur issue du JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) -->
@@ -2184,7 +2184,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="6246B15F-ABAE-4DCA-AAA4-7F13C1BB257A" />
-                  <code code="MED-119" displayName="Calcifications" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-119" displayName="Calcifications" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <!-- valeur issue du JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) -->
@@ -2207,7 +2207,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="41A4FAE5-A262-4C90-9984-08AA579878DF" />
-                  <code code="MED-026" displayName="Masse et calcifications" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-026" displayName="Masse et calcifications" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <!-- valeur issue du JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) -->
@@ -2230,7 +2230,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="41A4FAE5-A262-4C90-9984-08AA579878DF" />
-                  <code code="MED-026" displayName="Masse et calcifications" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-026" displayName="Masse et calcifications" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <!-- valeur issue du JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) -->
@@ -2253,7 +2253,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="814EB3D7-D097-4123-A527-AB33ED893E37" />
-                  <code code="MED-027" displayName="Distortion architecturale" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-027" displayName="Distortion architecturale" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <!-- valeur issue du JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) -->
@@ -2276,7 +2276,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="814EB3D7-D097-4123-A527-AB33ED893E37" />
-                  <code code="MED-027" displayName="Distortion architecturale" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-027" displayName="Distortion architecturale" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <!-- valeur issue du JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) -->
@@ -2299,7 +2299,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="4F68D058-792D-4676-99B5-5F6AE93352C2" />
-                  <code code="MED-028" displayName="Asymétrie focale de densité" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-028" displayName="Asymétrie focale de densité" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <!-- valeur issue du JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) -->
@@ -2322,7 +2322,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="4F68D058-792D-4676-99B5-5F6AE93352C2" />
-                  <code code="MED-028" displayName="Asymétrie focale de densité" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-028" displayName="Asymétrie focale de densité" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <!-- valeur issue du JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) -->
@@ -2351,14 +2351,14 @@
                   <statusCode code="completed" />
                   <effectiveTime value="20210729" />
                   <!-- Valeur issue du JDV_MotifEchographie_CISIS (1.2.250.1.213.1.1.5.88) -->
-                  <value xsi:type="CD" code="GEN-092.01.07" displayName="Autre motif d'échographie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <value xsi:type="CD" code="GEN-092.01.07" displayName="Autre motif d'échographie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <!-- [0..1] Entrée FR-Simple-Observation : Précision du motif de l'échographie -->
                   <entryRelationship typeCode="CAUS">
                     <observation classCode="OBS" moodCode="EVN">
                       <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
                       <templateId root="1.2.250.1.213.1.1.3.48" />
                       <id root="20F2666C-0B57-40D3-A212-58EB2A066CE5" />
-                      <code code="MED-001" displayName="Précision échographie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                      <code code="MED-001" displayName="Précision échographie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                       <text><reference value="#echographie-motif-precision" /></text>
                       <statusCode code="completed" />
                       <effectiveTime value="20210729" />
@@ -2374,7 +2374,7 @@
                       <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
                       <templateId root="1.2.250.1.213.1.1.3.48" />
                       <id root="A8ED3F8C-12AF-4DAD-806D-60F01986ED11" />
-                      <code code="MED-122" displayName="Résultat de l'échographie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                      <code code="MED-122" displayName="Résultat de l'échographie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                         <qualifier>
                           <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                           <!-- valeur issue du JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) -->
@@ -2394,7 +2394,7 @@
                       <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
                       <templateId root="1.2.250.1.213.1.1.3.48" />
                       <id root="A8ED3F8C-12AF-4DAD-806D-60F01986ED11" />
-                      <code code="MED-122" displayName="Résultat de l'échographie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                      <code code="MED-122" displayName="Résultat de l'échographie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                         <qualifier>
                           <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                           <!-- valeur issue du JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) -->
@@ -2405,7 +2405,7 @@
                       <statusCode code="completed" />
                       <effectiveTime value="20210729" />
                       <!-- valeur issue du JDV_Classification_ACR_Echographie_CISIS (1.2.250.1.213.1.1.5.657) -->
-                      <value xsi:type="CD" code="MED-1101" displayName="ACR 3" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                      <value xsi:type="CD" code="MED-1101" displayName="ACR 3" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
                     </observation>
                   </entryRelationship>
                 </observation>
@@ -2465,12 +2465,12 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.27"/>
                   <id root="B41BD0AE-0862-4A26-AFAE-51798C061651" />
-                  <code code="GEN-007" displayName="Conduite à tenir" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="GEN-007" displayName="Conduite à tenir" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#conduite" /></text>
                   <statusCode code="active" />
                   <effectiveTime value="20210729" />
                   <!-- Valeur issue du JDV_ConduiteATenir_1_CISIS (1.2.250.1.213.1.1.5.85) -->
-                  <value xsi:type="CD" code="MED-116" displayName="Suivi rapproché (&lt; 2ans)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <value xsi:type="CD" code="MED-116" displayName="Suivi rapproché (&lt; 2ans)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                 </observation>
               </entry>
               <!-- [0..1] Entrée FR-Demande-d-examen-ou-de-suivi -->
@@ -2484,7 +2484,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.27"/>
                   <id root="6EB1D234-9A74-42B9-AD1A-71D5ACCAFBE2" />
-                  <code code="MED-120" displayName="Fréquence de controle" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-120" displayName="Fréquence de controle" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#frequence-controle" /></text>
                   <statusCode code="active" />
                   <effectiveTime value="20210729" />
@@ -2503,7 +2503,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.27"/>
                   <id root="6EB1D234-9A74-42B9-AD1A-71D5ACCAFBE2" />
-                  <code code="ORG-064" displayName="Demande d'examen ou de suivi" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="ORG-064" displayName="Demande d'examen ou de suivi" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#examen-demande" /></text>
                   <statusCode code="active" />
                   <effectiveTime value="20210729" />
@@ -2730,7 +2730,7 @@
                   <!-- Conformité CI-SIS -->            
                   <templateId root="1.2.250.1.213.1.1.3.62"/>
                   <id root="B117A7E6-4E0B-46AA-8134-A405631F9C91" />
-                  <code code="MED-014" displayName="Bilan diagnostic" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-014" displayName="Bilan diagnostic" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#bilan-diagnostic" /></text>
                   <statusCode code="completed" />
                   <!-- Date de l'examen -->
@@ -2745,12 +2745,12 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="AF68094D-9495-4A7C-9D23-8E6A63789880" />
-                  <code code="MED-013" displayName="Motif du diagnostic" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-013" displayName="Motif du diagnostic" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#diagnostic-motif" /></text>
                   <statusCode code="completed" />
                   <effectiveTime value="20210729" />
                   <!-- Valeur issue du JDV_MotifDiagnostic_CISIS (1.2.250.1.213.1.1.5.35) -->
-                  <value xsi:type="CD" code="MED-1056" displayName="CLINIQUE" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <value xsi:type="CD" code="MED-1056" displayName="CLINIQUE" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                 </observation>
               </entry>
               <!-- [1..1] Entrée FR-Simple-observation : Bilan diagnostic -->
@@ -2761,12 +2761,12 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="AF68094D-9495-4A7C-9D23-8E6A63789880" />
-                  <code code="MED-014" displayName="Bilan diagnostic" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-014" displayName="Bilan diagnostic" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#diagnostic-bilan" /></text>
                   <statusCode code="completed" />
                   <effectiveTime value="20210729" />
                   <!-- Valeur issue du JDV_BilanDiagnostic_CISIS (1.2.250.1.213.1.1.5.84) -->
-                  <value xsi:type="CD" code="GEN-092.04.16" displayName="Autres clichés" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <value xsi:type="CD" code="GEN-092.04.16" displayName="Autres clichés" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                 </observation>
               </entry>
               <!-- [1..1] Entrée FR-Simple-observation : Précision technique du bilan diagnostic -->
@@ -2777,7 +2777,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="AF68094D-9495-4A7C-9D23-8E6A63789880"/>
-                  <code code="GEN-041" displayName="Précision Technique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="GEN-041" displayName="Précision Technique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#diagnostic-bilan-precision"/></text>
                   <statusCode code="completed" />
                   <effectiveTime value="20210729" />
@@ -2795,7 +2795,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="0F07981F-055A-4DC8-9217-B99B3F3C6B23" />
-                  <code code="MED-121" displayName="ACR Final" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-121" displayName="ACR Final" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <value code="24028007" displayName="droit" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
@@ -2805,7 +2805,7 @@
                   <statusCode code="completed" />
                   <effectiveTime value="20210729" />
                   <!-- Valeur issue du JDV_Classification_ACR_CISIS (1.2.250.1.213.1.1.5.481) -->
-                  <value xsi:type="CD" code="MED-131" displayName="Anormal BI-RADS ACR 3" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <value xsi:type="CD" code="MED-131" displayName="Anormal BI-RADS ACR 3" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                 </observation>
               </entry>
               <!-- [1..1] Entrée FR-Simple-Observation : ACR Final [1,2,3,4 ou 5] (Sein gauche) -->
@@ -2816,7 +2816,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="0F07981F-055A-4DC8-9217-B99B3F3C6B23" />
-                  <code code="MED-121" displayName="ACR Final" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-121" displayName="ACR Final" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <value code="7771000" displayName="gauche" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
@@ -2826,7 +2826,7 @@
                   <statusCode code="completed" />
                   <effectiveTime value="20210729" />
                   <!-- Valeur issue du JDV_Classification_ACR_CISIS (1.2.250.1.213.1.1.5.481) -->
-                  <value xsi:type="CD" code="MED-131" displayName="Anormal BI-RADS ACR 3" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <value xsi:type="CD" code="MED-131" displayName="Anormal BI-RADS ACR 3" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                 </observation>
               </entry>
               <!-- [1..*] Entrée FR-Acte : Technique utilisée (Sein Droit) -->
@@ -2921,13 +2921,13 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.27"/>
                   <id root="B41BD0AE-0862-4A26-AFAE-51798C061651" />
-                  <code code="GEN-007" displayName="Conduite à tenir" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="GEN-007" displayName="Conduite à tenir" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#bilan-conduite-a-tenir" /></text>
                   <statusCode code="active" />
                   <effectiveTime value="20210729" />
                   <!-- si ACR 1 ou 2 : Valeur issue du JDV_ConduiteATenir_3_CISIS (1.2.250.1.213.1.1.5.87) -->
                   <!-- si ACR 3, 4 ou 5 : Valeur issue du JDV_ConduiteATenir_1_CISIS (1.2.250.1.213.1.1.5.85) -->
-                  <value xsi:type="CD" code="MED-116" displayName="Suivi rapproché (&lt; 2ans)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <value xsi:type="CD" code="MED-116" displayName="Suivi rapproché (&lt; 2ans)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                 </observation>
               </entry>
               <!-- [0..1] Entrée FR-Demande-d-examen-ou-de-suivi -->
@@ -2941,7 +2941,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.27"/>
                   <id root="6EB1D234-9A74-42B9-AD1A-71D5ACCAFBE2" />
-                  <code code="MED-120" displayName="Fréquence de controle" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-120" displayName="Fréquence de controle" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#bilan-conduite-a-tenir-frequence" /></text>
                   <statusCode code="active" />
                   <effectiveTime value="20210729" />
@@ -2960,7 +2960,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.27"/>
                   <id root="6EB1D234-9A74-42B9-AD1A-71D5ACCAFBE2" />
-                  <code code="ORG-064" displayName="Demande d'examen ou de suivi" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="ORG-064" displayName="Demande d'examen ou de suivi" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#bilan-conduite-a-tenir-examen" /></text>
                   <statusCode code="active" />
                   <effectiveTime value="20210729" />
@@ -3230,7 +3230,7 @@
                   <!-- Conformité CI-SIS -->            
                   <templateId root="1.2.250.1.213.1.1.3.62"/>
                   <id root="9C87C49C-5887-477E-A993-CB22A6369331" />
-                  <code code="MED-022" displayName="Interprétation du lecteur" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-022" displayName="Interprétation du lecteur" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#lecture-2"/></text>
                   <statusCode code="completed" />
                   <!-- Date de la 2ème lecture -->
@@ -3245,12 +3245,12 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="D6C5E1FD-3F7A-4249-9429-C0C616C945CE" />
-                  <code code="MED-008" displayName="Type de lecture" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-008" displayName="Type de lecture" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#type-lecture-2"/></text>
                   <statusCode code="completed" />
                   <effectiveTime value="20210729" />
                   <!-- Valeur issue du JDV_TypeLecture_CISIS (1.2.250.1.213.1.1.5.29) -->
-                  <value xsi:type="CD" code="MED-024" displayName="Films" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <value xsi:type="CD" code="MED-024" displayName="Films" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                 </observation>
               </entry>
               <!-- [1...1] Entrée FR-Simple-Observation : Cliché techniquement insuffisant -->
@@ -3261,7 +3261,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="1202D64C-861A-46CF-9E37-5AA6214289EA" />
-                  <code code="MED-005" displayName="Cliché techniquement insuffisant" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-005" displayName="Cliché techniquement insuffisant" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#cliche-insuffisant" /></text>
                   <statusCode code="completed" />
                   <effectiveTime value="20210729" />
@@ -3277,7 +3277,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="029A07D0-46FF-439F-B67C-24FEEAC4685F" />
                   <!-- Valeur issue du JDV_ClicheTechniquementInsuffisant_CISIS (1.2.250.1.213.1.1.5.648) -->
-                  <code code="GEN-004" displayName="Positionnement" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="GEN-004" displayName="Positionnement" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <value code="24028007" displayName="droit" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
@@ -3298,7 +3298,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="029A07D0-46FF-439F-B67C-24FEEAC4685F" />
                   <!-- Valeur issue du JDV_ClicheTechniquementInsuffisant_CISIS (1.2.250.1.213.1.1.5.648) -->
-                  <code code="GEN-004" displayName="Positionnement" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="GEN-004" displayName="Positionnement" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <value code="7771000" displayName="gauche" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
@@ -3319,7 +3319,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="0DEBFDA6-4424-4436-98CE-A3B57B0A8C64" />
                   <!-- Valeur issue du JDV_ClicheTechniquementInsuffisant_CISIS (1.2.250.1.213.1.1.5.648) -->
-                  <code code="MED-006" displayName="Qualité de l'image" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-006" displayName="Qualité de l'image" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <value code="24028007" displayName="droit" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
@@ -3340,7 +3340,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="0DEBFDA6-4424-4436-98CE-A3B57B0A8C64" />
                   <!-- Valeur issue du JDV_ClicheTechniquementInsuffisant_CISIS (1.2.250.1.213.1.1.5.648) -->
-                  <code code="MED-006" displayName="Qualité de l'image" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-006" displayName="Qualité de l'image" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <value code="7771000" displayName="gauche" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
@@ -3361,7 +3361,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="0FFE12A6-5462-4697-B438-237ACDFA3149" />
                   <!-- Valeur issue du JDV_ClicheTechniquementInsuffisant_CISIS (1.2.250.1.213.1.1.5.648) -->
-                  <code code="MED-007" displayName="Mauvaise qualité de l'impression de la mammographie numérique, Réimpression du cliché" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-007" displayName="Mauvaise qualité de l'impression de la mammographie numérique, Réimpression du cliché" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <value code="24028007" displayName="droit" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
@@ -3382,7 +3382,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="0FFE12A6-5462-4697-B438-237ACDFA3149" />
                   <!-- Valeur issue du JDV_ClicheTechniquementInsuffisant_CISIS (1.2.250.1.213.1.1.5.648) -->
-                  <code code="MED-007" displayName="Mauvaise qualité de l'impression de la mammographie numérique, Réimpression du cliché" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-007" displayName="Mauvaise qualité de l'impression de la mammographie numérique, Réimpression du cliché" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <value code="7771000" displayName="gauche" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
@@ -3402,7 +3402,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="B14E5A65-6433-4A6F-90D1-1968B6D8FAFD" />
-                  <code code="GEN-014" displayName="Renseignements pour que le radiologue puisse corriger les insuffisances techniques" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="GEN-014" displayName="Renseignements pour que le radiologue puisse corriger les insuffisances techniques" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#enClair" /></text>
                   <statusCode code="completed" />
                   <effectiveTime value="20210729" />
@@ -3419,7 +3419,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="A5E3BF80-A93C-4F43-AAE3-E318003BE421" />
-                  <code code="MED-018" displayName="Comparaison avec clichés antérieurs" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-018" displayName="Comparaison avec clichés antérieurs" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#comparaison-2" /></text>
                   <statusCode code="completed" />
                   <!-- date du bilan comparé -->
@@ -3436,7 +3436,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="1216B13C-6ABE-4EE6-A7EE-58A48A805BEE" />
                   <!-- Valeur issue du JDV_ResultatComparaison_CISIS (1.2.250.1.213.1.1.5.649) -->
-                  <code code="GEN-001" displayName="Apparue" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="GEN-001" displayName="Apparue" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <value code="24028007" displayName="droit" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
@@ -3457,7 +3457,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="1216B13C-6ABE-4EE6-A7EE-58A48A805BEE" />
                   <!-- Valeur issue du JDV_ResultatComparaison_CISIS (1.2.250.1.213.1.1.5.649) -->
-                  <code code="GEN-001" displayName="Apparue" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="GEN-001" displayName="Apparue" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <value code="7771000" displayName="gauche" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
@@ -3478,7 +3478,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="42EF6BC7-8B45-4533-8AA2-5B1925A3E239" />
                   <!-- Valeur issue du JDV_ResultatComparaison_CISIS (1.2.250.1.213.1.1.5.649) -->
-                  <code code="GEN-002" displayName="Plus suspecte" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="GEN-002" displayName="Plus suspecte" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <value code="24028007" displayName="droit" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
@@ -3499,7 +3499,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="42EF6BC7-8B45-4533-8AA2-5B1925A3E239" />
                   <!-- Valeur issue du JDV_ResultatComparaison_CISIS (1.2.250.1.213.1.1.5.649) -->
-                  <code code="GEN-002" displayName="Plus suspecte" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="GEN-002" displayName="Plus suspecte" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <value code="7771000" displayName="gauche" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
@@ -3520,7 +3520,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="3D3F16EE-5CF4-48AF-9A3C-1B8D20F7D45E" />
                   <!-- Valeur issue du JDV_ResultatComparaison_CISIS (1.2.250.1.213.1.1.5.649) -->
-                  <code code="GEN-003" displayName="Identique ou moins suspecte" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="GEN-003" displayName="Identique ou moins suspecte" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <value code="24028007" displayName="droit" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
@@ -3541,7 +3541,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="3D3F16EE-5CF4-48AF-9A3C-1B8D20F7D45E" />
                   <!-- Valeur issue du JDV_ResultatComparaison_CISIS (1.2.250.1.213.1.1.5.649) -->
-                  <code code="GEN-003" displayName="Identique ou moins suspecte" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="GEN-003" displayName="Identique ou moins suspecte" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <value code="7771000" displayName="gauche" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
@@ -3561,7 +3561,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="4E1A7F98-18B9-488F-BC15-3039739051E5" />
-                  <code code="MED-043" displayName="Résultat deuxième lecture" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-043" displayName="Résultat deuxième lecture" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <value code="24028007" displayName="droit" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
@@ -3571,7 +3571,7 @@
                   <statusCode code="completed" />
                   <effectiveTime value="20210729" />
                   <!-- Valeur issue du JDV_Classification_ACR_2_CISIS (1.2.250.1.213.1.1.5.650) -->
-                  <value xsi:type="CD" code="MED-129" displayName="Normal BI-RADS ACR 1" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                  <value xsi:type="CD" code="MED-129" displayName="Normal BI-RADS ACR 1" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
                 </observation>
               </entry>
               <!-- [0..1] Entrée FR-Simple-Observation : Résultat Sein gauche (Anormal BI-RADS ACR 3) -->
@@ -3582,7 +3582,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="4EFE5DBB-FB67-4D57-A4A9-35D7C077B53C" />
-                  <code code="MED-043" displayName="Résultat deuxième lecture" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-043" displayName="Résultat deuxième lecture" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" codeSystem="2.16.840.1.113883.6.1" displayName="latéralité" codeSystemName="LOINC" />
                       <!-- valeur issue du JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) -->
@@ -3593,7 +3593,7 @@
                   <statusCode code="completed" />
                   <effectiveTime value="20210729" />
                   <!-- Valeur issue du JDV_Classification_ACR_2_CISIS (1.2.250.1.213.1.1.5.650) -->
-                  <value xsi:type="CD" code="MED-131" displayName="Anormal BI-RADS ACR 3" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                  <value xsi:type="CD" code="MED-131" displayName="Anormal BI-RADS ACR 3" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
                 </observation>
               </entry>
               <!-- [1..1] Entrée FR-Simple-Observation : Masse (Droit) -->
@@ -3604,7 +3604,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="AA1E0A38-A07E-4437-8EF4-80366AF181E9" />
-                  <code code="MED-118" displayName="Masse" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-118" displayName="Masse" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <!-- valeur issue du JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) -->
@@ -3627,7 +3627,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="AA1E0A38-A07E-4437-8EF4-80366AF181E9" />
-                  <code code="MED-118" displayName="Masse" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-118" displayName="Masse" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <!-- valeur issue du JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) -->
@@ -3650,7 +3650,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="6246B15F-ABAE-4DCA-AAA4-7F13C1BB257A" />
-                  <code code="MED-119" displayName="Calcifications" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-119" displayName="Calcifications" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <!-- valeur issue du JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) -->
@@ -3673,7 +3673,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="6246B15F-ABAE-4DCA-AAA4-7F13C1BB257A" />
-                  <code code="MED-119" displayName="Calcifications" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-119" displayName="Calcifications" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <!-- valeur issue du JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) -->
@@ -3696,7 +3696,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="41A4FAE5-A262-4C90-9984-08AA579878DF" />
-                  <code code="MED-026" displayName="Masse et calcifications" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-026" displayName="Masse et calcifications" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <!-- valeur issue du JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) -->
@@ -3719,7 +3719,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="41A4FAE5-A262-4C90-9984-08AA579878DF" />
-                  <code code="MED-026" displayName="Masse et calcifications" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-026" displayName="Masse et calcifications" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <!-- valeur issue du JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) -->
@@ -3742,7 +3742,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="814EB3D7-D097-4123-A527-AB33ED893E37" />
-                  <code code="MED-027" displayName="Distortion architecturale" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-027" displayName="Distortion architecturale" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <!-- valeur issue du JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) (Droit) -->
@@ -3765,7 +3765,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="814EB3D7-D097-4123-A527-AB33ED893E37" />
-                  <code code="MED-027" displayName="Distortion architecturale" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-027" displayName="Distortion architecturale" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <!-- valeur issue du JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) (Droit) -->
@@ -3788,7 +3788,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="4F68D058-792D-4676-99B5-5F6AE93352C2" />
-                  <code code="MED-028" displayName="Asymétrie focale de densité" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-028" displayName="Asymétrie focale de densité" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <!-- valeur issue du JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) -->
@@ -3811,7 +3811,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="4F68D058-792D-4676-99B5-5F6AE93352C2" />
-                  <code code="MED-028" displayName="Asymétrie focale de densité" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <code code="MED-028" displayName="Asymétrie focale de densité" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                     <qualifier>
                       <name code="20228-3" displayName="latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <!-- valeur issue du JDV_Lateralite_CISIS (1.2.250.1.213.1.1.5.160) -->
@@ -3907,7 +3907,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.27"/>
                   <id root="5B7533C9-F1F0-4DFA-B700-9F57B397A4E3" />
                   <!-- Valeur issue du JDV_ExamenComplementaire_CISIS (1.2.250.1.213.1.1.5.647) -->
-                  <code code="MED-035" displayName="Cliché(s) supplémentaire(s)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-035" displayName="Cliché(s) supplémentaire(s)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#cliches-supplementaires" /></text>
                   <statusCode code="active" />
                   <effectiveTime value="20210729" />
@@ -3927,12 +3927,12 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.27"/>
                   <id root="B41BD0AE-0862-4A26-AFAE-51798C061651" />
-                  <code code="GEN-007" displayName="Conduite à tenir" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="GEN-007" displayName="Conduite à tenir" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#conduite-2" /></text>
                   <statusCode code="active" />
                   <effectiveTime value="20210729" />
                   <!-- Valeur issue du JDV_ConduiteATenir_1_CISIS (1.2.250.1.213.1.1.5.85) -->
-                  <value xsi:type="CD" code="MED-116" displayName="Suivi rapproché (&lt; 2ans)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <value xsi:type="CD" code="MED-116" displayName="Suivi rapproché (&lt; 2ans)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                 </observation>
               </entry>
               <!-- [0..1] Entrée FR-Demande-d-examen-ou-de-suivi -->
@@ -3946,7 +3946,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.27"/>
                   <id root="6EB1D234-9A74-42B9-AD1A-71D5ACCAFBE2" />
-                  <code code="MED-120" displayName="Fréquence de controle" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-120" displayName="Fréquence de controle" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#frequence-controle-2" /></text>
                   <statusCode code="active" />
                   <effectiveTime value="20210729" />
@@ -3965,7 +3965,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.27"/>
                   <id root="6EB1D234-9A74-42B9-AD1A-71D5ACCAFBE2" />
-                  <code code="ORG-064" displayName="Demande d'examen ou de suivi" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="ORG-064" displayName="Demande d'examen ou de suivi" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#examen-demande-2" /></text>
                   <statusCode code="active" />
                   <effectiveTime value="20210729" />

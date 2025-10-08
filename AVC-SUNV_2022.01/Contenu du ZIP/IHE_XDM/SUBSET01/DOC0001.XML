@@ -235,7 +235,7 @@
   <documentationOf>
     <serviceEvent classCode="ACT">
       <id root="5A931FFC-E3D3-4153-953F-4C314500A410" />
-      <code code="47039-3" displayName="Historique et examen physique aux admissions de l'hôpital" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+      <code code="18842-5" displayName="Synthèse de sortie" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
       <effectiveTime>
         <low value="20181003120000+0100" />
         <high value="20181003120000+0100" />
@@ -354,7 +354,7 @@
                     <low value="20180923" />
                     <high value="20181003" />
                   </effectiveTime>
-                  <!-- Valeur issue du JDV_AntecedantsMedicaux_CISIS -->
+                  <!-- Valeur issue du jdv-antecedant-medical-cisis -->
                   <value xsi:type="CD" code="I63.9" displayName="Infarctus cérébral, sans précision" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
                     <originalText><reference value="#infarCereb" /></originalText>
                   </value>
@@ -370,7 +370,7 @@
                       <text><reference value="#assert1" /></text>
                       <statusCode code="completed" />
                       <effectiveTime value="2018" />
-                      <value xsi:type="CD" code="MED-479" displayName="Athérome extracrânien" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                      <value xsi:type="CD" code="MED-479" displayName="Athérome extracrânien" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                     </observation>
                   </entryRelationship>
                 </observation>
@@ -503,7 +503,7 @@
               <statusCode code="completed" />
               <effectiveTime value="20181003" />
               <value xsi:type="INT" value="0" />
-              <interpretationCode xsi:type="CE" code="MED-382" displayName="Absence de symptômes" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+              <interpretationCode xsi:type="CE" code="MED-382" displayName="Absence de symptômes" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                 <originalText><reference value="#rankin" /></originalText>
               </interpretationCode>
             </observation>
@@ -531,7 +531,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="F2E6A0B7-95F5-465D-813E-802D9847CF5E" />
-              <code code="MED-513" displayName="Evaluation en kinésithérapie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <code code="MED-513" displayName="Evaluation en kinésithérapie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
               <text><reference value="#avc_44" /></text>
               <statusCode code="completed" />
               <effectiveTime value="20181003" />
@@ -546,7 +546,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="52B928F8-6597-449B-AEAD-91C3B4F0E2E1" />
-              <code code="MED-514" displayName="Evaluation en orthophonie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <code code="MED-514" displayName="Evaluation en orthophonie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
               <text><reference value="#avc_45" /></text>
               <statusCode code="completed" />
               <effectiveTime value="20181003" />
@@ -561,7 +561,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="53FD5020-E85E-4385-812D-DC4B3200D9A4" />
-              <code code="MED-515" displayName="Evaluation en ergothérapie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <code code="MED-515" displayName="Evaluation en ergothérapie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
               <text><reference value="#avc_46" /></text>
               <statusCode code="completed" />
               <effectiveTime value="20181003" />
@@ -576,7 +576,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="FD64DAB3-562E-4D0F-85B7-2515D1B493CE" />
-              <code code="MED-516" displayName="Evaluation de l'assistance sociale" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <code code="MED-516" displayName="Evaluation de l'assistance sociale" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
               <text><reference value="#avc_47" /></text>
               <statusCode code="completed" />
               <effectiveTime value="20181003" />
@@ -591,7 +591,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="DA259E25-7B05-4332-9B29-83B695A57AC3" />
-              <code code="MED-513" displayName="Evaluation en neuropsychologie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <code code="MED-513" displayName="Evaluation en neuropsychologie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
               <text><reference value="#avc_48" /></text>
               <statusCode code="completed" />
               <effectiveTime value="20181003" />
@@ -606,7 +606,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="699354F7-86EB-4AC4-9AA2-35213F46F2AB" />
-              <code code="MED-218" displayName="Rééducation en cours d'hospitalisation" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <code code="MED-218" displayName="Rééducation en cours d'hospitalisation" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
               <text><reference value="#avc_49" /></text>
               <statusCode code="completed" />
               <effectiveTime value="20181003" />
@@ -654,13 +654,13 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="7BBD22BA-89C9-467E-AD2F-04A8DFD2F9C6" />
-              <code code="ORG-074" displayName="Modalité de sortie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <code code="ORG-074" displayName="Modalité de sortie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
               <text><reference value="#sortie" /></text>
               <statusCode code="completed" />
               <effectiveTime>
                 <low value="20181003" />
               </effectiveTime>
-              <value xsi:type="CD" code="GEN-092.06.01" displayName="Autre Etablissement de santé" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <value xsi:type="CD" code="GEN-092.06.01" displayName="Autre Etablissement de santé" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
             </observation>
           </entry>
           <!-- Destination -->
@@ -851,7 +851,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48.16" />
               <id root="7E8F0E39-C756-4B73-BC00-BC72D29E41BB" />
-              <code code="GEN-065" displayName="Statut du document" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <code code="GEN-065" displayName="Statut du document" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
               <text><reference value="#statut"/></text>
               <statusCode code="completed" />
               <effectiveTime value="20180923232000+0100" />

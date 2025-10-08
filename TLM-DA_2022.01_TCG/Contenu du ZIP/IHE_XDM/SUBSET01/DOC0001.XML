@@ -929,7 +929,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.41"/>
                           <id root="B18197B9-78A0-4DF6-9811-A464D942B063"/>
                           <!-- Type d'allergie / hypersensibilité -->
-                          <!-- Valeur issue du JDV_TypeEvenementIndesirablePrevisible_CISIS(1.2.250.1.213.1.1.5.794)-->
+                          <!-- Valeur issue du jdv-type-evenement-indesirable-previsible-cisis(1.2.250.1.213.1.1.5.794)-->
                           <code code="416098002" displayName="allergie médicamenteuse"
                             codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                           <text><reference value="#TypeAllergie"/></text>
@@ -976,7 +976,7 @@
                               <effectiveTime>
                                 <low value="20180221"/>
                               </effectiveTime>
-                              <!-- [ANS] à trouver le code CIM-11 provenant du JDV_AllergieReaction_CISIS (1.2.250.1.213.1.1.5.674)
+                              <!-- [ANS] à trouver le code CIM-11
                                (JDV à fournir par l'OMS) -->
                               <value xsi:type="CD" code="422587007" displayName="Nausea" codeSystem="2.16.840.1.113883.6.96">
                                 <originalText><reference value="#Réaction"/></originalText>
@@ -996,7 +996,7 @@
                                 codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7:ActCode"/>
                               <text><reference value="#Severite_allerg"/></text>
                               <statusCode code="completed"/>
-                              <!-- JDV_SeveriteObservation_CISIS (1.2.250.1.213.1.1.5.675) -->
+                              <!-- jdv-severite-observation-cisis (1.2.250.1.213.1.1.5.675) -->
                               <value xsi:type="CD" code="6736007" displayName="modéré"
                                 codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                             </observation>
@@ -1311,7 +1311,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="A8A8D0C6-E610-4466-9A03-28F63FB0B0B3"/>
                   <code code="MED-052" displayName="Arrêt de tous les traitements actifs"
-                    codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                    codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
                   <text><reference value="MED-ARRET-001"/></text>
                   <statusCode code="completed"/>
                   <!-- Date d'arrrêt des traitements actifs -->
@@ -1392,8 +1392,8 @@
                   <!-- Identifiant du prescripteur -->
                   <id root="1.2.250.1.71.4.2.1" extension="10100997245"/>
                   <!-- Profession / Spécialité du prescripteur -->
-                  <code code="G15_10/SCH16"
-                    displayName="Médecin - Chirurgie thoracique et cardio-vasculaire (SCH)"
+                  <code code="G15_10/SM11"
+                    displayName="Médecin - Chirurgie thoracique et cardio-vasculaire (SM)"
                     codeSystem="1.2.250.1.213.1.1.4.5"/>
                   <!-- Nom et prénom prescripteur -->
                   <assignedPerson>
@@ -1771,8 +1771,8 @@
               <!-- Conformité CI-SIS FR-Observation-sur-la-grossesse -->
               <templateId root="1.2.250.1.213.1.1.3.53"/>
               <id root="519793CA-54AC-4B6C-A966-A00054AF187C"/>
-              <code code="MED-089" displayName="Grossesse multiple"
-                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+              <code code="45371-2" displayName="Grossesse multiple"
+                codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                 <originalText><reference value="#grossesseMult"/></originalText>
               </code>
               <text><reference value="grossesseMult"/></text>

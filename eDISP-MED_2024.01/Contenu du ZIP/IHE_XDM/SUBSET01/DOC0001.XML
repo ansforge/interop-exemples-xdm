@@ -15,7 +15,8 @@
     format HL7 - CDA Release 2 - selon schéma XML (CDA.xsd) du standard ANSI/HL7 CDA, R2-2005 4/21/2005
     **********************************************************************************************************
     Notes:
-    - 17/06/2024 : Création exemple
+    17/06/2024 : Création exemple
+    21/08/2025 : MAJ des références entre parties narratives et entrées
     **********************************************************************************************************
 -->
 
@@ -83,7 +84,6 @@
                     <given qualifier="BR">RUTH</given>
                     <given>ISABELLE</given>
                     <family qualifier="BR">NESSI</family>
-                    <family qualifier="SP">DECOURCY</family>
                     <family qualifier="CL">DECOURCY</family>
                 </name>
                 <administrativeGenderCode code="F" displayName="Féminin" codeSystem="2.16.840.1.113883.5.1"/>
@@ -126,7 +126,7 @@
         <!-- [1..1] Date et heure de création du document par le DP -->
         <time value="20241225093000+0100"/>
         <!-- [1..1] Identification de l'auteur -->
-        <assignedAuthor classCode="ASSIGNED">
+        <assignedAuthor>
             <!-- Identifiant du DP -->
             <id root="1.2.250.1.71.4.2.1" extension="578435954900010/1.2.250.1.176.1"/> 
             <code code="DISPOSITIF" displayName="Dispositif médical" codeSystem="1.2.250.1.213.1.1.4.6"/>
@@ -150,7 +150,7 @@
         <!-- [1..1] Date et heure de création du document par le DP -->
         <time value="20241225093000+0100"/>
         <!-- [1..1] Identification de l'auteur -->
-        <assignedAuthor classCode="ASSIGNED">
+        <assignedAuthor>
             <!-- Identifiant du Pharmacien dispensateur -->
             <id root="1.2.250.1.71.4.2.1" extension="807505123456"/> 
             <code code="G15_21" displayName="Pharmacien" codeSystem="1.2.250.1.213.1.1.4.5"/>
@@ -177,7 +177,7 @@
                 </addr>
                 <!-- Cadre d'exercice : Valeur issue du JDV_J04-XdsPracticeSettingCode-CISIS (1.2.250.1.213.1.1.5.467) -->
                 <standardIndustryClassCode code="AMBULATOIRE" displayName="Ambulatoire"
-                    codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode"/>
+                    codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="TRE_A01_CadreExercice"/>
             </representedOrganization>
         </assignedAuthor>
     </author>
@@ -220,7 +220,7 @@
     <!-- [0..1] Participant : prescripteur -->
     <participant typeCode="REF">
         <!-- Date de la prescription -->
-        <time xsi:type="IVL_TS">
+        <time>
             <low value="20211201093000+0100"/>
         </time>       
         <associatedEntity classCode="PROV">
@@ -372,7 +372,7 @@
                         </addr>
                         <!-- Cadre d'exercice : Valeur issue du JDV_J04-XdsPracticeSettingCode-CISIS (1.2.250.1.213.1.1.5.467) -->
                         <standardIndustryClassCode code="AMBULATOIRE" displayName="Ambulatoire"
-                            codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode"/>
+                            codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="TRE_A01_CadreExercice"/>
                     </representedOrganization>
                 </assignedEntity>
             </performer>
@@ -428,7 +428,7 @@
                         </addr>
                         <!-- Cadre d'exercice : Valeur issue du JDV_J04-XdsPracticeSettingCode-CISIS (1.2.250.1.213.1.1.5.467) -->
                         <standardIndustryClassCode code="AMBULATOIRE" displayName="Ambulatoire"
-                            codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode"/>
+                            codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="TRE_A01_CadreExercice"/>
                     </representedOrganization>
                 </assignedEntity>
             </responsibleParty>
@@ -487,10 +487,10 @@
                               </tr>
                             </thead>
                             <tbody>
-                              <tr>                                  
-                                <td>du 25/01/2023 au 27/01/2023</td>
+                              <tr ID="med-001">                                  
+                                <td><content ID="med-001-duree">du 25/01/2023 au 27/01/2023</content></td>
                                 <td><content ID="med-001-delivre">PARACETAMOL VIATRIS 500 mg, comprimé plaquette(s) thermoformée(s) PVC-aluminium de 16 comprimé(s)</content></td>
-                                <td>2 Boites</td>
+                                <td>2 Boites</td>                                  
                                 <td><content ID="med-001-frequence">4 fois/j à partir du 25/01/2021 pendant 2 jours</content></td>
                                 <td><content ID="med-001-dose-min">1 cp</content> à <content ID="med-001-dose-max">1 cp</content></td>
                                 <td><content ID="med-001-rate-min">1500 mg/j</content> à <content ID="med-001-rate-max">3000 mg/j</content></td> 
@@ -523,7 +523,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>                                  
+                                <tr ID="med-002">                                  
                                     <td>du 25/01/2023 au 27/01/2023</td>
                                     <td><content ID="med-002-delivre">Préparation magistrale :<br/>- 30g de diprosone<br/>- 70g de Cérat Frais de Galien</content></td>
                                     <td>1 Récipient</td>
@@ -603,7 +603,7 @@
                             <!-- Conformité FR-Traitement-dispense(CI-SIS) -->
                             <templateId root="1.2.250.1.213.1.1.3.204"/>
                             <id root="AADC9C14-F1CA-4177-B2C8-A5178D5B3CA9"/>
-                            <text><reference value="#med-001"></reference></text>
+                            <text><reference value="#med-001"></reference></text>  
                             <!-- Unité issue de EDQM Packaging (30009000 "Boite")-->
                             <quantity value="2" unit="30009000"/>                            
                             <product>
@@ -631,7 +631,7 @@
                                         <!-- Nom de la marque -->
                                         <name>PARACETAMOL VIATRIS 500 mg, comprimé plaquette(s) thermoformée(s) PVC-aluminium de 16 comprimé(s)</name>                                        
                                         <!-- Forme galénique : EDQM Standard Terms (0.4.0.127.0.16.1.1.2.1) : Pharmaceutical Dose Forms -->
-                                        <pharm:formCode code="10219000" displayName="Comprimé" codeSystem="0.4.0.127.0.16.1.1.2.1" codeSystemName="EDQM"/>      
+                                        <pharm:formCode code="10219000" displayName="Comprimé" codeSystem="0.4.0.127.0.16.1.1.2.1" codeSystemName="StandardTermsEDQM"/>
                                         <lotNumberText>12345</lotNumberText>
                                         <pharm:expirationTime value="20321231"/>
                                         <!-- Présentation / conditionnement -->
@@ -644,7 +644,7 @@
                                                     codeSystem="1.2.250.1.213.2.3.2" codeSystemName="CIP"/>
                                                 <pharm:name>PARACETAMOL VIATRIS 500 mg, comprimé plaquette(s) thermoformée(s) PVC-aluminium de 16 comprimé(s)</pharm:name>
                                                 <!-- Conditionnement primaire -->
-                                                <pharm:formCode code="30009000" displayName="Boîte" codeSystem="0.4.0.127.0.16.1.1.2.1" codeSystemName="EDQM"/>
+                                                <pharm:formCode code="30009000" displayName="Boîte" codeSystem="0.4.0.127.0.16.1.1.2.1" codeSystemName="StandardTermsEDQM"/>
                                                 <pharm:capacityQuantity value="16" unit="{Tablet}"/> 
                                             </pharm:containerPackagedMedicine>
                                         </pharm:asContent>
@@ -681,7 +681,6 @@
                                     <id root="AADC9C14-F1CA-4177-B2C8-A5178D5B3CA0"/>
                                     <code code="PREItem" displayName="Prescription Item" 
                                         codeSystem="1.3.6.1.4.1.19376.1.9.2.2"  codeSystemName="IHE Pharmacy Item Type List">
-                                        <originalText><reference value="#med-001-item-prescription"></reference></originalText>
                                     </code>
                                     <consumable>
                                         <manufacturedProduct>
@@ -790,7 +789,7 @@
                                     <!-- Mode d'administration "Normal" -->
                                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
                                     <id root="4B007F00-973B-11ED-A8FC-0242AC120002"/>
-                                    <text><reference value="#med-001-instructions-dosage"></reference></text>
+                                    <text><reference value="#med-001-duree"></reference></text>
                                     <statusCode code="completed"/>
                                     <!-- Durée de traitement -->
                                     <effectiveTime xsi:type="IVL_TS">
@@ -814,12 +813,12 @@
                                         </comp>
                                     </effectiveTime>
                                     <!-- valeur issue d'EDQM Standard terms (0.4.0.127.0.16.1.1.2.1) / classe ROA (Voie d'administration) -->
-                                    <routeCode code="20053000" displayName="Voie orale" codeSystem="0.4.0.127.0.16.1.1.2.1" codeSystemName="EDQM">
+                                    <routeCode code="20053000" displayName="Voie orale" codeSystem="0.4.0.127.0.16.1.1.2.1" codeSystemName="StandardTermsEDQM">
                                         <originalText><reference value="#med-001-voie"/></originalText>
                                     </routeCode>                                    
                                     
                                     <!-- [0..1] Région anatomique d'administration : uniquement si posologie structurée -->
-                                    <!-- valeur issue du JDV_HumanSubstanceAdministrationSite-CISIS (1.2.250.1.213.1.1.5.686) -->
+                                    <!-- valeur issue du jdv-human-substance-administration-site-cisis (1.2.250.1.213.1.1.5.686) -->
                                     <!-- <approachSiteCode> </approachSiteCode> -->                                    
                                     
                                     <!-- Dose à administrer : 2 cp -->
@@ -887,7 +886,7 @@
                                     <templateId root="1.3.6.1.4.1.19376.1.9.1.3.9.2"/>
                                     <!-- FR-Acte-substitution (CI-SIS) -->
                                     <templateId root="1.2.250.1.213.1.1.3.206"/>
-                                    <code code="G" codeSystem="2.16.840.1.113883.5.1070" codeSystemName="HL7_substanceAdminSubstitution" displayName="Substitution autorisée par un produit générique">
+                                    <code code="G" codeSystem="2.16.840.1.113883.5.1070" codeSystemName="HL7_SubstanceAdminSubstitution" displayName="Substitution autorisée par un produit générique">
                                         <originalText><reference value="#med-001-substitution"></reference></originalText>
                                     </code>
                                     <statusCode code="completed"/>
@@ -925,13 +924,13 @@
                                         <templateId root="1.3.6.1.4.1.19376.1.9.1.3.1"/>
                                         <!-- Code CIS du médicament -->
                                         <code nullFlavor="NA">
-                                            <originalText><reference value="#med-002"/></originalText>
+                                            <originalText><reference value="#med-002-delivre"/></originalText>
                                         </code>
                                         <!-- Nom de la marque -->
                                         <name nullFlavor="NA"/>
                                         <!-- Forme galénique : EDQM Standard Terms (0.4.0.127.0.16.1.1.2.1) : Pharmaceutical Dose Forms -->
                                         <pharm:formCode code="50015000" displayName="pommade pour application cutanée et nasale" 
-                                            codeSystem="0.4.0.127.0.16.1.1.2.1" codeSystemName="EDQM"/>                    
+                                            codeSystem="0.4.0.127.0.16.1.1.2.1" codeSystemName="StandardTermsEDQM"/>                    
                                     </manufacturedMaterial>                 
                                 </manufacturedProduct>
                             </product>
@@ -947,7 +946,6 @@
                                     <id root="BBDC9C14-F1CA-4177-B2C8-A5178D5B3DB1"/>
                                     <code code="PREItem" displayName="Prescription Item" 
                                         codeSystem="1.3.6.1.4.1.19376.1.9.2.2"  codeSystemName="IHE Pharmacy Item Type List">
-                                        <originalText><reference value="#med-002-item-prescription"/></originalText>
                                     </code>
                                     <consumable>
                                         <manufacturedProduct>

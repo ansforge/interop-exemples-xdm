@@ -17,7 +17,7 @@
 		format HL7 - CDA Release 2 - selon schéma XML (CDA.xsd) du standard ANSI/HL7 CDA, R2-2005 4/21/2005
 		**********************************************************************************************************
 		06/05/2021 : Mise à jour avant publication
-		13/07/2021 : pour code="GEN-167" DisplayName="Quantité" : correction codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" 
+		13/07/2021 : pour code="GEN-167" DisplayName="Quantité" : correction codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" 
 		21/07/2021 : pour code="GEN-167" DisplayName="Quantité" : ajout de l'unité unit="%"
 		11/04/2022:  Migration des terminologies et JDV en SNOMED CT
 		**********************************************************************************************************
@@ -1273,7 +1273,7 @@
                   <text><reference value="#Nat_Mat" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
-                  <value xsi:type="CD" code="MED-310" displayName="Bloc tissulaire paraffiné" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <value xsi:type="CD" code="MED-310" displayName="Bloc tissulaire paraffiné" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <specimen>
                     <specimenRole>
                       <id root="E60A1BAD-8A12-47C0-9C20-21B7AB1AEA05"/>
@@ -1289,7 +1289,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="A211A6F2-D64B-43FB-953C-03623F0D67D0" />
-                  <code code="GEN-167" displayName="Quantité" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="GEN-167" displayName="Quantité" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#Pourcentage" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
@@ -1981,11 +1981,11 @@
               <id root="D3765FC7-678E-4AC8-9FD4-C07A87DD57BF" />
               <!-- code à trouver -->
               
-              <!--<code code="MED-549" displayName="Comparaison avec résultats antérieurs" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>-->
+              <!--<code code="MED-549" displayName="Comparaison avec résultats antérieurs" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>-->
               <code code="75326-9" codeSystem="2.16.840.1.113883.6.1" displayName="Problème">
                 <qualifier>
-                  <name code="MED-549" displayName="Comparaison avec résultats antérieurs" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <value code="MED-542" displayName="Résultats avec une mutation observée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <name code="MED-549" displayName="Comparaison avec résultats antérieurs" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <value code="MED-542" displayName="Résultats avec une mutation observée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                 </qualifier>
               </code>
               <statusCode code="completed" />
@@ -2028,7 +2028,7 @@
                   <id root="37ACFBDE-C20E-472E-AFF2-0E135F89D34F" />
                   <code>
                     <originalText><reference value="#historique" /></originalText>
-                    <translation code="MED-549" displayName="Comparaison avec résultats antérieurs" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                    <translation code="MED-549" displayName="Comparaison avec résultats antérieurs" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
                   </code>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
@@ -2127,8 +2127,8 @@
               <id root="CFAE9168-F917-4952-BA5E-82D5EFB3E655" />
               <code code="75326-9" displayName="Problème" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                 <qualifier>
-                  <name code="MED-550" displayName="Conclusions / Interprétation des résultats" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <value code="MED-542" displayName="Résultats avec une mutation observée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <name code="MED-550" displayName="Conclusions / Interprétation des résultats" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <value code="MED-542" displayName="Résultats avec une mutation observée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                 </qualifier>
               </code>
               <statusCode code="completed" />
@@ -2197,7 +2197,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.170"/>
                       <id root="ABDC970F-914D-4244-B6CB-78371A256B76" />
-                      <code code="MED-299" displayName="Impact de la mutation" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                      <code code="MED-299" displayName="Impact de la mutation" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                       <text><reference value="#Impact_mut" /></text>
                       <statusCode code="completed" />
                       <effectiveTime nullFlavor="NA"/>
@@ -2300,8 +2300,8 @@
               <id root="5CE72DF5-692C-4B19-A304-798F809CEA48" />
               <code code="75326-9" displayName="Problème" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                 <qualifier>
-                  <name code="MED-550" displayName="Conclusions / Interprétation des résultats" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <value code="MED-543" displayName="Résultats sans mutation" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <name code="MED-550" displayName="Conclusions / Interprétation des résultats" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <value code="MED-543" displayName="Résultats sans mutation" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                 </qualifier>
               </code>
               <statusCode code="completed" />
@@ -2402,8 +2402,8 @@
               <id root="CC1B7B49-5253-41EF-B8E5-6F6722F0D35E" />
               <code code="75326-9" displayName="Problème" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                 <qualifier>
-                  <name code="MED-550" displayName="Conclusions / Interprétation des résultats" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <value code="MED-544" displayName="Résultats non interprétables" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <name code="MED-550" displayName="Conclusions / Interprétation des résultats" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <value code="MED-544" displayName="Résultats non interprétables" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                 </qualifier>
               </code>
               <statusCode code="completed" />
@@ -2446,12 +2446,12 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="093C74F0-5CD0-47C4-A919-7607B37B6671" />
-                  <code code="MED-300" displayName="Qualification de la fraction génomique analysée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-300" displayName="Qualification de la fraction génomique analysée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#Qualification2" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <!-- Qualification de la fraction génomique analysée -->
-                  <value xsi:type="CD" code="GEN-166" displayName="Qualité" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <value xsi:type="CD" code="GEN-166" displayName="Qualité" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <specimen>
                     <specimenRole>
                       <id root="8DABC3B4-1919-4482-8BC7-B83783376504"/>
@@ -2468,11 +2468,11 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="34368D10-C055-4874-90FC-5E2A11737457" />
                   <!--Code de l'entrée Nature de la fraction génomique analysée -->
-                  <code code="MED-301" displayName="Nature de la fraction génomique analysée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-301" displayName="Nature de la fraction génomique analysée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#Nat_fraction2" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
-                  <value xsi:type="CD" code="MED-315" displayName="ADN" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <value xsi:type="CD" code="MED-315" displayName="ADN" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <specimen>
                     <specimenRole>
                       <id root="4DB7004A-1110-48F9-B4BD-5BBFBFE7B76D"/>
@@ -2507,8 +2507,8 @@
               <id root="51D19F38-2880-4C96-9B5D-41C71FCC74B5" />
               <code code="75326-9" codeSystem="2.16.840.1.113883.6.1" displayName="Problème">
                 <qualifier>
-                  <name code="MED-550" displayName="Conclusions / Interprétation des résultats" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <value code="MED-545" displayName="Suspicion d'une amplification ou d'une délétion" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <name code="MED-550" displayName="Conclusions / Interprétation des résultats" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <value code="MED-545" displayName="Suspicion d'une amplification ou d'une délétion" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                 </qualifier>
               </code>
               <statusCode code="completed" />
@@ -2755,7 +2755,7 @@
                   <text><reference value="#Nat_Mat2" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
-                  <value xsi:type="CD" code="MED-310" displayName="Bloc tissulaire parafiné" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <value xsi:type="CD" code="MED-310" displayName="Bloc tissulaire parafiné" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <specimen>
                     <specimenRole>
                       <id root="9EA0F202-ACD4-47AF-ACB6-DFC39E95BAE4"/>
@@ -2775,7 +2775,7 @@
                   <text><reference value="#Methode_preparation" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
-                  <value xsi:type="CD" code="MED-302" displayName="macro dissection de la zone d'intérêt" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <value xsi:type="CD" code="MED-302" displayName="macro dissection de la zone d'intérêt" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <specimen>
                     <specimenRole>
                       <id root="7EC5BD5E-AE48-4101-A437-58B4A6374299"/>
@@ -2791,7 +2791,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="C2BDB4F4-8C7B-493C-9DC4-3C605D79B5F6" />
-                  <code code="MED-546" displayName="Méthode d'extraction de l'ADN génomique tumoral" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-546" displayName="Méthode d'extraction de l'ADN génomique tumoral" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#methodeExtractionADN" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
@@ -2811,7 +2811,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="0D86A26F-A108-48B1-8A20-9AF0FE6EAF38" />
-                  <code code="MED-547" displayName="Méthode d'analyse" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-547" displayName="Méthode d'analyse" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#MethodeAnalyse" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
@@ -2831,7 +2831,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="12F638A5-08CF-4459-94D4-DBF25996A928" />
-                  <code code="MED-306" displayName="Séquenceur utilisé" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-306" displayName="Séquenceur utilisé" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#sequenceur" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
@@ -2851,7 +2851,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="96B28990-868E-4B96-893D-8185661A94FF" />
-                  <code code="MED-307" displayName="Sensibilité diagnostique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-307" displayName="Sensibilité diagnostique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#sensibiliteDiagnostic" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
@@ -2871,7 +2871,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="08030EC1-B3D4-4665-ACDB-EFB202932909" />
-                  <code code="MED-548" displayName="Profondeur minimale" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-548" displayName="Profondeur minimale" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#Prof_min" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
@@ -3045,7 +3045,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="D7C2506E-C603-4700-9926-52BA90703678" />
-                  <code code="MED-308" displayName="Version du pipeline d'analyse" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-308" displayName="Version du pipeline d'analyse" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#pipeline" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
@@ -3094,7 +3094,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48.16" />
               <id root="4379386D-81F0-4BBA-BBCA-98F46336C921" />
-              <code code="GEN-065" displayName="Statut du document" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <code code="GEN-065" displayName="Statut du document" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
               <text><reference value="#statutDoc" /></text>
               <statusCode code="completed" />
               <effectiveTime value="201801231245+0100" />

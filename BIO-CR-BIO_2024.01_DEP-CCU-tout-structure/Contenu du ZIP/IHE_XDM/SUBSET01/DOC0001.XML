@@ -1,0 +1,1345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../FeuilleDeStyle/CDA-FO.xsl"?>
+<?oxygen SCHSchema="../schematrons/profils/IHE.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/structurationMinimale/ASIP-STRUCT-MIN-StrucMin.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/CI-SIS_ModelesDeContenusCDA.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/CI-SIS_Modeles_ANS.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/terminologies/schematron/terminologie.sch"?>
+<?oxygen SCHSchema="../schematrons/CI-SIS_BIO-CR-BIO_2024.01.sch"?>
+<!-- 
+	**********************************************************************************************************
+    Document : Compte-rendu d’examens de biologie médicale (BIO-CR-BIO_2024.01_DEP-CCU-tout-structure)      
+    Auteur : ANS
+    **********************************************************************************************************
+    format HL7 - CDA Release 2 niveau 3
+    **********************************************************************************************************
+    Historique :
+    14/09/2023 : Evolution du volet CR-BIO : Ajout de la section FR-Document-PDF-copie (1.2.250.1.213.1.1.2.243)
+    14/08/2024 : Version 2024.01
+    20/08/2025 : correction reference copie du document et nom du fichier exemple
+    **********************************************************************************************************
+-->
+<!--
+    ********************************************************
+    En-tête du document
+    ********************************************************
+-->
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:lab="urn:oid:1.3.6.1.4.1.19376.1.3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="urn:hl7-org:v3 ../infrastructure/cda/CDA_extended.xsd">
+  <realmCode code="FR" />
+  <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040" />
+  <!-- Déclarations de conformité HL7 France -->
+  <templateId root="2.16.840.1.113883.2.8.2.1" />
+  <!-- Déclarations de conformité CI-SIS -->
+  <templateId root="1.2.250.1.213.1.1.1.1" />
+  <!-- Déclarations de conformité IHE -->
+  <templateId root="1.3.6.1.4.1.19376.1.3.3"/>
+  <!-- Déclarations de conformité au modèle BIO-CR-BIO_2024 du CI-SIS -->
+  <templateId root="1.2.250.1.213.1.1.1.55" extension="2024.01" />
+  <!-- Identifiant du document -->
+  <id root="1.2.250.1.213.1.1.1.55.2024.4.1"/>
+  <!-- Type de document -->
+  <code code="11502-2" displayName="CR d'examens biologiques" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+  <!-- Titre du document -->
+  <title>Compte rendu d'examens biologiques</title>
+  <!-- Date et heure de création du document / Validation du CR -->
+  <effectiveTime value="20240104160527+0100" />
+  <!-- Niveau de confidentialité du document -->
+  <confidentialityCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.25" />
+  <!-- Langue du document -->
+  <languageCode code="fr-FR" />
+  <!-- identifiant commun à toutes les versions successives du comtpe rendu -->
+  <setId root="1.2.250.1.213.1.1.1.55.2024.4" />
+  <!-- numéro de la version courante (entier positif) -->
+  <versionNumber value="1" />
+  
+  <!-- Patient -->
+  <recordTarget>
+    <patientRole>
+      <!-- INS-NIR de test  : 1.2.250.1.213.1.4.10 -->
+      <id extension="279035121518989" root="1.2.250.1.213.1.4.10" />
+      <!-- Numéro d'invitation au dépistage du cancer du col de l'utérus (si invitation envoyée par le CRCDC) --> 
+      <id extension="1234567890121" root="1.2.250.1.161.1.20.1.2" />
+      <!-- Adresse du patient -->
+      <addr>
+        <houseNumber>28</houseNumber>
+        <streetName>Av de Breteuil</streetName>
+        <unitID>Escalier A</unitID>
+        <postalCode>75007</postalCode>
+        <city>PARIS</city>
+        <country>FRANCE</country>
+      </addr>
+      <!-- Coordonnées télécom du patient -->
+      <telecom value="tel:0144534551" use="H" />
+      <telecom value="tel:0647151010" use="MC" />
+      <telecom value="mailto:279035121518989@patient.mssante.fr" />
+      <!-- Identité du patient -->
+      <patient classCode="PSN">
+        <name>
+          <!-- Nom et prénom(s) de naissance -->
+          <!-- Nom de l’acte de naissance -->
+          <family qualifier="BR">PAT-TROIS</family> 
+          <!-- Prénoms de l’acte de naissance -->
+          <given>DOMINIQUE MARIE-LOUISE</given>
+          <!-- Premier prénom de l’acte de naissance -->
+          <given qualifier="BR">DOMINIQUE</given>
+          <!-- Nom et prénom utilisés -->
+          <family qualifier="CL">PAT-TROIS</family>
+          <given qualifier="CL">DOMINIQUE</given>        
+        </name>
+        <administrativeGenderCode code="F" displayName="Féminin" codeSystem="2.16.840.1.113883.5.1" />
+        <!-- Date de naissance -->
+        <birthTime value="19790328" />
+        <!-- Représentant du patient -->
+        <guardian>
+          <addr use="H">
+            <houseNumber>28</houseNumber>
+            <streetName>Av de Breteuil</streetName>
+            <postalCode>75007</postalCode>
+            <city>PARIS</city>
+            <country>FRANCE</country>
+          </addr>
+          <telecom value="tel:0147150000" use="H" />
+          <guardianPerson>
+            <name>
+              <prefix>MME</prefix>
+              <family>NESSI</family>
+              <given>Jeanne</given>
+            </name>
+          </guardianPerson>
+        </guardian>
+        <!-- Lieu de naissance du patient -->
+        <birthplace>
+          <place>
+            <addr>
+              <county>51215</county>
+              <city>DOMPREMY</city>
+            </addr>
+          </place>
+        </birthplace>
+      </patient>
+    </patientRole>
+  </recordTarget>
+  
+  <!-- Auteur du résultat du test HPV-HR -->
+  <author>
+    <time value="20240104160527+0100" />
+    <assignedAuthor>
+      <id root="1.2.250.1.71.4.2.1" extension="801234534765" />
+      <code code="G15_10/SM03" displayName="Médecin - Biologie médicale (SM)" codeSystem="1.2.250.1.213.1.1.4.5" />
+      <addr>
+        <houseNumber>8</houseNumber>
+        <streetName>Rue Frédéric Bastia</streetName>
+        <postalCode>92100</postalCode>
+        <city>BOULOGNE-BILLANCOURT</city>
+      </addr>
+      <telecom value="tel:0174589607" use="WP" />
+      <assignedPerson>
+        <name>
+          <prefix>M</prefix>
+          <given>Marcel</given>
+          <family>CAMPARINI</family>
+          <suffix>DR</suffix>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <!-- Identifiant de l'organisation -->
+        <id root="1.2.250.1.71.4.2.2" extension="1120459876" />
+        <!-- Nom de l'organisation -->
+        <name>Laboratoire des charmes</name>
+        <!-- Coordonnées télécom de l'organisation -->
+        <telecom value="tel:0174589607" use="WP" />
+        <!-- Adresse de l'organisation -->
+        <addr>
+          <houseNumber>8</houseNumber>
+          <streetName>Rue Frédéric Bastia</streetName>
+          <postalCode>92100</postalCode>
+          <city>BOULOGNE-BILLANCOURT</city>
+        </addr>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  
+  <!-- Auteur du résultat de l'examen de cytologie -->
+  <author>
+    <time value="20240104102300+0100" />
+    <assignedAuthor>
+      <id root="1.2.250.1.71.4.2.1" extension="801234536598" />
+      <code code="G15_10/C01" displayName="Médecin - Anatomie et Cytologie pathologiques humaines (C)" codeSystem="1.2.250.1.213.1.1.4.5" />
+      <!-- Adresse du PS-->
+      <addr>
+        <houseNumber>2</houseNumber>
+        <streetName>Rue Georges Pompidou</streetName>
+        <postalCode>92100</postalCode>
+        <city>BOULOGNE-BILLANCOURT</city>
+      </addr>
+      <!-- Coordonnées télécom du PS-->
+      <telecom value="tel:0174589607" use="WP" />
+      <assignedPerson>
+        <name>
+          <prefix>M</prefix>
+          <given>Thierry</given>
+          <family>DUPONT</family>
+          <suffix>DR</suffix>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <!-- Identifiant de l'organisation -->
+        <id root="1.2.250.1.71.4.2.2" extension="1120453333" />
+        <!-- Nom de l'organisation -->
+        <name>Laboratoire d'anatomo-cyto-pathologie</name>
+        <!-- Coordonnées télécom de l'organisation -->
+        <telecom value="tel:0174589607" use="WP" />
+        <!-- Adresse de l'organisation -->
+        <addr>
+          <houseNumber>2</houseNumber>
+          <streetName>Rue Georges Pompidou</streetName>
+          <postalCode>92100</postalCode>
+          <city>BOULOGNE-BILLANCOURT</city>
+        </addr>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  
+  <!-- Personne à prévenir en cas d'urgence -->
+  <informant>
+    <relatedEntity classCode="ECON">
+      <code code="SIS" displayName="Soeur" codeSystem="2.16.840.1.113883.5.111" />
+      <addr nullFlavor="UNK" />
+      <telecom value="tel:0647150100" use="MC" />
+      <relatedPerson>
+        <name>
+          <family>NESSI</family>
+          <given>Sophie</given>
+        </name>
+      </relatedPerson>
+    </relatedEntity>
+  </informant>
+  
+  <!-- Personne de confiance -->
+  <informant>
+    <relatedEntity classCode="NOK">
+      <code code="SIS" displayName="Soeur" codeSystem="2.16.840.1.113883.5.111" />
+      <addr nullFlavor="UNK" />
+      <telecom value="tel:0647150100" use="MC" />
+      <relatedPerson>
+        <name>
+          <family>NESSI</family>
+          <given>Sophie</given>
+        </name>
+      </relatedPerson>
+    </relatedEntity>
+  </informant>
+  
+  <!-- Organisation chargée de la conservation du document -->
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <!-- Identifiant de l'organisation -->
+        <id root="1.2.250.1.71.4.2.2" extension="1120459876" />
+        <!-- Nom de l'organisation -->
+        <name>Laboratoire des charmes</name>
+        <!-- Coordonnées télécom de l'organisation -->
+        <telecom value="tel:0174589607" use="WP" />
+        <!-- Adresse de l'organisation -->
+        <addr>
+          <houseNumber>8</houseNumber>
+          <streetName>Rue Frédéric Bastia</streetName>
+          <postalCode>92100</postalCode>
+          <city>BOULOGNE-BILLANCOURT</city>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  
+  <!-- Destinataire prévu du document : le prescripteur -->
+  <informationRecipient>
+    <intendedRecipient>
+      <templateId root="1.3.6.1.4.1.19376.1.3.3.1.4"/>
+      <!-- RPPS prescripteur -->
+      <id root="1.2.250.1.71.4.2.1" extension="801234567892" />
+      <!-- coordonnées télécom -->
+      <telecom value="mailto:eva.blue@mssante.fr"/>
+      <informationRecipient>
+        <name>
+          <prefix>MME</prefix>
+          <given>Eva</given>
+          <family>BLUE</family>
+          <suffix>DR</suffix>
+        </name>
+      </informationRecipient>      
+    </intendedRecipient>
+  </informationRecipient>
+  
+  <!-- Destinataire prévu du document : le collecteur national des données de dépistage des cancers -->
+  <informationRecipient>
+    <intendedRecipient>
+      <templateId root="1.3.6.1.4.1.19376.1.3.3.1.4"/>
+      <!-- coordonnées télécom -->
+      <telecom value="mailto:collecteur-depistage@institutcancer.mssante.fr"/>
+      <receivedOrganization>
+        <name>Collecteur national des données de dépistage des cancers</name>
+      </receivedOrganization> 
+    </intendedRecipient>
+  </informationRecipient>
+  
+  <!-- Responsable du document -->
+  <legalAuthenticator>
+    <!-- Date et heure de la prise de responsabilité -->
+    <time value="20240104160527+0100" />
+    <signatureCode code="S" />
+    <assignedEntity>
+      <!-- PS identifié par son N°RPPS -->
+      <id root="1.2.250.1.71.4.2.1" extension="801234534765" />
+      <!-- Profession / spécialité du PS -->
+      <code code="G15_10/SM03" displayName="Médecin - Biologie médicale (SM)" codeSystem="1.2.250.1.213.1.1.4.5" />
+      <!-- Adresse du PS-->
+      <addr>
+        <houseNumber>8</houseNumber>
+        <streetName>Rue Frédéric Bastia</streetName>
+        <postalCode>92100</postalCode>
+        <city>BOULOGNE-BILLANCOURT</city>
+      </addr>
+      <!-- Coordonnées télécom du PS-->
+      <telecom value="tel:0174589607" use="WP" />
+      <!-- Identité du PS -->
+      <assignedPerson>
+        <!-- [NMA] : Nom et prénom du biologiste signataire du compte-rendu -->
+        <name>
+          <prefix>M</prefix>
+          <given>Marcel</given>
+          <family>CAMPARINI</family>
+          <suffix>DR</suffix>
+        </name>
+      </assignedPerson>
+      <!-- Etablissement de rattachement du PS -->
+      <representedOrganization>
+        <!-- Identifiant de l'organisation -->
+        <id root="1.2.250.1.71.4.2.2" extension="1120459876" />
+        <!-- Nom de l'organisation -->
+        <name>Laboratoire des charmes</name>
+        <!-- Coordonnées télécom de l'organisation -->
+        <telecom value="tel:0174589607" use="WP" />
+        <!-- Adresse de l'organisation -->
+        <addr>
+          <houseNumber>8</houseNumber>
+          <streetName>Rue Frédéric Bastia</streetName>
+          <postalCode>92100</postalCode>
+          <city>BOULOGNE-BILLANCOURT</city>
+        </addr>
+        <standardIndustryClassCode code="ETABLISSEMENT" displayName="Etablissement de santé" codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode" />
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+  
+  <!-- Biologiste ayant validé les résultats -->
+  <authenticator>
+    <templateId root="1.3.6.1.4.1.19376.1.3.3.1.5" />
+    <time value="202401041120+0100" />
+    <signatureCode code="S" />
+    <assignedEntity>
+      <id root="1.2.250.1.71.4.2.1" extension="801234567898" />
+      <addr>
+        <houseNumber>8</houseNumber>
+        <streetName>Rue Frédéric Bastia</streetName>
+        <postalCode>92100</postalCode>
+        <city>BOULOGNE-BILLANCOURT</city>
+      </addr>
+      <telecom value="tel:0174589607" use="WP" />
+      <assignedPerson>
+        <name>
+          <prefix>M</prefix>
+          <given>Jean</given>
+          <family>DE SANTS</family>
+          <suffix>DR</suffix>
+        </name>
+      </assignedPerson>
+      <!-- Etablissement de rattachement du PS -->
+      <representedOrganization>
+        <!-- Identifiant de l'organisation -->
+        <id root="1.2.250.1.71.4.2.2" extension="1120459876" />
+        <!-- Nom de l'organisation -->
+        <name>Laboratoire des charmes</name>
+        <!-- Coordonnées télécom de l'organisation -->
+        <telecom value="tel:0174589607" use="WP" />
+        <!-- Adresse de l'organisation -->
+        <addr>
+          <houseNumber>8</houseNumber>
+          <streetName>Rue Frédéric Bastia</streetName>
+          <postalCode>92100</postalCode>
+          <city>BOULOGNE-BILLANCOURT</city>
+        </addr>
+        <standardIndustryClassCode code="ETABLISSEMENT" displayName="Etablissement de santé" codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode" />
+      </representedOrganization>
+    </assignedEntity>
+  </authenticator>
+  
+  <!-- Médecin prescripteur des examens de biologie (ici, un gynécologue) -->
+  <participant typeCode="REF">
+    <templateId root='1.3.6.1.4.1.19376.1.3.3.1.6'/>
+    <!-- Date de l'ordonnance -->
+    <time xsi:type="IVL_TS">
+      <high value="202312311120+0100" />
+    </time>
+    <associatedEntity classCode="PROV">
+      <!-- RPPS prescripteur -->
+      <id root="1.2.250.1.71.4.2.1" extension="801234567892" />
+      <code code="G15_10/C25" displayName="Médecin - Gynécologie médicale (C)" codeSystem="1.2.250.1.213.1.1.4.5" />
+      <!-- Adresse prescripteur -->
+      <addr>
+        <houseNumber>18</houseNumber>
+        <streetName>Rue Magellan</streetName>
+        <postalCode>92100</postalCode>
+        <city>BOULOGNE-BILLANCOURT</city>
+      </addr>
+      <telecom value="tel:0147150000" use="EC" />
+      <telecom value="mailto:eva.blue@mssante.fr"/>
+      <associatedPerson>
+        <!-- Nom et prénom de prescripteur -->
+        <name>
+          <prefix>MME</prefix>
+          <given>Eva</given>
+          <family>BLUE</family>
+          <suffix>DR</suffix>
+        </name>
+      </associatedPerson>
+      <scopingOrganization>
+        <!-- Identifiant de l'organisation -->
+        <id root="1.2.250.1.71.4.2.2" extension="1120459384" />
+        <!-- Nom de l'organisation -->
+        <name>Cabinet du DR BLUE</name>
+        <!-- Coordonnées télécom de l'organisation -->
+        <telecom value="tel:014537865" use="WP" />
+        <!-- Adresse de l'organisation -->
+        <addr>
+          <houseNumber>12</houseNumber>
+          <streetName>Rue Laetitia GREEN</streetName>
+          <postalCode>92100</postalCode>
+          <city>BOULOGNE-BILLANCOURT</city>
+        </addr>
+      </scopingOrganization>
+    </associatedEntity>
+  </participant>
+  
+  <!-- Préleveur (ici, un médecin en biologie médicale) -->
+  <participant typeCode="PRF">
+    <functionCode code="PRELV" displayName="Préleveur" codeSystem="1.2.250.1.213.1.1.4.2.280" />
+    <!-- Date et heure de prélèvement -->
+    <time xsi:type="IVL_TS">
+      <high value="202401040735+0100" />
+    </time>
+    <associatedEntity classCode="PROV">
+      <id root="1.2.250.1.71.4.2.1" extension="801234567893" />
+      <code code="G15_10/SM03" displayName="Médecin - Biologie médicale (SM)" codeSystem="1.2.250.1.213.1.1.4.5" />
+      <addr>
+        <houseNumber>12</houseNumber>
+        <streetName>Rue du renard</streetName>
+        <postalCode>92100</postalCode>
+        <city>BOULOGNE-BILLANCOURT</city>
+      </addr>
+      <telecom value="tel:0149154578" use="EC" />
+      <associatedPerson>
+        <name>
+          <prefix>MME</prefix>
+          <given>Roberta</given>
+          <family>BLEEDER</family>
+        </name>
+      </associatedPerson>
+      <scopingOrganization>
+        <!-- Identifiant de l'organisation -->
+        <id root="1.2.250.1.71.4.2.2" extension="1120452948" />
+        <!-- Nom de l'organisation -->
+        <name>Cabinet d'infirmières de BB</name>
+        <!-- Coordonnées télécom de l'organisation -->
+        <telecom value="tel:0138475439" use="WP" />
+        <!-- Adresse de l'organisation -->
+        <addr>
+          <houseNumber>12</houseNumber>
+          <streetName>Rue du renard</streetName>
+          <postalCode>92100</postalCode>
+          <city>BOULOGNE-BILLANCOURT</city>
+        </addr>
+      </scopingOrganization>
+    </associatedEntity>
+  </participant>
+  
+  <!--  Identifiant de la prescription de la prescription attribué par le prescripteur -->
+  <inFulfillmentOf>
+    <order>
+      <!-- OrderPlacerNumber : Identifiant de la prescription attribué par le prescripteur -->
+      <id root="1.2.250.1.213.1.1.9" extension="2024123456780" />
+    </order>
+  </inFulfillmentOf>
+  
+  <!--  Acte principal : Laboratoire de première intention et son cadre d’exercice -->
+  <documentationOf>
+    <serviceEvent>
+      <!-- N° Dossier de la séquence de dépistage (numéro unique permettant de lier tous les résultats de cette séquence de dépistage) -->
+      <id root="1.2.250.1.213.1.1.9" extension="202411111123" />
+      <!-- Code du chapitre -->     
+      <code code="18725-2" displayName="Microbiologie" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+      <!-- Statut du compte rendu (partiel ou complet) -->
+      <lab:statusCode code="completed" />
+      <effectiveTime>
+        <!-- Date de réception de la demande et des échantillons -->
+        <low value="20240104092200+0100" />
+        <!-- Date de fin de traitement = date et heure de libération du compte rendu final -->
+        <high value="20240104160500+0100" />
+      </effectiveTime>
+      <!-- Laboratoire exécutant de première intention -->
+      <performer typeCode="PRF">
+        <templateId root="1.3.6.1.4.1.19376.1.3.3.1.7" />
+        <templateId root="1.2.250.1.213.1.1.3.23" />
+        <time>
+          <high value="20240104152530+0100" />
+        </time>        
+        <!-- Directeur du laboratoire -->
+        <assignedEntity>
+          <id root="1.2.250.1.71.4.2.1" extension="801234534765" />
+          <code code="G15_10/SM03" displayName="Médecin - Biologie médicale (SM)" codeSystem="1.2.250.1.213.1.1.4.5" />
+          <addr>
+            <houseNumber>8</houseNumber>
+            <streetName>Rue Frédéric Bastia</streetName>
+            <postalCode>92100</postalCode>
+            <city>BOULOGNE-BILLANCOURT</city>
+          </addr>
+          <telecom value="tel:0174589607" use="WP" />
+          <assignedPerson>
+            <name>
+              <prefix>M</prefix>
+              <given>Marcel</given>
+              <family>CAMPARINI</family>
+              <suffix>DR</suffix>
+            </name>
+          </assignedPerson>
+          <!-- Laboratoire exécutant de première intention -->
+          <representedOrganization>
+            <!-- Identifiant du laboratoire -->
+            <id root="1.2.250.1.71.4.2.2" extension="1120459876" />
+            <!-- Numéro d'accréditation EFI (European Federation for Immunogenetics) -->
+            <id root="1.2.250.1.213.6.3.2" extension="125896317" assigningAuthorityName="EFI" />
+            <!-- Nom de l'organisation -->
+            <name>Laboratoire des charmes</name>
+            <!-- Coordonnées télécom de l'organisation -->
+            <telecom value="tel:0174589607" use="WP" />
+            <!-- Adresse de l'organisation -->
+            <addr>
+              <houseNumber>8</houseNumber>
+              <streetName>Rue Frédéric Bastia</streetName>
+              <postalCode>92100</postalCode>
+              <city>BOULOGNE-BILLANCOURT</city>
+            </addr>
+            <!-- Cadre d'exercice -->
+            <standardIndustryClassCode code="AMBULATOIRE" displayName="Ambulatoire" codeSystem="1.2.250.1.213.1.1.4.9" />
+          </representedOrganization>
+        </assignedEntity>
+      </performer>
+    </serviceEvent>
+  </documentationOf>
+  
+  <!--  Autre acte : Laboratoire de seconde intention et son cadre d’exercice -->
+  <documentationOf>
+    <serviceEvent>
+      <!-- Code du chapitre -->     
+      <code code="1443252" displayName="Résultats des examens d'un laboratoire de seconde intention" codeSystem="1.2.250.1.213.1.1.5.130"/>
+      <!-- Statut du compte rendu (partiel ou complet) -->
+      <lab:statusCode code="completed" />
+      <effectiveTime>
+        <!-- Date de réception de la demande et des échantillons -->
+        <low value="20240104092200+0100" />
+        <!-- Date de fin de traitement = date et heure du compte rendu -->
+        <high value="20240104102300+0100" />
+      </effectiveTime>
+    </serviceEvent>
+  </documentationOf>
+  
+  <!-- Contexte de la prise en charge : Biologiste et laboratoire responsable -->
+  <componentOf>
+    <encompassingEncounter>
+      <id root="1.2.250.1.71.4.2.1" extension="801234534765" />
+      <code code="AMB" displayName="Ambulatoire (hors établissement)" codeSystem="2.16.840.1.113883.5.4" />
+      <effectiveTime>
+        <low value="202401040735+0100" />
+      </effectiveTime>
+      <!-- Biologiste et laboratoire responsable -->
+      <responsibleParty>
+        <assignedEntity>
+          <!-- Identifiant du biologiste responsable -->
+          <id root="1.2.250.1.71.4.2.1" extension="801234534765" />
+          <!-- Profession / Spécialité du biologiste responsable -->
+          <code code="G15_10/SM03" displayName="Médecin - Biologie médicale (SM)" codeSystem="1.2.250.1.213.1.1.4.5" />
+          <!-- Adresse du biologiste responsable -->
+          <addr>
+            <houseNumber>8</houseNumber>
+            <streetName>Rue Frédéric Bastia</streetName>
+            <postalCode>92100</postalCode>
+            <city>BOULOGNE-BILLANCOURT</city>
+          </addr>
+          <!-- Coordonnées télécom du biologiste responsable -->
+          <telecom value="tel:0174589607" use="WP" />
+          <!-- Identité du biologiste responsable -->
+          <assignedPerson>
+            <name>
+              <prefix>M</prefix>
+              <given>Marcel</given>
+              <family>CAMPARINI</family>
+              <suffix>DR</suffix>
+            </name>
+          </assignedPerson>
+          <!-- Laboratoire du biologiste responsable -->
+          <representedOrganization>
+            <!-- Identifiant FINESS du laboratoire responsable -->
+            <id root="1.2.250.1.71.4.2.2" extension="1120459876" />
+            <!-- Numéro d’accréditation COFRAC du laboratoire responsable  -->
+            <id root="1.2.250.1.213.6.3.1" extension="8-WXYZ" assigningAuthorityName="COFRAC" />
+            <!-- Nom du laboratoire responsable -->
+            <name>Laboratoire des charmes</name>
+            <!-- Coordonnées télécom du laboratoire responsable -->
+            <telecom value="tel:0174589607" use="WP" />
+            <!-- Adresse du laboratoire responsable -->
+            <addr>
+              <houseNumber>8</houseNumber>
+              <streetName>Rue Frédéric Bastia</streetName>
+              <postalCode>92100</postalCode>
+              <city>BOULOGNE-BILLANCOURT</city>
+            </addr>
+            <standardIndustryClassCode code="DEPISTAGE" displayName="Dépistage" codeSystem="1.2.250.1.213.1.1.4.9"/>
+            <!-- Forme d’exploitation du laboratoire responsable (Statut juridique FINESS du laboratoire responsable) -->
+            <asOrganizationPartOf>
+              <code code="80" codeSystem="1.2.250.1.213.1.6.1.44" displayName="Société Interprofessionnelle Soins Ambulatoires (S.I.S.A.)"/>
+            </asOrganizationPartOf>
+          </representedOrganization>
+        </assignedEntity>
+      </responsibleParty>
+      <!-- Laboratoire où s’est déroulée la prise en charge -->
+      <location>
+        <healthCareFacility>
+          <!-- Modalité d’exercice -->
+          <code code="SA25" displayName="Laboratoire de biologie médicale" codeSystem="1.2.250.1.71.4.2.4"/>          
+          <!-- Localisation du laboratoire -->
+          <location>
+            <!-- Nom du laboratoire responsable -->
+            <name>Laboratoire des charmes</name>
+            <!-- Adresse du laboratoire responsable -->
+            <addr>
+              <houseNumber>8</houseNumber>
+              <streetName>Rue Frédéric Bastia</streetName>
+              <postalCode>92100</postalCode>
+              <city>BOULOGNE-BILLANCOURT</city>
+            </addr>
+          </location>
+        </healthCareFacility>
+      </location>
+    </encompassingEncounter>
+  </componentOf>
+  <!--
+    ********************************************************
+    Corps du document
+    ********************************************************
+    -->
+  <component>
+    <structuredBody>
+      
+      <!-- Section FR-Raison-de-la-recommandation : Contexte de l'examen, obligatoire pour le dépistage organisé du cancer du col de l'utérus -->
+      <component>
+        <section>
+          <!-- Conformité Reason-For-Referral (IHE PCC) -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.1"/>
+          <!-- Conformité Coded Reason for Referral Section (IHE PCC) -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.2"/>
+          <!-- Conformité FR-Raison-de-la-recommandation (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.128"/>
+          <id root="41FEABE2-D1D7-4390-8CD5-F5BC78E07B7D"/>
+          <code code="42349-1" displayName="Raison de la recommandation"
+            codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>Contexte de l'examen</title>
+          <text>
+            <paragraph><content ID="contexte">Test HPV-HR de dépistage primaire réalisé sur prélèvement cervico-utérin</content></paragraph>            
+          </text>          
+          <!-- [1..1] Entrée FR-Simple-Observation : Raison de la recommandation -->
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Conformité Simple Observation (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+              <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.48"/>
+              <id root="B95156E1-B262-40DA-A4BB-3C9C71D19F4F"/>
+              <code code="42349-1" displayName="Raison de la recommandation"
+                codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+              <text><reference value="#contexte"/></text>
+              <statusCode code="completed"/>
+              <effectiveTime nullFlavor="NI"/>
+              <!-- Contexte de l'examen - Valeur issue du jdv-contexte-examen-ccu-cisis (1.2.250.1.213.1.1.5.722) -->
+              <value xsi:type="CD" code="MED-1210" displayName="Test HPV-HR de dépistage primaire réalisé sur prélèvement cervico-utérin"
+                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+            </observation>
+          </entry>
+          <!-- [1..1] Entrée FR-Probleme : Papillovirus -->
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Conformité Problem observation (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.28"/>
+              <!-- Conformité Problem Entry (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+              <!-- Conformité FR-Probleme (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.37"/>
+              <id root="8E3DB610-72F0-463C-8E9A-5998C1256662"/>
+              <code code="55607006" displayName="problème" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+              <text><reference value="#contexte"/></text>
+              <statusCode code="completed"/>
+              <effectiveTime>
+                <low nullFlavor="UNK"/>
+              </effectiveTime>
+              <value xsi:type="CD" code="B97.7" displayName="Papillovirus, cause de maladies classées dans d'autres chapitres"
+                codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
+                <originalText><reference value="#contexte"/></originalText>
+              </value>
+            </observation>
+          </entry>
+        </section>
+      </component>
+            
+      <!-- Section FR-CR-BIO-Chapitre : pour le laboratoire de 1ère intention (ici le labo qui fait le test HPV-HR) -->
+      <component>
+        <section>
+          <!-- Conformité Laboratory Specialty Section (IHE PALM) -->
+          <templateId root="1.3.6.1.4.1.19376.1.3.3.2.1"/>
+          <!-- Conformité FR-CR-BIO-Chapitre (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.70"/>
+          <code code="18725-2" displayName="Microbiologie" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+          <title>Test HPV-HR</title>
+          <text>
+            <!-- Prélèvement -->
+            <paragraph>Prélèvement :</paragraph>
+            <table border="0">
+              <thead>
+                <tr>
+                  <th>Prélèvement</th>
+                  <th>Nature échantillon</th>
+                  <th>Localisation du prélèvement</th>
+                  <th>Date du prélèvement</th>
+                  <th>Date d’enregistrement du prélèvement</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <content ID="prelevement-code-nabm">FCU-DO - FROTTIS</content>
+                  </td>
+                  <td>
+                    <content ID="prelevement-nature-echantillon">Prélèvement vaginal</content>
+                  </td>
+                  <td>
+                    <content>Vagin</content>
+                  </td>
+                  <td>04/01/2024 à 07:35</td>
+                  <td>04/01/2024 à 07:52</td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+            <!-- Trousse de détection HPV / milieu utilisé -->
+            <paragraph>Trousse de détection HPV / Milieu utilisé :</paragraph>
+            <table border="0">
+              <thead>
+                <tr>
+                  <th>Trousse de détection HPV</th>
+                  <th>Milieu utilisé</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><content ID="trousse">Abbott Alinity m HR HPV Amp Kit</content></td>
+                  <td><content ID="milieu">Hologic ThinPrep PreservCyt</content></td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+            <!-- Examens et résultats -->
+            <paragraph>Examens et résultats :</paragraph>
+            <table border="0">
+              <thead>
+                <tr>
+                  <th>Examen</th>
+                  <th>Résultat du 04/01/2024</th>
+                  <th>Résultat du 04/12/2023</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <content ID="examen-01">Test HPV-HR</content>
+                  </td>
+                  <td>
+                    <content ID="examen-01-resultat">ADN d'HPV-HR détecté</content>
+                  </td>                 
+                  <td>
+                    <content ID="examen-01-resultat-ant">HPV-HR non détecté</content>
+                  </td>
+                </tr>                
+              </tbody>
+            </table>             
+            <paragraph>Résultat validé par le DR Marcel CAMPARINI (Laboratoire des charmes)</paragraph>               
+          </text>
+          
+          <!-- Entrée FR-Resultats-examens-de-biologie-medicale -->
+          <entry typeCode="DRIV">
+            <!-- Conformité Laboratory Report Data Processing Entry (IHE PALM) -->
+            <templateId root="1.3.6.1.4.1.19376.1.3.1"/>
+            <!-- Conformité FR-Resultats-examens-de-biologie-medicale (CI-SIS) -->
+            <templateId root="1.2.250.1.213.1.1.3.21"/>
+            <act classCode="ACT" moodCode="EVN">
+              <code code="18725-2" displayName="Microbiologie" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+              <statusCode code="completed" />              
+              <!-- Laboratoire executant -->
+              <performer typeCode="PRF">
+                <templateId root="1.3.6.1.4.1.19376.1.3.3.1.7"/>
+                <templateId root="1.2.250.1.213.1.1.3.23"/>
+                <time value="20231224100000"/>
+                <assignedEntity>
+                  <!-- PS identifié par son N°RPPS -->
+                  <id root="1.2.250.1.71.4.2.1" extension="801234534765" />
+                  <!-- Profession / spécialité du PS -->
+                  <code code="G15_10/SM03" displayName="Médecin - Biologie médicale (SM)" codeSystem="1.2.250.1.213.1.1.4.5" />
+                  <!-- Adresse du PS-->
+                  <addr>
+                    <houseNumber>8</houseNumber>
+                    <streetName>Rue Frédéric Bastia</streetName>
+                    <postalCode>92100</postalCode>
+                    <city>BOULOGNE-BILLANCOURT</city>
+                  </addr>
+                  <!-- Coordonnées télécom du PS-->
+                  <telecom value="tel:0174589607" use="WP" />
+                  <!-- Identité du PS -->
+                  <assignedPerson>
+                    <!--Nom du biologiste signataire du compte-rendu-->
+                    <name>
+                      <prefix>M</prefix>
+                      <given>Marcel</given>
+                      <family>CAMPARINI</family>
+                      <suffix>DR</suffix>
+                    </name>
+                  </assignedPerson>
+                  <!-- Etablissement de rattachement du PS -->
+                  <representedOrganization>
+                    <!-- Identifiant de l'organisation -->
+                    <id root="1.2.250.1.71.4.2.2" extension="1120459876" />
+                    <!-- Nom de l'organisation -->
+                    <name>Laboratoire des charmes</name>
+                    <!-- Coordonnées télécom de l'organisation -->
+                    <telecom value="tel:0174589607" use="WP" />
+                    <!-- Adresse de l'organisation -->
+                    <addr>
+                      <houseNumber>8</houseNumber>
+                      <streetName>Rue Frédéric Bastia</streetName>
+                      <postalCode>92100</postalCode>
+                      <city>BOULOGNE-BILLANCOURT</city>
+                    </addr>
+                    <standardIndustryClassCode code="ETABLISSEMENT" displayName="Etablissement de santé" codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode" />
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>
+              
+              <!-- Professionnel de santé ayant validé les résultats -->
+              <participant typeCode="AUTHEN">
+                <!-- Conformité participant (IHE PALM) -->
+                <templateId root="1.3.6.1.4.1.19376.1.3.3.1.5"/>
+                <!-- Conformité FR-Participant (CI-SIS) -->
+                <templateId root="1.2.250.1.213.1.1.3.109"/>
+                <time>
+                  <high value="202401041120+0100" />
+                </time>
+                <participantRole>
+                  <id root="1.2.250.1.71.4.2.1" extension="801234534765" />
+                  <addr>
+                    <houseNumber>8</houseNumber>
+                    <streetName>Rue Frédéric Bastia</streetName>
+                    <postalCode>92100</postalCode>
+                    <city>BOULOGNE-BILLANCOURT</city>
+                  </addr>
+                  <telecom value="tel:0174589607" use="WP" />
+                  <playingEntity>
+                    <name>
+                      <prefix>M</prefix>
+                      <given>Marcel</given>
+                      <family>CAMPARINI</family>
+                      <suffix>DR</suffix>
+                    </name>
+                  </playingEntity>
+                </participantRole>
+              </participant>
+              
+              <!-- [0..*] Entrée FR-Prelevement : Prélèvement -->
+              <entryRelationship typeCode="COMP">
+                <procedure classCode="PROC" moodCode="EVN">
+                  <!-- Conformité Specimen Collection (IHE PALM) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.3.1.2"/>
+                  <!-- Conformité FR-Prelevement (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.77"/>
+                  <!-- Code de l'acte -->
+                  <code code="0027" displayName="FCU-DO - FROTTIS" codeSystem="1.2.250.1.213.2.7" codeSystemName="NABM">
+                    <originalText><reference value="#prelevement-code-nabm"/></originalText>
+                  </code>
+                  <!-- Date et heure du prélèvement -->
+                  <effectiveTime>
+                    <high value="202401040735+0100" />
+                  </effectiveTime>
+                  <!-- Localisation du prélèvement : valeur issue du jdv-localisation-prelevement-ccu-cisis (1.2.250.1.213.1.1.5.717) -->
+                  <targetSiteCode code="76784001" displayName="vagin" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+                  <!-- Echantillon prélevé -->
+                  <participant typeCode="PRD">
+                    <participantRole classCode="SPEC">
+                      <!-- Identifiant de l'échantillon -->
+                      <id root="1.2.250.1.71.4.2.1" extension="801234567893" />
+                      <!-- Nature de l'échantillon : valeur issue du jdv-specimen-type-cisis (1.2.250.1.213.1.1.5.819) -->
+                      <playingEntity>
+                        <code code="GENV" displayName="Prélèvement vaginal" codeSystem="2.16.840.1.113883.18.311">
+                          <originalText><reference value="#prelevement-nature-echantillon" /></originalText>
+                        </code>
+                      </playingEntity>
+                    </participantRole>
+                  </participant>
+                  <!-- Entrée FR-Echantillon-date-reception : Date et heure de réception au laboratoire -->
+                  <entryRelationship typeCode="COMP">
+                    <act classCode="ACT" moodCode="EVN">
+                      <!-- Conformité Specimen Received (IHE PALM) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.3.1.3" />
+                      <!-- Conformité FR-Echantillon-date-reception (CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.107" />
+                      <code code="SPRECEIVE" displayName="Échantillon reçu" codeSystem="1.3.5.1.4.1.19376.1.5.3.2" codeSystemName="IHEActCode" />
+                      <!-- [NMA] : Date d'enregistrement du prélèvement -->
+                      <effectiveTime value="202401040752+0100" />
+                    </act>
+                  </entryRelationship>
+                </procedure>
+              </entryRelationship>
+              
+              <!-- [0..1] Entrée FR-Resultat-examens-de-biologie-element-clinique-pertinent : Résultat du d’HPV -->
+              <entryRelationship typeCode="COMP">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <!-- Conformité Laboratory Observation (IHE PALM) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
+                      <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.80"/>
+                      <code code="77379-6" displayName="Papillomavirus humain 16 et 18 et 31+33+35+39+45+51+52+56+58+59+66+68 ADN:Interprétation:Ponctuel:Col de l'utérus:Résultat nominal" codeSystem="2.16.840.1.113883.6.1"  codeSystemName="LOINC">
+                        <originalText><reference value="#examen-01"/></originalText>
+                      </code>                      
+                      <statusCode code="completed" />
+                      <effectiveTime value="20240104155000+0100" />                      
+                      <!-- Résultat de recherche HPV - valeur issue du jdv-resultat-recherche-hpv-ccu-cisis (1.2.250.1.213.1.1.5.720) -->
+                      <value xsi:type="CD" code="1269497006" displayName="ADN d'HPV-HR détecté"
+                            codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+                        <originalText><reference value="#examen-01-resultat"/></originalText>
+                      </value>
+                      <methodCode code="GUF" displayName="PCR/RT PCR - Point final" 
+                        codeSystem="1.2.250.1.213.2.3.5" codeSystemName="ANSM – Table de codage commune des réactifs"/>
+                      
+                      <!-- [0..1] Trousse de détection HPV -->
+                      <participant typeCode="DEV">
+                        <participantRole classCode="MANU">
+                          <playingDevice>
+                            <!-- valeur issue du jdv-trousse-ccu-cisis (1.2.250.1.213.1.1.5.729) -->
+                            <code code="VHEDA1GUR01LX" displayName="ABBOTT - Alinity m HR HPV AMP Kit (09N15-090)"  
+                              codeSystem="1.2.250.1.213.2.3.5" codeSystemName="ANSM – Table de codage commune des réactifs">
+                              <originalText><reference value="#trousse"/></originalText>
+                            </code>
+                          </playingDevice>
+                        </participantRole>
+                      </participant>
+                      
+                      <!-- [0..1] Milieu utilisé -->
+                      <participant typeCode="CSM">
+                        <participantRole classCode="ADTV">
+                          <playingDevice>
+                            <!-- valeur issue du jdv-milieu-cytologie-ccu-cisis (1.2.250.1.213.1.1.5.723) -->
+                            <code code="GEN-303" displayName="Hologic ThinPrep PreservCyt"  codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+                              <originalText><reference value="#milieu"/></originalText>
+                            </code>
+                          </playingDevice>
+                        </participantRole>
+                      </participant>
+                      
+                      <!-- Résultat antérieur : Dernier test HPV réalisé -->
+                      <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN">
+                          <code code="77379-6" codeSystem="2.16.840.1.113883.6.1" 
+                            displayName="Papillomavirus humain 16 et 18 et 31+33+35+39+45+51+52+56+58+59+66+68 ADN:Interprétation:Ponctuel:Col de l'utérus:Résultat nominal" codeSystemName="LOINC">
+                            <originalText><reference value="#examen-01-ant" /></originalText>
+                          </code>
+                          <statusCode code="completed" />
+                          <!-- Date du dernier test HPV réalisé -->
+                          <effectiveTime value="20231204155000+0100" />
+                          <!-- Résultat du dernier test HPV - valeur issue du jdv-resultat-recherche-hpv-ccu-cisis (1.2.250.1.213.1.1.5.720)  -->
+                          <value xsi:type="CD" code="77851000146104" codeSystem="2.16.840.1.113883.6.96" displayName="HPV-HR non détecté">
+                            <originalText><reference value="#examen-01-resultat-ant"/></originalText>
+                          </value>                          
+                        </observation>
+                      </entryRelationship>
+                    </observation>  
+              </entryRelationship>      
+            </act>
+          </entry>
+        </section>
+      </component>
+      
+      <!-- Section FR-CR-BIO-Chapitre : pour le laboratoire de 2nd intention (ici le labo qui fait l'examen de cytologie) -->
+      <component>
+        <section>
+          <!-- Conformité Laboratory Specialty Section (IHE PALM) -->
+          <templateId root="1.3.6.1.4.1.19376.1.3.3.2.1"/>
+          <!-- Conformité FR-CR-BIO-Chapitre (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.70"/>
+          <code code="1443252" displayName="Résultats des examens d'un laboratoire de seconde intention" codeSystem="1.2.250.1.213.1.1.5.130"/>
+          <title>Examen cytologique</title>
+          <text>            
+            <!-- Examens et résultats -->
+            <paragraph>Examens et résultats :</paragraph>
+            <table border="0">
+              <thead>
+                <tr>
+                  <th>Examen</th>
+                  <th>Résultat du 04/01/2024</th>
+                  <th>Résultat du 04/12/2023</th>
+                </tr>
+              </thead>
+              <tbody>                
+                <tr>
+                  <td>
+                    <content ID="examen-02">Examen cytologique</content>
+                  </td>
+                  <td>
+                    <content ID="examen-02-resultat">adénocarcinome SAP</content>
+                  </td>                  
+                  <td>
+                    <content ID="examen-02-resultat-ant">négatif pour une lésion intra-épithéliale ou maligne</content>
+                  </td>
+                </tr>
+              </tbody>
+            </table>              
+            <paragraph>Résultat validé par le DR Thierry DUPONT (Laboratoire d'anatomo-cyto-pathologie)</paragraph>
+            <paragraph>Conduite à tenir : <linkHtml href="https://www.smpf.info/frottis/">www.smpf.info/frottis/</linkHtml>.</paragraph>
+          </text>
+          
+          <!-- Entrée FR-Resultats-examens-de-biologie-medicale -->
+          <entry typeCode="DRIV">
+            <!-- Conformité Laboratory Report Data Processing Entry (IHE PALM) -->
+            <templateId root="1.3.6.1.4.1.19376.1.3.1"/>
+            <!-- Conformité FR-Resultats-examens-de-biologie-medicale (CI-SIS) -->
+            <templateId root="1.2.250.1.213.1.1.3.21"/>
+            <act classCode="ACT" moodCode="EVN">
+              <code code="26438-2" displayName="Cytologie" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+              <statusCode code="completed" />              
+              <!-- Laboratoire executant -->
+              <performer typeCode="PRF">
+                <templateId root="1.3.6.1.4.1.19376.1.3.3.1.7"/>
+                <templateId root="1.2.250.1.213.1.1.3.23"/>
+                <time value="20240104155000"/>
+                <assignedEntity>
+                  <!-- PS identifié par son N°RPPS -->
+                  <id root="1.2.250.1.71.4.2.1" extension="801234536598" />
+                  <!-- Profession / spécialité du PS -->
+                  <code code="G15_10/C01" displayName="Médecin - Anatomie et Cytologie pathologiques humaines (C)" codeSystem="1.2.250.1.213.1.1.4.5" />
+                  <!-- Adresse du PS-->
+                  <addr>
+                    <houseNumber>2</houseNumber>
+                    <streetName>Rue Georges Pompidou</streetName>
+                    <postalCode>92100</postalCode>
+                    <city>BOULOGNE-BILLANCOURT</city>
+                  </addr>
+                  <!-- Coordonnées télécom du PS-->
+                  <telecom value="tel:0174589607" use="WP" />
+                  <!-- Identité du PS -->
+                  <assignedPerson>
+                    <name>
+                      <prefix>M</prefix>
+                      <given>Thierry</given>
+                      <family>DUPONT</family>
+                      <suffix>DR</suffix>
+                    </name>
+                  </assignedPerson>
+                  <!-- Etablissement de rattachement du PS -->
+                  <representedOrganization>
+                    <!-- Identifiant de l'organisation -->
+                    <id root="1.2.250.1.71.4.2.2" extension="1120453333" />
+                    <!-- Nom de l'organisation -->
+                    <name>Laboratoire d'anatomo-cyto-pathologie</name>
+                    <!-- Coordonnées télécom de l'organisation -->
+                    <telecom value="tel:0174589607" use="WP" />
+                    <!-- Adresse de l'organisation -->
+                    <addr>
+                      <houseNumber>2</houseNumber>
+                      <streetName>Rue Georges Pompidou</streetName>
+                      <postalCode>92100</postalCode>
+                      <city>BOULOGNE-BILLANCOURT</city>
+                    </addr>
+                    <standardIndustryClassCode code="ETABLISSEMENT" displayName="Etablissement de santé" codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode" />
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>
+              
+              <!-- Professionnel de santé ayant validé les résultats -->
+              <participant typeCode="AUTHEN">
+                <!-- Conformité participant (IHE PALM) -->
+                <templateId root="1.3.6.1.4.1.19376.1.3.3.1.5"/>
+                <!-- Conformité FR-Participant (CI-SIS) -->
+                <templateId root="1.2.250.1.213.1.1.3.109"/>
+                <time>
+                  <high value="202401041120+0100" />
+                </time>
+                <participantRole>
+                  <id root="1.2.250.1.71.4.2.1" extension="801234567898" />
+                  <addr>
+                    <houseNumber>2</houseNumber>
+                    <streetName>Rue Georges Pompidou</streetName>
+                    <postalCode>92100</postalCode>
+                    <city>BOULOGNE-BILLANCOURT</city>
+                  </addr>
+                  <telecom value="tel:0174589607" use="WP" />
+                  <playingEntity>
+                    <name>
+                      <prefix>M</prefix>
+                      <given>Thierry</given>
+                      <family>DUPONT</family>
+                      <suffix>DR</suffix>
+                    </name>
+                  </playingEntity>
+                </participantRole>
+              </participant>
+              
+              <!-- [0..1] Entrée FR-Resultat-examens-de-biologie-element-clinique-pertinent : Résultat de l'examen cytologique -->
+              <entryRelationship typeCode="COMP">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <!-- Conformité Laboratory Observation (IHE PALM) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
+                      <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.80"/>
+                      <code code="10524-7" displayName="Observation microscopique:Identification:Ponctuel:Col de l'utérus:Résultat nominal:Coloration cellulaire"
+                            codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+                        <originalText><reference value="#examen-02"/></originalText>
+                      </code>
+                      <statusCode code="completed" />
+                      <!-- Date du test cytologique réalisé -->
+                      <effectiveTime value="20240104155000+0100" />
+                      <!-- Résultat du test cytologique - valeur issue du jdv-resultat-examen-cytologique-ccu-cisis (1.2.250.1.213.1.1.5.721) -->
+                      <value xsi:type="CD" code="MED-1194" displayName="adénocarcinome SAP" 
+                            codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+                        <originalText><reference value="#examen-02-resultat"/></originalText>
+                      </value>
+                      <methodCode code="MI" displayName="Observation microscopique" 
+                        codeSystem="1.2.250.1.213.2.3.5" codeSystemName="ANSM – Table de codage commune des réactifs"/>
+                      <!-- Résultat antérieur : Dernier test cytologique réalisé -->
+                      <entryRelationship typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN">
+                          <code code="10524-7" 
+                            displayName="Observation microscopique:Identification:Ponctuel:Col de l'utérus:Résultat nominal:Coloration cellulaire"
+                            codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+                            <originalText><reference value="#examen-02-ant"/></originalText>
+                          </code>
+                          <statusCode code="completed" />
+                          <!-- Date du dernier test cytologique réalisé -->
+                          <effectiveTime value="20231204155000+0100" />
+                          <!-- Résultat du dernier test cytologique - Issu du jdv-resultat-examen-cytologique-ccu-cisis (1.2.250.1.213.1.1.5.721) -->
+                          <value xsi:type="CD" code="MED-1193" displayName="négatif pour une lésion intra-épithéliale ou maligne"
+                            codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+                            <originalText><reference value="#examen-02-ant-resultat"/></originalText>
+                          </value>
+                        </observation>
+                      </entryRelationship>
+                    </observation>
+              </entryRelationship>              
+            </act>
+          </entry>
+        </section>
+      </component>
+      
+      <!-- Section FR-Vaccinations (Vaccin contre le Papillomavirus) -->
+      <component>
+        <section>
+          <!-- Conformité Immunizations Section (CCD) -->
+          <templateId root="2.16.840.1.113883.10.20.1.6"/>
+          <!-- Conformité Immunization Section (IHE PCC) -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.23"/>
+          <!-- Conformité FR-Vaccinations (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.147"/>
+          <id root="DF6B5534-B28E-499B-968E-2CCAC9B98924" />
+          <code code="11369-6" displayName="Historique des vaccinations" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+          <title>Historique des vaccinations</title>
+          <text>
+            <table border="0">
+              <thead>
+                <tr>
+                  <th>Vaccin</th>
+                  <th>Réalisé (O/N)</th>
+                  <th>Dose</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><content ID="vaccin-HPV">Vaccin contre le Papillomavirus</content></td>
+                  <td>Non</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <!-- [1..*] Entrée FR-Vaccination : negationInd="true" pour vaccination contre le Papillomavirus non réalisée -->
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="EVN" negationInd="true">
+              <!-- Conformité Medication activity (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <!-- Conformité Immunizations (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12"/>
+              <!-- Conformité FR-Vaccination (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.45"/>
+              <id root="41DAC707-7C96-47B7-B600-AC63D8002142" />
+              <code code="IMMUNIZ" displayName="Vaccination sans autre précision" 
+                codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActSubstanceAdministrationImmunizationCode" />
+              <text><reference value="anti-HPV" /></text>
+              <statusCode code="completed" />
+              <!-- date de la vaccination -->
+              <effectiveTime nullFlavor="NA"/>
+              <!-- Vaccin -->
+              <consumable typeCode="CSM">
+                <manufacturedProduct>
+                  <!-- Conformité Product (CCD) -->
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <!-- Conformité Product Entry (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                  <!-- Conformité FR-Produit-de-sante (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.43"/>
+                  <manufacturedMaterial>  
+                    <code>
+                      <originalText><reference value="#vaccin-HPV"/></originalText>
+                      <!-- code ATC du vaccin -->
+                      <translation code="J07BM" displayName="vaccins contre le Papillomavirus"
+                            codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC"/> 
+                    </code>
+                    <name>vaccins contre le Papillomavirus</name>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>              
+            </substanceAdministration>
+          </entry>
+          
+         </section>
+      </component>
+      
+      <!-- Section FR-Commentaire-non-code : Conclusion simplifiée des résultats du dépistage (à destination de la patiente) -->
+      <component>
+        <section>
+          <!-- Conformité CDA Section (CDA) -->
+          <templateId root="2.16.840.1.113883.10.12.201"/>
+          <!-- Conformité Document Summary (IHE) -->
+          <templateId root="1.3.6.1.4.1.19376.1.4.1.2.16"/>
+          <!-- Conformité FR-Commentaire-non-code (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.73"/>
+          <code code="55112-7" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1"
+            codeSystemName="LOINC"/>
+          <title>Conclusion simplifiée des résultats du dépistage (à destination de la patiente)</title>
+          <text>
+            <br/>   
+            <table border="0">
+              <tbody>
+                <tr>
+                  <td>
+                    <content ID="conclusion-simplifiee" >Vous avez effectué un test de dépistage dans le cadre du programme de dépistage du cancer du col de l’utérus.<br/><br/>
+                      <content styleCode="Bold">Celui-ci a révélé une anomalie.</content><br/><br/>
+                      Cela ne signifie pas que vous avez un cancer mais que des examens complémentaires ou un suivi spécifique peuvent être nécessaires.<br/><br/>                      
+                      Nous vous recommandons vivement de contacter votre médecin ou votre sage-femme qui vous expliquera les résultats et vous indiquera le suivi à mettre en place ou les éventuels examens complémentaires à réaliser. Il ou elle vous orientera, si besoin, vers un professionnel de santé spécialisé.<br/><br/>                      
+                      Pour une bonne coordination, vos résultats sont envoyés aux professionnels de santé concernés par votre dépistage. Ils sont également transmis au médecin coordonnateur du centre de coordination des dépistages des cancers de votre région.</content>
+                  </td>
+                </tr>
+              </tbody>
+            </table>            
+          </text>
+        </section>
+      </component>
+      
+      <!-- Section FR-Commentaire-non-code : texte relatif aux droits RGPD demandé par le service juridique de l'INCa -->
+      <component>
+        <section>
+          <!-- Conformité CDA Section (CDA) -->
+          <templateId root="2.16.840.1.113883.10.12.201"/>
+          <!-- Conformité Document Summary (IHE) -->
+          <templateId root="1.3.6.1.4.1.19376.1.4.1.2.16"/>
+          <!-- Conformité FR-Commentaire-non-code (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.73"/>
+          <code code="55112-7" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1"
+            codeSystemName="LOINC"/>
+          <title>Règlement général sur la protection des données</title>
+          <text>
+            <paragraph>Conformément au Règlement général sur la protection des données et à la loi informatique et libertés, vous disposez de droits sur vos données et notamment d’un droit d’opposition au traitement de vos données que vous pouvez exercer en écrivant au CRCDC (coordonnées auprès de votre médecin, de votre sage-femme ou sur le site <linkHtml href="https://www.e-cancer.fr">e-cancer.fr</linkHtml>).<br/>
+              Pour d'avantage d'informations sur le programme national de dépistage organisé du cancer du col de l'utérus, sur la protection de vos données et sur vos droits consultez le site de l’Institut national du cancer : <linkHtml href="https://www.e-cancer.fr/Comprendre-prevenir-depister/Se-faire-depister/Depistage-du-cancer-du-col-de-l-uterus/Le-programme-national-de-depistage">https://www.e-cancer.fr/Comprendre-prevenir-depister/Se-faire-depister/Depistage-du-cancer-du-col-de-l-uterus/Le-programme-national-de-depistage</linkHtml>
+            </paragraph>            
+          </text>
+        </section>
+      </component>
+      
+      <!-- [0..1] FR-Document-PDF-copie -->
+      <component>
+        <section>
+          <!-- Conformité FR-Document-PDF-copie (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.243"/>
+          <id root="770B0DC2-A6B8-468E-8432-632B18D35F68"/>
+          <code code="55108-5" displayName="Copie du document"
+            codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>Copie du document</title>
+          <text>
+            <table border="0">							
+              <tbody>
+                <tr>
+                  <td><content ID="titre-copie-pdf">Copie PDF du document</content></td>
+                </tr>
+                <tr>
+                  <td><renderMultiMedia referencedObject="copie-pdf"/></td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          
+          <!-- [1..1] Entrée FR-Document-attache -->
+          <entry>
+            <organizer classCode="CLUSTER" moodCode="EVN">
+              <!-- Conformité FR-Document-attache (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.18"/>
+              <id root="88BEB395-3B4C-37F5-9A31-03BEA73A8D8B"/>
+              <code code="55107-7" displayName="Document attaché"
+                codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+              <statusCode code="completed"/>
+              <!-- [1..1] Entrée FR-Type-document-attache -->
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité Simple Observation (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                  <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.48"/>
+                  <!-- Conformité FR-Type-document-attache (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.48.18"/>
+                  <id root="0D1629B3-CC69-4632-81F3-2301FD4C318B"/>
+                  <code code="69764-9" displayName="Type de document"
+                    codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                  <text><reference value="#titre-copie-pdf"/></text>
+                  <statusCode code="completed"/>
+                  <effectiveTime nullFlavor="NA"/>
+                  <value xsi:type="CD" code="55108-5" displayName="Copie PDF du document"
+                    codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                </observation>
+              </component>
+              <!-- [1..1] Entrée ObservationMedia -->
+              <component>
+                <observationMedia classCode="OBS" moodCode="EVN" ID="copie-pdf">
+                  <value mediaType="application/pdf" representation="B64">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NzI+Pi9LIDAvUCAxNyAwIFIvUGcgMjYgMCBSL1MvRmlndXJlL1R5cGUvU3RydWN0RWxlbT4+DWVuZG9iag0xOSAwIG9iag08PC9BPDwvQkJveFswIDAgNTk0LjcyIDc5Ml0vSGVpZ2h0IDc5Mi9PL0xheW91dC9XaWR0aCA1OTQuNzI+Pi9LIDAvUCAxNyAwIFIvUGcgMSAwIFIvUy9GaWd1cmUvVHlwZS9TdHJ1Y3RFbGVtPj4NZW5kb2JqDTIwIDAgb2JqDTw8L0E8PC9CQm94WzAgMCA1OTQuNzIgNzkyXS9IZWlnaHQgNzkyL08vTGF5b3V0L1dpZHRoIDU5NC43Mj4+L0sgMC9QIDE3IDAgUi9QZyA0IDAgUi9TL0ZpZ3VyZS9UeXBlL1N0cnVjdEVsZW0+Pg1lbmRvYmoNMjEgMCBvYmoNPDwvQ291bnQgNC9LaWRzWzI2IDAgUiAxIDAgUiA0IDAgUiA3IDAgUl0vVHlwZS9QYWdlcz4+DWVuZG9iag0yMiAwIG9iag08PC9MZW5ndGggNTc3My9TdWJ0eXBlL1hNTC9UeXBlL01ldGFkYXRhPj5zdHJlYW0NCjw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+Cjx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAxIDc5LjJhMGQ4ZDksIDIwMjMvMDMvMTQtMTE6MTk6NDYgICAgICAgICI+CiAgIDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+CiAgICAgIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiCiAgICAgICAgICAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIKICAgICAgICAgICAgeG1sbnM6cGRmPSJodHRwOi8vbnMuYWRvYmUuY29tL3BkZi8xLjMvIgogICAgICAgICAgICB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOnBkZmFpZD0iaHR0cDovL3d3dy5haWltLm9yZy9wZGZhL25zL2lkLyIKICAgICAgICAgICAgeG1sbnM6cGRmdWFpZD0iaHR0cDovL3d3dy5haWltLm9yZy9wZGZ1YS9ucy9pZC8iCiAgICAgICAgICAgIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIgogICAgICAgICAgICB4bWxuczpwZGZhRXh0ZW5zaW9uPSJodHRwOi8vd3d3LmFpaW0ub3JnL3BkZmEvbnMvZXh0ZW5zaW9uLyIKICAgICAgICAgICAgeG1sbnM6cGRmYVNjaGVtYT0iaHR0cDovL3d3dy5haWltLm9yZy9wZGZhL25zL3NjaGVtYSMiCiAgICAgICAgICAgIHhtbG5zOnBkZmFQcm9wZXJ0eT0iaHR0cDovL3d3dy5haWltLm9yZy9wZGZhL25zL3Byb3BlcnR5IyI+CiAgICAgICAgIDxkYzpmb3JtYXQ+YXBwbGljYXRpb24vcGRmPC9kYzpmb3JtYXQ+CiAgICAgICAgIDxkYzpjcmVhdG9yPgogICAgICAgICAgICA8cmRmOlNlcT4KICAgICAgICAgICAgICAgPHJkZjpsaT5BTlM8L3JkZjpsaT4KICAgICAgICAgICAgPC9yZGY6U2VxPgogICAgICAgICA8L2RjOmNyZWF0b3I+CiAgICAgICAgIDxkYzpkZXNjcmlwdGlvbj4KICAgICAgICAgICAgPHJkZjpBbHQ+CiAgICAgICAgICAgICAgIDxyZGY6bGkgeG1sOmxhbmc9IngtZGVmYXVsdCI+Vmlld2VyPC9yZGY6bGk+CiAgICAgICAgICAgIDwvcmRmOkFsdD4KICAgICAgICAgPC9kYzpkZXNjcmlwdGlvbj4KICAgICAgICAgPHBkZjpQcm9kdWNlcj5pVGV4dMKuIDUuNS4xMy4zIMKpMjAwMC0yMDIyIGlUZXh0IEdyb3VwIE5WIChBR1BMLXZlcnNpb24pPC9wZGY6UHJvZHVjZXI+CiAgICAgICAgIDx4bXA6Q3JlYXRlRGF0ZT4yMDIzLTEwLTE5VDExOjMzOjI1KzAyOjAwPC94bXA6Q3JlYXRlRGF0ZT4KICAgICAgICAgPHhtcDpNb2RpZnlEYXRlPjIwMjMtMTAtMTlUMTE6Mzc6MjMrMDI6MDA8L3htcDpNb2RpZnlEYXRlPgogICAgICAgICA8eG1wOk1ldGFkYXRhRGF0ZT4yMDIzLTEwLTE5VDExOjM3OjIzKzAyOjAwPC94bXA6TWV0YWRhdGFEYXRlPgogICAgICAgICA8cGRmYWlkOnBhcnQ+MTwvcGRmYWlkOnBhcnQ+CiAgICAgICAgIDxwZGZhaWQ6Y29uZm9ybWFuY2U+QjwvcGRmYWlkOmNvbmZvcm1hbmNlPgogICAgICAgICA8cGRmdWFpZDpwYXJ0PjE8L3BkZnVhaWQ6cGFydD4KICAgICAgICAgPHhtcE1NOkRvY3VtZW50SUQ+dXVpZDo5OTBhNDBmYy1jYWZjLTQzMWQtOTcwZS1jZGZjNDZhNjI1NWQ8L3htcE1NOkRvY3VtZW50SUQ+CiAgICAgICAgIDx4bXBNTTpJbnN0YW5jZUlEPnV1aWQ6OGM3NDk0NTUtYTNmYy00NWFlLWE2N2EtYTkwMDdhOThjZTY5PC94bXBNTTpJbnN0YW5jZUlEPgogICAgICAgICA8cGRmYUV4dGVuc2lvbjpzY2hlbWFzPgogICAgICAgICAgICA8cmRmOkJhZz4KICAgICAgICAgICAgICAgPHJkZjpsaSByZGY6cGFyc2VUeXBlPSJSZXNvdXJjZSI+CiAgICAgICAgICAgICAgICAgIDxwZGZhU2NoZW1hOm5hbWVzcGFjZVVSST5odHRwOi8vd3d3LmFpaW0ub3JnL3BkZnVhL25zL2lkLzwvcGRmYVNjaGVtYTpuYW1lc3BhY2VVUkk+CiAgICAgICAgICAgICAgICAgIDxwZGZhU2NoZW1hOnByZWZpeD5wZGZ1YWlkPC9wZGZhU2NoZW1hOnByZWZpeD4KICAgICAgICAgICAgICAgICAgPHBkZmFTY2hlbWE6c2NoZW1hPlBERi9VQSBpZGVudGlmaWNhdGlvbiBzY2hlbWE8L3BkZmFTY2hlbWE6c2NoZW1hPgogICAgICAgICAgICAgICAgICA8cGRmYVNjaGVtYTpwcm9wZXJ0eT4KICAgICAgICAgICAgICAgICAgICAgPHJkZjpTZXE+CiAgICAgICAgICAgICAgICAgICAgICAgIDxyZGY6bGkgcmRmOnBhcnNlVHlwZT0iUmVzb3VyY2UiPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8cGRmYVByb3BlcnR5OmNhdGVnb3J5PmludGVybmFsPC9wZGZhUHJvcGVydHk6Y2F0ZWdvcnk+CiAgICAgICAgICAgICAgICAgICAgICAgICAgIDxwZGZhUHJvcGVydHk6ZGVzY3JpcHRpb24+UERGL1VBIHZlcnNpb24gaWRlbnRpZmllcjwvcGRmYVByb3BlcnR5OmRlc2NyaXB0aW9uPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8cGRmYVByb3BlcnR5Om5hbWU+cGFydDwvcGRmYVByb3BlcnR5Om5hbWU+CiAgICAgICAgICAgICAgICAgICAgICAgICAgIDxwZGZhUHJvcGVydHk6dmFsdWVUeXBlPkludGVnZXI8L3BkZmFQcm9wZXJ0eTp2YWx1ZVR5cGU+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvcmRmOmxpPgogICAgICAgICAgICAgICAgICAgICAgICA8cmRmOmxpIHJkZjpwYXJzZVR5cGU9IlJlc291cmNlIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgPHBkZmFQcm9wZXJ0eTpjYXRlZ29yeT5pbnRlcm5hbDwvcGRmYVByb3BlcnR5OmNhdGVnb3J5PgogICAgICAgICAgICAgICAgICAgICAgICAgICA8cGRmYVByb3BlcnR5OmRlc2NyaXB0aW9uPlBERi9VQSBhbWVuZG1lbnQgaWRlbnRpZmllcjwvcGRmYVByb3BlcnR5OmRlc2NyaXB0aW9uPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8cGRmYVByb3BlcnR5Om5hbWU+YW1kPC9wZGZhUHJvcGVydHk6bmFtZT4KICAgICAgICAgICAgICAgICAgICAgICAgICAgPHBkZmFQcm9wZXJ0eTp2YWx1ZVR5cGU+VGV4dDwvcGRmYVByb3BlcnR5OnZhbHVlVHlwZT4KICAgICAgICAgICAgICAgICAgICAgICAgPC9yZGY6bGk+CiAgICAgICAgICAgICAgICAgICAgICAgIDxyZGY6bGkgcmRmOnBhcnNlVHlwZT0iUmVzb3VyY2UiPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8cGRmYVByb3BlcnR5OmNhdGVnb3J5PmludGVybmFsPC9wZGZhUHJvcGVydHk6Y2F0ZWdvcnk+CiAgICAgICAgICAgICAgICAgICAgICAgICAgIDxwZGZhUHJvcGVydHk6ZGVzY3JpcHRpb24+UERGL1VBIGNvcnJpZ2VuZGEgaWRlbnRpZmllcjwvcGRmYVByb3BlcnR5OmRlc2NyaXB0aW9uPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8cGRmYVByb3BlcnR5Om5hbWU+Y29ycjwvcGRmYVByb3BlcnR5Om5hbWU+CiAgICAgICAgICAgICAgICAgICAgICAgICAgIDxwZGZhUHJvcGVydHk6dmFsdWVUeXBlPlRleHQ8L3BkZmFQcm9wZXJ0eTp2YWx1ZVR5cGU+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvcmRmOmxpPgogICAgICAgICAgICAgICAgICAgICA8L3JkZjpTZXE+CiAgICAgICAgICAgICAgICAgIDwvcGRmYVNjaGVtYTpwcm9wZXJ0eT4KICAgICAgICAgICAgICAgPC9yZGY6bGk+CiAgICAgICAgICAgIDwvcmRmOkJhZz4KICAgICAgICAgPC9wZGZhRXh0ZW5zaW9uOnNjaGVtYXM+CiAgICAgIDwvcmRmOkRlc2NyaXB0aW9uPgogICA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgCjw/eHBhY2tldCBlbmQ9InciPz4NCmVuZHN0cmVhbQ1lbmRvYmoNMjMgMCBvYmoNPDwvQXV0aG9yKEFOUykvQ3JlYXRpb25EYXRlKEQ6MjAyMzEwMTkxMTMzMjUrMDInMDAnKS9Nb2REYXRlKEQ6MjAyMzEwMTkxMTM3MjMrMDInMDAnKS9Qcm9kdWNlcihpVGV4dK4gNS41LjEzLjMgqTIwMDAtMjAyMiBpVGV4dCBHcm91cCBOViBcKEFHUEwtdmVyc2lvblwpKS9TdWJqZWN0KFZpZXdlcik+Pg1lbmRvYmoNeHJlZg0KMCAyNA0KMDAwMDAwMDAwMCA2NTUzNSBmDQowMDAwMDE0NTEwIDAwMDAwIG4NCjAwMDAwMTQ3MTAgMDAwMDAgbg0KMDAwMDAxNDg1OSAwMDAwMCBuDQowMDAwMDE5MzM2IDAwMDAwIG4NCjAwMDAwMTk1MzYgMDAwMDAgbg0KMDAwMDAxOTY4NSAwMDAwMCBuDQowMDAwMDI0NzcyIDAwMDAwIG4NCjAwMDAwMjQ5NzIgMDAwMDAgbg0KMDAwMDAyNTEyMSAwMDAwMCBuDQowMDAwMDI3Mzg1IDAwMDAwIG4NCjAwMDAwMjc0NTQgMDAwMDAgbg0KMDAwMDAyNzUxNyAwMDAwMCBuDQowMDAwMDI3NTQyIDAwMDAwIG4NCjAwMDAwMjc1NjcgMDAwMDAgbg0KMDAwMDAyNzU5MiAwMDAwMCBuDQowMDAwMDI3NjE3IDAwMDAwIG4NCjAwMDAwMjc3NDUgMDAwMDAgbg0KMDAwMDAyNzgzMyAwMDAwMCBuDQowMDAwMDI3OTYyIDAwMDAwIG4NCjAwMDAwMjgwOTAgMDAwMDAgbg0KMDAwMDAyODIxOCAwMDAwMCBuDQowMDAwMDI4Mjg5IDAwMDAwIG4NCjAwMDAwMzQxNDAgMDAwMDAgbg0KdHJhaWxlcg0KPDwvU2l6ZSAyNC9JRFs8MThBMEJGRkY0RTI3NTk4MjcwQzYyODBFQkY0NTAyODI+PENFNTFDQjVFNTg2NjBDNDY5RDgxRUUxQTRCREZFNkZEPl0+Pg0Kc3RhcnR4cmVmDQoxMTYNCiUlRU9GDQo=
+                  </value>
+      </observationMedia>
+  </component>
+  </organizer>
+  </entry>
+  </section>
+  </component>
+  
+      
+    </structuredBody>
+  </component>
+</ClinicalDocument>

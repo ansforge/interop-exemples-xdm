@@ -18,8 +18,9 @@
       **********************************************************************************************************
       Historique :
       24/10/2022 : Création
-       - Migration des terminologies et JDVs
-       28/08/2023 : MAJ des JDV
+      28/08/2023 : MAJ des JDV
+      15/02/2024 : Nouvelle version 2024.01
+      27/03/2025 : mise à jour des noms des JDV
       **********************************************************************************************************
    -->
   <!-- Référencement CDAr2 -->
@@ -38,7 +39,7 @@
   <id root="1.2.250.1.213.1.1.1.45.2024.2.1"/>
   <!-- Type de document -->  
   <code code="18748-4" displayName="CR d’imagerie médicale" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
-    <!-- valeur issue du JDV_CodesDocumentImagerie_CISIS (1.2.250.1.213.1.1.5.687) -->
+    <!-- valeur issue du jdv-code-document-imagerie-cisis (1.2.250.1.213.1.1.5.687) -->
     <translation code="24727-0" displayName="CT Head W contrast IV"
       codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
     <translation code="36235-0" displayName="CT Neck W contrast IV"
@@ -369,16 +370,16 @@
         <!-- [0..1] code CCAM de l'acte documenté  --> 
         <translation code="ACQH004"  displayName="Scanographie du crâne, de son contenu et du tronc, avec injection intraveineuse de produit de contraste" 
           codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM"/>
-        <!-- [1..*] Modalité d'imagerie : Valeur issue du JDV_ModaliteAcquisition_CISIS (1.2.250.1.213.1.1.5.618) -->
+        <!-- [1..*] Modalité d'imagerie : Valeur issue du jdv-modalite-acquisition-cisis (1.2.250.1.213.1.1.5.618) -->
         <translation code="CT" displayName="Tomodensitométrie" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM">
           <qualifier>
             <name code="121139" displayName="Modalité d'imagerie" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM"/>
           </qualifier>
         </translation>
-        <!-- [0..*] Région anatomique : Valeur issue du JDV_RegionAnatomique_CISIS (1.2.250.1.213.1.1.5.695) --> 
+        <!-- [0..*] Région anatomique : Valeur issue du jdv-region-anatomique-cisis (1.2.250.1.213.1.1.5.695) --> 
         <translation code="774007" displayName="structure de la tête et/ou du cou" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
           <qualifier>
-            <name code="39111-0" displayName="localisation anatomique" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+            <name code="39111-0" displayName="Localisation anatomique" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
           </qualifier>
         </translation>
       </code>
@@ -438,17 +439,17 @@
         <!-- [0..1] code CCAM de l'acte documenté  --> 
         <translation code="LCQH001"  displayName="Scanographie des tissus mous du cou, avec injection intraveineuse de produit de contraste" 
           codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM"/>
-        <!-- [1..*] Modalité d'imagerie : Valeur issue du JDV_ModaliteAcquisition_CISIS (1.2.250.1.213.1.1.5.618) -->
+        <!-- [1..*] Modalité d'imagerie : Valeur issue du jdv-modalite-acquisition-cisis (1.2.250.1.213.1.1.5.618) -->
         <translation code="CT" displayName="Tomodensitométrie" codeSystem="1.2.840.10008.2.16.4"
           codeSystemName="DCM">
           <qualifier>
             <name code="121139" displayName="Modalité d'imagerie" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM"/>
           </qualifier>
         </translation>
-        <!-- [0..*] Région anatomique : Valeur issue du JDV_RegionAnatomique_CISIS (1.2.250.1.213.1.1.5.695) --> 
+        <!-- [0..*] Région anatomique : Valeur issue du jdv-region-anatomique-cisis (1.2.250.1.213.1.1.5.695) --> 
         <translation code="774007" displayName="structure de la tête et/ou du cou" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
           <qualifier>
-            <name code="39111-0" displayName="localisation anatomique" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+            <name code="39111-0" displayName="Localisation anatomique" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
           </qualifier>
         </translation>
       </code>
@@ -508,16 +509,16 @@
         <!-- [0..1] code CCAM de l'acte documenté  --> 
         <translation code="ZBQH001"  displayName="Scanographie du thorax, avec injection intraveineuse de produit de contraste" 
           codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM"/>
-        <!-- [1..*] Modalité d'imagerie : Valeur issue du JDV_ModaliteAcquisition_CISIS (1.2.250.1.213.1.1.5.618) -->
+        <!-- [1..*] Modalité d'imagerie : Valeur issue du jdv-modalite-acquisition-cisis (1.2.250.1.213.1.1.5.618) -->
         <translation code="CT" displayName="Tomodensitométrie" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM">
           <qualifier>
             <name code="121139" displayName="Modalité d'imagerie" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM"/>
           </qualifier>
         </translation>
-        <!-- [0..*] Région anatomique : Valeur issue du JDV_RegionAnatomique_CISIS (1.2.250.1.213.1.1.5.695) --> 
+        <!-- [0..*] Région anatomique : Valeur issue du jdv-region-anatomique-cisis (1.2.250.1.213.1.1.5.695) --> 
         <translation code="67734004" displayName="segment thoracique du tronc" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
           <qualifier>
-            <name code="39111-0" displayName="localisation anatomique" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+            <name code="39111-0" displayName="Localisation anatomique" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
           </qualifier>
         </translation>
       </code>

@@ -575,7 +575,7 @@
                   <!-- Conformité FR-Acte (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.62"/>
                   <id root="D3DCE1E0-EB52-47CB-8507-D33F0041D138" />
-                  <!-- Valeur issue du JDV_ModeNaissance_CISIS (1.2.250.1.213.1.1.5.744) -->
+                  <!-- Valeur issue du jdv-mode-naissance-cisis (1.2.250.1.213.1.1.5.744) -->
                   <code code="700000006" displayName="accouchement par voie basse" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                   <text><reference value="#modeAccouchement" /></text>
                   <statusCode code="completed" />
@@ -589,11 +589,11 @@
                       <!-- Conformité FR-Simple-Observation (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.48" />
                       <id root="721A82E2-3775-4705-9FC7-BDB87872C948" />
-                      <code code="MED-1171" displayName="Type intervention voie basse" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                      <code code="MED-1171" displayName="Type intervention voie basse" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                       <text><reference value="#typeInterventionVoieBasse" /></text>
                       <statusCode code="completed" />
                       <effectiveTime nullFlavor="NA" />
-                      <!-- mode d’accouchement : valeur issue du JDV_TypeInterventionVoieBasse_CISIS (1.2.250.1.213.1.1.5.750) -->
+                      <!-- mode d’accouchement : valeur issue du jdv-type-intervention-voie-basse-cisis (1.2.250.1.213.1.1.5.750) -->
                       <value xsi:type="CD" code="61586001" displayName="accouchement par extraction par ventouse" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
                     </observation>
                   </entryRelationship>
@@ -606,7 +606,7 @@
                       <!-- Conformité FR-Simple-Observation (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.48" />
                       <id root="441DF6CB-D9A8-4023-BFC3-2F0A5D4DC0A5" />
-                      <code code="MED-1268" displayName="Motif intervention voie basse" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                      <code code="MED-1268" displayName="Motif intervention voie basse" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                       <text><reference value="#motifInterventionVoieBasse" /></text>
                       <statusCode code="completed" />
                       <effectiveTime nullFlavor="NA" />
@@ -693,7 +693,7 @@
                   <!-- Conformité FR-Simple-Observation (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="F50090E5-B029-41D0-B00A-380A45E3E3D8" />
-                  <!-- Valeur issue de JDV_OBP_Result_Evenement_CISIS (1.2.250.1.213.1.1.5.724) -->
+                  <!-- Valeur issue de jdv-obp-resultat-evenement-cisis (1.2.250.1.213.1.1.5.724) -->
                   <code code="73771-8" displayName="Rang de naissance" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                   <text><reference value="#rang" /></text>
                   <statusCode code="completed" />
@@ -709,7 +709,7 @@
                   <!-- Conformité FR-Simple-Observation (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="29E37FE1-C7EC-4C1B-A3C0-C68E66DBE5F1" />
-                  <!-- Valeur issue de JDV_OBP_Result_Evenement_CISIS (1.2.250.1.213.1.1.5.724) -->
+                  <!-- Valeur issue de jdv-obp-resultat-evenement-cisis (1.2.250.1.213.1.1.5.724) -->
                   <code code="11884-4" displayName="Age gestationnel du fœtus (estimation clinique)" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                   <text><reference value="#ageGest" /></text>
                   <statusCode code="completed" />
@@ -725,13 +725,13 @@
                   <!-- Conformité FR-Simple-Observation (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="8CD9BA94-498C-4741-AFA7-2A4D3A33479D" />
-                  <!-- Valeur issue de JDV_OBP_Result_Evenement_CISIS (1.2.250.1.213.1.1.5.724) -->
+                  <!-- Valeur issue de jdv-obp-resultat-evenement-cisis (1.2.250.1.213.1.1.5.724) -->
                   <!-- Code à valider -->
-                  <code code="MED-1223" displayName="Présentation fœtale" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                  <code code="MED-1223" displayName="Présentation fœtale" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
                   <text><reference value="#presFoet" /></text>
                   <statusCode code="completed" />
                   <effectiveTime value="20230425"/>
-                  <!-- Valeur issue du JDV_PresentationFoetale_CISIS (1.2.250.1.213.1.1.5.746) -->
+                  <!-- Valeur issue du jdv-presentation-foetale-cisis (1.2.250.1.213.1.1.5.746) -->
                   <value xsi:type="CD" code="289366006" displayName="malposition du fœtus par présentation de la face" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
                 </observation>
               </entry>
@@ -743,12 +743,12 @@
                   <!-- Conformité FR-Simple-Observation (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="FF14E7F0-A73C-4F91-AB7B-8A04F713B36B" />
-                  <!-- Valeur issue de JDV_OBP_Result_Evenement_CISIS (1.2.250.1.213.1.1.5.724) -->
+                  <!-- Valeur issue de jdv-obp-resultat-evenement-cisis (1.2.250.1.213.1.1.5.724) -->
                   <code code="3156-7" displayName="Volume de liquide amniotique" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                   <text><reference value="#quantiteLiq" /></text>
                   <statusCode code="completed" />
                   <effectiveTime value="20230425"/>
-                  <!-- Valeur issue du JDV_QuantiteLA_CISIS (1.2.250.1.213.1.1.5.747) -->
+                  <!-- Valeur issue du jdv-quantite-liquide-amniotique-cisis (1.2.250.1.213.1.1.5.747) -->
                   <value xsi:type="CD" code="278092006" displayName="volume de liquide amniotique dans l'intervalle de référence" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
                 </observation>
               </entry>
@@ -760,12 +760,12 @@
                   <!-- Conformité FR-Simple-Observation (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="074B1861-D92E-4441-9E52-0C563D7AB51C" />
-                  <!-- Valeur issue de JDV_OBP_Result_Evenement_CISIS (1.2.250.1.213.1.1.5.724) -->
+                  <!-- Valeur issue de jdv-obp-resultat-evenement-cisis (1.2.250.1.213.1.1.5.724) -->
                   <code code="38386-9" displayName="Couleur du liquide amniotique" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
                   <text><reference value="#aspLiq" /></text>
                   <statusCode code="completed" />
                   <effectiveTime value="20230425"/>
-                  <!-- Valeur issue du JDV_AspectLA_CISIS (1.2.250.1.213.1.1.5.740) -->
+                  <!-- Valeur issue du jdv-aspect-liquide-amniotique-cisis (1.2.250.1.213.1.1.5.740) -->
                   <value xsi:type="CD" code="408781009" displayName="liquide amniotique de couleur jaune paille" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
                 </observation>
               </entry>
@@ -777,7 +777,7 @@
                   <!-- Conformité FR-Simple-Observation (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="B3C83C2D-3667-4FE7-BFAB-B2B554E920C5" />
-                  <!-- Valeur issue de JDV_OBP_Result_Evenement_CISIS (1.2.250.1.213.1.1.5.724) -->
+                  <!-- Valeur issue de jdv-obp-resultat-evenement-cisis (1.2.250.1.213.1.1.5.724) -->
                   <code code="56829-5" displayName="Durée d'ouverture de l'oeuf" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                   <text><reference value="#dureeOeuf" /></text>
                   <statusCode code="completed" />
@@ -793,7 +793,7 @@
                   <!-- Conformité FR-Simple-Observation (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="DE89B61E-6EF0-4EFB-B1C2-FDEE89138E04" />
-                  <!-- Valeur issue de JDV_OBP_Result_Evenement_CISIS (1.2.250.1.213.1.1.5.724) -->
+                  <!-- Valeur issue de jdv-obp-resultat-evenement-cisis (1.2.250.1.213.1.1.5.724) -->
                   <code code="73757-7" displayName="Enfant vivant" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
                   <text><reference value="#enfantViv" /></text>
                   <statusCode code="completed" />
@@ -810,12 +810,12 @@
                   <!-\- Conformité FR-Simple-Observation (CI-SIS) -\->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="FE062A9D-6E00-4DE2-B866-D60C892B0AC3" />
-                  <!-\- Valeur issue de JDV_OBP_Result_Evenement_CISIS (1.2.250.1.213.1.1.5.724) -\->
+                  <!-\- Valeur issue de jdv-obp-resultat-evenement-cisis (1.2.250.1.213.1.1.5.724) -\->
                   <code code="92022-3" displayName="Cause initiale du décès fétus" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
                   <text><reference value="#deces" /></text>
                   <statusCode code="completed" />
                   <effectiveTime value="20230425"/>
-                  <!-\- Valeur issue de JDV_CirconstancesDeces_CISIS (1.2.250.1.213.1.1.5.741) -\->
+                  <!-\- Valeur issue de jdv-circonstance-deces-cisis (1.2.250.1.213.1.1.5.741) -\->
                   <value xsi:type="CD" code="1762004" displayName="mort fœtale par asphyxie et/ou par anoxie pendant le travail" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
                 </observation>
               </entry>-->
@@ -1172,7 +1172,7 @@
                       <effectiveTime>
                         <low nullFlavor="UNK"/>
                       </effectiveTime>
-                      <value xsi:type="CD" code="MED-1172" displayName="Émission d’urine" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" >
+                      <value xsi:type="CD" code="MED-1172" displayName="Émission d’urine" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" >
                         <originalText><reference value="#urine"/></originalText>
                       </value>
                     </observation>
@@ -1193,7 +1193,7 @@
                       <effectiveTime>
                         <low nullFlavor="UNK"/>
                       </effectiveTime>
-                      <value xsi:type="CD" code="MED-1173" displayName="Émission de méconium" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                      <value xsi:type="CD" code="MED-1173" displayName="Émission de méconium" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
                         <originalText><reference value="#meconium"/></originalText>
                       </value>
                     </observation>
@@ -1244,7 +1244,7 @@
                   <!-- Conformité FR-Acte (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.62"/>
                   <id root="D3DCE1E0-EB52-47CB-8507-D33F0041D111" />
-                  <!-- code issu du JDV_GesteReanimationNouveauNe_CISIS (1.2.250.1.213.1.1.5.754) -->
+                  <!-- code issu du jdv-geste-reanimation-nouveau-ne-cisis (1.2.250.1.213.1.1.5.754) -->
                   <code code="83099006" displayName="massage cardiaque externe manuel à thorax fermé" 
                         codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
                   <text><reference value="#reanimation-1"/></text>
@@ -1265,7 +1265,7 @@
                   <!-- Conformité FR-Acte (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.62"/>
                   <id root="D3DCE1E0-EB52-47CB-8507-D33F0041D112" />
-                  <code code="MED-1174" displayName="Administration de Vitamine K" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-1174" displayName="Administration de Vitamine K" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#vita-K" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
@@ -1285,7 +1285,7 @@
                   <!-- Conformité FR-Acte (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.62"/>
                   <id root="D3DCE1E0-EB52-47CB-8507-D33F0041D113" />
-                  <code code="MED-1175" displayName="Prélévement bactériologique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                  <code code="MED-1175" displayName="Prélévement bactériologique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
                   <text><reference value="#prelev-bacterio"/></text>
                   <statusCode code="completed" />
                   <effectiveTime>
@@ -1435,12 +1435,12 @@
               <!-- Conformité FR-Simple-Observation (CI-SIS) -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="A59E0EBD-018D-4289-B879-0A8D55F64D02" />
-              <code code="ORG-074" displayName="Mode de sortie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <code code="ORG-074" displayName="Mode de sortie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
               <text><reference value="#modeSortie" /></text>
               <statusCode code="completed" />
               <!-- [1..1] Date et heure de sortie -->
               <effectiveTime value="20230425112000"/>
-              <!-- [1..1] Valeur issue du JDV_ModeSortie_OBP_SNE_CISIS (1.2.250.1.213.1.1.5.699) -->
+              <!-- [1..1] Valeur issue du jdv-mode-sortie-obp-sne-cisis (1.2.250.1.213.1.1.5.699) -->
               <value xsi:type="CD" code="107724000" displayName="transfert du patient" 
                 codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
             </observation>
@@ -1478,8 +1478,8 @@
                   </addr>
                   <telecom value="tel:0442515151" use="WP" />
                   <playingEntity classCode="ENT">
-                    <!-- valeur issue du JDV_Destination_OBP_SNE_CISIS (1.2.250.1.213.1.1.5.702) -->
-                    <code code="ORG-141" displayName="Unité Kangourou" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                    <!-- valeur issue du jdv-destination-obp-sne-cisis (1.2.250.1.213.1.1.5.702) -->
+                    <code code="ORG-141" displayName="Unité Kangourou" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
                     <!-- Nom de l'établissement -->
                     <name>Clinique du Belvédère</name>                    
                   </playingEntity>
@@ -1511,11 +1511,11 @@
               <templateId root="1.2.250.1.213.1.1.3.48.16"/>
               <id root="878F54EB-D561-4F90-855C-71BF3D97FE1D"/>
               <code code="GEN-065" displayName="Statut du document"
-                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
               <text><reference value="#statutDocument"/></text>
               <statusCode code="completed"/>
               <effectiveTime value="20230425"/>
-              <!-- Valeur isssue du JDV_StatutDoc_CISIS. (1.2.250.1.213.1.1.5.93) -->
+              <!-- Valeur isssue du jdv-statut-document-cisis. (1.2.250.1.213.1.1.5.93) -->
               <value xsi:type="CD" code="9571008" displayName="approuvé" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
             </observation>
           </entry>

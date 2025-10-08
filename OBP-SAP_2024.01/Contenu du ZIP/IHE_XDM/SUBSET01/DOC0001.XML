@@ -775,7 +775,7 @@
               <!-- Conformité FR-Observation-sur-la-grossesse (CI-SIS) -->
               <templateId root="1.2.250.1.213.1.1.3.53"/>
               <id root="9854174F-532F-471B-9C75-1F1EE917C0DC" />
-              <!-- valeur issue du JDV_ObservationGrossesse-CISIS (1.2.250.1.213.1.1.5.500) -->
+              <!-- valeur issue du jdv-observation-grossesse-cisis (1.2.250.1.213.1.1.5.500) -->
               <code code="8665-2" displayName="Date de début des dernières règles" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
               <text><reference value="#date-debut-dernieres-regles" /></text>
               <statusCode code="completed" />
@@ -794,7 +794,7 @@
               <!-- Conformité FR-Observation-sur-la-grossesse (CI-SIS) -->
               <templateId root="1.2.250.1.213.1.1.3.53"/>
               <id root="9854174F-532F-471B-9C75-1F1EE917C0DC" />
-              <!-- valeur issue du JDV_ObservationGrossesse-CISIS (1.2.250.1.213.1.1.5.500) -->
+              <!-- valeur issue du jdv-observation-grossesse-cisis (1.2.250.1.213.1.1.5.500) -->
               <code code="55281-0" displayName="Nombre de foetus" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
               <text><reference value="#nb-foetus" /></text>
               <statusCode code="completed" />
@@ -846,13 +846,13 @@
                   <!-- Conformité FR-Observation-sur-la-grossesse (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.53"/>
                   <id root="07AA424B-EC0A-40AD-9CA6-B1A1702D312D" />
-                  <!-- valeur issue du JDV_AntecedentsObstetricaux_OBP_CISIS (1.2.250.1.213.1.1.5.732) -->
+                  <!-- valeur issue du jdv-antecedent-obstetrical-obp-cisis (1.2.250.1.213.1.1.5.732) -->
                   <code code="63893-2" displayName="Issue de la grossesse" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
                   <text><reference value="#antecedent-obs-01-issue" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
-                  <!-- valeur issue du JDV_IssueGrossesse_CISIS (1.2.250.1.213.1.1.5.731) -->
-                  <value xsi:type="CD" code="236973005" displayName="accouchement" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>                    
+                  <!-- valeur issue du jdv-issue-grossesse-cisis (1.2.250.1.213.1.1.5.731) -->
+                  <value xsi:type="CD" code="3950001" displayName="naissance" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>                    
                 </observation>
               </component>
               <!-- [1..1] FR-Observation-sur-la-grossesse : Age gestationnel du fœtus (SA révolues) -->
@@ -865,7 +865,7 @@
                   <!-- Conformité FR-Observation-sur-la-grossesse (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.53"/>
                   <id root="D48F6F89-1217-43F6-8DFE-DAA558D52F5C" />
-                  <!-- valeur issue du JDV_AntecedentsObstetricaux_OBP_CISIS (1.2.250.1.213.1.1.5.732) -->
+                  <!-- valeur issue du jdv-antecedent-obstetrical-obp-cisis (1.2.250.1.213.1.1.5.732) -->
                   <code code="11884-4" displayName="Age gestationnel du fœtus (estimation clinique)" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
                   <text><reference value="#antecedent-obs-01-age" /></text>
                   <statusCode code="completed" />
@@ -883,12 +883,12 @@
                   <!-- Conformité FR-Observation-sur-la-grossesse (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.53"/>
                   <id root="9C5A2CAE-44A0-4FB1-9F71-10A1349DBA5C" />
-                  <!-- valeur issue du JDV_AntecedentsObstetricaux_OBP_CISIS (1.2.250.1.213.1.1.5.732) -->
-                  <code code="MED-1247" displayName="Etat du périnée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                  <!-- valeur issue du jdv-antecedent-obstetrical-obp-cisis (1.2.250.1.213.1.1.5.732) -->
+                  <code code="MED-1247" displayName="Etat du périnée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
                   <text><reference value="#antecedent-obs-01-perinee"/></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
-                  <!-- Valeur issue du JDV_EtatPerinee_CISIS (1.2.250.1.213.1.1.5.734) -->
+                  <!-- Valeur issue du jdv-etat-perinee-cisis (1.2.250.1.213.1.1.5.734) -->
                   <value xsi:type="CD" code="289854007" displayName="périnée intact" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
                 </observation>
               </component>
@@ -902,7 +902,7 @@
                   <!-- Conformité FR-Observation-sur-la-grossesse (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.53"/>
                   <id root="10E86757-E586-4ECC-9DFD-C7313A537CB8" />
-                  <!-- valeur issue du JDV_AntecedentsObstetricaux_OBP_CISIS (1.2.250.1.213.1.1.5.732) -->
+                  <!-- valeur issue du jdv-antecedent-obstetrical-obp-cisis (1.2.250.1.213.1.1.5.732) -->
                   <code code="O72" displayName="Hémorragie du postpartum" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10"/>
                   <text><reference value="#antecedent-obs-01-hemorragie"/></text>
                   <statusCode code="completed" />
@@ -920,7 +920,7 @@
                   <!-- Conformité FR-Observation-sur-la-grossesse (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.53"/>
                   <id root="8B6DADE2-F2B5-42D6-B502-D04C81E339F3" />
-                  <!-- valeur issue du JDV_AntecedentsObstetricaux_OBP_CISIS (1.2.250.1.213.1.1.5.732) -->
+                  <!-- valeur issue du jdv-antecedent-obstetrical-obp-cisis (1.2.250.1.213.1.1.5.732) -->
                   <code code="O99" displayName="Autres maladies de la mère classées ailleurs, mais compliquant la grossesse, l'accouchement et la puerpéralité" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10"/>
                   <text><reference value="antecedent-obs-01-patho-1"/></text>
                   <statusCode code="completed" />
@@ -939,7 +939,7 @@
                   <!-- Conformité FR-Observation-sur-la-grossesse (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.53"/>
                   <id root="983E0D03-9109-4F3C-BBA2-3ED90F86DF00" />
-                  <!-- valeur issue du JDV_AntecedentsObstetricaux_OBP_CISIS (1.2.250.1.213.1.1.5.732) -->
+                  <!-- valeur issue du jdv-antecedent-obstetrical-obp-cisis (1.2.250.1.213.1.1.5.732) -->
                   <code code="11638-4" displayName="Nombre d'enfants vivants" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
                   <text><reference value="nb-enfant"/></text>
                   <statusCode code="completed" />
@@ -987,12 +987,12 @@
                       <!-- Conformité FR-Observation-sur-la-grossesse (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.53"/>
                       <id root="DE11D953-55E0-4078-BB79-259D4479BD32" />
-                      <!-- valeur issue du JDV_ObservationEnfant_CISIS (1.2.250.1.213.1.1.5.733) -->
+                      <!-- valeur issue du jdv-observation-enfant-cisis (1.2.250.1.213.1.1.5.733) -->
                       <code code="57071-3" displayName="Méthode d'accouchement" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
                       <text><reference value="#enfant-1-mode-accouchement"/></text>
                       <statusCode code="completed" />
                       <effectiveTime nullFlavor="NA" />
-                      <!-- valeur issue du JDV_ModeAccouchement_CISIS (1.2.250.1.213.1.1.5.735) -->
+                      <!-- valeur issue du jdv-mode-accouchement-cisis (1.2.250.1.213.1.1.5.735) -->
                       <value xsi:type="CD" code="700000006" displayName="voie basse spontanée" 
                         codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                     </observation>
@@ -1007,7 +1007,7 @@
                       <!-- Conformité FR-Observation-sur-la-grossesse (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.53"/>
                       <id root="55B37B01-4558-4D5D-8896-F519725C680D" />
-                      <!-- valeur issue du JDV_ObservationEnfant_CISIS (1.2.250.1.213.1.1.5.733) -->
+                      <!-- valeur issue du jdv-observation-enfant-cisis (1.2.250.1.213.1.1.5.733) -->
                       <code code="8339-4" displayName="Poids à la naissance" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
                       <text><reference value="#enfant-1-poids"/></text>
                       <statusCode code="completed" />
@@ -1026,12 +1026,12 @@
                       <!-- Conformité FR-Observation-sur-la-grossesse (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.53"/>
                       <id root="7F234EEB-5936-4B6B-BA6B-942699D52ADB" />
-                      <!-- valeur issue du JDV_ObservationEnfant_CISIS (1.2.250.1.213.1.1.5.733) -->
+                      <!-- valeur issue du jdv-observation-enfant-cisis (1.2.250.1.213.1.1.5.733) -->
                       <code code="92276-5" displayName="Statut du nouveau né" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
                       <text><reference value="#enfant-1-etat"/></text>
                       <statusCode code="completed" />
                       <effectiveTime nullFlavor="NA" />
-                      <!-- valeur issue du JDV_EtatNaissance_CISIS (1.2.250.1.213.1.1.5.736) -->
+                      <!-- valeur issue du jdv-etat-naissance-cisis (1.2.250.1.213.1.1.5.736) -->
                       <value xsi:type="CD" code="281050002" displayName="naissance vivante" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                     </observation>
                   </component>
@@ -1046,13 +1046,13 @@
                       <!-- Conformité FR-Observation-sur-la-grossesse (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.53"/>
                       <id root="56D4CF5E-B4AF-42D0-8CA6-1CCD923527B9" />
-                      <!-- valeur issue du JDV_ObservationEnfant_CISIS (1.2.250.1.213.1.1.5.733) -->
+                      <!-- valeur issue du jdv-observation-enfant-cisis (1.2.250.1.213.1.1.5.733) -->
                       <code code="107724000" displayName="transfert du patient" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                       <text><reference value="#enfant-1-transfert-mutation"/></text>
                       <statusCode code="completed" />
                       <effectiveTime nullFlavor="NA" />
-                      <!-- valeur issue du JDV_TransfertMutation_CISIS (1.2.250.1.213.1.1.5.737) -->
-                      <value xsi:type="CD" code="GEN-301" displayName="Pas de transfert ni mutation" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                      <!-- valeur issue du jdv-transfert-mutation-cisis (1.2.250.1.213.1.1.5.737) -->
+                      <value xsi:type="CD" code="GEN-301" displayName="Pas de transfert ni mutation" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
                       <!-- [0..1] Entrée FR-Commentaire-ER : Motif du transfert / mutation -->
                       <entryRelationship typeCode="SUBJ" inversionInd="true">
                         <act classCode="ACT" moodCode="EVN">
@@ -1141,7 +1141,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.41" />
                   <id root="BD75F82B-6BB7-4138-A038-03A1C5336B84" />
                   <!-- Allergy -->
-                  <!-- Valeur issue du JDV_TypeEvenementIndesirablePrevisible_CISIS(1.2.250.1.213.1.1.5.794)-->
+                  <!-- Valeur issue du jdv-type-evenement-indesirable-previsible-cisis(1.2.250.1.213.1.1.5.794)-->
                   <code code="609328004" displayName="allergie" codeSystem="2.16.840.1.113883.6.96" />
                   <text><reference value="alg" /></text>
                   <statusCode code="completed" />
@@ -1180,7 +1180,6 @@
                       <effectiveTime xsi:type="IVL_TS">
                         <low value="20230322"/>
                       </effectiveTime>
-                      <!-- valeur issue du JDV_AllergieReaction-CISIS (1.2.250.1.213.1.1.5.674) -->
                       <value xsi:type="CD" code="126485001" displayName="urticaire" 
                         codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                         <originalText><reference value="#allergie-reaction" /></originalText>
@@ -1198,7 +1197,7 @@
                             codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7:ActCode" />
                           <text><reference value="#allergie-01-severite-reaction-1" /></text>
                           <statusCode code="completed" />
-                          <!-- valeur issue du JDV_SeveriteObservation-CISIS (1.2.250.1.213.1.1.5.675) -->
+                          <!-- valeur issue du jdv-severite-observation-cisis (1.2.250.1.213.1.1.5.675) -->
                           <value xsi:type="CD" code="6736007" displayName="modéré" 
                             codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                         </observation>
@@ -1513,7 +1512,7 @@
                   </code>
                   <statusCode code="completed" />
                   <effectiveTime value="20230125" />
-                  <!-- Valeur issue du JDV_GroupeRhesus_CISIS (1.2.250.1.213.1.1.5.755) -->
+                  <!-- Valeur issue du jdv-groupe-rhesus-cisis (1.2.250.1.213.1.1.5.755) -->
                   <value xsi:type="CE" code="278149003" displayName="groupe sanguin A positif" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />                  
                 </observation>
               </entryRelationship>
@@ -1577,8 +1576,8 @@
               <!-- Conformité FR-Rencontre (CI-SIS) -->
               <templateId root="1.2.250.1.213.1.1.3.58"/>
               <id root="AADF4F54-5072-439A-A552-222A4078C378" />
-              <!-- Valeur issue du JDV_TypeRencontre-OBP-CISIS (1.2.250.1.213.1.1.5.697) -->
-              <code code="GEN-079" displayName="Entretien prénatal précoce" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>                
+              <!-- Valeur issue du jdv-type-rencontre-obp-cisis (1.2.250.1.213.1.1.5.697) -->
+              <code code="GEN-079" displayName="Entretien prénatal précoce" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>                
               <text><reference value="#rencontre-01"/></text>
               <!-- Date de la rencontre -->
               <effectiveTime>
@@ -1623,8 +1622,8 @@
               <!-- Conformité FR-Rencontre (CI-SIS) -->
               <templateId root="1.2.250.1.213.1.1.3.58"/>
               <id root="AADF4F54-5072-439A-A552-222A4078C378" />
-              <!-- Valeur issue du JDV_TypeRencontre-OBP-CISIS (1.2.250.1.213.1.1.5.697) -->
-              <code code="MED-163" displayName="Préparation à la naissance" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>                
+              <!-- Valeur issue du jdv-type-rencontre-obp-cisis (1.2.250.1.213.1.1.5.697) -->
+              <code code="MED-163" displayName="Préparation à la naissance" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>                
               <text><reference value="#rencontre-01"/></text>
               <!-- Date de la rencontre -->
               <effectiveTime>
@@ -1669,8 +1668,8 @@
               <!-- Conformité FR-Rencontre (CI-SIS) -->
               <templateId root="1.2.250.1.213.1.1.3.58"/>
               <id root="AADF4F54-5072-439A-A552-222A4078C378" />
-              <!-- Valeur issue du JDV_TypeRencontre-OBP-CISIS (1.2.250.1.213.1.1.5.697) -->
-              <code code="ORG-193" displayName="Consultation auprès d'un centre de diagnostic prénatal" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+              <!-- Valeur issue du jdv-type-rencontre-obp-cisis (1.2.250.1.213.1.1.5.697) -->
+              <code code="ORG-193" displayName="Consultation auprès d'un centre de diagnostic prénatal" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
               <text><reference value="#rencontre-02"/></text>
               <statusCode code="completed" />
               <!-- Date de la rencontre -->
@@ -1716,8 +1715,8 @@
               <!-- Conformité FR-Rencontre (CI-SIS) -->
               <templateId root="1.2.250.1.213.1.1.3.58"/>
               <id root="AADF4F54-5072-439A-A552-222A4078C378" />
-              <!-- Valeur issue du JDV_TypeRencontre-OBP-CISIS (1.2.250.1.213.1.1.5.697) -->
-              <code code="ORG-077" displayName="Hospitalisation (y compris à domicile)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+              <!-- Valeur issue du jdv-type-rencontre-obp-cisis (1.2.250.1.213.1.1.5.697) -->
+              <code code="ORG-077" displayName="Hospitalisation (y compris à domicile)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
               <text><reference value="#rencontre-02"/></text>
               <statusCode code="completed" />
               <!-- Date de la rencontre -->
@@ -2312,11 +2311,11 @@
               <templateId root="1.2.250.1.213.1.1.3.48.16"/>
               <id root="878F54EB-D561-4F90-855C-71BF3D97FE1D"/>
               <code code="GEN-065" displayName="Statut du document"
-                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
               <text><reference value="#statutDocument"/></text>
               <statusCode code="completed"/>
               <effectiveTime value="20230322"/>
-              <!-- Valeur isssue du JDV_StatutDoc_CISIS. (1.2.250.1.213.1.1.5.93) -->
+              <!-- Valeur isssue du jdv-statut-document-cisis (1.2.250.1.213.1.1.5.93) -->
               <value xsi:type="CD" code="9571008" displayName="approuvé" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
             </observation>
           </entry>
