@@ -3,13 +3,13 @@
                          <!--##################################################################-->
                          <!--RegistryPackage-->
                          <!--##################################################################-->
-                         <ns2:RegistryPackage  xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" id="urn:uuid:5b62517c-3dab-4334-9896-97b8aa778b45"  status="urn:oasis:names:tc:ebxml-regrep:StatusType:Approved"  >
+                         <ns2:RegistryPackage  xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" id="urn:uuid:97633102-cda6-468e-a1fe-157bd2010ff3"  status="urn:oasis:names:tc:ebxml-regrep:StatusType:Approved"  >
                              <!--===================-->
                              <!--SubmissionTime-->
                              <!--===================-->
                              <ns2:Slot name="submissionTime"> 
                                  <ns2:ValueList>
-                                     <ns2:Value>20251008143649</ns2:Value>
+                                     <ns2:Value>20251027150007</ns2:Value>
                                  </ns2:ValueList>
                              </ns2:Slot>
                              <!--===================-->
@@ -28,11 +28,11 @@
                              <!--Classification-->
                              <!--===================-->
                              <ns2:Classification id = "SubmissionSet01_c001"
-                             classificationNode = "urn:uuid:a54d6aa5-d40d-43f9-88c5-b4633d873bdd"	classifiedObject = "urn:uuid:5b62517c-3dab-4334-9896-97b8aa778b45" nodeRepresentation = "" />
+                             classificationNode = "urn:uuid:a54d6aa5-d40d-43f9-88c5-b4633d873bdd"	classifiedObject = "urn:uuid:97633102-cda6-468e-a1fe-157bd2010ff3" nodeRepresentation = "" />
                              <!--===================-->
                              <!--Author attributes-->
                              <!--===================-->
-                             <ns2:Classification id="urn:uuid:0dc13321-3336-4192-972f-c1a169a2843a" classificationScheme="urn:uuid:a7058bb9-b4e4-4307-ba5b-e3f0ab85e12d" classifiedObject="urn:uuid:5b62517c-3dab-4334-9896-97b8aa778b45" nodeRepresentation=""> 
+                             <ns2:Classification id="urn:uuid:2a2bdf9a-f668-47e5-8b55-4fb152136338" classificationScheme="urn:uuid:a7058bb9-b4e4-4307-ba5b-e3f0ab85e12d" classifiedObject="urn:uuid:97633102-cda6-468e-a1fe-157bd2010ff3" nodeRepresentation=""> 
                              <!--===================-->
                              <!--AuthorInstitution-->
                              <!--===================-->
@@ -61,7 +61,7 @@
                              <!--===================-->
                              <!--HealthcareFacility-->
                              <!--===================-->
-                             <ns2:Classification id="SubmissionSet01_c002" classificationScheme="urn:uuid:aa543740-bdda-424e-8c96-df4873be8500" classifiedObject="urn:uuid:5b62517c-3dab-4334-9896-97b8aa778b45" nodeRepresentation="SA25" >
+                             <ns2:Classification id="SubmissionSet01_c002" classificationScheme="urn:uuid:aa543740-bdda-424e-8c96-df4873be8500" classifiedObject="urn:uuid:97633102-cda6-468e-a1fe-157bd2010ff3" nodeRepresentation="SA25" >
                                  <ns2:Slot name="codingScheme" >
                                      <ns2:ValueList>
                                          <ns2:Value>1.2.250.1.71.4.2.4</ns2:Value>
@@ -74,7 +74,7 @@
                              <!--===================-->
                              <!--PatientId-->
                              <!--===================-->
-                             <ns2:ExternalIdentifier id="urn:uuid:5ebc7384-4e80-4c12-8c83-ed86123739c3" identificationScheme="urn:uuid:6b5aea1a-874d-4603-a4bc-96a0a7b38446" registryObject="urn:uuid:5b62517c-3dab-4334-9896-97b8aa778b45" value="279035121518989^^^&amp;1.2.250.1.213.1.4.10&amp;ISO^NH">
+                             <ns2:ExternalIdentifier id="urn:uuid:ca84aade-653b-4e59-9ba8-13338f060c05" identificationScheme="urn:uuid:6b5aea1a-874d-4603-a4bc-96a0a7b38446" registryObject="urn:uuid:97633102-cda6-468e-a1fe-157bd2010ff3" value="279035121518989^^^&amp;1.2.250.1.213.1.4.10&amp;ISO^NH">
                                  <ns2:Name>
                                      <ns2:LocalizedString value="XDSSubmissionSet.patientId"/>
                                  </ns2:Name>
@@ -82,7 +82,7 @@
                              <!--===================-->
                              <!--SourceId-->
                              <!--===================-->
-                             <ns2:ExternalIdentifier id="urn:uuid:38697d6d-3843-47b4-b170-6003761e9859" identificationScheme="urn:uuid:554ac39e-e3fe-47fe-b233-965d2a147832" registryObject="urn:uuid:a6e06ca8-0c75-4064-9e5d-88b9045a9ab6" value="1.2.250.1.71.4.2.2.1120459876">
+                             <ns2:ExternalIdentifier id="urn:uuid:7d88a812-8219-4095-be8b-69c847142586" identificationScheme="urn:uuid:554ac39e-e3fe-47fe-b233-965d2a147832" registryObject="urn:uuid:a6e06ca8-0c75-4064-9e5d-88b9045a9ab6" value="1.2.250.1.71.4.2.2.1120459876">
                                  <ns2:Name>
                                      <ns2:LocalizedString value="XDSSumissionSet.sourceId"/>
                                  </ns2:Name>
@@ -90,7 +90,7 @@
                              <!--===================-->
                              <!--UniqueId-->
                              <!--===================-->
-                             <ns2:ExternalIdentifier id="urn:uuid:fd32ef21-ae02-4b84-a003-8dfe1e96092a" identificationScheme="urn:uuid:96fdda7c-d067-4183-912e-bf5ee74998a8" registryObject="urn:uuid:a6e06ca8-0c75-4064-9e5d-88b9045a9ab6" value="1.2.250.1.213.1.1.1.1.2025.10.10.638955310095393577">
+                             <ns2:ExternalIdentifier id="urn:uuid:f5f4c261-1ed5-480a-aa49-12578b2f283f" identificationScheme="urn:uuid:96fdda7c-d067-4183-912e-bf5ee74998a8" registryObject="urn:uuid:a6e06ca8-0c75-4064-9e5d-88b9045a9ab6" value="1.2.250.1.213.1.1.1.1.2025.10.10.638971740074142877">
                                  <ns2:Name>
                                      <ns2:LocalizedString value="XDSSubmissionSet.uniqueId"/>
                                  </ns2:Name>
@@ -99,13 +99,13 @@
                          <!-- ################################################################## -->
                          <!--   Extrinsic object - CDA DOC0001.XML-->
                          <!-- ################################################################## -->
-                         <ns2:ExtrinsicObject mimeType="text/xml" objectType="urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1" id="urn:uuid:urn:uuid:16437b9f-6707-4b3f-988d-4a5d4042c562" xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" status="urn:oasis:names:tc:ebxml-regrep:StatusType:Approved"	>
+                         <ns2:ExtrinsicObject mimeType="text/xml" objectType="urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1" id="urn:uuid:urn:uuid:a5843a46-c250-4232-bcf0-719677f9fc05" xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" status="urn:oasis:names:tc:ebxml-regrep:StatusType:Approved"	>
                              <!--===================-->
                              <!--Hash-->
                              <!--===================-->
                              <ns2:Slot name="hash">
                                  <ns2:ValueList>
-                                     <ns2:Value>551E334D63A05749B1F2AE261F19D16562E6243B</ns2:Value>
+                                     <ns2:Value>7B3027C3BB32EFA033EB8BFA70A2E0C58C4DE422</ns2:Value>
                                  </ns2:ValueList>
                              </ns2:Slot>
                              <!--===================-->
@@ -113,7 +113,7 @@
                              <!--===================-->
                              <ns2:Slot name="size">
                                  <ns2:ValueList>
-                                     <ns2:Value>135136</ns2:Value>
+                                     <ns2:Value>135178</ns2:Value>
                                  </ns2:ValueList>
                              </ns2:Slot>
                              <!--===================-->
@@ -199,40 +199,43 @@
                              <!--===================-->
                              <!--EventCodeList-->
                              <!--===================-->
-                             <ns2:Classification classificationScheme="urn:uuid:2c6b8cb7-8b2a-4051-b291-b1ae6a575ef4" classifiedObject="urn:uuid:urn:uuid:16437b9f-6707-4b3f-988d-4a5d4042c562" id="urn:uuid:517e790f-e9a8-4505-afd9-954eb5bafb60"                               nodeRepresentation="18719-5" objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification" >
-                                 <ns2:Slot name="codingScheme">
-                                     <ns2:ValueList>
-                                         <ns2:Value>2.16.840.1.113883.6.1</ns2:Value>
-                                     </ns2:ValueList>
-                                 </ns2:Slot>
+                             <!--  Code -->
+                             <ns2:Classification classificationScheme="urn:uuid:2c6b8cb7-8b2a-4051-b291-b1ae6a575ef4" classifiedObject="urn:uuid:urn:uuid:a5843a46-c250-4232-bcf0-719677f9fc05" id="urn:uuid:00928b55-c494-4ad8-8f79-8652e8017fd7"                               nodeRepresentation="18719-5" objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification" >
                                  <ns2:Name>
                                      <ns2:LocalizedString xml:lang="FR" charset="UTF8"                                      value="Biochimie"/>
                                  </ns2:Name>
+                             <ns2:Slot name="codingScheme">
+                                 <ns2:ValueList>
+                                     <ns2:Value>2.16.840.1.113883.6.1</ns2:Value>
+                                 </ns2:ValueList>
+                             </ns2:Slot>
                              </ns2:Classification>
-                             <ns2:Classification classificationScheme="urn:uuid:2c6b8cb7-8b2a-4051-b291-b1ae6a575ef4" classifiedObject="urn:uuid:urn:uuid:16437b9f-6707-4b3f-988d-4a5d4042c562" id="urn:uuid:efa4fa56-92ca-48cd-8e96-586aa3d6eb6e"                               nodeRepresentation="18727-8" objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification" >
-                                 <ns2:Slot name="codingScheme">
-                                     <ns2:ValueList>
-                                         <ns2:Value>2.16.840.1.113883.6.1</ns2:Value>
-                                     </ns2:ValueList>
-                                 </ns2:Slot>
+                             <!--  Code -->
+                             <ns2:Classification classificationScheme="urn:uuid:2c6b8cb7-8b2a-4051-b291-b1ae6a575ef4" classifiedObject="urn:uuid:urn:uuid:a5843a46-c250-4232-bcf0-719677f9fc05" id="urn:uuid:b1cc3582-87d5-4002-a4bd-44209ca0df5a"                               nodeRepresentation="18727-8" objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification" >
                                  <ns2:Name>
                                      <ns2:LocalizedString xml:lang="FR" charset="UTF8"                                      value="Sérologie"/>
                                  </ns2:Name>
+                             <ns2:Slot name="codingScheme">
+                                 <ns2:ValueList>
+                                     <ns2:Value>2.16.840.1.113883.6.1</ns2:Value>
+                                 </ns2:ValueList>
+                             </ns2:Slot>
                              </ns2:Classification>
-                             <ns2:Classification classificationScheme="urn:uuid:2c6b8cb7-8b2a-4051-b291-b1ae6a575ef4" classifiedObject="urn:uuid:urn:uuid:16437b9f-6707-4b3f-988d-4a5d4042c562" id="urn:uuid:f92546a4-461e-4db0-9caf-a0c63ab32eab"                               nodeRepresentation="18718-7" objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification" >
-                                 <ns2:Slot name="codingScheme">
-                                     <ns2:ValueList>
-                                         <ns2:Value>2.16.840.1.113883.6.1</ns2:Value>
-                                     </ns2:ValueList>
-                                 </ns2:Slot>
+                             <!--  Code -->
+                             <ns2:Classification classificationScheme="urn:uuid:2c6b8cb7-8b2a-4051-b291-b1ae6a575ef4" classifiedObject="urn:uuid:urn:uuid:a5843a46-c250-4232-bcf0-719677f9fc05" id="urn:uuid:1a7ed7d9-b0c1-49a5-a710-9eb3ea847719"                               nodeRepresentation="18718-7" objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification" >
                                  <ns2:Name>
                                      <ns2:LocalizedString xml:lang="FR" charset="UTF8"                                      value="Protéines, marqueurs tumoraux, vitamines"/>
                                  </ns2:Name>
+                             <ns2:Slot name="codingScheme">
+                                 <ns2:ValueList>
+                                     <ns2:Value>2.16.840.1.113883.6.1</ns2:Value>
+                                 </ns2:ValueList>
+                             </ns2:Slot>
                              </ns2:Classification>
                              <!--*********************************************************-->
                              <!--  Authors Attributes -->
                              <!--*********************************************************-->
-                             <ns2:Classification id="urn:uuid:2fe5b0d8-29da-452d-8a35-2cf6d63ceb32" classificationScheme="urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d" classifiedObject="urn:uuid:5b62517c-3dab-4334-9896-97b8aa778b45" nodeRepresentation=""> 
+                             <ns2:Classification id="urn:uuid:107c0775-7b1c-41e0-93a2-dc8d5fe376f9" classificationScheme="urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d" classifiedObject="urn:uuid:97633102-cda6-468e-a1fe-157bd2010ff3" nodeRepresentation=""> 
                                  <!--===================-->
                                  <!--AuthorInstitution-->
                                  <!--===================-->
@@ -262,7 +265,7 @@
                                  <!--  Class -->
                                  <!--*********************************************************-->
                                  <!--  -->
-                                 <ns2:Classification id="urn:uuid:4789c612-74f5-4551-8689-5206c8af94a9" classificationScheme="urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a" classifiedObject="urn:uuid:5b62517c-3dab-4334-9896-97b8aa778b45" nodeRepresentation="10">
+                                 <ns2:Classification id="urn:uuid:008d1543-9b6d-4555-9870-bc2236a80aed" classificationScheme="urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a" classifiedObject="urn:uuid:97633102-cda6-468e-a1fe-157bd2010ff3" nodeRepresentation="10">
                                      <ns2:Slot name="codingScheme">
                                          <ns2:ValueList>
                                              <ns2:Value>1.2.250.1.213.1.1.4.1</ns2:Value>
@@ -275,7 +278,7 @@
                                  <!-- ***************************************************************************-->
                                  <!--     Confidentiality  -->
                                  <!-- ***************************************************************************-->
-                                 <ns2:Classification id="urn:uuid:8eb70076-19d1-4c62-bd84-1eac7b378efe" classificationScheme="urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f" classifiedObject="urn:uuid:5b62517c-3dab-4334-9896-97b8aa778b45" nodeRepresentation="N">
+                                 <ns2:Classification id="urn:uuid:4e7b2b94-2aad-4630-90ba-4394b7a4cc06" classificationScheme="urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f" classifiedObject="urn:uuid:97633102-cda6-468e-a1fe-157bd2010ff3" nodeRepresentation="N">
                                      <ns2:Slot name="codingScheme">
                                          <ns2:ValueList>
                                              <ns2:Value>2.16.840.1.113883.5.25</ns2:Value>
@@ -288,7 +291,7 @@
                                  <!--***********************************-->
                                  <!--  Format -->
                                  <!--***********************************-->
-                                 <ns2:Classification id="urn:uuid:b186b18e-7160-4da9-9d94-12ec7160662b" classificationScheme="urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d" classifiedObject="urn:uuid:5b62517c-3dab-4334-9896-97b8aa778b45" nodeRepresentation="urn:ihe:lab:xd-lab:2008"> 
+                                 <ns2:Classification id="urn:uuid:05072e62-004f-4ae7-af41-4bbfa6d3779b" classificationScheme="urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d" classifiedObject="urn:uuid:97633102-cda6-468e-a1fe-157bd2010ff3" nodeRepresentation="urn:ihe:lab:xd-lab:2008"> 
                                      <ns2:Slot name="codingScheme">
                                          <ns2:ValueList>
                                              <ns2:Value>1.2.250.1.213.1.1.4.2.282</ns2:Value>
@@ -301,7 +304,7 @@
                                  <!--***********************************-->
                                  <!--  HealthcareFacility -->
                                  <!--***********************************-->
-                                 <ns2:Classification id="urn:uuid:e8ade3d2-53f4-4d54-adf6-54fb68b40623" classificationScheme="urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1" classifiedObject="urn:uuid:5b62517c-3dab-4334-9896-97b8aa778b45" nodeRepresentation="SA25">
+                                 <ns2:Classification id="urn:uuid:bb4f1e28-a43a-4c45-82e1-37a41bc6bb72" classificationScheme="urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1" classifiedObject="urn:uuid:97633102-cda6-468e-a1fe-157bd2010ff3" nodeRepresentation="SA25">
                                      <ns2:Slot name="codingScheme">
                                          <ns2:ValueList>
                                              <ns2:Value>1.2.250.1.71.4.2.4</ns2:Value>
@@ -314,7 +317,7 @@
                                  <!--********************************-->
                                  <!--  Practice Settings -->
                                  <!--********************************-->
-                                 <ns2:Classification id="urn:uuid:bf1a9d1d-447a-4a69-9dae-95f283d1a4dd" classificationScheme="urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead" classifiedObject="urn:uuid:5b62517c-3dab-4334-9896-97b8aa778b45" nodeRepresentation="AMBULATOIRE">
+                                 <ns2:Classification id="urn:uuid:4a4e9e46-e067-471e-b995-cfd6e341ffd6" classificationScheme="urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead" classifiedObject="urn:uuid:97633102-cda6-468e-a1fe-157bd2010ff3" nodeRepresentation="AMBULATOIRE">
                                      <ns2:Slot name="codingScheme">
                                          <ns2:ValueList>
                                              <ns2:Value>1.2.250.1.213.1.1.4.9</ns2:Value>
@@ -327,7 +330,7 @@
                                  <!--********************************-->
                                  <!--  Type -->
                                  <!--********************************-->
-                                 <ns2:Classification id="urn:uuid:512291f0-efbb-436c-9aaa-485bffd520dc" classificationScheme="urn:uuid:f0306f51-975f-434e-a61c-c59651d33983" classifiedObject="urn:uuid:5b62517c-3dab-4334-9896-97b8aa778b45" nodeRepresentation="11502-2">
+                                 <ns2:Classification id="urn:uuid:fb301e27-923c-4c44-95e5-e05ebbe24c50" classificationScheme="urn:uuid:f0306f51-975f-434e-a61c-c59651d33983" classifiedObject="urn:uuid:97633102-cda6-468e-a1fe-157bd2010ff3" nodeRepresentation="11502-2">
                                      <ns2:Slot name="codingScheme">
                                          <ns2:ValueList>
                                              <ns2:Value>2.16.840.1.113883.6.1</ns2:Value>
@@ -340,7 +343,7 @@
                                  <!--********************************-->
                                  <!--  PatientId (FICHE) -->
                                  <!--********************************-->
-                                 <ns2:ExternalIdentifier id="urn:uuid:e22b5f14-a26c-426c-9247-a57c9ef89ab3" identificationScheme="urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427" registryObject="urn:uuid:urn:uuid:16437b9f-6707-4b3f-988d-4a5d4042c562" value="279035121518989^^^&amp;1.2.250.1.213.1.4.10&amp;ISO^NH">
+                                 <ns2:ExternalIdentifier id="urn:uuid:6bc2c8c4-d201-44d7-9318-a331c15b70af" identificationScheme="urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427" registryObject="urn:uuid:urn:uuid:a5843a46-c250-4232-bcf0-719677f9fc05" value="279035121518989^^^&amp;1.2.250.1.213.1.4.10&amp;ISO^NH">
                                      <ns2:Name>
                                          <ns2:LocalizedString value="XDSDocumentEntry.patientId"/>
                                      </ns2:Name>
@@ -348,7 +351,7 @@
                                  <!--********************************-->
                                  <!--  UniqueId -->
                                  <!--********************************-->
-                                 <ns2:ExternalIdentifier id="urn:uuid:f3bb8309-17ce-4b6e-8756-b646c137bfc2" identificationScheme="urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab" registryObject="b576aac4-33be-4875-b875-f8ee50bf66e0" value="1.2.250.1.213.1.1.1.55.2024.9.1">
+                                 <ns2:ExternalIdentifier id="urn:uuid:5a46ffc6-9be4-4195-af62-289534fc7548" identificationScheme="urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab" registryObject="b576aac4-33be-4875-b875-f8ee50bf66e0" value="1.2.250.1.213.1.1.1.55.2024.9.1">
                                      <ns2:Name>
                                          <ns2:LocalizedString xml:lang="FR" charset="UTF8"  value="XDSDocumentEntry.uniqueId"/>
                                      </ns2:Name>
@@ -357,7 +360,7 @@
                              <!--*****************************************-->
                              <!--*            ASSOCIATIONS -->
                              <!--*****************************************-->
-                             <ns2:Association id="urn:uuid:ed4f3446-f2d9-4afd-9e2f-368396f087a8" objectType="Original" associationType="urn:oasis:names:tc:ebxml-regrep:AssociationType:HasMember"                               sourceObject="urn:uuid:5b62517c-3dab-4334-9896-97b8aa778b45" targetObject="urn:uuid:urn:uuid:16437b9f-6707-4b3f-988d-4a5d4042c562"  xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"  >
+                             <ns2:Association id="urn:uuid:4a29d515-b7d0-44e6-9c47-4de84a428690" objectType="Original" associationType="urn:oasis:names:tc:ebxml-regrep:AssociationType:HasMember"                               sourceObject="urn:uuid:97633102-cda6-468e-a1fe-157bd2010ff3" targetObject="urn:uuid:urn:uuid:a5843a46-c250-4232-bcf0-719677f9fc05"  xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"  >
                                  <ns2:Slot name="SubmissionSetStatus">
                                      <ns2:ValueList>
                                          <ns2:Value>Original</ns2:Value>

@@ -19,6 +19,7 @@
       25/08/2023 : Migration des terminologies et JDVs après validation
       22/04/2025 : Nouvelle version 2025.01 avec copie PDF du PPS dans la section FR-Document-PDF-copie (1.2.250.1.213.1.1.2.243)
       27/06/2025 : Ajout de la nouvelle section FR-Documents-ajoutes (1.2.250.1.213.1.1.2.37)
+      27/08/2025 : Suppression du xsi:type dans le code de la section 1 FR-Plan-de-soins et dans le targetSiteCode de l'entrée Entrée FR-Diagnostic-du-cancer de la section FR-Diagnostic-du-cancer 
 		**********************************************************************************************************    
 -->
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -941,7 +942,7 @@
           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.36"/>
           <!-- Conformité CI-SIS -->
           <templateId root="1.2.250.1.213.1.1.2.158"/>
-          <code xsi:type="CE" code="18776-5" displayName="Plan de soins"
+          <code code="18776-5" displayName="Plan de soins"
             codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
             <translation code="MED-566" displayName="Programme thérapeutique et de suivi"
               codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
@@ -1639,7 +1640,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="E521BD9E-539A-4E40-8317-5AB21F015523"/>
-                  <code code="MED-565" displayName="Effets secondaires"
+                  <code code="MED-565" displayName="Effet(s) secondaire(s)"
                     codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                   <text><reference value="#trait-propose-chimiotherapie-effets"/></text>
                   <statusCode code="completed"/>
@@ -1791,7 +1792,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="B95156E1-B262-40DA-A4BB-3C9C71D19F4F"/>
-                  <code code="MED-565" displayName="Effets secondaires"
+                  <code code="MED-565" displayName="Effet(s) secondaire(s)"
                     codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                   <text><reference value="#trait-propose-autre-mode"/></text>
                   <statusCode code="completed"/>
@@ -2729,7 +2730,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="B95156E1-B262-40DA-A4BB-3C9C71D19F4F"/>
-                  <code code="ORG-116" displayName="Rythme d'administration"
+                  <code code="ORG-004" displayName="Rythme"
                     codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                   <text><reference value="#soin-propose-tabagique-rythme"/></text>
                   <statusCode code="completed"/>
@@ -3256,7 +3257,7 @@
                       <name code="20228-3" displayName="Latéralité"
                         codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
                       <!-- code latéralité : jdv-modificateur-topographique-cisis  (1.2.250.1.213.1.1.5.688) -->
-                      <value xsi:type="CE" code="24028007" displayName="droit"
+                      <value code="24028007" displayName="droit"
                         codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT">
                         <originalText><reference value="#lateralite-1"/></originalText>
                       </value>

@@ -22,6 +22,7 @@
       24/10/2022:  Version 2022.01
       30/11/2023:  Version 2023.01
       03/01/2024 : Version 2024.01
+      19/09/2025 : Corrections codeSystemNames et ajout templateId du subject dans section FR-Antecedents-familiaux
       **********************************************************************************************************
    -->
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../infrastructure/cda/CDA_extended.xsd" xmlns="urn:hl7-org:v3">
@@ -438,7 +439,7 @@
                   <!-- Conformité FR-Probleme (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.37" />
                   <id root="21872220-FBDF-4BCC-85B1-61D1BBB420A5" />
-                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT" />
                   <text><reference value="#antecedent-medical-01" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
@@ -611,7 +612,7 @@
                   <!-- Conformité FR-Antecedent-familial-observe (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.51" />
                   <id root="32EB23D0-5F3A-4DE6-A7F5-B52BFC0D88FE" />
-                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT" />
                   <text><reference value="#antecedent-familial-01" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
@@ -633,7 +634,10 @@
               <templateId root="1.2.250.1.213.1.1.3.59"/>
               <statusCode code="completed" />
               <subject typeCode="SBJ">
+                <!-- Conformité IHE PCC -->
                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.15.2"/>
+                <!-- Conformité CI-SIS -->
+                <templateId root="1.2.250.1.213.1.1.3.60"/>
                 <relatedSubject classCode="PRS">
                   <code code="FTH" displayName="Père" codeSystem="2.16.840.1.113883.5.111" codeSystemName="RoleCode">
                     <originalText><reference value="#antecedent-familial-02-origine" /></originalText>
@@ -655,7 +659,7 @@
                   <!-- Conformité FR-Antecedent-familial-observe (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.51" />
                   <id root="3DB3BC22-4956-412C-A55F-7BAAC8731368" />
-                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT" />
                   <text><reference value="#antecedent-familial-02" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
@@ -829,7 +833,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.55" />
               <id root="5A8DC9DA-3FD8-42E7-BBD3-0096EB3347D7" />
-              <code code="118185001" displayName="constatation à propos de la grossesse" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+              <code code="118185001" displayName="constatation à propos de la grossesse" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT" />
               <statusCode code="completed" />
               <!-- Période de la grossesse -->
               <effectiveTime>
@@ -852,7 +856,7 @@
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
                   <!-- valeur issue du jdv-issue-grossesse-cisis (1.2.250.1.213.1.1.5.731) -->
-                  <value xsi:type="CD" code="3950001" displayName="naissance" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>                    
+                  <value xsi:type="CD" code="3950001" displayName="naissance" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>                    
                 </observation>
               </component>
               <!-- [1..1] FR-Observation-sur-la-grossesse : Age gestationnel du fœtus (SA révolues) -->
@@ -884,12 +888,12 @@
                   <templateId root="1.2.250.1.213.1.1.3.53"/>
                   <id root="9C5A2CAE-44A0-4FB1-9F71-10A1349DBA5C" />
                   <!-- valeur issue du jdv-antecedent-obstetrical-obp-cisis (1.2.250.1.213.1.1.5.732) -->
-                  <code code="MED-1247" displayName="Etat du périnée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                  <code code="MED-1247" displayName="Etat du périnée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                   <text><reference value="#antecedent-obs-01-perinee"/></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
                   <!-- Valeur issue du jdv-etat-perinee-cisis (1.2.250.1.213.1.1.5.734) -->
-                  <value xsi:type="CD" code="289854007" displayName="périnée intact" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                  <value xsi:type="CD" code="289854007" displayName="périnée intact" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT" />
                 </observation>
               </component>
               <!-- [1..1] FR-Observation-sur-la-grossesse : Hémorragie du post-partum -->
@@ -958,7 +962,7 @@
                   <!-- Conformité FR-Naissance (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.56"/>
                   <id root="79259809-9DB8-4749-9369-FCBD31F8EC46" />
-                  <code code="118215003" displayName="observation sur l'accouchement" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                  <code code="118215003" displayName="observation sur l'accouchement" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT" />
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
                   <!-- Eléménent FR-Sujet -->
@@ -994,7 +998,7 @@
                       <effectiveTime nullFlavor="NA" />
                       <!-- valeur issue du jdv-mode-accouchement-cisis (1.2.250.1.213.1.1.5.735) -->
                       <value xsi:type="CD" code="700000006" displayName="voie basse spontanée" 
-                        codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+                        codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
                     </observation>
                   </component>
                   <!-- [1..1] FR-Observation-sur-la-grossesse : Poids à la naissance  -->
@@ -1032,7 +1036,7 @@
                       <statusCode code="completed" />
                       <effectiveTime nullFlavor="NA" />
                       <!-- valeur issue du jdv-etat-naissance-cisis (1.2.250.1.213.1.1.5.736) -->
-                      <value xsi:type="CD" code="281050002" displayName="naissance vivante" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+                      <value xsi:type="CD" code="281050002" displayName="naissance vivante" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
                     </observation>
                   </component>
                   <!-- [1..1] FR-Observation-sur-la-grossesse : Transfert ou mutation -->
@@ -1047,12 +1051,12 @@
                       <templateId root="1.2.250.1.213.1.1.3.53"/>
                       <id root="56D4CF5E-B4AF-42D0-8CA6-1CCD923527B9" />
                       <!-- valeur issue du jdv-observation-enfant-cisis (1.2.250.1.213.1.1.5.733) -->
-                      <code code="107724000" displayName="transfert du patient" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+                      <code code="107724000" displayName="transfert du patient" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
                       <text><reference value="#enfant-1-transfert-mutation"/></text>
                       <statusCode code="completed" />
                       <effectiveTime nullFlavor="NA" />
                       <!-- valeur issue du jdv-transfert-mutation-cisis (1.2.250.1.213.1.1.5.737) -->
-                      <value xsi:type="CD" code="GEN-301" displayName="Pas de transfert ni mutation" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                      <value xsi:type="CD" code="GEN-301" displayName="Pas de transfert ni mutation" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                       <!-- [0..1] Entrée FR-Commentaire-ER : Motif du transfert / mutation -->
                       <entryRelationship typeCode="SUBJ" inversionInd="true">
                         <act classCode="ACT" moodCode="EVN">
@@ -1174,14 +1178,14 @@
                       <!-- FR-Probleme (FR CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.37" />
                       <id root="C64C6013-C8AF-4938-AD10-1B7D26DEE2B1"/>
-                      <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                      <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT" />
                       <text><reference value="#allergie-reaction" /></text>
                       <statusCode code="completed" />
                       <effectiveTime xsi:type="IVL_TS">
                         <low value="20230322"/>
                       </effectiveTime>
                       <value xsi:type="CD" code="126485001" displayName="urticaire" 
-                        codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+                        codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT">
                         <originalText><reference value="#allergie-reaction" /></originalText>
                       </value>
                       <!-- [0..1] Entrée FR-Severite : Sévérité de la réaction -->
@@ -1194,12 +1198,12 @@
                           <!-- FR-Severite (FR CI-SIS) -->
                           <templateId root="1.2.250.1.213.1.1.3.29" />
                           <code code="SEV" displayName="Sévérité" 
-                            codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7:ActCode" />
+                            codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7_ActCode" />
                           <text><reference value="#allergie-01-severite-reaction-1" /></text>
                           <statusCode code="completed" />
                           <!-- valeur issue du jdv-severite-observation-cisis (1.2.250.1.213.1.1.5.675) -->
-                          <value xsi:type="CD" code="6736007" displayName="modéré" 
-                            codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+                          <value xsi:type="CD" code="6736007" displayName="gravité modérée" 
+                            codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
                         </observation>
                       </entryRelationship>
                     </observation>
@@ -1306,7 +1310,7 @@
               <text><reference value="#habitus-03"/></text>
               <statusCode code="completed" />
               <effectiveTime nullFlavor="NA" />
-              <value xsi:type="CD" code="418149003" displayName="substance psychoactive" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+              <value xsi:type="CD" code="418149003" displayName="substance psychoactive" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT">
               </value>
             </observation>
           </entry>          
@@ -1513,7 +1517,7 @@
                   <statusCode code="completed" />
                   <effectiveTime value="20230125" />
                   <!-- Valeur issue du jdv-groupe-rhesus-cisis (1.2.250.1.213.1.1.5.755) -->
-                  <value xsi:type="CE" code="278149003" displayName="groupe sanguin A positif" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />                  
+                  <value xsi:type="CE" code="278149003" displayName="groupe sanguin A positif" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT" />                  
                 </observation>
               </entryRelationship>
             </act>
@@ -1577,7 +1581,7 @@
               <templateId root="1.2.250.1.213.1.1.3.58"/>
               <id root="AADF4F54-5072-439A-A552-222A4078C378" />
               <!-- Valeur issue du jdv-type-rencontre-obp-cisis (1.2.250.1.213.1.1.5.697) -->
-              <code code="GEN-079" displayName="Entretien prénatal précoce" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>                
+              <code code="GEN-079" displayName="Entretien prénatal précoce" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>                
               <text><reference value="#rencontre-01"/></text>
               <!-- Date de la rencontre -->
               <effectiveTime>
@@ -1623,7 +1627,7 @@
               <templateId root="1.2.250.1.213.1.1.3.58"/>
               <id root="AADF4F54-5072-439A-A552-222A4078C378" />
               <!-- Valeur issue du jdv-type-rencontre-obp-cisis (1.2.250.1.213.1.1.5.697) -->
-              <code code="MED-163" displayName="Préparation à la naissance" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>                
+              <code code="MED-163" displayName="Préparation à la naissance" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>                
               <text><reference value="#rencontre-01"/></text>
               <!-- Date de la rencontre -->
               <effectiveTime>
@@ -1669,7 +1673,7 @@
               <templateId root="1.2.250.1.213.1.1.3.58"/>
               <id root="AADF4F54-5072-439A-A552-222A4078C378" />
               <!-- Valeur issue du jdv-type-rencontre-obp-cisis (1.2.250.1.213.1.1.5.697) -->
-              <code code="ORG-193" displayName="Consultation auprès d'un centre de diagnostic prénatal" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+              <code code="ORG-193" displayName="Consultation auprès d'un centre de diagnostic prénatal" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
               <text><reference value="#rencontre-02"/></text>
               <statusCode code="completed" />
               <!-- Date de la rencontre -->
@@ -1716,7 +1720,7 @@
               <templateId root="1.2.250.1.213.1.1.3.58"/>
               <id root="AADF4F54-5072-439A-A552-222A4078C378" />
               <!-- Valeur issue du jdv-type-rencontre-obp-cisis (1.2.250.1.213.1.1.5.697) -->
-              <code code="ORG-077" displayName="Hospitalisation (y compris à domicile)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+              <code code="ORG-077" displayName="Hospitalisation (y compris à domicile)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
               <text><reference value="#rencontre-02"/></text>
               <statusCode code="completed" />
               <!-- Date de la rencontre -->
@@ -1861,7 +1865,7 @@
                   <!-- Conformité FR-Probleme (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.37" />
                   <id root="81F63B26-1107-44A0-9D2D-4ACDAB02536F" />
-                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT" />
                   <text><reference value="#probleme-01" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
@@ -1900,7 +1904,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.37" />
                   <!-- ID de l'observation -->
                   <id root="5BE3EF14-1B14-4595-BA29-B1B89AA26699" />
-                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT" />
                   <text><reference value="#probleme-02" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
@@ -1923,7 +1927,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.37" />
                   <!-- ID de l'observation -->
                   <id root="82D010B2-B627-469E-B73B-5B7CE1F44CA3" />
-                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT" />
                   <text><reference value="#probleme-03" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
@@ -1946,7 +1950,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.37" />
                   <!-- ID de l'observation -->
                   <id root="EE79BC4E-2533-4920-A7FF-3ADCD5558A68" />
-                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT" />
                   <text><reference value="#probleme-04" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
@@ -1969,7 +1973,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.37" />
                   <!-- ID de l'observation -->
                   <id root="F04F6D6C-E07A-4D61-9025-7A9C3BD8F621" />
-                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT" />
                   <text><reference value="#probleme-05" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
@@ -1992,7 +1996,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.37" />
                   <!-- ID de l'observation -->
                   <id root="F7FD74AB-A27D-44A5-BD56-F4AA5E5CCE54" />
-                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT" />
                   <text><reference value="#probleme-06" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
@@ -2015,7 +2019,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.37" />
                   <!-- ID de l'observation -->
                   <id root="6F812DF0-4556-4D95-AE82-B793E44B919E" />
-                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT" />
                   <text><reference value="#probleme-07" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
@@ -2076,7 +2080,7 @@
                   <!-- Conformité FR-Probleme (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.37" />
                   <id root="81F63B26-1107-44A0-9D2D-4ACDAB02536F" />
-                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT" />
                   <text><reference value="#probleme-foetus-01" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
@@ -2115,7 +2119,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.37" />
                   <!-- ID de l'observation -->
                   <id root="5BE3EF14-1B14-4595-BA29-B1B89AA26699" />
-                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT" />
                   <text><reference value="#probleme-foetus-02" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
@@ -2138,7 +2142,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.37" />
                   <!-- ID de l'observation -->
                   <id root="82D010B2-B627-469E-B73B-5B7CE1F44CA3" />
-                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT" />
                   <text><reference value="#probleme-foetus-03" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
@@ -2311,12 +2315,12 @@
               <templateId root="1.2.250.1.213.1.1.3.48.16"/>
               <id root="878F54EB-D561-4F90-855C-71BF3D97FE1D"/>
               <code code="GEN-065" displayName="Statut du document"
-                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
               <text><reference value="#statutDocument"/></text>
               <statusCode code="completed"/>
               <effectiveTime value="20230322"/>
               <!-- Valeur isssue du jdv-statut-document-cisis (1.2.250.1.213.1.1.5.93) -->
-              <value xsi:type="CD" code="9571008" displayName="approuvé" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+              <value xsi:type="CD" code="9571008" displayName="approuvé" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
             </observation>
           </entry>
         </section>

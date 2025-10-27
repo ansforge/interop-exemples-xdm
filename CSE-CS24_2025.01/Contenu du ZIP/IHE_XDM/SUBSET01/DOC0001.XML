@@ -38,6 +38,7 @@
                    - suppression du médecin qui suivra l'enfant (demandé dans le CS8 uniquement)
                    - suppression de personne de confiance et personne à prévenir en cas d'urgence, non demandé dans les CSE.
                    - création des vaccins manquants
+      28/08/2025 : correction effectiveTime dans entrée FR-Liste-des-problemes
       ********************************************************************************************************** -->
    
    <!-- ************************************************************
@@ -846,11 +847,10 @@
                      <id root="FD850158-7CCD-11EB-9439-0242AC130010"/>
                      <code nullFlavor="NA"/>
                      <statusCode code="completed"/>
-                     <!-- <effectiveTime>
+                     <effectiveTime>
                         <low value="20210211094914+0100"/>
                         <high value="20210211094915+0100"/>
-                     </effectiveTime> -->
-                     <effectiveTime nullFlavor="UNK"/>
+                     </effectiveTime>
                      
                      <!-- Entrée FR-Probleme : Prématurité inf. à 33 semaines non constaté (negationInd="true") -->
                      <entryRelationship typeCode="SUBJ" inversionInd="false">
@@ -894,7 +894,7 @@
                               <low nullFlavor="UNK"/>
                            </effectiveTime>
                            <!-- valeur issue du jdv-antecedent-cse24-cisis (1.2.250.1.213.1.1.5.104) -->
-                           <value xsi:type="CD" code="MED-185" displayName="Accident domestique depuis le 9ème mois"
+                           <value xsi:type="CD" code="MED-185" displayName="Accident(s) domestique(s) depuis le 9ème mois"
                               codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                               <originalText><reference value="#accidentDomestique"/></originalText>
                            </value>
@@ -928,7 +928,7 @@
                                  <templateId root="1.2.250.1.213.1.1.3.48"/>
                                  <id root="2022BE76-7CC9-11EB-9439-0242AC130017"/>
                                  <!-- valeur issue du jdv-cause-accident-domestique-cisis (1.2.250.1.213.1.1.5.121) -->
-                                 <code code="NE2Z" displayName="Brûlures, sans précision"
+                                 <code code="NE2Z" displayName="Brulures, sans précision"
                                     codeSystem="2.16.840.1.113883.6.347" codeSystemName="CIM11MMS"/>
                                  <text><reference value="#brulure"/></text>
                                  <statusCode code="completed"/>
@@ -948,7 +948,7 @@
                                  <templateId root="1.2.250.1.213.1.1.3.48"/>
                                  <id root="2022BE76-7CC9-11EB-9439-0242AC130018"/>
                                  <!-- valeur issue du jdv-cause-accident-domestique-cisis (1.2.250.1.213.1.1.5.121) -->
-                                 <code code="NE61" displayName="Intoxication SAI"
+                                 <code code="NE61" displayName="Effets nocifs ou exposition à des substances nocives, principalement d'origine nonmédicinale, non classés ailleurs"
                                     codeSystem="2.16.840.1.113883.6.347" codeSystemName="CIM11MMS"/>
                                  <text><reference value="#intoxication"/></text>
                                  <statusCode code="completed"/>
@@ -1210,7 +1210,7 @@
                      <id root="FD850158-7CCD-11EB-9439-0242AC130076"/>
                      <!-- Valeur issue du jdv-developpement-psychomoteur-cs24-cisis (1.2.250.1.213.1.1.5.712) -->
                      <code code="MED-201" codeSystem="1.2.250.1.213.1.1.4.322"
-                        codeSystemName="TerminologieCISIS" displayName="Âge de la marche acquise"/>
+                        codeSystemName="TerminologieCISIS" displayName="Age de la marche acquise (mois)"/>
                      <text><reference value="#ageMarche"/></text>
                      <statusCode code="completed"/>
                      <effectiveTime value="20210803"/>

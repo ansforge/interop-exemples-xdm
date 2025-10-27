@@ -483,7 +483,7 @@
                 <templateId root="1.2.250.1.213.1.1.3.60"/>
                 <relatedSubject classCode="PRS">
                   <!-- Lien de parenté : valeur issue du jdv-hl7-v3-PersonalRelationshipRoleType-cisis (2.16.840.1.113883.1.11.19563) -->
-                  <code code="PCOUSN" displayName="Cousin" codeSystem="2.16.840.1.113883.5.111" codeSystemName="HL7_RoleCode">
+                  <code code="PCOUSN" displayName="Cousin (paternel)" codeSystem="2.16.840.1.113883.5.111" codeSystemName="HL7_RoleCode">
                     <originalText><reference value="#lien-parente"/></originalText>
                   </code>
                   <subject classCode="PSN">
@@ -647,7 +647,7 @@
               <!-- Identifiant de la prise en charge -->
               <id root="6917FE7A-2F04-458E-8224-D273C6B643E7"/>
               <!-- Type de prise en charge : valeur issue du jdv-hl7-v3-ActEncounterCode-cisis (2.16.840.1.113883.1.11.13955) -->
-              <code code="IMP" displayName="Hospitalisation" codeSystem="2.16.840.1.113883.5.4"/>
+              <code code="IMP" displayName="Hospitalisation (établissement, y compris HAD)" codeSystem="2.16.840.1.113883.5.4"/>
               <text><reference value="#PEC-01"/></text>
               <!-- Date d'inclusion dans le site -->
               <effectiveTime xsi:type="IVL_TS">
@@ -860,7 +860,7 @@
                   <id extension="S001" root="1.2.250.1.213.2.61"/>
                   <!-- Identifiant FINESS du lieu de consultation -->
                   <id root="1.2.250.1.71.4.2.2" extension="1750803454"/>
-                  <code code="ORG-070" displayName="Site Maladie rare"
+                  <code code="ORG-170" displayName="Site Maladie rare"
                     codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                   <!-- Lieu de consultation uniquement si différent du site pour lequel l'activité est déclarée -->
                   <addr>
@@ -1042,7 +1042,7 @@
                     <participantRole classCode="SDLOC">
                       <!-- Identifiant du site -->
                       <id extension="S001" root="1.2.250.1.213.2.61"/>
-                      <code code="ORG-070" displayName="Site Maladie rare"
+                      <code code="ORG-170" displayName="Site Maladie rare"
                         codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                       <addr>
                         <houseNumber>54</houseNumber>
@@ -1123,7 +1123,7 @@
                       <!-- Conformité CI-SIS FR-Simple-Observation-->
                       <templateId root="1.2.250.1.213.1.1.3.48"/>
                       <id root="87B88A38-8DF6-4198-9995-0B3D20472D05"/>
-                      <code code="PAT-013" displayName="Age aux premiers signes"
+                      <code code="PAT-013" displayName="Moment aux premiers signes"
                         codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                       <text><reference value="#age_premiers_signes"/></text>
                       <statusCode code="completed"/>
@@ -1176,7 +1176,7 @@
                       <!-- Conformité FR-Simple-Observation (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.48"/>
                       <id root="7867E08B-D92F-49CF-9026-B9E1C8275C9E"/>
-                      <code code="PAT-062" displayName="Age au diagnostic clinique"
+                      <code code="PAT-062" displayName="Moment au diagnostic clinique"
                         codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                       <text><reference value="#age_diagnostic_clinique "/></text>
                       <statusCode code="completed"/>
@@ -1194,7 +1194,7 @@
                       <!-- Conformité FR-Simple-Observation (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.48"/>
                       <id root="7867E08B-D92F-49CF-9026-B9E1C8275C9E"/>
-                      <code code="PAT-064" displayName="Age au diagnostic génétique"
+                      <code code="PAT-064" displayName="Moment au diagnostic génétique"
                         codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                       <text><reference value="#age_diagnostic_genetique "/></text>
                       <statusCode code="completed"/>
@@ -1253,7 +1253,7 @@
                       <statusCode code="completed"/>
                       <effectiveTime nullFlavor="NA"/>
                       <!-- Valeur issue du jdv-technique-diagnostic-cisis (1.2.250.1.213.1.1.5.48) -->
-                      <value xsi:type="CD" code="GEN-092.04.17" displayName="Autre technique diagnostic"
+                      <value xsi:type="CD" code="GEN-092.04.17" displayName="Autre technique"
                         codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">                        
                         <originalText><reference value="#technique_genetique_precision"/></originalText>
                       </value>
@@ -1267,7 +1267,7 @@
                       <!-- Conformité FR-Simple-Observation (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.48"/>
                       <id root="A1FDA6D4-FC8C-47AD-98C4-A36977EFC8DF"/>
-                      <code code="MED-552" displayName="Gène" codeSystem="1.2.250.1.213.1.1.4.322"
+                      <code code="MED-552" displayName="Gêne" codeSystem="1.2.250.1.213.1.1.4.322"
                         codeSystemName="TerminologieCISIS"/>
                       <text>
                         <reference value="#gene"/>

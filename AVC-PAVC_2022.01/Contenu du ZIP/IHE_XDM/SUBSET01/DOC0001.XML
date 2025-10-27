@@ -17,10 +17,11 @@
       **********************************************************************************************************
       05/04/2022 : Migration des terminologies et JDV en SNOMED CT
       25/08/2023 : Migration des terminologies et JDVs après validation
+      18/09/2025 : Mise à jour entrées FR-Evaluation (suppression du translation)
       **********************************************************************************************************
    -->
   <realmCode code="FR" />
-  <!-- Référence au standard CDA R2  -->
+  <!-- Référence au standard CDA R2 -->
   <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040" />
   <!-- Conformité spécifications HL7 France -->
   <templateId root="2.16.840.1.113883.2.8.2.1" />
@@ -499,7 +500,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="FCA755B7-0236-4684-9167-8EC436882F18" />
-                  <code code="MED-325" displayName="Risque de récidive" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-325" displayName="Risque de récidive" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <text><reference value="#recidive"/></text>
                   <statusCode code="completed" />
                   <effectiveTime>
@@ -606,7 +607,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="C0BB3564-5FC6-4B4C-9706-FC0C6F14679F" />
-                  <code code="MED-1157" displayName="Hématologique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-1157" displayName="Hématologique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <text><reference value="#hematologique"/></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
@@ -644,7 +645,7 @@
                   <effectiveTime>
                     <low nullFlavor="UNK" />
                   </effectiveTime>
-                  <value xsi:type="CD" code="MED-320" displayName="ALD" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+                  <value xsi:type="CD" code="MED-320" displayName="Affection longue durée (ALD)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                     <originalText><reference value="#ald" /></originalText>
                   </value>
                 </observation>
@@ -665,7 +666,7 @@
                   <effectiveTime>
                     <low nullFlavor="UNK" />
                   </effectiveTime>
-                  <value xsi:type="CD" code="MED-321" displayName="Surhandicap" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+                  <value xsi:type="CD" code="MED-321" displayName="Surhandicap" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                     <originalText><reference value="#surhandicap" /></originalText>
                   </value>
                 </observation>
@@ -686,7 +687,7 @@
                   <effectiveTime>
                     <low nullFlavor="UNK" />
                   </effectiveTime>
-                  <value xsi:type="CD" code="MED-322" displayName="Plurihandicap" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+                  <value xsi:type="CD" code="MED-322" displayName="Plurihandicap" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                     <originalText><reference value="#plurihandicap" /></originalText>
                   </value>
                 </observation>
@@ -707,7 +708,7 @@
                   <effectiveTime>
                     <low nullFlavor="UNK" />
                   </effectiveTime>
-                  <value xsi:type="CD" code="MED-323" displayName="Polyhandicap" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+                  <value xsi:type="CD" code="MED-323" displayName="Polyhandicap" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                     <originalText><reference value="#polyhandicap" /></originalText>
                   </value>
                 </observation>
@@ -728,7 +729,7 @@
                   <effectiveTime>
                     <low nullFlavor="UNK" />
                   </effectiveTime>
-                  <value xsi:type="CD" code="MED-324" displayName="Polypathologies" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+                  <value xsi:type="CD" code="MED-324" displayName="Polypathologies" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                     <originalText><reference value="#polypathologies"/></originalText>
                   </value>
                 </observation>
@@ -857,7 +858,7 @@
               <effectiveTime>
                 <low nullFlavor="UNK" />
               </effectiveTime>
-              <value xsi:type="CD" code="MED-329" displayName="Spasticité génante" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+              <value xsi:type="CD" code="MED-329" displayName="Spasticité gênante" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                 <originalText><reference value="#spasticite"/></originalText>
               </value>
               <!-- Sévérité -->
@@ -935,7 +936,7 @@
               <effectiveTime>
                 <low nullFlavor="UNK" />
               </effectiveTime>
-              <value xsi:type="CD" code="MED-330" displayName="Négligence visuospatiale" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+              <value xsi:type="CD" code="MED-330" displayName="Négligence visuospatiale" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                 <originalText><reference value="#negliVisuospatiale"/></originalText>
               </value>
             </observation>
@@ -956,7 +957,7 @@
               <effectiveTime>
                 <low nullFlavor="UNK" />
               </effectiveTime>
-              <value xsi:type="CD" code="MED-331" displayName="HLH-QLH" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+              <value xsi:type="CD" code="MED-331" displayName="HLH - QLH" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                 <originalText><reference value="#hlh"/></originalText>
               </value>
             </observation>
@@ -977,7 +978,7 @@
               <effectiveTime>
                 <low nullFlavor="UNK" />
               </effectiveTime>
-              <value xsi:type="CD" code="MED-332" displayName="Troubles de la déglutition " codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+              <value xsi:type="CD" code="MED-332" displayName="Trouble de la déglutition" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                 <originalText><reference value="#troubleDeglutition"/></originalText>
               </value>
             </observation>
@@ -998,7 +999,7 @@
               <effectiveTime>
                 <low nullFlavor="UNK" />
               </effectiveTime>
-              <value xsi:type="CD" code="MED-333" displayName="Troubles de l'élimination urinaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+              <value xsi:type="CD" code="MED-333" displayName="Trouble de l'élimination urinaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                 <originalText><reference value="#troubleUrinaire"/></originalText>
               </value>
             </observation>
@@ -1019,7 +1020,7 @@
               <effectiveTime>
                 <low nullFlavor="UNK" />
               </effectiveTime>
-              <value xsi:type="CD" code="MED-334" displayName="Troubles de l'élimination fécale" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+              <value xsi:type="CD" code="MED-334" displayName="Trouble de l'élimination fécale" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                 <originalText><reference value="#troubleFecale"/></originalText>
               </value>
             </observation>
@@ -1040,7 +1041,7 @@
               <effectiveTime>
                 <low nullFlavor="UNK" />
               </effectiveTime>
-              <value xsi:type="CD" code="MED-335" displayName="Troubles de la sexualité" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+              <value xsi:type="CD" code="MED-335" displayName="Trouble de la sexualité" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                 <originalText><reference value="troubleSexualite"/></originalText>
               </value>
             </observation>
@@ -1233,9 +1234,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.25" />
               <id root="36F1FD35-2AB3-4E67-A156-68C922EB823B" />
-              <code nullFlavor="NA">
-                <translation code="GEN-148" displayName="Marcher seul à l'exterieur (transports)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
-              </code>
+              <code code="GEN-148" displayName="Marcher seul à l'exterieur (transports)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
               <text><reference value="marcherSeulExt"/></text>
               <statusCode code="completed" />
               <effectiveTime>
@@ -1277,9 +1276,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.25" />
               <id root="A2171B8F-C3F8-4DCE-806C-909A394197DE" />
-              <code nullFlavor="NA">
-                <translation  code="GEN-144" displayName="Risque de chute" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
-              </code>
+              <code code="GEN-144" displayName="Risque de chute" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
               <text><reference value="#chute"/></text>
               <statusCode code="completed" />
               <effectiveTime>
@@ -1363,9 +1360,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.25" />
               <id root="8F4F692D-2F19-4A19-ABB5-F61F7DE90FDF" />
-              <code nullFlavor="NA">
-                <translation code="GEN-147" displayName="Gérer seul ses traitements" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
-              </code>
+              <code code="GEN-147" displayName="Gérer seul ses traitements" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
               <text><reference value="#traitementsSeul"/></text>
               <statusCode code="completed" />
               <effectiveTime>
@@ -1386,9 +1381,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.25" />
               <id root="5A8A46CD-FAB8-471F-80F1-93192AA4455B" />
-              <code nullFlavor="NA">
-                <translation code="GEN-145" displayName="Incontinence" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
-              </code>
+              <code code="GEN-145" displayName="Incontinence" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
               <text><reference value="#incontinence"/></text>
               <statusCode code="completed" />
               <effectiveTime>
@@ -1409,9 +1402,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.25" />
               <id root="328DA3C3-9097-47EC-9107-E19FC878E87E" />
-              <code nullFlavor="NA">
-                <translation code="GEN-149" displayName="Communiquer : proches" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
-              </code>
+              <code code="GEN-149" displayName="Communiquer : proches" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
               <text><reference value="#communiquer"/></text>
               <statusCode code="completed" />
               <effectiveTime>
@@ -1432,9 +1423,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.25" />
               <id root="F5367428-AE29-4D17-8439-47B226836C40" />
-              <code nullFlavor="NA">
-                <translation code="GEN-150" displayName="Extérieur (appel secours, courses…)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
-              </code>
+              <code code="GEN-150" displayName="Extérieur (appel secours, courses…)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
               <text><reference value="#exterieur"/></text>
               <statusCode code="completed" />
               <effectiveTime>
@@ -1455,9 +1444,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.25" />
               <id root="CA16EB87-2EDF-4DC4-9DAB-C1BDDD2C23ED" />
-              <code nullFlavor="NA">
-                <translation code="GEN-146" displayName="Gérer ses comptes et ses affaires personnelles" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
-              </code>
+              <code code="GEN-146" displayName="Gérer ses comptes et ses affaires personnelles" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
               <text><reference value="comptes"/></text>
               <statusCode code="completed" />
               <effectiveTime>
@@ -1478,9 +1465,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.25" />
               <id root="FE59DB5E-DBFE-425E-9C72-D9CEDAAFD145" />
-              <code nullFlavor="NA">
-                <translation code="GEN-151" displayName="Le patient bénéficie-t-il d'une aide humaine ?" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
-              </code>
+              <code code="GEN-151" displayName="Le patient bénéficie-t-il d'une aide humaine ?" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
               <text><reference value="#aideHumaine"/></text>
               <statusCode code="completed" />
               <effectiveTime>
@@ -1555,7 +1540,7 @@
               <effectiveTime>
                 <low nullFlavor="UNK" />
               </effectiveTime>
-              <value xsi:type="CD" code="MED-337" displayName="Syndrôme dysexecutif" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+              <value xsi:type="CD" code="MED-337" displayName="Syndrome dysexécutif" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                 <originalText><reference value="#dysexecutif"/></originalText>
               </value>
             </observation>
@@ -1576,7 +1561,7 @@
               <effectiveTime>
                 <low nullFlavor="UNK" />
               </effectiveTime>
-              <value xsi:type="CD" code="MED-338" displayName="Détérioration intellectuelle" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+              <value xsi:type="CD" code="MED-338" displayName="Détérioration intellectuelle" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                 <originalText><reference value="#deterioration"/></originalText>
               </value>
               <!-- Sévérité -->
@@ -1845,7 +1830,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="7B87569D-DE67-4A34-A59B-4DB4F42B8F38" />
-              <code code="MED-326" displayName="Bilan initial étiologique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="MED-326" displayName="Bilan initial étiologique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#bilanInitial"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NASK" />
@@ -1862,7 +1847,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="8A13C8E2-82C1-49FD-8CCE-8612FDCDF1AC" />
-              <code code="MED-327" displayName="Ce qui a été prévu ultérieurement a-t-il été fait?" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="MED-327" displayName="Ce qui a été prévu ultérieurement a-t-il été fait?" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#fait" /></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NASK" />
@@ -1879,7 +1864,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="F6849C4E-FE7E-4870-9330-CA728AE495D7" />
-              <code code="MED-319" displayName="Besoin d'un bilan complémentaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="MED-319" displayName="Besoin d’un bilan complémentaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#bilanOrtho" /></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NASK" />
@@ -1889,7 +1874,7 @@
                 <observation classCode="OBS" moodCode="EVN">
                   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
                   <id root="E8428249-EBDE-4A0B-8DFC-E0625B9AA521" />
-                  <code code="GEN-118" displayName="Fait" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="GEN-118" displayName="Fait" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <text><reference value="#bilanOrthoFait"/></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
@@ -1904,7 +1889,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="4C202BC1-2291-4874-9491-24EAC961DA6D" />
-                  <code code="GEN-118" displayName="A faire / A refaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="GEN-119" displayName="A faire/ A refaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <text><reference value="#bilanOrthoAFaire"/></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
@@ -1923,7 +1908,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="A8F5C626-C1D3-49E1-BBE0-1E64C6467FE7" />
-              <code code="MED-012" displayName="Avis spécialisé" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="MED-012" displayName="Avis spécialisé" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#ortho"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="MSK" />
@@ -1940,7 +1925,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="410358DD-BC43-4CEA-BC53-61E931B7F28D" />
-              <code code="MED-012" displayName="Avis spécialisé" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="MED-012" displayName="Avis spécialisé" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#cardio"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="MSK" />
@@ -1957,7 +1942,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="4AE418FD-C651-4974-B609-7721108CAA27" />
-              <code code="MED-012" displayName="Avis spécialisé" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="MED-012" displayName="Avis spécialisé" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#neuro"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="MSK" />
@@ -1974,7 +1959,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="79F3A15A-48FB-4410-A0F5-D47828406053" />
-              <code code="MED-012" displayName="Avis spécialisé" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="MED-012" displayName="Avis spécialisé" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#geriatre"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="MSK" />
@@ -1991,7 +1976,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="99826168-908F-470A-81D9-42C8BDF94AB9" />
-              <code code="MED-012" displayName="Avis spécialisé" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="MED-012" displayName="Avis spécialisé" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#autre"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="MSK" />
@@ -2008,7 +1993,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="48130D0D-266C-432F-8F11-F2C141B0A2E2" />
-              <code code="MED-317" displayName="Besoin d'un soutien psychotérapeutique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="MED-317" displayName="Besoin d'un soutien psychotérapeutique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#soutienPatient"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NA" />
@@ -2025,7 +2010,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="0CC1B8C5-E223-4A5F-A793-FEEEAE5F8D7F" />
-              <code code="MED-317" displayName="Besoin d'un soutien psychotérapeutique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="MED-317" displayName="Besoin d'un soutien psychotérapeutique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#soutienProche"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NA" />
@@ -2048,11 +2033,11 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="0BD6EE83-18FB-4E4D-ADDD-40BEF23B0872" />
-              <code code="GEN-120" displayName="Mesure de protection" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="GEN-120" displayName="Mesures de protection juridique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#protectionJuridique"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NASK" />
-              <value xsi:type="CD" code="GEN-121" displayName="A envisager" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <value xsi:type="CD" code="GEN-121" displayName="A envisager" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
             </observation>
           </entry>
           <!-- Mesure de protection / Reprise professionnelle -->
@@ -2065,11 +2050,11 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="FF32F986-7F13-4B4F-B891-261F244EDA9C" />
-              <code code="GEN-124" displayName="Mesures de protection / Reprise professionnelle" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="GEN-124" displayName="Mesures de protection / Reprise professionnelle" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#protectionProfessionnelle"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="MSK" />
-              <value xsi:type="CD" code="GEN-125" displayName="Reprise à envisager. Démarches faites." codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <value xsi:type="CD" code="GEN-125" displayName="Reprise à envisager. Démarches faites." codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
             </observation>
           </entry>
           <!-- Mesure de protection / Conduite automobile -->
@@ -2082,11 +2067,11 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="9C54D4C5-55C5-458E-A4F5-7CEC417C4DB9" />
-              <code code="GEN-127" displayName="Mesures de protection / Conduite automobile" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="GEN-127" displayName="Mesures de protection / Conduite automobile" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#conduiteContreindiquee"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="MSK" />
-              <value xsi:type="CD" code="GEN-128" displayName="Conduite formellement contre-indiquée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <value xsi:type="CD" code="GEN-128" displayName="Conduite formellement contre-indiquée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
             </observation>
           </entry>
           <!-- Mesure de protection / Conduite automobile -->
@@ -2099,11 +2084,11 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="A0AFAFA4-1DAC-4850-9BBA-71DBE97BB6F1" />
-              <code code="GEN-127" displayName="Mesures de protection / Conduite automobile" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="GEN-127" displayName="Mesures de protection / Conduite automobile" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#conduitePossible"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="MSK" />
-              <value xsi:type="CD" code="GEN-129" displayName="Conduite possible sans permis spécial" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <value xsi:type="CD" code="GEN-129" displayName="Conduite possible sans permis spécial" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
             </observation>
           </entry>
           <!-- Mesure de protection / Conduite automobile -->
@@ -2116,11 +2101,11 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="7FD19A94-97B9-46D0-9900-61B4A2336722" />
-              <code code="GEN-127" displayName="Mesures de protection / Conduite automobile" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="GEN-127" displayName="Mesures de protection / Conduite automobile" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#conduiteDemarche"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="MSK" />
-              <value xsi:type="CD" code="GEN-130" displayName="Les démarches ont-elles été faites ? (Commission médicale)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <value xsi:type="CD" code="GEN-130" displayName="Les démarches ont-elles été faites ? (Commission médicale)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
             </observation>
           </entry>
           <!-- Lieu de vie -->
@@ -2133,7 +2118,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="D6A98DD7-7313-4D3B-86FE-DCABFFB8267F" />
-              <code code="GEN-131" displayName="Lieu de vie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="GEN-131" displayName="Lieu de vie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#lieuDeVie"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="MSK" />
@@ -2150,7 +2135,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="CFB9878B-4F47-450E-ADB4-BE5BD8529084" />
-              <code code="GEN-132" displayName="Mode de vie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="GEN-132" displayName="Mode de vie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#modeDeVie"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="MSK" />
@@ -2167,7 +2152,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="3558613A-A1DE-406A-A272-3832FCF452E4" />
-              <code code="GEN-142" displayName="autonomie de l'habitat" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="GEN-142" displayName="Diagnostic autonomie de l'habitat" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#Habitat"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NA" />
@@ -2180,7 +2165,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="36CBE9D0-9575-4390-9B13-EEA87B692056" />
-                  <code code="GEN-118" displayName="Fait" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="GEN-118" displayName="Fait" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <text><reference value="#bilanFait"/></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
@@ -2195,7 +2180,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="706C7AB9-1A90-4873-8554-46BE1341B8C8" />
-                  <code code="GEN-118" displayName="A faire / A refaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="GEN-119" displayName="A faire/ A refaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <text><reference value="#bilanAFaire"/></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
@@ -2214,7 +2199,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="B909E7F2-66A4-4DDE-84DF-8B23A533B2F8" />
-              <code code="GEN-136" displayName="Dossier MDPH en cours,adapté" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="GEN-136" displayName="Dossier MDPH en cours, adapté" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#mdph"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NASK" />
@@ -2231,11 +2216,11 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="E4B7AF18-E627-43DA-8ABD-4E888E1F006B" />
-              <code code="GEN-137" displayName="Dossier à mettre en œuvre ou à réadapter" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="GEN-137" displayName="Dossier à mettre en œuvre / à réadapter" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#apa"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NASK" />
-              <value xsi:type="CD" code="GEN-138" displayName="Allocation personnalisée d'autonomie (APA)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <value xsi:type="CD" code="GEN-138" displayName="Allocation personnalisée d’autonomie (APA)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
             </observation>
           </entry>
           <!-- Aides de mises en œuvre / PCH / à ne pas mettre en oeuvre (negationInd='true') -->
@@ -2248,11 +2233,11 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="88BB70CF-E4DD-4599-8328-05DC21AEBB51" />
-              <code code="GEN-137" displayName="Dossier à mettre en œuvre ou à réadapter" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="GEN-137" displayName="Dossier à mettre en œuvre / à réadapter" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#pch"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NASK" />
-              <value xsi:type="CD" code="GEN-139" displayName="Prestation de compensation du handicap (PCH)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <value xsi:type="CD" code="GEN-139" displayName="Prestation de compensation du handicap (PCH)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
             </observation>
           </entry>
           <!-- Aides de mises en œuvre / AAH / à ne pas mettre en oeuvre (negationInd='true') -->
@@ -2265,11 +2250,11 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="C730BA53-9E11-4BD3-B0DA-D26EA95311EA" />
-              <code code="GEN-137" displayName="Dossier à mettre en œuvre ou à réadapter" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="GEN-137" displayName="Dossier à mettre en œuvre / à réadapter" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#aah"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NASK" />
-              <value xsi:type="CD" code="GEN-140" displayName="Allocation aux adultes handicapés (AAH)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <value xsi:type="CD" code="GEN-140" displayName="Allocation aux adultes handicapés (AAH)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
             </observation>
           </entry>
           <!-- Aides de mises en œuvre / ASPA-ASI / à ne pas mettre en oeuvre (negationInd='true') -->
@@ -2282,11 +2267,11 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="DE106603-AF76-4591-8063-FF7FECC691AE" />
-              <code code="GEN-137" displayName="Dossier à mettre en œuvre ou à réadapter" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="GEN-137" displayName="Dossier à mettre en œuvre / à réadapter" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#aspa"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NASK" />
-              <value xsi:type="CD" code="GEN-141" displayName="Allocation de solidarité aux personnes âgées (ASPA) /Allocation supplémentaire d'invalidité (ASI)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <value xsi:type="CD" code="GEN-141" displayName="Allocation de solidarité aux personnes âgées (ASPA) /Allocation supplémentaire d'invalidité (ASI)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
             </observation>
           </entry>
           <!-- Souhait et projet de vie -->
@@ -2299,7 +2284,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="40ADC3B4-E207-4985-A076-583C46F466D0" />
-              <code code="GEN-143" displayName="Souhait et projet de vie de la personne" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="GEN-143" displayName="Souhait et projet de vie de la personne" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#souhait"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NASK" />
@@ -2449,7 +2434,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="8A51A0DD-F784-4950-847D-0087B7FC65B0" />
-              <code code="GEN-158" displayName="Soins de réadaptation" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="GEN-158" displayName="Soins de réadaptation" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#readaptation"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NA" />
@@ -2466,7 +2451,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="C08DFDF1-EA42-4883-A283-F406C59E1C17" />
-              <code code="MED-345" displayName="Appareillage" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="MED-345" displayName="Appareillage" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#appareillage"/></text>
               <statusCode code="completed" />
               <effectiveTime nullFlavor="NA" />
@@ -2483,7 +2468,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="23A75D93-427F-4ED0-80CE-E5361C9D039C" />
-              <code code="MED-527" displayName="Soins ou traitements nocturnes" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="MED-527" displayName="Soins ou traitements nocturnes" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#soinsNocturnes"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NASK" />
@@ -2500,7 +2485,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="F1B7174D-AE37-41DB-8974-C7E4225DCEE8" />
-              <code code="MED-528" displayName="Ventilation" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="MED-528" displayName="Ventilation" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#ventilation"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NASK" />
@@ -2517,7 +2502,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="F309CABE-56D0-486B-AE5A-53D808E27DFC" />
-              <code code="MED-529" displayName="Contrainte alimentaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="MED-529" displayName="Contrainte alimentaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#alim"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NASK" />
@@ -2534,7 +2519,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="4CEC61BB-0D34-4C87-AC0D-4383546DA2D3" />
-              <code code="MED-318" displayName="Association de soutien" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="MED-318" displayName="Association de soutien" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#associationSoutien"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NASK" />
@@ -2551,7 +2536,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="8C4F9C89-D721-4B67-8712-5A084AF6736B" />
-              <code code="MED-530" displayName="Traitement médical préventif de récidive" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="MED-530" displayName="Traitement médical préventif de récidive" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#traitementPreventifRecidive"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NASK" />
@@ -2568,7 +2553,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="6BAFEB17-7225-435C-A14C-0FAD88D0F801" />
-              <code code="MED-531" displayName="Traitement médical préventif de complication" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="MED-531" displayName="Traitement médical préventif de complication" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#traitementPreventifComplication"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NASK" />
@@ -2585,7 +2570,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="B6C16798-F700-45A6-A2FD-6357F6BB5A86" />
-              <code code="ORG-163" displayName="Consultation de spécialité" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="ORG-163" displayName="Consultation de spécialité" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#pecReguliereSpecialite"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NASK" />
@@ -2619,11 +2604,11 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="57E5AD79-C245-470E-B7DC-3FC382611DA4" />
-              <code code="GEN-161" displayName="Prévoir" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="GEN-161" displayName="Prévoir" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#prevoir1"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NASK" />
-              <value xsi:type="CD" code="ORG-165" displayName="Séjour de répit" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <value xsi:type="CD" code="ORG-165" displayName="Séjour de répit" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
             </observation>
           </entry>
           <!-- Traitement / Prévoir / Maison d'accueil spécialisé (MAS) / Foyer d'accueil médicalisé (FAM) -->
@@ -2636,7 +2621,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="64258030-EF69-4306-8749-81A5610AB7F4" />
-              <code code="GEN-161" displayName="Prévoir" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="GEN-161" displayName="Prévoir" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#prevoir2"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NASK" />
@@ -2653,7 +2638,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="7A07A692-5967-4E80-BD45-C8A3401223E8" />
-              <code code="GEN-161" displayName="Prévoir" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="GEN-161" displayName="Prévoir" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#prevoir3"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NASK" />
@@ -2670,7 +2655,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="C67D3F70-2EFE-4BB8-AAD9-23467328C8E3" />
-              <code code="GEN-161" displayName="Prévoir" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="GEN-161" displayName="Prévoir" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#prevoir4"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NASK" />
@@ -2687,7 +2672,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="8C165EA7-E47C-4A69-99A9-001599CADEAB" />
-              <code code="GEN-161" displayName="Prévoir" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="GEN-161" displayName="Prévoir" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#prevoir4"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NASK" />
@@ -2704,7 +2689,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.27" />
               <id root="2B754E96-3619-4F9A-BBBE-DD640C01D937" />
-              <code code="GEN-161" displayName="Prévoir1" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="GEN-161" displayName="Prévoir" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="#prevoir1"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NASK" />
@@ -2746,7 +2731,7 @@
               </tbody>
             </table>
             <br /></text>
-          <!-- Entrée de type Questionnaire d'évalutation -->
+          <!-- Entrée FR-Evaluation : Perte d'autonomie -->
           <entry>
             <observation classCode="OBS" moodCode="EVN">
               <!-- Conformité CCD -->
@@ -2758,18 +2743,16 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.25" />
               <id root="0B4BF53E-B737-4D00-AF6B-D6419B54A500" />
-              <code nullFlavor="NA">
-                <translation code="MED-346" displayName="Perte d'autonomie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
-              </code>
+              <code code="MED-346" displayName="Perte d'autonomie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
               <text><reference value="#perteAuto"/></text>
               <statusCode code="completed" />
               <effectiveTime>
                 <low nullFlavor="UNK" />
               </effectiveTime>
-              <value xsi:type="CD" code="MED-339" displayName="GIR -1" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <value xsi:type="CD" code="MED-339" displayName="GIR-1" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
             </observation>
           </entry>
-          <!--Realisation effective activites-->
+          <!-- Entrée FR-Evaluation : Realisation effective activites-->
           <entry>
             <observation classCode="OBS" moodCode="EVN">
               <!-- Conformité CCD -->
@@ -2781,9 +2764,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.25" />
               <id root="83CE8D98-B6FD-4415-BA6D-9E07585E9C31" />
-              <code nullFlavor="NA">
-                <translation code="MED-347" displayName="Realisation effective d'activités" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
-              </code>
+              <code code="MED-347" displayName="Réalisation effective d'activités" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
               <text><reference value="#realisation"/></text>
               <statusCode code="completed" />
               <effectiveTime>

@@ -666,7 +666,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="68F4934C-4C1E-473F-B89A-95D8E0AEC507" />
-                  <code code="MED-593" displayName="Accès veineux difficile" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+                  <code code="MED-593" displayName="Accès veineux difficile" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                   </code>
                   <text><reference value="#acces-veineux" /></text>
                   <statusCode code="completed" />
@@ -739,7 +739,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="34509226-D2BB-49DD-92BE-25E9717942F4" />
-                  <code code="MED-638" displayName="Score de Mallampati" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+                  <code code="MED-638" displayName="Score de Mallampati" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                   </code>
                   <text><reference value="#score-mallampati" /></text>
                   <statusCode code="completed" />
@@ -755,7 +755,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="6BDA18D8-9EF9-4EE7-AA53-D9F2B04C1BDA" />
-                  <code code="MED-639" displayName="Ouverture de bouche" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+                  <code code="MED-639" displayName="Ouverture de bouche" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                   </code>
                   <text><reference value="#ouverture-bouche" /></text>
                   <statusCode code="completed" />
@@ -771,7 +771,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="B16360BD-6B61-4684-B58A-67926BE9E33B" />
-                  <code code="MED-640" displayName="Distance thyromentonnière" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+                  <code code="MED-640" displayName="Distance thyromentonnière" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                   </code>
                   <text><reference value="#distance-thyromenton" /></text>
                   <statusCode code="completed" />
@@ -955,7 +955,7 @@
                   <effectiveTime>
                     <low nullFlavor="UNK" />
                   </effectiveTime>
-                  <value xsi:type="CD" code="I10" displayName="Hypertension essentielle" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
+                  <value xsi:type="CD" code="I10" displayName="Hypertension essentielle (primitive)" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
                     <originalText><reference value="#probleme-cardio-vasculaire-01" /></originalText>
                   </value>
                   <!-- [0..1] Entrée FR-Commentaire-ER -->
@@ -1281,7 +1281,7 @@
                   <effectiveTime>
                     <low value="20180923" />
                   </effectiveTime>
-                  <value xsi:type="CD" code="MED-670" displayName="Cancer" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+                  <value xsi:type="CD" code="02" displayName="Tumeurs" codeSystem="2.16.840.1.113883.6.347" codeSystemName="CIM11MMS">
                     <originalText><reference value="#probleme-cancer-01" /></originalText>
                   </value>
                   <!-- [0..1] Entrée FR-Commentaire-ER -->
@@ -1932,7 +1932,7 @@
               <!-- jdv-social-history-code-cisis (1.2.250.1.213.1.1.4.2.283.4) -->
               <code code="11345-6" displayName="Autre élément social" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                 <qualifier>
-                  <name code="GEN-232" displayName="Risques sociaux" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <name code="GEN-232" displayName="Risques sociaux" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                 </qualifier>
               </code>
               <text><reference value="#risques-sociaux" /></text>
@@ -1982,7 +1982,7 @@
               <!-- jdv-social-history-code-cisis (1.2.250.1.213.1.1.4.2.283.4) -->
               <code code="11345-6" displayName="Autre élément social" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                 <qualifier>
-                  <name code="GEN-207" displayName="Facteurs de risques environnementaux" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <name code="GEN-207" displayName="Facteurs de risques environnementaux" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                 </qualifier>
               </code>
               <text><reference value="#risques-environnementaux" /></text>
@@ -2010,7 +2010,7 @@
               <!-- jdv-social-history-code-cisis (1.2.250.1.213.1.1.4.2.283.4) -->
               <code code="11345-6" displayName="Autre élément social" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                 <qualifier>
-                  <name code="ORG-075" displayName="Activité professionnelle" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <name code="ORG-075" displayName="Activité professionnelle" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                 </qualifier>
               </code>
               <text><reference value="#activite-professionnelle" /></text>
@@ -2060,7 +2060,7 @@
               <!-- jdv-social-history-code-cisis (1.2.250.1.213.1.1.4.2.283.4) -->
               <code code="11345-6" displayName="Autre élément social" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                 <qualifier>
-                  <name code="GEN-208" displayName="Sédentarité" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <name code="GEN-208" displayName="Sédentarité" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                 </qualifier>
               </code>
               <text><reference value="#sedentarite" /></text>
@@ -2137,7 +2137,7 @@
                 <low value="20200323" />
               </effectiveTime>
               <!-- jdv-niveau-dependance-cisis (1.2.250.1.213.1.1.5.483) -->
-              <value xsi:type="CD" code="GEN-199" displayName="Dépendance moyenne" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <value xsi:type="CD" code="GEN-199" displayName="Dépendance moyenne" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
             </observation>
           </entry>
           <!-- [1..*] Entrée FR-Habitus-Mode-de-vie : Voyages récents -->
@@ -2155,7 +2155,7 @@
               <!-- jdv-social-history-code-cisis (1.2.250.1.213.1.1.4.2.283.4) -->
               <code code="11345-6" displayName="Autre élément social" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                 <qualifier>
-                  <name code="GEN-050" displayName="Voyage" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <name code="GEN-050" displayName="Voyage" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                 </qualifier>
               </code>
               <text><reference value="#voyage-recent" /></text>
@@ -2184,7 +2184,7 @@
               <!-- jdv-social-history-code-cisis (1.2.250.1.213.1.1.4.2.283.4) -->
               <code code="11345-6" displayName="Autre élément social" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                 <qualifier>
-                  <name code="GEN-231" displayName="Fait(s) marquant(s)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <name code="GEN-231" displayName="Fait(s) marquant(s)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                 </qualifier>
               </code>
               <text><reference value="fait-marquant" /></text>
@@ -2319,7 +2319,7 @@
               <id root="E59111F0-D6D9-4867-B564-DB765FFB27CE" />
               <code code="95023-8" displayName="Mobilité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                 <qualifier>
-                  <name code="MED-596" displayName="Le patient est-il capable de se lever et de traverser le local de consultation en moins de 15 secondes ?" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <name code="MED-596" displayName="Le patient est-il capable de se lever et de traverser le local de consultation en moins de 15 secondes ?" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                 </qualifier>
               </code>
               <text><reference value="#deplacement" /></text>
@@ -2344,7 +2344,7 @@
               <id root="184CE8C1-F2CA-4BA9-8E06-C446D26CCB81" />
               <code code="95023-8" displayName="Mobilité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                 <qualifier>
-                  <name code="MED-597" displayName="Le patient a-t-il effectué une chute dans les 6 derniers mois ?" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <name code="MED-597" displayName="Le patient a-t-il effectué une chute dans les 6 derniers mois ?" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                 </qualifier>
               </code>
               <text><reference value="#chute" /></text>
@@ -2369,7 +2369,7 @@
               <id root="32578CE8-508C-46F2-987B-591CC6544293" />
               <code code="95023-8" displayName="Mobilité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                 <qualifier>
-                  <name code="MED-598" displayName="Aide au déplacement" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <name code="MED-598" displayName="Aide au déplacement" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                 </qualifier>
               </code>
               <text><reference value="#aide-deplacement" /></text>
@@ -2395,7 +2395,7 @@
               <id root="9941AFB5-9475-452B-BDD2-D5B1ABC06E19" />
               <code code="10210-3" displayName="Etat général" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                 <qualifier>
-                  <name code="MED-346" displayName="Perte d'autonomie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <name code="MED-346" displayName="Perte d'autonomie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                 </qualifier>
               </code>
               <text><reference value="#score-GIR" /></text>
@@ -2404,7 +2404,7 @@
                 <low value="20200323" />
               </effectiveTime>
               <!-- jdv-gir-cisis (1.2.250.1.213.1.1.5.53) -->
-              <value xsi:type="CD" code="MED-344" displayName="GIR-6" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <value xsi:type="CD" code="MED-344" displayName="GIR-6" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
             </observation>
           </entry>
           <!-- Entrée FR-Evaluation : Score Duke (codé à partir d'un JDV) -->
@@ -2421,7 +2421,7 @@
               <id root="6FCF6B00-04AE-4607-9A05-A5AA8DB67711" />
               <code code="10210-3" displayName="Etat général" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                 <qualifier>
-                  <name code="MED-633" displayName="Aptitude physique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <name code="MED-633" displayName="Aptitude physique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                 </qualifier>
               </code>
               <text><reference value="#score-Duke" /></text>
@@ -2430,7 +2430,7 @@
                 <low value="20200323" />
               </effectiveTime>
               <!-- jdv-score-duke-cisis (1.2.250.1.213.1.1.5.493) -->
-              <value xsi:type="CD" code="MED-589" displayName="Aptitude physique excellente (Score de Duke &gt; 10 MET)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <value xsi:type="CD" code="MED-589" displayName="Aptitude physique excellente (Score de Duke &gt; 10 MET)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
             </observation>
           </entry>
           <!-- Entrée FR-Evaluation : Support Nutritionnel (codé à partir d'un JDV) -->
@@ -2447,7 +2447,7 @@
               <id root="2A9AD211-FF28-4A45-A092-591A9CFA72AF" />
               <code code="75305-3" displayName="Statut nutritionnel" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                 <qualifier>
-                  <name code="MED-599" displayName="Support nutritionnel" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <name code="MED-599" displayName="Support nutritionnel" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                 </qualifier>
               </code>
               <text><reference value="#support-nutritionnel" /></text>
@@ -2456,7 +2456,7 @@
                 <low value="20200323" />
               </effectiveTime>
               <!-- jdv-support-nutritionnel-cisis (1.2.250.1.213.1.1.5.487) -->
-              <value xsi:type="CD" code="MED-575" displayName="Alimentation mixée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <value xsi:type="CD" code="MED-575" displayName="Alimentation mixée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
             </observation>
           </entry>
           <!-- Entrée FR-Evaluation : Malnutrition : Le patient a-t-il perdu du poids involontairement pendant ces derniers 6 mois ? (true/false) -->
@@ -2473,7 +2473,7 @@
               <id root="582358B5-C4C7-43FA-9228-02BDC1B24E78" />
               <code code="75305-3" displayName="Statut nutritionnel" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                 <qualifier>
-                  <name code="MED-650" displayName="Le patient a-t-il perdu du poids involontairement pendant ces derniers 6 mois ?" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <name code="MED-650" displayName="Le patient a-t-il perdu du poids involontairement pendant ces derniers 6 mois ?" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                 </qualifier>
               </code>
               <text><reference value="#malnutrition-perte-poids" /></text>
@@ -2498,7 +2498,7 @@
               <id root="41A4D69B-571B-4208-A55F-3DE8D306FCB2" />
               <code code="75305-3" displayName="Statut nutritionnel" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                 <qualifier>
-                  <name code="MED-651" displayName="Le patient a-t-il mangé moins que d'habitude depuis plus d'une semaine ?" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <name code="MED-651" displayName="Le patient a-t-il mangé moins que d'habitude depuis plus d'une semaine ?" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                 </qualifier>
               </code>
               <text><reference value="#malnutrition-perte-appetit" /></text>

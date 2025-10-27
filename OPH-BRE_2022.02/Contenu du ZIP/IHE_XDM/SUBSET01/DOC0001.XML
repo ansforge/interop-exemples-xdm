@@ -269,7 +269,7 @@
   <documentationOf>
     <serviceEvent classCode="ACT">
       <!-- code de l'acte documenté : valeur issue du jdv-motif-consultation-ophtalmologique-cisis (1.2.250.1.213.1.1.5.622) -->
-      <code code="MED-903" displayName="Délivrance de correction optique (opticien)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+      <code code="MED-903" displayName="Délivrance de correction optique (opticien)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
       <!-- Date de la création du document -->
       <effectiveTime>
         <low value="20210827154500+0100" />
@@ -424,7 +424,7 @@
               <statusCode code="completed" />
               <effectiveTime value="20210827" />
               <!-- Valeur issue du jdv-motif-consultation-ophtalmologique-cisis (1.2.250.1.213.1.1.5.622) -->
-              <value xsi:type="CD" code="MED-903" displayName="Délivrance de correction optique (opticien)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <value xsi:type="CD" code="MED-903" displayName="Délivrance de correction optique (opticien)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
             </observation>
           </entry>
           <!-- [1..1] Entrée FR-Probleme -->
@@ -780,7 +780,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.121" />
                           <id root="EAF2B689-957A-4C9B-888B-4DB5ECC693FF" />
                           <!-- Valeur issue du jdv-type-de-mesure-de-refraction-cisis (1.2.250.1.213.1.1.5.641)  -->
-                          <code code="MED-1065" displayName="Valeur de la kératométrie dans l'axe le plus plat" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1065" displayName="Valeur de la kératométrie dans l'axe le plus plat" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#indiceRefractionkOg" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -801,7 +801,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.121" />
                           <id root="D47FDA25-22F1-4AB8-ACE3-CC63DBD3B86A" />
                           <!-- Valeur issue du jdv-type-de-mesure-de-refraction-cisis (1.2.250.1.213.1.1.5.641)  -->
-                          <code code="MED-1066" displayName="Valeur de la kératométrie dans l'axe le plus cambré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                          <code code="MED-1066" displayName="Valeur de la kératométrie dans l'axe le plus cambré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                           <text><reference value="#indiceRefractionkpOd" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210827093000+0100" />
@@ -821,7 +821,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.121" />
                           <id root="B71AB7CD-32DA-4C47-B28E-031421D0C50A" />
                           <!-- Valeur issue du jdv-type-de-mesure-de-refraction-cisis (1.2.250.1.213.1.1.5.641)  -->
-                          <code code="MED-1066" displayName="Valeur de la kératométrie dans l'axe le plus cambré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                          <code code="MED-1066" displayName="Valeur de la kératométrie dans l'axe le plus cambré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                           <text><reference value="#indiceRefractionKpOG" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -887,11 +887,11 @@
                       <id root="E1B838BB-4333-4854-A042-536C4CEB20C8" />
                       <code code="28631-0" displayName="Etude de l'acuité visuelle" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                         <qualifier>                          
-                          <name code="MED-1049" displayName="Acuité visuelle observée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
-                          <value code="MED-1048" displayName="Meilleure acuité visuelle corrigée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <name code="MED-1049" displayName="Acuité visuelle observée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
+                          <value code="MED-1048" displayName="Meilleure acuité visuelle corrigée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                         </qualifier>
                         <qualifier>
-                          <name code="MED-1054" displayName="Distance de mesure de l'acuité visuelle" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <name code="MED-1054" displayName="Distance de mesure de l'acuité visuelle" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <value nullFlavor="NA"></value>
                         </qualifier>
                       </code>
@@ -1305,7 +1305,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.119" />
                           <id root="9FC804C9-F40E-4699-9D8C-8C9FB1D8B957" />
                           <!-- Valeur issue du jdv-type-de-mesure-acuite-visuelle-cisis (1.2.250.1.213.1.1.5.642)  -->
-                          <code code="MED-886" displayName="Addition" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                          <code code="MED-886" displayName="Addition" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                           <text><reference value="#additionOd" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -1336,7 +1336,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.119" />
                           <id root="9EF3E294-EFE9-4CF8-8DC9-4A4B4BE32F09" />
                           <!-- Valeur issue du jdv-type-de-mesure-acuite-visuelle-cisis (1.2.250.1.213.1.1.5.642)  -->
-                          <code code="MED-886" displayName="Addition" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                          <code code="MED-886" displayName="Addition" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                           <text><reference value="#additionOg" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -1368,7 +1368,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.119" />
                           <id root="F1F4CAF7-7665-4CF8-BC40-5D980572441E" />
                           <!-- Valeur issue du jdv-type-de-mesure-acuite-visuelle-cisis (1.2.250.1.213.1.1.5.642)  -->
-                          <code code="MED-990" displayName="Prisme – puissance – acuité visuelle" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-990" displayName="Prisme – puissance – acuité visuelle" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#prismePuissanceOd" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -1399,7 +1399,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.119" />
                           <id root="FE752065-F3BF-400B-A1CB-AE8C78261D72" />
                           <!-- Valeur issue du jdv-type-de-mesure-acuite-visuelle-cisis (1.2.250.1.213.1.1.5.642)  -->
-                          <code code="MED-990" displayName="Prisme – puissance – acuité visuelle" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                          <code code="MED-990" displayName="Prisme – puissance – acuité visuelle" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                           <text><reference value="#prismePuissanceOg" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -1431,14 +1431,14 @@
                           <templateId root="1.2.250.1.213.1.1.3.119" />
                           <id root="1715F186-AD8C-4DDE-AA9F-9A371E6092D6" />
                           <!-- Valeur issue du jdv-type-de-mesure-acuite-visuelle-cisis (1.2.250.1.213.1.1.5.642)  -->
-                          <code code="MED-887" displayName="Prisme - orientation base – acuité visuelle" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                          <code code="MED-887" displayName="Prisme - orientation base – acuité visuelle" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                           <text><reference value="#prismeOrientationBaseOd" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
                           <!-- Valeur issue du jdv-orientation-base-du-prisme-cisis(1.2.250.1.213.1.1.5.623) -->
                           <value xsi:type="CD" code="260521003" displayName="interne" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
                           <!-- Valeur provenant du jdv-methode-de-mesure-acuite-visuelle-cisis(1.2.250.1.213.1.1.5.715) -->
-                          <methodCode code="MED-1177" displayName="réfracteur" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                          <methodCode code="MED-1177" displayName="réfracteur" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                           <!-- Valeur issue du jdv-oeil-examine-cisis (1.2.250.1.213.1.1.5.627) -->
                           <targetSiteCode code="1290032005" displayName="oeil droit" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>   
                           <!-- Entrée FR-Reference-interne qui lie cette observation à l'entrée FR-Liste-des-mesures-de-refraction (1.3.6.1.4.1.19376.1.12.1.3.3) -->
@@ -1463,14 +1463,14 @@
                           <templateId root="1.2.250.1.213.1.1.3.119" />
                           <id root="68CE14DA-E84E-43F6-A0AA-65567CD2BECB" />
                           <!-- Valeur issue du jdv-type-de-mesure-acuite-visuelle-cisis (1.2.250.1.213.1.1.5.642)  -->
-                          <code code="MED-887" displayName="Prisme - orientation base – acuité visuelle" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                          <code code="MED-887" displayName="Prisme - orientation base – acuité visuelle" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                           <text><reference value="#prismeOrientationBaseOg" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
                           <!-- Valeur issue du jdv-orientation-base-du-prisme-cisis(1.2.250.1.213.1.1.5.623) -->
                           <value xsi:type="CD" code="260521003" displayName="interne" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
                           <!-- Valeur provenant du jdv-methode-de-mesure-acuite-visuelle-cisis(1.2.250.1.213.1.1.5.715) -->
-                          <methodCode code="MED-1177" displayName="réfracteur" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                          <methodCode code="MED-1177" displayName="réfracteur" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                           <!-- vValeur issue du jdv-oeil-examine-cisis(1.2.250.1.213.1.1.5.627) -->
                           <targetSiteCode code="1290031003" displayName="oeil gauche" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>   
                           <!-- Entrée FR-Reference-interne qui lie cette observation à l'entrée FR-Liste-des-mesures-de-refraction (1.3.6.1.4.1.19376.1.12.1.3.3) -->
@@ -1496,13 +1496,13 @@
                           <templateId root="1.2.250.1.213.1.1.3.119" />
                           <id root="02AE9DA8-27FA-4C8B-919C-F7A0E759D4AE" />
                           <!-- Valeur issue du jdv-type-de-mesure-acuite-visuelle-cisis (1.2.250.1.213.1.1.5.642)  -->
-                          <code code="MED-1047" displayName="Prisme - axe en degrés – acuité visuelle" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1047" displayName="Prisme - axe en degrés – acuité visuelle" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#prismeAxeOd" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
                           <value xsi:type="PQ" value="15" unit="deg" />
                           <!-- Valeur provenant du jdv-methode-de-mesure-acuite-visuelle-cisis(1.2.250.1.213.1.1.5.715) -->
-                          <methodCode code="MED-1177" displayName="réfracteur" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                          <methodCode code="MED-1177" displayName="réfracteur" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                           <!-- Valeur issue du jdv-oeil-examine-cisis (1.2.250.1.213.1.1.5.627) -->
                           <targetSiteCode code="1290032005" displayName="oeil droit" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>   
                           <!-- Entrée FR-Reference-interne qui lie cette observation à l'entrée FR-Liste-des-mesures-de-refraction (1.3.6.1.4.1.19376.1.12.1.3.3) -->
@@ -1527,13 +1527,13 @@
                           <templateId root="1.2.250.1.213.1.1.3.119" />
                           <id root="4CA053AF-52DB-4B2B-AAF7-256915B96443" />
                           <!-- Valeur issue du jdv-type-de-mesure-acuite-visuelle-cisis (1.2.250.1.213.1.1.5.642)  -->                          
-                          <code code="MED-1047" displayName="Prisme - axe en degrés – acuité visuelle" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                          <code code="MED-1047" displayName="Prisme - axe en degrés – acuité visuelle" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                           <text><reference value="#prismeAxeOg" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
                           <value xsi:type="PQ" value="15" unit="deg" />
                           <!-- Valeur provenant du jdv-methode-de-mesure-acuite-visuelle-cisis(1.2.250.1.213.1.1.5.715) -->
-                          <methodCode code="MED-1177" displayName="réfracteur" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                          <methodCode code="MED-1177" displayName="réfracteur" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                           <!-- Valeur issue du jdv-oeil-examine-cisis(1.2.250.1.213.1.1.5.627) -->
                           <targetSiteCode code="1290031003" displayName="oeil gauche" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>   
                           <!-- Entrée FR-Reference-interne qui lie cette observation à l'entrée FR-Liste-des-mesures-de-refraction (1.3.6.1.4.1.19376.1.12.1.3.3) -->
@@ -2075,7 +2075,7 @@
                       <templateId root="1.2.250.1.213.1.1.3.118" />
                       <id root="E366AC45-A815-4441-BF55-A76DEDA69DA6" />
                       <!-- Valeur issue du jdv-type-de-mesure-dispositif-oculaire-cisis (1.2.250.1.213.1.1.5.643)  -->
-                      <code code="MED-1179" displayName="Verres prescrits" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                      <code code="MED-1179" displayName="Verres prescrits" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                       <statusCode code="completed" />
                       <effectiveTime value="20210416093000+0100" />
                       
@@ -2088,7 +2088,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="B28047D7-75A0-426F-AF38-3AC4A8C515CE" />
                           <!-- Valeur issue du jdv-mesure-verre-prescrit-cisis (1.2.250.1.213.1.1.5.651) -->
-                          <code code="MED-1070" displayName="Pathologie listée dans arrété du 3 décembre 2018 publié le 13 décembre 2018" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1070" displayName="Pathologie listée dans arrété du 3 décembre 2018 publié le 13 décembre 2018" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#patho" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -2158,7 +2158,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="D955F0AD-22FE-4851-8B3E-EE6BBD438E00" />
                           <!-- Valeur issue du jdv-mesure-verre-prescrit-cisis (1.2.250.1.213.1.1.5.651)  -->
-                          <code code="MED-1071" displayName="Puissance de la sphère – verre prescrit" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1071" displayName="Puissance de la sphère - verre prescrit" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#sphereOd1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -2184,7 +2184,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="8E226E80-C41E-41F6-9C7D-B51C5430D121" />
                           <!-- Valeur issue du jdv-mesure-verre-prescrit-cisis (1.2.250.1.213.1.1.5.651)  -->
-                          <code code="MED-1071" displayName="Puissance de la sphère – verre prescrit" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1071" displayName="Puissance de la sphère - verre prescrit" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#sphereOg1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -2211,7 +2211,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="3D6B16B3-A2FC-4B71-9316-2F2032F675C1" />
                           <!-- Valeur issue du jdv-mesure-verre-prescrit-cisis (1.2.250.1.213.1.1.5.651)  -->
-                          <code code="MED-1072" displayName="Puissance du cylindre – verre prescrit" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1072" displayName="Puissance du cylindre - verre prescrit" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#cylindreOd1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -2237,7 +2237,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="756E5DB2-A4C1-4E83-84CF-F4D97C79DA4A" />
                           <!-- Valeur issue du jdv-mesure-verre-prescrit-cisis (1.2.250.1.213.1.1.5.651)  -->
-                          <code code="MED-1072" displayName="Puissance du cylindre – verre prescrit" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                          <code code="MED-1072" displayName="Puissance du cylindre - verre prescrit" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                           <text><reference value="#cylindreOg1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -2264,7 +2264,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="F9B32DB3-BB12-4766-8D25-47A17B8A722D" />
                           <!-- Valeur issue du jdv-mesure-verre-prescrit-cisis (1.2.250.1.213.1.1.5.651)  -->
-                          <code code="MED-1076" displayName="Axe en degrés – verre prescrit" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1076" displayName="Axe en degrés - verre prescrit" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#axeOd1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -2290,7 +2290,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="FF910EDD-958C-40E7-A4B7-E355D1F0349C" />
                           <!-- Valeur issue du jdv-mesure-verre-prescrit-cisis (1.2.250.1.213.1.1.5.651)  -->
-                          <code code="MED-1075" displayName="Prisme - axe en degrés – verre prescrit" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1075" displayName="Prisme - axe en degrés - verre prescrit" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#prismeAxeOg1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -2317,7 +2317,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="905CD9F5-2C7E-4EB3-99F6-081FF7A5AF43" />
                           <!-- Valeur issue du jdv-mesure-verre-prescrit-cisis (1.2.250.1.213.1.1.5.651)  -->
-                          <code code="MED-886" displayName="Addition" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-886" displayName="Addition" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#additionOd1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -2343,7 +2343,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="4CC0D6CD-0975-4232-A5BF-E03505989065" />
                           <!-- Valeur issue du jdv-mesure-verre-prescrit-cisis (1.2.250.1.213.1.1.5.651)  -->
-                          <code code="MED-886" displayName="Addition" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-886" displayName="Addition" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#additionOg1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -2370,7 +2370,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="BC3D6875-94A2-475E-9C97-A06B34294FDD" />
                           <!-- Valeur issue du jdv-mesure-verre-prescrit-cisis (1.2.250.1.213.1.1.5.651)  -->
-                          <code code="MED-1073" displayName="Prisme – puissance – verre prescrit" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                          <code code="MED-1073" displayName="Prisme - puissance - verre prescrit" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                           <text><reference value="#prismePuissanceOd1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -2396,7 +2396,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="DD30CA44-9F38-480E-850D-136BD77FF22F" />
                           <!-- Valeur issue du jdv-mesure-verre-prescrit-cisis (1.2.250.1.213.1.1.5.651)  -->
-                          <code code="MED-1073" displayName="Prisme – puissance – verre prescrit" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1073" displayName="Prisme - puissance - verre prescrit" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#prismePuissanceOg1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -2423,7 +2423,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="D6701C99-9A9A-4472-8A69-D56A1BF6CD63" />
                           <!-- Valeur issue du jdv-mesure-verre-prescrit-cisis (1.2.250.1.213.1.1.5.651)  -->
-                          <code code="MED-1074" displayName="Prisme - orientation base – verre prescrit" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1074" displayName="Prisme - orientation base - verre prescrit" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#prismeOrientationBaseOd1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -2450,7 +2450,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="4A846EA4-D58F-4057-9FF0-4409E26A57C9" />
                           <!-- Valeur issue du jdv-mesure-verre-prescrit-cisis (1.2.250.1.213.1.1.5.651)  -->
-                          <code code="MED-1074" displayName="Prisme - orientation base – verre prescrit" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1074" displayName="Prisme - orientation base - verre prescrit" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#prismeOrientationBaseOg1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -2478,7 +2478,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="16D5CE3B-5F5C-4D9C-9CC0-08D5447269A9" />
                           <!-- Valeur issue du jdv-mesure-verre-prescrit-cisis (1.2.250.1.213.1.1.5.651)  -->
-                          <code code="MED-1075" displayName="Prisme - axe en degrés – verre prescrit" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                          <code code="MED-1075" displayName="Prisme - axe en degrés - verre prescrit" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                           <text><reference value="#prismeAxeOd1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -2504,7 +2504,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="8755143D-454C-43A5-B173-F6A9A21E5A30" />
                           <!-- Valeur issue du jdv-mesure-verre-prescrit-cisis (1.2.250.1.213.1.1.5.651)  -->
-                          <code code="MED-1076" displayName="Axe en degrés – verre prescrit" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1076" displayName="Axe en degrés - verre prescrit" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#axeOg1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -2536,7 +2536,7 @@
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
                           <!-- Valeur proveant de jdv-type-de-prisme-cisis(1.2.250.1.213.1.1.5.624) -->
-                          <value xsi:type="CD" code="MED-1216" displayName="Prisme intégré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <value xsi:type="CD" code="MED-1216" displayName="Prisme intégré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <methodCode nullFlavor="NA"/>
                           <!-- targetSiteCode provenant du jdv-type-dispositif-oculaire-cisis(1.2.250.1.213.1.1.5.716) -->
                           <targetSiteCode code="421591000" displayName="verre de lunettes" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
@@ -2563,7 +2563,7 @@
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
                           <!-- Valeur proveant de jdv-type-de-prisme-cisis(1.2.250.1.213.1.1.5.624) -->
-                          <value xsi:type="CD" code="MED-1216" displayName="Prisme intégré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <value xsi:type="CD" code="MED-1216" displayName="Prisme intégré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <methodCode code="C25209" displayName="Mesure Automatique" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCIT" />
                           <!-- targetSiteCode provenant du jdv-type-dispositif-oculaire-cisis(1.2.250.1.213.1.1.5.716) -->
                           <targetSiteCode code="421591000" displayName="verre de lunettes" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
@@ -2605,7 +2605,7 @@
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
                           <!-- Valeur issue du jdv-type-de-verre-prescrit-cisis (1.2.250.1.213.1.1.5.625) -->
-                          <value xsi:type="CD" code="MED-907" displayName="Verres progressifs" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <value xsi:type="CD" code="MED-907" displayName="Verres progressifs" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <methodCode nullFlavor="NA"/>
                           <!-- targetSiteCode provenant du jdv-type-dispositif-oculaire-cisis(1.2.250.1.213.1.1.5.716) -->
                           <targetSiteCode code="421591000" displayName="verre de lunettes" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
@@ -2627,7 +2627,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="2B4C1E9B-F09D-4ECB-93DD-8F0E7FD6BC14" />
                           <!-- valeur issue du jdv-mesure-type-verre-prescrit-cisis (1.2.250.1.213.1.1.5.652)  -->
-                          <code code="GEN-292" displayName="Commentaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="GEN-292" displayName="Commentaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#commentaireOd1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -2651,7 +2651,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="1F0B0C68-B40A-4A62-A304-1C6F4B940C9F" />
                           <!-- valeur issue du jdv-mesure-type-verre-prescrit-cisis (1.2.250.1.213.1.1.5.652)  -->
-                          <code code="MED-888" displayName="Intolérance aux verres progressifs" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-888" displayName="Intolérance aux verres progressifs" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#intoleranceVerresProgressifsOd1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -2682,7 +2682,7 @@
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
                           <!-- Valeur issue du jdv-type-de-verre-prescrit-cisis (1.2.250.1.213.1.1.5.625) -->
-                          <value xsi:type="CD" code="MED-907" displayName="Verres Progressifs" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <value xsi:type="CD" code="MED-907" displayName="Verres Progressifs" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <methodCode nullFlavor="NA" />
                           <!-- targetSiteCode provenant du jdv-type-dispositif-oculaire-cisis(1.2.250.1.213.1.1.5.716) -->
                           <targetSiteCode code="421591000" displayName="verre de lunettes" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
@@ -2704,7 +2704,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="6C400C40-7733-42CE-94B1-7D3DFADC03D8" />
                           <!-- valeur issue du jdv-mesure-type-verre-prescrit-cisis (1.2.250.1.213.1.1.5.652)  -->
-                          <code code="GEN-292" displayName="Commentaire"  codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                          <code code="GEN-292" displayName="Commentaire"  codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                           <text><reference value="#commentaireOg1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -2728,7 +2728,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="DE47F04A-4C63-4081-9405-DD57DB642CCB" />
                           <!-- valeur issue du jdv-mesure-type-verre-prescrit-cisis (1.2.250.1.213.1.1.5.652)  -->
-                          <code code="MED-888" displayName="Intolérance aux verres progressifs" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-888" displayName="Intolérance aux verres progressifs" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#intoleranceVerresProgressifsOg1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -2809,7 +2809,7 @@
                       <templateId root="1.2.250.1.213.1.1.3.118" />
                       <id root="72294484-3115-4BF8-9EDA-ABC4B9054C32" />
                       <!-- Valeur issue du jdv-type-de-mesure-dispositif-oculaire-cisis (1.2.250.1.213.1.1.5.643)  -->
-                      <code code="MED-1067" displayName="Verres délivrés" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                      <code code="MED-1067" displayName="Verres délivrés" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                       <statusCode code="completed" />
                       <effectiveTime value="20210416093000+0100" />
                       <!-- [1..1] Entrée FR-Mesure-dispositif-oculaire : Sphère (OD) (D)-->
@@ -2821,7 +2821,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="C03E246A-BBD3-4C62-9AB9-0156BA7F117A" />
                           <!-- valeur issue du jdv-mesure-verre-delivre-cisis (1.2.250.1.213.1.1.5.653) -->
-                          <code code="MED-1077" displayName="Puissance de la sphère – verre délivré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1077" displayName="Puissance de la sphère – verre délivré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#sphereOd2" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -2847,7 +2847,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="A9B52321-1597-40DD-968B-C00450BCBAB6" />
                           <!-- valeur issue du jdv-mesure-verre-delivre-cisis (1.2.250.1.213.1.1.5.653) -->
-                          <code code="MED-1077" displayName="Puissance de la sphère – verre délivré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1077" displayName="Puissance de la sphère – verre délivré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#sphereOg2" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -2874,7 +2874,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="CA2A0017-D733-4FB7-BAA0-22557E9A3B1F" />
                           <!-- valeur issue du jdv-mesure-verre-delivre-cisis (1.2.250.1.213.1.1.5.653) -->
-                          <code code="MED-1078" displayName="Puissance du cylindre – verre délivré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1078" displayName="Puissance du cylindre – verre délivré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#cylindreOd2" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -2900,7 +2900,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="571200DA-2DE9-41E0-AE7F-01AD9598A382" />
                           <!-- valeur issue du jdv-mesure-verre-delivre-cisis (1.2.250.1.213.1.1.5.653) -->
-                          <code code="MED-1078" displayName="Puissance du cylindre – verre délivré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1078" displayName="Puissance du cylindre – verre délivré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#cylindreOg2" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -2927,7 +2927,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="1F0330FE-71B9-4150-A72A-FA11541423CC" />
                           <!-- valeur issue du jdv-mesure-verre-delivre-cisis (1.2.250.1.213.1.1.5.653) -->
-                          <code code="MED-1082" displayName="Axe en degrés – verre délivré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1082" displayName="Axe en degrés – verre délivré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#axeOd2" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -2953,7 +2953,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="2F3A3A31-E112-4572-BE9E-761ECC52FC2E" />
                           <!-- valeur issue du jdv-mesure-verre-delivre-cisis (1.2.250.1.213.1.1.5.653) -->
-                          <code code="MED-1082" displayName="Axe en degrés – verre délivré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1082" displayName="Axe en degrés – verre délivré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#axeOg2" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -2980,7 +2980,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="B973D298-FB07-4917-A256-5CA237B152DF" />
                           <!-- valeur issue du jdv-mesure-verre-delivre-cisis (1.2.250.1.213.1.1.5.653) -->
-                          <code code="MED-886" displayName="Addition" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                          <code code="MED-886" displayName="Addition" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                           <text><reference value="#additionOd2" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -3006,7 +3006,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="F9E61142-6340-436F-8316-9A9A190669BA" />
                           <!-- valeur issue du jdv-mesure-verre-delivre-cisis (1.2.250.1.213.1.1.5.653) -->
-                          <code code="MED-886" displayName="Addition" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                          <code code="MED-886" displayName="Addition" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                           <text><reference value="#additionOg2" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -3033,7 +3033,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="2F0DCA79-C582-4FA0-B7C2-D6EF8ACCA385" />
                           <!-- valeur issue du jdv-mesure-verre-delivre-cisis (1.2.250.1.213.1.1.5.653) -->
-                          <code code="MED-1079" displayName="Prisme – puissance – verre délivré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1079" displayName="Prisme – puissance – verre délivré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#prismePuissanceOd2" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -3059,7 +3059,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="AE81AE40-6CD0-4C4D-821D-5C74A72497ED" />
                           <!-- valeur issue du jdv-mesure-verre-delivre-cisis (1.2.250.1.213.1.1.5.653) -->
-                          <code code="MED-1079" displayName="Prisme – puissance – verre délivré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1079" displayName="Prisme – puissance – verre délivré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#prismePuissanceOg2" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -3086,7 +3086,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="A87AE1A6-5AEC-4188-8C11-8F32D1058246" />
                           <!-- valeur issue du jdv-mesure-verre-delivre-cisis (1.2.250.1.213.1.1.5.653) -->
-                          <code code="MED-1080" displayName="Prisme - Orientation base – verre délivré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1080" displayName="Prisme - orientation base – verre délivré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#prismeOrientationBaseOd2" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -3113,7 +3113,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="0E604B12-D39B-4A23-9353-41A58801F436" />
                           <!-- valeur issue du jdv-mesure-verre-delivre-cisis (1.2.250.1.213.1.1.5.653) -->
-                          <code code="MED-1080" displayName="Prisme - Orientation base – verre délivré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1080" displayName="Prisme - orientation base – verre délivré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#prismeOrientationBaseOg2" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -3141,7 +3141,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="6ABC08D1-42AB-4A18-87EB-1D869815D2FA" />
                           <!-- valeur issue du jdv-mesure-verre-delivre-cisis (1.2.250.1.213.1.1.5.653) -->
-                          <code code="MED-1081" displayName="Prisme - Axe en degrés – verre délivré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1081" displayName="Prisme - axe en degrés – verre délivré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#prismeAxeOd2" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -3167,7 +3167,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="F3EBBFEA-89CB-43EA-AA83-226E8EA32F2A" />
                           <!-- valeur issue du jdv-mesure-verre-delivre-cisis (1.2.250.1.213.1.1.5.653) -->
-                          <code code="MED-1081" displayName="Prisme - Axe en degrés – verre délivré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"  />
+                          <code code="MED-1081" displayName="Prisme - axe en degrés – verre délivré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"  />
                           <text><reference value="#prismeAxeOg2" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -3199,7 +3199,7 @@
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
                           <!-- Valeur issue du jdv-type-de-prisme-cisis (1.2.250.1.213.1.1.5.624) -->
-                          <value xsi:type="CD" code="MED-1216" displayName="Prisme intégré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <value xsi:type="CD" code="MED-1216" displayName="Prisme intégré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <methodCode nullFlavor="NA"/>
                           <!-- targetSiteCode provenant du jdv-type-dispositif-oculaire-cisis(1.2.250.1.213.1.1.5.716) -->
                           <targetSiteCode code="421591000" displayName="verre de lunettes" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
@@ -3226,7 +3226,7 @@
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
                           <!-- Valeur issue du jdv-type-de-prisme-cisis (1.2.250.1.213.1.1.5.624) -->
-                          <value xsi:type="CD" code="MED-1216" displayName="Prisme intégré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <value xsi:type="CD" code="MED-1216" displayName="Prisme intégré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <methodCode nullFlavor="NA"/>
                           <!-- targetSiteCode provenant du jdv-type-dispositif-oculaire-cisis(1.2.250.1.213.1.1.5.716) -->
                           <targetSiteCode code="421591000" displayName="verre de lunettes" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
@@ -3251,7 +3251,7 @@
                       <templateId root="1.2.250.1.213.1.1.3.118" />
                       <id root="9DBA434A-202C-4866-A5CA-C6F34C1385F7" />
                       <!-- Valeur issue du jdv-type-de-mesure-dispositif-oculaire-cisis (1.2.250.1.213.1.1.5.643)  -->
-                      <code code="MED-1068" displayName="Types de verres délivrés" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                      <code code="MED-1068" displayName="Types de verres délivrés" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                       <statusCode code="completed" />
                       <effectiveTime value="20210416093000+0100" />
                       <!-- [0..1] Entrée FR-Mesure-dispositif-oculaire : Date de délivrance  -->
@@ -3263,7 +3263,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="8925B6AE-30D0-4F49-8BD7-71AE2211F6F7" />
                           <!-- valeur issue du jdv-mesure-type-verre-delivre-cisis (1.2.250.1.213.1.1.5.654) -->
-                          <code code="MED-1181" displayName="Date de délivrance" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1181" displayName="Date de délivrance" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#dateDelivrance" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -3316,7 +3316,7 @@
                           <text><reference value="#typeverreDelivreOd1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
-                          <value xsi:type="CD" code="MED-907" displayName="Verres progressifs" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <value xsi:type="CD" code="MED-907" displayName="Verres progressifs" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <methodCode nullFlavor="NA"/>
                           <!-- targetSiteCode provenant du jdv-type-dispositif-oculaire-cisis(1.2.250.1.213.1.1.5.716) -->
                           <targetSiteCode code="421591000" displayName="verre de lunettes" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
@@ -3338,7 +3338,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="9CFE6F3B-D347-4710-BDC1-4EA87C9D2077" />
                           <!-- valeur issue du jdv-mesure-type-verre-delivre-cisis (1.2.250.1.213.1.1.5.654) -->
-                          <code code="GEN-292" displayName="Commentaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="GEN-292" displayName="Commentaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#commentaireDelivreOd1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -3418,7 +3418,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="5C107737-378F-403D-96AC-A8FD61F012E0" />
                           <!-- valeur issue du jdv-mesure-type-verre-delivre-cisis (1.2.250.1.213.1.1.5.654) -->
-                          <code code="MED-890" displayName="Demi-écart interpupillaire VL" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-890" displayName="Demi-écart interpupillaire VL" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#demiecartInterpupillaireVLOd1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -3444,7 +3444,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="0BD07D42-05BC-443C-A08F-52D13735E0AF" />
                           <!-- valeur issue du jdv-mesure-type-verre-delivre-cisis (1.2.250.1.213.1.1.5.654) -->
-                          <code code="MED-891" displayName="Demi-écart interpupillaire VI" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-891" displayName="Demi-écart interpupillaire VI" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#demiecartInterpupillaireVIOd1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -3470,7 +3470,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="712380FA-780A-448A-A35F-4DDB624782CE" />
                           <!-- valeur issue du jdv-mesure-type-verre-delivre-cisis (1.2.250.1.213.1.1.5.654) -->
-                          <code code="MED-892" displayName="Demi-écart interpupillaire VP" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-892" displayName="Demi-écart interpupillaire VP" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#demiecartInterpupillaireVPOd1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -3496,7 +3496,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="18FCAEED-BC64-4C99-8DDE-75C6632EED41" />
                           <!-- valeur issue du jdv-mesure-type-verre-delivre-cisis (1.2.250.1.213.1.1.5.654) -->
-                          <code code="MED-893" displayName="Hauteur de montage" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-893" displayName="Hauteur de montage" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#hauteurMontageOd1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -3526,7 +3526,7 @@
                           <text><reference value="#typeverreDelivreOg1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
-                          <value xsi:type="CD" code="MED-907" displayName="Verres Progressifs" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <value xsi:type="CD" code="MED-907" displayName="Verres Progressifs" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <methodCode nullFlavor="NA" />
                           <!-- targetSiteCode provenant du jdv-type-dispositif-oculaire-cisis(1.2.250.1.213.1.1.5.716) -->
                           <targetSiteCode code="421591000" displayName="verre de lunettes" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
@@ -3548,7 +3548,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="0B443BD1-429D-440C-BF1A-1C9E29CC8F42" />
                           <!-- valeur issue du jdv-mesure-type-verre-delivre-cisis (1.2.250.1.213.1.1.5.654) -->
-                          <code code="GEN-292" displayName="Commentaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="GEN-292" displayName="Commentaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#commentaireDelivreOg1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -3628,7 +3628,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="5517CB47-B263-42A6-9073-76178A4F1F7A" />
                           <!-- valeur issue du jdv-mesure-type-verre-delivre-cisis (1.2.250.1.213.1.1.5.654) -->
-                          <code code="MED-890" displayName="Demi-écart interpupillaire VL" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-890" displayName="Demi-écart interpupillaire VL" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#demiecartInterpupillaireVLOg1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -3654,7 +3654,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="C5764400-D20B-43A5-98F4-C3F0638721C5" />
                           <!-- valeur issue du jdv-mesure-type-verre-delivre-cisis (1.2.250.1.213.1.1.5.654) -->
-                          <code code="MED-891" displayName="Demi-écart interpupillaire VI" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-891" displayName="Demi-écart interpupillaire VI" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#demiecartInterpupillaireVIOg1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -3680,7 +3680,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="B3997D46-B713-4BDC-B567-B2F0504D05C3" />
                           <!-- valeur issue du jdv-type-de-mesure-dispositif-oculaire-cisis (1.2.250.1.213.1.1.5.643)  -->
-                          <code code="MED-892" displayName="Demi-écart interpupillaire VP" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-892" displayName="Demi-écart interpupillaire VP" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#demiecartInterpupillaireVPOg1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -3706,7 +3706,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="4F838F15-2886-4BF1-A601-BDF0BB3FCB5C" />
                           <!-- valeur issue du jdv-type-de-mesure-dispositif-oculaire-cisis (1.2.250.1.213.1.1.5.643)  -->
-                          <code code="MED-893" displayName="Hauteur de montage" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-893" displayName="Hauteur de montage" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#hauteurMontageOg1" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -3748,7 +3748,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="94B5C02A-1AC6-41E9-9586-C22AEB5DBBCD" />
                           <!-- valeur issue du jdv-mesure-lentille-prescrite-cisis (1.2.250.1.213.1.1.5.655) -->
-                          <code code="MED-897" displayName="Prise en charge LPP" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-897" displayName="Prise en charge LPP" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#priseChargeLPP" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -3771,7 +3771,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="9FC00069-7AD7-4F66-8FCF-4262CFD518F5" />
                           <!-- valeur issue du jdv-mesure-lentille-prescrite-cisis (1.2.250.1.213.1.1.5.655) -->
-                          <code code="MED-1083" displayName="Prescription pour primo porteur de lentille de contact"  codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1083" displayName="Prescription pour primo porteur de lentille de contact"  codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#primoPorteurLentille" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -3842,12 +3842,12 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="983C1458-1694-43E5-BD92-57D2EAD3FF87" />
                           <!-- valeur issue du jdv-mesure-lentille-prescrite-cisis (1.2.250.1.213.1.1.5.655) -->
-                          <code code="MED-1180" displayName="Type de lentille" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1180" displayName="Type de lentille" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#typeLentilleOd" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
                           <!-- Valeur provenant de jdv-type-de-lentille-cisis(1.2.250.1.213.1.1.5.626) -->
-                          <value xsi:type="CD" code="MED-1217" displayName="Prisme souple" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <value xsi:type="CD" code="MED-1217" displayName="Prisme souple" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <methodCode nullFlavor="NA"/>
                           <!-- targetSiteCode provenant du jdv-type-dispositif-oculaire-cisis(1.2.250.1.213.1.1.5.716) -->
                           <targetSiteCode code="57368009" displayName="lentille de contact" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
@@ -3869,12 +3869,12 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="C06AD945-632F-4505-B731-6CE3B44DE596" />
                           <!-- valeur issue du jdv-mesure-lentille-prescrite-cisis (1.2.250.1.213.1.1.5.655) -->
-                          <code code="MED-1180" displayName="Type de lentille" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1180" displayName="Type de lentille" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#typeLentilleOg" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
                           <!-- Valeur provenant de jdv-type-de-lentille-cisis(1.2.250.1.213.1.1.5.626) -->
-                          <value xsi:type="CD" code="MED-1217" displayName="Prisme souple" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <value xsi:type="CD" code="MED-1217" displayName="Prisme souple" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           
                           <methodCode code="C25209" displayName="Mesure Automatique" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCIT" />
                           <!-- targetSiteCode provenant du jdv-type-dispositif-oculaire-cisis(1.2.250.1.213.1.1.5.716) -->
@@ -3898,7 +3898,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="8CCF27C9-28A3-4DF5-B00F-489F4A524ABF" />
                           <!-- valeur issue du jdv-mesure-lentille-prescrite-cisis (1.2.250.1.213.1.1.5.655) -->
-                          <code code="GEN-292" displayName="Commentaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="GEN-292" displayName="Commentaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#commentaireOd" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -3922,7 +3922,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="351851B2-51CC-4636-802A-0B0D82F246BB" />
                           <!-- valeur issue du jdv-mesure-lentille-prescrite-cisis (1.2.250.1.213.1.1.5.655) -->
-                          <code code="GEN-292" displayName="Commentaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="GEN-292" displayName="Commentaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#commentaireOg" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -4061,7 +4061,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="C922C32B-D4F4-4890-A6E0-FAF0CF637FE8" />
                           <!-- valeur issue du jdv-mesure-lentille-prescrite-cisis (1.2.250.1.213.1.1.5.655) -->
-                          <code code="GEN-309" displayName="matériau" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="GEN-309" displayName="matériau" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#materiauOd" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -4089,7 +4089,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="9D5EBB2A-906E-4EA5-B207-6DA82D39DFB5" />
                           <!-- valeur issue du jdv-mesure-lentille-prescrite-cisis (1.2.250.1.213.1.1.5.655) -->
-                          <code code="GEN-309" displayName="matériau" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="GEN-309" displayName="matériau" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#materiauOg" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -4118,7 +4118,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="343FA13E-3F54-461C-93B5-64B31DF9B319" />
                           <!-- valeur provenant du jdv-mesure-lentille-prescrite-cisis (1.2.250.1.213.1.1.5.655) -->
-                          <code code="MED-1084" displayName="Diamètre lentille – lentille prescrite" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1084" displayName="Diamètre lentille – lentille prescrite" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#diametreLentilleOd" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -4145,7 +4145,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="16283407-87E4-47D8-B9FA-F41E9A1E68F9" />
                           <!-- valeur issue du jdv-mesure-lentille-prescrite-cisis (1.2.250.1.213.1.1.5.655) -->
-                          <code code="MED-1084" displayName="Diamètre lentille – lentille prescrite" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1084" displayName="Diamètre lentille – lentille prescrite" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#diametreLentilleOg" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -4173,7 +4173,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="95C03E05-3FDB-42EF-8925-B946E99D8BBA" />
                           <!-- valeur issue du jdv-mesure-lentille-prescrite-cisis (1.2.250.1.213.1.1.5.655) -->
-                          <code code="MED-1085" displayName="Rayon 1 lentille – lentille prescrite" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1085" displayName="Rayon 1 lentille – lentille prescrite" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#rayon1LentilleOd" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -4200,7 +4200,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="C8377839-018C-4BD4-A5CD-CCAA603AFEF8" />
                           <!-- valeur issue du jdv-mesure-lentille-prescrite-cisis (1.2.250.1.213.1.1.5.655) -->
-                          <code code="MED-1085" displayName="Rayon 1 lentille – lentille prescrite" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1085" displayName="Rayon 1 lentille – lentille prescrite" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#rayon1LentilleOg" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -4228,7 +4228,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="632A00DD-C7CC-4516-892E-0F58ABB7FF57" />
                           <!-- valeur issue du jdv-mesure-lentille-prescrite-cisis (1.2.250.1.213.1.1.5.655) -->
-                          <code code="MED-1086" displayName="Rayon 2 lentille – lentille prescrite" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                          <code code="MED-1086" displayName="Rayon 2 lentille – lentille prescrite" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                           <text><reference value="#rayon2LentilleOd" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -4255,7 +4255,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="EB00A40C-1E8A-4A7A-8A61-C64954D6BD86" />
                           <!-- valeur issue du jdv-mesure-lentille-prescrite-cisis (1.2.250.1.213.1.1.5.655) -->
-                          <code code="MED-1086" displayName="Rayon 2 lentille – lentille prescrite" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                          <code code="MED-1086" displayName="Rayon 2 lentille – lentille prescrite" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                           <text><reference value="#rayon2LentilleOg" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -4283,7 +4283,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="7A530F5E-089B-432F-8B8E-A8AC29E1C980" />
                           <!-- valeur issue du jdv-mesure-lentille-prescrite-cisis (1.2.250.1.213.1.1.5.655) -->
-                          <code code="GEN-092.08.04" displayName="Autre(s) paramètre(s)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="GEN-092.08.04" displayName="Autre(s) paramètre(s)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#autresParametresOd" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -4312,7 +4312,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="9082A0AA-9E6F-4F69-8E2B-94924C996C1A" />
                           <!-- valeur issue du jdv-mesure-lentille-prescrite-cisis (1.2.250.1.213.1.1.5.655) -->
-                          <code code="GEN-092.08.04" displayName="Autre(s) paramètre(s)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="GEN-092.08.04" displayName="Autre(s) paramètre(s)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#autresParametresOg" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -4342,7 +4342,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="222D6564-403F-4AC1-9585-867767E23483" />
                           <!-- valeur issue du jdv-mesure-lentille-prescrite-cisis (1.2.250.1.213.1.1.5.655) -->
-                          <code code="MED-1065" displayName="Valeur de la kératométrie dans l'axe le plus plat" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1065" displayName="Valeur de la kératométrie dans l'axe le plus plat" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#kLentilleOd" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -4369,7 +4369,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="6DF54C4C-1EAB-4B2C-883E-8E798A4BB02A" />
                           <!-- valeur issue du jdv-mesure-lentille-prescrite-cisis (1.2.250.1.213.1.1.5.655) -->
-                          <code code="MED-1065" displayName="Valeur de la kératométrie dans l'axe le plus plat" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1065" displayName="Valeur de la kératométrie dans l'axe le plus plat" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#kLentilleOg" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -4397,7 +4397,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="5BFF8E2D-3122-46BF-8E35-F5428DFAE980" />
                           <!-- valeur issue du jdv-mesure-lentille-prescrite-cisis (1.2.250.1.213.1.1.5.655) -->
-                          <code code="MED-1066" displayName="Valeur de la kératométrie dans l'axe le plus cambré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1066" displayName="Valeur de la kératométrie dans l'axe le plus cambré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#kpLentilleOd" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -4424,7 +4424,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="D3936CFC-6A1D-4672-B88A-897EF4485BB9" />
                           <!-- valeur issue du jdv-mesure-lentille-prescrite-cisis (1.2.250.1.213.1.1.5.655) -->
-                          <code code="MED-1066" displayName="Valeur de la kératométrie dans l'axe le plus cambré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1066" displayName="Valeur de la kératométrie dans l'axe le plus cambré" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#kpLentilleOg" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -4507,7 +4507,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="33A03995-5B75-43EB-AA05-41F49995EE23" />
                           <!-- valeur issue du jdv-mesure-lentille-prescrite-cisis (1.2.250.1.213.1.1.5.655) -->
-                          <code code="MED-1087" displayName="Puissance de la Sphère – lentille prescrite" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1087" displayName="Puissance de la sphère – lentille prescrite" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#sphereLentilleOd" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -4534,7 +4534,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="2F480283-F6B3-4FB2-ABAC-6C6C8A859438" />
                           <!-- valeur issue du jdv-mesure-lentille-prescrite-cisis (1.2.250.1.213.1.1.5.655) -->
-                          <code code="MED-1087" displayName="Puissance de la Sphère – lentille prescrite" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1087" displayName="Puissance de la sphère – lentille prescrite" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#sphereLentilleOg" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -4562,7 +4562,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="17182B4B-2C5A-42F2-BA86-6E872128CFF1" />
                           <!-- valeur issue du jdv-mesure-lentille-prescrite-cisis (1.2.250.1.213.1.1.5.655) -->
-                          <code code="MED-1088" displayName="Puissance du Cylindre – lentille prescrite" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1088" displayName="Puissance du cylindre – lentille prescrite" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#cylindreLentilleOd" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -4589,7 +4589,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="7829D59F-8B14-4E81-8C75-2BA631303AF0" />
                           <!-- valeur issue du jdv-mesure-lentille-prescrite-cisis (1.2.250.1.213.1.1.5.655) -->
-                          <code code="MED-1088" displayName="Puissance du Cylindre – lentille prescrite" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1088" displayName="Puissance du cylindre – lentille prescrite" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#cylindreLentilleOg" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -4782,7 +4782,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="1E22947E-EF9E-4C8E-8610-BB76E99EDF01" />
                           <!-- valeur issue du jdv-mesure-lentille-prescrite-cisis (1.2.250.1.213.1.1.5.655) -->
-                          <code code="MED-1183" displayName="Produit d'entretien" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1183" displayName="Produit d'entretien" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#ProduitEntretien" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -4847,7 +4847,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="316B77A2-DC83-48EB-B477-308B8BCD6498" />
                           <!-- valeur issue du  jdv-mesure-lentille-delivree-cisis (1.2.250.1.213.1.1.5.656)  -->
-                          <code code="MED-1181" displayName="Date de délivrance" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1181" displayName="Date de délivrance" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#dateDelivranceLentilles" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -4871,12 +4871,12 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="F736528C-D40E-4A96-9171-A52D77A76995" />
                           <!-- valeur issue du  jdv-mesure-lentille-delivree-cisis (1.2.250.1.213.1.1.5.656)  -->
-                          <code code="MED-1180" displayName="Type de lentille" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1180" displayName="Type de lentille" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#typeLentilleDelivreOd" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
                           <!-- Valeur issue du jdv-type-de-lentille-cisis (1.2.250.1.213.1.1.5.626) -->
-                          <value xsi:type="CD" code="MED-1217" displayName="Prisme souple" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <value xsi:type="CD" code="MED-1217" displayName="Prisme souple" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <methodCode nullFlavor="NA"/>
                           <!-- targetSiteCode provenant du jdv-type-dispositif-oculaire-cisis(1.2.250.1.213.1.1.5.716) -->
                           <targetSiteCode code="57368009" displayName="lentille de contact" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
@@ -4898,12 +4898,12 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="0C59CE0C-7864-4B46-A068-F3A58B8B66C9" />
                           <!-- valeur issue du jdv-mesure-lentille-delivree-cisis (1.2.250.1.213.1.1.5.656)  -->
-                          <code code="MED-1180" displayName="Type de lentille" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1180" displayName="Type de lentille" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#typeLentilleDelivreOg" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
                           <!-- Valeur provenant de jdv-type-de-lentille-cisis(1.2.250.1.213.1.1.5.626) -->
-                          <value xsi:type="CD" code="MED-1217" displayName="Prisme souple" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <value xsi:type="CD" code="MED-1217" displayName="Prisme souple" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           
                           <methodCode nullFlavor="NA"/>
                           <!-- targetSiteCode provenant du jdv-type-dispositif-oculaire-cisis(1.2.250.1.213.1.1.5.716) -->
@@ -4927,7 +4927,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="DA29CAD9-43E9-4AD3-93C8-1E33D9E09FF4" />
                           <!-- valeur issue du jdv-mesure-lentille-delivree-cisis (1.2.250.1.213.1.1.5.656)  -->
-                          <code code="GEN-292" displayName="Commentaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                          <code code="GEN-292" displayName="Commentaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                           <text><reference value="#commentaireDelivreOd" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -4951,7 +4951,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="88456B38-15B0-442A-9625-98A679084DF0" />
                           <!-- valeur issue du jdv-mesure-lentille-delivree-cisis (1.2.250.1.213.1.1.5.656)  -->
-                          <code code="GEN-292" displayName="Commentaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                          <code code="GEN-292" displayName="Commentaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                           <text><reference value="#commentaireDelivreOg" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -5090,7 +5090,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="6CDC360D-8D2C-4D15-AF9F-A3CDAC55E30C" />
                           <!-- valeur issue du jdv-mesure-lentille-delivree-cisis (1.2.250.1.213.1.1.5.656)  -->
-                          <code code="MED-1089" displayName="Diamètre lentille – lentille délivrée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1089" displayName="Diamètre lentille – lentille délivrée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#diametreLentilleDelivreOd" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -5117,7 +5117,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="2C9F53BB-D27F-4265-95A8-A03B7E702062" />
                           <!-- valeur issue du jdv-mesure-lentille-delivree-cisis (1.2.250.1.213.1.1.5.656)  -->
-                          <code code="MED-1089" displayName="Diamètre lentille – lentille délivrée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1089" displayName="Diamètre lentille – lentille délivrée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#diametreLentilleDelivreOg" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -5145,7 +5145,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="0BCA4CA6-4830-498B-88D5-B963DC96A2EB" />
                           <!-- valeur issue du jdv-mesure-lentille-delivree-cisis (1.2.250.1.213.1.1.5.656)  -->
-                          <code code="MED-1090" displayName="Rayon 1 lentille – lentille délivrée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1090" displayName="Rayon 1 lentille – lentille délivrée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#rayon1LentilleDelivreOd" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -5172,7 +5172,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="EAA6939F-536A-4BCC-93B6-E3DD5B97AC27" />
                           <!-- valeur issue du jdv-mesure-lentille-delivree-cisis (1.2.250.1.213.1.1.5.656)  -->
-                          <code code="MED-1090" displayName="Rayon 1 lentille – lentille délivrée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1090" displayName="Rayon 1 lentille – lentille délivrée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#rayon1LentilleDelivreOg" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -5200,7 +5200,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="AB937680-4C56-4747-A490-C02B83CC8ADD" />
                           <!-- valeur issue du jdv-mesure-lentille-delivree-cisis (1.2.250.1.213.1.1.5.656)  -->
-                          <code code="MED-1091" displayName="Rayon 2 lentille – lentille délivrée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                          <code code="MED-1091" displayName="Rayon 2 lentille – lentille délivrée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                           <text><reference value="#rayon2LentilleDelivreOd" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -5227,7 +5227,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="60607896-DA45-4C04-AE95-CACF36049AB8" />
                           <!-- valeur issue du jdv-mesure-lentille-delivree-cisis (1.2.250.1.213.1.1.5.656)  -->
-                          <code code="MED-1091" displayName="Rayon 2 lentille – lentille délivrée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                          <code code="MED-1091" displayName="Rayon 2 lentille – lentille délivrée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                           <text><reference value="#rayon2LentilleDelivreOg" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -5255,7 +5255,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="6FCEA085-F965-4F0F-BA49-229B68D9E6F3" />
                           <!-- valeur issue du jdv-mesure-lentille-delivree-cisis (1.2.250.1.213.1.1.5.656)  -->
-                          <code code="GEN-092.08.04" displayName="Autre(s) paramètre(s)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="GEN-092.08.04" displayName="Autre(s) paramètre(s)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#autresParametresDelivreOd" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -5284,7 +5284,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="ACD06366-F100-4856-B43B-F98B03CE301B" />
                           <!-- valeur issue du jdv-mesure-lentille-delivree-cisis (1.2.250.1.213.1.1.5.656)  -->
-                          <code code="GEN-092.08.04" displayName="Autre(s) paramètre(s)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="GEN-092.08.04" displayName="Autre(s) paramètre(s)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#autresParametresDelivreOg" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -5314,7 +5314,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="5A1243BA-214B-4B5A-A15F-447757F180FC" />
                           <!-- valeur issue du jdv-mesure-lentille-delivree-cisis (1.2.250.1.213.1.1.5.656)  -->
-                          <code code="MED-1092" displayName="Puissance de la Sphère – lentille délivrée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1092" displayName="Puissance de la sphère – lentille délivrée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#sphereLentilleDelivreOd" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -5341,7 +5341,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="F88E8202-D634-48E5-BD03-79899F9080B4" />
                           <!-- valeur issue du jdv-mesure-lentille-delivree-cisis (1.2.250.1.213.1.1.5.656)  -->
-                          <code code="MED-1092" displayName="Puissance de la Sphère – lentille délivrée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1092" displayName="Puissance de la sphère – lentille délivrée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#sphereLentilleDelivreOg" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -5369,7 +5369,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="00550C73-B0CE-4966-A2D3-001D4C2E5D9A" />
                           <!-- valeur issue du jdv-mesure-lentille-delivree-cisis (1.2.250.1.213.1.1.5.656)  -->
-                          <code code="MED-1093" displayName="Puissance du Cylindre – lentille délivrée"  codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1093" displayName="Puissance du cylindre – lentille délivrée"  codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#cylindreLentilleDelivreOd" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -5396,7 +5396,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.122" />
                           <id root="B79630AA-1674-4A59-88D4-782ED094084D" />
                           <!-- valeur issue du jdv-mesure-lentille-delivree-cisis (1.2.250.1.213.1.1.5.656)  -->
-                          <code code="MED-1093" displayName="Puissance du Cylindre – lentille délivrée"  codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                          <code code="MED-1093" displayName="Puissance du cylindre – lentille délivrée"  codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                           <text><reference value="#cylindreLentilleDelivreOg" /></text>
                           <statusCode code="completed" />
                           <effectiveTime value="20210416093000+0100" />
@@ -5590,7 +5590,7 @@
                           <id root="D84DB5DF-B348-4024-9318-8D2DF8E0F8FC"/>
                           <!-- valeur issue du jdv-mesure-lentille-delivree-cisis (1.2.250.1.213.1.1.5.656)  -->
                           <code code="MED-1183" displayName="Produit d'entretien"
-                            codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                            codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                           <text><reference value="#produitEntretienDelivre"/></text>
                           <statusCode code="completed"/>
                           <effectiveTime value="20210416093000+0100"/>

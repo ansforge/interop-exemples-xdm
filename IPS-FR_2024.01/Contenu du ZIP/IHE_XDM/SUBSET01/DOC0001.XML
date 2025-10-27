@@ -17,6 +17,7 @@
       Historique :
       02/04/2024 : Création IPS-FR_2023.01 (conforme IPS) 
       21/08/2025 : Maj des codeSystemName en fonction de la nouvelle règle de nommage
+      25/08/2025 : Maj des références parties narratives / entrées
       **********************************************************************************************************
    -->
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -227,7 +228,7 @@
       <!-- PS identifié par son N°RPPS -->
       <id root="1.2.250.1.71.4.2.1" extension="801234567897"/>
       <!-- Profession / spécialité du PS -->
-      <code code="G15_10/SM26" displayName="Médecin - Qualifié en Médecin Générale (SM)"
+      <code code="G15_10/SM26" displayName="Médecin - Qualifié en Médecine Générale (SM)"
         codeSystem="1.2.250.1.213.1.1.4.5"/>
       <!-- Adresse du PS-->
       <addr>
@@ -1245,7 +1246,7 @@
                     <low value="20180422"/>
                     <high value="20180430"/>
                   </effectiveTime>
-                  <value xsi:type="CD" code="G45.9" displayName="Accident Ischémique Cérébral Transitoire"
+                  <value xsi:type="CD" code="G45.9" displayName="Accident ischémique cérébral transitoire, sans précision"
                     codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10FRPMSI">
                     <originalText>
                       <reference value="#antecedent-medical-01"/>
@@ -1373,7 +1374,7 @@
                     <low value="20180114"/>
                     <high value="20180125"/>
                   </effectiveTime>
-                  <value xsi:type="CD" code="N10" displayName="Pyélonéphrite aiguë"
+                  <value xsi:type="CD" code="N10" displayName="Pyélonéphrite aigüe"
                     codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10FRPMSI">
                     <originalText>
                       <reference value="#antecedent-medical-02"/>
@@ -1593,7 +1594,7 @@
                   <!-- FR-Reference-interne (FR CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.36"/>
                   <id root="FC21DC59-43D5-4BB0-ACC7-3601784BFBC0"/>
-                  <code code="I21.1" displayName="Infarctus transmural inférieur"
+                  <code code="I21.1" displayName="Infarctus transmural aigu du myocarde, de la paroi inférieure"
                     codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10FRPMSI">
                     <originalText>
                       <reference value="#acte-01-motif"/>
@@ -1698,17 +1699,11 @@
               <tbody>
                 <tr>
                   <td>04/12/2021</td>
-                  <td>
-                    <content ID="allergie-01-type">Allergie médicamenteuse</content>
-                  </td>
-                  <td>
-                    <content ID="allergie-01-agent">Paracétamol</content>
-                  </td>
-                  <td>
-                    <content ID="allergie-statut-01">Actif</content>
-                  </td>
-                  <td>Bas</td>
-                  <td>Confirmé</td>
+                  <td><content ID="allergie-01-type">Allergie médicamenteuse</content></td>
+                  <td><content ID="allergie-01-agent">Paracétamol</content></td>
+                  <td><content ID="allergie-01-statut">Actif</content></td>
+                  <td><content ID="allergie-01-criticite">Bas</content></td>
+                  <td><content ID="allergie-01-certitude">Confirmé</content></td>
                   <td>
                     <content ID="allergie-01-reaction-1">Bronchospasme d'origine
                       médicamenteuse</content><br/>
@@ -1771,14 +1766,14 @@
                   <!-- Description clinique de l'allergie / hypersensibilité : non renseigné -->
                   <value xsi:type="CD">
                     <originalText>
-                      <reference value="#"/>
+                      <reference value="noref"/>
                     </originalText>
                   </value>
                   <!-- Agent responsable de l'allergie / hypersensibilité -->
                   <participant typeCode="CSM">
                     <participantRole classCode="MANU">
                       <playingEntity classCode="MMAT">
-                        <code code="XM5DJ7" displayName="PARACETAMOL"
+                        <code code="XM5DJ7" displayName="Paracétamol"
                           codeSystem="2.16.840.1.113883.6.347" codeSystemName="CIM11MMS">
                           <originalText><reference value="#allergie-01-agent"/></originalText>
                         </code>
@@ -1801,7 +1796,7 @@
                       <code code="33999-4" displayName="Status" codeSystem="2.16.840.1.113883.6.1"
                         codeSystemName="LOINC"/>
                       <text>
-                        <reference value="#allergie-statut-01"/>
+                        <reference value="#allergie-01-statut"/>
                       </text>
                       <statusCode code="completed"/>
                       <!-- valeur du jdv-hl7-allergyintolerance-clinical-cisis (2.16.840.1.113883.4.642.3.1372) -->
@@ -1824,7 +1819,7 @@
                       <code code="82606-5" displayName="Criticité"
                         codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
                       <text>
-                        <reference value="#"/>
+                        <reference value="#allergie-01-criticite"/>
                       </text>
                       <statusCode code="completed"/>
                       <effectiveTime nullFlavor="NA"/>
@@ -1848,7 +1843,7 @@
                       <code code="66455-7" displayName="Certitude"
                         codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
                       <text>
-                        <reference value="#"/>
+                        <reference value="#allergie-01-certitude"/>
                       </text>
                       <statusCode code="completed"/>
                       <effectiveTime nullFlavor="NA"/>
@@ -2280,7 +2275,7 @@
                   <td>11/01/2024</td>
                   <td>-</td>
                   <td><content ID="med-01">LEVOTHYROX 75 microgrammes, comprimé sécable</content></td>
-                  <td><content ID="med-01-doseMin-1">1 cp</content></td>
+                  <td><content ID="med-01-doseMin-1">1 cp</content><content ID="med-01-doseMax-1"></content></td>
                   <td><content ID="med-01-frequence">1 fois/j</content></td>
                   <td><content ID="med-01-rateMin">-</content></td>
                   <td><content ID="med-01-voie">Voie orale</content></td>
@@ -2466,14 +2461,14 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr ID="DM-01">
                   <td>11/08/2019</td>
                   <td></td>
                   <td><content ID="DM-01-categorie">STIMULATEUR CARDIAQUE IMPLANTABLE TRIPLE CHAMBRE</content></td>
                   <td>inconnu</td>
                   <td><content ID="DM-01-commentaire">(texte libre)</content></td>
                 </tr>
-                <tr>
+                <tr ID="DM-02">
                   <td>11/08/2013</td>
                   <td></td>
                   <td><content ID="DM-02-categorie">Autre DM : (texte libre)</content></td>
@@ -2493,7 +2488,7 @@
               <!-- Identifiant de la fourniture du DM -->
               <id nullFlavor="UNK"/>
               <!-- Référence vers la partie narrative de la section DM -->
-              <text><reference value="#DM-001"/></text>
+              <text><reference value="#DM-01"/></text>
               <!-- Date d'utilisation du DM -->
               <effectiveTime xsi:type="IVL_TS">
                 <low value="20190811"/>
@@ -2506,7 +2501,7 @@
                   <!-- Catégorie de DM -->
                   <playingDevice classCode="DEV" determinerCode="INSTANCE">
                     <code code="J010104"
-                      displayName="STIMULATEUR CARDIAQUE IMPLANTABLE TRIPLE CHAMBRE"
+                      displayName="STIMULATEURS CARDIAQUES IMPLANTABLES TRIPLE CHAMBRE"
                       codeSystem="1.2.250.1.213.2.68" codeSystemName="EMDN">                      
                         <originalText><reference value="#DM-01-categorie"/></originalText>
                     </code>
@@ -2542,7 +2537,7 @@
               <!-- Identifiant de la fourniture du DM -->
               <id nullFlavor="UNK"/>
               <!-- Référence vers la partie narrative de la section DM -->
-              <text><reference value="#DM-001"/></text>
+              <text><reference value="#DM-02"/></text>
               <!-- Date d'utilisation du DM -->
               <effectiveTime xsi:type="IVL_TS">
                 <low value="20190811"/>
@@ -2769,11 +2764,7 @@
                   <id root="FB97F8B7-7D3D-474A-B6A6-7D55D4DA3AFD"/>
                   <!-- Autre type de statut fonctionnel -->
                   <code xsi:type="CD" code="GEN-092.04.23" displayName="Autre statut fonctionnel"
-                    codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
-                    <originalText>
-                      <reference value="#statut-fonctionnel-03"/>
-                    </originalText>
-                  </code>
+                    codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                   <text><reference value="#statut-fonctionnel-03"/></text>
                   <statusCode code="completed"/>
                   <effectiveTime>
@@ -3476,7 +3467,7 @@
                   <code code="418799008"
                     displayName="symptôme rapporté par le patient ou le répondant"
                     codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
-                  <text><reference value="#tetanos2-reac"/></text>
+                  <text><reference value="#vaccin-02-reaction"/></text>
                   <statusCode code="completed"/>
                   <effectiveTime>
                     <low value="20090928"/>
@@ -3484,7 +3475,7 @@
                   <value xsi:type="CD" code="R50.2" displayName="Fièvre due à des médicaments"
                     codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10FRPMSI">
                     <originalText>
-                      <reference value="#tetanos2-reac"/>
+                      <reference value="#vaccin-02-reaction"/>
                     </originalText>
                   </value>
                 </observation>
@@ -3500,7 +3491,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.32"/>
                   <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1"
                     codeSystemName="LOINC"/>
-                  <text><reference value="#tetanos2-comment"/></text>
+                  <text><reference value="#vaccin-02-comment"/></text>
                   <statusCode code="completed"/>
                 </act>
               </entryRelationship>
@@ -3519,7 +3510,7 @@
               <code code="INITIMMUNIZ" displayName="1ère série vaccinante"
                 codeSystem="2.16.840.1.113883.5.4"
                 codeSystemName="HL7_ActCode"/>
-              <text><reference value="#tetanos1"/></text>
+              <text><reference value="#vaccin-01"/></text>
               <statusCode code="completed"/>
               <effectiveTime value="20090928094914+0100"/>
               <!-- Voie d'administration : valeur issue du jdv-immunization-route-code-cisis (1.2.250.1.213.1.1.5.676)  -->
@@ -3614,7 +3605,7 @@
                   <code code="418799008"
                     displayName="symptôme rapporté par le patient ou le répondant"
                     codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
-                  <text><reference value="#tetanos1-reac"/></text>
+                  <text><reference value="#vaccin-01-reaction"/></text>
                   <statusCode code="completed"/>
                   <effectiveTime>
                     <low value="20090825"/>
@@ -3622,7 +3613,7 @@
                   <value xsi:type="CD" code="R50.2" displayName="Fièvre due à des médicaments"
                     codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10FRPMSI">
                     <originalText>
-                      <reference value="#tetanos1-reac"/>
+                      <reference value="#vaccin-01-reaction"/>
                     </originalText>
                   </value>
                 </observation>
@@ -3639,7 +3630,7 @@
                   <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1"
                     codeSystemName="LOINC"/>
                   <text>
-                    <reference value="#tetanos1-comment"/>
+                    <reference value="#vaccin-01-comment"/>
                   </text>
                   <statusCode code="completed"/>
                 </act>
@@ -4464,7 +4455,7 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>
+                  <td ID="directives-anticipees">
                     <renderMultiMedia referencedObject="directives-anticipees-pdf" />
                   </td>                  
                 </tr>
@@ -4784,7 +4775,7 @@
               <!-- valeur issue du jdv-type-directive-anticipee-cisis (1.2.250.1.213.1.1.5.136) -->
               <code code="42348-3" displayName="Directives anticipées"
                 codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
-              <text><reference value="#directives-anticipees-pdf"/></text>
+              <text><reference value="#directives-anticipees"/></text>
               <statusCode code="completed"/>
               <!-- Date du document Directives anticipées récupéré du DMP -->
               <effectiveTime>
@@ -4868,10 +4859,10 @@
               <tbody>
                 <tr>
                   <td>29/03/2024</td>
-                  <td><content ID="resultat-imagerie-02">CT rachis dorsal avec contraste IV</content></td>
-                  <td><content ID="resultat-imagerie-02-resultat">Pas d'embolie pulmonaire proximale</content></td>
-                  <td><content ID="resultat-imagerie-02-localisation">Thorax entier</content></td>
-                  <td><content ID="resultat-imagerie-02-commentaire">(Texte libre)</content></td>
+                  <td><content ID="resultat-imagerie-01">CT rachis dorsal avec contraste IV</content></td>
+                  <td><content ID="resultat-imagerie-01-resultat">Pas d'embolie pulmonaire proximale</content></td>
+                  <td><content ID="resultat-imagerie-01-localisation">Thorax entier</content></td>
+                  <td><content ID="resultat-imagerie-01-commentaire">(Texte libre)</content></td>
                 </tr>
               </tbody>
             </table>
@@ -5027,11 +5018,7 @@
               <templateId root="1.2.250.1.213.1.1.3.208"/>
               <id root="D5C3639B-2A68-4C87-8019-CBD941B7B429"/>
               <code code="18748-4" displayName="Imagerie" codeSystemName="LOINC"
-                codeSystem="2.16.840.1.113883.6.1">
-                <originalText>
-                  <reference value="#resultat-02"/>
-                </originalText>
-              </code>
+                codeSystem="2.16.840.1.113883.6.1"/>                
               <statusCode code="completed"/>
               <effectiveTime value="20240329"/>
               <!-- Laboratoire exécutant -->
@@ -5134,17 +5121,17 @@
                   <code code="24979-7" 
                     displayName="CT rachis dorsal avec contraste IV"   
                     codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
-                  <text><reference value="#resultat-imagerie-02"/></text>
+                  <text><reference value="#resultat-imagerie-01"/></text>
                   <statusCode code="completed"/>
                   <effectiveTime value="20240329"/>
                   <value xsi:type="CD">
-                    <originalText><reference value="#resultat-imagerie-02-resultat"/></originalText>
+                    <originalText><reference value="#resultat-imagerie-01-resultat"/></originalText>
                   </value>                  
                   <!-- [0..1] Localisation anatomique -->
                   <targetSiteCode xsi:type="CD" code="302551006" displayName="thorax entier"
                     codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT">
                     <originalText mediaType="text/xml">
-                      <reference value="#resultat-imagerie-02-localisation"/>
+                      <reference value="#resultat-imagerie-01-localisation"/>
                     </originalText>                
                   </targetSiteCode>                  
                   <!-- Entrée FR-Commentaire-ER -->
@@ -5159,7 +5146,7 @@
                       <code code="48767-8" displayName="Commentaire"
                         codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
                       <text>
-                        <reference value="#resultat-imagerie-02-commentaire"/>
+                        <reference value="#resultat-imagerie-01-commentaire"/>
                       </text>
                       <statusCode code="completed"/>
                     </act>

@@ -658,7 +658,7 @@
                             <id root="EB98426A-18AF-4D64-AE2D-592C04302205"/>
                             <code code="MED-1130" codeSystem="1.2.250.1.213.1.1.4.322"
                                 displayName="Le patient a-t-il été informé des risques relatifs à l'examen d'imagerie médicale ?"
-                                codeSystemName="terminologie-cisis-fr"/>
+                                codeSystemName="TerminologieCISIS"/>
                             <text><reference value="risque-examen"/></text>
                             <statusCode code="completed"/>
                             <effectiveTime>
@@ -700,7 +700,7 @@
                     <templateId root="1.2.250.1.213.1.1.2.158"/>
                     <!-- Conformité FR-Plan-de-soins-IMG-DA (CI-SIS) -->
                     <templateId root="1.2.250.1.213.1.1.2.158.3"/>
-                    <id root="fc21dc59-43d5-4bb0-acc7-3601784bfbc0"/>
+                    <id root="7E359CA6-5689-49E1-B453-3B16E8F1AB57"/>
                     <code code="18776-5" displayName="Plan de soins"
                         codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
                     <title>Acte(s) d'imagerie demandé(s)</title>
@@ -752,7 +752,7 @@
                             <id root="CFE83290-82A0-11EC-A8A3-0242AC120002"/>
                             <!-- [1..1] Modalité de l’examen : Valeur issue du jdv-modalite-demande-acte-imagerie-cisis(1.2.250.1.213.1.1.5.660) -->
                             <code code="MED-1126" displayName="Radiographie sans contraste"
-                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                                 <originalText mediaType="text/xml"><reference value="#modalite-examen-01"/></originalText>                                
                             </code>
                             <text><reference value="#modalite-examen-01"/></text>
@@ -798,7 +798,7 @@
                             <id root="CFE83290-82A0-11EC-A8A3-0242AC120002"/>
                             <!-- [1..1] Modalité de l’examen : Valeur issue du jdv-modalite-demande-acte-imagerie-cisis(1.2.250.1.213.1.1.5.660) -->
                             <code code="MED-1128" displayName="Échographie sans contraste"
-                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                                 <originalText mediaType="text/xml"><reference value="#modalite-examen-02"/></originalText>                                
                             </code>
                             <text><reference value="#modalite-examen-02"/></text>
@@ -843,7 +843,7 @@
                             <id root="CFE83290-82A0-11EC-A8A3-0242AC120002"/>
                             <!-- [1..1] Modalité de l’examen : valeur issue du jdv-modalite-demande-acte-imagerie-cisis(1.2.250.1.213.1.1.5.660) -->
                             <code code="MED-1126" displayName="Radiographie sans contraste"
-                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                                 <originalText mediaType="text/xml"><reference value="#modalite-examen-03"/></originalText>                                
                             </code>
                             <text><reference value="#modalite-examen-03"/></text>

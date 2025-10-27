@@ -349,7 +349,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.24" />
               <id root="43AF63F6-1951-4D24-A706-9A48C0C4CCA9" />
-              <code code="ORG-153" displayName="SAMU, SMUR terrestre" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+              <code code="ORG-153" displayName="SAMU, SMUR terrestre" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                 <originalText><reference value="#AUNV_001" /></originalText>
               </code>
               <effectiveTime>
@@ -664,7 +664,7 @@
               <effectiveTime>
                 <low value="201809232030" />
               </effectiveTime>
-              <value xsi:type="CD" code="MED-349" codeSystem="1.2.250.1.213.1.1.4.322" displayName="Persistance des troubles à l'admission" codeSystemName="terminologie-cisis-fr">
+              <value xsi:type="CD" code="MED-349" codeSystem="1.2.250.1.213.1.1.4.322" displayName="Persistance des troubles à l'admission" codeSystemName="TerminologieCISIS">
                 <originalText><reference value="#persistance"/></originalText>
               </value>
             </observation>
@@ -815,7 +815,7 @@
                 <tr>
                   <td>23/09/2018</td>
                   <td>
-                    <content ID="hyperArt">Hypertension artérielle</content>
+                    <content ID="hyperArt">Hypertension essentielle (primitive)</content>
                   </td>
                   <td>Oui</td>
                   <td>
@@ -894,7 +894,7 @@
                   <effectiveTime>
                     <low value="20180923" />
                   </effectiveTime>
-                  <value xsi:type="CD" code="I10" displayName="Hypertension artérielle" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
+                  <value xsi:type="CD" code="I10" displayName="Hypertension essentielle (primitive)" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
                     <originalText><reference value="hyperArt"/></originalText>
                   </value>
                   <!-- Suivi du traitement -->
@@ -1016,7 +1016,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.48" />
                       <id root="29050C44-E4E5-480A-BE0B-B86DE3C72ECD" />
-                      <code code="MED-352" displayName="Score de somnolence d'Epworth" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                      <code code="MED-352" displayName="Score de somnolence d’Epworth" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                       <text><reference value="epworth"/></text>
                       <statusCode code="completed" />
                       <effectiveTime nullFlavor="NA" />
@@ -1423,7 +1423,7 @@
                       <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
                       <templateId root="1.2.250.1.213.1.1.3.48" />
                       <id root="1F44995B-C0E6-44C4-818E-01FB03ECCF3A" />
-                      <code code="MED-350" displayName="Circonstances de découverte" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                      <code code="MED-350" displayName="Circonstances de découverte" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                       <text><reference value="parox"/></text>
                       <statusCode code="completed" />
                       <effectiveTime value="2007" />
@@ -1448,7 +1448,7 @@
                   <effectiveTime>
                     <low value="2006" />
                   </effectiveTime>
-                  <value xsi:type="CD" code="MED-533" displayName="Comorbidité" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+                  <value xsi:type="CD" code="MED-533" displayName="Comorbidité" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                     <originalText><reference value="comoPEC" /></originalText>
                   </value>
                 </observation>
@@ -2187,7 +2187,7 @@
                   <effectiveTime>
                     <low value="20180923" />
                   </effectiveTime>
-                  <value xsi:type="CD" code="MED-380" displayName="Déficit moteur de la main" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+                  <value xsi:type="CD" code="MED-380" displayName="Déficit moteur de la main" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                     <originalText><reference value="#avc_110" /></originalText>
                     <qualifier>
                       <value code="C25229" displayName="Gauche" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCIT"/>
@@ -2232,7 +2232,7 @@
                   <effectiveTime>
                     <low value="20180923" />
                   </effectiveTime>
-                  <value xsi:type="CD" code="H57.04" displayName="Mydriase" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
+                  <value xsi:type="CD" code="37125009" displayName="Mydriase" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT">
                     <originalText><reference value="#avc_101" /></originalText>
                   </value>
                 </observation>
@@ -2352,7 +2352,7 @@
                   <statusCode code="completed" />
                   <effectiveTime value="2012" />
                   <value xsi:type="INT" value="0" />
-                  <interpretationCode xsi:type="CE" code="MED-382" displayName="Absence de symptômes" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+                  <interpretationCode xsi:type="CE" code="MED-382" displayName="Absence de symptômes" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                     <originalText><reference value="#rankin" /></originalText>
                   </interpretationCode>
                 </observation>
@@ -3413,14 +3413,14 @@
                 </tr>
               </thead>
               <tbody>
-                <!-- ECG -->
+                <!-- Électrocardiographie sur au moins 12 dérivations -->
                 <tr>
                   <td>23/09/2018</td>
                   <td>
-                    <content ID="examen-01">ECG</content>
+                    <content ID="examen-01">Électrocardiographie sur au moins 12 dérivations</content>
                   </td>
                   <td>
-                    <content ID="diag-01">ECG Anormal</content>
+                    <content ID="diag-01">Électrocardiographie sur au moins 12 dérivations Anormal</content>
                   </td>
                   <td>
                   </td>
@@ -3671,7 +3671,7 @@
               </effectiveTime>
             </procedure>
           </entry>
-          <!-- Entrée FR-Simple-Observation : ECG -->
+          <!-- Entrée FR-Simple-Observation : Électrocardiographie sur au moins 12 dérivations -->
           <entry>
             <observation classCode="OBS" moodCode="EVN" negationInd="false">
               <!-- Conformité IHE PCC -->
@@ -3679,7 +3679,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="BC7009BF-802D-42E9-A790-C785D7072805" />
-              <code code="DEQP003" displayName="ECG" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM" />
+              <code code="DEQP003" displayName="Électrocardiographie sur au moins 12 dérivations" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM" />
               <text><reference value="#examen-01" /></text>
               <statusCode code="completed" />
               <effectiveTime value="20110622" />
@@ -3696,14 +3696,14 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="7B3D9D66-DED2-49A6-9027-F66886204108" />
-              <code code="ACQK001" displayName="Scannographie du crâne et de son contenu" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM" />
+              <code code="ACQK001" displayName="Scanographie du crâne et de son contenu, sans injection de produit de contraste" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM" />
               <text><reference value="#examen-02" /></text>
               <statusCode code="completed" />
               <effectiveTime value="20110622" />
               <value xsi:type="CD" code="I63.9" displayName="Infarctus cérébral, sans précision" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM 10">
                 <originalText><reference value="#diag-02" /></originalText>
                 <qualifier>
-                  <value code="MED-442" displayName="Carotidien territorial" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <value code="MED-442" displayName="Carotidien territorial" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                 </qualifier>
               </value>
               <!-- Entrée FR-Simple-Observation : Territoire antérieur = Oui + localisation ACM Profond -->
@@ -3724,7 +3724,7 @@
                     </qualifier>
                   </value>
                   <!-- [ANS] à trouver dans la SNOMED CT -->
-                  <targetSiteCode code="MED-462" displayName="artère cérébrale moyenne territoire superficiel" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <targetSiteCode code="MED-462" displayName="artère cérébrale moyenne territoire superficiel" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                 </observation>
               </entryRelationship>
               <!-- Entrée FR-Simple-Observation : Centre ovale = non -->
@@ -3850,7 +3850,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="FAD93FDF-AEE9-405D-A11A-BCFA40E9308C" />
-              <code code="EAQJ001" displayName="Remnographie du crâne et de son contenu" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM" />
+              <code code="EAQJ001" displayName="Remnographie des vaisseaux encéphaliques [Angio-IRM cérébrale]" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM" />
               <text><reference value="#examen-03" /></text>
               <statusCode code="completed" />
               <effectiveTime value="20110622" />
@@ -3869,7 +3869,7 @@
                   <text><reference value="#lobaire" /></text>
                   <statusCode code="completed" />
                   <effectiveTime value="20110622" />
-                  <value xsi:type="CD" code="MED-447" displayName="Hémisphère topographie lobaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+                  <value xsi:type="CD" code="MED-447" displayName="Hémisphère topographie lobaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                     <qualifier>
                       <value code="C25229" displayName="Gauche" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCIT"/>
                     </qualifier>
@@ -3911,7 +3911,7 @@
                   <text><reference value="#anatomique" /></text>
                   <statusCode code="completed" />
                   <effectiveTime value="20110622" />
-                  <value xsi:type="CD" code="MED-448" displayName="Hémisphère topographie intraventriculaire pure" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <value xsi:type="CD" code="MED-448" displayName="Hémisphère topographie intraventriculaire pure" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                 </observation>
               </entryRelationship>
               <!-- Entrée FR-Simple-Observation : Cervelet -->
@@ -3981,7 +3981,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="FC1846FC-73D2-4DC4-9FBD-48195C0AD982" />
-              <code code="ACQN001" displayName="Remnographie du crâne et de son contenu" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM" />
+              <code code="ACQN001" displayName="Remnographie [IRM] du crâne et de son contenu, sans injection intraveineuse de produit de contraste" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM" />
               <text><reference value="#examen-04" /></text>
               <statusCode code="completed" />
               <effectiveTime value="20110622" />
@@ -4000,7 +4000,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="8A306C9B-03C0-4EA2-857E-0E2BDE3BFEF7" />
-              <code code="ACQN001" displayName="Remnographie du crâne et de son contenu" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM" />
+              <code code="ACQN001" displayName="Remnographie [IRM] du crâne et de son contenu, sans injection intraveineuse de produit de contraste" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM" />
               <text><reference value="#examen-05" /></text>
               <statusCode code="completed" />
               <effectiveTime value="20110622" />
@@ -4015,12 +4015,12 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="50E93222-1F16-4DED-A980-D43E8D97800B" />
-                  <code code="MED-485" displayName="Echelle scannographique de Fisher" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-485" displayName="Echelle scannographique de Fisher" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <text><reference value="#fish" /></text>
                   <statusCode code="completed" />
                   <effectiveTime value="20110622" />
                   <value xsi:type="INT" value="3" />
-                  <interpretationCode code="MED-390" displayName="Dépôts de plus de 1 mm d'épaisseur" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <interpretationCode code="MED-390" displayName="Dépôts de plus de 1 mm d'épaisseur" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                 </observation>
               </entryRelationship>
               <!-- Entrée FR-Simple-Observation : Lésions anciennes -->
@@ -4035,7 +4035,7 @@
                   <text><reference value="#lesAnc" /></text>
                   <statusCode code="completed" />
                   <effectiveTime value="20110622" />
-                  <value xsi:type="CD" code="MED-467" displayName="Hemorragie ancienne" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <value xsi:type="CD" code="MED-467" displayName="Hémorragie ancienne" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                 </observation>
               </entryRelationship>
               <!-- Entrée FR-Simple-Observation : Microsaignements -->
@@ -4050,7 +4050,7 @@
                   <text><reference value="#AVC_112" /></text>
                   <statusCode code="completed" />
                   <effectiveTime value="20110622" />
-                  <value xsi:type="CD" code="MED-468" displayName="Microsaignements" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+                  <value xsi:type="CD" code="MED-468" displayName="Microsaignements" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                     <originalText><reference value="#AVC_112" /></originalText>
                   </value>
                 </observation>
@@ -4065,7 +4065,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="FF2E5AD2-3CCB-4A5C-ACFC-2BEAC80F3D71" />
-              <code code="EAQH002" displayName="Scanographie des vaisseaux encéphaliques" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM" />
+              <code code="EAQH002" displayName="Scanographie des vaisseaux encéphaliques [Angioscanner cérébral]" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM" />
               <text><reference value="examen-06" /></text>
               <statusCode code="completed" />
               <effectiveTime value="20110622" />
@@ -4082,7 +4082,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="BF1A9530-5088-4A47-8455-40E420221FFE" />
-              <code code="EAQJ001" displayName="Remnographie des vaisseaux encéphaliques" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM" />
+              <code code="EAQJ001" displayName="Remnographie des vaisseaux encéphaliques [Angio-IRM cérébrale]" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM" />
               <text><reference value="examen-07" /></text>
               <statusCode code="completed" />
               <effectiveTime value="20110622" />
@@ -4166,7 +4166,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="B52F6335-F83B-47A2-857A-2BEB3B40577D" />
-              <code code="MED-495" displayName="Aspirine dans les 24h d'hospitalisation" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="MED-495" displayName="Aspirine dans les 24h d'hospitalisation" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="aspi24"/></text>
               <statusCode code="completed" />
               <effectiveTime nullFlavor="NA" />
@@ -4181,7 +4181,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="534FC334-56DB-4A85-BF72-6C2C23C6E28A" />
-              <code code="MED-496" displayName="Posologie aspirine entre 160 et 300 mg" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="MED-496" displayName="Posologie aspirine entre 160 et 300 mg" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="poso"/></text>
               <statusCode code="completed" />
               <effectiveTime nullFlavor="NA" />
@@ -4196,7 +4196,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="B1E9764E-45C3-4438-98A3-C2E1F103BE89" />
-              <code code="MED-497" displayName="Contre-indication aspirine" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="MED-497" displayName="Contre-indication aspirine" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="contreIndiAspi"/></text>
               <statusCode code="completed" />
               <effectiveTime nullFlavor="NA" />
@@ -4241,7 +4241,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="EAA94DC0-E775-4CD4-BA54-3B3554F6625A" />
-              <code code="MED-500" displayName="Inclusion dans protocole" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="MED-500" displayName="Inclusion dans protocole" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="incluProto"/></text>
               <statusCode code="completed" />
               <effectiveTime nullFlavor="NA" />
@@ -4256,7 +4256,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="06542E2D-D632-49E6-9605-547CCE0CFBBE" />
-              <code code="MED-501" displayName="Date de consentement au protocole" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="MED-501" displayName="Date de consentement au protocole" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference value="dateCons"/></text>
               <statusCode code="completed" />
               <effectiveTime nullFlavor="NA" />
@@ -4372,7 +4372,7 @@
                 <tr>
                   <td>Heure de début des symptômes connue et &gt; 4h30</td>
                   <td>Non</td>
-                  <td>Diabète et antécédent d'AVC</td>
+                  <td>Diabète et antécédent d’AVC</td>
                   <td>Non</td>
                 </tr>
                 <tr>
@@ -4388,19 +4388,19 @@
                   <td>Non</td>
                 </tr>
                 <tr>
-                  <td>Déficit neurologique s'améliorant rapidement</td>
+                  <td>Déficit neurologique s’améliorant rapidement</td>
                   <td>Non</td>
                   <td>Massage cardiaque externe traumatique &lt; 10 jours</td>
                   <td>Non</td>
                 </tr>
                 <tr>
-                  <td>Suspicion d'hémorragie méningée (même si scanner normal)</td>
+                  <td>Suspicion d’hémorragie méningée (même si scanner normal)</td>
                   <td>Non</td>
-                  <td>Ponction récente d'un vaisseau non compressible &lt; 7 jours</td>
+                  <td>Ponction récente d’un vaisseau non compressible &lt; 7 jours</td>
                   <td>Non</td>
                 </tr>
                 <tr>
-                  <td>Crise épileptique lors de l'installation du déficit</td>
+                  <td>Crise épileptique lors de l’installation du déficit</td>
                   <td>Non</td>
                   <td>Grossesse, accouchement</td>
                   <td>Non</td>
@@ -4502,169 +4502,169 @@
               </consumable>
               <precondition>
                 <criterion>
-                  <code code="PAT-056" displayName="Age &lt; 18 ans &gt; 80 ans" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="PAT-056" displayName="Age &lt; 18 ans et &gt; 80 ans" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <value xsi:type="BL" value="false" />
                 </criterion>
               </precondition>
               <precondition>
                 <criterion>
-                  <code code="MED-353" displayName="Heure de début des symptômes connue et &gt; 4h30" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-353" displayName="Heure de début des symptômes connue et &gt; 4h30" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <value xsi:type="BL" value="false" />
                 </criterion>
               </precondition>
               <precondition>
                 <criterion>
-                  <code code="MED-354" displayName="Déficit neurologique mineur" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-354" displayName="Déficit neurologique mineur" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <value xsi:type="BL" value="false" />
                 </criterion>
               </precondition>
               <precondition>
                 <criterion>
-                  <code code="MED-355" displayName="Déficit neurologique trop sévère (ex. score NIHSS &gt; 25)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-355" displayName="Déficit neurologique trop sévère (ex. score NIHSS &gt; 25)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <value xsi:type="BL" value="false" />
                 </criterion>
               </precondition>
               <precondition>
                 <criterion>
-                  <code code="MED-356" displayName="Déficit neurologique s'améliorant rapidement" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-356" displayName="Déficit neurologique s’améliorant rapidement" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <value xsi:type="BL" value="false" />
                 </criterion>
               </precondition>
               <precondition>
                 <criterion>
-                  <code code="MED-357" displayName="Suspicion d'hémorragie méningée (même si scanner normal)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-357" displayName="Suspicion d’hémorragie méningée (même si scanner normal)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <value xsi:type="BL" value="false" />
                 </criterion>
               </precondition>
               <precondition>
                 <criterion>
-                  <code code="MED-358" displayName="Crise épileptique lors de l'installation du déficit" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-358" displayName="Crise épileptique lors de l’installation du déficit" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <value xsi:type="BL" value="false" />
                 </criterion>
               </precondition>
               <precondition>
                 <criterion>
-                  <code code="MED-359" displayName="PAS &gt; 185 mm Hg ou PAD &gt; 110 mm Hg" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-359" displayName="PAS &gt; 185 mm Hg ou PAD &gt; 110 mm Hg" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <value xsi:type="BL" value="false" />
                 </criterion>
               </precondition>
               <precondition>
                 <criterion>
-                  <code code="MED-360" displayName="AVC &lt; 3 mois" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-360" displayName="AVC &lt; 3 mois" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <value xsi:type="BL" value="false" />
                 </criterion>
               </precondition>
               <precondition>
                 <criterion>
-                  <code code="MED-361" displayName="ATCD hémorragie intra-parenchymateuse ou hémorragie méningée liée à un anévrysme" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-361" displayName="ATCD hémorragie intra-parenchymateuse ou hémorragie méningée liée à un anévrysme" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <value xsi:type="BL" value="false" />
                 </criterion>
               </precondition>
               <precondition>
                 <criterion>
-                  <code code="MED-362" displayName="Intervention chirurgicale ou traumatisme important &lt; 3 mois" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-362" displayName="Intervention chirurgicale ou traumatisme important &lt; 3 mois" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <value xsi:type="BL" value="false" />
                 </criterion>
               </precondition>
               <precondition>
                 <criterion>
-                  <code code="MED-363" displayName="Hémorragie sévère (manifeste ou récente) ; maladie connue favorisant les hémorragies ; rétinopathie hémorragique (diabétique par ex)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-363" displayName="Hémorragie sévère (manifeste ou récente) ; maladie connue favorisant les hémorragies ; rétinopathie hémorragique (diabétique par ex)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <value xsi:type="BL" value="false" />
                 </criterion>
               </precondition>
               <precondition>
                 <criterion>
-                  <code code="MED-364" displayName="Hépatopathie sévère ; pancréatite aiguë " codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-364" displayName="Hépatopathie sévère ; pancréatite aiguë" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <value xsi:type="BL" value="false" />
                 </criterion>
               </precondition>
               <precondition>
                 <criterion>
-                  <code code="MED-365" displayName="Ulcère gastroduodénal documenté &lt; 3 mois" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-365" displayName="Ulcère gastroduodénal documenté &lt; 3 mois" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <value xsi:type="BL" value="false" />
                 </criterion>
               </precondition>
               <precondition>
                 <criterion>
-                  <code code="MED-366" displayName="Malformations vasculaires artérielles ou veineuses " codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-366" displayName="Malformations vasculaires artérielles ou veineuses" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <value xsi:type="BL" value="false" />
                 </criterion>
               </precondition>
               <precondition>
                 <criterion>
-                  <code code="MED-367" displayName="Diabète et antécédent d'AVC" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-367" displayName="Diabète et antécédent d’AVC" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <value xsi:type="BL" value="false" />
                 </criterion>
               </precondition>
               <precondition>
                 <criterion>
-                  <code code="MED-368" displayName="Lésion sévère du SNC (ex. néoplasie, intervention chirurgicale intracérébrale ou intrarachidienne)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-368" displayName="Lésion sévère du SNC (ex. néoplasie, intervention chirurgicale intracérébrale ou intrarachidienne)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <value xsi:type="BL" value="false" />
                 </criterion>
               </precondition>
               <precondition>
                 <criterion>
-                  <code code="MED-369" displayName="Endocardite bactérienne. Péricardite" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-369" displayName="Endocardite bactérienne. Péricardite" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <value xsi:type="BL" value="false" />
                 </criterion>
               </precondition>
               <precondition>
                 <criterion>
-                  <code code="MED-370" displayName="Massage cardiaque externe traumatique &lt; 10 jours" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-370" displayName="Massage cardiaque externe traumatique &lt; 10 jours" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <value xsi:type="BL" value="false" />
                 </criterion>
               </precondition>
               <precondition>
                 <criterion>
-                  <code code="MED-371" displayName="Ponction récente d'un vaisseau non compressible &lt; 7 jours" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-371" displayName="Ponction récente d’un vaisseau non compressible &lt; 7 jours" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <value xsi:type="BL" value="false" />
                 </criterion>
               </precondition>
               <precondition>
                 <criterion>
-                  <code code="MED-372" displayName="Grossesse, accouchement" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-372" displayName="Grossesse, accouchement" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <value xsi:type="BL" value="false" />
                 </criterion>
               </precondition>
               <precondition>
                 <criterion>
-                  <code code="MED-373" displayName="IDM récent (&lt; 3 mois)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-373" displayName="IDM récent (&lt; 3 mois)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <value xsi:type="BL" value="false" />
                 </criterion>
               </precondition>
               <precondition>
                 <criterion>
-                  <code code="MED-374" displayName="Traitement concomitant par des anticoagulants oraux avec INR &gt; 1.7 (AHA 2007)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-374" displayName="Traitement concomitant par des anticoagulants oraux avec INR &gt; 1.7 (AHA 2007)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <value xsi:type="BL" value="false" />
                 </criterion>
               </precondition>
               <precondition>
                 <criterion>
-                  <code code="MED-375" displayName="Héparine dans les 48 h précédentes avec TCA anormal" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-375" displayName="Héparine dans les 48 h précédentes avec TCA anormal" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <value xsi:type="BL" value="false" />
                 </criterion>
               </precondition>
               <precondition>
                 <criterion>
-                  <code code="MED-376" displayName="Glycémie &lt; 0,5 ou &gt; 4 g/l (&lt; 2.7 ou &gt; 22 mmol/l)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-376" displayName="Glycémie &lt; 0,5 ou &gt; 4 g/l (&lt; 2.7 ou &gt; 22 mmol/l)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <value xsi:type="BL" value="false" />
                 </criterion>
               </precondition>
               <precondition>
                 <criterion>
-                  <code code="MED-377" displayName="Plaquettes &lt; 100 000/mm3" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-377" displayName="Plaquettes &lt; 100 000/mm3" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <value xsi:type="BL" value="false" />
                 </criterion>
               </precondition>
               <precondition>
                 <criterion>
-                  <code code="MED-378" displayName="Hémorragie intracrânienne" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-378" displayName="Hémorragie intracrânienne" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <value xsi:type="BL" value="false" />
                 </criterion>
               </precondition>
               <precondition>
                 <criterion>
-                  <code code="MED-379" displayName="Infarctus jugé sévère sur l'imagerie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+                  <code code="MED-379" displayName="Infarctus jugé sévère sur l’imagerie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <value xsi:type="BL" value="false" />
                 </criterion>
               </precondition>
@@ -4744,7 +4744,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48.16" />
               <id root="7E8F0E39-C756-4B73-BC00-BC72D29E41BB" />
-              <code code="GEN-065" displayName="Statut du document" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr" />
+              <code code="GEN-065" displayName="Statut du document" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
               <text><reference nullFlavor="NA"/></text>
               <statusCode code="completed" />
               <effectiveTime value="20180923232000+0100" />

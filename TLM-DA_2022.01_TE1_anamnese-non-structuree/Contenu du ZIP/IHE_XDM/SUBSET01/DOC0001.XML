@@ -1,0 +1,1185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../FeuilleDeStyle/CDA-FO.xsl"?>
+<?oxygen SCHSchema="../schematrons/profils/IHE.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/structurationMinimale/ASIP-STRUCT-MIN-StrucMin.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/CI-SIS_ModelesDeContenusCDA.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/CI-SIS_Modeles_ANS.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/terminologies/schematron/terminologie.sch"?> 
+<?oxygen SCHSchema="../schematrons/CI-SIS_TLM-DA_2022.01.sch"?>
+<!-- 
+    **********************************************************************************************************
+    Document : Demande d'acte de télémédecine (TLM-DA_2022.01)
+    Exemple de télé-expertise (code="TE1" dans documentationOf[1])
+    avec les informations sur l'anamnèse sont saisies en texte libre (donc sans les 5 sous-sections Pathologies actives, antédédents médicaux, etc...)
+    Auteur : ANS / PML
+    **********************************************************************************************************
+    format HL7 - CDA Release 2 - selon schéma XML (CDA.xsd) du standard ANSI/HL7 CDA, R2-2005 4/21/2005
+    **********************************************************************************************************
+    Historique :
+      - 26/11/2019 : Création
+      - 20/12/2019 : Corrections
+      - 27/03/2020 : Mise à jour suite à concertation
+      - 15/07/2021 : Correction de l'unité en "mo" (au lieu de "mois")
+      - 16/09/2021 : version 2021.01
+      - 22/09/2021 : Correction de l'unité en "{tbl}" (au lieu de "tbl")
+      - 20/04/2022 : Migration des terminologies et JDVs en SNOMED CT
+    **********************************************************************************************************
+-->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../infrastructure/cda/CDA_extended.xsd" xmlns="urn:hl7-org:v3">
+  <!-- 
+    ********************************************************
+    En-tête du document
+    ********************************************************
+    -->
+  <!-- Périmètre d'utilisation -->
+  <realmCode code="FR" />
+  <!-- Référence au standard CDA R2 -->
+  <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040" />
+  <!-- Conformité spécifications HL7 France -->
+  <templateId root="2.16.840.1.113883.2.8.2.1" />
+  <!-- Conformité spécifications au CI-SIS -->
+  <templateId root="1.2.250.1.213.1.1.1.1" />
+  <!-- Conformité au Volet TLM_DA -->
+  <templateId root="1.2.250.1.213.1.1.1.38" extension="2022.01" />
+  <!-- Identifiant du document -->
+  <id root="1.2.250.1.213.1.1.1.38.2022.3.1"/>
+  <!-- Type de document -->
+  <code code="75496-0" displayName="Demande d'acte de télémédecine" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+  <!-- Titre du document -->
+  <title>Demande de téléexpertise</title>
+  <!-- Date de création du document -->
+  <effectiveTime value="20210327153500+0100"/>
+  <!-- Niveau de confidentialité du document -->
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentiality" displayName="Normal" />
+  <!-- Langue du document -->
+  <languageCode code="fr-FR" />
+  <!-- Identifiant commun à toutes les versions successives du document -->
+  <setId root="1.2.250.1.213.1.1.1.38.2022.3"/>
+  <!-- Numéro de la version du présent document (entier positif) -->
+  <versionNumber value="1" />
+
+  <!-- Patient -->
+  <recordTarget>
+    <patientRole>
+      <!-- INS-NIR de test : 1.2.250.1.213.1.4.10 -->
+      <id extension="279035121518989" root="1.2.250.1.213.1.4.10"/>
+      <!-- IPP du patient dans l'établissement avec root = l'OID de l'ES -->
+      <id extension="1234567890121" root="1.2.3.4.567.8.9.10"/>
+      <!-- Adresse du patient -->
+      <addr>
+        <houseNumber>28</houseNumber>
+        <streetName>Avenue de Breteuil</streetName>
+        <unitID>Escalier A</unitID>
+        <postalCode>75007</postalCode>
+        <city>PARIS</city>
+        <country>FRANCE</country>
+      </addr>
+      <!-- Coordonnées télécom du patient -->
+      <telecom value="tel:0144534551" use="H"/>
+      <telecom value="tel:0647151010" use="MC"/>
+      <telecom value="mailto:279035121518989@patient.mssante.fr"/>
+      <!-- Identité du patient -->
+      <patient classCode="PSN">
+        <name>
+          <!-- Nom et prénom(s) de naissance -->
+          <!-- Nom de l’acte de naissance -->
+          <family qualifier="BR">PAT-TROIS</family> 
+          <!-- Prénoms de l’acte de naissance -->
+          <given>DOMINIQUE MARIE-LOUISE</given>
+          <!-- Premier prénom de l’acte de naissance -->
+          <given qualifier="BR">DOMINIQUE</given>
+          <!-- Nom et prénom utilisés -->
+          <family qualifier="CL">PAT-TROIS</family>
+          <given qualifier="CL">DOMINIQUE</given>        
+        </name>
+        <administrativeGenderCode code="F" displayName="Féminin" codeSystem="2.16.840.1.113883.5.1"/>
+        <birthTime value="19790328"/>
+        <!-- Représentant du patient -->
+        <guardian>
+          <addr use="H">
+            <houseNumber>28</houseNumber>
+            <streetName>Avenue de Breteuil</streetName>
+            <postalCode>75007</postalCode>
+            <city>PARIS</city>
+            <country>FRANCE</country>
+          </addr>
+          <telecom value="tel:0147150000" use="H"/>
+          <guardianPerson>
+            <name>
+              <prefix>MME</prefix>
+              <family>NESSI</family>
+              <given>Jeanne</given>
+            </name>
+          </guardianPerson>
+        </guardian>
+        <!-- Lieu de naissance du patient -->
+        <birthplace>
+          <place>
+            <addr>
+              <county>51215</county>
+              <city>DOMPREMY</city>
+            </addr>
+          </place>
+        </birthplace>
+      </patient>
+    </patientRole>
+  </recordTarget>
+  
+  <!-- Auteur du document -->
+  <author>
+    <!-- [1..1] Horodatage de la validation par l'auteur -->
+    <time value="20210327153500+0100" />
+    <!-- [1..1] Identification de l'auteur -->
+    <assignedAuthor>
+      <!-- [1..1] Identifiant de l'auteur (Id RPPS du PS obligatoire pour les PS) -->
+      <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+      <!-- [1..1] Profession / spécialité du PS (obligatoire pour les PS) -->
+      <code code="G15_10/SM26" displayName="Médecin - Qualifié en Médecine Générale (SM)" codeSystem="1.2.250.1.213.1.1.4.5" />
+      <!-- [0..*] Adresse du PS-->
+      <addr>
+        <houseNumber>88</houseNumber>
+        <streetName>Rue Lecourbe</streetName>
+        <postalCode>75015</postalCode>
+        <city>PARIS</city>
+      </addr>
+      <!-- [0..*] Coordonnées télécom du PS-->
+      <telecom value="tel:0242515151" use="WP" />
+      <!-- [0..1] Identité du PS -->
+      <assignedPerson>
+        <name>
+          <prefix>M</prefix>
+          <given>Bernard</given>
+          <family>VACQUIER</family>
+          <suffix>DR</suffix>
+        </name>
+      </assignedPerson>
+    </assignedAuthor>
+  </author>
+
+  <!-- Personne à prévenir en cas d'urgence -->
+  <informant>
+    <relatedEntity classCode="ECON">
+      <code code="SIS" displayName="Soeur" codeSystem="2.16.840.1.113883.5.111"/>
+      <addr nullFlavor="NAV"/>
+      <telecom value="tel:0647150100" use="MC"/>
+      <relatedPerson>
+        <name>
+          <family>NESSI</family>
+          <given>Sophie</given>
+        </name>
+      </relatedPerson>
+    </relatedEntity>
+  </informant>
+  
+  <!-- Personne de confiance -->
+  <informant>
+    <relatedEntity classCode="NOK">
+      <code code="SIS" displayName="Soeur" codeSystem="2.16.840.1.113883.5.111"/>
+      <addr nullFlavor="NAV"/>
+      <telecom value="tel:0647150100" use="MC"/>
+      <relatedPerson>
+        <name>
+          <family>NESSI</family>
+          <given>Sophie</given>
+        </name>
+      </relatedPerson>
+    </relatedEntity>
+  </informant>
+  
+  <!-- Organisation chargée de la conservation du document -->
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <!-- Identifiant de l'organisation -->
+        <id root="1.2.250.1.71.4.2.2" extension="1120456789" />
+        <!-- Nom de l'organisation -->
+        <name>Centre de soins le Belvédère</name>
+        <!-- Coordonnées télécom de l'organisation -->
+        <telecom value="tel:0242515151" use="WP" />
+        <!-- Adresse de l'organisation -->
+        <addr>
+          <houseNumber>88</houseNumber>
+          <streetName>Rue Lecourbe</streetName>
+          <postalCode>75015</postalCode>
+          <city>PARIS</city>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+
+  <!-- Destinataire en copie du document (le médecin téléconsultant) -->
+  <informationRecipient>
+    <intendedRecipient>
+      <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+      <addr>
+        <houseNumber>20</houseNumber>
+        <streetName>Rue Leblanc</streetName>
+        <postalCode>75015</postalCode>
+        <city>PARIS</city>
+      </addr>
+      <telecom value="tel:0156092000" use="WP" />
+      <informationRecipient>
+        <name>
+          <prefix>M</prefix>
+          <given>Olivier</given>
+          <family>DUMAS</family>
+          <suffix>DR</suffix>
+        </name>
+      </informationRecipient>
+      <receivedOrganization>
+        <name>GRP HOSP UNIVERSITAIRE PARIS OUEST SITE G POMPIDOU APHP</name>
+        <telecom value="tel:0156092000" use="WP" />
+        <addr>
+          <houseNumber>20</houseNumber>
+          <streetName>Rue Leblanc</streetName>
+          <postalCode>75015</postalCode>
+          <city>PARIS</city>
+        </addr>
+      </receivedOrganization>
+    </intendedRecipient>
+  </informationRecipient>
+
+  <!-- Responsable du document -->
+  <legalAuthenticator>
+    <!-- Date et heure de la prise de responsabilité -->
+    <time value="20210327153500+0100" />
+    <signatureCode code="S" />
+    <assignedEntity>
+      <!-- PS identifié par son N°RPPS -->
+      <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+      <!-- Profession / spécialité du PS -->
+      <code code="G15_10/SM26" displayName="Médecin - Qualifié en Médecine Générale (SM)" codeSystem="1.2.250.1.213.1.1.4.5" />
+      <!-- Adresse du PS-->
+      <addr>
+        <houseNumber>88</houseNumber>
+        <streetName>Rue Lecourbe</streetName>
+        <postalCode>75015</postalCode>
+        <city>PARIS</city>
+      </addr>
+      <!-- Coordonnées télécom du PS-->
+      <telecom value="tel:0242515151" use="WP" />
+      <!-- Identité du PS -->
+      <assignedPerson>
+        <name>
+          <prefix>M</prefix>
+          <given>Bernard</given>
+          <family>VACQUIER</family>
+          <suffix>DR</suffix>
+        </name>
+      </assignedPerson>
+      <!-- Etablissement de rattachement du PS -->
+      <representedOrganization>
+        <id root="1.2.250.1.71.4.2.2" extension="2801234567" />
+        <name>Centre de soins le Belvédère</name>
+        <addr>
+          <houseNumber>88</houseNumber>
+          <streetName>Rue Lecourbe</streetName>
+          <postalCode>75015</postalCode>
+          <city>PARIS</city>
+        </addr>
+        <standardIndustryClassCode code="ETABLISSEMENT" displayName="Établissement de santé" codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode" />
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+
+  <!-- Acte documenté -->
+  <documentationOf>
+    <serviceEvent classCode="ACT">
+      <!-- Code de l'acte  -->
+      <code code="TE1" displayName="Acte de téléexpertise de niveau 1 d'un médecin sollicité par un autre médecin" codeSystem="1.2.250.1.215.200.3.3" codeSystemName="NGAP" />
+      <!-- Date de la création du document -->
+      <effectiveTime>
+        <low value="20210327154500+0100" />
+      </effectiveTime>
+      <!-- Personne ayant exécuté l'acte -->
+      <performer typeCode="PRF">
+        <assignedEntity>
+          <!-- PS identifié par son N°RPPS -->
+          <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+          <code code="G15_10/SM26" displayName="Médecin - Qualifié en Médecine Générale (SM)" codeSystem="1.2.250.1.213.1.1.4.5" />
+          <!-- Adresse du PS-->
+          <addr>
+            <houseNumber>88</houseNumber>
+            <streetName>Rue Lecourbe</streetName>
+            <postalCode>75015</postalCode>
+            <city>PARIS</city>
+          </addr>
+          <!-- Coordonnées télécom du PS-->
+          <telecom value="tel:0242515151" use="WP" />
+          <!-- Identité du PS -->
+          <assignedPerson>
+            <name>
+              <prefix>M</prefix>
+              <given>Bernard</given>
+              <family>VACQUIER</family>
+              <suffix>DR</suffix>
+            </name>
+          </assignedPerson>
+          <!-- Etablissement de rattachement du PS -->
+          <representedOrganization>
+            <id root="1.2.250.1.71.4.2.2" extension="2801234567" />
+            <name>Centre de soins le Belvédère</name>
+            <addr>
+              <houseNumber>88</houseNumber>
+              <streetName>Rue Lecourbe</streetName>
+              <postalCode>75015</postalCode>
+              <city>PARIS</city>
+            </addr>
+            <!-- Cadre d'exercice du PS -->
+            <standardIndustryClassCode code="ETABLISSEMENT" displayName="Établissement de santé" codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode" />
+          </representedOrganization>
+        </assignedEntity>
+      </performer>
+    </serviceEvent>
+  </documentationOf>
+
+  <!-- Contexte de la prise en charge -->
+  <componentOf>
+    <encompassingEncounter>
+      <!-- Type de prise en charge -->
+      <code code="VR" displayName="Virtuelle (exemple : RCP en l'absence du patient)" codeSystem="2.16.840.1.113883.5.4" />
+      <!-- Date de la PEC -->
+      <effectiveTime>
+        <low value="20210327154500+0100" />
+      </effectiveTime>
+      <!-- Responsable de la prise en charge (identifié par son N°RPPS) -->
+      <responsibleParty>
+        <assignedEntity classCode="ASSIGNED">
+          <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+          <code code="G15_10/SM26" displayName="Médecin - Qualifié en Médecine Générale (SM)" codeSystem="1.2.250.1.213.1.1.4.5" />
+          <!-- Adresse du PS-->
+          <addr>
+            <houseNumber>88</houseNumber>
+            <streetName>Rue Lecourbe</streetName>
+            <postalCode>75015</postalCode>
+            <city>PARIS</city>
+          </addr>
+          <!-- Coordonnées télécom du PS-->
+          <telecom value="tel:0242515151" use="WP" />
+          <!-- Identité du PS -->
+          <assignedPerson>
+            <name>
+              <prefix>M</prefix>
+              <given>Bernard</given>
+              <family>VACQUIER</family>
+              <suffix>DR</suffix>
+            </name>
+          </assignedPerson>
+          <!-- Etablissement de rattachement du PS -->
+          <representedOrganization>
+            <id root="1.2.250.1.71.4.2.2" extension="2801234567" />
+            <name>Centre de soins le Belvédère</name>
+            <addr>
+              <houseNumber>88</houseNumber>
+              <streetName>Rue Lecourbe</streetName>
+              <postalCode>75015</postalCode>
+              <city>PARIS</city>
+            </addr>
+            <!-- Cadre d'exercice du PS -->
+            <standardIndustryClassCode code="ETABLISSEMENT" displayName="Établissement de santé" codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode" />
+          </representedOrganization>
+        </assignedEntity>
+      </responsibleParty>
+      <!-- Etablissement de santé au sein duquel la prise en charge est organisée -->
+      <location>
+        <healthCareFacility>
+          <!-- Numéro FINESS -->
+          <id root="1.2.250.1.71.4.2.2" extension="1120456789" />
+          <!-- Modalité d'exercice -->
+          <code code="SA03" displayName="Etablissement privé PSPH" codeSystem="1.2.250.1.71.4.2.4" codeSystemName="healthCareFacilityTypeCode" />
+          <!-- Localisation de l'ES -->
+          <location>
+            <name>Centre de soins le Belvédère</name>
+            <addr>
+              <houseNumber>88</houseNumber>
+              <streetName>Rue Lecourbe</streetName>
+              <postalCode>75015</postalCode>
+              <city>PARIS</city>
+            </addr>
+          </location>
+        </healthCareFacility>
+      </location>
+    </encompassingEncounter>
+  </componentOf>
+  <!--
+    *********************************
+    Corps du document
+    *********************************
+    -->
+  <component>
+    <structuredBody>
+
+      <!-- [1..1] Section FR-Anamnese-et-facteurs-de-risques -->
+      <component>
+        <section>
+          <!-- Conformité CI-SIS FR-Anamnese-et-facteurs-de-risques -->
+          <templateId root="1.2.250.1.213.1.1.2.68" />
+          <id root="8CF3E078-DED2-43CB-82AC-B06329D2910A" />
+          <code code="46612-8" displayName="Conclusions de synthèse" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+          <title>Anamnèse et facteurs de risques</title>
+          <!-- élément <text> non présent -->
+          
+          <!-- [1..1] Sous-section FR-Anamnese -->
+          <component>
+            <section>
+              <!-- Conformité CI-SIS FR-Anamnese -->
+              <templateId root="1.2.250.1.213.1.1.2.69" />
+              <id root="8CF3E078-DED2-43CB-82AC-B06329D2910A" />
+              <code code="34117-2" displayName="Historique et physique" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+              <title>Anamnèse</title>
+              <text>
+                <table border="0">
+                  <thead>
+                    <tr>
+                      <th>
+                        <content>Anamnèse</content>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Texte libre pour la description des pathologies actives, des antécédents médicaux, chirurgicaux et familiaux et des allergies</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </text>
+            </section>
+          </component>
+          
+          <!-- [0..1] Sous-Section FR-Habitus-mode-de-vie-non-code -->
+          <component>
+            <section>
+              <!-- Conformité CCD -->
+              <templateId root="2.16.840.1.113883.10.20.1.15" />
+              <!-- Conformité IHE PCC Social History section -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.16" />
+              <!-- Conformité CI-SIS FR-Habitus-mode-de-vie-non-code -->
+              <templateId root="1.2.250.1.213.1.1.2.140" />
+              <id root="D99F46A4-C196-44CC-9F77-CB034DF6D1AF" />
+              <code code="29762-2" displayName="Habitus, Mode de vie" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+              <title>Habitus, Mode de vie</title>
+              <text>
+                <table border="0" width="100%">
+                  <thead>
+                    <tr>
+                      <th>
+                        <content>Facteurs de risques sociaux</content>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Texte libre pour la description des facteurs de risques sociaux (tabagisme, consommation d'alcool, de drogues, etc...)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </text>
+            </section>
+          </component>
+          
+          <!-- [0..1] Sous-Section FR-Facteurs-de-risque-professionnels-non-code -->
+          <component>
+            <section>
+              <!-- Conformité IHE PCC Hazardous working conditions -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.1" />
+              <!-- Conformité CI-SIS FR-Facteurs-de-risque-professionnels-noncode -->
+              <templateId root="1.2.250.1.213.1.1.2.74" />
+              <id root="BC6A2067-884F-4D55-8B27-E8C2BE276F29" />
+              <code code="10161-8" displayName="Facteurs de risques professionnels" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+              <title>Facteurs de risques professionnels</title>
+              <text>
+                <table border="0" width="100%">
+                  <thead>
+                    <tr>
+                      <th>
+                        <content>Facteurs de risques professionnels</content>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Texte libre pour la description des risques professionnels</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </text>
+            </section>
+          </component>
+        </section>
+      </component>
+      
+      <!-- [1..1] Section FR-Traitements -->
+      <component>
+        <section>
+          <!-- Conformité CCD -->
+          <templateId root="2.16.840.1.113883.10.20.1.8"/>
+          <!-- Conformité IHE PCC Medications -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.19"/>
+          <!-- Conformité CI-SIS FR-Traitements -->
+          <templateId root="1.2.250.1.213.1.1.2.143"/>
+          <code code="10160-0" codeSystem="2.16.840.1.113883.6.1" />
+          <title>Traitements</title>
+          <text>
+            <table border="0" width="100%">
+              <thead>
+                <tr>
+                  <th>Date de début</th>
+                  <th>Date de fin</th>
+                  <th>Médicament</th>
+                  <th>Composition</th>
+                  <th>Fréquence</th>
+                  <th>Motif</th>
+                  <th>Motif d'arrêt du traitement</th>
+                  <th>Commentaire</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>29/04/2019</td>
+                  <td>29/05/2019</td>
+                  <td>
+                    <content ID="MED-CIS-001">PLAVIX 75mg, comprimé
+                                        pelliculé</content>
+                  </td>
+                  <td>
+                    <content ID="MED-MV-001">Clopidogrel
+                                        (hydrogénosulfate) 75 mg comprimé</content>
+                  </td>
+                  <td>1 cp/j</td>
+                  <td>
+                    <content ID="MED-MOTIF-001">Angine de poitrine
+                                        instable</content>
+                  </td>
+                  <td>
+                    <content ID="MED-ARRET-001">Chirurgie réglée à
+                                        risque hémorragique</content>
+                  </td>
+                  <td>Commentaire sur ce traitement</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          
+          <!-- [1..*] Entrée FR-Traitement :  PLAVIX -->
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <!-- Conformité CCD -->
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <!-- Conformité IHE PCC Medication -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+              <!-- Conformité CI-SIS FR-Traitement -->
+              <templateId root="1.2.250.1.213.1.1.3.42"/>
+              <!-- [1..1] Mode d'administration : Normal -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+              <id root="25DF8166-7F45-4119-96AC-94D9527FAA58" />
+              <text><reference/></text>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20190429" />
+                <high value="20190529" />
+              </effectiveTime>
+              <effectiveTime xsi:type="PIVL_TS" operator="A">
+                <period value="1" unit="d" />
+              </effectiveTime>
+              <routeCode code="20053000" displayName="Voie orale"
+                codeSystem="0.4.0.127.0.16.1.1.2.1" codeSystemName="EDQM"/>
+              <doseQuantity>
+                <low value="1" unit="{tbl}" />
+                <high value="1" unit="{tbl}" />
+              </doseQuantity>
+              <rateQuantity nullFlavor="NASK" />
+              <!-- [1..1] Entrée FR-Produit-de-sante -->
+              <consumable>
+                <manufacturedProduct>
+                  <!-- Conformité CCD -->
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <!-- Conformité IHE PCC Product entry -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                  <!-- Conformité CI-SIS FR-Produit-de-sante -->
+                  <templateId root="1.2.250.1.213.1.1.3.43"/>
+                  <manufacturedMaterial>
+                    <code code="63564053" displayName="PLAVIX 75mg, comprimé pelliculé"
+                      codeSystem="1.2.250.1.213.2.3.1" codeSystemName="CIS">
+                      <originalText mediaType="text/xml"><reference value="#MED-CIS-001"/></originalText>
+                      <translation code="MV00002297"
+                        displayName="Clopidogrel (hydrogénosulfate) 75 mg comprimé"
+                        codeSystem="1.2.250.1.213.2.59" codeSystemName="MV">
+                        <originalText mediaType="text/xml"><reference value="#MED-MV-001"/></originalText>
+                      </translation>
+                    </code>
+                    <name>PLAVIX 75 mg</name>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+              
+              <!-- [0..*] Entrée FR-Reference-interne : Motif du traitement -->
+              <entryRelationship typeCode="RSON">
+                <act classCode="ACT" moodCode="EVN">
+                  <!-- Conformité IHE PCC Internal Références -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.4.1"/>
+                  <!-- Conformité CI-SIS FR-Reference-interne -->
+                  <templateId root="1.2.250.1.213.1.1.3.36"/>
+                  <id root="931E7870-C02F-4A1D-BEB2-C59614A9BE30" />
+                  <code code="I20.0" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10" displayName="Angine de poitrine instable">
+                    <originalText mediaType="text/xml"><reference value="#MED-MOTIF-001" /></originalText>
+                  </code>
+                </act>
+              </entryRelationship>
+
+              <!-- [0..*] Entrée FR-Simple-Observation : Motif d'arrêt du traitement -->
+              <entryRelationship typeCode="COMP">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité IHE PCC Simple Observation -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                  <!-- Conformité CI-SIS FR-Simple-Observation-->
+                  <templateId root="1.2.250.1.213.1.1.3.48"/>
+                  <id root="8EFA259C-2C88-499D-88EA-B96E72D8B8DB" />
+                  <code code="MED-052" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" displayName="Arrêt de tous les traitements actifs" />
+                  <text><reference value="MED-ARRET-001" /></text>
+                  <statusCode code="completed" />
+                  <!-- Date d'arrrêt des traitements actifs -->
+                  <effectiveTime value="20190529" />
+                  <value xsi:type="ST">Motif d'arrêt du traitement</value>
+                </observation>
+              </entryRelationship>
+            </substanceAdministration>
+          </entry>
+        </section>
+      </component>
+      
+      <!-- [0..1] Section FR-Dispositifs-medicaux -->
+      <component>
+        <section>
+          <!-- Conformité CI-SIS FR-Dispositifs-medicaux -->
+          <templateId root="1.2.250.1.213.1.1.2.1"/>
+          <templateId root="2.16.840.1.11383.10.20.1.7"/>
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5"/>
+          <id root="A5516277-3F86-4681-9013-93868243AB67" />
+          <code code="46264-8" displayName="Dispositifs médicaux" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+          <title>Dispositifs médicaux</title>
+          <text>
+            <table border="0" width="100%">
+              <thead>
+                <tr>
+                  <th>Type du matériel</th>
+                  <th>Identifiant du matériel</th>
+                  <th>Date d'implantation du matériel</th>
+                  <th>Commentaire</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><content ID="DM001-categorie">STENTS CORONAIRES</content></td>
+                  <td>[2.16.840.1.113883.3.3719] {01}00844588003288{17}141120{10}7654321D{21}10987654d321</td>
+                  <td>11/07/2019</td>
+                  <td>Commentaire sur le matériel</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <!-- [1..*] Entrée FR-Dispositif-medical -->
+          <entry>
+            <supply classCode="SPLY" moodCode="EVN">
+              <!-- Conformité CCD -->
+              <templateId root="2.16.840.1.113883.10.20.1.34" />
+              <!-- Conformité CI-SIS FR-Dispositif-medical -->
+              <templateId root="1.2.250.1.213.1.1.3.20" />
+              <!-- Identifiant de la fourniture du DM -->
+              <id nullFlavor="UNK" />
+              <!-- Référence vers la partie narrative de la section DM -->
+              <text><reference value="#DM001" /></text>
+              <!-- Date d'utilisation du DM -->
+              <effectiveTime xsi:type="IVL_TS">
+                <low nullFlavor="UNK"/>
+              </effectiveTime>
+              <!-- Dispensateur -->
+              <performer typeCode="PRF">
+                <!-- Date de délivrance -->
+                <time value="20190711" />
+                <assignedEntity>
+                  <!--Identifiant du PS exécutant-->
+                  <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+                  <!-- Délivré par -->
+                  <representedOrganization>
+                    <id root="1.2.250.1.71.4.2.2" extension="1750017212" />
+                    <name>Hôpital Albert Schweitzer</name>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>
+              <!-- Prescripteur -->
+              <author>
+                <time value="20190711153500+0100" />
+                <assignedAuthor>
+                  <!-- Identifiant du prescripteur -->
+                  <id root="1.2.250.1.71.4.2.1" extension="10100997245" />
+                  <!-- Profession / Spécialité du prescripteur -->
+                  <code code="G15_10/SM11"
+                    displayName="Médecin - Chirurgie thoracique et cardio-vasculaire (SM)"
+                    codeSystem="1.2.250.1.213.1.1.4.5"/>
+                  <!-- Nom et prénom prescripteur -->
+                  <assignedPerson>
+                    <name>
+                      <suffix>DR</suffix>
+                      <given>Laure</given>
+                      <family>MARIGNY</family>
+                    </name>
+                  </assignedPerson>
+                  <!-- Etablissement du prescripteur -->
+                  <representedOrganization>
+                    <id root="1.2.250.1.71.4.2.2" extension="1750058190" />
+                    <name>Hôpital Albert Schweitzer</name>
+                  </representedOrganization>
+                </assignedAuthor>
+              </author>
+              <!-- Description du dispositif médical -->
+              <participant typeCode="DEV">
+                <participantRole classCode="MANU">
+                  <!-- UDI-DI + UDI-PI du DM (EUDAMED) ou Référence catalogue -->
+                  <id root="2.16.840.1.113883.3.3719" extension="{01}00844588003288{17}141120{10}7654321D{21}10987654d321" />
+                  <!-- Catégorie de DM (EMDN) -->
+                  <playingDevice classCode="DEV" determinerCode="INSTANCE">
+                    <code code="P07040201" displayName="STENTS CORONAIRES" codeSystem="1.2.250.1.213.2.68" codeSystemName="EMDN">
+                      <originalText mediaType="text/xml"><reference value="#DM001-categorie" /></originalText>
+                    </code>
+                  </playingDevice>
+                </participantRole>
+              </participant>
+            </supply>
+          </entry>
+        </section>
+      </component>
+      
+      <!-- [0..1] Section FR-Signes-vitaux -->
+      <component>
+        <section>
+          <!-- Conformité CCD -->
+          <templateId root="2.16.840.1.113883.10.20.1.16"/>
+          <!-- Conformité IHE PCC parent Vital Signs Section -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.25"/>
+          <!-- Conformité IHE PCC Coded Vital Signs Section-->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.2"/>
+          <!-- Conformité CI-SIS FR-Signes-vitaux -->
+          <templateId root="1.2.250.1.213.1.1.2.75"/>
+          <id root="F9AB2E81-9206-4C7F-AF14-F87063CDDAEC" />
+          <code code="8716-3" displayName="Signes vitaux" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+          <title>Signes vitaux</title>
+          <text>
+            <table border="0">
+              <thead>
+                <tr>
+                  <th align="center" colspan="2">Signes vitaux</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <content ID="poids">Poids</content>
+                  </td>
+                  <td>59 kg</td>
+                </tr>
+                <tr>
+                  <td>
+                    <content ID="taille">Taille</content>
+                  </td>
+                  <td>176cm</td>
+                </tr>
+                <tr>
+                  <td>
+                    <content ID="imc">IMC</content>
+                  </td>
+                  <td>19</td>
+                </tr>
+                <tr>
+                  <td>Commentaire</td>
+                  <td>
+                    <content>Commentaire sur les signes vitaux</content>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+
+          <!-- [1..1] Entrée FR-Signes-vitaux -->
+          <entry> 
+            <organizer classCode="CLUSTER" moodCode="EVN">
+              <!-- Conformité CCD -->
+              <templateId root="2.16.840.1.113883.10.20.1.32"/>
+              <!-- Conformité CCD -->
+              <templateId root="2.16.840.1.113883.10.20.1.35"/>
+              <!-- Conformité IHE PCC Vital Signs Organizer -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.1"/>
+              <!-- Conformité CI-SIS FR-Signes-vitaux -->
+              <templateId root="1.2.250.1.213.1.1.3.49"/>
+              <id root="E10E58C5-6A8D-49F7-A4D5-03CFD054978F" />
+              <code code="85353-1" displayName="Signes vitaux" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+              <statusCode code="completed" />
+              <effectiveTime value="20191125" />
+              
+              <!-- [1..*] Entrée FR-Signe-vital-observe : Poids(kg) -->
+              <component typeCode="COMP">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité CCD -->
+                  <templateId root="2.16.840.1.113883.10.20.1.31"/>
+                  <!-- Conformité IHE PCC parent Simple Observation -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                  <!-- Conformité IHE PCC Vital Signs Observation -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+                  <!-- Conformité CI-SIS FR-Signe-vital-observe -->
+                  <templateId root="1.2.250.1.213.1.1.3.50"/>
+                  <id root="94EB957B-9A5C-413C-B675-93985D34EE4E" />
+                  <code code="29463-7" displayName="Poids" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+                  <text><reference value="poids" /></text>
+                  <statusCode code="completed" />
+                  <effectiveTime nullFlavor="NA" />
+                  <value xsi:type="PQ" value="59" unit="kg" />
+                </observation>
+              </component>
+              
+              <!-- [1..*] Entrée FR-Signe-vital-observe : Taille(cm) -->
+              <component typeCode="COMP">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité CCD -->
+                  <templateId root="2.16.840.1.113883.10.20.1.31"/>
+                  <!-- Conformité IHE PCC parent Simple Observation -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                  <!-- Conformité IHE PCC Vital Signs Observation -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+                  <!-- Conformité CI-SIS FR-Signe-vital-observe -->
+                  <templateId root="1.2.250.1.213.1.1.3.50"/>
+                  <id root="1C569004-BB62-45B7-BF02-5288B1E8C445" />
+                  <code code="8302-2" displayName="Taille" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+                  <text><reference value="taille" /></text>
+                  <statusCode code="completed" />
+                  <effectiveTime nullFlavor="NA" />
+                  <value xsi:type="PQ" value="176" unit="cm" />
+                </observation>
+              </component>
+              
+              <!-- [1..*] Entrée FR-Signe-vital-observe : IMC -->
+              <component typeCode="COMP">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité CCD -->
+                  <templateId root="2.16.840.1.113883.10.20.1.31"/>
+                  <!-- Conformité IHE PCC parent Simple Observation -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                  <!-- Conformité IHE PCC Vital Signs Observation -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+                  <!-- Conformité CI-SIS FR-Signe-vital-observe -->
+                  <templateId root="1.2.250.1.213.1.1.3.50"/>
+                  <id root="DC6660D5-D06B-4D67-B830-744E870A436E" />
+                  <code code="39156-5" displayName="Index de masse corporelle (IMC)" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+                  <text><reference value="imc" /></text>
+                  <statusCode code="completed" />
+                  <effectiveTime nullFlavor="NA" />
+                  <value xsi:type="PQ" value="19" unit="kg/m2" />
+                </observation>
+              </component>
+            </organizer>
+          </entry>
+        </section>
+      </component>
+      
+      <!-- [0..1] Section FR-Resultats-examens-non-code -->
+      <component>
+        <section>
+          <!-- Conformité IHE PCC Results Section -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.27" />
+          <!-- Conformité CI-SIS FR-Resultats-examens-non-code -->
+          <templateId root="1.2.250.1.213.1.1.2.150" />
+          <id root="8B85EFE7-21E8-4FA4-AE9E-8DCF086C1670" />
+          <code code="30954-2" displayName="Résultats d'examens" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+          <title>Résultats d'examens</title>
+          <text>
+            <table border="0">
+              <thead align="center">
+                <tr>
+                  <th colspan="2">Résultats d'examens</th>
+                </tr>
+              </thead>
+              <tbody align="left">
+                <tr>
+                  <td>
+                                        Résultats d'examens techniques
+                                    </td>
+                  <td> [Examen] : Échographie-doppler des veines des
+                                        membres inférieurs et des veines iliaques, pour
+                                        recherche de thrombose veineuse profonde
+                                        [Résultats] : Thrombose progressive des
+                                        artères des membres inférieurs]
+                                        <br></br></td>
+                </tr>
+                <tr>
+                  <td>
+                                        Résultats d'examens complémentaires
+                                    </td>
+                  <td> [Examen 2] : 
+                                        [Résultats 2] :  </td>
+                </tr>
+                <tr>
+                  <td>
+                                        Résultats d'examens biologiques
+                                    </td>
+                  <td> [Examen 3] : 
+                                        [Résultats 3] :  </td>
+                </tr>
+                <tr>
+                  <td>Commentaire </td>
+                  <td>
+                                        Commentaire sur les résultats
+                                    </td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+        </section>
+      </component>
+      
+      <!-- [0..1] Section FR-Historique-des-grossesses -->
+      <component>
+        <section>
+          <!-- Conformité IHE PCC Pregnancy History Section -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.4" />
+          <!-- Conformité CI-SIS FR-Historique-des-grossesses -->
+          <templateId root="1.2.250.1.213.1.1.2.77" />
+          <id root="9D4010A0-7102-455E-9EA7-329D24574B42" />
+          <code code="10162-6" displayName="Historique des grossesses" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+          <title>Obstétrique</title>
+          <text>
+            <table border="0">
+              <thead>
+                <tr>
+                  <th align="center" colspan="7">Statut obstétrical de la
+                                        patiente</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="2">
+                    <content ID="statutGross">Statut de grossesse</content>
+                  </td>
+                  <td>enceinte</td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <content ID="statutMenstruel">Statut de l'état
+                                        mentruel</content>
+                  </td>
+                  <td>Troubles menstruels</td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <content ID="DateDernMenstru">Date des dernières
+                                        règles</content>
+                  </td>
+                  <td>12/07/2019</td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <content ID="DateEstAcc">Date estimée de
+                                        l'accouchement</content>
+                  </td>
+                  <td>12/03/2020</td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <content ID="ageGestationnel">Age
+                                        gestationnel</content>
+                  </td>
+                  <td>5 mois</td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <content ID="grossesseMult">Grossesses
+                                        multiples</content>
+                  </td>
+                  <td>Non</td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <content>Commentaire</content>
+                  </td>
+                  <td>Texte libre</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <!-- [0..*] Entrée FR-Observation-sur-la-grossesse -->
+          <entry>
+            <observation classCode="OBS" moodCode="EVN" negationInd="false">
+              <!-- Conformité IHE PCC parent Simple Observation -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+              <!-- Conformité IHE PCC Pregnancy Observation -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.5"/>
+              <!-- Conformité CI-SIS FR-Observation-sur-la-grossesse -->
+              <templateId root="1.2.250.1.213.1.1.3.53"/>
+              <id root="159A968A-9B52-4934-A3AB-CBD099F230F1" />
+              <code code="11449-6" displayName="Statut de la grossesse" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+              </code>
+              <text><reference value="statutGross" /></text>
+              <statusCode code="completed" />
+              <effectiveTime nullFlavor="NA" />
+              <value xsi:type="ST">enceinte</value>
+            </observation>
+          </entry>
+          <!-- [0..*] Entrée FR-Observation-sur-la-grossesse -->
+          <entry>
+            <observation classCode="OBS" moodCode="EVN" negationInd="false">
+              <!-- Conformité IHE PCC parent Simple Observation -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+              <!-- Conformité IHE PCC Pregnancy Observation -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.5"/>
+              <!-- Conformité CI-SIS FR-Observation-sur-la-grossesse -->
+              <templateId root="1.2.250.1.213.1.1.3.53"/>
+              <id root="F6CC68B0-E865-49D4-AA9D-0DA0E68CE082" />
+              <code code="8678-5" displayName="Statut de l'état menstruel" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+              </code>
+              <text><reference value="statutMenstruel" /></text>
+              <statusCode code="completed" />
+              <effectiveTime nullFlavor="NA" />
+              <value xsi:type="ST">Troubles Menstruels</value>
+            </observation>
+          </entry>
+          <!-- [0..*] Entrée FR-Observation-sur-la-grossesse -->
+          <entry>
+            <observation classCode="OBS" moodCode="EVN" negationInd="false">
+              <!-- Conformité IHE PCC parent Simple Observation -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+              <!-- Conformité IHE PCC Pregnancy Observation -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.5"/>
+              <!-- Conformité CI-SIS FR-Observation-sur-la-grossesse -->
+              <templateId root="1.2.250.1.213.1.1.3.53"/>
+              <id root="3788D1BE-F42F-4732-9D73-568B95040620" />
+              <code code="8665-2" displayName="Date des dernières règles" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+              </code>
+              <text><reference value="DateDernMenstru" /></text>
+              <statusCode code="completed" />
+              <effectiveTime nullFlavor="NA" />
+              <value xsi:type="TS" value="20190712" />
+            </observation>
+          </entry>
+          <!-- [0..*] Entrée FR-Observation-sur-la-grossesse -->
+          <entry>
+            <observation classCode="OBS" moodCode="EVN" negationInd="false">
+              <!-- Conformité IHE PCC parent Simple Observation -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+              <!-- Conformité IHE PCC Pregnancy Observation -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.5"/>
+              <!-- Conformité CI-SIS FR-Observation-sur-la-grossesse -->
+              <templateId root="1.2.250.1.213.1.1.3.53"/>
+              <id root="BB0484BC-CA70-49C0-B759-88C6DABE425D" />
+              <code code="11778-8" displayName="Date estimée d'accouchement" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+              </code>
+              <text><reference value="DateEstAcc" /></text>
+              <statusCode code="completed" />
+              <effectiveTime nullFlavor="NA" />
+              <value xsi:type="TS" value="20200312" />
+            </observation>
+          </entry>
+          <!-- [0..*] Entrée FR-Observation-sur-la-grossesse -->
+          <entry>
+            <observation classCode="OBS" moodCode="EVN" negationInd="false">
+              <!-- Conformité IHE PCC parent Simple Observation -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+              <!-- Conformité IHE PCC Pregnancy Observation -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.5"/>
+              <!-- Conformité CI-SIS FR-Observation-sur-la-grossesse -->
+              <templateId root="1.2.250.1.213.1.1.3.53"/>
+              <id root="D2BC7793-14B9-44BB-B022-33E2CE06CB0A" />
+              <code code="11884-4" displayName="Age gestationnel du fœtus (estimation clinique)" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+                <originalText><reference value="#ageGestationnel" /></originalText>
+              </code>
+              <text><reference value="ageGestationnel" /></text>
+              <statusCode code="completed" />
+              <effectiveTime nullFlavor="NA" />
+              <!-- 15/07/2021 : Correction de l'unité en "mo" (au lieu de "mois") -->
+              <value xsi:type="PQ" value="5" unit="mo" />
+            </observation>
+          </entry>
+          <!-- [0..*] Entrée FR-Observation-sur-la-grossesse -->
+          <entry>
+            <observation classCode="OBS" moodCode="EVN" negationInd="false">
+              <!-- Conformité IHE PCC parent Simple Observation -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+              <!-- Conformité IHE PCC Pregnancy Observation -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.5"/>
+              <!-- Conformité CI-SIS FR-Observation-sur-la-grossesse -->
+              <templateId root="1.2.250.1.213.1.1.3.53"/>
+              <id root="43176E88-85B3-4889-9F36-29C25E0B114F" />
+              <code code="45371-2" displayName="Grossesse multiple"
+                codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+                <originalText><reference value="#grossesseMult" /></originalText>
+              </code>
+              <text><reference value="grossesseMult" /></text>
+              <statusCode code="completed" />
+              <effectiveTime nullFlavor="NA" />
+              <value xsi:type="BL" value="false" />
+            </observation>
+          </entry>
+        </section>
+      </component>
+      
+      <!-- [0..1] Section FR-Documents-ajoutes -->
+      <component>
+        <section>
+          <!-- Conformité CI-SIS FR-Documents-ajoutes -->
+          <templateId root="1.2.250.1.213.1.1.2.37" />
+          <id root="6C4E50B8-D045-4C19-B72A-E53E49F67557" />
+          <code code="55107-7" displayName="Documents ajoutés" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+          <title>Documents complémentaires</title>
+          <text>
+            <table border="0">
+              <thead>
+                <tr>
+                  <th align="center">Document(s) attaché(s)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <content ID="titreDoc" styleCode="BoldItalics">CR
+                                        Echo-Doppler veineux du 15/12/2019</content>
+                    <br />
+                    <renderMultiMedia referencedObject="DOC-001" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <!-- [1..*] Entrée FR-Document-attache -->
+          <entry>
+            <organizer classCode="CLUSTER" moodCode="EVN">
+              <!-- Conformité CI-SIS FR-Document-attache -->
+              <templateId root="1.2.250.1.213.1.1.3.18" />
+              <id root="37160508-8E4C-4DA2-A5DC-130DD85E46AA" />
+              <code code="55107-7" displayName="Document attaché" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+              <statusCode code="completed" />
+              <!-- [1..1] Entrée FR-Simple-Observation : Nature du document attaché -->
+              <component typeCode="COMP">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité IHE PCC Simple Observation -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                  <!-- Conformité CI-SIS FR-Simple-Observation-->
+                  <templateId root="1.2.250.1.213.1.1.3.48"/>
+                  <id root="2714D00E-26AA-4E7D-95F9-C5AE5316CE1E" />
+                  <code code="69764-9" displayName="Type de document" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+                  <text><reference value="#titreDoc" /></text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20191215" />
+                  <value xsi:type="CD"><originalText><reference value="#titreDoc"/></originalText></value>
+                </observation>
+              </component>
+              <!-- Document attaché [1..1] -->
+              <component>
+                <observationMedia classCode="OBS" moodCode="EVN" ID="DOC-001">
+                  <value mediaType="application/pdf" representation="B64">
+                    JVBERi0xLjcKJcfsj6IKJSVJbnZvY2F0aW9uOiBncyAtLXBlcm1pdC1maWxlLXJlYWQ9PyAtZFNBVkVSIC1kQkFUQ0ggLWROT1BBVVNFIC1zREVWSUNFPXBkZndyaXRlIC1zT3V0cHV0RmlsZT0/IC1kQXV0b1JvdGF0ZVBhZ2VzPS9Ob25lIC1zQ29sb3JDb252ZXJzaW9uU3RyYXRlZ3k9UkdCIC1kQXV0b0ZpbHRlckNvbG9ySW1hZ2VzPWZhbHNlIC1kQXV0b0ZpbHRlckdyYXlJbWFnZXM9ZmFsc2UgLWREb3duc2FtcGxlQ29sb3JJbWFnZXM9ZmFsc2UKJSUrIC1kRG93bnNhbXBsZUdyYXlJbWFnZXM9ZmFsc2UgLWREb3duc2FtcGxlTW9ub0ltYWdlcz1mYWxzZSAtZFBhc3NUaHJvdWdoSlBFR0ltYWdlcz10cnVlIC1kVHJhbnNmZXJGdW5jdGlvbkluZm89L1ByZXNlcnZlIC1kQ29udmVydENNWUtJbWFnZXNUb1JHQj10cnVlIC1kUHJlc2VydmVPdmVycHJpbnRTZXR0aW5ncz10cnVlIC1kRW1iZWRBbGxGb250cz10cnVlIC1kU3Vic2V0Rm9udHM9dHJ1ZSAtZFByZXNlcnZlQW5ub3RzPXRydWUKJSUrIC1kUERGQUNvbXBhdGliaWxpdHlQb2xpY3k9MSAtZFBERkE9MiAtZiA/CjcgMCBvYmoKPDwvTGVuZ3RoIDggMCBSL0ZpbHRlciAvRmxhdGVEZWNvZGU+PgpzdHJlYW0KeJy9Vk1THDcQve+v0A1NKjOo9a3c7JiDU6TKxntz+bDsDh8p1sAuUPmL+SfmX+S1tDMj7MGHHFJUgeiRulvv9evWvVAdCcU/h7/r7UKJy8X9grJVHP6st+LtcnF8lgRRp6xYXizKfhJBdVGbKILHQiy3i8/y96Y1nSJLXvYNVsqnKL9ilZJNRj7s+HtKpOrvYtM3FlbnkhT7siNqJ2+z1dokr5tWdykGb+CM2BqTxE7CSuO7uGnaYW/PGxSRk+Jt0zqO4V1lvZl8PZVYJmr5nLMJzsjNmO238UxOWykNN23sgrJkpWi+LP8AMEQVMqazLgGL08Xyl88ylmPeaqmawKsYJU1GPRrNZLSj0U1GPxrDZIyjMU3G0OiOtFXhkCCnZJWeSalaiibi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ZS14YXAtZmlsdGVycyBlc2M9IkNSTEYiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSdhZG9iZTpuczptZXRhLycgeDp4bXB0az0nWE1QIHRvb2xraXQgMi45LjEtMTMsIGZyYW1ld29yayAxLjYnPgo8cmRmOlJERiB4bWxuczpyZGY9J2h0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMnIHhtbG5zOmlYPSdodHRwOi8vbnMuYWRvYmUuY29tL2lYLzEuMC8nPgo8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczpwZGY9J2h0dHA6Ly9ucy5hZG9iZS5jb20vcGRmLzEuMy8nPjxwZGY6UHJvZHVjZXI+R1BMIEdob3N0c2NyaXB0IDEwLjAwLjA8L3BkZjpQcm9kdWNlcj4KPHBkZjpLZXl3b3Jkcz48L3BkZjpLZXl3b3Jkcz4KPC9yZGY6RGVzY3JpcHRpb24+CjxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0naHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyc+PHhtcDpNb2RpZnlEYXRlPjIwMjQtMDQtMDNUMTE6NTY6NTBaPC94bXA6TW9kaWZ5RGF0ZT4KPHhtcDpDcmVhdGVEYXRlPjIwMjQtMDQtMDNUMTE6NTY6NTBaPC94bXA6Q3JlYXRlRGF0ZT4KPHhtcDpDcmVhdG9yVG9vbD5QREYyNCBUb29sczwveG1wOkNyZWF0b3JUb29sPjwvcmRmOkRlc2NyaXB0aW9uPgo8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4YXBNTT0naHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLycgeGFwTU06RG9jdW1lbnRJRD0ndXVpZDpjZTA1ZWRhZS0yOWNkLTExZmEtMDAwMC0zNWMwMTdkNjVkMjYnLz4KPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6ZGM9J2h0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvJyBkYzpmb3JtYXQ9J2FwcGxpY2F0aW9uL3BkZic+PGRjOnRpdGxlPjxyZGY6QWx0PjxyZGY6bGkg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X57o3dz7+Erwlft9Pn2DV92vXr/mdO1Kv23/xeuW18/fML9x7ibrZuctk1sdA8YD7beNb7cPmgx23DG903XX7G730LqhnmHr4cv3HO5du+96/9bI+pGh0YDRB2NhY4IHnAfTDxMevnmU/mjx8c4n6CcFT0Wflj+TfVb/q+avbQITwYVxh/GB537PH0+wJ179lvLb58m8F+QX5VMKU03ThtPnZ5xm7r7c8HLyVdKrxdn838V+r3mt8frnP2z+GJgLnpt8w3+z9GfRW6m3J94Zveud955/9j7x/eJCwQepDyc/sj72fwr6NLWY8Rn7ueKL5pfur+5fnywlLi0JXUDoAkIXELqA0AWELiB0AaELCF1A6AJCFxC6gNAFhC4gdIH/YxdY/Y+zHMjK5dgYAP45AHjcBqCyCgC1KAAoYanczNSVVd4WJntLUhY/NjomdQ0zLYXLjOJzuQlZgPA3Dn8KHQplbmRzdHJlYW0KZW5kb2JqCjUgMCBvYmoKPDwvUy9HVFNfUERGQTEKL091dHB1dENvbmRpdGlvbklkZW50aWZpZXIoc1JHQikKL0Rlc3RPdXRwdXRQcm9maWxlICA0IDAgUiAKL1R5cGUvT3V0cHV0SW50ZW50Pj4KZW5kb2JqCjIgMCBvYmoKPDwvUHJvZHVjZXIoR1BMIEdob3N0c2NyaXB0IDEwLjAwLjApCi9DcmVhdGlvbkRhdGUoRDoyMDI0MDQwMzExNTY1MFowMCcwMCcpCi9Nb2REYXRlKEQ6MjAyNDA0MDMxMTU2NTBaMDAnMDAnKQovVGl0bGUoKQovQXV0aG9yKCkKL0NyZWF0b3IoUERGMjQgVG9vbHMpCi9TdWJqZWN0KCkKL0tleXdvcmRzKCk+PgplbmRvYmoKeHJlZgowIDIzCjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMjA1MyAwMDAwMCBuIAowMDAwMDM0NjgxIDAwMDAwIG4gCjAwMDAwMDE5OTQgMDAwMDAgbiAKMDAwMDAzMjA0NSAwMDAwMCBuIAowMDAwMDM0NTcwIDAwMDAwIG4gCjAwMDAwMDE4NTUgMDAwMDAgbiAKMDAwMDAwMDU1MCAwMDAwMCBuIAowMDAwMDAxODM1IDAwMDAwIG4gCjAwMDAwMDMyNjggMDAwMDAgbiAKMDAwMDAwNDExMCAwMDAwMCBuIAowMDAwMDA0MDAwIDAwMDAwIG4gCjAwMDAwMTU2NDEgMDAwMDAgbiAKMDAwMDAwMjE0MyAwMDAwMCBuIAowMDAwMDAyNjUxIDAwMDAwIG4gCjAwMDAwMDIxODQgMDAwMDAgbiAKMDAwMDAwMjI1NyAwMDAwMCBuIAowMDAwMDAzMzgyIDAwMDAwIG4gCjAwMDAwMDQzMTYgMDAwMDAgbiAKMDAwMDAxNTg0MiAwMDAwMCBuIAowMDAwMDAzMDQ5IDAwMDAwIG4gCjAwMDAwMDM3ODAgMDAwMDAgbiAKMDAwMDAzMDQ4MSAwMDAwMCBuIAp0cmFpbGVyCjw8IC9TaXplIDIzIC9Sb290IDEgMCBSIC9JbmZvIDIgMCBSCi9JRCBbPDgwREVENzY2NzQ5MDlCRDNENTQ5RDA1MjgyNjk1MTVGPjw4MERFRDc2Njc0OTA5QkQzRDU0OUQwNTI4MjY5NTE1Rj5dCj4+CnN0YXJ0eHJlZgozNDg3MgolJUVPRgo=
+                  </value>
+                </observationMedia>
+              </component>
+            </organizer>
+          </entry>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

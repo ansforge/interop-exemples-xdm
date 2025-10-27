@@ -17,6 +17,7 @@
     14/09/2023 : Evolution du volet CR-BIO : Ajout de la section FR-Document-PDF-copie (1.2.250.1.213.1.1.2.243)
     14/08/2024 : Version 2024.01
     20/08/2025 : correction reference copie du document et nom du fichier exemple
+    18/09/2025 : ajout des addr dans informationRecipient qui sont obligatoires
     **********************************************************************************************************
 -->
 <!--
@@ -258,6 +259,13 @@
       <templateId root="1.3.6.1.4.1.19376.1.3.3.1.4"/>
       <!-- RPPS prescripteur -->
       <id root="1.2.250.1.71.4.2.1" extension="801234567892" />
+      <!-- adresse -->
+      <addr>
+        <houseNumber>18</houseNumber>
+        <streetName>Rue Magellan</streetName>
+        <postalCode>92100</postalCode>
+        <city>BOULOGNE-BILLANCOURT</city>        
+      </addr>
       <!-- coordonnées télécom -->
       <telecom value="mailto:eva.blue@mssante.fr"/>
       <informationRecipient>
@@ -275,6 +283,8 @@
   <informationRecipient>
     <intendedRecipient>
       <templateId root="1.3.6.1.4.1.19376.1.3.3.1.4"/>
+      <!-- adresse -->
+      <addr nullFlavor="NA"/>
       <!-- coordonnées télécom -->
       <telecom value="mailto:collecteur-depistage@institutcancer.mssante.fr"/>
       <receivedOrganization>
@@ -671,7 +681,7 @@
               <effectiveTime nullFlavor="NI"/>
               <!-- Contexte de l'examen - Valeur issue du jdv-contexte-examen-ccu-cisis (1.2.250.1.213.1.1.5.722) -->
               <value xsi:type="CD" code="MED-1210" displayName="Test HPV-HR de dépistage primaire réalisé sur prélèvement cervico-utérin"
-                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
             </observation>
           </entry>
           <!-- [1..1] Entrée FR-Probleme : Papillovirus -->
@@ -952,7 +962,7 @@
                         <participantRole classCode="ADTV">
                           <playingDevice>
                             <!-- valeur issue du jdv-milieu-cytologie-ccu-cisis (1.2.250.1.213.1.1.5.723) -->
-                            <code code="GEN-303" displayName="Hologic ThinPrep PreservCyt"  codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+                            <code code="GEN-303" displayName="Hologic ThinPrep PreservCyt"  codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                               <originalText><reference value="#milieu"/></originalText>
                             </code>
                           </playingDevice>
@@ -1122,7 +1132,7 @@
                       <effectiveTime value="20240104155000+0100" />
                       <!-- Résultat du test cytologique - valeur issue du jdv-resultat-examen-cytologique-ccu-cisis (1.2.250.1.213.1.1.5.721) -->
                       <value xsi:type="CD" code="MED-1194" displayName="adénocarcinome SAP" 
-                            codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+                            codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                         <originalText><reference value="#examen-02-resultat"/></originalText>
                       </value>
                       <methodCode code="MI" displayName="Observation microscopique" 
@@ -1140,7 +1150,7 @@
                           <effectiveTime value="20231204155000+0100" />
                           <!-- Résultat du dernier test cytologique - Issu du jdv-resultat-examen-cytologique-ccu-cisis (1.2.250.1.213.1.1.5.721) -->
                           <value xsi:type="CD" code="MED-1193" displayName="négatif pour une lésion intra-épithéliale ou maligne"
-                            codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+                            codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                             <originalText><reference value="#examen-02-ant-resultat"/></originalText>
                           </value>
                         </observation>

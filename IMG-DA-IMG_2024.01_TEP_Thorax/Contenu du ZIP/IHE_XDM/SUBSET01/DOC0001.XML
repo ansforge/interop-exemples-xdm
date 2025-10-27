@@ -660,7 +660,7 @@
                             <id root="EB98426A-18AF-4D64-AE2D-592C04302205"/>
                             <code code="MED-1130" codeSystem="1.2.250.1.213.1.1.4.322"
                                 displayName="Le patient a-t-il été informé des risques relatifs à l'examen d'imagerie médicale ?"
-                                codeSystemName="terminologie-cisis-fr"/>
+                                codeSystemName="TerminologieCISIS"/>
                             <text><reference value="risque-examen"/></text>
                             <statusCode code="completed"/>
                             <effectiveTime>
@@ -702,7 +702,7 @@
                     <templateId root="1.2.250.1.213.1.1.2.158"/>
                     <!-- Conformité FR-Plan-de-soins-IMG-DA (CI-SIS) -->
                     <templateId root="1.2.250.1.213.1.1.2.158.3"/>
-                    <id root="fc21dc59-43d5-4bb0-acc7-3601784bfbc0"/>
+                    <id root="7E359CA6-5689-49E1-B453-3B16E8F1AB62"/>
                     <code code="18776-5" displayName="Plan de soins"
                         codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
                     <title>Acte(s) d'imagerie demandé(s)</title>
@@ -783,7 +783,7 @@
                                 <!-- Valeur issue du jdv-injection-pdc-tep-cisis(1.2.250.1.213.1.1.5.670) -->
                                 <qualifier>
                                     <value code="MED-1153" displayName="avec injection de produit de contraste" 
-                                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+                                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                                         <originalText><reference value="#InjectionPDC-TEP-01"/></originalText>
                                     </value>
                                 </qualifier>
@@ -862,7 +862,7 @@
                                     <templateId root="1.2.250.1.213.1.1.3.48"/>
                                     <id root="4693E61A-7DE6-11EC-90D6-0242AC120003"/>
                                     <code code="GEN-297" displayName="Le demandeur souhaite un retour par téléphone"
-                                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                                     <text><reference value="#retour-tel-souhaite"/></text>
                                     <statusCode code="completed"/>
                                     <effectiveTime nullFlavor="NA"/>
@@ -876,9 +876,9 @@
                                     <templateId root="1.2.250.1.213.1.1.3.48"/>
                                     <id root="4693E61A-7DE6-11EC-90D6-0242AC120003"/>
                                     <code code="GEN-296"
-                                        displayName="Évènement associé à l'examen demandé"
+                                        displayName="Évènements associés à l'examen demandé"
                                         codeSystem="1.2.250.1.213.1.1.4.322"
-                                        codeSystemName="terminologie-cisis-fr"/>
+                                        codeSystemName="TerminologieCISIS"/>
                                     <text><reference value="#evenement"/></text>
                                     <statusCode code="completed"/>
                                     <effectiveTime nullFlavor="NA"/>
@@ -891,15 +891,15 @@
                                     <templateId root="1.2.250.1.213.1.1.3.48"/>
                                     <templateId root="1.2.250.1.213.1.1.3.48.36"/>
                                     <id root="4693E61A-7DE6-11EC-90D6-0242AC120003"/>
-                                    <code code="MED-1133" displayName="Fonction étudiée"
-                                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                                    <code code="MED-1131" displayName="Fonction étudiée"
+                                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                                     <text><reference value="#fonction"/></text>
                                     <statusCode code="completed"/>
                                     <effectiveTime nullFlavor="NA"/>
                                     <!-- Valeur issue du jdv-fonction-etudiee-tep-cisis (1.2.250.1.213.1.1.5.668) si TEP-Scan -->
                                     <!-- Valeur issue du jdv-fonction-etudiee-scintigraphie-cisis (1.2.250.1.213.1.1.5.669) si Scintigraphie -->
                                     <value xsi:type="CD" code="MED-1133" displayName="FDG Oncologie /Infectieux/inflammatoire"
-                                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+                                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                                         <originalText><reference value="#fonction"/></originalText>
                                     </value>
                                 </observation>

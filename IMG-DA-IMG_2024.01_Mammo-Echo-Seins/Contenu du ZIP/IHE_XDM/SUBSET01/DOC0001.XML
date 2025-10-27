@@ -427,7 +427,7 @@
     <documentationOf>
         <serviceEvent>
             <code code="MED-1095" displayName="Exécution en urgence" 
-                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                 <originalText>: motif de l'urgence (retour par téléphone souhaité)</originalText>                
             </code>         
             <!-- Médecin effecteur contacté -->
@@ -656,7 +656,7 @@
                                     <templateId root="1.2.250.1.213.1.1.3.150"/>
                                     <id root="4F5F282A-7CCF-492C-920D-2845D594BD27"/>
                                     <code code="ORG-192" displayName="Informations pour la prise en charge"
-                                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                                     <text><reference value="#info-pec-01"/></text>
                                     <statusCode code="completed"/>
                                     <effectiveTime value="20230112171504+0500"/>
@@ -677,7 +677,7 @@
                                     <templateId root="1.2.250.1.213.1.1.3.150"/>
                                     <id root="4F5F282A-7CCF-492C-920D-2845D594BD27"/>
                                     <code code="ORG-192" displayName="Informations pour la prise en charge"
-                                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr"/>
+                                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                                     <text><reference value="#info-pec-02"/></text>
                                     <statusCode code="completed"/>
                                     <effectiveTime value="20230112171504+0500"/>
@@ -736,7 +736,7 @@
                             <id root="EB98426A-18AF-4D64-AE2D-592C04302205"/>
                             <code code="MED-1130" codeSystem="1.2.250.1.213.1.1.4.322"
                                 displayName="Le patient a-t-il été informé des risques relatifs à l'examen d'imagerie médicale ?"
-                                codeSystemName="terminologie-cisis-fr"/>
+                                codeSystemName="TerminologieCISIS"/>
                             <text><reference value="risque-examen"/></text>
                             <statusCode code="completed"/>
                             <effectiveTime>
@@ -870,7 +870,7 @@
                             <id root="CFE83290-82A0-11EC-A8A3-0242AC120002"/>
                             <!-- [1..1] Modalité de l’examen : Valeur issue du jdv-modalite-demande-acte-imagerie-cisis(1.2.250.1.213.1.1.5.660) -->
                             <code code="MED-1128" displayName="Échographie sans contraste"
-                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="terminologie-cisis-fr">
+                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                                 <originalText mediaType="text/xml"><reference value="#modalite-examen-02"/></originalText>                                
                             </code>
                             <text><reference value="#modalite-examen-02"/></text>

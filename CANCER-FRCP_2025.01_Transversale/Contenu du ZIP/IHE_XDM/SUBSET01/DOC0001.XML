@@ -657,7 +657,7 @@
   <documentationOf>
     <serviceEvent classCode="ACT">
       <!-- Topographie : jdv-tumeur-cisis (1.2.250.1.213.1.1.4.2.281.21) -->
-      <code code="C50.2" displayName="Quadrant supéro-interne du sein" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10FRPMSI"/>
+      <code code="C50.2" displayName="Tumeur maligne du quadrant supéro-interne du sein" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10FRPMSI"/>
       <!-- si Topographie ne peut être codée avec le jdv-tumeur-cisis : texte libre dans <originalText>  
          <code code="GEN-243" displayName="Topographie"
             codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
@@ -836,7 +836,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.48"/>
                   <id root="91688420-D829-47A4-9D2A-B22897867353"/>
-                  <code code="ORG-138" displayName="Traitement / Soins" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
+                  <code code="ORG-138" displayName="Traitement/Soins" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
                   <text><reference value="#traitement-soins"/></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NAV"/>
@@ -1133,7 +1133,7 @@
                 <tr>
                   <td>Topographie</td>
                   <td>C50.2 [CIM10FRPMSI]</td>
-                  <td><content ID="topographie-1">Quadrant supéro-interne du sein</content></td>
+                  <td><content ID="topographie-1">Tumeur maligne du quadrant supéro-interne du sein</content></td>
                 </tr>
                 <tr>
                   <td>Latéralité (si applicable)</td>
@@ -2785,7 +2785,7 @@
             <organizer classCode="CLUSTER" moodCode="EVN">
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.7"/>
-              <code code="GEN-099" displayName="Information RCP"
+              <code code="GEN-099" displayName="Information FRCP"
                 codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
               <statusCode code="completed"/>
               <!-- Dossier complet O/N -->
@@ -3241,7 +3241,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.48"/>
               <id root="534329A4-AAAC-4D2C-A135-190C8986C0CA"/>
-              <code code="MED-250" displayName="Proposition d'inclusion dans un essai clinique"
+              <code code="MED-250" displayName="Proposition d’inclusion dans un essai clinique"
                 codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
               <text><reference value="#essai-clinique"/></text>
               <statusCode code="completed"/>

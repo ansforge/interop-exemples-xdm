@@ -1467,7 +1467,7 @@
                      <!-- Conformité FR-Observation-sur-la-grossesse (CI-SIS) -->
                      <templateId root="1.2.250.1.213.1.1.3.53"/>
                      <id root="582BB12C-7B63-11EB-9439-0242AC130027"/>
-                     <code code="ORG-077" displayName="Durée d'hospitalisation"
+                     <code code="ORG-077" displayName="Hospitalisation (y compris à domicile)"
                         codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                      <text><reference value="#nbHospi"/></text>
                      <statusCode code="completed"/>
@@ -1570,7 +1570,7 @@
                            <!-- Conformité FR-Simple-Observation (CI-SIS) -->
                            <templateId root="1.2.250.1.213.1.1.3.48" />
                            <id root="582BB12C-7B63-11EB-9439-0242AC130035"/>
-                           <code code="GEN-078" displayName="Dépistage biologique de la trisomie 21"
+                           <code code="GEN-078" displayName="Dépistage de la trisomie 21"
                               codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                            <text><reference value="#depistageBio"/></text>
                            <statusCode code="completed"/>
@@ -1888,7 +1888,7 @@
                            <statusCode code="completed"/>
                            <effectiveTime value="20210425"/>                     
                            <!-- valeur issue du jdv-cause-cesarienne-cisis (1.2.250.1.213.1.1.5.116) -->
-                           <value xsi:type="CD" code="MED-210" displayName="Cause Fœtale"
+                           <value xsi:type="CD" code="MED-210" displayName="Cause fœtale"
                               codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
                               <originalText><reference value="#causeFoetale"/></originalText>
                            </value>
@@ -2359,7 +2359,7 @@
                            <templateId root="1.2.250.1.213.1.1.3.62"/>
                            <id root="D3DCE1E0-EB52-47CB-8507-D33F0041D138"/>
                            <!-- code de l'acte -->
-                           <code code="MED-174" displayName="Gestes techniques spécialisés"
+                           <code code="MED-174" displayName="Geste technique spécialisé"
                               codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                            <text><reference value="acte001"/></text>
                            <statusCode code="completed"/>
