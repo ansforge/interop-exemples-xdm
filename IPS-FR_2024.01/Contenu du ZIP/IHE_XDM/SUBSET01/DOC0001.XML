@@ -18,6 +18,7 @@
       02/04/2024 : Création IPS-FR_2023.01 (conforme IPS) 
       21/08/2025 : Maj des codeSystemName en fonction de la nouvelle règle de nommage
       25/08/2025 : Maj des références parties narratives / entrées
+      26/03/2026 : Ajout exemple d'allergie à une substance non présente dans SMS (en texte libre)
       **********************************************************************************************************
    -->
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -583,7 +584,7 @@
                         <reference value="#probleme-01-statut-clinique"/>
                       </text>
                       <statusCode code="completed"/>
-                      <value xsi:type="CE" code="102499006" displayName="en forme"
+                      <value xsi:type="CE" code="81323004" displayName="fonction corporelle générale : normale"
                         codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
                     </observation>
                   </entryRelationship>
@@ -710,7 +711,7 @@
                         <reference value="#probleme-02-statut-clinique"/>
                       </text>
                       <statusCode code="completed"/>
-                      <value xsi:type="CE" code="102499006" displayName="en forme"
+                      <value xsi:type="CE" code="81323004" displayName="fonction corporelle générale : normale"
                         codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
                     </observation>
                   </entryRelationship>
@@ -837,7 +838,7 @@
                         <reference value="#probleme-03-statut-clinique"/>
                       </text>
                       <statusCode code="completed"/>
-                      <value xsi:type="CE" code="102499006" displayName="en forme"
+                      <value xsi:type="CE" code="81323004" displayName="fonction corporelle générale : normale"
                         codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
                     </observation>
                   </entryRelationship>
@@ -965,7 +966,7 @@
                         <reference value="#probleme-04-statut-clinique"/>
                       </text>
                       <statusCode code="completed"/>
-                      <value xsi:type="CE" code="84387000" displayName="asymptomatique"
+                      <value xsi:type="CE" code="162467007" displayName="asymptomatique"
                         codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
                     </observation>
                   </entryRelationship>
@@ -1105,7 +1106,7 @@
                         <reference value="#probleme-05-statut-clinique"/>
                       </text>
                       <statusCode code="completed"/>
-                      <value xsi:type="CE" code="102499006" displayName="en forme"
+                      <value xsi:type="CE" code="81323004" displayName="fonction corporelle générale : normale"
                         codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
                     </observation>
                   </entryRelationship>
@@ -1308,7 +1309,7 @@
                         <reference value="#antecedent-medical-01-statut-clinique"/>
                       </text>
                       <statusCode code="completed"/>
-                      <value xsi:type="CE" code="102499006" displayName="en forme"
+                      <value xsi:type="CE" code="81323004" displayName="fonction corporelle générale : normale"
                         codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
                     </observation>
                   </entryRelationship>
@@ -1436,7 +1437,7 @@
                         <reference value="#antecedent-medical-02-statut-clinique"/>
                       </text>
                       <statusCode code="completed"/>
-                      <value xsi:type="CE" code="102499006" displayName="en forme"
+                      <value xsi:type="CE" code="81323004" displayName="fonction corporelle générale : normale"
                         codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
                     </observation>
                   </entryRelationship>
@@ -1716,9 +1717,25 @@
                   </td>
                   <td><content ID="allergie-01-commentaire">(texte libre)</content></td>
                 </tr>
+                <tr>
+                  <td>04/12/2021</td>
+                  <td><content ID="allergie-02-type">Allergie médicamenteuse</content></td>
+                  <td><content ID="allergie-02-agent">feuille de millepertuis</content></td>
+                  <td><content ID="allergie-02-statut">Actif</content></td>
+                  <td><content ID="allergie-02-criticite">Bas</content></td>
+                  <td><content ID="allergie-02-certitude">Confirmé</content></td>
+                  <td>
+                    <content ID="allergie-02-reaction-1">Troubles allergiques ou d'hypersensibilité de la peau ou des muqueuses</content>
+                  </td>
+                  <td>
+                    <content ID="allergie-02-reaction-1-severite">léger</content>
+                  </td>
+                  <td><content ID="allergie-02-commentaire">(texte libre)</content></td>
+                </tr>
               </tbody>
             </table>
           </text>
+          
           <!-- Entrée FR-Liste-des-allergies-et-hypersensibilites -->
           <entry>
             <act classCode="ACT" moodCode="EVN">
@@ -1972,6 +1989,193 @@
                     </act>
                   </entryRelationship>
 
+                </observation>
+              </entryRelationship>
+              
+              <!-- [1..*] Entrée FR-Allergie-ou-hypersensibilites (feuille de millepertuis) -->
+              <entryRelationship typeCode="SUBJ" inversionInd="false">
+                <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                  <!-- Conformité Alert observation (CCD) -->
+                  <templateId root="2.16.840.1.113883.10.20.1.18"/>
+                  <!-- Conformité Problem observation (CCD) -->
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <!-- Conformité Problem Entry (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <!-- Conformité Allergies And Intolerances Entry (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+                  <!-- Conformité FR-Allergie-ou-hypersensibilite (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.41"/>
+                  <id root="C64C6013-C8AF-4938-AD10-1B7D26DEE2A2"/>
+                  <!-- Type d'allergie / hypersensibilité -->
+                  <!-- valeur issue de jdv-type-evenement-indesirable-previsible-cisis (1.2.250.1.213.1.1.5.794). -->
+                  <code code="416098002" displayName="allergie médicamenteuse"
+                    codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
+                  <text>
+                    <reference value="#allergie-02-type"/>
+                  </text>
+                  <statusCode code="completed"/>
+                  <!-- Date de l'allergie / hypersensibilité -->
+                  <effectiveTime xsi:type="IVL_TS">
+                    <low value="20211204"/>
+                  </effectiveTime>
+                  <!-- Description clinique de l'allergie / hypersensibilité : non renseigné -->
+                  <value xsi:type="CD">
+                    <originalText>
+                      <reference value="noref"/>
+                    </originalText>
+                  </value>
+                  <!-- Agent responsable de l'allergie / hypersensibilité -->
+                  <participant typeCode="CSM">
+                    <participantRole classCode="MANU">
+                      <playingEntity classCode="MMAT">
+                        <code>
+                          <originalText><reference value="#allergie-02-agent"/></originalText>
+                        </code>
+                        <name>feuille de millepertuis</name>
+                      </playingEntity>
+                    </participantRole>
+                  </participant>
+                  
+                  <!-- Entrée FR-Statut-du-probleme : Statut clinique de l'allergie -->
+                  <entryRelationship typeCode="REFR" inversionInd="false">
+                    <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                      <!-- Conformité Problem status observation (CCD) -->
+                      <templateId root="2.16.840.1.113883.10.20.1.50"/>
+                      <!-- Conformité Status observation (CCD) -->
+                      <templateId root="2.16.840.1.113883.10.20.1.57"/>
+                      <!-- Conformité Problem Status Observation (IHE PCC) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.1.1"/>
+                      <!-- Conformité FR-Statut-du-probleme (FR CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.30"/>
+                      <code code="33999-4" displayName="Status" codeSystem="2.16.840.1.113883.6.1"
+                        codeSystemName="LOINC"/>
+                      <text>
+                        <reference value="#allergie-02-statut"/>
+                      </text>
+                      <statusCode code="completed"/>
+                      <!-- valeur du jdv-hl7-allergyintolerance-clinical-cisis (2.16.840.1.113883.4.642.3.1372) -->
+                      <value xsi:type="CE" code="active" displayName="Actif"
+                        codeSystem="2.16.840.1.113883.4.642.4.1373"
+                        codeSystemName="HL7_AllergyIntoleranceClinicalStatusCodes"/>
+                    </observation>
+                  </entryRelationship>
+                  
+                  <!-- Entrée FR-Criticite : Criticité de l'allergie -->
+                  <entryRelationship typeCode="SUBJ" inversionInd="true">
+                    <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                      <!-- Conformité FR-Criticite (FR CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.172"/>
+                      <!-- Simple Observation (IHE PCC) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                      <!-- Conformité Simple Observation (CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.48"/>
+                      <id root="B6B00F3F-40A0-419F-847F-FDA1E0908EC8"/>
+                      <code code="82606-5" displayName="Criticité"
+                        codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                      <text>
+                        <reference value="#allergie-02-criticite"/>
+                      </text>
+                      <statusCode code="completed"/>
+                      <effectiveTime nullFlavor="NA"/>
+                      <!-- valeur du jdv-hl7-allergy-intolerance-criticality-cisis (2.16.840.1.113883.4.642.3.129) -->
+                      <value xsi:type="CE" code="low" displayName="Bas"
+                        codeSystem="2.16.840.1.113883.4.642.4.130"
+                        codeSystemName="HL7_AllergyIntoleranceCriticality"/>
+                    </observation>
+                  </entryRelationship>
+                  
+                  <!-- Entrée FR-Certitude : Certitude de l'allergie -->
+                  <entryRelationship typeCode="SUBJ" inversionInd="true">
+                    <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                      <!-- Conformité FR-Certitude (FR CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.171"/>
+                      <!-- Simple Observation (IHE PCC) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                      <!-- Conformité Simple Observation (CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.48"/>
+                      <id root="BC6A2067-884F-4D55-8B27-E8C2BE276F29"/>
+                      <code code="66455-7" displayName="Certitude"
+                        codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                      <text>
+                        <reference value="#allergie-02-certitude"/>
+                      </text>
+                      <statusCode code="completed"/>
+                      <effectiveTime nullFlavor="NA"/>
+                      <!-- valeur du jdv-hl7-condition-ver-status-cisis (2.16.840.1.113883.4.642.3.166) -->
+                      <value xsi:type="CE" code="confirmed" displayName="Confirmé"
+                        codeSystem="2.16.840.1.113883.4.642.4.130"
+                        codeSystemName="HL7_AllergyIntoleranceCriticality"/>
+                    </observation>
+                  </entryRelationship>
+                  
+                  <!-- [0..*] Entrée FR-Probleme : Réaction 1 observée -->
+                  <entryRelationship typeCode="MFST">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <!-- Conformité Problem observation (CCD) -->
+                      <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                      <!-- Conformité Problem Entry (IHE PCC) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                      <!-- Conformité Reaction (IHE PCC) -->
+                      <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                      <!-- Conformité FR-Probleme (FR CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.37"/>
+                      <id root="C64C6013-C8AF-4938-AD10-1B7D26DEE2B1"/>
+                      <code code="418799008" displayName="symptôme rapporté par le patient ou le répondant"
+                        codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
+                      <text><reference value="#allergie-02-reaction-1"/></text>
+                      <statusCode code="completed"/>
+                      <effectiveTime xsi:type="IVL_TS">
+                        <low value="20211204"/>
+                      </effectiveTime>
+                      <!-- valeur issue de la CIM-11 / Chapitre 04 Maladies du système immunitaire / Bloc Affections allergiques ou d'hypersensibilité -->
+                      <value xsi:type="CD" code="4A82"
+                        displayName="Troubles allergiques ou d'hypersensibilité de la peau ou des muqueuses"
+                        codeSystem="2.16.840.1.113883.6.347" codeSystemName="CIM11MMS">
+                        <originalText>
+                          <reference value="#allergie-02-reaction-1"/>
+                        </originalText>
+                      </value>
+                      <!-- [0..1] Entrée FR-Severite : Sévérité de la réaction -->
+                      <entryRelationship typeCode="SUBJ" inversionInd="true">
+                        <observation classCode="OBS" moodCode="EVN">
+                          <!-- Conformité Severity observation (CCD) -->
+                          <templateId root="2.16.840.1.113883.10.20.1.55"/>
+                          <!-- Conformité Severity Entry (IHE PCC) -->
+                          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.1"/>
+                          <!-- Conformité FR-Severite (FR CI-SIS) -->
+                          <templateId root="1.2.250.1.213.1.1.3.29"/>
+                          <code code="SEV" displayName="Sévérité" codeSystem="2.16.840.1.113883.5.4"
+                            codeSystemName="HL7_ActCode"/>
+                          <text>
+                            <reference value="#allergie-02-reaction-1-severite"/>
+                          </text>
+                          <statusCode code="completed"/>
+                          <!-- valeur issue du jdv-severite-observation-cisis (1.2.250.1.213.1.1.5.675) -->
+                          <value xsi:type="CD" code="255604002" displayName="léger"
+                            codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
+                        </observation>
+                      </entryRelationship>
+                    </observation>
+                  </entryRelationship>
+                  
+                  <!-- Entrée FR-Commentaire-ER -->
+                  <entryRelationship typeCode="SUBJ" inversionInd="true">
+                    <act classCode="ACT" moodCode="EVN">
+                      <!-- Conformité Comment (CCD) -->
+                      <templateId root="2.16.840.1.113883.10.20.1.40"/>
+                      <!-- Conformité Comment Entry (IHE PCC) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+                      <!-- Conformité FR-Commentaire-ER (CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.32"/>
+                      <code code="48767-8" displayName="Commentaire"
+                        codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                      <text>
+                        <reference value="#allergie-02-commentaire"/>
+                      </text>
+                      <statusCode code="completed"/>
+                    </act>
+                  </entryRelationship>
+                  
                 </observation>
               </entryRelationship>
             </act>
