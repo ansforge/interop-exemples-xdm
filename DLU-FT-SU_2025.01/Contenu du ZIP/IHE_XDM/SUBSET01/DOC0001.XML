@@ -15,6 +15,8 @@
       **********************************************************************************************************
       Notes:            
       22/07/2025 : Première version 2025.01
+      03/11/2025 : Mise à jour suite à concertation
+      18/11/2025 : Correction title de la section FR-Fonctions-physiques
       **********************************************************************************************************
  -->
 <ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -39,7 +41,7 @@
   <code code="78341-5" displayName="Fiche de transfert vers le service des urgences" codeSystem="2.16.840.1.113883.6.1"
     codeSystemName="LOINC"/>
   <!-- Titre du document -->
-  <title>Fiche de transfert vers le service des urgences</title>
+  <title>Fiche de transfert vers le service des urgences – Dossier de liaison d’urgence</title>
   <!-- Date de création du document -->
   <effectiveTime value="20250722153500+0100"/>
   <!-- Niveau de confidentialité du document -->
@@ -505,7 +507,7 @@
           <id root="2914B83F-B6EB-4DD4-9178-7C737E4B35B1"/>
           <code code="46006-3" displayName="Problèmes physiques fonctionnels et structurels" 
                 codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
-          <title>Observations</title>
+          <title>Etat du patient</title>
           <text>
             <table border="0">
               <thead>
@@ -633,7 +635,7 @@
         </section>
       </component>
       
-      <!-- [1..1] Section FR-Signes-vitaux : Pouls / Température / Poids / Tension artérielle haute / Tension artérielle basse -->
+      <!-- [1..1] Section FR-Signes-vitaux : Pouls / Température / Poids / Tension artérielle systolique / Tension artérielle diastolique -->
       <component>
         <section>
           <!-- Conformité Vital Signs (CCD) -->
@@ -963,13 +965,13 @@
               <id root="591BFAC8-4850-4324-B6D3-443A4AAE481D"/>
               <!-- valeur issue du jdv-prothese-objet-personnel-cisis (1.2.250.1.213.1.1.5.515) -->
               <code code="GEN-092.02.01" displayName="Autre dispositif ou objet personnel"
-                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
+                <originalText><reference value="#autreDispoST"/></originalText>
+              </code>
               <text><reference value="#autreDispoST"/></text>
               <statusCode code="completed"/>
               <effectiveTime value="20250722153500+0100"/>
-              <value xsi:type="CD">
-                <originalText><reference value="#autreDispoST"/></originalText>
-              </value>
+              <value xsi:type="BL" value="true"/>
             </observation>
           </entry>
         </section>
