@@ -1836,9 +1836,9 @@
                         </observation>
                      </entry>
                      
-                     <!-- [1..1] Entrée FR-Simple-Observation : Analgésie au cours du travail -->
+                     <!-- [1..*] Entrée FR-Simple-Observation : Analgésie au cours du travail -->
                      <entry>
-                        <observation classCode="OBS" moodCode="EVN" negationInd="true">
+                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
                            <!-- Conformité Simple Observation (IHE PCC) -->
                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
                            <!-- Conformité FR-Simple-Observation (CI-SIS) -->
@@ -2441,7 +2441,7 @@
                         </table>   
                      </text>
                      
-                     <!-- [1..*] Entrée FR-Traitement : Immunisation contre le VRS (negationInd="false" = le traitement a été effectué) -->
+                     <!-- [1..1] Entrée FR-Traitement : Immunisation contre le VRS (negationInd="false" = le traitement a été effectué) -->
                      <entry>
                         <substanceAdministration classCode="SBADM" moodCode="EVN" negationInd="false">
                            <!-- Conformité Medication Activity (CCD) -->
@@ -2486,7 +2486,7 @@
                         </substanceAdministration>
                      </entry>
                      
-                     <!-- [1..*] Entrée FR-Traitement : Hépatite B - Injection d’immunoglobine (negationInd="false" = l'injection a été effectué) -->
+                     <!-- [1..1] Entrée FR-Traitement : Hépatite B - Injection d’immunoglobine (negationInd="false" = l'injection a été effectué) -->
                      <entry>
                         <substanceAdministration classCode="SBADM" moodCode="EVN" negationInd="false">
                            <!-- Conformité Medication Activity (CCD) -->
