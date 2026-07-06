@@ -1,0 +1,2205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../FeuilleDeStyle/CDA-FO.xsl"?>
+
+<?oxygen SCHSchema="../schematrons/profils/IHE.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/structurationMinimale/ASIP-STRUCT-MIN-StrucMin.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/CI-SIS_ModelesDeContenusCDA.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/CI-SIS_Modeles_ANS.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/terminologies/schematron/terminologie.sch"?>
+<?oxygen SCHSchema="../schematrons/CI-SIS_CNAM-HR_2021.01.sch"?>
+
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:hl7-org:v3 ../infrastructure/cda/CDA_extended.xsd" xmlns="urn:hl7-org:v3">
+
+  <!-- 
+		**********************************************************************************************************
+		Document : Historique des remboursements (CNAM-HR_2021.01)		
+		Auteur : ANS
+		Date : 18/05/2020
+		**********************************************************************************************************
+		format HL7 - CDA Release 2 - selon schéma XML (CDA.xsd) du standard ANSI/HL7 CDA, R2-2005 4/21/2005
+		**********************************************************************************************************
+		Historique :
+		18/05/2020 : création
+		22/10/2020 : correction des professions/spécialités des PS
+		28/10/2022 : Version 2022.01
+		12/06/2023 : Correction de la version à 2021.01
+		**********************************************************************************************************
+  -->
+
+  <!-- ************************* -->
+  <!-- ************************* -->
+  <!--   En-tête du document     -->
+  <!-- ************************* -->
+  <!-- ************************* -->
+
+  <!-- Périmètre d'utilisation -->
+  <realmCode code="FR"/>
+  <!-- Référence au standard CDAr2 -->
+  <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+  <!-- Conformité spécifications HL7 France -->
+  <templateId root="2.16.840.1.113883.2.8.2.1"/>
+  <!-- Conformité spécifications CI-SIS -->
+  <templateId root="1.2.250.1.213.1.1.1.1"/>
+  <!-- Conformité au modèle du document CNAM-HR -->
+  <templateId root="1.2.250.1.213.1.1.1.36" extension="2021.01"/>
+  <!-- Identifiant du document -->
+  <id root="1.2.250.1.213.1.1.1.36.2021.1.1"/>
+  <!-- Type du document -->
+  <code code="REMB" codeSystem="1.2.250.1.213.1.1.4.12" displayName="Données de remboursement"/>
+  <!-- Titre du document -->
+  <title>Données de remboursement</title>
+  <!-- Date et heure du document -->
+  <effectiveTime value="20190701164900+0100"/>
+  <!-- Niveau de confidentialité -->
+  <confidentialityCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.25"
+    codeSystemName="Confidentiality"/>
+  <!-- Langue du document -->
+  <languageCode code="fr-FR"/>
+  <!-- Identifiant du lot de version d'un même document -->
+  <setId root="1.2.250.1.213.1.1.1.36.2021.1"/>
+  <!-- Identifiant de la version du document -->
+  <versionNumber value="1"/>
+
+  <!-- Patient -->
+  <recordTarget>
+    <patientRole>
+      <!-- INS-NIR de test : 1.2.250.1.213.1.4.10 -->
+      <id extension="279035121518989" root="1.2.250.1.213.1.4.10"/>
+      <!-- IPP du patient dans l'établissement avec root = l'OID de l'ES -->
+      <id extension="1234567890121" root="1.2.3.4.567.8.9.10"/>
+      <!-- Adresse du patient -->
+      <addr>
+        <houseNumber>28</houseNumber>
+        <streetName>Avenue de Breteuil</streetName>
+        <unitID>Escalier A</unitID>
+        <postalCode>75007</postalCode>
+        <city>PARIS</city>
+        <country>FRANCE</country>
+      </addr>
+      <!-- Coordonnées télécom du patient -->
+      <telecom value="tel:0144534551" use="H"/>
+      <telecom value="tel:0647151010" use="MC"/>
+      <telecom value="mailto:279035121518989@patient.mssante.fr"/>
+      <!-- Identité du patient -->
+      <patient classCode="PSN">
+        <name>
+          <!-- Nom et prénom(s) de naissance -->
+          <!-- Nom de l’acte de naissance -->
+          <family qualifier="BR">PAT-TROIS</family> 
+          <!-- Prénoms de l’acte de naissance -->
+          <given>DOMINIQUE MARIE-LOUISE</given>
+          <!-- Premier prénom de l’acte de naissance -->
+          <given qualifier="BR">DOMINIQUE</given>
+          <!-- Nom et prénom utilisés -->
+          <family qualifier="CL">PAT-TROIS</family>
+          <given qualifier="CL">DOMINIQUE</given>        
+        </name>
+        <administrativeGenderCode code="F" displayName="Féminin" codeSystem="2.16.840.1.113883.5.1"/>
+        <birthTime value="19790328"/>
+        <!-- Représentant du patient -->
+        <guardian>
+          <addr use="H">
+            <houseNumber>28</houseNumber>
+            <streetName>Avenue de Breteuil</streetName>
+            <postalCode>75007</postalCode>
+            <city>PARIS</city>
+            <country>FRANCE</country>
+          </addr>
+          <telecom value="tel:0147150000" use="H"/>
+          <guardianPerson>
+            <name>
+              <prefix>MME</prefix>
+              <family>NESSI</family>
+              <given>Jeanne</given>
+            </name>
+          </guardianPerson>
+        </guardian>
+        <!-- Lieu de naissance du patient -->
+        <birthplace>
+          <place>
+            <addr>
+              <county>51215</county>
+              <city>DOMPREMY</city>
+            </addr>
+          </place>
+        </birthplace>
+      </patient>
+    </patientRole>
+  </recordTarget>
+  
+  <!-- Auteur du document -->
+  <author>
+    <time value="201907011649+0100"/>
+    <assignedAuthor>
+      <!-- Identiant RPPS du PS -->
+      <id root="1.2.250.1.71.4.2.1" extension="518003502400041/1.2.250.1.215.1.2"/>
+      <code code="ALIM_AM"
+        displayName="Alimentation auto à partir du SI de l'Ass Maladie"
+        codeSystem="1.2.250.1.213.1.1.4.6"/>      
+      <addr nullFlavor="NASK"/>
+      <telecom nullFlavor="NASK"/>
+      <assignedAuthoringDevice>
+        <manufacturerModelName>.</manufacturerModelName>
+        <softwareName>Assurance Maladie</softwareName>
+      </assignedAuthoringDevice>
+      <representedOrganization>
+        <id root="1.2.250.1.71.4.2.2" extension="318003502400041"/>
+        <name>Assurance Maladie</name>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+
+  <!-- Organisation chargée de la conservation du document -->
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <!-- Identifiant de l'organisation -->
+        <id root="1.2.250.1.71.4.2.2" extension="318003502400041"/>
+        <!-- Nom de l'organisation -->
+        <name>Assurance Maladie</name>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+
+  <!-- Responsable du document -->
+  <legalAuthenticator>
+    <!-- Date et heure de la prise de responsabilité -->
+    <time value="201907011649+0100"/>
+    <signatureCode code="S"/>
+    <assignedEntity>
+      <!-- Identiant -->
+      <id root="1.2.250.1.71.4.2.1" extension="518003502400041/1.2.250.1.215.1.2"/>
+      <addr nullFlavor="NASK"/>
+      <telecom nullFlavor="NASK"/>
+      <!-- Identité du PS -->
+      <assignedPerson>
+        <name>
+          <given>.</given>
+          <family>Assurance Maladie</family>
+        </name>
+      </assignedPerson>
+    </assignedEntity>
+  </legalAuthenticator>
+
+  <!-- Acte principal documenté  -->
+  <documentationOf>
+    <serviceEvent>
+      <!-- Période couverte par le document -->
+      <effectiveTime>
+        <!-- Date (et heure) de début de la période -->
+        <low value="20190101154500+0100"/>
+        <!-- Date (et heure) de fin de la période -->
+        <high value="20190701154500+0100"/>
+      </effectiveTime>
+      <!-- Exécutant -->
+      <performer typeCode="PRF">
+        <assignedEntity>
+          <id nullFlavor="NA"/>
+          <representedOrganization>
+            <standardIndustryClassCode code="AMO"
+              displayName="Organisme d'assurance maladie obligatoire"
+              codeSystem="1.2.250.1.213.1.1.4.9"/>
+          </representedOrganization>
+        </assignedEntity>
+      </performer>
+    </serviceEvent>
+  </documentationOf>
+
+  <!-- Association du document à une prise en charge -->
+  <componentOf>
+    <encompassingEncounter>
+      <effectiveTime nullFlavor="NA">
+        <!--<low/>-->
+      </effectiveTime>
+      <location>
+        <healthCareFacility>
+          <!-- Secteur d'activité -->
+          <code code="SA24" displayName="Organisme de sécurité sociale"
+            codeSystem="1.2.250.1.71.4.2.4"/>
+        </healthCareFacility>
+      </location>
+    </encompassingEncounter>
+  </componentOf>
+
+  <!-- ************************* -->
+  <!-- ************************* -->
+  <!--     Corps du document     -->
+  <!-- ************************* -->
+  <!-- ************************* -->
+  <component>
+    <structuredBody>
+      
+      <!-- ************************************************************************* -->
+      <!-- Section FR-Commentaire-non-code : mention Usage et Responsabilités [1..1] -->
+      <!-- ************************************************************************* -->
+      <component>
+        <section>
+          <!-- Conformité CDA Section (CDA) -->
+          <templateId root="2.16.840.1.113883.10.12.201"/>
+          <!-- Conformité Document Summary (IHE CARD CRC) -->
+          <templateId root="1.3.6.1.4.1.19376.1.4.1.2.16"/>
+          <!-- Conformité FR-Commentaire-non-code (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.73"/>
+          <code code="55112-7" displayName="Commentaire sur le document"
+            codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>Usage et Responsabilités</title>
+          <text ID="mention">
+            Les données affichées sont le reflet des informations issues des procédures de remboursement ou de prise en charge détenues par l'Assurance Maladie pour la période de soins référencée. 
+            <br/>Elles sont fournies à titre purement informatif et leur exhaustivité ne peut être garantie, notamment en cas de changement administratif durant cette période de soins.
+            <br/>Toute interprétation ou toute décision, de quelle que nature que ce soit, se basant sur ces données relève de la seule responsabilité de la personne qui les consulte.
+          </text>
+        </section>
+      </component>
+      
+      <!-- ***************************** -->
+      <!-- Section FR-Traitements [1..1] -->
+      <!-- ***************************** -->
+      <component>
+        <section>
+          <!-- Conformité Medications Section (CCD) -->
+          <templateId root="2.16.840.1.113883.10.20.1.8"/>
+          <!-- Conformité Medications (IHE PCC) -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.19"/>
+          <!-- Conformité FR-Traitements (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.143"/>
+          <id nullFlavor="UNK"/>
+          <code code="10160-0" displayName="Médication administrée"
+            codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>Médicaments</title>
+          <text>
+            <table border="0">
+              <thead>
+                <tr>
+                  <th colspan="2">Date de délivrance</th>
+                  <th>Libellé du médicament</th>
+                  <th>Groupe thérapeutique</th>
+                  <th>Composants actifs du médicament</th>
+                  <th>Prescrit par</th>
+                  <th>Spécialité du prescripteur</th>
+                  <th>Établissement du prescripteur</th>
+                  <th>Délivré par</th>
+                  <th>Quantité délivrée</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td/> 
+                  <td>26/05/2019</td>
+                  <td><content ID="MED001">LUDEAL CPR3/21</content></td>
+                  <td>HORMONES SEXUELLES ET MODULATEURS DE LA FONCTION GENITALE</td>
+                  <td>LEVONORGESTREL<br/>ETHYNILESTRADIOL</td>
+                  <td>Dr Antoine DUPONT</td>
+                  <td>Non communiqué</td>
+                  <td>CLINIQUE SAINTE GENEVIEVE</td>
+                  <td>CLINIQUE SAINTE GENEVIEVE</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td/>
+                  <td>11/03/2019</td>
+                  <td><content ID="MED002">CRESTOR 5MG CPR9/10</content></td>
+                  <td>AGENTS MODIFIANT LIPIDES</td>
+                  <td>ROSUVASTATINE</td>
+                  <td>Dr Laure MARIGNY</td>
+                  <td>Médecin - Qualifié en Médecine Générale (SM)</td>
+                  <td>CENTRE DE SANTE SAINT MARTIN (CSM)</td>
+                  <td>PHARMACIE COMPAIN</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td/>
+                  <td>08/03/2019</td>
+                  <td><content ID="MED003">PRODUIT HOMEOPATHIQUE</content></td>
+                  <td></td>
+                  <td align="left"/>
+                  <td>Dr Henri MARTIN</td>
+                  <td>Médecin - Qualifié en Médecine Générale (SM)</td>
+                  <td>CABINET DU DR HENRI MARTIN</td>
+                  <td>PHARMACIE COMPAIN</td>
+                  <td>4</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+
+          <!-- 1ère Entrée FR-Traitement [1..*] -->
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <!-- Conformité Medication Activity (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <!-- Conformité Medications Entry (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+              <!-- Conformité FR-Traitement (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.42"/>
+              <!-- Conformité IHE Mode d’administration "Normal" -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+              <id root="D93E0545-3313-4C89-9DFB-CC5E64BE46D5"/>
+              <text><reference/></text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <!-- Date de début de traitement -->
+                <low nullFlavor="UNK"/>
+                <!--Date de fin de traitement-->
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <!-- Fréquence d'administration -->
+              <effectiveTime operator="A"/>              
+              <!-- Médicament -->
+              <consumable>
+                <manufacturedProduct>
+                  <!-- Conformité Product (CCD) -->
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <!-- Conformité Product Entry (IHE PCC)-->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                  <!-- Conformité FR-Produit-de-sante (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.43"/>
+                  <manufacturedMaterial>
+                    <!-- Codes du médicament -->
+                    <code>
+                        <originalText><reference value="#MED001"/></originalText>
+                        <!-- Code du médicament : JDV Cnam JDV_BDM_CNAM-HR_CISIS avec codes UCD (1.2.250.1.215.200.1.1.2) ou CIP (1.2.250.1.215.200.1.1.1) -->
+                        <translation code="3400935673220" displayName="LUDEAL CPR3/21"
+                          codeSystem="1.2.250.1.215.200.1.1.1" codeSystemName="JDV_BDM_CNAM-HR_CISIS"/>
+                        <!--  Groupe thérapeutique : JDV Cnam JDV_BDM_ATC_CNAM-HR_CISIS avec codes ATC 3 digits (1.2.250.1.215.200.1.2.1) -->
+                        <translation code="G03" displayName="HORMONES SEXUELLES ET MODULATEURS DE LA FONCTION GENITALE" 
+                          codeSystem="1.2.250.1.215.200.1.2.1" codeSystemName="JDV_BDM_ATC_CNAM-HR_CISIS"/>
+                        <!-- Composants actifs : JDV Cnam JDV_BDM_CA_CNAM-HR_CISIS avec codes spécifiques de la Cnam (1.2.250.1.215.200.1.3.1) -->                       
+                        <translation>                        
+                          <translation code="1636" displayName="ETHINYLESTRADIOL" 
+                            codeSystem="1.2.250.1.215.200.1.3.1" codeSystemName="JDV_BDM_CA_CNAM-HR_CISIS"/>
+                          <translation code="1949" displayName="LEVONORGESTREL" 
+                            codeSystem="1.2.250.1.215.200.1.3.1" codeSystemName="JDV_BDM_CA_CNAM-HR_CISIS"/>
+                        </translation>                        
+                    </code>
+                    <!-- Nom de Spécialité -->
+                    <name>LUDEAL CPR3/21</name>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+              <!-- Prescription / Dispensation -->
+              <entryRelationship typeCode="REFR" inversionInd="false">
+                <supply classCode="SPLY" moodCode="EVN">
+                  <!-- Conformité Supply activity (CCD) -->
+                  <templateId root="2.16.840.1.113883.10.20.1.34"/>
+                  <!-- Conformité Supply Entry (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.3"/>
+                  <!-- Conformité FR-Prescription (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.44"/>
+                  <id root="D8314EB9-ABCB-48C5-A262-6AD5363B695D"/>
+                  <!-- Quantité délivrée -->
+                  <quantity value='1'/> 
+                  <!-- Dispensateur -->
+                  <performer typeCode="PRF">
+                    <time value="20190526"/>
+                    <assignedEntity>
+                      <!-- Identifiant du PS exécutant -->
+                      <id nullFlavor="UNK" />
+                      <!-- Délivré par -->
+                      <representedOrganization>
+                        <name>CLINIQUE SAINTE GENEVIEVE</name>
+                      </representedOrganization>
+                      </assignedEntity>
+                  </performer> 
+                  <!-- Prescripteur -->
+                  <author>
+                    <time value="20190526094914+0100"/>
+                    <assignedAuthor>
+                      <!-- Identifiant du prescripteur -->
+                      <id root="1.2.250.1.71.4.2.1" extension="697121458706"/>
+                      <!-- Profession / Spécialité du prescripteur -->
+                      <!-- <code code="G15_10-SM19" displayName="Médecin - Gynécologie médicale (SM)" 
+                        codeSystem="1.2.250.1.213.1.1.4.5"/> -->
+                      <!-- Nom et prénom prescripteur -->
+                      <assignedPerson>
+                        <name>
+                          <suffix>DR</suffix>
+                          <given>Antoine</given>
+                          <family>DUPONT</family>
+                        </name>
+                      </assignedPerson>
+                      <!-- Etablissement du prescripteur -->
+                      <representedOrganization>
+                        <id root="1.2.250.1.71.4.2.2" extension="1750300550"/>
+                        <name>CLINIQUE SAINTE GENEVIEVE</name>
+                      </representedOrganization>
+                    </assignedAuthor>
+                  </author>
+                </supply>
+              </entryRelationship>
+              
+              <!-- Déconditionné -->
+              <entryRelationship typeCode='COMP'>
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité Simple Observation (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                  <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.48"/>
+                  <id root="AA400674-2E58-4836-B527-2694CC24A3EA"/>
+                  <code code="MED-559" displayName="Déconditionné" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                  <text><reference value="#deconditionne"/></text>
+                  <statusCode code="completed"/>
+                  <effectiveTime nullFlavor="UNK"/>
+                  <value xsi:type="BL" value="false"/>
+                </observation>
+              </entryRelationship>
+            </substanceAdministration>
+          </entry>
+          
+          <!-- 2ème Entrée FR-Traitement [1..*] -->
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <!-- Conformité Medication Activity (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <!-- Conformité Medications Entry (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+              <!-- Conformité FR-Traitement (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.42"/>
+              <!-- Conformité IHE Mode d’administration "Normal" -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+              <id root="503F7BB3-31B2-46E0-A148-A1C54613185A"/>
+              <text><reference/></text>
+              <statusCode code="completed"/>
+              <effectiveTime xsi:type="IVL_TS">
+                <!-- Date de début de traitement -->
+                <low nullFlavor="UNK"/>
+                <!--Date de fin de traitement-->
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <!-- Fréquence d'administration -->
+              <effectiveTime operator="A"/>
+              <!-- Médicament -->
+              <consumable>
+                <manufacturedProduct>
+                  <!-- Conformité Product (CCD) -->
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <!-- Conformité Product Entry (IHE PCC)-->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                  <!-- Conformité FR-Produit-de-sante (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.43"/>           
+                  <manufacturedMaterial>
+                    <!-- Codes du médicament -->
+                    <code>
+                      <originalText><reference value="#MED002"/></originalText>
+                      <!-- Code du médicament : JDV Cnam JDV_BDM_CNAM-HR_CISIS avec codes UCD (1.2.250.1.215.200.1.1.2) ou CIP (1.2.250.1.215.200.1.1.1) -->
+                      <translation code="3400939169002" displayName="CRESTOR 5MG CPR9/10"
+                        codeSystem="1.2.250.1.215.200.1.1.1" codeSystemName="JDV_BDM_CNAM-HR_CISIS"/>
+                      <!--  Groupe thérapeutique : JDV Cnam JDV_BDM_ATC_CNAM-HR_CISIS avec codes ATC 3 digits (1.2.250.1.215.200.1.2.1) -->
+                      <translation code="C10" displayName="AGENTS MODIFIANT LIPIDES" 
+                        codeSystem="1.2.250.1.215.200.1.2.1" codeSystemName="JDV_BDM_ATC_CNAM-HR_CISIS"/>
+                      <!-- Composants actifs : JDV Cnam JDV_BDM_CA_CNAM-HR_CISIS avec codes spécifiques de la Cnam (1.2.250.1.215.200.1.3.1) -->
+                      <translation>                        
+                        <translation code="5014" displayName="ROSUVASTATINE" 
+                          codeSystem="1.2.250.1.215.200.1.3.1" codeSystemName="JDV_BDM_CA_CNAM-HR_CISIS"/>
+                      </translation>                      
+                    </code>
+                    <!-- Nom de Spécialité -->
+                    <name>CRESTOR 5MG CPR9/10</name>
+                  </manufacturedMaterial>                  
+                </manufacturedProduct>
+              </consumable>              
+              <!-- Prescription / Dispensation -->
+              <entryRelationship typeCode="REFR" inversionInd="false">
+                <supply classCode="SPLY" moodCode="EVN">
+                  <!-- Conformité Supply activity (CCD) -->
+                  <templateId root="2.16.840.1.113883.10.20.1.34"/>
+                  <!-- Conformité Supply Entry (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.3"/>
+                  <!-- Conformité FR-Prescription (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.44"/>
+                  <id root="D740080E-682B-44FA-9618-65A35146ECF7"/>
+                  <!-- Quantité délivrée -->
+                  <quantity value='1'/> 
+                  <!-- Dispensateur -->
+                  <performer typeCode="PRF">
+                    <time value="20190311"/>
+                    <assignedEntity>
+                      <!--Identifiant du PS exécutant-->
+                      <id nullFlavor="UNK" />
+                      <!-- Délivré par -->
+                      <representedOrganization>
+                        <name>HARMACIE COMPAIN</name>
+                      </representedOrganization>
+                    </assignedEntity>
+                  </performer>
+                  <!-- Prescripteur -->
+                  <author>
+                    <time value="20190311094914+0100"/>
+                    <assignedAuthor>
+                      <!-- Identifiant du prescripteur -->
+                      <id root="1.2.250.1.71.4.2.1" extension="10100997245"/>
+                      <!-- Profession / Spécialité du prescripteur -->
+                      <code code="G15_10/SM54" displayName="Médecin - Médecine Générale (SM)" 
+                        codeSystem="1.2.250.1.213.1.1.4.5"/>
+                      <!-- Nom et prénom prescripteur -->
+                      <assignedPerson>
+                        <name>
+                          <suffix>DR</suffix>
+                          <given>Laure</given>
+                          <family>MARIGNY</family>
+                        </name>
+                      </assignedPerson>
+                      <!-- Etablissement du prescripteur -->
+                      <representedOrganization>
+                        <id root="1.2.250.1.71.4.2.2" extension="1750058190"/>
+                        <name>CENTRE DE SANTE SAINT MARTIN</name>
+                      </representedOrganization>
+                    </assignedAuthor>
+                  </author>
+                </supply>
+              </entryRelationship>
+              
+              <!-- Déconditionné -->
+              <entryRelationship typeCode='COMP'>
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité Simple Observation (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                  <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.48"/>
+                  <id nullFlavor="UNK"/>
+                  <code code="MED-559" displayName="Déconditionné" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                  <text><reference value="#deconditionne"/></text>
+                  <statusCode code="completed"/>
+                  <effectiveTime nullFlavor="UNK"/>
+                  <value xsi:type="BL" value="false"/>
+                </observation>
+              </entryRelationship>
+            </substanceAdministration>
+          </entry>
+          
+          <!-- 3ème Entrée FR-Traitement [1..*] -->
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <!-- Conformité Medication Activity (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <!-- Conformité Medications Entry (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+              <!-- Conformité FR-Traitement (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.42"/>
+              <!-- Conformité IHE Mode d’administration "Normal" -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+              <id root="1FE3F627-6565-4CF5-95E9-33BA2BAEFC58"/>
+              <text><reference/></text>
+              <statusCode code="completed"/>
+              <!-- Durée du traitement -->
+              <effectiveTime xsi:type="IVL_TS">
+                <!-- Date de début de traitement -->
+                <low nullFlavor="UNK"/>
+                <!--Date de fin de traitement-->
+                <high nullFlavor="UNK"/>
+              </effectiveTime>
+              <!-- Fréquence d'administration -->
+              <effectiveTime operator="A"/>
+              <!-- Médicament -->
+              <consumable>
+                <manufacturedProduct>
+                  <!-- Conformité Product (CCD) -->
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <!-- Conformité Product Entry (IHE PCC)-->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                  <!-- Conformité FR-Produit-de-sante (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.43"/>           
+                  <manufacturedMaterial>
+                    <!-- Codes du médicament -->
+                    <code>
+                      <originalText><reference value="#MED003"/></originalText>
+                      <!-- Code du médicament : JDV Cnam JDV_BDM_CNAM-HR_CISIS avec codes UCD (1.2.250.1.215.200.1.1.2) ou CIP (1.2.250.1.215.200.1.1.1) -->
+                      <translation code="9064295" displayName="NUX VOMICA COMP BOIR GRL"
+                        codeSystem="1.2.250.1.215.200.1.1.2" codeSystemName="JDV_BDM_CNAM-HR_CISIS"/>
+                      <!--  Groupe thérapeutique : JDV Cnam JDV_BDM_ATC_CNAM-HR_CISIS avec codes ATC 3 digits (1.2.250.1.215.200.1.2.1) -->
+                      <translation code="W99" displayName="SPECIALITES HOMEOPATHIQUES" 
+                        codeSystem="1.2.250.1.215.200.1.2.1" codeSystemName="JDV_BDM_ATC_CNAM-HR_CISIS"/>
+                      <!-- Composants actifs : JDV Cnam JDV_BDM_CA_CNAM-HR_CISIS avec codes spécifiques de la Cnam (1.2.250.1.215.200.1.3.1) -->
+                      <translation>                        
+                        <translation code="6209" displayName="NUX VOMICA" 
+                          codeSystem="1.2.250.1.215.200.1.3.1" codeSystemName="JDV_BDM_CA_CNAM-HR_CISIS"/>
+                      </translation>
+                    </code>
+                    <!-- Nom de Spécialité -->
+                    <name>PRODUIT HOMEOPATHIQUE</name>
+                  </manufacturedMaterial>          
+                </manufacturedProduct>
+              </consumable>
+              <!-- Prescription / Dispensation -->
+              <entryRelationship typeCode="REFR" inversionInd="false">
+                <supply classCode="SPLY" moodCode="EVN">
+                  <!-- Conformité Supply activity (CCD) -->
+                  <templateId root="2.16.840.1.113883.10.20.1.34"/>
+                  <!-- Conformité Supply Entry (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.3"/>
+                  <!-- Conformité FR-Prescription (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.44"/>
+                  <id root="C9005B3E-01EA-4012-9F18-CD9A8B436BC6"/>    
+                  <!-- Quantité délivrée -->
+                  <quantity value='4'/> 
+                  <!-- Dispensateur -->
+                  <performer typeCode="PRF">
+                    <time value="20190308"/>                    
+                    <assignedEntity>
+                      <!--Identifiant du PS exécutant-->
+                      <id nullFlavor="UNK" />
+                      <!-- Délivré par -->
+                      <representedOrganization>
+                        <name>HARMACIE COMPAIN</name>
+                      </representedOrganization>
+                    </assignedEntity>
+                  </performer>
+                  <!-- Prescripteur -->
+                  <author>
+                    <time value="20190308094914+0100"/>
+                    <assignedAuthor>
+                      <!-- Identifiant du prescripteur -->
+                      <id root="1.2.250.1.71.4.2.1" extension="10100997245"/>
+                      <!-- Profession / Spécialité du prescripteur -->
+                      <code code="G15_10/SM54" displayName="Médecin - Médecine Générale (SM)" 
+                        codeSystem="1.2.250.1.213.1.1.4.5"/>
+                      <!-- Nom et prénom prescripteur -->
+                      <assignedPerson>
+                        <name>
+                          <suffix>DR</suffix>
+                          <given>Laure</given>
+                          <family>MARIGNY</family>
+                        </name>
+                      </assignedPerson>
+                      <!-- Etablissement du prescripteur -->
+                      <representedOrganization>
+                        <id root="1.2.250.1.71.4.2.2" extension="1750058190"/>
+                        <name>CENTRE DE SANTE SAINT MARTIN</name>
+                      </representedOrganization>
+                    </assignedAuthor>
+                  </author>
+                </supply>
+              </entryRelationship>
+              
+              <!-- Déconditionné -->
+              <entryRelationship typeCode='COMP'>
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité Simple Observation (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                  <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.48"/>
+                  <id nullFlavor="UNK"/>
+                  <code code="MED-559" displayName="Déconditionné" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                  <text><reference value="#deconditionne"/></text>
+                  <statusCode code="completed"/>
+                  <effectiveTime nullFlavor="UNK"/>
+                  <value xsi:type="BL" value="false"/>
+                </observation>
+              </entryRelationship>
+            </substanceAdministration>
+          </entry>
+          
+        </section>
+      </component>
+
+      <!-- ****************************** -->
+      <!-- Section FR-Vaccinations [1..1] -->
+      <!-- ****************************** -->
+      <component>
+        <section>
+          <!-- Conformité Immunizations Section (CCD) -->
+          <templateId root="2.16.840.1.113883.10.20.1.6"/>
+          <!-- Conformité Immunizations (IHE PCC) -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.23"/>
+          <!-- Conformité FR-Vaccinations (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.147"/>
+          <id root="FAFB704F-ED40-491A-B398-485A4F9177AA"/>
+          <code code="11369-6" displayName="Historique des vaccinations"
+            codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>Vaccinations</title>
+          <text>
+            <table border="0">
+              <thead>
+                <tr>
+                  <th colspan="2">Date de délivrance</th>
+                  <th>Libellé du vaccin</th>
+                  <th>Valence vaccinale</th>
+                  <th>Prescrit par</th>
+                  <th>Spécialité du prescripteur</th>
+                  <th>Établissement du prescripteur</th>
+                  <th>Délivré par</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td/>
+                  <td>11/07/2019</td>
+                  <td><content ID="vaccin001">VACCIN TETANIQUE PASTEUR SUSP INJ1/.5</content></td>
+                  <td>ANATOXINE TETANIQUE</td>
+                  <td>Dr Laure MARIGNY</td>
+                  <td>Médecin - Qualifié en Médecine Générale (SM)</td>
+                  <td>CENTRE DE SANTE SAINT MARTIN (CSM)</td>
+                  <td>PHARMACIE COMPAIN</td>
+                </tr>
+                <tr>
+                  <td/>
+                  <td>08/07/2019</td>
+                  <td><content ID="vaccin002">HBVAXPRO 10 MICROG/ML SUSP INJ SER1/1</content></td>
+                  <td>HEPATITE B, ANTIGENE PURIFIE</td>
+                  <td>Dr Laure MARIGNY</td>
+                  <td>Médecin - Qualifié en Médecine Générale (SM)</td>
+                  <td>CENTRE DE SANTE SAINT MARTIN (CSM)</td>
+                  <td>PHARMACIE COMPAIN</td>
+                </tr>
+                <tr>
+                  <td/>
+                  <td>26/06/2019</td>
+                  <td><content ID="vaccin003">VACCIN TETANIQUE PASTEUR SUSP INJ1/.5</content></td>
+                  <td>ANATOXINE TETANIQUE</td>
+                  <td>Dr Laure MARIGNY</td>
+                  <td>Médecin - Qualifié en Médecine Générale (SM)</td>
+                  <td>CENTRE DE SANTE SAINT MARTIN (CSM)</td>
+                  <td>PHARMACIE COMPAIN</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+
+          <!-- 1ère Entrée FR-Vaccination [1..*] -->
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="EVN" negationInd="false">
+              <!-- Conformité Medication activity (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <!-- Conformité Immunizations (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12"/>
+              <!-- Conformité FR-Vaccination (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.45"/>
+              <id root="163EE6B9-F196-405E-85E9-B32FC3B4D23F"/>
+              <code code="IMMUNIZ" displayName="Vaccination sans autres précisions" codeSystem="2.16.840.1.113883.5.4"/>
+              <text><reference value="#vaccin001"/></text>
+              <statusCode code="completed"/>
+              <!-- Date d'administration -->
+              <effectiveTime nullFlavor="UNK"/>
+              <!-- Vaccin -->
+              <consumable typeCode="CSM">
+                <manufacturedProduct>
+                  <!-- Conformité Product (CCD) -->
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <!-- Conformité Product Entry (IHE PCC)-->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                  <!-- Conformité FR-Produit-de-sante (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.43"/>
+                  <manufacturedMaterial>                    
+                    <!-- Codes du médicament -->
+                    <code>
+                      <originalText><reference value="#vaccin001"/></originalText>
+                      <!-- Code du médicament : JDV Cnam JDV_BDM_CNAM-HR_CISIS avec codes UDC (1.2.250.1.215.200.1.1.2) ou CIP (1.2.250.1.215.200.1.1.1) -->
+                      <translation code="3400932857241" displayName="VACCIN TETANIQUE PASTEUR SUSP INJ1/.5"
+                        codeSystem="1.2.250.1.215.200.1.1.1" codeSystemName="JDV_BDM_CNAM-HR_CISIS"/>
+                      <!-- Valence vaccinale : JDV Cnam JDV_BDM_ATC_CNAM-HR_CISIS avec codes ATC 5 digits (1.2.250.1.215.200.1.2.2) -->
+                      <translation code="J07AM01" displayName="ANATOXINE TETANIQUE" 
+                        codeSystem="1.2.250.1.215.200.1.2.2" codeSystemName="JDV_BDM_ATC_CNAM-HR_CISIS"/>
+                    </code>
+                    <!-- Nom de Spécialité -->
+                    <name>VACCIN TETANIQUE PASTEUR SUSP INJ1/.5</name>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>              
+              
+              <!-- Prescripteur / Dispensateur -->
+              <entryRelationship typeCode="REFR" inversionInd="false">
+                <supply classCode="SPLY" moodCode="EVN">
+                  <!-- Conformité Supply activity (CCD) -->
+                  <templateId root="2.16.840.1.113883.10.20.1.34"/>
+                  <!-- Conformité Supply Entry (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.3"/>
+                  <!-- Conformité FR-Prescription (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.44"/>
+                  <id root="439E6C0D-9BA5-4618-9822-86C1111240FE"/> 
+                  <!-- Dispensateur -->
+                  <performer typeCode="PRF">
+                    <time value="20190711"/>
+                    <assignedEntity>
+                      <!--Identifiant du PS exécutant-->
+                      <id nullFlavor="UNK" />
+                      <!-- Délivré par -->
+                      <representedOrganization>
+                        <name>PHARMACIE COMPAIN</name>
+                      </representedOrganization>
+                    </assignedEntity>
+                  </performer>
+                  <!-- Prescripteur -->
+                  <author>
+                    <time value="20190711094914+0100"/>
+                    <assignedAuthor>
+                      <!-- Identifiant du prescripteur -->
+                      <id root="1.2.250.1.71.4.2.1" extension="10100997245"/>
+                      <!-- Profession / Spécialité du prescripteur -->
+                      <code code="G15_10/SM54" displayName="Médecin - Médecine Générale (SM)" 
+                        codeSystem="1.2.250.1.213.1.1.4.5"/>
+                      <!-- Nom et prénom prescripteur -->
+                      <assignedPerson>
+                        <name>
+                          <suffix>DR</suffix>
+                          <given>Laure</given>
+                          <family>MARIGNY</family>
+                        </name>
+                      </assignedPerson>
+                      <!-- Etablissement du prescripteur -->
+                      <representedOrganization>
+                        <id root="1.2.250.1.71.4.2.2" extension="1750058190"/>
+                        <name>CENTRE DE SANTE SAINT MARTIN</name>   
+                      </representedOrganization>
+                    </assignedAuthor>
+                  </author>
+                </supply>
+              </entryRelationship>
+              
+            </substanceAdministration>
+          </entry>          
+          
+          <!-- 2ème Entrée FR-Vaccination [1..*] -->
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="EVN" negationInd="false">
+              <!-- Conformité Medication activity (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <!-- Conformité Immunizations (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12"/>
+              <!-- Conformité FR-Vaccination (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.45"/>
+              <id root="34615184-14D4-45D0-AAD3-F9C859619064"/>
+              <code code="IMMUNIZ" displayName="Vaccination sans autres précisions" codeSystem="2.16.840.1.113883.5.4"/>
+              <text><reference value="#vaccin002"/></text>
+              <statusCode code="completed"/>
+              <!-- Date d'administration -->
+              <effectiveTime nullFlavor="UNK"/>
+              <!-- Vaccin -->
+              <consumable typeCode="CSM">
+                <manufacturedProduct>
+                  <!-- Conformité Product (CCD) -->
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <!-- Conformité Product Entry (IHE PCC)-->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                  <!-- Conformité FR-Produit-de-sante (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.43"/>
+                  <manufacturedMaterial>
+                    <!-- Code du médicament -->
+                    <code>                    
+                      <originalText><reference value="#vaccin002"/></originalText>
+                      <!-- Code du médicament : JDV Cnam JDV_BDM_CNAM-HR_CISIS avec codes UDC (1.2.250.1.215.200.1.1.2) ou CIP (1.2.250.1.215.200.1.1.1) -->
+                      <translation code="3400936924642" displayName="HBVAXPRO 10 MICROG/ML SUSP INJ SER1/1"
+                        codeSystem="1.2.250.1.215.200.1.1.1" codeSystemName="JDV_BDM_CNAM-HR_CISIS"/>
+                      <!--  Valence vaccinale : JDV Cnam JDV_BDM_ATC_CNAM-HR_CISIS avec codes ATC 5 digits (1.2.250.1.215.200.1.2.2) -->
+                      <translation code="J07BC01" displayName="HEPATITE B, ANTIGENE PURIFIE" 
+                        codeSystem="1.2.250.1.215.200.1.2.2" codeSystemName="JDV_BDM_ATC_CNAM-HR_CISIS"/>
+                    </code>
+                    <!-- Nom de Spécialité -->
+                    <name>HBVAXPRO 10 MICROG/ML SUSP INJ SER1/1</name>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+              <!-- Prescripteur / Dispensateur -->
+              <entryRelationship typeCode="REFR" inversionInd="false">
+                <supply classCode="SPLY" moodCode="EVN">
+                  <!-- Conformité Supply activity (CCD) -->
+                  <templateId root="2.16.840.1.113883.10.20.1.34"/>
+                  <!-- Conformité Supply Entry (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.3"/>
+                  <!-- Conformité FR-Prescription (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.44"/>
+                  <id root="8C916212-0693-4B00-A717-CB8CD341976A"/>
+                  <!-- Dispensateur -->
+                  <performer typeCode="PRF">
+                    <time value="20190708"/>
+                    <assignedEntity>
+                      <!--Identifiant du PS exécutant-->
+                      <id nullFlavor="UNK" />
+                      <!-- Délivré par -->
+                      <representedOrganization>
+                        <name>PHARMACIE COMPAIN</name>
+                      </representedOrganization>
+                    </assignedEntity>
+                  </performer>
+                  <!-- Prescripteur -->
+                  <author>
+                    <time value="20190708094914+0100"/>
+                    <assignedAuthor>
+                      <!-- Identifiant du prescripteur -->
+                      <id root="1.2.250.1.71.4.2.1" extension="10100997245"/>
+                      <!-- Profession / Spécialité du prescripteur -->
+                      <code code="G15_10/SM54" displayName="Médecin - Médecine Générale (SM)" 
+                        codeSystem="1.2.250.1.213.1.1.4.5"/>
+                      <!-- Nom et prénom prescripteur -->
+                      <assignedPerson>
+                        <name>
+                          <suffix>DR</suffix>
+                          <given>Laure</given>
+                          <family>MARIGNY</family>
+                        </name>
+                      </assignedPerson>
+                      <!-- Etablissement du prescripteur -->
+                      <representedOrganization>
+                        <id root="1.2.250.1.71.4.2.2" extension="1750058190"/>
+                        <name>CENTRE DE SANTE SAINT MARTIN</name>   
+                      </representedOrganization>
+                    </assignedAuthor>
+                  </author>
+                </supply>
+              </entryRelationship>
+            </substanceAdministration>
+          </entry>
+          
+          <!-- 3ème Entrée FR-Vaccination [1..*] -->
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="EVN" negationInd="false">
+              <!-- Conformité Medication activity (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <!-- Conformité Immunizations (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12"/>
+              <!-- Conformité FR-Vaccination (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.45"/>
+              <id root="0F9AAE0D-9B4C-4BEB-99D7-F5DDE80645DE"/>
+              <code code="IMMUNIZ" displayName="Vaccination sans autres précisions" codeSystem="2.16.840.1.113883.5.4"/>
+              <text><reference value="#vaccin003"/></text>
+              <statusCode code="completed"/>
+              <!-- Date d'administration -->
+              <effectiveTime nullFlavor="UNK"/>
+              <!-- Vaccin -->
+              <consumable typeCode="CSM">
+                <manufacturedProduct>
+                  <!-- Conformité Product (CCD) -->
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <!-- Conformité Product Entry (IHE PCC)-->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                  <!-- Conformité FR-Produit-de-sante (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.43"/>
+                  <manufacturedMaterial>
+                    <!-- Code du médicament -->
+                    <code>
+                      <originalText><reference value="#vaccin003"/></originalText>
+                      <!-- Code du médicament : JDV Cnam JDV_BDM_CNAM-HR_CISIS avec codes UDC (1.2.250.1.215.200.1.1.2) ou CIP (1.2.250.1.215.200.1.1.1) -->
+                      <translation code="3400932857241" displayName="VACCIN TETANIQUE PASTEUR SUSP INJ1/.5"
+                        codeSystem="1.2.250.1.215.200.1.1.1" codeSystemName="JDV_BDM_CNAM-HR_CISIS"/>
+                      <!--  Valence vaccinale : JDV Cnam JDV_BDM_ATC_CNAM-HR_CISIS avec codes ATC 5 digits (1.2.250.1.215.200.1.2.2) -->
+                      <translation code="J07AM01" displayName="ANATOXINE TETANIQUE" 
+                        codeSystem="1.2.250.1.215.200.1.2.2" codeSystemName="JDV_BDM_ATC_CNAM-HR_CISIS"/>
+                    </code>
+                    <!-- Nom de Spécialité -->
+                    <name>VACCIN TETANIQUE PASTEUR SUSP INJ1/.5</name>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+              <!-- Prescripteur / Dispensateur -->
+              <entryRelationship typeCode="REFR" inversionInd="false">
+                <supply classCode="SPLY" moodCode="EVN">
+                  <!-- Conformité Supply activity (CCD) -->
+                  <templateId root="2.16.840.1.113883.10.20.1.34"/>
+                  <!-- Conformité Supply Entry (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.3"/>
+                  <!-- Conformité FR-Prescription (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.44"/>
+                  <id nullFlavor="UNK"/>
+                  <!-- Dispensateur -->
+                  <performer typeCode="PRF">
+                    <time value="20190626"/>
+                    <assignedEntity>
+                      <!--Identifiant du PS exécutant-->
+                      <id nullFlavor="UNK" />
+                      <!-- Délivré par -->
+                      <representedOrganization>
+                        <name>PHARMACIE COMPAIN</name>
+                      </representedOrganization>
+                    </assignedEntity>
+                  </performer>
+                  <!-- Prescripteur -->
+                  <author>
+                    <time value="20190626094914+0100"/>
+                    <assignedAuthor>
+                      <!-- Identifiant du prescripteur -->
+                      <id root="1.2.250.1.71.4.2.1" extension="10100997245"/>
+                      <!-- Profession / Spécialité du prescripteur -->
+                      <code code="G15_10/SM54" displayName="Médecin - Médecine Générale (SM)" 
+                        codeSystem="1.2.250.1.213.1.1.4.5"/>
+                      <!-- Nom et prénom prescripteur -->
+                      <assignedPerson>
+                        <name>
+                          <suffix>DR</suffix>
+                          <given>Laure</given>
+                          <family>MARIGNY</family>
+                        </name>
+                      </assignedPerson>
+                      <!-- Etablissement du prescripteur -->
+                      <representedOrganization>
+                        <id root="1.2.250.1.71.4.2.2" extension="1750058190"/>
+                        <name>CENTRE DE SANTE SAINT MARTIN</name>   
+                      </representedOrganization>
+                    </assignedAuthor>
+                  </author>
+                </supply>
+              </entryRelationship>
+              
+            </substanceAdministration>
+          </entry>
+          
+        </section>
+      </component>
+
+      <!-- ************************************** -->
+      <!-- Section FR-Dispositifs-medicaux [1..1] -->
+      <!-- ************************************** -->
+      <component>
+        <section>
+          <!-- Conformité Medical Equipment Section (CCD) -->
+          <templateId root="2.16.840.1.11383.10.20.1.7"/>
+          <!-- Conformité Medical Devices Section (IHE PCC) -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5"/>
+          <!-- Conformité FR-Dispositifs-medicaux (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.1"/>
+          <id nullFlavor="UNK"/>
+          <code code="46264-8" displayName="Dispositifs médicaux" codeSystem="2.16.840.1.113883.6.1"
+            codeSystemName="LOINC"/>
+          <title>Dispositifs médicaux</title>
+
+          <text>
+            <table border="0">
+              <thead>
+                <tr>
+                  <th colspan="2">Date de délivrance</th>
+                  <th>Libellé du dispositif médical</th>
+                  <th>Prescrit par</th>
+                  <th>Spécialité du prescripteur</th>
+                  <th>Établissement du prescripteur</th>
+                  <th>Délivré par</th>
+                  <th>Quantité délivrée</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td/>
+                  <td>11/07/2019</td>
+                  <td><content ID="DM001">COMPRESSES ACIDE HYALURONIQUE&amp;SULFADIAZINE ARGENTIQUE,GENEVRIER,IALUSET+,LES 10</content></td>
+                  <td>Dr Laure MARIGNY</td>
+                  <td>Médecin - Qualifié en Médecine Générale (SM)</td>
+                  <td>CENTRE DE SANTE SAINT MARTIN (CSM)</td>
+                  <td>PHARMACIE COMPAIN</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td/>
+                  <td>28/05/2019</td>
+                  <td><content ID="DM002">PANSEMENTS HYDROCELLULAIRES, &gt; OU = 50 CM2 ET &lt; 63 CM2, BOÎTE DE 10.</content></td>
+                  <td> </td>
+                  <td> </td>
+                  <td>CLINIQUE SAINTE GENEVIEVE</td>
+                  <td>CLINIQUE SAINTE GENEVIEVE</td>
+                  <td>2</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          
+          <!-- 1ère Entrée FR-Dispositif-medical -->
+          <entry>
+            <supply classCode="SPLY" moodCode="EVN">
+              <!-- Conformité Supply Activity (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.34"/>
+              <!-- Conformité FR-Dispositif-medical (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.20"/>
+              <!-- Identifiant de la fourniture du DM -->
+              <id root="F7D08AC0-D7AA-4F9D-A408-7A16D42D8A0C"/>
+              <!-- Référence vers la partie narrative de la section DM -->
+              <text><reference value="#DM001"/></text>
+              <!-- Date d'utilisation du DM -->
+              <effectiveTime xsi:type="IVL_TS">
+                <low nullFlavor="UNK"/>                
+              </effectiveTime>
+              <!-- quantité délivrée -->
+              <quantity value="1"/>
+              <!-- Dispensateur -->
+              <performer typeCode="PRF">
+                <!-- Date de délivrance -->
+                <time value="20190711"/>
+                <assignedEntity>
+                  <!--Identifiant du PS exécutant-->
+                  <id nullFlavor="UNK" />
+                  <!-- Délivré par -->
+                  <representedOrganization>
+                    <id root="1.2.250.1.71.4.2.2" extension="1750017212"/>
+                    <name>PHARMACIE COMPAIN</name>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>      
+              <!-- Prescripteur -->
+              <author>
+                <time value="20190711094914+0100"/>
+                <assignedAuthor>
+                  <!-- Identifiant du prescripteur -->
+                  <id root="1.2.250.1.71.4.2.1" extension="10100997245"/>
+                  <!-- Profession / Spécialité du prescripteur -->
+                  <code code="G15_10/SM54" displayName="Médecin - Médecine Générale (SM)" 
+                    codeSystem="1.2.250.1.213.1.1.4.5"/>
+                  <!-- Nom et prénom prescripteur -->
+                  <assignedPerson>
+                    <name>
+                      <suffix>DR</suffix>
+                      <given>Laure</given>
+                      <family>MARIGNY</family>
+                    </name>
+                  </assignedPerson>
+                  <!-- Etablissement du prescripteur -->
+                  <representedOrganization>
+                    <id root="1.2.250.1.71.4.2.2" extension="1750058190"/>
+                    <name>CENTRE DE SANTE SAINT MARTIN</name>   
+                  </representedOrganization>
+                </assignedAuthor>
+              </author>
+              <!-- Description du dispositif médical -->
+              <participant typeCode="DEV">
+                <participantRole classCode="MANU">
+                  <!-- UID du DM -->
+                  <id root="2.16.840.1.113883.3.3719" extension="{01}00844588003288{17}141120{10}7654321D{21}10987654d321"/>
+                  <!-- Type de DM -->
+                  <playingDevice classCode="DEV" determinerCode="INSTANCE">
+                    <code>
+                      <originalText><reference value="#DM001"/></originalText>
+                      <translation code="3408693" displayName="Stimulateur cardiaque de re-synchro ventriculaire, BIOTRONIK, EDORA 8 HF-T." 
+                        codeSystem="1.2.250.1.215.200.2.1" codeSystemName="JDV_LPP_CNAM-HR_CISIS"/>
+                    </code>
+                  </playingDevice>
+                </participantRole>
+              </participant>
+              
+            </supply>
+          </entry>
+          
+          <!-- 2ème Entrée FR-Dispositif-medical -->
+          <entry>
+            <supply classCode="SPLY" moodCode="EVN">
+              <!-- Conformité Supply Activity (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.34"/>
+              <!-- Conformité FR-Dispositif-medical (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.20"/>
+              <!-- Identifiant de la fourniture du DM -->
+              <id nullFlavor="UNK"/>
+              <!-- Référence vers la partie narrative de la section DM -->
+              <text><reference value="#DM002"/></text>
+              <!-- Date d'utilisation du DM -->
+              <effectiveTime xsi:type="IVL_TS">
+                <low nullFlavor="UNK"/>
+              </effectiveTime>
+              <!-- quantité délivrée -->
+              <quantity value="1"/>              
+              <!-- Dispensateur -->
+              <performer typeCode="PRF">
+                <!-- Date de délivrance -->
+                <time value="20190528"/>
+                <assignedEntity>
+                  <!--Identifiant du PS exécutant-->
+                  <id nullFlavor="UNK" />
+                  <!-- Délivré par -->
+                  <representedOrganization>
+                    <id root="1.2.250.1.71.4.2.2" extension="1750300550"/>
+                    <name>CLINIQUE SAINTE GENEVIEVE</name>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>              
+              <!-- Prescripteur -->
+              <author>
+                <time value="20190528094914+0100"/>
+                <assignedAuthor>
+                  <!-- Identifiant du prescripteur -->
+                  <id root="1.2.250.1.71.4.2.1" extension="10100997245" />
+                  <!-- Etablissement du prescripteur -->
+                  <representedOrganization>
+                    <id root="1.2.250.1.71.4.2.2" extension="1750300550"/>
+                    <name>CLINIQUE SAINTE GENEVIEVE</name>   
+                  </representedOrganization>
+                </assignedAuthor>
+              </author>
+              <!-- Description du dispositif médical -->
+              <participant typeCode="DEV">
+                <participantRole classCode="MANU">
+                  <!-- Identifiant du DM -->
+                  <id root="2.16.840.1.113883.3.3719" extension="{01}00844588003288{17}141120{10}7654321D{21}10987654d321"/>
+                  <!-- Type de DM -->
+                  <playingDevice classCode="DEV" determinerCode="INSTANCE">
+                    <code>
+                      <originalText><reference value="#DM002"/></originalText>
+                      <translation code="1397790" displayName="COMPRESSES ACIDE HYALURONIQUE&amp;SULFADIAZINE ARGENTIQUE,GENEVRIER,IALUSET+,LES 10" 
+                        codeSystem="1.2.250.1.215.200.2.1" codeSystemName="JDV_LPP_CNAM-HR_CISIS"/>
+                    </code>                    
+                  </playingDevice>
+                </participantRole>
+              </participant>
+              
+            </supply>
+          </entry>
+          
+        </section>
+      </component>
+
+      <!-- ******************************************************* -->
+      <!-- Section FR-Historique-prises-en-charge-medicales [1..1] -->
+      <!-- ******************************************************* -->
+      <component>
+        <section>
+          <!-- Conformité Encounters section (CCD) -->
+          <templateId root="2.16.840.1.113883.10.20.1.3"/>
+          <!-- Conformité Encounter Histories Section (IHE PCC) -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.3"/>
+          <!-- Conformité FR-Historique-prises-en-charge-medicales (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.76"/>
+          <id nullFlavor="UNK"/>
+          <code code="46240-8" displayName="Historique des rencontres"
+            codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>Hospitalisations</title>
+          
+          <text>
+            <table border="0">
+              <thead>
+                <tr>
+                  <th>Période du séjour</th>
+                  <th>Nature du séjour</th>
+                  <th>Lieu du séjour</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>du 15/05/2019 au 30/05/2019</td>
+                  <td><content ID="HOSP001">Interventions majeures sur l'intestin grêle et le côlon, niveau 2</content></td>
+                  <td>CLINIQUE SAINTE GENEVIEVE</td>
+                </tr>
+                <tr>
+                  <td>le 12/04/2019</td>
+                  <td><content ID="HOSP002">Mise en place de certains accès vasculaires de la CMD 05, séjours de moins de 2 jours</content></td>
+                  <td>CLINIQUE SAINTE GENEVIEVE</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          
+          <!-- 1ère Entrée FR-Rencontre [1..*] -->
+          <entry>
+            <encounter classCode="ENC" moodCode="EVN">
+              <!-- Conformité Encounter activity (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.21"/>
+              <!-- Conformité Encounter (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
+              <!-- Conformité FR-Rencontre (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.58"/>
+              <id nullFlavor="UNK"/>
+              <!-- Code 'IMP' (Hospitalisation) issu du JDV_HL7_ActEncounterCode_CISIS -->
+              <code code="IMP" displayName="Hospitalisation (établissement, y compris HAD)" 
+                codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode">
+                <!-- Code et nature du séjour : JDV_sejours_actes_CNAM-HR_CISIS avec codes GHS (1.2.250.1.215.200.3.1), DDP (1.2.250.1.215.200.3.2) ou NGAP (1.2.250.1.215.200.3.3) -->
+                <qualifier><value code="1940" displayName="Interventions majeures sur l'intestin grêle et le côlon, niveau 2" 
+                  codeSystem="1.2.250.1.215.200.3.1" codeSystemName="JDV_sejours_actes_CNAM-HR_CISIS"></value></qualifier>
+              </code>
+              <text><reference value="#HOSP001"/></text>
+              <!-- Période du séjour -->
+              <effectiveTime>
+                <low value="20190515"/>
+                <high value="20190530"/>
+              </effectiveTime>
+              <performer typeCode="PRF">
+                <assignedEntity>
+                  <id nullFlavor="UNK" />
+                  <!-- Lieu du séjour -->
+                  <representedOrganization>
+                    <id root="1.2.250.1.71.4.2.2" extension="1750300550"/>
+                    <name>CLINIQUE SAINTE GENEVIEVE</name>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>
+            </encounter>
+          </entry>
+          
+          <!-- 2ème Entrée FR-Rencontre [1..*] -->
+          <entry>
+            <encounter classCode="ENC" moodCode="EVN">
+              <!-- Conformité Encounter activity (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.21"/>
+              <!-- Conformité Encounter (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
+              <!-- Conformité FR-Rencontre (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.58"/>
+              <id nullFlavor="UNK"/>
+              <!-- Code 'IMP' (Hospitalisation) issu du JDV_HL7_ActEncounterCode_CISIS -->
+              <code code="IMP" displayName="Hospitalisation (établissement, y compris HAD)" 
+                codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode">
+                <!-- Code et nature du séjour : JDV_sejours_actes_CNAM-HR_CISIS avec codes GHS (1.2.250.1.215.200.3.1), DDP (1.2.250.1.215.200.3.2) ou NGAP (1.2.250.1.215.200.3.3) -->
+                <qualifier><value code="1721" displayName="Mise en place de certains accès vasculaires de la CMD 05, séjours de moins de 2 jours"  
+                  codeSystem="1.2.250.1.215.200.3.1" codeSystemName="JDV_sejours_actes_CNAM-HR_CISIS"></value></qualifier>
+              </code>
+              <text><reference value="#HOSP002"/></text>
+              <!-- Période du séjour -->
+              <effectiveTime>
+                <low value="20190412"/>
+              </effectiveTime>
+              <performer typeCode="PRF">
+                <assignedEntity>
+                  <id nullFlavor="UNK" />
+                  <!-- Lieu du séjour -->
+                  <representedOrganization>
+                    <id root="1.2.250.1.71.4.2.2" extension="1750300550"/>
+                    <name>CLINIQUE SAINTE GENEVIEVE</name>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>
+            </encounter>
+          </entry>
+        </section>
+      </component>
+
+      <!-- ********************************************************************** -->
+      <!-- Section FR-Actes-et-interventions : Soins médicaux et dentaires [1..1] -->
+      <!-- ********************************************************************** -->
+      <component>
+        <section>
+          <!-- Conformité Procedures and Interventions Section (IHE PCC) -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.13.2.11"/>
+          <!-- Conformité FR-Actes-et-interventions (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.118"/>
+          <id nullFlavor="UNK"/>
+          <code code="29554-3" displayName="Actes" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+            <translation code="67803-7" displayName="Liste des actes" codeSystem="2.16.840.1.113883.6.1"></translation>
+          </code>
+          <title>Soins médicaux et dentaires</title>
+          <text>
+            <table border="0">
+              <thead>
+                <tr>
+                  <th colspan="2">Date de l'acte</th>
+                  <th>Code de l'acte</th>
+                  <th>Libellé de l'acte</th>
+                  <th>Réalisé par</th>
+                  <th>Spécialité</th>
+                  <th>Établissement</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td/>
+                  <td>11/07/2019</td>
+                  <td>G</td>
+                  <td><content ID="ACTE001">CONSULTATION MEDECINE GENERALE</content></td>
+                  <td>Dr Laure MARIGNY</td>
+                  <td>Médecin - Qualifié en Médecine Générale (SM)</td>
+                  <td>CENTRE DE SANTE SAINT MARTIN (CSM)</td>
+                </tr>
+                <tr>
+                  <td/>
+                  <td>08/07/2019</td>
+                  <td>G</td>
+                  <td><content ID="ACTE002">CONSULTATION MEDECINE GENERALE</content></td>
+                  <td>Dr Laure MARIGNY</td>
+                  <td>Médecin - Qualifié en Médecine Générale (SM)</td>
+                  <td>CENTRE DE SANTE SAINT MARTIN (CSM)</td>
+                </tr>
+                <tr>
+                  <td/>
+                  <td>26/06/2019</td>
+                  <td>G</td>
+                  <td><content ID="ACTE003">CONSULTATION MEDECINE GENERALE</content></td>
+                  <td>Dr Laure MARIGNY</td>
+                  <td>Médecin - Qualifié en Médecine Générale (SM)</td>
+                  <td>CENTRE DE SANTE SAINT MARTIN (CSM)</td>
+                </tr>
+                <tr>
+                  <td/>
+                  <td>25/05/2019</td>
+                  <td>FTR</td>
+                  <td><content ID="ACTE004">FORFAIT TECHNIQUE REDUIT IRMN -SCANNERS</content></td>
+                  <td> </td>
+                  <td> </td>
+                  <td>CLINIQUE SAINTE GENEVIEVE</td>
+                </tr>
+                <tr>
+                  <td/>
+                  <td>11/03/2019</td>
+                  <td>G</td>
+                  <td><content ID="ACTE005">CONSULTATION MEDECINE GENERALE</content></td>
+                  <td>Dr Laure MARIGNY</td>
+                  <td>Médecin - Qualifié en Médecine Générale (SM)</td>
+                  <td>CENTRE DE SANTE SAINT MARTIN (CSM)</td>
+                </tr>
+                <tr>
+                  <td/>
+                  <td>08/03/2019</td>
+                  <td>G</td>
+                  <td><content ID="ACTE006">CONSULTATION MEDECINE GENERALE</content></td>
+                  <td>Dr Laure MARIGNY</td>
+                  <td>Médecin - Qualifié en Médecine Générale (SM)</td>
+                  <td>CENTRE DE SANTE SAINT MARTIN (CSM)</td>
+                </tr>
+                <tr>
+                  <td/>
+                  <td>08/02/2019</td>
+                  <td>HBMD053</td>
+                  <td><content ID="ACTE007">Restaur 1 prémol / molaire 1 face par matér plastiq sans ancr</content></td>
+                  <td>Dr Henry DUPONT</td>
+                  <td>Chirurgien-Dentiste</td>
+                  <td>CDS DU CHATEAU CDC</td>
+                </tr>
+                <tr>
+                  <td/>
+                  <td>21/01/2019</td>
+                  <td>BJQP002</td>
+                  <td><content ID="ACTE008">exam. fct motricité oculaire</content></td>
+                  <td>Dr Jean DURAND</td>
+                  <td>Médecin - Ophtalmologie (SM)</td>
+                  <td>CABINET DU DR Jean DURAND</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+
+          <!-- 1ère Entrée FR-Acte [1..*] -->
+          <entry>
+            <procedure classCode="PROC" moodCode="EVN">
+              <!-- Conformité Procedure activity (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.29"/>
+              <!-- Conformité Procedure Entry (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+              <!-- Conformité FR-Acte (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.62"/>
+              <id nullFlavor="UNK"/>
+              <!-- Code et libellé de l'acte : JDV Cnam JDV_sejours_actes_CNAM-HR_CISIS avec des codes CCAM (1.2.250.1.215.200.3.4) ou NGAP (1.2.250.1.215.200.3.3) -->
+              <code code="G" displayName="CONSULTATION MEDECINE GENERALE" codeSystem="1.2.250.1.215.200.3.3" codeSystemName="JDV_sejours_actes_CNAM-HR_CISIS"/>
+              <text><reference value="#ACTE001"/></text>
+              <statusCode code="completed"/>
+              <!-- Date de l'acte -->
+              <effectiveTime value="20190711"/>
+              <performer>
+                <assignedEntity classCode="ASSIGNED">
+                  <!-- Identifiant de l'exécutant -->
+                  <id root="1.2.250.1.71.4.2.1" extension="10100997245"/>
+                  <!-- Spécialité de l'exécutant -->
+                  <code code="G15_10/SM54" displayName="Médecin - Médecine Générale (SM)"
+                    codeSystem="1.2.250.1.213.1.1.4.5"/>
+                  <assignedPerson>
+                    <!-- Nom et prénom de l'exécutant -->
+                    <name>
+                      <suffix>DR</suffix>
+                      <family>Laure</family>
+                      <given>MARIGNY</given>
+                    </name>
+                  </assignedPerson>
+                  <representedOrganization>
+                    <!--Identifiant de l'établissement-->
+                    <id root="1.2.250.1.71.4.2.2" extension="1750058190"/>
+                    <!--nom de l'établissement-->
+                    <name>CENTRE DE SANTE SAINT MARTIN (CSM)</name>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>   
+            </procedure>
+          </entry>
+          
+          <!-- 2ème Entrée FR-Acte [1..*] -->
+          <entry>
+            <procedure classCode="PROC" moodCode="EVN">
+              <!-- Conformité Procedure activity (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.29"/>
+              <!-- Conformité Procedure Entry (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+              <!-- Conformité FR-Acte (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.62"/>
+              <id nullFlavor="UNK"/>
+              <!-- Code et libellé de l'acte : JDV Cnam JDV_sejours_actes_CNAM-HR_CISIS avec des codes CCAM (1.2.250.1.215.200.3.4) ou NGAP (1.2.250.1.215.200.3.3) -->
+              <code code="G" displayName="CONSULTATION MEDECINE GENERALE" codeSystem="1.2.250.1.215.200.3.3" codeSystemName="JDV_sejours_actes_CNAM-HR_CISIS"/>
+              <text><reference value="#ACTE002"/></text>
+              <statusCode code="completed"/>
+              <!-- Date de l'acte -->
+              <effectiveTime value="20190708"/>
+              <performer>
+                <assignedEntity classCode="ASSIGNED">
+                  <!-- Identifiant de l'exécutant -->
+                  <id root="1.2.250.1.71.4.2.1" extension="10100997245"/>
+                  <!-- Spécialité de l'exécutant -->
+                  <code code="G15_10/SM54" displayName="Médecin - Médecine Générale (SM)"
+                    codeSystem="1.2.250.1.213.1.1.4.5"/>
+                  <assignedPerson>
+                    <!-- Nom et prénom de l'exécutant -->
+                    <name>
+                      <suffix>DR</suffix>
+                      <family>Laure</family>
+                      <given>MARIGNY</given>
+                    </name>
+                  </assignedPerson>
+                  <representedOrganization>
+                    <!--Identifiant de l'établissement-->
+                    <id root="1.2.250.1.71.4.2.2" extension="1750058190"/>
+                    <!--nom de l'établissement-->
+                    <name>CENTRE DE SANTE SAINT MARTIN (CSM)</name>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>
+            </procedure>
+          </entry>
+          
+          <!-- 3ème Entrée FR-Acte [1..*] -->
+          <entry>
+            <procedure classCode="PROC" moodCode="EVN">
+              <!-- Conformité Procedure activity (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.29"/>
+              <!-- Conformité Procedure Entry (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+              <!-- Conformité FR-Acte (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.62"/>
+              <id nullFlavor="UNK"/>
+              <!-- Code et libellé de l'acte : JDV Cnam JDV_sejours_actes_CNAM-HR_CISIS avec des codes CCAM (1.2.250.1.215.200.3.4) ou NGAP (1.2.250.1.215.200.3.3) -->
+              <code code="G" displayName="CONSULTATION MEDECINE GENERALE" codeSystem="1.2.250.1.215.200.3.3" codeSystemName="JDV_sejours_actes_CNAM-HR_CISIS"/>
+              <text><reference value="#ACTE003"/></text>
+              <statusCode code="completed"/>
+              <!-- Date de l'acte -->
+              <effectiveTime value="20190626"/>
+              <performer>
+                <assignedEntity classCode="ASSIGNED">
+                  <!-- Identifiant de l'exécutant -->
+                  <id root="1.2.250.1.71.4.2.1" extension="10100997245"/>
+                  <!-- Spécialité de l'exécutant -->
+                  <code code="G15_10/SM54" displayName="Médecin - Médecine Générale (SM)"
+                    codeSystem="1.2.250.1.213.1.1.4.5"/>
+                  <assignedPerson>
+                    <!-- Nom et prénom de l'exécutant -->
+                    <name>
+                      <suffix>DR</suffix>
+                      <family>Laure</family>
+                      <given>MARIGNY</given>
+                    </name>
+                  </assignedPerson>
+                  <representedOrganization>
+                    <!--Identifiant de l'établissement-->
+                    <id root="1.2.250.1.71.4.2.2" extension="1750058190"/>
+                    <!--nom de l'établissement-->
+                    <name>CENTRE DE SANTE SAINT MARTIN (CSM)</name>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>
+            </procedure>
+          </entry>
+          
+          <!-- 4ème Entrée FR-Acte [1..*] -->
+          <entry>
+            <procedure classCode="PROC" moodCode="EVN">
+              <!-- Conformité Procedure activity (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.29"/>
+              <!-- Conformité Procedure Entry (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+              <!-- Conformité FR-Acte (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.62"/>
+              <id nullFlavor="UNK"/>
+              <!-- Code et libellé de l'acte : JDV Cnam JDV_sejours_actes_CNAM-HR_CISIS avec des codes CCAM (1.2.250.1.215.200.3.4) ou NGAP (1.2.250.1.215.200.3.3) -->
+              <code code="FTR" displayName="FORFAIT TECHNIQUE REDUIT IRMN -SCANNERS" codeSystem="1.2.250.1.215.200.3.3" codeSystemName="JDV_sejours_actes_CNAM-HR_CISIS"/>
+              <text><reference value="#ACTE004"/></text>
+              <statusCode code="completed"/>
+              <!-- Date de l'acte -->
+              <effectiveTime value="20190525"/>
+              <performer>
+                <assignedEntity classCode="ASSIGNED">
+                  <!-- Identifiant de l'exécutant -->
+                  <id nullFlavor="UNK"/>
+                  <representedOrganization>
+                    <!--Identifiant de l'établissement-->
+                    <id root="1.2.250.1.71.4.2.2" extension="1750300550"/>
+                    <!--nom de l'établissement-->
+                    <name>CLINIQUE SAINTE GENEVIEVE</name>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>
+            </procedure>
+          </entry>
+          
+          <!-- 5ème Entrée FR-Acte [1..*] -->
+          <entry>
+            <procedure classCode="PROC" moodCode="EVN">
+              <!-- Conformité Procedure activity (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.29"/>
+              <!-- Conformité Procedure Entry (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+              <!-- Conformité FR-Acte (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.62"/>
+              <id nullFlavor="UNK"/>
+              <!-- Code et libellé de l'acte : JDV Cnam JDV_sejours_actes_CNAM-HR_CISIS avec des codes CCAM (1.2.250.1.215.200.3.4) ou NGAP (1.2.250.1.215.200.3.3) -->
+              <code code="G" displayName="CONSULTATION MEDECINE GENERALE" codeSystem="1.2.250.1.215.200.3.3" codeSystemName="JDV_sejours_actes_CNAM-HR_CISIS"/>
+              <text><reference value="#ACTE005"/></text>
+              <statusCode code="completed"/>
+              <!-- Date de l'acte -->
+              <effectiveTime value="20190311"/>
+              <performer>
+                <assignedEntity classCode="ASSIGNED">
+                  <!-- Identifiant de l'exécutant -->
+                  <id root="1.2.250.1.71.4.2.1" extension="10100997245"/>
+                  <!-- Spécialité de l'exécutant -->
+                  <code code="G15_10/SM54" displayName="Médecin - Médecine Générale (SM)"
+                    codeSystem="1.2.250.1.213.1.1.4.5"/>
+                  <assignedPerson>
+                    <!-- Nom et prénom de l'exécutant -->
+                    <name>
+                      <suffix>DR</suffix>
+                      <family>Laure</family>
+                      <given>MARIGNY</given>
+                    </name>
+                  </assignedPerson>
+                  <representedOrganization>
+                    <!--Identifiant de l'établissement-->
+                    <id root="1.2.250.1.71.4.2.2" extension="1750058190"/>
+                    <!--nom de l'établissement-->
+                    <name>CENTRE DE SANTE SAINT MARTIN (CSM)</name>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>
+            </procedure>
+          </entry>
+ 
+          <!-- 6ème Entrée FR-Acte [1..*] -->
+          <entry>
+            <procedure classCode="PROC" moodCode="EVN">
+              <!-- Conformité Procedure activity (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.29"/>
+              <!-- Conformité Procedure Entry (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+              <!-- Conformité FR-Acte (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.62"/>
+              <id nullFlavor="UNK"/>
+              <!-- Code et libellé de l'acte : JDV Cnam JDV_sejours_actes_CNAM-HR_CISIS avec des codes CCAM (1.2.250.1.215.200.3.4) ou NGAP (1.2.250.1.215.200.3.3) -->
+              <code code="G" displayName="CONSULTATION MEDECINE GENERALE" codeSystem="1.2.250.1.215.200.3.3" codeSystemName="JDV_sejours_actes_CNAM-HR_CISIS"/>
+              <text><reference value="#ACTE006"/></text>
+              <statusCode code="completed"/>
+              <!-- Date de l'acte -->
+              <effectiveTime value="20190308"/>
+              <performer>
+                <assignedEntity classCode="ASSIGNED">
+                  <!-- Identifiant de l'exécutant -->
+                  <id root="1.2.250.1.71.4.2.1" extension="10100997245"/>
+                  <!-- Spécialité de l'exécutant -->
+                  <code code="G15_10/SM54" displayName="Médecin - Médecine Générale (SM)"
+                    codeSystem="1.2.250.1.213.1.1.4.5"/>
+                  <assignedPerson>
+                    <!-- Nom et prénom de l'exécutant -->
+                    <name>
+                      <suffix>DR</suffix>
+                      <family>Laure</family>
+                      <given>MARIGNY</given>
+                    </name>
+                  </assignedPerson>
+                  <representedOrganization>
+                    <!--Identifiant de l'établissement-->
+                    <id root="1.2.250.1.71.4.2.2" extension="1750058190"/>
+                    <!--nom de l'établissement-->
+                    <name>CENTRE DE SANTE SAINT MARTIN (CSM)</name>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>
+            </procedure>
+          </entry>
+          
+          <!-- 7ème Entrée FR-Acte [1..*] -->
+          <entry>
+            <procedure classCode="PROC" moodCode="EVN">
+              <!-- Conformité Procedure activity (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.29"/>
+              <!-- Conformité Procedure Entry (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+              <!-- Conformité FR-Acte (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.62"/>
+              <id nullFlavor="UNK"/>
+              <!-- Code et libellé de l'acte : JDV Cnam JDV_sejours_actes_CNAM-HR_CISIS avec des codes CCAM (1.2.250.1.215.200.3.4) ou NGAP (1.2.250.1.215.200.3.3) -->
+              <code code="HBMD053" displayName="Restaur 1 prémol / molaire 1 face par matér plastiq sans ancr" codeSystem="1.2.250.1.215.200.3.4" codeSystemName="JDV_sejours_actes_CNAM-HR_CISIS"/>
+              <text><reference value="#ACTE007"/></text>
+              <statusCode code="completed"/>
+              <!-- Date de l'acte -->
+              <effectiveTime value="20190208"/>
+              <performer>
+                <assignedEntity classCode="ASSIGNED">
+                  <!-- Identifiant de l'exécutant -->
+                  <id root="1.2.250.1.71.4.2.1" extension="10101451689"/>
+                  <!-- Spécialité de l'exécutant -->
+                  <code code="G15_40" displayName="Chirurgien-Dentiste"
+                    codeSystem="1.2.250.1.213.1.1.4.5"/>
+                  <assignedPerson>
+                    <!-- Nom et prénom de l'exécutant -->
+                    <name>
+                      <suffix>DR</suffix>
+                      <family>Henri</family>
+                      <given>DUPONT</given>
+                    </name>
+                  </assignedPerson>
+                  <representedOrganization>
+                    <!--Identifiant de l'établissement-->
+                    <id root="1.2.250.1.71.4.2.2" extension="1750051211"/>
+                    <!--nom de l'établissement-->
+                    <name>CDS DU CHATEAU CDC</name>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>
+            </procedure>
+          </entry>
+          
+          <!-- 8ème Entrée FR-Acte [1..*] -->
+          <entry>
+            <procedure classCode="PROC" moodCode="EVN">
+              <!-- Conformité Procedure activity (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.29"/>
+              <!-- Conformité Procedure Entry (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+              <!-- Conformité FR-Acte (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.62"/>
+              <id nullFlavor="UNK"/>
+              <!-- Code et libellé de l'acte : JDV Cnam JDV_sejours_actes_CNAM-HR_CISIS avec des codes CCAM (1.2.250.1.215.200.3.4) ou NGAP (1.2.250.1.215.200.3.3) -->
+              <code code="BJQP002" displayName="exam. fct motricité oculaire" codeSystem="1.2.250.1.215.200.3.4" codeSystemName="JDV_sejours_actes_CNAM-HR_CISIS"/>
+              <text><reference value="#ACTE008"/></text>
+              <statusCode code="completed"/>
+              <!-- Date de l'acte -->
+              <effectiveTime value="20190121"/>
+              <performer>
+                <assignedEntity classCode="ASSIGNED">
+                  <!-- Identifiant de l'exécutant -->
+                  <id root="1.2.250.1.71.4.2.1" extension="10004000922"/>
+                  <!-- Profession / Spécialité de l'exécutant -->
+                  <code code="G15_10/SM38" displayName="Médecin - Ophtalmologie (SM)"
+                    codeSystem="1.2.250.1.213.1.1.4.5"/>
+                  <assignedPerson>
+                    <!-- Nom et prénom de l'exécutant -->
+                    <name>
+                      <suffix>DR</suffix>
+                      <family>Jean</family>
+                      <given>DURAND</given>
+                    </name>
+                  </assignedPerson>
+                  <representedOrganization>
+                    <!--Identifiant de l'établissement-->
+                    <id root="1.2.250.1.71.4.2.2" extension="10004000922005"/>
+                    <!--nom de l'établissement-->
+                    <name>CABINET DU DR Jean DURAND</name>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>
+            </procedure>
+          </entry>
+          
+        </section>
+      </component>
+
+      <!-- ***************************************************** -->
+      <!-- Section FR-Actes-et-interventions : Radiologie [1..1] -->
+      <!-- ***************************************************** -->
+      <component>
+        <section>
+          <!-- Conformité Procedures and Interventions Section (IHE PCC) -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.13.2.11"/>
+          <!-- Conformité FR-Actes-et-interventions (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.118"/>
+          <id nullFlavor="UNK"/>
+          <code code="29554-3" displayName="Actes" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+            <translation code="18726-0" displayName="Radiologie" codeSystem="2.16.840.1.113883.6.1"></translation>
+          </code>
+          <title>Radiologie</title>
+          <text>
+            <table border="0">
+              <thead>
+                <tr>
+                  <th colspan="2">Date de l'acte</th>
+                  <th>Code de l'acte</th>
+                  <th>Libellé de l'acte</th>
+                  <th>Réalisé par</th>
+                  <th>Établissement</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td/>
+                  <td>15/05/2019</td>
+                  <td>YYYY300</td>
+                  <td><content ID="RAD001">suppl. imagerie pr radio interv. au bloc op.</content></td>
+                  <td>Dr Nicolas DURIEUX</td>
+                  <td>CLINIQUE SAINTE GENEVIEVE</td>
+                </tr>
+                <tr>
+                  <td/>
+                  <td>30/04/2019</td>
+                  <td>QEQJ001</td>
+                  <td><content ID="RAD002">remno sein +inject IV</content></td>
+                  <td>Dr Jacqueline LORIOT</td>
+                  <td>CENTRE SCANNER REPUBLIQUE</td>
+                </tr>
+                <tr>
+                  <td/>
+                  <td>30/04/2019</td>
+                  <td>YYYY600</td>
+                  <td><content ID="RAD003">sup pour archivage numérique 1 mammo ou 1 exam scan ou remno</content></td>
+                  <td>Dr Jacqueline LORIOT</td>
+                  <td>CENTRE SCANNER REPUBLIQUE</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+
+          <!-- 1er Entrée FR-Acte [1..*] -->
+          <entry>
+            <procedure classCode="PROC" moodCode="EVN">
+              <!-- Conformité Procedure activity (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.29"/>
+              <!-- Conformité Procedure Entry (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+              <!-- Conformité FR-Acte (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.62"/>
+              <id nullFlavor="UNK"/>
+              <!-- Code et libellé de l'acte : JDV_sejours_actes_CNAM-HR_CISIS avec codes CCAM (1.2.250.1.215.200.3.4) ou NGAP (1.2.250.1.215.200.3.3) -->
+              <code code="YYYY300" displayName="suppl. imagerie pr radio interv. au bloc op." 
+                codeSystem="1.2.250.1.215.200.3.4" codeSystemName="JDV_sejours_actes_CNAM-HR_CISIS"/>
+              <text><reference value="#RAD001"/></text>
+              <statusCode code="completed"/>
+              <!--Date de l'acte-->
+              <effectiveTime value="20190515"/>
+              <performer>
+                <assignedEntity classCode="ASSIGNED">
+                  <!--Identifiant de l'exécutant -->
+                  <id root="1.2.250.1.71.4.2.1" extension="10000336601"/>
+                  <!-- Profession / Spécialité de l'exécutant -->
+                  <code code="G15_10/SM55" displayName="Médecin - Radio-diagnostic et Radio-Thérapie (SM)"
+                    codeSystem="1.2.250.1.213.1.1.4.5"/>
+                  <assignedPerson>
+                    <!--Nom et prénom de l'exécutant -->
+                    <name>
+                      <suffix>DR</suffix>
+                      <family>DURIEUX</family>
+                      <given>Nicolas</given>
+                    </name>
+                  </assignedPerson>
+                  <representedOrganization>
+                    <!--Identifiant de l'établissement-->
+                    <id root="1.2.250.1.71.4.2.2" extension="1750300550"/>
+                    <!--nom de l'établissement-->
+                    <name>CLINIQUE SAINTE GENEVIEVE</name>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>
+            </procedure>
+          </entry>
+          
+          <!-- 2ème Entrée FR-Acte [1..*] -->
+          <entry>
+            <procedure classCode="PROC" moodCode="EVN">
+              <!-- Conformité Procedure activity (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.29"/>
+              <!-- Conformité Procedure Entry (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+              <!-- Conformité FR-Acte (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.62"/>
+              <id nullFlavor="UNK"/>
+              <!-- Code et libellé de l'acte : JDV_sejours_actes_CNAM-HR_CISIS avec codes CCAM (1.2.250.1.215.200.3.4) ou NGAP (1.2.250.1.215.200.3.3) -->
+              <code code="QEQJ001" displayName="remno sein +inject IV" 
+                codeSystem="1.2.250.1.215.200.3.4" codeSystemName="JDV_sejours_actes_CNAM-HR_CISIS"/>
+              <text><reference value="#RAD002"/></text>
+              <statusCode code="completed"/>
+              <!--Date de l'acte-->
+              <effectiveTime value="20190430"/>
+              <performer>
+                <assignedEntity classCode="ASSIGNED">
+                  <!--Identifiant de l'exécutant -->
+                  <id root="1.2.250.1.71.4.2.1" extension="10000441302"/>
+                  <!-- Profession / Spécialité de l'exécutant -->
+                  <code code="G15_10/SM55" displayName="Médecin - Radio-diagnostic et Radio-Thérapie (SM)"
+                    codeSystem="1.2.250.1.213.1.1.4.5"/>
+                  <assignedPerson>
+                    <!--Nom et prénom de l'exécutant -->
+                    <name>
+                      <suffix>DR</suffix>
+                      <family>LORIOT</family>
+                      <given>Jacqueline</given>
+                    </name>
+                  </assignedPerson>
+                  <representedOrganization>
+                    <!--Identifiant de l'établissement-->
+                    <id root="1.2.250.1.71.4.2.2" extension="1750035479"/>
+                    <!--nom de l'établissement-->
+                    <name>CENTRE SCANNER REPUBLIQUE</name>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>
+            </procedure>
+          </entry>
+          
+          <!-- 3ème Entrée FR-Acte [1..*] -->
+          <entry>
+            <procedure classCode="PROC" moodCode="EVN">
+              <!-- Conformité Procedure activity (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.29"/>
+              <!-- Conformité Procedure Entry (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+              <!-- Conformité FR-Acte (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.62"/>
+              <id nullFlavor="UNK"/>
+              <!-- Code et libellé de l'acte : JDV_sejours_actes_CNAM-HR_CISIS avec codes CCAM (1.2.250.1.215.200.3.4) ou NGAP (1.2.250.1.215.200.3.3) -->
+              <code code="YYYY600" displayName="sup pour archivage numérique 1 mammo ou 1 exam scan ou remno" 
+                codeSystem="1.2.250.1.215.200.3.4" codeSystemName="JDV_sejours_actes_CNAM-HR_CISIS"/>
+              <text><reference value="#RAD003"/></text>
+              <statusCode code="completed"/>
+              <!--Date de l'acte-->
+              <effectiveTime value="20190430"/>
+              <performer>
+                <assignedEntity classCode="ASSIGNED">
+                  <!--Identifiant de l'exécutant -->
+                  <id root="1.2.250.1.71.4.2.1" extension="10000441302"/>
+                  <!-- Profession / Spécialité de l'exécutant -->
+                  <code code="G15_10/SM55" displayName="Médecin - Radio-diagnostic et Radio-Thérapie (SM)"
+                    codeSystem="1.2.250.1.213.1.1.4.5"/>
+                  <assignedPerson>
+                    <!--Nom et prénom de l'exécutant -->
+                    <name>
+                      <suffix>DR</suffix>
+                      <family>LORIOT</family>
+                      <given>Jacqueline</given>
+                    </name>
+                  </assignedPerson>
+                  <representedOrganization>
+                    <!--Identifiant de l'établissement-->
+                    <id root="1.2.250.1.71.4.2.2" extension="1750035479"/>
+                    <!--nom de l'établissement-->
+                    <name>CENTRE SCANNER REPUBLIQUE</name>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>
+            </procedure>
+          </entry>
+          
+        </section>
+      </component>
+
+      <!-- *************************************************** -->
+      <!-- Section FR-Actes-et-interventions : Biologie [1..1] -->
+      <!-- *************************************************** -->
+      <component>
+        <section>
+          <!-- Conformité Procedures and Interventions Section (IHE PCC) -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.13.2.11"/>
+          <!-- Conformité FR-Actes-et-interventions (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.118"/>
+          <id nullFlavor="UNK"/>
+          <code code="29554-3" displayName="Actes" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+            <translation code="26436-6" displayName="Biologie" codeSystem="2.16.840.1.113883.6.1"></translation>
+          </code>
+          <title>Biologie</title>
+          
+          <text>
+            <table border="0">
+              <thead>
+                <tr>
+                  <th colspan="2">Date de l'acte</th>
+                  <th>Code de l'acte</th>
+                  <th>Libellé de l'acte</th>
+                  <th>Réalisé par</th>
+                  <th>Établissement</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td/>
+                  <td>11/06/2019</td>
+                  <td>1208</td>
+                  <td><content ID="BIO001">T.S.H. (SANG)</content></td>
+                  <td>LBM PARC MONCEAU SITE MAGENTA</td>
+                  <td> </td>
+                </tr>
+                <tr>
+                  <td/>
+                  <td>11/06/2019</td>
+                  <td>9105</td>
+                  <td><content ID="BIO002">FORFAIT DE SECURITE POUR ECHANTILLON SANGUIN</content></td>
+                  <td>LBM PARC MONCEAU SITE MAGENTA</td>
+                  <td> </td>
+                </tr>
+                <tr>
+                  <td/>
+                  <td>15/05/2019</td>
+                  <td>552</td>
+                  <td><content ID="BIO003">SANG : GLUCOSE (GLYCEMIE)</content></td>
+                  <td>LABORATOIRE</td>
+                  <td>CLINIQUE SAINTE GENEVIEVE</td>
+                </tr>
+                <tr>
+                  <td/>
+                  <td>15/05/2019</td>
+                  <td>1208</td>
+                  <td><content ID="BIO004">T.S.H. (SANG)</content></td>
+                  <td>LABORATOIRE</td>
+                  <td>CLINIQUE SAINTE GENEVIEVE</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+            
+          <!-- 1ère Entrée FR-Acte [1..*] -->
+          <entry>
+            <procedure classCode="PROC" moodCode="EVN">
+              <!-- Conformité Procedure activity (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.29"/>
+              <!-- Conformité Procedure Entry (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+              <!-- Conformité FR-Acte (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.62"/>
+              <id nullFlavor="UNK"/>
+              <!-- Code et libellé de l'acte : JDV_NABM_CNAM-HR_CISIS avec codes NABM (1.2.250.1.215.200.4.1) -->
+              <code code="1208" displayName="T.S.H. (SANG)" 
+                    codeSystem="1.2.250.1.215.200.4.1" codeSystemName="JDV_NABM_CNAM-HR_CISIS"/>
+              <text><reference value="#BIO001"/></text>
+              <statusCode code="completed"/>
+              <!-- Date de l'acte -->
+              <effectiveTime value="20190611"/>
+              <!-- Laboratoire exécutant -->
+              <performer>
+                <assignedEntity classCode="ASSIGNED">
+                  <id nullFlavor="UNK"/>
+                  <representedOrganization>
+                    <!-- Identifiant de l'établissement -->
+                    <id root="1.2.250.1.71.4.2.2" extension="1750057283"/>
+                    <!-- Nom de l'établissement -->
+                    <name>LBM PARC MONCEAU SITE MAGENTA</name>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>
+              <!-- Etablissement exécutant -->
+              <performer>
+                <assignedEntity classCode="ASSIGNED">
+                  <id nullFlavor="UNK"/>
+                  <representedOrganization>
+                    <!-- Identifiant de l'établissement -->
+                    <id root="1.2.250.1.71.4.2.2" extension="1750057283"/>
+                    <!-- Nom de l'établissement -->
+                    <name>LBM PARC MONCEAU SITE MAGENTA</name>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>
+            </procedure>
+          </entry>
+ 
+          <!-- 2ème Entrée FR-Acte [1..*] -->
+          <entry>
+            <procedure classCode="PROC" moodCode="EVN">
+              <!-- Conformité Procedure activity (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.29"/>
+              <!-- Conformité Procedure Entry (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+              <!-- Conformité FR-Acte (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.62"/>
+              <id nullFlavor="UNK"/>
+              <!-- Code et libellé de l'acte : JDV_NABM_CNAM-HR_CISIS avec codes NABM (1.2.250.1.215.200.4.1) -->
+              <code code="9105" displayName="FORFAIT DE SECURITE POUR ECHANTILLON SANGUIN" 
+                codeSystem="1.2.250.1.215.200.4.1" codeSystemName="JDV_NABM_CNAM-HR_CISIS"/>
+              <text><reference value="#BIO002"/></text>
+              <statusCode code="completed"/>
+              <!-- Date de l'acte -->
+              <effectiveTime value="20190611"/>
+              <!-- Laboratoire exécutant -->
+              <performer>
+                <assignedEntity classCode="ASSIGNED">
+                  <id nullFlavor="UNK"/>
+                  <representedOrganization>
+                    <!-- Identifiant de l'établissement -->
+                    <id root="1.2.250.1.71.4.2.2" extension="1750057283"/>
+                    <!-- Nom de l'établissement -->
+                    <name>LBM PARC MONCEAU SITE MAGENTA</name>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>
+              <!-- Etablissement exécutant -->
+              <performer>
+                <assignedEntity classCode="ASSIGNED">
+                  <id nullFlavor="UNK"/>
+                  <representedOrganization>
+                    <!-- Identifiant de l'établissement -->
+                    <id root="1.2.250.1.71.4.2.2" extension="1750057283"/>
+                    <!-- Nom de l'établissement -->
+                    <name>LBM PARC MONCEAU SITE MAGENTA</name>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>   
+            </procedure>
+          </entry>
+          
+          <!-- 3ème Entrée FR-Acte [1..*] -->
+          <entry>
+            <procedure classCode="PROC" moodCode="EVN">
+              <!-- Conformité Procedure activity (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.29"/>
+              <!-- Conformité Procedure Entry (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+              <!-- Conformité FR-Acte (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.62"/>
+              <id nullFlavor="UNK"/>
+              <!-- Code et libellé de l'acte : JDV_NABM_CNAM-HR_CISIS avec codes NABM (1.2.250.1.215.200.4.1) -->
+              <code code="552" displayName="SANG : GLUCOSE (GLYCEMIE)" 
+                codeSystem="1.2.250.1.215.200.4.1" codeSystemName="JDV_NABM_CNAM-HR_CISIS"/>
+              <text><reference value="#BIO003"/></text>
+              <statusCode code="completed"/>
+              <!-- Date de l'acte -->
+              <effectiveTime value="20190515"/>
+              <!-- Laboratoire exécutant -->
+              <performer>
+                <assignedEntity classCode="ASSIGNED">
+                  <id nullFlavor="UNK"/>
+                  <representedOrganization>
+                    <!-- Identifiant de l'établissement -->
+                    <id root="1.2.250.1.71.4.2.2" extension="1750300551"/>
+                    <!-- Nom de l'établissement -->
+                    <name>LABORATOIRE</name>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>
+              <!-- Etablissement exécutant -->              
+              <performer>
+                <assignedEntity classCode="ASSIGNED">
+                  <id nullFlavor="UNK"/>
+                  <representedOrganization>
+                    <!-- Identifiant de l'établissement -->
+                    <id root="1.2.250.1.71.4.2.2" extension="1750300550"/>
+                    <!-- Nom de l'établissement -->
+                    <name>CLINIQUE SAINTE GENEVIEVE</name>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>
+            </procedure>
+          </entry>
+          
+          <!-- 4ème Entrée FR-Acte [1..*] -->
+          <entry>
+            <procedure classCode="PROC" moodCode="EVN">
+              <!-- Conformité Procedure activity (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.29"/>
+              <!-- Conformité Procedure Entry (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+              <!-- Conformité FR-Acte (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.62"/>
+              <id nullFlavor="UNK"/>
+              <!-- Code et libellé de l'acte : JDV_NABM_CNAM-HR_CISIS avec codes NABM (1.2.250.1.215.200.4.1) -->
+              <code code="1208" displayName="T.S.H. (SANG)" 
+                codeSystem="1.2.250.1.215.200.4.1" codeSystemName="JDV_NABM_CNAM-HR_CISIS"/>
+              <text><reference value="#BIO004"/></text>
+              <statusCode code="completed"/>
+              <!-- Date de l'acte -->
+              <effectiveTime value="20190515"/>              
+              <!-- Laboratoire exécutant -->
+              <performer>
+                <assignedEntity classCode="ASSIGNED">
+                  <id nullFlavor="UNK"/>
+                  <representedOrganization>
+                    <!-- Identifiant de l'établissement -->
+                    <id root="1.2.250.1.71.4.2.2" extension="1750300551"/>
+                    <!-- Nom de l'établissement -->
+                    <name>LABORATOIRE</name>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>
+              <!-- Etablissement exécutant -->              
+              <performer>
+                <assignedEntity classCode="ASSIGNED">
+                  <id nullFlavor="UNK"/>
+                  <representedOrganization>
+                    <!-- Identifiant de l'établissement -->
+                    <id root="1.2.250.1.71.4.2.2" extension="1750300550"/>
+                    <!-- Nom de l'établissement -->
+                    <name>CLINIQUE SAINTE GENEVIEVE</name>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>
+            </procedure>
+          </entry>
+ 
+        </section>
+      </component>
+      
+    </structuredBody>
+  </component>
+</ClinicalDocument>

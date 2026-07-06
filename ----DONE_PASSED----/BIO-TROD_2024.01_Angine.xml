@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../FeuilleDeStyle/CDA-FO.xsl"?>
+<?oxygen SCHSchema="../schematrons/profils/IHE.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/structurationMinimale/ASIP-STRUCT-MIN-StrucMin.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/CI-SIS_ModelesDeContenusCDA.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/CI-SIS_Modeles_ANS.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/terminologies/schematron/terminologie.sch"?>
+<?oxygen SCHSchema="../schematrons/CI-SIS_BIO-TROD_2024.01.sch"?>
+
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="urn:hl7-org:v3 ../infrastructure/cda/CDA_extended.xsd">
+   <!-- 
+      **********************************************************************************************************
+      Document : Biologie - Test rapide d'orientation diagnostique (BIO-TROD_2024.01)
+      Auteur : ANS
+      **********************************************************************************************************
+      format HL7 - CDA Release 2 N3
+      **********************************************************************************************************
+      Historique :    
+      15/10/2024 : Création du document
+      
+      ********************************************************************************************************** -->
+
+   <!-- ************************************************************
+        En-tête du document        
+   ************************************************************* -->
+
+   <realmCode code="FR"/>
+   <!-- Référencement au standard CDAr2 -->
+   <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+   <!-- Conformité spécifications HL7 France -->
+   <templateId root="2.16.840.1.113883.2.8.2.1"/>
+   <!-- Conformité spécifications à IHE PCC -->
+   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1"/>
+   <!-- Conformité spécifications au CI-SIS -->
+   <templateId root="1.2.250.1.213.1.1.1.1"/>
+   <!-- Conformité spécifications BIO-TROD_2024.01 -->
+   <templateId root="1.2.250.1.213.1.1.1.59" extension="2024.01"/>
+   <!-- Identifiant du document -->
+   <id root="1.2.250.1.213.1.1.1.59.2024.1.1"/>
+   <!-- Code du document -->
+   <code code="96173-0" displayName="Test rapide d'orientation diagnostique" codeSystem="2.16.840.1.113883.6.1"/>
+   <!-- Titre du document -->
+   <title>Test rapide d'orientation diagnostique : TROD Angine</title>
+   <!-- Date de production du document -->
+   <effectiveTime value="20240106113623+0100"/>
+   <!-- Niveau de confidentialité du document -->
+   <confidentialityCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.25"/>
+   <!-- Langage utilisé dans le document -->
+   <languageCode code="fr-FR"/>
+   <!-- Identifiant commun à toutes les versions successives du document -->
+   <setId root="1.2.250.1.213.1.1.1.59.2024.1"/>
+   <!-- Numéro de la version du présent document (entier positif) -->
+   <versionNumber value="1"/>
+
+   <!-- [1..1] Patient -->
+   <recordTarget>
+      <patientRole>
+         <!-- INS-NIR de test : 1.2.250.1.213.1.4.10 -->
+         <id extension="279035121518989" root="1.2.250.1.213.1.4.10"/>
+         <!-- Adresse du patient -->
+         <addr>
+            <houseNumber>28</houseNumber>
+            <streetName>Avenue de Breteuil</streetName>
+            <unitID>Escalier A</unitID>
+            <postalCode>75007</postalCode>
+            <city>PARIS</city>
+            <country>FRANCE</country>
+         </addr>
+         <!-- Coordonnées télécom du patient -->
+         <telecom value="tel:0144534551" use="H"/>
+         <telecom value="tel:0647151010" use="MC"/>
+         <telecom value="mailto:279035121518989@patient.mssante.fr"/>
+         <!-- Identité du patient -->
+         <patient classCode="PSN">
+            <name>
+               <!-- Nom et prénom(s) de naissance -->
+               <!-- Nom de l’acte de naissance -->
+               <family qualifier="BR">PAT-TROIS</family> 
+               <!-- Prénoms de l’acte de naissance -->
+               <given>DOMINIQUE MARIE-LOUISE</given>
+               <!-- Premier prénom de l’acte de naissance -->
+               <given qualifier="BR">DOMINIQUE</given>
+               <!-- Nom et prénom utilisés -->
+               <family qualifier="CL">PAT-TROIS</family>
+               <given qualifier="CL">DOMINIQUE</given>        
+            </name>
+            <administrativeGenderCode code="F" displayName="Féminin"
+               codeSystem="2.16.840.1.113883.5.1"/>
+            <birthTime value="19790328"/>
+            <!-- Représentant du patient -->
+            <guardian>
+               <addr use="H">
+                  <houseNumber>28</houseNumber>
+                  <streetName>Avenue de Breteuil</streetName>
+                  <postalCode>75007</postalCode>
+                  <city>PARIS</city>
+                  <country>FRANCE</country>
+               </addr>
+               <telecom value="tel:0147150000" use="H"/>
+               <guardianPerson>
+                  <name>
+                     <prefix>MME</prefix>
+                     <family>NESSI</family>
+                     <given>Jeanne</given>
+                  </name>
+               </guardianPerson>
+            </guardian>
+            <!-- Lieu de naissance du patient -->
+            <birthplace>
+               <place>
+                  <addr>
+                     <county>51215</county>
+                     <city>DOMPREMY</city>
+                  </addr>
+               </place>
+            </birthplace>
+         </patient>
+      </patientRole>
+   </recordTarget>
+
+   <!-- [1..*] Auteur du document -->
+   <author>
+      <time value="20240106113623+0100"/>
+      <assignedAuthor>
+         <id root="1.2.250.1.71.4.2.1" extension="807655473259"/>
+         <!-- Valeur issue du JDV_J01-XdsAuthorSpecialty-CISIS (1.2.250.1.213.1.1.5.461) -->
+         <code code="G15_21/A" displayName="Pharmacien titulaire d'officine"
+            codeSystem="1.2.250.1.213.1.1.4.5"/>
+         <addr>
+            <houseNumber>5</houseNumber>
+            <streetName>Rue des 4 cantons</streetName>
+            <postalCode>75005</postalCode>
+            <city>PARIS</city>
+         </addr>
+         <telecom value="tel:0140404022" use="WP"/>
+         <assignedPerson>
+            <name>
+               <given>Pierre</given>
+               <family>DIDOT</family>
+               <prefix>M</prefix>
+               <suffix>DR</suffix>
+            </name>
+         </assignedPerson>
+         <representedOrganization>
+            <id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
+            <name>Pharmacie des 4 cantons</name>
+            <telecom value="tel:0105584396"/>
+            <addr>
+               <houseNumber>5</houseNumber>
+               <streetName>Rue des 4 cantons</streetName>
+               <postalCode>75005</postalCode>
+               <city>PARIS</city>
+            </addr>
+         </representedOrganization>
+      </assignedAuthor>
+   </author>
+
+   <!-- [1..1] Structure chargée de la conservation du document -->
+   <custodian>
+      <assignedCustodian>
+         <representedCustodianOrganization>
+            <id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
+            <name>Pharmacie des 4 cantons</name>
+            <telecom value="tel:0105584396"/>
+            <addr>
+               <houseNumber>5</houseNumber>
+               <streetName>Rue des 4 cantons</streetName>
+               <postalCode>75005</postalCode>
+               <city>PARIS</city>
+            </addr>
+         </representedCustodianOrganization>
+      </assignedCustodian>
+   </custodian>
+
+   <!-- [0..*] Destinataire prévu du document -->
+   <informationRecipient>      
+      <intendedRecipient>
+         <id root="1.2.250.1.71.4.2.1" extension="801234567897"/>
+         <!-- Adresse du PS-->
+         <addr>
+            <houseNumber>3</houseNumber>
+            <streetName>Rue Petit Pont</streetName>
+            <postalCode>75005</postalCode>
+            <city>PARIS</city>
+         </addr>
+         <!-- Coordonnées télécom du PS-->
+         <telecom value="tel:0147150000" use="WP"/>
+         <telecom value="mailto:stephane.medioni@mssante.fr"/>
+         <!-- Identité du PS -->
+         <informationRecipient>
+            <name>
+               <prefix>M</prefix>
+               <given>Stéphane</given>
+               <family>MEDIONI</family>
+               <suffix>DR</suffix>
+            </name>
+         </informationRecipient>
+         <!-- Etablissement de rattachement du PS -->
+         <receivedOrganization>
+            <id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
+            <name>Centre de soins le Belvédère</name>
+            <addr>
+               <houseNumber>3</houseNumber>
+               <streetName>Rue Petit Pont</streetName>
+               <postalCode>75005</postalCode>
+               <city>PARIS</city>
+            </addr>
+         </receivedOrganization>
+      </intendedRecipient>
+   </informationRecipient>   
+   
+   <!-- [1..1] Responsable du document -->
+   <legalAuthenticator>
+      <time value="20240106113623+100"/>
+      <signatureCode code="S"/>
+      <assignedEntity>
+         <id root="1.2.250.1.71.4.2.1" extension="807655473259"/>
+         <!-- Valeur issue du JDV_J01-XdsAuthorSpecialty-CISIS (1.2.250.1.213.1.1.5.461) -->
+         <code code="G15_21/A" displayName="Pharmacien titulaire d'officine"
+            codeSystem="1.2.250.1.213.1.1.4.5"/>
+         <addr>
+            <houseNumber>5</houseNumber>
+            <streetName>Rue des 4 cantons</streetName>
+            <postalCode>75005</postalCode>
+            <city>PARIS</city>
+         </addr>
+         <telecom value="tel:0105584396" use="WP"/>
+         <assignedPerson>
+            <name>
+               <given>Pierre</given>
+               <family>DIDOT</family>
+               <prefix>M</prefix>
+               <suffix>DR</suffix>
+            </name>
+         </assignedPerson>
+         <representedOrganization>
+            <id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
+            <name>Pharmacie des 4 cantons</name>
+            <telecom value="tel:0105584396"/>
+            <addr>
+               <houseNumber>5</houseNumber>
+               <streetName>Rue des 4 cantons</streetName>
+               <postalCode>75005</postalCode>
+               <city>PARIS</city>
+            </addr>
+            <standardIndustryClassCode code="DEPISTAGE" displayName="Dépistage"
+               codeSystem="1.2.250.1.213.1.1.4.9"/>
+         </representedOrganization>
+      </assignedEntity>
+   </legalAuthenticator>
+   
+   <!-- [0..1] Médecin traitant -->
+   <participant typeCode="INF">
+      <functionCode code="PCP" codeSystem="2.16.840.1.113883.5.88" displayName="Médecin Traitant"/>
+      <time xsi:type="IVL_TS">
+         <low value="20240402113623+0100"/>
+      </time>
+      <associatedEntity classCode="PROV">
+         <id root="1.2.250.1.71.4.2.1" extension="801234567897"/>
+         <!-- Adresse du PS-->
+         <addr>
+            <houseNumber>3</houseNumber>
+            <streetName>Rue Petit Pont</streetName>
+            <postalCode>75005</postalCode>
+            <city>PARIS</city>
+         </addr>
+         <!-- Coordonnées télécom du PS-->
+         <telecom value="tel:0147150000" use="WP"/>
+         <telecom value="mailto:stephane.medioni@mssante.fr"/>
+         <!-- Identité du PS -->
+         <associatedPerson>
+            <name>
+               <prefix>M</prefix>
+               <given>Stéphane</given>
+               <family>MEDIONI</family>
+               <suffix>DR</suffix>
+            </name>
+         </associatedPerson>
+         <!-- Etablissement de rattachement du PS -->
+         <scopingOrganization>
+            <id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
+            <name>Centre de soins le Belvédère</name>
+            <addr>
+               <houseNumber>3</houseNumber>
+               <streetName>Rue Petit Pont</streetName>
+               <postalCode>75005</postalCode>
+               <city>PARIS</city>
+            </addr>
+            <standardIndustryClassCode code="ETABLISSEMENT" displayName="Etablissement de santé"
+               codeSystem="1.2.250.1.213.1.1.4.9"/>
+         </scopingOrganization>
+      </associatedEntity>
+   </participant>
+   
+   <!-- [1..*] Évènement documenté : Pathologie / substance dépistée : Angine -->
+   <documentationOf>
+      <serviceEvent classCode="ACT">
+         <!-- Pathologie ou substance dépistée -->
+          <code code="J02.0" displayName="Pharyngite à streptocoques" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10"/>
+         <!-- Date du test de dépistage -->
+         <effectiveTime>
+            <low value="20240106113623+0100"/>
+         </effectiveTime>
+         <!-- Professionnel de santé ayant réalisé le test de dépistage -->
+         <performer typeCode="PRF">
+            <assignedEntity>
+               <id root="1.2.250.1.71.4.2.1" extension="807655473259"/>
+               <!-- Valeur issue du JDV_J01-XdsAuthorSpecialty-CISIS (1.2.250.1.213.1.1.5.461) -->
+               <code code="G15_21/A" displayName="Pharmacien titulaire d'officine"
+                  codeSystem="1.2.250.1.213.1.1.4.5"/>
+               <addr>
+                  <houseNumber>5</houseNumber>
+                  <streetName>Rue des 4 cantons</streetName>
+                  <postalCode>75005</postalCode>
+                  <city>PARIS</city>
+               </addr>
+               <telecom value="tel:0105584396"/>
+               <assignedPerson>
+                  <name>
+                     <given>Pierre</given>
+                     <family>DIDOT</family>
+                     <prefix>M</prefix>
+                     <suffix>DR</suffix>
+                  </name>
+               </assignedPerson>
+               <representedOrganization>
+                  <id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
+                  <name>Pharmacie des 4 cantons</name>
+                  <telecom value="tel:0105584396"/>
+                  <addr>
+                     <houseNumber>5</houseNumber>
+                     <streetName>Rue des 4 cantons</streetName>
+                     <postalCode>75005</postalCode>
+                     <city>PARIS</city>
+                  </addr>
+                  <!-- Valeur issue du JDV_J04-XdsPracticeSettingCode-CISIS (1.2.250.1.213.1.1.5.467) et fixée à -->
+                  <standardIndustryClassCode code="DEPISTAGE" displayName="Dépistage"
+                     codeSystem="1.2.250.1.213.1.1.4.9"/>
+               </representedOrganization>
+            </assignedEntity>
+         </performer>
+      </serviceEvent>
+   </documentationOf>
+
+   <!-- [0..*] Consentement du patient -->
+   <authorization typeCode="AUTH">
+      <consent classCode="CONS" moodCode="EVN">
+         <code code="GEN-366"
+            displayName="Le patient (ou son représentant légal) a donné son consentement pour la réalisation du test."
+            codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+         <statusCode code="completed"/>
+      </consent>
+   </authorization>
+   
+   <!-- [1..1] Association du document à une prise en charge -->
+   <componentOf>
+      <encompassingEncounter>
+         <!-- Valeur issue du JDV_J142-TypeRencontre-CISIS (1.2.250.1.213.1.1.5.589) -->
+         <code code="AMB" codeSystem="2.16.840.1.113883.5.4"
+            displayName="Ambulatoire (hors établissement)"/>
+         <effectiveTime>
+            <low value="20240106113623+0100"/>
+         </effectiveTime>
+         <responsibleParty>
+            <assignedEntity>
+               <id root="1.2.250.1.71.4.2.1" extension="807655473259"/>
+               <!-- Valeur issue du JDV_J01-XdsAuthorSpecialty-CISIS (1.2.250.1.213.1.1.5.461) -->
+               <code code="G15_21/A" displayName="Pharmacien titulaire d'officine"
+                  codeSystem="1.2.250.1.213.1.1.4.5"/>
+               <addr>
+                  <houseNumber>5</houseNumber>
+                  <streetName>Rue des 4 cantons</streetName>
+                  <postalCode>75005</postalCode>
+                  <city>PARIS</city>
+               </addr>
+               <telecom value="tel:0105584396"/>
+               <assignedPerson>
+                  <name>
+                     <given>Pierre</given>
+                     <family>DIDOT</family>
+                     <prefix>M</prefix>
+                     <suffix>DR</suffix>
+                  </name>
+               </assignedPerson>
+               <representedOrganization>
+                  <id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
+                  <name>Pharmacie des 4 cantons</name>
+                  <telecom value="tel:0105584396"/>
+                  <addr>
+                     <houseNumber>5</houseNumber>
+                     <streetName>Rue des 4 cantons</streetName>
+                     <postalCode>75005</postalCode>
+                     <city>PARIS</city>
+                  </addr>
+                  <!-- Valeur issue du JDV_J04-XdsPracticeSettingCode-CISIS (1.2.250.1.213.1.1.5.467) et fixée à -->
+                  <standardIndustryClassCode code="DEPISTAGE" displayName="Dépistage"
+                     codeSystem="1.2.250.1.213.1.1.4.9"/>
+               </representedOrganization>
+            </assignedEntity>
+         </responsibleParty>
+         <location>
+            <healthCareFacility>
+               <!-- Modalité d'exercice : valeur issue du JDV_J02-XdsHealthcareFacilityTypeCode-CISIS (1.2.250.1.213.1.1.5.466) -->
+               <code code="SA33" displayName="Pharmacie d'officine" codeSystem="1.2.250.1.71.4.2.4"/>
+               <location>
+                  <name>Pharmacie des 4 cantons</name>
+                  <addr>
+                     <houseNumber>5</houseNumber>
+                     <streetName>Rue des 4 cantons</streetName>
+                     <postalCode>75005</postalCode>
+                     <city>PARIS</city>
+                  </addr>
+               </location>
+            </healthCareFacility>
+         </location>
+      </encompassingEncounter>
+   </componentOf>
+
+   <!-- ************************************************************
+        Corps du document
+   ************************************************************* -->
+   <component>
+      <structuredBody>
+         <!-- Section FR-CR-BIO-Chapitre -->
+         <component>
+            <section>
+               <!-- Conformité Laboratory Specialty Section (IHE PALM) -->
+               <templateId root="1.3.6.1.4.1.19376.1.3.3.2.1"/>
+               <!-- Conformité FR-CR-BIO-Chapitre (CI-SIS) -->
+               <templateId root="1.2.250.1.213.1.1.2.70"/>
+               <code code="18725-2" displayName="Microbiologie" codeSystem="2.16.840.1.113883.6.1"
+                  codeSystemName="LOINC"/>
+               <title>Résultat du test rapide d'orientation diagnostique</title>
+               <text>
+                  <table border="0">
+                     <thead>
+                        <tr>
+                           <th>Pathologie/Substance dépistée</th>
+                           <th>Résultat</th>
+                           <th>Commentaire / Contexte</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                            <td><content ID="examen-1">Dépistage Angine (S. pyogenes)</content></td>
+                           <td><content ID="resultat-1">négatif</content></td>
+                           <td><content ID="commentaire-1">(texte libre)</content></td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <br/>
+                  <table border="0">
+                     <thead>
+                        <tr>
+                           <th>Code UDI du dispositif utilisé</th>
+                           <th>Fabricant | Référence | N° de lot | Date de péremption </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                            <td>(01)03612345678903(17)251231(10)B987654</td>
+                            <td><content ID="dispositif-nom-reference">Bionysex. | 8029 | B987654 | 31/12/2025</content></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </text>
+               <!-- [1..1] Entrée FR-Resultats-examens-de-biologie-medicale -->
+               <entry typeCode="DRIV">
+                  <!-- Conformité Laboratory Report Data Processing Entry (IHE PALM) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.3.1"/>
+                  <!-- Conformité FR-Resultats-examens-de-biologie-medicale (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.21"/>
+                  <act classCode="ACT" moodCode="EVN">
+                      <code code="92894-5" displayName="Sérologie bactérienne"
+                        codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                     <statusCode code="completed"/>                     
+                     <!-- Elément FR-participant : dispositif de test utilisé -->
+                     <participant typeCode="DEV">
+                        <participantRole classCode="MANU">
+                           <!-- UDI du dispositif de test utilisé -->
+                            <id root="2.51.1.1" extension="(01)03612345678903(17)251231(10)B987654"/>
+                           <playingDevice classCode="DEV" determinerCode="INSTANCE">
+                              <code>
+                                 <!-- Nom du fabricant | Référence | N° de lot | Date de péremption -->
+                                 <originalText><reference value="#dispositif-nom-reference"/></originalText>
+                              </code>
+                           </playingDevice>
+                        </participantRole>
+                     </participant>   
+                     <!-- Entrée FR-Resultat-examens-de-biologie-element-clinique-pertinent -->
+                     <entryRelationship typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN">
+                           <!-- Conformité Laboratory Observation (IHE PALM) -->
+                           <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
+                           <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
+                           <templateId root="1.2.250.1.213.1.1.3.80"/>
+                           <!-- code du test de dépistage -->
+                            <code code="78012-2"
+                                displayName="Streptococcus pyogenes Ag [Présence/Seuil] Gorge ; Qualitatif ; Immunoanalyse rapide"
+                              codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+                              <originalText><reference value="#examen-1"/></originalText>
+                           </code>
+                           <statusCode code="completed"/>
+                           <!-- Date et heure du test de dépistage -->
+                           <effectiveTime value="20240106113623+0100"/>
+                           <!-- Résultat du dépistage : valeur issue du jdv-resultat-depistage-cisis (1.2.250.1.213.1.1.5.761) -->
+                           <value xsi:type="CD" code="260385009" displayName="négatif"
+                              codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+                              <originalText><reference value="#resultat-1"/></originalText>
+                           </value>  
+                           <!-- Entrée FR-Commentaire-ER -->
+                           <entryRelationship typeCode="SUBJ">
+                              <act classCode="ACT" moodCode="EVN">
+                                 <!-- Conformité Comment (CCD) -->
+                                 <templateId root="2.16.840.1.113883.10.20.1.40"/>
+                                 <!-- Conformité Comment Entry (IHE PCC) -->
+                                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2"/>
+                                 <!-- Conformité FR-Commentaire-ER (CI-SIS) -->
+                                 <templateId root="1.2.250.1.213.1.1.3.32"/>
+                                 <code code="48767-8" displayName="Commentaire"
+                                    codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                                 <text><reference value="#commentaire-1"/></text>
+                                 <statusCode code="completed"/>
+                              </act>
+                           </entryRelationship>
+                        </observation>
+                     </entryRelationship>
+                  </act>
+               </entry>
+            </section>
+         </component>
+
+      </structuredBody>
+   </component>
+</ClinicalDocument>
+
+
+

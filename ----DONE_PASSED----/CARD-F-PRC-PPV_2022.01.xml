@@ -1,0 +1,1345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../FeuilleDeStyle/CDA-FO.xsl"?>
+<?oxygen SCHSchema="../schematrons/profils/IHE.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/structurationMinimale/ASIP-STRUCT-MIN-StrucMin.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/CI-SIS_ModelesDeContenusCDA.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/CI-SIS_Modeles_ANS.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/terminologies/schematron/terminologie.sch"?>
+<?oxygen SCHSchema="../schematrons/CI-SIS_CARD-F-PRC-PPV_2022.01.sch"?>
+<!-- 
+      **********************************************************************************************************
+      Document : UFCV - Porteur d'une Prothèse Valvulaire (F-PRC-PPV_2022.01)
+      Auteur : ANS / PML
+      **********************************************************************************************************
+      format HL7 - CDA Release 2 - selon schéma XML (CDA.xsd) du standard ANSI/HL7 CDA, R2-2005 4/21/2005
+      **********************************************************************************************************
+      Historique :
+       25/03/2009 : Création 
+     	11/06/2018 : Correction d'erreurs suite à la mise à jour des schématrons    
+     	13/07/2021 : Correction de l'unité "mmHg" par "mm[Hg]"   	
+     	22/09/2021 : correction de l'unité UCUM "tbl" par "{tbl}"
+     	29/04/2022 : Nouvelle version 2022.01
+     	29/04/2022 : Migration des terminologies et JDV en SNOMED CT
+     	25/08/2023 : Migration des terminologies et JDVs après validation
+     	25/03/2025 : Correction participant, documentationOf, componentOf de l'entête
+     	19/09/2025 : Correction participant@typeCode pour le cardiologue
+      **********************************************************************************************************
+   -->
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:lab="urn:hl7-org:lab" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../infrastructure/cda/CDA_extended.xsd">
+  <!-- 
+   ***********************
+   Entête du document
+   ***********************
+   -->
+  <realmCode code="FR" />
+  <!-- Référence au standard CDA R2  -->
+  <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040" />
+  <!-- Déclaration de conformité aux spécifications HL7 France -->
+  <templateId root="2.16.840.1.113883.2.8.2.1" />
+  <!-- Déclaration de conformité aux spécifications du CI-SIS -->
+  <templateId root="1.2.250.1.213.1.1.1.1" />
+  <!-- Déclarations de conformité aux spécifications PCC Medical Summary -->
+  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.2" />
+  <!-- Déclaration de conformité aux spécifications F-PRC -->
+  <templateId root="1.2.250.1.213.1.1.1.2.1" />
+  <!-- Déclaration de conformité aux spécifications F-PRC-PPV -->
+  <templateId root="1.2.250.1.213.1.1.1.2.1.5" extension="2022.01"/>
+  <!-- Identifiant du document -->
+  <id root="1.2.250.1.213.1.1.1.2.1.5.2022.1.1"/>
+  <!-- Type de document -->
+  <code code="34133-9" displayName="Synthèse d'épisode de soins" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+  <!-- Titre du document -->
+  <title>Fiche patient à risque en cardiologie - Porteur d'une prothèse valvulaire</title>
+  <!-- Date de création du document -->
+  <effectiveTime value="20080929094914+0100" />
+  <!-- Niveau de confidentialité du document -->
+  <confidentialityCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentiality" />
+  <!-- Langue du document -->
+  <languageCode code="fr-FR" />
+  <!-- Identifiant commun à toutes les versions successives du document -->
+  <setId root="1.2.250.1.213.1.1.1.2.1.5.2022.1"/>
+  <!-- Numéro de la version du présent document (entier positif) -->
+  <versionNumber value="2" />
+
+  <!-- Patient -->
+  <recordTarget>
+    <patientRole>
+      <!-- INS-NIR de test : 1.2.250.1.213.1.4.10 -->
+      <id extension="279035121518989" root="1.2.250.1.213.1.4.10"/>
+      <!-- IPP du patient dans l'établissement avec root = l'OID de l'ES -->
+      <id extension="1234567890121" root="1.2.3.4.567.8.9.10"/>
+      <!-- Adresse du patient -->
+      <addr>
+        <houseNumber>28</houseNumber>
+        <streetName>Avenue de Breteuil</streetName>
+        <unitID>Escalier A</unitID>
+        <postalCode>75007</postalCode>
+        <city>PARIS</city>
+        <country>FRANCE</country>
+      </addr>
+      <!-- Coordonnées télécom du patient -->
+      <telecom value="tel:0144534551" use="H"/>
+      <telecom value="tel:0647151010" use="MC"/>
+      <telecom value="mailto:279035121518989@patient.mssante.fr"/>
+      <!-- Identité du patient -->
+      <patient classCode="PSN">
+        <name>
+          <!-- Nom et prénom(s) de naissance -->
+          <!-- Nom de l’acte de naissance -->
+          <family qualifier="BR">PAT-TROIS</family> 
+          <!-- Prénoms de l’acte de naissance -->
+          <given>DOMINIQUE MARIE-LOUISE</given>
+          <!-- Premier prénom de l’acte de naissance -->
+          <given qualifier="BR">DOMINIQUE</given>
+          <!-- Nom et prénom utilisés -->
+          <family qualifier="CL">PAT-TROIS</family>
+          <given qualifier="CL">DOMINIQUE</given>        
+        </name>
+        <administrativeGenderCode code="F" displayName="Féminin" codeSystem="2.16.840.1.113883.5.1"/>
+        <birthTime value="19790328"/>
+        <!-- Représentant du patient -->
+        <guardian>
+          <addr use="H">
+            <houseNumber>28</houseNumber>
+            <streetName>Avenue de Breteuil</streetName>
+            <postalCode>75007</postalCode>
+            <city>PARIS</city>
+            <country>FRANCE</country>
+          </addr>
+          <telecom value="tel:0147150000" use="H"/>
+          <guardianPerson>
+            <name>
+              <prefix>MME</prefix>
+              <family>NESSI</family>
+              <given>Jeanne</given>
+            </name>
+          </guardianPerson>
+        </guardian>
+        <!-- Lieu de naissance du patient -->
+        <birthplace>
+          <place>
+            <addr>
+              <county>51215</county>
+              <city>DOMPREMY</city>
+            </addr>
+          </place>
+        </birthplace>
+      </patient>
+    </patientRole>
+  </recordTarget>
+  
+  <!-- Auteur du document -->
+  <author contextControlCode="OP" typeCode="AUT">
+    <time value="20080929094914+0100" />
+    <assignedAuthor classCode="ASSIGNED">
+      <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+      <!-- [1..1] Profession / spécialité du PS (obligatoire pour les PS) -->
+      <code code="G15_10/C07" displayName="Médecin - Cardiologie (C)" codeSystem="1.2.250.1.213.1.1.4.5" />
+      <!-- Adresse -->
+      <addr>
+        <houseNumber>20</houseNumber>
+        <streetName>Rue Leblanc</streetName>
+        <postalCode>75015</postalCode>
+        <city>PARIS</city>
+      </addr>
+      <!-- Coordonnées télécom -->
+      <telecom value="tel:0647150000" use="MC" />
+      <telecom value="tel:0141291290" use="WP" />
+      <assignedPerson>
+        <name>
+          <suffix>DR</suffix>
+          <given>Jacques</given>
+          <family>ANDRE</family>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+        <name>Hôpital Européen Georges Pompidou</name>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  
+  <!-- Personne à prévenir en cas d'urgence -->
+  <informant>
+    <relatedEntity classCode="ECON">
+      <code code="SIS" displayName="Soeur" codeSystem="2.16.840.1.113883.5.111"/>
+      <addr nullFlavor="NAV"/>
+      <telecom value="tel:0647150100" use="MC"/>
+      <relatedPerson>
+        <name>
+          <family>NESSI</family>
+          <given>Sophie</given>
+        </name>
+      </relatedPerson>
+    </relatedEntity>
+  </informant>
+  
+  <!-- Personne de confiance -->
+  <informant>
+    <relatedEntity classCode="NOK">
+      <code code="SIS" displayName="Soeur" codeSystem="2.16.840.1.113883.5.111"/>
+      <addr nullFlavor="NAV"/>
+      <telecom value="tel:0647150100" use="MC"/>
+      <relatedPerson>
+        <name>
+          <family>NESSI</family>
+          <given>Sophie</given>
+        </name>
+      </relatedPerson>
+    </relatedEntity>
+  </informant>
+  
+  <!-- Organisation de santé responsable du document -->
+  <custodian typeCode="CST">
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+        <name>Hôpital Européen Georges Pompidou</name>
+        <telecom value="tel:0141297500" use="WP" />
+        <addr>
+          <houseNumber>20</houseNumber>
+          <streetName>Rue Leblanc</streetName>
+          <postalCode>75015</postalCode>
+          <city>PARIS</city>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  
+  <!-- Responsable du document -->
+  <legalAuthenticator>
+    <time value="20060922094914+0100" />
+    <signatureCode code="S" />
+    <assignedEntity>
+      <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+      <code code="G15_10/C07" displayName="Médecin - Cardiologie (C)" codeSystem="1.2.250.1.213.1.1.4.5" />
+      <addr>
+        <houseNumber>20</houseNumber>
+        <streetName>Rue Leblanc</streetName>
+        <postalCode>75015</postalCode>
+        <city>PARIS</city>
+      </addr>
+      <telecom value="tel:0647150000" use="MC" />
+      <telecom value="tel:0141291290" use="WP" />
+      <assignedPerson>
+        <name>
+          <suffix>DR</suffix>
+          <given>Jacques</given>
+          <family>ANDRE</family>
+        </name>
+      </assignedPerson>
+      <!-- Etablissement de rattachement du PS -->
+      <representedOrganization>
+        <!-- établissement identifié par son N° FINESS -->
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+        <name>Hôpital Européen Georges Pompidou</name>
+        <telecom value="tel:0141297500" use="WP" />
+        <addr>
+          <houseNumber>20</houseNumber>
+          <streetName>Rue Leblanc</streetName>
+          <postalCode>75015</postalCode>
+          <city>PARIS</city>
+        </addr>
+        <standardIndustryClassCode code="ETABLISSEMENT" displayName="Etablissement de santé" codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode" />
+      </representedOrganization>
+    </assignedEntity>
+  </legalAuthenticator>
+  
+  <!-- Cardiologue -->
+  <participant typeCode="RESP">
+    <time xsi:type="IVL_TS">
+      <low value="20060922094914+0100" />
+    </time>
+    <associatedEntity classCode="PROV">
+      <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+      <code code="G15_10/C07" displayName="Médecin - Cardiologie (C)" codeSystem="1.2.250.1.213.1.1.4.5" />
+      <addr>
+        <houseNumber>20</houseNumber>
+        <streetName>Rue Leblanc</streetName>
+        <postalCode>75015</postalCode>
+        <city>PARIS</city>
+      </addr>
+      <telecom value="tel:0647150000" use="MC" />
+      <telecom value="tel:0141291290" use="WP" />
+      <associatedPerson>
+        <name>
+          <suffix>DR</suffix>
+          <given>Jacques</given>
+          <family>ANDRE</family>
+        </name>
+      </associatedPerson>
+      <scopingOrganization>
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+        <name>Hôpital Européen Georges Pompidou</name>
+        <telecom value="tel:0141297500" use="WP" />
+        <addr>
+          <houseNumber>20</houseNumber>
+          <streetName>Rue Leblanc</streetName>
+          <postalCode>75015</postalCode>
+          <city>PARIS</city>
+        </addr>
+        <standardIndustryClassCode code="ETABLISSEMENT" displayName="Etablissement de santé" codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode" />
+      </scopingOrganization>
+    </associatedEntity>
+  </participant>
+  
+  <!-- Médecin Traitant -->
+  <participant typeCode="INF">
+    <functionCode code="PCP" displayName="Médecin traitant" codeSystem="2.16.840.1.113883.5.88" />
+    <time xsi:type="IVL_TS">
+      <low value="20060922094914+0100" />
+    </time>
+    <associatedEntity classCode="PROV">
+      <id root="1.2.250.1.71.4.2.1" extension="802926406900" />
+      <addr>
+        <city>Paris</city>
+        <postalCode>75</postalCode>
+      </addr>
+      <telecom value="tel:0147150000" use="EC" />
+      <telecom value="mailto:charles.michels@mssante.fr" />
+      <associatedPerson>
+        <name>
+          <suffix>DR</suffix>
+          <given>Charles</given>
+          <family>MICHELS</family>
+        </name>
+      </associatedPerson>
+    </associatedEntity>
+  </participant>
+  
+  <!-- Acte documenté -->
+  <documentationOf>
+    <serviceEvent>
+      <code code="11429006" displayName="consultation" codeSystem="2.16.840.1.113883.6.96"
+        codeSystemName="SNOMED CT"/>
+      <effectiveTime>
+        <low value="20100104152530+0100" />
+        <high value="20100104152530+0100" />
+      </effectiveTime>
+      <performer typeCode="PRF">        
+        <assignedEntity>
+          <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+          <code code="G15_10/C07" displayName="Médecin - Cardiologie (C)" codeSystem="1.2.250.1.213.1.1.4.5" />
+          <addr>
+            <houseNumber>20</houseNumber>
+            <streetName>Rue Leblanc</streetName>
+            <postalCode>75015</postalCode>
+            <city>PARIS</city>
+          </addr>
+          <telecom value="tel:0647150000" use="MC" />
+          <telecom value="tel:0141291290" use="WP" />
+          <assignedPerson>
+            <name>
+              <suffix>DR</suffix>
+              <given>Jacques</given>
+              <family>ANDRE</family>
+            </name>
+          </assignedPerson>
+          <!-- Etablissement de rattachement du PS -->
+          <representedOrganization>
+            <!-- établissement identifié par son N° FINESS -->
+            <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+            <name>Hôpital Européen Georges Pompidou</name>
+            <telecom value="tel:0141297500" use="WP" />
+            <addr>
+              <houseNumber>20</houseNumber>
+              <streetName>Rue Leblanc</streetName>
+              <postalCode>75015</postalCode>
+              <city>PARIS</city>
+            </addr>
+            <standardIndustryClassCode code="ETABLISSEMENT" displayName="Etablissement de santé" codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode" />
+          </representedOrganization>
+        </assignedEntity>
+      </performer>
+    </serviceEvent>
+  </documentationOf>
+  
+  <!-- Contexte de la prise en charge -->
+  <componentOf>
+    <encompassingEncounter>
+      <code code="EXTERNE" displayName="Acte et consultation externe (établissement)" codeSystem="1.2.250.1.213.1.1.4.2.291"/>
+      <effectiveTime>
+        <low value="201001020735+0100" />
+        <high value="201001041635+0100" />
+      </effectiveTime>
+      <responsibleParty>
+        <assignedEntity>
+          <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+          <code code="G15_10/C07" displayName="Médecin - Cardiologie (C)" codeSystem="1.2.250.1.213.1.1.4.5" />
+          <addr>
+            <houseNumber>20</houseNumber>
+            <streetName>Rue Leblanc</streetName>
+            <postalCode>75015</postalCode>
+            <city>PARIS</city>
+          </addr>
+          <telecom value="tel:0647150000" use="MC" />
+          <telecom value="tel:0141291290" use="WP" />
+          <assignedPerson>
+            <name>
+              <suffix>DR</suffix>
+              <given>Jacques</given>
+              <family>ANDRE</family>
+            </name>
+          </assignedPerson>
+          <!-- Etablissement de rattachement du PS -->
+          <representedOrganization>
+            <!-- établissement identifié par son N° FINESS -->
+            <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+            <name>Hôpital Européen Georges Pompidou</name>
+            <telecom value="tel:0141297500" use="WP" />
+            <addr>
+              <houseNumber>20</houseNumber>
+              <streetName>Rue Leblanc</streetName>
+              <postalCode>75015</postalCode>
+              <city>PARIS</city>
+            </addr>
+            <standardIndustryClassCode code="ETABLISSEMENT" displayName="Etablissement de santé" codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode" />
+          </representedOrganization>
+        </assignedEntity>
+      </responsibleParty>
+      <location>
+        <healthCareFacility>
+          <code code="SA01" displayName="Etablissement public de santé" codeSystem="1.2.250.1.71.4.2.4" />
+        </healthCareFacility>
+      </location>
+    </encompassingEncounter>
+  </componentOf>
+  <!-- 
+      ********************************************************
+      Corps du document
+      ********************************************************
+   -->
+  <component>
+    <structuredBody>
+      <!-- 
+            ********************************************************
+            Active Problems section
+            ********************************************************
+         -->
+      <component>
+        <section>
+          <!-- Conformité CCD -->
+          <templateId root="2.16.840.1.113883.10.20.1.11"/>
+          <!-- Conformité IHE PCC Active Problems -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
+          <!-- Conformité CI-SIS -->
+          <templateId root="1.2.250.1.213.1.1.2.132"/>
+          <id root="BF004117-2249-4B9C-BDB2-1D895BE5136C" />
+          <code code="11450-4" displayName="Liste des problèmes actifs" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+          <title>PATHOLOGIE COURANTE</title>
+          <text>
+            <table border="0">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Pathologie</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>20/06/2006</td>
+                  <td>
+                    <content ID="avk0027">Accident ischémique cérébral transitoire</content>
+                  </td>
+                </tr>
+                <tr>
+                  <td>22/06/2009</td>
+                  <td>
+                    <content ID="avk0028">Angine de poitrine instable</content>
+                  </td>
+                </tr>
+                <tr>
+                  <td>12/08/1999</td>
+                  <td>
+                    <content ID="avk0029">Insuffisance aortique sévère</content>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <!-- AIT -->
+          <entry>
+            <act classCode="ACT" moodCode="EVN">
+              <!-- Conformité CCD Problem Act  -->
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <!-- Conformité IHE PCC Concern -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <!-- Conformité IHE PCC Problem Concern -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+              <!-- Conformité CI-SIS -->
+              <templateId root="1.2.250.1.213.1.1.3.39"/>
+              <id root="327E85E1-AF8B-403F-94DB-64954A42A6F6" />
+              <code nullFlavor="NA" />
+              <statusCode code="completed" />
+              <effectiveTime>
+                <low nullFlavor="UNK" />
+                <high nullFlavor="UNK" />
+              </effectiveTime>
+              <entryRelationship typeCode="SUBJ" inversionInd="false">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité CCD Problem Observation -->
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <!-- Conformité IHE PCC Problem -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <!-- Conformité CI-SIS -->
+                  <templateId root="1.2.250.1.213.1.1.3.37"/>
+                  <id root="F93F69B4-BEF6-4738-866E-4B676BA396B7" />
+                  <!-- ID de l'observation -->
+                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+                    <originalText mediaType="text/xml"><reference value="#avk0027" /></originalText>
+                  </code>
+                  <text><reference value="#avk0027" /></text>
+                  <statusCode code="completed" />
+                  <effectiveTime>
+                    <low value="20060620" />
+                  </effectiveTime>
+                  <value xsi:type="CD" code="G45.9" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10" displayName="Accident ischémique cérébral transitoire, sans précision">
+                    <originalText><reference value="#avk0027" /></originalText>
+                  </value>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+          <!-- Angine de Poitrine instable -->
+          <entry>
+            <act classCode="ACT" moodCode="EVN">
+              <!-- Conformité CCD Problem Act  -->
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <!-- Conformité IHE PCC Concern -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <!-- Conformité IHE PCC Problem Concern -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+              <!-- Conformité CI-SIS -->
+              <templateId root="1.2.250.1.213.1.1.3.39"/>
+              <id root="104C1E11-9967-4B4D-A0CC-81A6C27E6547" />
+              <code nullFlavor="NA" />
+              <statusCode code="completed" />
+              <effectiveTime>
+                <low nullFlavor="UNK" />
+                <high nullFlavor="UNK" />
+              </effectiveTime>
+              <entryRelationship typeCode="SUBJ" inversionInd="false">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité CCD Problem Observation -->
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <!-- Conformité IHE PCC Problem -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <!-- Conformité CI-SIS -->
+                  <templateId root="1.2.250.1.213.1.1.3.37"/>
+                  <id root="844487D0-D337-464C-A757-D5C5AD1A2BB5" />
+                  <!-- ID de l'observation -->
+                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+                    <originalText mediaType="text/xml"><reference value="#avk0028" /></originalText>
+                  </code>
+                  <text><reference value="#avk0028" /></text>
+                  <statusCode code="completed" />
+                  <effectiveTime>
+                    <low value="20090622" />
+                  </effectiveTime>
+                  <value xsi:type="CD" code="I20.0" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10" displayName="Angine de poitrine instable">
+                    <originalText><reference value="#avk0028" /></originalText>
+                  </value>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+          <!-- Insuffisance aortique sévère -->
+          <entry>
+            <act classCode="ACT" moodCode="EVN">
+              <!-- Conformité CCD Problem Act  -->
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <!-- Conformité IHE PCC Concern -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <!-- Conformité IHE PCC Problem Concern -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+              <!-- Conformité CI-SIS -->
+              <templateId root="1.2.250.1.213.1.1.3.39"/>
+              <id root="35FD5F0D-C6B5-4108-9431-705D4F50EBFE" />
+              <code nullFlavor="NA" />
+              <statusCode code="completed" />
+              <effectiveTime>
+                <low nullFlavor="UNK" />
+                <high nullFlavor="UNK" />
+              </effectiveTime>
+              <entryRelationship typeCode="SUBJ" inversionInd="false">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité CCD Problem Observation -->
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <!-- Conformité IHE PCC Problem -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <!-- Conformité CI-SIS -->
+                  <templateId root="1.2.250.1.213.1.1.3.37"/>
+                  <id root="297EF413-9B05-4DE7-9F17-3507AE0DBC44" />
+                  <!-- ID de l'observation -->
+                  <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+                    <originalText mediaType="text/xml"><reference value="#avk0029" /></originalText>
+                  </code>
+                  <text><reference value="#avk0029" /></text>
+                  <statusCode code="completed" />
+                  <effectiveTime>
+                    <low value="19990912" />
+                  </effectiveTime>
+                  <value xsi:type="CD" code="E78.2" displayName="Hyperlipidémie mixte" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10">
+                    <originalText><reference value="#avk0029" /></originalText>
+                  </value>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+          <entry>
+            <act classCode="ACT" moodCode="EVN">
+              <!-- Conformité CCD Problem Act  -->
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <!-- Conformité IHE PCC Concern -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <!-- Conformité IHE PCC Problem Concern -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+              <!-- Conformité CI-SIS -->
+              <templateId root="1.2.250.1.213.1.1.3.39"/>
+              <id root="051ACF3C-E1A3-4769-A663-D52FFFB2F3AE" />
+              <code nullFlavor="NA" />
+              <statusCode code="completed" />
+              <effectiveTime>
+                <low nullFlavor="UNK" />
+                <high nullFlavor="UNK" />
+              </effectiveTime>
+              <!-- Liaison du Traitement Antivitalmine K à sa cause -->
+              <entryRelationship typeCode="SUBJ" inversionInd="false">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité CCD Problem Observation -->
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <!-- Conformité IHE PCC Problem -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <!-- Conformité CI-SIS -->
+                  <templateId root="1.2.250.1.213.1.1.3.37"/>
+                  <id root="481B7C2F-424C-4ECD-A0B2-187CF4E2D62D" />
+                  <code code="55607006" displayName="problème" codeSystem="2.16.840.1.113883.6.96" />
+                  <text><reference value="#ppv0006" /></text>
+                  <statusCode code="completed" />
+                  <effectiveTime xsi:type="IVL_TS">
+                    <low value="20000328" />
+                  </effectiveTime>
+                  <value xsi:type="CD" code="G45.9" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10" displayName="Accident ischémique cérébral transitoire, sans précision">
+                    <originalText mediaType="text/xml"><reference value="#ppv0006" /></originalText>
+                  </value>
+                </observation>
+              </entryRelationship>
+              <!-- Liaison du traitement Antivitalmine K à un résultat d'INR -->
+              <entryRelationship typeCode="REFR">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité IHE PCC -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
+                  <!-- Conformité CI-SIS -->
+                  <templateId root="1.2.250.1.213.1.1.3.48" />
+                  <!-- Result observation template -->
+                  <id root="1D784912-576F-4B9C-A95C-C64F63E15CB5" />
+                  <code code="3289-6" codeSystem="2.16.840.1.113883.6.1" displayName="TP (INR)">
+                    <originalText mediaType="text/xml"><reference value="#ppv0007" /></originalText>
+                  </code>
+                  <text><reference value="#ppv0007" /></text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20090512" />
+                  <value xsi:type="REAL" value="2.5" />
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+          <entry>
+            <act classCode="ACT" moodCode="EVN">
+              <!-- Conformité CCD Problem Act  -->
+              <templateId root="2.16.840.1.113883.10.20.1.27"/>
+              <!-- Conformité IHE PCC Concern -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+              <!-- Conformité IHE PCC Problem Concern -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+              <!-- Conformité CI-SIS -->
+              <templateId root="1.2.250.1.213.1.1.3.39"/>
+              <id root="DFF3D082-3169-46AF-AE66-22B49AFD3C0D" />
+              <code nullFlavor="NA" />
+              <statusCode code="completed" />
+              <effectiveTime>
+                <low nullFlavor="UNK" />
+                <high nullFlavor="UNK" />
+              </effectiveTime>
+              <!-- Liaison du traitement Antiaggrégants plaquettaires à sa cause -->
+              <entryRelationship typeCode="SUBJ" inversionInd="false">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité CCD Problem Observation -->
+                  <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <!-- Conformité IHE PCC Problem -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                  <!-- Conformité CI-SIS -->
+                  <templateId root="1.2.250.1.213.1.1.3.37"/>
+                  <id root="031B555D-DFD8-4942-8B2E-2BBE75DE6208" />
+                  <code code="55607006" displayName="problème" codeSystem="2.16.840.1.113883.6.96" />
+                  <text><reference value="#ppv0010" /></text>
+                  <statusCode code="completed" />
+                  <effectiveTime>
+                    <low nullFlavor="UNK" />
+                    <high nullFlavor="UNK" />
+                  </effectiveTime>
+                  <value xsi:type="CD" code="I20.0" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10" displayName="Angine de poitrine instable">
+                    <originalText mediaType="text/xml"><reference value="#ppv0010" /></originalText>
+                  </value>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+        </section>
+      </component>
+      <!-- 
+            ********************************************************
+            Results section
+            ********************************************************
+         -->
+      <component>
+        <section>
+          <!-- Conformité IHE PCC -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.28" />
+          <!-- Conformité IHE PCC -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.27" />
+          <!-- Conformité CI-SIS parent Hospital Studies Summary -->
+          <templateId root="1.2.250.1.213.1.1.2.151" />
+          <!-- Results section template -->
+          <code code="30954-2" codeSystem="2.16.840.1.113883.6.1" />
+          <title>Examens Biologiques</title>
+          <text>
+            <table border="0" width="100%">
+              <thead>
+                <tr>
+                  <th>Analyse</th>
+                  <th>Résultat</th>
+                  <th>Date</th>
+                  <th>Référence</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>TP (INR)</td>
+                  <td>
+                    <content ID="ppv0001">2.5</content>
+                  </td>
+                  <td>12/05/2009</td>
+                  <td>2.5 - 3.5</td>
+                </tr>
+                <tr>
+                  <td>TP (INR)</td>
+                  <td>
+                    <content ID="ppv0002">1.5</content>
+                  </td>
+                  <td>11/06/2009</td>
+                  <td>2.5 - 3.5</td>
+                </tr>
+                <tr>
+                  <td>TP (INR)</td>
+                  <td>
+                    <content ID="ppv0003">2.0</content>
+                  </td>
+                  <td>15/06/2009</td>
+                  <td>2.5 - 3.5</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry>
+            <!-- Procedure Entry -->
+            <procedure classCode="PROC" moodCode="EVN">
+              <!-- Conformité CCD -->
+              <templateId root="2.16.840.1.113883.10.20.1.29"/>
+              <!-- Conformité IHE PCC -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+              <!-- Conformité CI-SIS -->
+              <templateId root="1.2.250.1.213.1.1.3.62"/>
+              <id root="74A52D6D-80F8-4941-A7F0-AD0FEADDD5CC" />
+              <code code="MED-036" displayName="Examen(s) réalisé(s)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
+              <text><reference value="#exam" /></text>
+              <statusCode code="completed" />
+              <effectiveTime value="200905121430" />
+            </procedure>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Conformité IHE PCC -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
+              <!-- Conformité CI-SIS -->
+              <templateId root="1.2.250.1.213.1.1.3.48" />
+              <!-- Result observation template -->
+              <id root="969BE9CC-A765-44BF-866F-4B1FD935649A" />
+              <code code="3289-6" codeSystem="2.16.840.1.113883.6.1" displayName="TP (INR)">
+                <originalText mediaType="text/xml"><reference value="#ppv0001" /></originalText>
+              </code>
+              <text><reference value="#ppv0001" /></text>
+              <statusCode code="completed" />
+              <effectiveTime value="200905121430" />
+              <value xsi:type="REAL" value="2.5" />
+              <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83" displayName="Normal" />
+              <referenceRange>
+                <observationRange>
+                  <text>2.5 - 3.5</text>
+                </observationRange>
+              </referenceRange>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Conformité IHE PCC -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
+              <!-- Conformité CI-SIS -->
+              <templateId root="1.2.250.1.213.1.1.3.48" />
+              <!-- Result observation template -->
+              <id root="203FA731-2511-46FA-BA6D-1FB2CE24F09F" />
+              <code code="3289-6" codeSystem="2.16.840.1.113883.6.1" displayName="TP (INR)">
+                <originalText mediaType="text/xml"><reference value="#ppv0002" /></originalText>
+              </code>
+              <text><reference value="#ppv0002" /></text>
+              <statusCode code="completed" />
+              <effectiveTime value="200905121430" />
+              <value xsi:type="REAL" value="1.5" />
+              <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83" displayName="Normal" />
+              <referenceRange>
+                <observationRange>
+                  <text>2.5 - 3.5</text>
+                </observationRange>
+              </referenceRange>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Conformité IHE PCC -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
+              <!-- Conformité CI-SIS -->
+              <templateId root="1.2.250.1.213.1.1.3.48" />
+              <!-- Result observation template -->
+              <id root="0C5D4ADA-81B2-475B-BE9A-3AA18A150E9A" />
+              <code code="3289-6" codeSystem="2.16.840.1.113883.6.1" displayName="TP (INR)">
+                <originalText mediaType="text/xml"><reference value="#ppv0003" /></originalText>
+              </code>
+              <text><reference value="#ppv0003" /></text>
+              <statusCode code="completed" />
+              <effectiveTime value="200905121430" />
+              <value xsi:type="REAL" value="2.0" />
+              <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83" displayName="Normal" />
+              <referenceRange>
+                <observationRange>
+                  <text>2.5 - 3.5</text>
+                </observationRange>
+              </referenceRange>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <!-- 
+            ********************************************************
+            Medication Section
+            ********************************************************
+         -->
+      <component>
+        <section>
+          <!-- Conformité CI-SIS -->
+          <templateId root="1.2.250.1.213.1.1.2.143"/>
+          <!-- Conformité CCD Medication -->
+          <templateId root="2.16.840.1.113883.10.20.1.8"/>
+          <!-- Conformité IHE PCC Medication -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.19"/>
+          <!-- PCC Medications section template -->
+          <code code="10160-0" codeSystem="2.16.840.1.113883.6.1" />
+          <title>Médications</title>
+          <text>
+            <table border="0" width="100%">
+              <thead>
+                <tr>
+                  <th>Médicament (Spécialité)</th>
+                  <th>Médicament (DC)</th>
+                  <th>Motif</th>
+                  <th>Date</th>
+                  <th>INR</th>
+                  <th>Posologie</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="6">
+                    <content styleCode="BoldItalics">AVK</content>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <content ID="ppv0004">COUMADINE 5mg, comprimé sécable</content>
+                  </td>
+                  <td>
+                    <content ID="ppv0005">WARFARINE SODIQUE</content>
+                  </td>
+                  <td>
+                    <content ID="ppv0006">Accident Ischémique Cérébral Transitoire, SP</content>
+                  </td>
+                  <td>12/05/2009</td>
+                  <td>
+                    <content ID="ppv0007">2.5</content>
+                  </td>
+                  <td>1cp</td>
+                </tr>
+                <tr>
+                  <td colspan="6">
+                    <content styleCode="BoldItalics">Antiagrégants</content>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <content ID="ppv0008">PLAVIX 75mg, comprimé pelliculé</content>
+                  </td>
+                  <td>
+                    <content ID="ppv0009">CLOPIDOGREL</content>
+                  </td>
+                  <td>
+                    <content ID="p000816">Angine de poitrine instable, SP</content>
+                  </td>
+                  <td>12/05/2009</td>
+                  <td />
+                  <td>1cp</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <!-- ************ Traitement Antivitalmine K ************ -->
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <!-- Conformité CI-SIS -->
+              <templateId root="1.2.250.1.213.1.1.3.42"/>
+              <!-- Conformité CCD Medication activity -->
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <!-- Conformité IHE PCC Medication -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+              <!-- Conformité IHE Mode d’administration "Normal" -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+              <id root="625EB1D8-2231-473F-B6E9-2FEBCE024E52" />
+              <text><reference/></text>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20000328" />
+                <high value="20000404" />
+              </effectiveTime>
+              <effectiveTime xsi:type="PIVL_TS" operator="A">
+                <period value="6" unit="h" />
+              </effectiveTime>
+              <routeCode code="20053000" displayName="Voie orale" codeSystem="0.4.0.127.0.16.1.1.2.1" />
+              <doseQuantity>
+                <low value="1" unit="{tbl}" />
+                <high value="1" unit="{tbl}" />
+              </doseQuantity>
+              <rateQuantity nullFlavor="NASK" />
+              <consumable>
+                <manufacturedProduct>
+                  <!-- Conformité CI-SIS -->
+                  <templateId root="1.2.250.1.213.1.1.3.43"/>
+                  <!-- Conformité IHE CCD -->
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <!-- Conformité IHE PCC IHE Product Entry-->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                  <!-- Product template -->
+                  <manufacturedMaterial>
+                    <code code="63245753" codeSystem="1.2.250.1.213.2.3.1" codeSystemName="CIS" displayName="COUMADINE 5mg, comprimé sécable">
+                      <originalText mediaType="text/xml"><reference value="#ppv0004" /></originalText>
+                      <translation code="3400935693099" codeSystem="1.2.250.1.213.2.3.2" codeSystemName="CIP" displayName="COUMADINE 5 mg, comprimé sécable -  TEOFARMA [Autorisation active, 02/05/2001] plaquette(s) thermoformée(s) PVC-aluminium de 30 comprimé(s)">
+                        <originalText mediaType="text/xml"><reference value="#ppv0005" /></originalText>
+                      </translation>
+                    </code>
+                    <name>COUMADINE 5mg</name>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <!-- Traitement Antiaggrégants plaquettaires -->
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <!-- Conformité CI-SIS -->
+              <templateId root="1.2.250.1.213.1.1.3.42"/>
+              <!-- Conformité CCD Medication activity -->
+              <templateId root="2.16.840.1.113883.10.20.1.24"/>
+              <!-- Conformité IHE PCC Medication -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+              <!-- Conformité IHE Mode d’administration "Normal" -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+              <id root="42BD065B-DCCB-4374-A3CC-6FE9C1A4B89F" />
+              <text><reference/></text>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20090512" />
+                <high nullFlavor="UNK" />
+              </effectiveTime>
+              <effectiveTime xsi:type="PIVL_TS" operator="A">
+                <period value="1" unit="d" />
+              </effectiveTime>
+              <routeCode code="20053000" displayName="Voie orale" codeSystem="0.4.0.127.0.16.1.1.2.1" />
+              <doseQuantity>
+                <low value="1" unit="{tbl}" />
+                <high value="1" unit="{tbl}" />
+              </doseQuantity>
+              <rateQuantity nullFlavor="NASK" />
+              <consumable>
+                <manufacturedProduct>
+                  <!-- Conformité CI-SIS -->
+                  <templateId root="1.2.250.1.213.1.1.3.43"/>
+                  <!-- Conformité IHE CCD -->
+                  <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                  <!-- Conformité IHE PCC IHE Product Entry-->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                  <!-- Product template -->
+                  <manufacturedMaterial>
+                    <code code="63564053" codeSystem="1.2.250.1.213.2.3.1" codeSystemName="CIS" displayName="PLAVIX 75mg, comprimé pelliculé">
+                      <originalText mediaType="text/xml"><reference value="#ppv0008" /></originalText>
+                      <translation code="3400938022377" codeSystem="1.2.250.1.213.2.3.2" codeSystemName="CIP" displayName="PLAVIX 75 mg, comprimé pelliculé plaquette(s) thermoformée(s) aluminium de 30 comprimé(s)">
+                        <originalText mediaType="text/xml"><reference value="#ppv0009" /></originalText>
+                      </translation>
+                    </code>
+                    <name>PLAVIX 75 mg</name>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+        </section>
+      </component>
+      <!-- 
+            ********************************************************
+            Coded List of surgeries section
+            ********************************************************
+         -->
+      <component>
+        <section>
+          <!-- Conformité CCD -->
+          <templateId root="2.16.840.1.113883.10.20.1.12" />
+          <!-- Conformité IHE PCC Parent Template -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.11" />
+          <!-- Conformité IHE PCC -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.12"/>
+          <!-- Conformité CI-SIS -->
+          <templateId root="1.2.250.1.213.1.1.2.136" />
+          <id root="739A6F87-8AD4-40EE-AD45-EF91B6412EE6" />
+          <code code="47519-4" displayName="Historique des actes" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+          <title>Intervention</title>
+          <text>
+            <table border="0" width="100%">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Type</th>
+                  <th>Indication</th>
+                  <th>Etablissement</th>
+                  <th>Adresse</th>
+                  <th>N° téléphone d'urgence</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>12/08/1999</td>
+                  <td>
+                    <content ID="ppv0011">Remplacement de la valve aortique par bioprothèse sans armature, par thoracotomie avec CEC</content>
+                  </td>
+                  <td>
+                    <content ID="ppv0012">Insuffisance Aortique Sévère</content>
+                  </td>
+                  <td>Clinique Bonséjour</td>
+                  <td>17 rue du Chat qui pêche - 75005 PARIS</td>
+                  <td>+33 1 68 69 88 550</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry>
+            <procedure classCode="PROC" moodCode="EVN">
+              <!-- Conformité CCD -->
+              <templateId root="2.16.840.1.113883.10.20.1.29"/>
+              <!-- Conformité IHE PCC -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+              <!-- Conformité CI-SIS -->
+              <templateId root="1.2.250.1.213.1.1.3.62"/>
+              <id root="EC6FC218-B715-465F-843C-0A28DFC32E4F" />
+              <code code="DBKA003" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM" displayName="Remplacement de la valve aortique par bioprothèse sans armature, par thoracotomie avec CEC">
+                <originalText mediaType="text/xml"><reference value="#ppv0011" /></originalText>
+              </code>
+              <text><reference value="#ppv0011" /></text>
+              <statusCode code="completed" />
+              <effectiveTime value="19990812" />
+              <participant typeCode="LOC">
+                <!-- Conforimté CI-SIS -->
+                <templateId root="1.2.250.1.213.1.1.3.109" />
+                <!-- Location participation template -->
+                <participantRole classCode="SDLOC">
+                  <!-- Location where healthcare have been provided -->
+                  <addr>
+                    <streetAddressLine>17 rue du Chat qui pêche - 75005 PARIS</streetAddressLine>
+                  </addr>
+                  <telecom value="tel:+331686988550" use="EC" />
+                  <playingEntity classCode="PLC">
+                    <name>Clinique Bonséjour</name>
+                  </playingEntity>
+                </participantRole>
+              </participant>
+              <participant typeCode="DEV">
+                <!-- Conforimté CI-SIS -->
+                <templateId root="1.2.250.1.213.1.1.3.109" />
+                <participantRole classCode="MANU">
+                  <templateId root="2.16.840.1.113883.10.20.1.52" />
+                  <!-- Product instance template -->
+                  <id root="45ABC65F-FB6D-41DB-92B9-2FEE853BA87D" />
+                  <!-- ID du matériel implanté -->
+                </participantRole>
+              </participant>
+              <entryRelationship typeCode="RSON">
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité IHE PCC -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
+                  <!-- Conformité CI-SIS -->
+                  <templateId root="1.2.250.1.213.1.1.3.48" />
+                  <!-- Problem observation template -->
+                  <id root="675136D6-6B82-4F79-9772-383EFA30831F" />
+                  <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4">
+                    <originalText mediaType="text/xml"><reference value="#ppv0012" /></originalText>
+                  </code>
+                  <text><reference value="#ppv0012"/></text>
+                  <statusCode code="completed"/>
+                  <effectiveTime value="20200319"/>
+                  <value xsi:type="CE" code="E78.2" displayName="Hyperlipidémie mixte" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10" />
+                </observation>
+              </entryRelationship>
+            </procedure>
+          </entry>
+        </section>
+      </component>
+      <!-- 
+            ********************************************************
+            Section FR-Dispositifs-medicaux
+            ********************************************************
+         -->
+      <component>
+        <section>
+          <!-- Conformité CCD Medical Equipment -->
+          <templateId root="2.16.840.1.11383.10.20.1.7" />
+          <!-- Conformité IHE PCC Medical Devices -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.5" />
+          <!-- Conformité CI-SIS -->
+          <templateId root="1.2.250.1.213.1.1.2.1"/>
+          <id root="5CB98DD2-5F77-4F9A-A95D-B3A5341DC331" />          
+          <code code="46264-8" displayName="Dispositifs médicaux" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+          <title>Dispositifs médicaux</title>
+          <text>
+            <table border="0" width="100%">
+              <thead>
+                <tr>
+                  <th>N° Série</th>
+                  <th>Type de DM</th>
+                  <th>Type de Valve</th>
+                  <th>Modèle</th>
+                  <th>Valve</th>
+                  <th>Composant</th>
+                  <th>Diamètre</th>
+                  <th>Gradient</th>
+                  <th>Niveau d'anticoagulation souhaitée</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <content ID="DM-numero-serie">615225 Z</content>
+                  </td>
+                  <td>
+                    <content ID="DM-type">Prothèse valvulaire</content>
+                  </td>
+                  <td>
+                    <content ID="DM-type-valve">Bioprothèse</content>
+                  </td>
+                  <td>
+                    <content ID="DM-modele">60-0007-21</content>
+                  </td>
+                  <td>
+                    <content ID="DM-valve">Aortique</content>
+                  </td>
+                  <td>
+                    <content ID="DM-composant">Homogreffe</content>
+                  </td>
+                  <td>
+                    <content ID="DM-diametre">21 mm</content>
+                  </td>
+                  <td>
+                    <content ID="DM-gradient">67.5 mm[Hg]</content>
+                  </td>
+                  <td>
+                    <content ID="DM-niveau-anticoagulation">0,5</content>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <!-- Entrée FR-Dispositif-medical : Prothèse valvulaire -->
+          <entry>
+            <supply classCode="SPLY" moodCode="EVN">
+              <!-- Conformité CCD -->
+              <templateId root="2.16.840.1.113883.10.20.1.34"/>
+              <!-- Conformité CI-SIS -->
+              <templateId root="1.2.250.1.213.1.1.3.20"/>
+              <!-- Identifiant de la fourniture du DM -->
+              <id root="9507EA9D-B12C-4F48-B346-AEE4BEFCA96D"/>
+              <!-- Référence vers la partie narrative de la section DM -->
+              <text><reference value="#DM-type"/></text>
+              <!-- Date d'utilisation du DM -->
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20080929094914+0100"/>
+              </effectiveTime>
+              <!-- Description du dispositif médical -->
+              <participant typeCode="DEV">
+                <participantRole classCode="MANU">
+                  <!-- ID du matériel implanté (numéro de série)-->
+                  <id extension="615225 Z"/>
+                  <!-- Code du dispositif médical -->
+                  <playingDevice classCode="DEV" determinerCode="INSTANCE">
+                    <!-- Valeur issue JDV_UFCV_MatImpl_CISIS -->
+                    <code code="P0703" displayName="VALVES CARDIAQUES" codeSystem="1.2.250.1.213.2.68" codeSystemName="EMDN">
+                      <originalText><reference value="#DM-type"/></originalText>
+                      <!--Type de valve-->
+                      <!-- Valeur issue du JDV_UFCV_ProtValv_CISIS -->
+                      <translation code="P070301" displayName="VALVES CARDIAQUES BIOLOGIQUES" codeSystem="1.2.250.1.213.2.68" codeSystemName="EMDN">
+                        <originalText><reference value="#DM-type-valve"/></originalText>
+                      </translation>    
+                      <!-- Modèle -->
+                      <translation>
+                        <originalText><reference value="#DM-modele"/></originalText>
+                      </translation>
+                    </code>
+                  </playingDevice>
+                </participantRole>
+              </participant>
+              <!-- Valve -->
+              <entryRelationship typeCode="COMP">                
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité IHE PCC -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
+                  <!-- Conformité CI-SIS -->
+                  <templateId root="1.2.250.1.213.1.1.3.48" />
+                  <id root="8D40D39D-3574-496A-91EA-B7BE236ABD1A" />
+                  <!-- Valeur issue du JDV_UFCV_CodEntree_CISIS -->
+                  <code code="GEN-400" displayName="Valve" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                  <text><reference value="#DM-valve"/></text>
+                  <statusCode code="completed" />
+                  <effectiveTime nullFlavor="NA" />
+                  <!-- valeur issue du JDV_UFCV_TypVal_CISIS (1.2.250.1.213.1.1.4.2.16) -->
+                  <value xsi:type="CD" code="P070301030101" displayName="VALVES AORTIQUES BIOLOGIQUES AVEC ARMATURE PAR VOIE PERCUTANÉE AVEC SUPPORT - VALVE D'ORIGINE ANIMALE" codeSystem="1.2.250.1.213.2.68" codeSystemName="EMDN"/>                   
+                </observation>
+              </entryRelationship>
+              <!-- Composant -->
+              <entryRelationship typeCode="COMP">                
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité IHE PCC -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
+                  <!-- Conformité CI-SIS -->
+                  <templateId root="1.2.250.1.213.1.1.3.48" />
+                  <id root="8D40D39D-3574-496A-91EA-B7BE236ABD1A" />
+                  <!-- Valeur issue du JDV_UFCV_CodEntree_CISIS -->
+                  <code code="GEN-401" displayName="Composant" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                  <text><reference value="#DM-composant"/></text>
+                  <statusCode code="completed" />
+                  <effectiveTime nullFlavor="NA" />
+                  <!-- valeur issue du JDV_UFCV_CompProt_CISIS (1.2.250.1.213.1.1.4.2.10 -->
+                  <value xsi:type="CD" code="7970006" displayName="allogreffe" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+                </observation>
+              </entryRelationship>
+              <!-- Diamètre -->
+              <entryRelationship typeCode="COMP">                
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité IHE PCC -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
+                  <!-- Conformité CI-SIS -->
+                  <templateId root="1.2.250.1.213.1.1.3.48" />
+                  <id root="8D40D39D-3574-496A-91EA-B7BE236ABD1A" />
+                  <!-- Valeur issue du JDV_UFCV_CodEntree_CISIS -->
+                  <code code="GEN-402" displayName="Diamètre" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                  <text><reference value="#DM-diametre"/></text>
+                  <statusCode code="completed" />
+                  <effectiveTime nullFlavor="NA" />
+                  <value xsi:type="PQ" value="21" unit="mm"/>                    
+                </observation>
+              </entryRelationship>
+              <!-- Gradient -->
+              <entryRelationship typeCode="COMP">                
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité IHE PCC -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
+                  <!-- Conformité CI-SIS -->
+                  <templateId root="1.2.250.1.213.1.1.3.48" />
+                  <id root="8D40D39D-3574-496A-91EA-B7BE236ABD1A" />
+                  <!-- Valeur issue du JDV_UFCV_CodEntree_CISIS -->
+                  <code code="GEN-403" displayName="Gradient" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                  <text><reference value="#DM-gradient"/></text>
+                  <statusCode code="completed" />
+                  <effectiveTime nullFlavor="NA" />
+                  <value xsi:type="PQ" value="67.5" unit="mm[Hg]"/> 
+                </observation>
+              </entryRelationship>
+              <!-- Niveau anticoagulation souhaité -->
+              <entryRelationship typeCode="COMP">                
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité IHE PCC -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
+                  <!-- Conformité CI-SIS -->
+                  <templateId root="1.2.250.1.213.1.1.3.48" />
+                  <id root="8D40D39D-3574-496A-91EA-B7BE236ABD1A" />
+                  <!-- Valeur issue du JDV_UFCV_CodEntree_CISIS -->
+                  <code code="GEN-404" displayName="Niveau anticoagulation souhaité" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                  <text><reference value="#DM-niveau-anticoagulation"/></text>
+                  <statusCode code="completed" />
+                  <effectiveTime nullFlavor="NA" />
+                  <value xsi:type="REAL" value="0.5"/>
+                </observation>
+              </entryRelationship>
+            </supply>
+          </entry>      
+        </section>
+      </component>
+      <!-- 
+            ********************************************************
+            Patient Information section
+            ********************************************************
+         -->
+      <component>
+        <section>
+          <!-- Conformité CI-SIS -->
+          <templateId root="1.2.250.1.213.1.1.2.107" />
+          <!-- Conformité IHE PCC Parent Template Patient Education and Consents -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.9.38" />
+          <!-- Conformité IHE PCC Coded Patient Education and Consents -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.9.39" />
+          <code code="34895-3" codeSystem="2.16.840.1.113883.6.1" />
+          <title>Information du patient</title>
+          <text>
+            <list>
+              <item>
+                <content ID="ppv-pdf"><linkHtml href="documentsAnnexes/ppv.pdf">Documentation Prothèse valvulaire</linkHtml></content>
+              </item>
+            </list>
+          </text>
+          <!-- Document Externe -->
+          <entry>
+            <act classCode="ACT" moodCode="EVN">
+              <!-- Conformité CI-SIS -->
+              <templateId root="1.2.250.1.213.1.1.3.35" />
+              <!-- Conformité IHE PCC External References -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.4" />
+              <id root="255828D6-C6AC-4E1C-A6CF-09ED128A58C0" />
+              <code nullFlavor="NA"/>
+              <text><reference value="ppv-pdf"/></text>
+              <reference typeCode="REFR">
+                <externalDocument classCode="DOC" moodCode="EVN">
+                  <!-- Identifiant du document -->
+                  <id root="9FE51E69-F25C-4316-8EBC-6143A4B8DB94"/>
+                  <!-- Référence externe du document -->
+                  <text><reference value="http://..." /></text>
+                </externalDocument>
+              </reference>              
+            </act>
+          </entry>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

@@ -1,0 +1,1527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../FeuilleDeStyle/CDA-FO.xsl"?>
+<?oxygen SCHSchema="../schematrons/profils/IHE.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/structurationMinimale/ASIP-STRUCT-MIN-StrucMin.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/CI-SIS_ModelesDeContenusCDA.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/CI-SIS_Modeles_ANS.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/terminologies/schematron/terminologie.sch"?>
+<?oxygen SCHSchema="../schematrons/CI-SIS_OBP-SNE_2024.01.sch"?>
+<!-- 
+      **********************************************************************************************************
+      Document :  Synthèse Salle de Naissance Enfant (OBP-SNE_2023.01)
+      Auteur : ANS
+      **********************************************************************************************************
+      format HL7 - CDA Release 2 - selon schéma XML (CDA.xsd) du standard ANSI/HL7 CDA, R2-2005 4/21/2005
+      **********************************************************************************************************
+      Historique :
+      28/03/2012 : Création
+      11/06/2018 : Correction d'erreurs suite à la mise à jour des schématrons   
+      13/09/2021 : Mise en conformité avec le volet 2021.01
+      20/04/2022:  Migration des terminologies et JDV en SNOMED CT
+      20/04/2022 : Modification vers la nouvelle version 2022.01
+      30/11/2023 : Nouvelle version 2023.01
+      06/12/2023 : Ajout de l'identifiant de l’entité ayant effectué le transfert dans l'entrée FR-Transfert-du-patient
+      03/01/2024 : Version 2024.01
+      **********************************************************************************************************
+-->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../infrastructure/cda/CDA_extended.xsd" xmlns="urn:hl7-org:v3">
+  <!-- 
+   **************************************************************************************************************
+	EN TETE DU DOCUMENT
+	**************************************************************************************************************
+   -->
+  <realmCode code="FR" />
+  <!-- Référencement CDAr2/Interopérabilité de niveau 3 -->
+  <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040" />
+  <!-- Conformité spécifications HL7 France -->
+  <templateId root="2.16.840.1.113883.2.8.2.1" />
+  <!-- Conformité spécifications au CI-SIS de l'ASIP Santé -->
+  <templateId root="1.2.250.1.213.1.1.1.1" />
+  <!-- Conformité au Volet Synthèse Salle de Naissance Enfant (OBP-SNE_2024.01)-->
+  <templateId root="1.2.250.1.213.1.1.1.12.3" extension="2024.01"/>
+  <!-- Identifiant du document -->
+  <id root="1.2.250.1.213.1.1.1.12.3.2024.1.1"/>
+  <!-- Type de document -->
+  <code code="57075-4" displayName="Synthèse Salle de Naissance Enfant" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+  <!-- Titre du document -->
+  <title>Synthèse Salle de Naissance Enfant</title>
+  <!-- Date de création du document -->
+  <effectiveTime value="20230425111700+0100" />
+  <!-- Niveau de confidentialité du document -->
+  <confidentialityCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentiality" />
+  <!-- Langue du document -->
+  <languageCode code="fr-FR" />
+  <!-- Identifiant commun à toutes les versions successives du document -->
+  <setId root="1.2.250.1.213.1.1.1.12.3.2024.1"/>
+  <!-- Numéro de la version du présent document (entier positif) -->
+  <versionNumber value="1" />
+
+  <!-- Patient = enfant -->
+  <recordTarget>
+    <patientRole>
+      <!-- INS-NIR -->
+      <id extension="223042545611404" root="1.2.250.1.213.1.4.8"/>
+      <!-- IPP -->
+      <id extension="594857603" root="1.2.3.4.5.6.7.8.9.10"/>
+      <!-- Adresse du patient (obligatoire pour le CSE) -->
+      <addr>
+        <houseNumber>24</houseNumber>
+        <streetName>Avenue de Breteuil</streetName>
+        <postalCode>75007</postalCode>
+        <city>PARIS</city>
+        <country>FRANCE</country>
+      </addr>
+      <telecom value="tel:0147150000" use="H"/>
+      <patient classCode="PSN">
+        <name>
+          <!-- Nom et prénom(s) de naissance -->
+          <!-- Nom de l’acte de naissance -->
+          <family qualifier="BR">DECOURCY</family> 
+          <!-- Prénoms de l’acte de naissance -->
+          <given>Marie Jeanne Michelle</given>
+          <!-- Premier prénom de l’acte de naissance -->
+          <given qualifier="BR">Marie</given>
+          <!-- Nom et prénom utilisés -->
+          <family qualifier="CL">DECOURCY</family>
+          <given qualifier="CL">Marie</given> 
+        </name>
+        <administrativeGenderCode code="F" displayName="Féminin" codeSystem="2.16.840.1.113883.5.1"/>
+        <birthTime value="20230425"/>
+        <!-- Représentant de l'enfant : mère -->
+        <guardian>
+          <!-- INS de la mère -->
+          <id extension="277076322082910" root="1.2.250.1.213.1.4.8"/>
+          <addr use="H">
+            <houseNumber>24</houseNumber>
+            <streetName>Avenue de Breteuil</streetName>
+            <postalCode>75007</postalCode>
+            <city>PARIS</city>
+            <country>FRANCE</country>
+          </addr>
+          <telecom value="tel:0147150000" use="H"/>
+          <guardianPerson>
+            <name>
+              <prefix>MME</prefix>
+              <family>DECOURCY</family>
+              <given>Marie</given>
+            </name>
+          </guardianPerson>
+        </guardian>
+        <!-- Lieu de naissance -->
+        <birthplace>
+          <place>
+            <name>Centre Hospitalier Cochin</name>
+            <addr>
+              <houseNumber>27</houseNumber>
+              <streetName>Rue Faubourg Saint-Jacques</streetName>
+              <postalCode>75014</postalCode>
+              <county>75056</county>
+              <city>PARIS</city>
+            </addr>
+          </place>
+        </birthplace>
+      </patient>
+    </patientRole>
+  </recordTarget>
+  
+  <!-- Auteur du document -->
+  <author>
+    <time value="20230425111700+0100" />
+    <assignedAuthor classCode="ASSIGNED">
+      <!-- PS identifié par son N°RPPS -->
+      <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+      <code code="G15_10/SM20" codeSystem="1.2.250.1.213.1.1.4.5" displayName="Médecin - Gynécologie-obstétrique (SM)" />
+      <addr nullFlavor="NASK" />
+      <telecom nullFlavor="NASK" />
+      <assignedPerson>
+        <name>
+          <given>Charles </given>
+          <family>BOILEAU</family>
+          <suffix>DR</suffix>
+        </name>
+      </assignedPerson>
+      <!-- Numéro FINESS de l'ES (optionnel)  -->
+      <representedOrganization>
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+        <name>Clinique du Belvédère</name>
+        <telecom nullFlavor="NAV" />
+        <addr>
+          <houseNumber>142</houseNumber>
+          <streetName>Rue Belvédère</streetName>
+          <postalCode>92100</postalCode>
+          <city>Boulogne-Billancourt</city>
+        </addr>
+        <standardIndustryClassCode code="ETABLISSEMENT" displayName="Établissement de santé" codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode" />
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+
+  <!-- Personne à prévenir en cas d'urgence -->
+  <informant>
+    <relatedEntity classCode="ECON">
+      <code code="FTH" codeSystem="2.16.840.1.113883.5.111" displayName="Père"/>
+      <addr>
+        <houseNumber>28</houseNumber>
+        <streetName>Avenue de Breteuil</streetName>
+        <unitID>Escalier A</unitID>
+        <postalCode>75007</postalCode>
+        <city>PARIS</city>
+        <country>FRANCE</country>
+      </addr>
+      <telecom value="tel:0647150100" use="MC"/>
+      <relatedPerson>
+        <name>
+          <family>DECOURCY</family>
+          <given>Guillaume</given>
+        </name>
+      </relatedPerson>
+    </relatedEntity>
+  </informant>
+  
+  <!-- Personne de confiance -->
+  <informant>
+    <relatedEntity classCode="NOK">
+      <code code="FTH" codeSystem="2.16.840.1.113883.5.111" displayName="Père"/>
+      <addr>
+        <houseNumber>28</houseNumber>
+        <streetName>Avenue de Breteuil</streetName>
+        <unitID>Escalier A</unitID>
+        <postalCode>75007</postalCode>
+        <city>PARIS</city>
+        <country>FRANCE</country>
+      </addr>
+      <telecom value="tel:0647150100" use="MC"/>
+      <relatedPerson>
+        <name>
+          <family>DECOURCY</family>
+          <given>Guillaume</given>
+        </name>
+      </relatedPerson>
+    </relatedEntity>
+  </informant>
+  
+  <!-- Organisation de santé responsable du document -->
+  <custodian typeCode="CST">
+    <assignedCustodian classCode="ASSIGNED">
+      <representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+        <id root="1.2.250.1.71.4.2.2" extension="1120456789" />
+        <name>Clinique du Belvédère</name>
+        <telecom value="tel:0442515151" use="WP" />
+        <addr>
+          <houseNumber>142</houseNumber>
+          <streetName>Rue Belvédère</streetName>
+          <postalCode>92100</postalCode>
+          <city>Boulogne-Billancourt</city>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+
+  <!-- Responsable de la validation de la synthèse -->
+  <legalAuthenticator>
+    <time value="20230425111700+0100" />
+    <signatureCode code="S" />
+    <assignedEntity>
+      <!-- PS identifié par son N°RPPS -->
+      <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+      <code code="G15_10/SM20" codeSystem="1.2.250.1.213.1.1.4.5" displayName="Médecin - Gynécologie-obstétrique (SM)" />
+      <assignedPerson>
+        <name>
+          <given>Jacques </given>
+          <family>BIDEAULT</family>
+          <suffix>PR</suffix>
+        </name>
+      </assignedPerson>
+    </assignedEntity>
+  </legalAuthenticator>
+  
+  <!-- Médecin ou Sage-femme responsable de l'accouchement -->
+  <participant typeCode="RESP">
+    <time xsi:type="IVL_TS">
+      <low value="20230425080000+0100" />
+    </time>
+    <associatedEntity classCode="PROV">
+      <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+      <code code="G15_10/SM20" codeSystem="1.2.250.1.213.1.1.4.5" displayName="Médecin - Gynécologie-obstétrique (SM)" />
+      <addr>
+        <houseNumber>142</houseNumber>
+        <streetName>Rue Belvédère</streetName>
+        <postalCode>92100</postalCode>
+        <city>Boulogne-Billancourt</city>
+      </addr>
+      <telecom value="tel:0142515151" use="WP" />
+      <associatedPerson>
+        <name>
+          <given>Jacques </given>
+          <family>BIDEAULT</family>
+          <suffix>DR</suffix>
+        </name>
+      </associatedPerson>
+      <scopingOrganization>
+        <id root="1.2.250.1.71.4.2.2" extension="1120456789" />
+        <name>Clinique du Belvédère</name>
+        <telecom value="tel:0142515151" use="WP" />
+        <addr>
+          <houseNumber>142</houseNumber>
+          <streetName>Rue Belvédère</streetName>
+          <postalCode>92100</postalCode>
+          <city>Boulogne-Billancourt</city>
+        </addr>
+      </scopingOrganization>
+    </associatedEntity>
+  </participant>
+  
+  <!-- Anesthésiste -->
+  <participant typeCode="PRF">
+    <functionCode code="353" displayName="Membre de l'équipe de soins" codeSystem="1.2.250.1.213.1.6.1.107" >
+      <originalText>Anesthésiste</originalText>
+    </functionCode>
+    <time xsi:type="IVL_TS">
+      <low value="20230425080000+0100" />
+    </time>
+    <associatedEntity classCode="PROV">
+      <id root="1.2.250.1.71.4.2.1" extension="801234562121" />
+      <code code="G15_10/SM02" codeSystem="1.2.250.1.213.1.1.4.5" displayName="Médecin - Anesthésie-réanimation (SM)"/>
+      <addr>
+        <houseNumber>142</houseNumber>
+        <streetName>Rue Belvédère</streetName>
+        <postalCode>92100</postalCode>
+        <city>Boulogne-Billancourt</city>
+      </addr>
+      <telecom value="tel:0142515151" use="WP" />
+      <associatedPerson>
+        <name>
+          <family>SANTI</family>
+          <given>Jérôme</given>
+        </name>
+      </associatedPerson>
+      <scopingOrganization>
+        <id root="1.2.250.1.71.4.2.2" extension="1120456789" />
+        <name>Clinique du Belvédère</name>
+        <telecom value="tel:0142515151" use="WP" />
+        <addr>
+          <houseNumber>142</houseNumber>
+          <streetName>Rue Belvédère</streetName>
+          <postalCode>92100</postalCode>
+          <city>Boulogne-Billancourt</city>
+        </addr>
+      </scopingOrganization>
+    </associatedEntity>
+  </participant>
+  
+  <!-- Médecin traitant -->
+  <participant typeCode="INF">
+    <functionCode code="PCP" displayName="Médecin traitant" codeSystem="2.16.840.1.113883.5.88" />
+    <time xsi:type="IVL_TS">
+      <low value="20230425080000+0100" />
+    </time>
+    <associatedEntity classCode="PROV">
+      <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+      <code code="G15_10/SM26" codeSystem="1.2.250.1.213.1.1.4.5" displayName="Médecin - Qualifié en Médecine Générale (SM)"/>
+      <addr>
+        <houseNumber>3</houseNumber>
+        <streetName>Rue Petit Pont</streetName>
+        <postalCode>75005</postalCode>
+        <city>Paris</city>
+      </addr>
+      <telecom value="tel:0147150000" use="EC" />
+      <associatedPerson>
+        <name>
+          <family>MEDIONI</family>
+          <given>Jacques</given>
+          <suffix>DR</suffix>
+        </name>
+      </associatedPerson>
+    </associatedEntity>
+  </participant>
+  
+  <!-- Sage-femme referente -->
+  <participant typeCode="PRF">
+    <functionCode code="353" displayName="Membre de l'équipe de soins" codeSystem="1.2.250.1.213.1.6.1.107">
+      <originalText>Sage-femme referente</originalText>
+    </functionCode>
+    <time xsi:type="IVL_TS">
+      <low value="20230425080000+0100" />
+    </time>
+    <associatedEntity classCode="PROV">
+      <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+      <code code="G15_50" codeSystem="1.2.250.1.213.1.1.4.5" displayName="Sage-Femme"/>
+      <addr>
+        <houseNumber>142</houseNumber>
+        <streetName>Rue Belvédère</streetName>
+        <postalCode>92100</postalCode>
+        <city>Boulogne-Billancourt</city>
+      </addr>
+      <telecom value="tel:0142515151" use="WP" />
+      <associatedPerson>
+        <name>
+          <family>NAOURI</family>
+          <given>Lucette</given>
+        </name>
+      </associatedPerson>
+      <scopingOrganization>
+        <id root="1.2.250.1.71.4.2.2" extension="1120456789" />
+        <name>Clinique du Belvédère</name>
+        <telecom value="tel:0142515151" use="WP" />
+        <addr>
+          <houseNumber>142</houseNumber>
+          <streetName>Rue Belvédère</streetName>
+          <postalCode>92100</postalCode>
+          <city>Boulogne-Billancourt</city>
+        </addr>
+      </scopingOrganization>
+    </associatedEntity>
+  </participant>  
+  
+  <!-- Praticien ayant suivi la patiente -->
+  <participant typeCode="CON">
+    <functionCode code="CORRE" codeSystem="1.2.250.1.213.1.1.4.2.280" displayName="Correspondant">      
+      <originalText>Praticien ayant suivi la patiente</originalText>
+    </functionCode>
+    <time xsi:type="IVL_TS">
+      <low value="20230425080000+0100" />
+    </time>
+    <associatedEntity classCode="PROV">
+      <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+      <code code="G15_10/SM20" codeSystem="1.2.250.1.213.1.1.4.5" displayName="Médecin - Gynécologie-obstétrique (SM)" />
+      <addr>
+        <houseNumber>3</houseNumber>
+        <streetName>Rue Petit Pont</streetName>
+        <postalCode>75005</postalCode>
+        <city>Paris</city>
+      </addr>
+      <telecom value="tel:0147150000" use="EC" />
+      <associatedPerson>
+        <name>
+          <given>Charles </given>
+          <family>BOILEAU</family>
+          <suffix>DR</suffix>
+        </name>
+      </associatedPerson>
+    </associatedEntity>
+  </participant>
+  
+  <!-- Pédiatre -->
+  <participant typeCode="CON">
+    <functionCode code="CORRE" codeSystem="1.2.250.1.213.1.1.4.2.280" displayName="Correspondant">  
+      <originalText>Pédiatre</originalText>
+    </functionCode>
+    <time xsi:type="IVL_TS">
+      <low value="20230425080000+0100" />
+    </time>
+    <associatedEntity classCode="PROV">
+      <id root="1.2.250.1.71.4.2.1" extension="801234566565" />
+      <code code="G15_10/SM40" codeSystem="1.2.250.1.213.1.1.4.5" displayName="Médecin - Pédiatrie (SM)"/>
+      <addr>
+        <houseNumber>21</houseNumber>
+        <streetName>Rue de l'école</streetName>
+        <postalCode>75005</postalCode>
+        <city>Paris</city>
+      </addr>
+      <telecom value="tel:0147120000" use="EC" />
+      <associatedPerson>
+        <name>
+          <given>Ivan</given>
+          <family>BUSSENS</family>
+          <suffix>DR</suffix>
+        </name>
+      </associatedPerson>
+    </associatedEntity>
+  </participant>
+  
+  <!-- Acte documenté -->
+  <documentationOf>
+    <serviceEvent classCode="ACT">
+      <id root="5A931FFC-E3D3-4153-953F-4C314500A410" />
+      <code code="236973005" displayName="Accouchement" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+      <effectiveTime>
+        <low value="20230425080000+0100"/>
+        <high value="20230425111000+0100"/>
+      </effectiveTime>
+      <performer typeCode="PRF">
+        <assignedEntity>
+          <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+          <code code="G15_10/SM20" codeSystem="1.2.250.1.213.1.1.4.5" displayName="Médecin - Gynécologie-obstétrique (SM)" />
+          <assignedPerson>
+            <name>
+              <given>Jacques </given>
+              <family>BIDEAULT</family>
+              <suffix>DR</suffix>
+            </name>
+          </assignedPerson>
+          <representedOrganization>
+            <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+            <name>Clinique du Belvédère</name>
+            <telecom value="tel:0442515151" use="WP" />
+            <addr>
+              <houseNumber>142</houseNumber>
+              <streetName>Rue Belvédère</streetName>
+              <postalCode>92100</postalCode>
+              <city>Boulogne-Billancourt</city>
+            </addr>
+            <standardIndustryClassCode code="ETABLISSEMENT" displayName="Établissement de santé" codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode" />
+          </representedOrganization>
+        </assignedEntity>
+      </performer>
+    </serviceEvent>
+  </documentationOf>
+
+  <!-- Prise en charge -->
+  <componentOf>
+    <encompassingEncounter>
+      <code code="EXTERNE" displayName="Acte et consultation externe (établissement)" codeSystem="1.2.250.1.213.1.1.4.2.291" />
+      <effectiveTime>
+        <low value="20230425080000+0100" />
+        <high value="20230425111000+0100" />
+      </effectiveTime>
+      <responsibleParty>
+        <assignedEntity>
+          <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+          <code code="G15_10/SM20" codeSystem="1.2.250.1.213.1.1.4.5" displayName="Médecin - Gynécologie-obstétrique (SM)" />
+          <assignedPerson>
+            <name>
+              <given>Jacques </given>
+              <family>BIDEAULT</family>
+              <suffix>DR</suffix>
+            </name>
+          </assignedPerson>
+          <representedOrganization>
+            <id root="1.2.250.1.71.4.2.2" extension="1120456789"/>
+            <name>Clinique du Belvédère</name>
+            <telecom value="tel:0442515151" use="WP" />
+            <addr>
+              <houseNumber>142</houseNumber>
+              <streetName>Rue Belvédère</streetName>
+              <postalCode>92100</postalCode>
+              <city>Boulogne-Billancourt</city>
+            </addr>
+            <standardIndustryClassCode code="ETABLISSEMENT" displayName="Établissement de santé" codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode" />
+          </representedOrganization>
+        </assignedEntity>
+      </responsibleParty>
+      <location>
+        <healthCareFacility>
+          <id root="1.2.250.1.71.4.2.2" extension="1120456789"/>
+          <code code="SA04" displayName="Etablissement privé non PSPH" codeSystem="1.2.250.1.71.4.2.4" />
+          <location>
+            <name>Clinique du Belvédère</name>
+            <addr>
+              <houseNumber>142</houseNumber>
+              <streetName>Rue Belvédère</streetName>
+              <postalCode>92100</postalCode>
+              <city>Boulogne-Billancourt</city>
+            </addr>
+          </location>
+        </healthCareFacility>
+      </location>
+    </encompassingEncounter>
+  </componentOf>
+  <!-- 
+      ********************************************************
+      Corps du document
+      ********************************************************
+   -->
+  <component>
+    <structuredBody>
+      <!-- [1..1] Section FR-Travail-et-accouchement -->
+      <component>
+        <section>
+          <!-- Conformité Labor and Delivery Events (IHE PCC) -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.21.2.3"/>
+          <!-- Conformité FR-Travail-et-accouchement (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.123"/>
+          <id root="1B465436-2243-445F-959E-A421D96C1522" />
+          <code code="57074-7" displayName="Travail et accouchement" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+          <title>Travail et accouchement</title>
+          <text/>
+          <!-- [1..1] Sous-section FR-Actes-et-interventions -->
+          <component>
+            <section>
+              <!-- Conformité Procedures and Interventions (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.13.2.11"/>      
+              <!-- Conformité FR-Actes-et-interventions (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.2.118"/>
+              <id root="E52A7B75-3B12-44DF-80B3-3DEA64E25B4B" />
+              <code code="29554-3" displayName="Actes" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+              <text>
+                <table border="0">                  
+                  <tbody>
+                        <tr>
+                          <td><content ID="modeAccouchement">Mode d'accouchement</content></td>
+                          <td>accouchement par voie basse</td>
+                        </tr>
+                        <tr>
+                          <td><content ID="typeInterventionVoieBasse">Type d'intervention</content></td>
+                          <td>accouchement par extraction par ventouse<br /></td>
+                        </tr>
+                        <tr>
+                          <td><content ID="motifInterventionVoieBasse">Motif de l'intervention</content></td>
+                          <td>Travail prolongé</td>
+                        </tr>
+                        <tr>
+                          <td>Référence</td>
+                          <td><linkHtml ID="a3" href="http://reference/exemple.pdf">A7102400008_630#</linkHtml></td>
+                        </tr>
+                  </tbody>
+                </table>
+              </text>
+              <!-- [1..1] Entrée FR-Acte : Mode d'accouchement  -->
+              <entry>
+                <procedure classCode="PROC" moodCode="EVN" negationInd="false">
+                  <!-- Conformité Procedure activity (CCD) -->
+                  <templateId root="2.16.840.1.113883.10.20.1.29"/>
+                  <!-- Conformité Procedure Entry (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+                  <!-- Conformité FR-Acte (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.62"/>
+                  <id root="D3DCE1E0-EB52-47CB-8507-D33F0041D138" />
+                  <!-- Valeur issue du jdv-mode-naissance-cisis (1.2.250.1.213.1.1.5.744) -->
+                  <code code="700000006" displayName="accouchement par voie basse" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+                  <text><reference value="#modeAccouchement" /></text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20230425"/>                  
+                  
+                  <!-- [1..*] Entrée FR-Simple-Observation : Type Intervention Voie Basse -->
+                  <entryRelationship typeCode="COMP" inversionInd="false">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <!-- Conformité Simple Observation (IHE PCC) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
+                      <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.48" />
+                      <id root="721A82E2-3775-4705-9FC7-BDB87872C948" />
+                      <code code="MED-1171" displayName="Type intervention voie basse" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
+                      <text><reference value="#typeInterventionVoieBasse" /></text>
+                      <statusCode code="completed" />
+                      <effectiveTime nullFlavor="NA" />
+                      <!-- mode d’accouchement : valeur issue du jdv-type-intervention-voie-basse-cisis (1.2.250.1.213.1.1.5.750) -->
+                      <value xsi:type="CD" code="61586001" displayName="accouchement par extraction par ventouse" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                    </observation>
+                  </entryRelationship>
+                  
+                  <!-- [1..*] Entrée FR-Simple-Observation : Motif de l'intervention voie basse-->
+                  <entryRelationship typeCode="COMP" inversionInd="false">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <!-- Conformité Simple Observation (IHE PCC) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
+                      <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.48" />
+                      <id root="441DF6CB-D9A8-4023-BFC3-2F0A5D4DC0A5" />
+                      <code code="MED-1268" displayName="motif intervention voie basse" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
+                      <text><reference value="#motifInterventionVoieBasse" /></text>
+                      <statusCode code="completed" />
+                      <effectiveTime nullFlavor="NA" />
+                      <!-- CIM 10 -->
+                      <value xsi:type="CE" code="O63.9" displayName="Travail prolongé, sans précision" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM 10" />
+                    </observation>
+                  </entryRelationship>
+                  
+                  <!-- [0..1] Entrée FR-References-externes : Référence du CR d'extraction -->
+                  <entryRelationship typeCode="REFR" inversionInd="false">
+                    <act classCode="ACT" moodCode="EVN">
+                      <!-- Conformité External References (IHE PCC) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.4"/>
+                      <!-- Conformité FR-References-externes (CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.35"/>
+                      <id root="1E2DF585-ACF2-4004-B179-3010A99DD158" />
+                      <code nullFlavor="NA">
+                        <originalText><reference value="#a3"/></originalText>
+                      </code>
+                      <text nullFlavor="NA"> 
+                      </text><reference typeCode="REFR">
+                        <externalDocument classCode="DOC" moodCode="EVN">
+                          <!-- Identifiant unique du document de référence -->
+                          <id root="1.2.250.1.213.1.1.9" extension="A7102400008_630" />
+                        </externalDocument>
+                      </reference>
+                    </act>
+                  </entryRelationship>
+                </procedure>
+              </entry>
+            </section>
+          </component>
+          
+          <!-- [1..1] Sous-section FR-Resultats-evenements -->
+          <component>
+            <section>
+              <!-- Conformité Event Outcomes (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.21.2.9"/>
+              <!-- Conformité Coded Event Outcomes (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.7.3.1.1.13.7"/>
+              <!-- Conformité FR-Resultats-evenements (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.2.163"/>
+              <id root="E52A7B75-3B12-44DF-80B3-3DEA64E25B4B" />
+              <code code="42545-4" displayName="Evènements observés" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+              <text>
+                <table border="0">                  
+                  <tbody>
+                    <tr>
+                      <td><content ID="rang">Rang de naissance</content></td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td><content ID="ageGest">Age gestationnel</content></td>
+                      <td>36 SA</td>
+                    </tr>
+                    <tr>                      
+                      <td><content ID="presFoet">Présentation foetale</content></td>
+                      <td>malposition du fœtus par présentation de la face</td>
+                    </tr>
+                    <tr>
+                      <td><content ID="quantiteLiq">Quantité de liquide amniotique</content></td>
+                      <td>Volume de liquide amniotique dans l'intervalle de référence</td>
+                    </tr>
+                    <tr>
+                      <td><content ID="aspLiq">Aspect du liquide amniotique à la naissance</content></td>
+                      <td>Liquide amniotique de couleur jaune paille</td>
+                    </tr>
+                    <tr>
+                      <td><content ID="dureeOeuf">Durée d'ouverture de l'oeuf</content></td>
+                      <td>12 mn</td>
+                    </tr>
+                    <tr>
+                      <td><content ID="enfantViv">Enfant vivant</content></td>
+                      <td>Oui</td>
+                    </tr>                    
+                  </tbody>
+                </table>
+              </text>
+              <!-- [1..1] Entrée FR-Simple-Observation : Rang et date de naissance -->
+              <entry>
+                <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                  <!-- Conformité Simple Observation (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
+                  <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.48" />
+                  <id root="F50090E5-B029-41D0-B00A-380A45E3E3D8" />
+                  <!-- Valeur issue de jdv-obp-resultat-evenement-cisis (1.2.250.1.213.1.1.5.724) -->
+                  <code code="73771-8" displayName="Rang de naissance" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+                  <text><reference value="#rang" /></text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20230425"/>
+                  <value xsi:type="INT" value="1" />
+                </observation>
+              </entry>
+              <!-- [1..1] Entrée FR-Simple-Observation : Age gestationnel -->
+              <entry>
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité Simple Observation (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
+                  <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.48" />
+                  <id root="29E37FE1-C7EC-4C1B-A3C0-C68E66DBE5F1" />
+                  <!-- Valeur issue de jdv-obp-resultat-evenement-cisis (1.2.250.1.213.1.1.5.724) -->
+                  <code code="11884-4" displayName="Age gestationnel du fœtus (estimation clinique)" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+                  <text><reference value="#ageGest" /></text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20230425"/>
+                  <value xsi:type="PQ" value="36" unit="wk" />
+                </observation>
+              </entry>
+              <!-- [1..1] Entrée FR-Simple-Observation : Présentation foetale -->
+              <entry>
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité Simple Observation (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
+                  <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.48" />
+                  <id root="8CD9BA94-498C-4741-AFA7-2A4D3A33479D" />
+                  <!-- Valeur issue de jdv-obp-resultat-evenement-cisis (1.2.250.1.213.1.1.5.724) -->
+                  <!-- Code à valider -->
+                  <code code="MED-1223" displayName="Présentation fœtale" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                  <text><reference value="#presFoet" /></text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20230425"/>
+                  <!-- Valeur issue du jdv-presentation-foetale-cisis (1.2.250.1.213.1.1.5.746) -->
+                  <value xsi:type="CD" code="289366006" displayName="malposition du fœtus par présentation de la face" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                </observation>
+              </entry>
+              <!-- [1..1] Entrée FR-Simple-Observation : Volume de liquide amniotique -->
+              <entry>
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité Simple Observation (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
+                  <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.48" />
+                  <id root="FF14E7F0-A73C-4F91-AB7B-8A04F713B36B" />
+                  <!-- Valeur issue de jdv-obp-resultat-evenement-cisis (1.2.250.1.213.1.1.5.724) -->
+                  <code code="3156-7" displayName="Volume de liquide amniotique" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+                  <text><reference value="#quantiteLiq" /></text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20230425"/>
+                  <!-- Valeur issue du jdv-quantite-liquide-amniotique-cisis (1.2.250.1.213.1.1.5.747) -->
+                  <value xsi:type="CD" code="278092006" displayName="volume de liquide amniotique dans l'intervalle de référence" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                </observation>
+              </entry>
+              <!-- [1..1] Entrée FR-Simple-Observation : Couleur du liquide amniotique à la naissance -->
+              <entry>
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité Simple Observation (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
+                  <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.48" />
+                  <id root="074B1861-D92E-4441-9E52-0C563D7AB51C" />
+                  <!-- Valeur issue de jdv-obp-resultat-evenement-cisis (1.2.250.1.213.1.1.5.724) -->
+                  <code code="38386-9" displayName="Couleur du liquide amniotique" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                  <text><reference value="#aspLiq" /></text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20230425"/>
+                  <!-- Valeur issue du jdv-aspect-liquide-amniotique-cisis (1.2.250.1.213.1.1.5.740) -->
+                  <value xsi:type="CD" code="408781009" displayName="liquide amniotique de couleur jaune paille" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                </observation>
+              </entry>
+              <!-- [1..1] Entrée FR-Simple-Observation : Durée d'ouverture de l'oeuf -->
+              <entry>
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité Simple Observation (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
+                  <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.48" />
+                  <id root="B3C83C2D-3667-4FE7-BFAB-B2B554E920C5" />
+                  <!-- Valeur issue de jdv-obp-resultat-evenement-cisis (1.2.250.1.213.1.1.5.724) -->
+                  <code code="56829-5" displayName="Durée d'ouverture de l'oeuf" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+                  <text><reference value="#dureeOeuf" /></text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20230425"/>
+                  <value xsi:type="PQ" value="12" unit="min" />
+                </observation>
+              </entry>
+              <!-- [1..1] Entrée FR-Simple-Observation : Enfant vivant (true / false) -->
+              <entry>
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité Simple Observation (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
+                  <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.48" />
+                  <id root="DE89B61E-6EF0-4EFB-B1C2-FDEE89138E04" />
+                  <!-- Valeur issue de jdv-obp-resultat-evenement-cisis (1.2.250.1.213.1.1.5.724) -->
+                  <code code="73757-7" displayName="Enfant vivant" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                  <text><reference value="#enfantViv" /></text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20230425"/>
+                  <value xsi:type="BL" value="true" />
+                </observation>
+              </entry>
+              
+              <!-- <!-\- [0..1] Entrée FR-Simple-Observation : Circonstance du décès : Si mort foetale -\->
+              <entry>
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-\- Conformité Simple Observation (IHE PCC) -\->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
+                  <!-\- Conformité FR-Simple-Observation (CI-SIS) -\->
+                  <templateId root="1.2.250.1.213.1.1.3.48" />
+                  <id root="FE062A9D-6E00-4DE2-B866-D60C892B0AC3" />
+                  <!-\- Valeur issue de jdv-obp-resultat-evenement-cisis (1.2.250.1.213.1.1.5.724) -\->
+                  <code code="92022-3" displayName="Cause initiale du décès fétus" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                  <text><reference value="#deces" /></text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20230425"/>
+                  <!-\- Valeur issue de jdv-circonstance-deces-cisis (1.2.250.1.213.1.1.5.741) -\->
+                  <value xsi:type="CD" code="1762004" displayName="mort fœtale par asphyxie et/ou par anoxie pendant le travail" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                </observation>
+              </entry>-->
+              
+            </section>
+          </component>
+        </section>
+      </component>
+
+      <!-- [0..1] Section FR-Informations-sur-l-accouchement -->
+      <component>
+        <section>
+          <!-- Conformité Newborn Delivery Information (IHE PCC) -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.21.2.4"/>
+          <!-- Conformité FR-Informations-sur-l-accouchement (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.124"/>  
+          <id root="F5DADC43-8E1A-4699-9BBD-BFDB84091BFB" />
+          <code code="57075-4" displayName="Informations sur l'accouchement et le nouveau-né" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+          <title>Enfant en salle de naissance</title>
+          <text/>
+          <!-- [0..1] Sous-section FR-Examen-physique-detaille-code -->
+          <component>
+            <section>
+              <!-- Conformité IHE PCC Parent Template Physical Examination -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.24"/>
+              <!-- Conformité IHE PCC Detailed Physical Examination -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.9.15"/>
+              <!-- Conformité IHE PCC Coded Detailed Physical Examination -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.9.15.1"/>
+              <!-- Conformité CI-SIS -->
+              <templateId root="1.2.250.1.213.1.1.2.84"/>
+              <id root="4A402640-1CF6-4153-B5BA-D56B623004C8" />
+              <code code="29545-1" displayName="Examen physique" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+              <title>Examen physique du nouveau-né</title>
+              <text/>
+              
+              <!-- [0..1] Sous-sous-section FR-Signes-vitaux -->
+              <component>
+                <section>
+                  <!-- Conformité Vital Signs (CCD) -->
+                  <templateId root="2.16.840.1.113883.10.20.1.16"/>
+                  <!-- Conformité Vital Signs narrative (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.25"/>
+                  <!-- Conformité Coded Vital Signs (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.2"/>
+                  <!-- Conformité FR-Signes-vitaux (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.2.75"/>
+                  <id root="3B6E8DA4-C82E-4C3F-9DF9-3A7599EE6D63"/>
+                  <code code="8716-3" displayName="Signes vitaux"
+                    codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                  <title>Signes vitaux</title>
+                  <text>
+                    <table border="0">                      
+                      <tbody>
+                        <tr>                          
+                          <td><content ID="apgar1mn">APGAR à 1 min</content></td>
+                          <td>10</td>
+                        </tr>
+                        <tr>
+                          <td><content ID="apgar5mn">APGAR à 5 min</content></td>
+                          <td>10</td>
+                        </tr>
+                        <tr>
+                          <td><content ID="apgar10mn">APGAR à 10 min</content></td>
+                          <td>10</td>
+                        </tr>
+                        <tr>
+                          <td><content ID="poids">Poids</content></td>
+                          <td>3900 g</td>
+                        </tr>
+                        <tr>
+                          <td><content ID="taille">Taille</content></td>
+                          <td>52 cm</td>
+                        </tr>
+                        <tr>
+                          <td><content ID="perimetre-cranien">Périmètre crânien</content></td>
+                          <td>35 cm</td>
+                        </tr>                
+                      </tbody>
+                    </table>
+                  </text>                 
+                  <!-- [1..1] Entrée FR-Signes-vitaux -->
+                  <entry>
+                    <organizer classCode="CLUSTER" moodCode="EVN">
+                      <!-- Conformité Result organizer (CCD) -->
+                      <templateId root="2.16.840.1.113883.10.20.1.32"/>
+                      <!-- Conformité Vital signs organizer (CCD) -->
+                      <templateId root="2.16.840.1.113883.10.20.1.35"/>
+                      <!-- Conformité Vital Signs Organizer (IHE PCC) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.1"/>
+                      <!-- Conformité FR-Signes-vitaux (CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.49"/>
+                      <id root="0FD525FD-8712-40F9-BC31-AF9E25069C24"/>
+                      <code code="85353-1" displayName="Signes vitaux"
+                        codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                      <statusCode code="completed"/>
+                      <effectiveTime value="20190901"/>
+                      
+                      <!-- Entrée FR-Signe-vital-observe : APGAR à 1 mn -->
+                      <component typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN">
+                          <!-- Conformité Result observation (CCD) -->
+                          <templateId root="2.16.840.1.113883.10.20.1.31"/>
+                          <!-- Conformité Simple Observation (IHE PCC) -->
+                          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                          <!-- Conformité Vital Signs Observation (IHE PCC) -->
+                          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+                          <!-- Conformité FR-Signe-vital-observé (CI-SIS) -->
+                          <templateId root="1.2.250.1.213.1.1.3.50"/>
+                          <id root="4461355E-71B1-41B9-8D48-80D672C8D08C"/>
+                          <code code="9272-6" displayName="APGAR à 1mn"
+                            codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                          <text><reference value="#apgar1mn"/></text>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20190901"/>
+                          <value xsi:type="PQ" value="10" unit="{score}"/>
+                        </observation>
+                      </component>
+                      
+                      <!-- Entrée FR-Signe-vital-observe : APGAR à 5 mn -->
+                      <component typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN">
+                          <!-- Conformité Result observation (CCD) -->
+                          <templateId root="2.16.840.1.113883.10.20.1.31"/>
+                          <!-- Conformité Simple Observation (IHE PCC) -->
+                          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                          <!-- Conformité Vital Signs Observation (IHE PCC) -->
+                          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+                          <!-- Conformité FR-Signe-vital-observé (CI-SIS) -->
+                          <templateId root="1.2.250.1.213.1.1.3.50"/>
+                          <id root="2D06DA10-5A5E-4782-BA57-9A0DC1FA5CFA"/>
+                          <code code="9274-2" displayName="APGAR à 5mn"
+                            codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                          <text><reference value="#apgar5mn"/></text>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20190901"/>                          
+                          <value xsi:type="PQ" value="10" unit="{score}"/>
+                        </observation>
+                      </component>
+                      
+                      <!-- Entrée FR-Signe-vital-observe : APGAR à 10 mn -->
+                      <component typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN">
+                          <!-- Conformité Result observation (CCD) -->
+                          <templateId root="2.16.840.1.113883.10.20.1.31"/>
+                          <!-- Conformité Simple Observation (IHE PCC) -->
+                          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                          <!-- Conformité Vital Signs Observation (IHE PCC) -->
+                          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+                          <!-- Conformité FR-Signe-vital-observé (CI-SIS) -->
+                          <templateId root="1.2.250.1.213.1.1.3.50"/>
+                          <id root="1AC40147-D987-475D-9C57-B7B91CBAC1C5"/>
+                          <code code="9271-8" displayName="APGAR à 10mn" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                          <text><reference value="#apgar10mn"/></text>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20190901"/>                          
+                          <value xsi:type="PQ" value="10" unit="{score}"/>
+                        </observation>
+                      </component>
+                      
+                      <!-- Entrée FR-Signe-vital-observe : Poids -->
+                      <component typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN">
+                          <!-- Conformité Result observation (CCD) -->
+                          <templateId root="2.16.840.1.113883.10.20.1.31"/>
+                          <!-- Conformité Simple Observation (IHE PCC) -->
+                          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                          <!-- Conformité Vital Signs Observation (IHE PCC) -->
+                          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+                          <!-- Conformité FR-Signe-vital-observé (CI-SIS) -->
+                          <templateId root="1.2.250.1.213.1.1.3.50"/>
+                          <id root="222B0A68-94C4-47B2-BC51-2375CD896B42"/>
+                          <code code="29463-7" codeSystem="2.16.840.1.113883.6.1"
+                            displayName="Poids" codeSystemName="LOINC"/>
+                          <text><reference value="#poids"/></text>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20190901"/>
+                          <value xsi:type="PQ" value="3900" unit="g"/>
+                        </observation>
+                      </component>
+                      
+                      <!-- Entrée FR-Signe-vital-observe : Taille -->
+                      <component typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN">
+                          <!-- Conformité Result observation (CCD) -->
+                          <templateId root="2.16.840.1.113883.10.20.1.31"/>
+                          <!-- Conformité Simple Observation (IHE PCC) -->
+                          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                          <!-- Conformité Vital Signs Observation (IHE PCC) -->
+                          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+                          <!-- Conformité FR-Signe-vital-observé (CI-SIS) -->
+                          <templateId root="1.2.250.1.213.1.1.3.50"/>
+                          <id root="2D8611C6-9F6B-4964-9837-7F999E092A1B"/>
+                          <code code="8302-2" codeSystem="2.16.840.1.113883.6.1"
+                            displayName="Taille" codeSystemName="LOINC"/>
+                          <text><reference value="#taille"/></text>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20190901"/>
+                          <value xsi:type="PQ" value="52" unit="cm"/>
+                        </observation>
+                      </component>
+                      
+                      <!-- Entrée FR-Signe-vital-observe : Périmètre crânien -->
+                      <component typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN">
+                          <!-- Conformité Result observation (CCD) -->
+                          <templateId root="2.16.840.1.113883.10.20.1.31"/>
+                          <!-- Conformité Simple Observation (IHE PCC) -->
+                          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                          <!-- Conformité Vital Signs Observation (IHE PCC) -->
+                          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+                          <!-- Conformité FR-Signe-vital-observé (CI-SIS) -->
+                          <templateId root="1.2.250.1.213.1.1.3.50"/>
+                          <id root="F3FF9F82-8188-47F8-912B-FF848621F210"/>
+                          <code code="8287-5" displayName="Périmètre crânien"
+                            codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                          <text><reference value="#perimetre-cranien"/></text>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20190901"/>
+                          <value xsi:type="PQ" value="35" unit="cm"/>
+                        </observation>
+                      </component>
+                    </organizer>
+                  </entry>
+                </section>
+              </component>
+              
+              <!-- [0..1] Sous-sous-section FR-ORL  -->
+              <component>
+                <section>
+                  <!-- Conformité Ears, Nose, Mouth and Throat Section(IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.9.20" />
+                  <!-- Conformité FR-ORL (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.2.89" />
+                  <id root="4A402640-1CF6-4153-B5BA-D56B623004C8" />
+                  <code code="11393-6" displayName="ORL" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+                  <title>Examen ORL</title>
+                  <text>
+                    <table border="0">
+                      <tbody>
+                        <tr>
+                          <td><content ID="choanes">Atrésie des choanes</content></td>
+                          <td>Non</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </text>
+                  <!-- Entrée FR-Probleme : Atrésie des choanes (Non : negationInd="true") -->
+                  <entry>
+                    <observation classCode="OBS" moodCode="EVN" negationInd="true">
+                      <!-- Conformité Problem observation (CCD) -->
+                      <templateId root="2.16.840.1.113883.10.20.1.28" />
+                      <!-- Conformité Problem Entry (IHE PCC) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5" />
+                      <!-- Conformité FR-Probleme (CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.37" />
+                      <id root="55E0941C-424C-4844-B811-394A67F8C67D" />
+                      <code code="404684003" displayName="constatation clinique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                      <text><reference value="#choanes"/></text>
+                      <statusCode code="completed" />
+                      <effectiveTime>
+                        <low nullFlavor="UNK"/>
+                      </effectiveTime>
+                      <value xsi:type="CD" code="Q30.0" displayName="Atrésie des choanes" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
+                        <originalText><reference value="#choanes"/></originalText>
+                      </value>
+                    </observation>
+                  </entry>
+                </section>
+              </component>
+              
+              <!-- [0..1] Sous-sous-section FR-Colon-rectum -->
+              <component>
+                <section>
+                  <!-- Conformité Rectum Section (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.9.37" />
+                  <!-- Conformité FR-Colon-rectum (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.2.106" />
+                  <id root="4A402640-1CF6-4153-B5BA-D56B623004C8" />
+                  <code code="10205-3" displayName="Côlon rectum" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+                  <title>Examen du rectum</title>
+                  <text>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td><content ID="anale">Absence, atrésie et sténose congénitales de l'anus, sans fistule</content></td>
+                          <td>Non</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </text>   
+                  <!-- Entrée FR-Probleme : Absence, atrésie et sténose congénitales du gros intestin (non : negationInd="true") -->
+                  <entry>
+                    <observation classCode="OBS" moodCode="EVN" negationInd="true">
+                      <!-- Conformité Problem observation (CCD) -->
+                      <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                      <!-- Conformité Problem Entry (IHE PCC) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                      <!-- Conformité FR-Probleme (CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.37"/>
+                      <id root="F912B74F-F888-4C82-B4CF-7D0889C5D8AD"/>
+                      <code code="404684003" displayName="constatation clinique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                      <text><reference value="#anale"/></text>
+                      <statusCode code="completed" />
+                      <effectiveTime>
+                        <low nullFlavor="UNK"/>
+                      </effectiveTime>
+                      <value xsi:type="CD" code="Q42.3" displayName="Absence, atrésie et sténose congénitales de l'anus, sans fistule" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
+                        <originalText><reference value="#anale"/></originalText>
+                      </value>
+                    </observation>
+                  </entry>                  
+                </section>
+              </component>
+              
+              <!-- [0..1] Sous-sous-section FR-Etat-general -->
+              <component>
+                <section>
+                  <!-- Conformité General Appearance Section (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.9.16" />
+                  <!-- Conformité FR-Etat-general (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.2.85" />
+                  <id root="4A402640-1CF6-4153-B5BA-D56B623004B4" />
+                  <code code="10210-3" displayName="État général" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+                  <title>État général</title>
+                  <text>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td><content ID="urine">Émission d'urine</content></td>
+                          <td>Oui</td>
+                        </tr>
+                        <tr>
+                          <td><content ID="meconium">Émission de méconium</content></td>
+                          <td>Oui</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </text>                    
+                  
+                  <!-- Entrée FR-Probleme : Émission d’urine (oui : negationInd="false") -->
+                  <entry>
+                    <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                      <!-- Conformité Problem observation (CCD) -->
+                      <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                      <!-- Conformité Problem Entry (IHE PCC) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                      <!-- Conformité FR-Probleme (CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.37"/>
+                      <id root="55E0941C-424C-4844-B811-394A67F8C68D"/>
+                      <code code="404684003" displayName="constatation clinique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                      <text><reference value="#urine"/></text>
+                      <statusCode code="completed" />
+                      <effectiveTime>
+                        <low nullFlavor="UNK"/>
+                      </effectiveTime>
+                      <value xsi:type="CD" code="MED-1172" displayName="Émission d'urine" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" >
+                        <originalText><reference value="#urine"/></originalText>
+                      </value>
+                    </observation>
+                  </entry>            
+                  <!-- Entrée FR-Probleme : Émission de méconium (oui : negationInd="false") -->
+                  <entry>
+                    <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                      <!-- Conformité Problem observation (CCD) -->
+                      <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                      <!-- Conformité Problem Entry (IHE PCC) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                      <!-- Conformité FR-Probleme (CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.37"/>
+                      <id root="7AB08573-C3A1-4946-923A-F6AAF33B2C8E"/>
+                      <code code="404684003" displayName="constatation clinique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                      <text><reference value="#meconium"/></text>
+                      <statusCode code="completed" />
+                      <effectiveTime>
+                        <low nullFlavor="UNK"/>
+                      </effectiveTime>
+                      <value xsi:type="CD" code="MED-1173" displayName="Émission de méconium" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
+                        <originalText><reference value="#meconium"/></originalText>
+                      </value>
+                    </observation>
+                  </entry>            
+                  
+                </section>
+              </component>
+              
+              </section>
+          </component>
+          
+          <!-- [0..1] Sous-section FR-Actes-et-interventions -->
+          <component>
+            <section>
+              <!-- Conformité Procedures and Interventions (IHE-PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.13.2.11"/>
+              <!-- Conformité FR-Actes-et-interventions (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.2.118"/>
+              <id root="E52A7B75-3B12-44DF-80B3-3DEA64E25B4B" />
+              <code code="29554-3" displayName="Actes" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+              <title>Actes et interventions</title>
+              <text>
+                <table border="0">
+                  <tbody>
+                    <tr>
+                      <td><content ID="reanimation-1">massage cardiaque externe manuel à thorax fermé</content></td>                      
+                      <td></td>
+                    </tr>                    
+                    <tr>
+                      <td><content ID="vita-K">Administration de Vitamine K</content></td>
+                      <td>par voie orale</td>
+                    </tr>
+                    <tr>
+                      <td>Prélèvements bactériologiques</td>
+                      <td><content ID="prelev-bacterio">(texte libre)</content></td>
+                    </tr>        
+                  </tbody>
+                </table>
+              </text>
+              
+              <!-- [0..*] Entrée FR-Acte : Réanimation -->
+              <entry>
+                <procedure classCode="PROC" moodCode="EVN" negationInd="false">
+                  <!-- Conformité Procedure activity (CCD) -->
+                  <templateId root="2.16.840.1.113883.10.20.1.29"/>
+                  <!-- Conformité Procedure Entry (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+                  <!-- Conformité FR-Acte (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.62"/>
+                  <id root="D3DCE1E0-EB52-47CB-8507-D33F0041D111" />
+                  <!-- code issu du jdv-geste-reanimation-nouveau-ne-cisis (1.2.250.1.213.1.1.5.754) -->
+                  <code code="83099006" displayName="massage cardiaque externe manuel à thorax fermé" 
+                        codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                  <text><reference value="#reanimation-1"/></text>
+                  <statusCode code="completed" />
+                  <effectiveTime>
+                    <low value="20230425"/>
+                  </effectiveTime>
+                </procedure>
+              </entry>
+                  
+              <!-- [0..1] Entrée FR-Acte : Administration de Vitamine K -->
+              <entry>
+                <procedure classCode="PROC" moodCode="EVN" negationInd="false">
+                  <!-- Conformité Procedure activity (CCD) -->
+                  <templateId root="2.16.840.1.113883.10.20.1.29"/>
+                  <!-- Conformité Procedure Entry (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+                  <!-- Conformité FR-Acte (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.62"/>
+                  <id root="D3DCE1E0-EB52-47CB-8507-D33F0041D112" />
+                  <code code="MED-1174" displayName="Administration de Vitamine K" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
+                  <text><reference value="#vita-K" /></text>
+                  <statusCode code="completed" />
+                  <effectiveTime>
+                    <low value="20230425"/>
+                  </effectiveTime>
+                  <approachSiteCode code="20053000" displayName="Voie orale" codeSystem="0.4.0.127.0.16.1.1.2.1"/>
+                </procedure>
+              </entry>
+              
+              <!-- [0..1] Entrée FR-Acte : Prélèvements bactériologiques -->
+              <entry>
+                <procedure classCode="PROC" moodCode="EVN" negationInd="false">
+                  <!-- Conformité Procedure activity (CCD) -->
+                  <templateId root="2.16.840.1.113883.10.20.1.29"/>
+                  <!-- Conformité Procedure Entry (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+                  <!-- Conformité FR-Acte (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.62"/>
+                  <id root="D3DCE1E0-EB52-47CB-8507-D33F0041D113" />
+                  <code code="MED-1175" displayName="Prélévement bactériologique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
+                  <text><reference value="#prelev-bacterio"/></text>
+                  <statusCode code="completed" />
+                  <effectiveTime>
+                    <low value="20230425"/>
+                  </effectiveTime>                    
+                </procedure>
+              </entry>
+              
+            </section>
+          </component>
+          
+        </section>
+      </component>
+
+      <!-- [0..1] Section FR-CR-BIO-Chapitre -->
+      <component>
+        <section>
+          <!-- Conformité Laboratory Specialty Section (IHE PCC) -->
+          <templateId root="1.3.6.1.4.1.19376.1.3.3.2.1"/>
+          <!-- Conformité FR-CR-BIO-Chapitre (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.70"/>
+          <code code="18719-5" displayName="Biochimie" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+          <title>Résultats de biologie</title>
+          <text>
+            <table border="0">
+              <thead>
+                <tr>
+                  <th>Examen</th>
+                  <th>Résultat</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>pH - sang de cordon artériel</td>
+                  <td>7.0</td>
+                </tr>
+                <tr>
+                  <td>pH - sang de cordon veineux</td>
+                  <td>7.0</td>
+                </tr>
+                <tr>
+                  <td>Acide lactique</td>
+                  <td>1.5 mmol/L</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <!-- [1..*] Entrée FR-Resultats-examens-de-biologie-medicale -->
+          <entry typeCode="DRIV">
+            <!-- Conformité Laboratory Report Data Processing Entry (IHE PALM) -->
+            <templateId root="1.3.6.1.4.1.19376.1.3.1"/>
+            <!-- Conformité FR-Resultats-examens-de-biologie-medicale (CI-SIS) -->
+            <templateId root="1.2.250.1.213.1.1.3.21"/>
+            <act classCode="ACT" moodCode="EVN">
+              <code code="18767-4" displayName="Gaz du Sang" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+              <statusCode code="completed" />               
+              <!-- pH Sang de cordon artériel -->
+              <entryRelationship typeCode="COMP"> 
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité Laboratory Observation (IHE PALM) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
+                  <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.80"/>
+                  <id root="D5086904-99AA-482E-86AE-BA33CF8C421F" />
+                  <code code="28646-8" codeSystem="2.16.840.1.113883.6.1" displayName="pH Sang de cordon artériel" codeSystemName="LOINC">
+                    <originalText><reference value="#phCordonArteriel"/></originalText>
+                  </code>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20230425"/>
+                  <value xsi:type="PQ" value="7.0" unit="[pH]"/>
+                </observation>                  
+              </entryRelationship>
+              <!-- pH Sang de cordon veineux -->
+              <entryRelationship typeCode="COMP"> 
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité Laboratory Observation (IHE PALM) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
+                  <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.80"/>
+                  <id root="1D07547D-7AFD-4589-8F4D-40B34961899E" />
+                  <code code="28647-6" codeSystem="2.16.840.1.113883.6.1" displayName="pH Sang de cordon veineux" codeSystemName="LOINC">
+                    <originalText><reference value="#phCordonVeineux"/></originalText>
+                  </code>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20230425"/>                  
+                  <value xsi:type="PQ" value="7.0" unit="[pH]"/>
+                </observation>                  
+              </entryRelationship> 
+              <!-- Lactate [Moles/Volume] Sang -->
+              <entryRelationship typeCode="COMP">  
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité Laboratory Observation (IHE PALM) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
+                  <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.80"/>
+                  <id root="4FDB71EE-B896-4AC8-BDA9-C1F5A895F60D" />
+                  <code code="32693-4" codeSystem="2.16.840.1.113883.6.1" displayName="Lactate [Moles/Volume] Sang" codeSystemName="LOINC">
+                    <originalText><reference value="#lactates"/></originalText>
+                  </code>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20230425"/>
+                  <value xsi:type="PQ" value="1.5" unit="mmol/L" />
+                </observation>                  
+              </entryRelationship>
+            </act>
+          </entry>
+        </section>
+      </component>
+      
+      <!-- [1..1] Section FR-Resultats-evenements -->
+      <component>
+        <section>
+          <!-- Conformité Event Outcomes (IHE PCC) -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.21.2.9"/>
+          <!-- Conformité Coded Event Outcomes (IHE PCC) -->
+          <templateId root="1.3.6.1.4.1.19376.1.7.3.1.1.13.7"/>
+          <!-- Conformité FR-Resultats-evenements (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.163"/>
+          <id root="E52A7B75-3B12-44DF-80B3-3DEA64E25B4B" />
+          <code code="42545-4" displayName="Evènements observés" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+          <title>Sortie de la salle de naissance</title>
+          <text>            
+            <table border="0">
+              <thead>
+                <tr>
+                  <th>Date et heure de sortie</th>
+                  <th>Mode de sortie</th>
+                  <th>Destination</th>
+                  <th>Précision sur la destination</th>
+                </tr>
+              </thead>
+              <tbody>                    
+                <tr>
+                  <td>25/04/2023 à 11h20</td>
+                  <td><content ID="modeSortie">Transfert du patient</content></td>
+                  <td><content ID="destination-precision">Unité Kangourou</content></td>
+                  <td><content ID="destination">Clinique du Belvédère</content></td>
+                </tr>                    
+              </tbody>
+            </table>
+          </text>
+          <!-- Entrée FR-Simple-Observation : Date, Heure et Mode de sortie -->
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Conformité Simple Observation (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
+              <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.48" />
+              <id root="A59E0EBD-018D-4289-B879-0A8D55F64D02" />
+              <code code="ORG-074" displayName="Modalité de sortie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
+              <text><reference value="#modeSortie" /></text>
+              <statusCode code="completed" />
+              <!-- [1..1] Date et heure de sortie -->
+              <effectiveTime value="20230425112000"/>
+              <!-- [1..1] Valeur issue du jdv-mode-sortie-obp-sne-cisis (1.2.250.1.213.1.1.5.699) -->
+              <value xsi:type="CD" code="107724000" displayName="transfert du patient" 
+                codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+            </observation>
+          </entry>
+          
+          <!-- Entrée FR-Transfert-du-patient : Destination -->
+          <entry>
+            <act classCode="ACT" moodCode="EVN">
+              <!-- Conformité Patient Transfer (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.25.1.4.1" />
+              <!-- Conformité FR-Transfert-du-patient (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.28" />
+              <id root="A59E0EBD-018D-4289-B879-0A8D55F64F34" />
+              <code code="80413-8" displayName="Transfert du patient" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+              <text><reference value="#destination" /></text>
+              <statusCode code="completed" />
+              <effectiveTime>
+                <low value="20230425112000"/>
+                <high value="20230425113000"/>
+              </effectiveTime>
+              <!-- Destination -->
+              <participant typeCode="DST">
+                <!-- Identifiant de l’établissement de destination -->
+                <templateId root="1.2.250.1.71.4.2.2" extension="1120456789"/>              
+                <participantRole classCode="SDLOC">
+                  <!-- Identifiant de l’entité ayant effectué le transfert -->
+                  <id nullFlavor="UNK"/>
+                  <!-- valeur issue du JDV_J02_XdsHealthcareFacilityTypeCode_CISIS (1.2.250.1.213.1.1.5.3) -->
+                  <code code="SA04" displayName="Etablissement privé non PSPH" codeSystem="1.2.250.1.71.4.2.4"/>                  
+                  <addr>
+                    <houseNumber>142</houseNumber>
+                    <streetName>Rue Belvédère</streetName>
+                    <postalCode>92100</postalCode>
+                    <city>Boulogne-Billancourt</city>
+                  </addr>
+                  <telecom value="tel:0442515151" use="WP" />
+                  <playingEntity classCode="ENT">
+                    <!-- valeur issue du jdv-destination-obp-sne-cisis (1.2.250.1.213.1.1.5.702) -->
+                    <code code="ORG-141" displayName="Unité Kangourou" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                    <!-- Nom de l'établissement -->
+                    <name>Clinique du Belvédère</name>                    
+                  </playingEntity>
+                </participantRole>
+              </participant>              
+            </act>
+          </entry>
+          
+        </section>
+      </component>
+      
+      <!-- [1..1] Section FR-Statut-du-document -->
+      <component>
+        <section>
+          <!-- Conformité FR-Statut-du-document (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.35"/>
+          <id root="40BA1599-AFD6-4625-969E-FBAB97694C99"/>
+          <code code="33557-0" displayName="Etat d'achèvement" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+          <title>Statut du document</title>
+          <text><content ID="statutDocument">approuvé</content></text>
+          <!-- [1..1] Entrée FR-Statut-document -->
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Conformité Simple Observation (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+              <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.48"/>
+              <!-- Conformité FR-Statut-document (CI-SIS)  -->
+              <templateId root="1.2.250.1.213.1.1.3.48.16"/>
+              <id root="878F54EB-D561-4F90-855C-71BF3D97FE1D"/>
+              <code code="GEN-065" displayName="Statut du document"
+                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+              <text><reference value="#statutDocument"/></text>
+              <statusCode code="completed"/>
+              <effectiveTime value="20230425"/>
+              <!-- Valeur isssue du jdv-statut-document-cisis. (1.2.250.1.213.1.1.5.93) -->
+              <value xsi:type="CD" code="9571008" displayName="approuvé" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      
+    </structuredBody>
+  </component>
+</ClinicalDocument>

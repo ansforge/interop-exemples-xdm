@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../FeuilleDeStyle/CDA-FO.xsl"?>
+
+<?oxygen SCHSchema="../schematrons/profils/IHE.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/structurationMinimale/ASIP-STRUCT-MIN-StrucMin.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/CI-SIS_ModelesDeContenusCDA.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/CI-SIS_Modeles_ANS.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/terminologies/schematron/terminologie.sch"?>
+<?oxygen SCHSchema="../schematrons/CI-SIS_CSE-MDE_2023.01.sch"?>
+
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="urn:hl7-org:v3 ../infrastructure/cda/CDA_extended.xsd">
+   <!-- 
+      **********************************************************************************************************
+      Document : Carnet de santé de l'enfant - Mesures de l'enfant (CSE-MDE_2023.01)
+      Auteur : ANS
+      **********************************************************************************************************
+      format HL7 - CDA Release 2 N3
+      **********************************************************************************************************
+      Historique :    
+      06/01/2023 : Création du document
+      ********************************************************************************************************** -->
+   
+   <!-- ************************************************************
+        En-tête du document        
+   ************************************************************* -->
+   
+   <realmCode code="FR"/>
+   <!-- Référencement au standard CDAr2 -->
+   <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+   <!-- Conformité spécifications HL7 France -->
+   <templateId root="2.16.840.1.113883.2.8.2.1"/>
+   <!-- Conformité spécifications à IHE PCC -->
+   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1"/>
+   <!-- Conformité spécifications au CI-SIS -->
+   <templateId root="1.2.250.1.213.1.1.1.1"/>
+   <!-- Conformité spécifications du CSE -->
+   <templateId root="1.2.250.1.213.1.1.1.5"/>
+   <!-- Conformité spécifications CSE-MDE_2023.01 -->
+   <templateId root="1.2.250.1.213.1.1.1.5.4" extension="2023.01"/>
+   <!-- Identifiant du document -->
+   <id root="1.2.250.1.213.1.1.1.5.2023.1.1"/>
+   <!-- Code du document -->
+   <code code="29274-8" displayName="Mesures de signes vitaux" codeSystem="2.16.840.1.113883.6.1"/>
+   <!-- Titre du document -->
+   <title>Carnet de santé de l'enfant - Mesures de l'enfant</title>
+   <!-- Date de production du document -->
+   <effectiveTime value="20230106113623+0100"/>
+   <!-- Niveau de confidentialité du document -->
+   <confidentialityCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.25"/>
+   <!-- Langage utilisé dans le document -->
+   <languageCode code="fr-FR"/>
+   <!-- Identifiant commun à toutes les versions successives du document -->
+   <setId root="1.2.250.1.213.1.1.1.5.4.2023.1"/>
+   <!-- Numéro de la version du présent document (entier positif) -->
+   <versionNumber value="4"/>
+   
+   <!-- Patient -->
+   <recordTarget>
+      <patientRole>         
+         <!-- INS-NIR -->
+         <id extension="222127505611201" root="1.2.250.1.213.1.4.8"/>
+         <!-- IPP -->
+         <id extension="1234567890121" root="1.2.3.4.5.6.7.8.9.10"/>
+         <!-- Adresse -->
+         <addr>
+            <houseNumber>24</houseNumber>
+            <streetName>Avenue de Breteuil</streetName>
+            <postalCode>75007</postalCode>
+            <city>PARIS</city>
+            <country>FRANCE</country>
+         </addr>   
+         <telecom value="tel:0147150000" use="H"/>
+         <patient classCode="PSN">
+            <name>
+               <!-- Nom et prénom(s) de naissance -->
+               <family qualifier="BR">DECOURCY</family>
+               <!-- Prénoms de l’acte de naissance -->
+               <given>Ruth Isabelle</given>
+               <!-- Premier prénom de l’acte de naissance -->
+               <given qualifier="BR">Ruth</given>
+               <!-- Nom et prénom utilisés -->
+               <family qualifier="CL">DECOURCY</family>
+               <given qualifier="CL">Ruth</given>   
+            </name>
+            <administrativeGenderCode code="F" displayName="Féminin" codeSystem="2.16.840.1.113883.5.1"/>
+            <birthTime value="20221225"/>
+            <!-- Représentant de l'enfant -->
+            <guardian>
+               <addr use="H">
+                  <houseNumber>24</houseNumber>
+                  <streetName>Avenue de Breteuil</streetName>
+                  <postalCode>75007</postalCode>
+                  <city>PARIS</city>
+                  <country>FRANCE</country>
+               </addr>
+               <telecom value="tel:0147150000" use="H"/>
+               <guardianPerson>
+                  <name>
+                     <prefix>MME</prefix>
+                     <family>DECOURCY</family>
+                     <given>Marie</given>
+                  </name>
+               </guardianPerson>
+            </guardian>
+            <!-- Lieu de naissance -->
+            <birthplace>
+               <place>
+                  <name>Centre Hospitalier Cochin</name>
+                  <addr>
+                     <houseNumber>27</houseNumber>
+                     <streetName>Rue Faubourg Saint-Jacques</streetName>
+                     <postalCode>75014</postalCode>
+                     <county>75056</county>
+                     <city>PARIS</city>
+                  </addr>
+               </place>
+            </birthplace>
+         </patient>         
+      </patientRole>
+   </recordTarget>
+
+   <!-- Auteur du document -->
+   <author>
+      <time value="20230106113623+0100"/>
+      <assignedAuthor>
+         <id root="1.2.250.1.71.4.2.1" extension="801234567897"/>
+         <code code="G15_10/SM40" displayName="Médecin - Pédiatrie (SM)" codeSystem="1.2.250.1.213.1.1.4.5"/>        
+         <addr>
+            <houseNumber>3</houseNumber>
+            <streetName>Rue Petit Pont</streetName>
+            <postalCode>75005</postalCode>
+            <city>PARIS</city>
+         </addr>
+         <telecom value="tel:0140404022" use="WP"/>
+         <assignedPerson>
+            <name>
+               <given>Charles </given>
+               <family>MULLER</family>
+               <prefix>M</prefix>
+               <suffix>DR</suffix>
+            </name>
+         </assignedPerson>
+         <representedOrganization>
+            <id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
+            <name>Centre de santé du Belvédère</name>
+            <telecom value="tel:0140404022" use="WP"/>
+            <addr>
+               <houseNumber>3</houseNumber>
+               <streetName>Rue Petit Pont</streetName>
+               <postalCode>75005</postalCode>
+               <city>PARIS</city>
+            </addr>
+         </representedOrganization>
+      </assignedAuthor>
+   </author>
+
+   <!-- Informateur : la mère de l'enfant -->
+   <informant>
+      <relatedEntity classCode="CON">
+         <code code="MTH" displayName="Mère" codeSystem="2.16.840.1.113883.5.111"/>
+         <addr>
+            <streetAddressLine>24 Avenue de Breteuil</streetAddressLine>
+            <streetAddressLine>75007 PARIS</streetAddressLine>
+         </addr>   
+         <telecom value="tel:0147150000" use="H"/>
+         <relatedPerson>
+            <name>
+               <family>DECOURCY</family>
+               <given>Marie</given>
+               <prefix>MME</prefix>
+            </name>
+         </relatedPerson>
+      </relatedEntity>
+   </informant>
+   
+   <!-- Informateur : le père de l'enfant -->
+   <informant>
+      <relatedEntity classCode="CON">
+         <code code="FTH" displayName="Père" codeSystem="2.16.840.1.113883.5.111"/>
+         <addr>
+            <streetAddressLine>24 Avenue de Breteuil</streetAddressLine>
+            <streetAddressLine>75007 PARIS</streetAddressLine>
+         </addr>   
+         <telecom value="tel:0147150000" use="H"/>
+         <relatedPerson>
+            <name>
+               <family>DECOURCY</family>
+               <given>Guillaume</given>
+               <prefix>M</prefix>
+            </name>
+         </relatedPerson>
+      </relatedEntity>
+   </informant>
+
+   <!-- Personne à prévenir en cas d'urgence -->
+   <informant>
+      <relatedEntity classCode="ECON">
+         <code code="SIS" displayName="Soeur" codeSystem="2.16.840.1.113883.5.111"/>
+         <addr nullFlavor="NAV"/>
+         <telecom value="tel:0647150100" use="MC"/>
+         <relatedPerson>
+            <name>
+               <family>DECOURCY</family>
+               <given>Sophie</given>
+            </name>
+         </relatedPerson>
+      </relatedEntity>
+   </informant>
+   
+   <!-- Personne de confiance -->
+   <informant>
+      <relatedEntity classCode="NOK">
+         <code code="SIS" displayName="Soeur" codeSystem="2.16.840.1.113883.5.111"/>
+         <addr nullFlavor="NAV"/>
+         <telecom value="tel:0647150100" use="MC"/>
+         <relatedPerson>
+            <name>
+               <family>DECOURCY</family>
+               <given>Sophie</given>
+            </name>
+         </relatedPerson>
+      </relatedEntity>
+   </informant>   
+   
+   <!-- Structure chargée de la conservation du document -->
+   <custodian>
+      <assignedCustodian>
+         <representedCustodianOrganization>
+            <id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
+            <name>Centre de santé du Belvédère</name>
+            <telecom value="tel:0140404022" use="WP"/>
+            <addr>
+               <houseNumber>3</houseNumber>
+               <streetName>Rue Petit Pont</streetName>
+               <postalCode>75005</postalCode>
+               <city>PARIS</city>
+            </addr>
+         </representedCustodianOrganization>
+      </assignedCustodian>
+   </custodian>
+
+   <!-- Responsable du document -->
+   <legalAuthenticator>
+      <time value="20230106113623+0100"/>
+      <signatureCode code="S"/>
+      <assignedEntity>
+         <id root="1.2.250.1.71.4.2.1" extension="801234567897"/>
+         <code code="G15_10/SM40" displayName="Médecin - Pédiatrie (SM)" codeSystem="1.2.250.1.213.1.1.4.5"/>
+         <addr>
+            <houseNumber>3</houseNumber>
+            <streetName>Rue Petit Pont</streetName>
+            <postalCode>75005</postalCode>
+            <city>PARIS</city>
+         </addr>
+         <telecom value="tel:0140404022" use="WP"/>
+         <assignedPerson>
+            <name>
+               <given>Charles </given>
+               <family>MULLER</family>
+               <prefix>M</prefix>
+               <suffix>DR</suffix>
+            </name>
+         </assignedPerson>
+         <representedOrganization>
+            <id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
+            <name>Centre de santé du Belvédère</name>            
+            <telecom value="tel:0140404022" use="WP"/>
+            <addr>
+               <houseNumber>3</houseNumber>
+               <streetName>Rue Petit Pont</streetName>
+               <postalCode>75005</postalCode>
+               <city>PARIS</city>
+            </addr>
+            <standardIndustryClassCode code="ETABLISSEMENT" displayName="Etablissement de santé" codeSystem="1.2.250.1.213.1.1.4.9"/>
+         </representedOrganization>
+      </assignedEntity>
+   </legalAuthenticator>
+
+   <!-- Participant : Médecin traitant -->
+   <participant typeCode="INF">
+      <functionCode code="PCP" displayName="Médecin traitant" codeSystem="2.16.840.1.113883.5.88"/>
+      <time xsi:type="IVL_TS" nullFlavor="NA"/>
+      <associatedEntity classCode="PROV">
+         <id root="1.2.250.1.71.4.2.1" extension="801234567897"/>
+         <code code="G15_10/SM54" displayName="Médecin - Médecine Générale (SM)" codeSystem="1.2.250.1.213.1.1.4.5"/>
+         <addr>
+            <houseNumber>3</houseNumber>
+            <streetName>Rue Petit Pont</streetName>
+            <postalCode>75005</postalCode>
+            <city>PARIS</city>
+         </addr>
+         <telecom value="tel:0140404022" use="WP"/>
+         <associatedPerson>
+            <name>
+               <family>ANDRE</family>
+               <given>Jacques</given>
+               <prefix>M</prefix>
+               <suffix>DR</suffix>
+            </name>
+         </associatedPerson>
+         <!-- Etablissement de rattachement du PS -->
+         <scopingOrganization>
+            <id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
+            <name>Centre de santé du Belvédère</name>
+            <telecom value="tel:0140404022" use="WP"/>
+            <addr>
+               <houseNumber>3</houseNumber>
+               <streetName>Rue Petit Pont</streetName>
+               <postalCode>75005</postalCode>
+               <city>PARIS</city>
+            </addr>
+         </scopingOrganization>
+      </associatedEntity>
+   </participant>
+
+   <!-- Évènement documenté -->
+   <documentationOf>
+      <serviceEvent classCode="ACT">
+         <code code="11429006" displayName="consultation" codeSystem="2.16.840.1.113883.6.96"
+            codeSystemName="SNOMED CT"/>
+         <!-- Date de l"examen médical -->
+         <effectiveTime>
+            <low value="20230106113623+0100"/>
+         </effectiveTime>
+         <!-- Médecin ayant réalisé la consultation -->
+         <performer typeCode="PRF">
+            <assignedEntity>
+               <id root="1.2.250.1.71.4.2.1" extension="801234567897"/>
+               <code code="G15_10/SM40" displayName="Médecin - Pédiatrie (SM)" codeSystem="1.2.250.1.213.1.1.4.5"/>
+               <addr>
+                  <houseNumber>3</houseNumber>
+                  <streetName>Rue Petit Pont</streetName>
+                  <postalCode>75005</postalCode>
+                  <city>PARIS</city>
+               </addr>
+               <telecom value="tel:0140404022"/>
+               <assignedPerson>
+                  <name>
+                     <given>Charles</given>
+                     <family>MULLER</family>
+                     <prefix>M</prefix>
+                     <suffix>DR</suffix>
+                  </name>
+               </assignedPerson>
+               <representedOrganization>
+                  <id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
+                  <name>Centre de santé du Belvédère</name>
+                  <telecom value="tel:0140404022"/>
+                  <addr>
+                     <houseNumber>3</houseNumber>
+                     <streetName>Rue Petit Pont</streetName>
+                     <postalCode>75005</postalCode>
+                     <city>PARIS</city>
+                  </addr>
+                  <standardIndustryClassCode code="ETABLISSEMENT" displayName="Etablissement de santé" codeSystem="1.2.250.1.213.1.1.4.9"/>
+               </representedOrganization>
+            </assignedEntity>
+         </performer>
+      </serviceEvent>
+   </documentationOf>
+   
+   <!-- Association du document à une prise en charge -->
+   <componentOf>
+      <encompassingEncounter>
+         <code code="AMB" codeSystem="2.16.840.1.113883.5.4" displayName="Ambulatoire (hors établissement)"/>
+         <effectiveTime>
+            <low value="20230106111510+0100"/>
+            <high value="20230106113623+0100"/>
+         </effectiveTime>
+         <location>
+            <healthCareFacility>
+               <code code="SA05" displayName="Centre de santé" codeSystem="1.2.250.1.71.4.2.4"/>               
+               <location>
+                  <name>Centre de santé du Belvédère</name>
+                  <addr>
+                     <houseNumber>3</houseNumber>
+                     <streetName>Rue Petit Pont</streetName>
+                     <postalCode>75005</postalCode>
+                     <city>PARIS</city>
+                  </addr>
+               </location>
+            </healthCareFacility>
+         </location>
+      </encompassingEncounter>
+   </componentOf>
+   
+   <!-- ************************************************************
+        Corps du document
+   ************************************************************* -->
+   <component>
+      <structuredBody>
+               <!-- [1..1] Section FR-Signes-vitaux -->
+               <component>
+                  <section>
+                     <!-- Conformité Vital Signs Section (CCD) -->
+                     <templateId root="2.16.840.1.113883.10.20.1.16"/>
+                     <!-- Conformité Vital Signs (IHE PCC) -->
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.25"/>
+                     <!-- Conformité Coded Vital Signs (IHE PCC) -->
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.2"/>
+                     <!-- Conformité FR-Signes-vitaux (CI-SIS) -->
+                     <templateId root="1.2.250.1.213.1.1.2.75"/>
+                     <id root="2022BE76-7CC9-11EB-9439-0242AC130026"/>
+                     <code code="8716-3" displayName="Signes vitaux"
+                        codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                     <title>Signes vitaux</title>
+                     <text>
+                           <table border="0">
+                              <thead><tr><th colspan="2">Mesures</th></tr></thead>
+                              <tbody>
+                                 <tr>
+                                    <td>Poids</td>
+                                    <td><content ID="poids">3900 g</content></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Taille</td>
+                                    <td><content ID="taille">52 cm</content></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Périmètre crânien</td>
+                                    <td><content ID="crane">35 cm</content></td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                     </text>        
+                     
+                     <!-- [1..1] Entrée FR-Signes-vitaux -->
+                     <entry>
+                        <organizer classCode="CLUSTER" moodCode="EVN">
+                           <!-- Conformité Result organizer (CCD) -->
+                           <templateId root="2.16.840.1.113883.10.20.1.32"/>
+                           <!-- Conformité Vital signs organizer (CCD) -->
+                           <templateId root="2.16.840.1.113883.10.20.1.35"/>
+                           <!-- Conformité Vital Signs Organizer (IHE PCC) -->
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.1"/>
+                           <!-- Conformité FR-Signes-vitaux (CI-SIS) -->
+                           <templateId root="1.2.250.1.213.1.1.3.49"/>
+                           <id root="2022BE76-7CC9-11EB-9439-0242AC130027"/>
+                           <code code="85353-1" displayName="Signes vitaux" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+                           <statusCode code="completed"/>
+                           <effectiveTime value="20210211"/>
+                           <!-- Entrée FR-Signe-vital-observe : Poids (g) -->
+                           <component typeCode="COMP">
+                              <observation classCode="OBS" moodCode="EVN">
+                                 <!-- Conformité Result observation (CCD) -->
+                                 <templateId root="2.16.840.1.113883.10.20.1.31"/>
+                                 <!-- Conformité Simple Observation (IHE PCC) -->
+                                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                                 <!-- Conformité Vital Signs Observation (IHE PCC) -->
+                                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+                                 <!-- Conformité FR-Signe-vital-observé (CI-SIS) -->
+                                 <templateId root="1.2.250.1.213.1.1.3.50"/>
+                                 <id root="2022BE76-7CC9-11EB-9439-0242AC130028"/>
+                                 <code code="29463-7"  displayName="Poids" 
+                                       codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                                 <text><reference value="#poids"/></text>
+                                 <statusCode code="completed"/>
+                                 <effectiveTime nullFlavor="NASK"/>
+                                 <value xsi:type="PQ" value="3900" unit="g"/>
+                              </observation>
+                           </component>
+                           <!-- Entrée FR-Signe-vital-observe : Taille (cm) -->
+                           <component typeCode="COMP">
+                              <observation classCode="OBS" moodCode="EVN">                                 
+                                 <!-- Conformité Result observation (CCD) -->
+                                 <templateId root="2.16.840.1.113883.10.20.1.31"/>
+                                 <!-- Conformité Simple Observation (IHE PCC) -->
+                                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                                 <!-- Conformité Vital Signs Observation (IHE PCC) -->
+                                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+                                 <!-- Conformité FR-Signe-vital-observé (CI-SIS) -->
+                                 <templateId root="1.2.250.1.213.1.1.3.50"/>
+                                 <id root="2022BE76-7CC9-11EB-9439-0242AC130029"/>
+                                 <code code="8302-2" displayName="Taille" 
+                                    codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                                 <text><reference value="#taille"/></text>
+                                 <statusCode code="completed"/>
+                                 <effectiveTime nullFlavor="NASK"/>
+                                 <value xsi:type="PQ" value="52" unit="cm"/>
+                              </observation>
+                           </component>
+                           <!-- Entrée FR-Signe-vital-observe : Périmètre cranien (cm) -->
+                           <component typeCode="COMP">
+                              <observation classCode="OBS" moodCode="EVN">
+                                 <!-- Conformité Result observation (CCD) -->
+                                 <templateId root="2.16.840.1.113883.10.20.1.31"/>
+                                 <!-- Conformité Simple Observation (IHE PCC) -->
+                                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                                 <!-- Conformité Vital Signs Observation (IHE PCC) -->
+                                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+                                 <!-- Conformité FR-Signe-vital-observé (CI-SIS) -->
+                                 <templateId root="1.2.250.1.213.1.1.3.50"/>
+                                 <id root="2022BE76-7CC9-11EB-9439-0242AC130030"/>
+                                 <code code="8287-5" displayName="Périmètre crânien" 
+                                       codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                                 <text><reference value="#crane"/></text>
+                                 <statusCode code="completed"/>
+                                 <effectiveTime nullFlavor="NASK"/>
+                                 <value xsi:type="PQ" value="35" unit="cm"/>
+                              </observation>
+                           </component>
+                        </organizer>
+                     </entry>
+                  </section>
+               </component>
+      </structuredBody>
+   </component>
+</ClinicalDocument>

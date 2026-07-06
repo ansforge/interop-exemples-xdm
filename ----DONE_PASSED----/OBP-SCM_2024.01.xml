@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../FeuilleDeStyle/CDA-FO.xsl"?>
+<?oxygen SCHSchema="../schematrons/profils/IHE.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/structurationMinimale/ASIP-STRUCT-MIN-StrucMin.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/CI-SIS_ModelesDeContenusCDA.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/CI-SIS_Modeles_ANS.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/terminologies/schematron/terminologie.sch"?>
+<?oxygen SCHSchema="../schematrons/CI-SIS_OBP-SCM_2024.01.sch"?>
+<!-- 
+      **********************************************************************************************************
+      Document :  Synthèse Suites de Couches Mère (OBP-SCM_2024.01)
+      Auteur : ANS
+      **********************************************************************************************************
+      format HL7 - CDA Release 2 - selon schéma XML (CDA.xsd) du standard ANSI/HL7 CDA, R2-2005 4/21/2005
+      **********************************************************************************************************
+      Historique :
+      28/03/2012 : Création
+      11/06/2018 : Correction d'erreurs suite à la mise à jour des schématrons 
+      13/09/2021 : remplacement nom du schématron 2021.01
+      22/09/2021 : correction de l'unité UCUM "tbl" par "{tbl}"
+      20/04/2022:  Migration des terminologies et JDV en SNOMED CT
+      30/11/2023 : Nouvelle version 2023.01
+      06/12/2023 : Ajout de l'identifiant de l’entité ayant effectué le transfert dans l'entrée FR-Transfert-du-patient
+      03/01/2024 : Version 2024.01
+      **********************************************************************************************************
+-->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../infrastructure/cda/CDA_extended.xsd" xmlns="urn:hl7-org:v3">
+  <!-- 
+   **************************************************************************************************************
+	EN TETE DU DOCUMENT
+	**************************************************************************************************************
+   -->
+  <realmCode code="FR" />
+  <!-- Référencement CDAr2/Interopérabilité de niveau 3 -->
+  <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040" />
+  <!-- Conformité spécifications HL7 France -->
+  <templateId root="2.16.840.1.113883.2.8.2.1" />
+  <!-- Conformité spécifications au CI-SIS de l'ASIP Santé -->
+  <templateId root="1.2.250.1.213.1.1.1.1" />
+  <!-- Conformité au Volet Synthèse Postpartum Mère (OBP-SCM_2024.01)-->
+  <templateId root="1.2.250.1.213.1.1.1.12.4" extension="2024.01"/>
+  <!-- Identifiant du document -->
+  <id root="1.2.250.1.213.1.1.1.12.4.2024.1.1"/>
+  <!-- Type de document -->
+  <code code="89235-6" displayName="Synthèse Suites de Couches Mère" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+  <!-- Titre du document -->
+  <title>Synthèse Suites de Couches Mère</title>
+  <!-- Date de création du document -->
+  <effectiveTime value="20210328111700+0100" />
+  <!-- Niveau de confidentialité du document -->
+  <confidentialityCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentiality" />
+  <!-- Langue du document -->
+  <languageCode code="fr-FR" />
+  <!-- Identifiant commun à toutes les versions successives du document -->
+  <setId root="1.2.250.1.213.1.1.1.12.4.2024.1"/>
+  <!-- Numéro de la version du présent document (entier positif) -->
+  <versionNumber value="1" />
+
+  <!-- Patiente : mère -->
+  <recordTarget>
+    <patientRole>
+      <!-- INS-NIR de production : 1.2.250.1.213.1.4.8 -->
+      <id extension="277076322082910" root="1.2.250.1.213.1.4.8"/>
+      <!-- IPP du patient dans l'établissement avec root = l'OID de l'ES -->
+      <id extension="1234567890121" root="1.2.3.4.567.8.9.10"/>
+      <!-- Adresse du patient -->
+      <addr>
+        <houseNumber>28</houseNumber>
+        <streetName>Avenue de Breteuil</streetName>
+        <unitID>Escalier A</unitID>
+        <postalCode>75007</postalCode>
+        <city>PARIS</city>
+        <country>FRANCE</country>
+      </addr>
+      <!-- Coordonnées télécom du patient -->
+      <telecom value="tel:0144534551" use="H"/>
+      <telecom value="tel:0647151010" use="MC"/>
+      <telecom value="mailto:277076322082910@patient.mssante.fr"/>
+      <!-- Identité du patient -->
+      <patient classCode="PSN">
+        <name>
+          <!-- Nom et prénom(s) de naissance -->
+          <!-- Nom de l’acte de naissance -->
+          <family qualifier="BR">NESSI</family> 
+          <!-- Prénoms de l’acte de naissance -->
+          <given>Marie Jeanne Michelle</given>
+          <!-- Premier prénom de l’acte de naissance -->
+          <given qualifier="BR">Marie</given>
+          <!-- Nom et prénom utilisés -->
+          <family qualifier="CL">DECOURCY</family>
+          <given qualifier="CL">Marie</given> 
+        </name>
+        <administrativeGenderCode code="F" displayName="Féminin" codeSystem="2.16.840.1.113883.5.1"/>
+        <birthTime value="19770714"/>        
+        <!-- Lieu de naissance du patient -->
+        <birthplace>
+          <place>
+            <addr>
+              <county>51215</county>
+              <city>DOMPREMY</city>
+            </addr>
+          </place>
+        </birthplace>
+      </patient>
+    </patientRole>
+  </recordTarget>
+  
+  <!-- Auteur du document - Clinicien ayant suivi la patiente -->
+  <author>
+    <time value="20210328111700+0100" />
+    <assignedAuthor classCode="ASSIGNED">
+      <!-- PS identifié par son N°RPPS -->
+      <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+      <code code="G15_10/SM20" codeSystem="1.2.250.1.213.1.1.4.5" displayName="Médecin - Gynécologie-obstétrique (SM)" />
+      <addr nullFlavor="NASK" />
+      <telecom nullFlavor="NASK" />
+      <assignedPerson>
+        <name>
+          <given>Charles </given>
+          <family>BOILEAU</family>
+          <suffix>DR</suffix>
+        </name>
+      </assignedPerson>
+      <!-- Numéro FINESS de l'ES (optionnel)  -->
+      <representedOrganization>
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+        <name>Clinique du Belvédère</name>
+        <telecom nullFlavor="NAV" />
+        <addr>
+          <houseNumber>142</houseNumber>
+          <streetName>Rue Belvédère</streetName>
+          <postalCode>92100</postalCode>
+          <city>Boulogne-Billancourt</city>
+        </addr>
+        <standardIndustryClassCode code="ETABLISSEMENT" displayName="Établissement de santé" codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode" />
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  
+  <!-- Personne à prévenir en cas d'urgence -->
+  <informant>
+    <relatedEntity classCode="ECON">
+      <code code="HUSB" codeSystem="2.16.840.1.113883.5.111" displayName="Epoux"/>
+      <addr>
+        <houseNumber>28</houseNumber>
+        <streetName>Avenue de Breteuil</streetName>
+        <unitID>Escalier A</unitID>
+        <postalCode>75007</postalCode>
+        <city>PARIS</city>
+        <country>FRANCE</country>
+      </addr>
+      <telecom value="tel:0647150100" use="MC"/>
+      <relatedPerson>
+        <name>
+          <family>DECOURCY</family>
+          <given>Guillaume</given>
+        </name>
+      </relatedPerson>
+    </relatedEntity>
+  </informant>
+  
+  <!-- Personne de confiance -->
+  <informant>
+    <relatedEntity classCode="NOK">
+      <code code="HUSB" codeSystem="2.16.840.1.113883.5.111" displayName="Epoux"/>
+      <addr>
+        <houseNumber>28</houseNumber>
+        <streetName>Avenue de Breteuil</streetName>
+        <unitID>Escalier A</unitID>
+        <postalCode>75007</postalCode>
+        <city>PARIS</city>
+        <country>FRANCE</country>
+      </addr>
+      <telecom value="tel:0647150100" use="MC"/>
+      <relatedPerson>
+        <name>
+          <family>DECOURCY</family>
+          <given>Guillaume</given>
+        </name>
+      </relatedPerson>
+    </relatedEntity>
+  </informant>
+  
+  <!-- Organisation de santé responsable du document -->
+  <custodian typeCode="CST">
+    <assignedCustodian classCode="ASSIGNED">
+      <representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+        <id root="1.2.250.1.71.4.2.2" extension="1120456789" />
+        <name>Clinique du Belvédère</name>
+        <telecom value="tel:0442515151" use="WP" />
+        <addr>
+          <houseNumber>142</houseNumber>
+          <streetName>Rue Belvédère</streetName>
+          <postalCode>92100</postalCode>
+          <city>Boulogne-Billancourt</city>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+
+  <!-- Responsable de la validation de la synthèse -->
+  <legalAuthenticator>
+    <time value="20210329094914+0100" />
+    <signatureCode code="S" />
+    <assignedEntity>
+      <!-- PS identifié par son N°RPPS -->
+      <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+      <code code="G15_10/SM20" codeSystem="1.2.250.1.213.1.1.4.5" displayName="Médecin - Gynécologie-obstétrique (SM)" />
+      <assignedPerson>
+        <name>
+          <given>Jacques </given>
+          <family>BIDEAULT</family>
+          <suffix>PR</suffix>
+        </name>
+      </assignedPerson>
+    </assignedEntity>
+  </legalAuthenticator>
+
+  <!-- Anesthésiste -->
+  <participant typeCode="PRF">
+    <functionCode code="353" displayName="Membre de l'équipe de soins" codeSystem="1.2.250.1.213.1.6.1.107" >
+      <originalText>Anesthésiste</originalText>
+    </functionCode>
+    <time xsi:type="IVL_TS">
+      <low value="202304250735+0100" />
+    </time>
+    <associatedEntity classCode="PROV">
+      <id root="1.2.250.1.71.4.2.1" extension="801234562121" />
+      <code code="G15_10/SM02" codeSystem="1.2.250.1.213.1.1.4.5" displayName="Médecin - Anesthésie-réanimation (SM)"/>
+      <addr>
+        <houseNumber>142</houseNumber>
+        <streetName>Rue Belvédère</streetName>
+        <postalCode>92100</postalCode>
+        <city>Boulogne-Billancourt</city>
+      </addr>
+      <telecom value="tel:0142515151" use="WP" />
+      <associatedPerson>
+        <name>
+          <family>SANTI</family>
+          <given>Jérôme</given>
+        </name>
+      </associatedPerson>
+      <scopingOrganization>
+        <id root="1.2.250.1.71.4.2.2" extension="1120456789" />
+        <name>Clinique du Belvédère</name>
+        <telecom value="tel:0142515151" use="WP" />
+        <addr>
+          <houseNumber>142</houseNumber>
+          <streetName>Rue Belvédère</streetName>
+          <postalCode>92100</postalCode>
+          <city>Boulogne-Billancourt</city>
+        </addr>
+      </scopingOrganization>
+    </associatedEntity>
+  </participant>
+  
+  <!-- Médecin traitant -->
+  <participant typeCode="INF">
+    <functionCode code="PCP" displayName="Médecin traitant" codeSystem="2.16.840.1.113883.5.88" />
+    <time xsi:type="IVL_TS">
+      <low value="202304250735+0100" />
+    </time>
+    <associatedEntity classCode="PROV">
+      <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+      <code code="G15_10/SM26" codeSystem="1.2.250.1.213.1.1.4.5" displayName="Médecin - Qualifié en Médecine Générale (SM)"/>
+      <addr>
+        <houseNumber>3</houseNumber>
+        <streetName>Rue Petit Pont</streetName>
+        <postalCode>75005</postalCode>
+        <city>Paris</city>
+      </addr>
+      <telecom value="tel:0147150000" use="EC" />
+      <associatedPerson>
+        <name>
+          <family>MEDIONI</family>
+          <given>Jacques</given>
+          <suffix>DR</suffix>
+        </name>
+      </associatedPerson>
+    </associatedEntity>
+  </participant>
+  
+  <!-- Sage-femme referente -->
+  <participant typeCode="PRF">
+    <functionCode code="353" displayName="Membre de l'équipe de soins" codeSystem="1.2.250.1.213.1.6.1.107">
+      <originalText>Sage-femme referente</originalText>
+    </functionCode>
+    <time xsi:type="IVL_TS">
+      <low value="202304250735+0100" />
+    </time>
+    <associatedEntity classCode="PROV">
+      <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+      <code code="G15_50" codeSystem="1.2.250.1.213.1.1.4.5" displayName="Sage-Femme"/>
+      <addr>
+        <houseNumber>142</houseNumber>
+        <streetName>Rue Belvédère</streetName>
+        <postalCode>92100</postalCode>
+        <city>Boulogne-Billancourt</city>
+      </addr>
+      <telecom value="tel:0142515151" use="WP" />
+      <associatedPerson>
+        <name>
+          <family>NAOURI</family>
+          <given>Lucette</given>
+        </name>
+      </associatedPerson>
+      <scopingOrganization>
+        <id root="1.2.250.1.71.4.2.2" extension="1120456789" />
+        <name>Clinique du Belvédère</name>
+        <telecom value="tel:0142515151" use="WP" />
+        <addr>
+          <houseNumber>142</houseNumber>
+          <streetName>Rue Belvédère</streetName>
+          <postalCode>92100</postalCode>
+          <city>Boulogne-Billancourt</city>
+        </addr>
+      </scopingOrganization>
+    </associatedEntity>
+  </participant>  
+  
+  <!-- Praticien ayant suivi la patiente -->
+  <participant typeCode="CON">
+    <functionCode code="CORRE" codeSystem="1.2.250.1.213.1.1.4.2.280" displayName="Correspondant">      
+      <originalText>Praticien ayant suivi la patiente</originalText>
+    </functionCode>
+    <time xsi:type="IVL_TS">
+      <low value="202304250735+0100" />
+    </time>
+    <associatedEntity classCode="PROV">
+      <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+      <code code="G15_10/SM20" codeSystem="1.2.250.1.213.1.1.4.5" displayName="Médecin - Gynécologie-obstétrique (SM)" />
+      <addr>
+        <houseNumber>3</houseNumber>
+        <streetName>Rue Petit Pont</streetName>
+        <postalCode>75005</postalCode>
+        <city>Paris</city>
+      </addr>
+      <telecom value="tel:0147150000" use="EC" />
+      <associatedPerson>
+        <name>
+          <given>Charles </given>
+          <family>BOILEAU</family>
+          <suffix>DR</suffix>
+        </name>
+      </associatedPerson>
+    </associatedEntity>
+  </participant>
+  
+  <!-- Pédiatre -->
+  <participant typeCode="CON">
+    <functionCode code="CORRE" codeSystem="1.2.250.1.213.1.1.4.2.280" displayName="Correspondant">  
+      <originalText>Pédiatre</originalText>
+    </functionCode>
+    <time xsi:type="IVL_TS">
+      <low value="202304250735+0100" />
+    </time>
+    <associatedEntity classCode="PROV">
+      <id root="1.2.250.1.71.4.2.1" extension="801234566565" />
+      <code code="G15_10/SM40" codeSystem="1.2.250.1.213.1.1.4.5" displayName="Médecin - Pédiatrie (SM)"/>
+      <addr>
+        <houseNumber>21</houseNumber>
+        <streetName>Rue de l'école</streetName>
+        <postalCode>75005</postalCode>
+        <city>Paris</city>
+      </addr>
+      <telecom value="tel:0147120000" use="EC" />
+      <associatedPerson>
+        <name>
+          <given>Ivan</given>
+          <family>BUSSENS</family>
+          <suffix>DR</suffix>
+        </name>
+      </associatedPerson>
+    </associatedEntity>
+  </participant>
+  
+  <!-- Evènement documenté -->
+  <documentationOf>
+    <serviceEvent classCode="ACT">
+      <id root="5A931FFC-E3D3-4153-953F-4C314500A410" />
+      <code code="MED-1176" displayName="Suites de couches" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+      <effectiveTime>
+        <low value="20210328111700+0100" />
+        <high value="20210330111700+0100" />
+      </effectiveTime>
+      <performer typeCode="PRF">
+        <assignedEntity>
+          <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+          <code code="G15_10/SM20" codeSystem="1.2.250.1.213.1.1.4.5" displayName="Médecin - Gynécologie-obstétrique (SM)" />
+          <assignedPerson>
+            <name>
+              <given>Jacques </given>
+              <family>BIDEAULT</family>
+              <suffix>DR</suffix>
+            </name>
+          </assignedPerson>
+          <representedOrganization>
+            <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+            <name>Clinique du Belvédère</name>
+            <telecom nullFlavor="NAV" />
+            <addr>
+              <houseNumber>142</houseNumber>
+              <streetName>Rue Belvédère</streetName>
+              <postalCode>92100</postalCode>
+              <city>Boulogne-Billancourt</city>
+            </addr>
+            <standardIndustryClassCode code="ETABLISSEMENT" displayName="Établissement de santé" codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode" />
+          </representedOrganization>
+        </assignedEntity>
+      </performer>
+    </serviceEvent>
+  </documentationOf>
+
+  <!-- Informations sur la prise en charge -->
+  <componentOf>
+    <encompassingEncounter>
+      <code code="IMP" codeSystem="2.16.840.1.113883.5.4" displayName="Hospitalisation (établissement, y compris HAD)"/>
+      <effectiveTime>
+        <!-- High : Date de sortie -->
+        <high value="20230429111700+0100" />
+      </effectiveTime>
+      <responsibleParty>
+        <assignedEntity>
+          <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+          <code code="G15_10/SM20" codeSystem="1.2.250.1.213.1.1.4.5" displayName="Médecin - Gynécologie-obstétrique (SM)" />
+          <assignedPerson>
+            <name>
+              <given>Jacques </given>
+              <family>BIDEAULT</family>
+              <suffix>DR</suffix>
+            </name>
+          </assignedPerson>
+          <representedOrganization>
+            <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+            <name>Clinique du Belvédère</name>
+            <telecom nullFlavor="NAV" />
+            <addr>
+              <houseNumber>142</houseNumber>
+              <streetName>Rue Belvédère</streetName>
+              <postalCode>92100</postalCode>
+              <city>Boulogne-Billancourt</city>
+            </addr>
+            <standardIndustryClassCode code="ETABLISSEMENT" displayName="Établissement de santé" codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode" />
+          </representedOrganization>
+        </assignedEntity>
+      </responsibleParty>
+      <location>
+        <healthCareFacility>
+          <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+          <code code="SA04" displayName="Etablissement privé non PSPH" codeSystem="1.2.250.1.71.4.2.4" />
+          <location>
+            <name>Clinique du Belvédère</name>
+            <addr>
+              <houseNumber>142</houseNumber>
+              <streetName>Rue Belvédère</streetName>
+              <postalCode>92100</postalCode>
+              <city>Boulogne-Billancourt</city>
+            </addr>
+          </location>
+        </healthCareFacility>
+      </location>
+    </encompassingEncounter>
+  </componentOf>
+  
+  <!-- 
+      ********************************************************
+      Corps du document
+      ********************************************************
+   -->
+  <component>
+    <structuredBody>
+      
+      <!-- [1..1] Section FR-Actes-et-interventions -->
+      <component>
+        <section>
+          <!-- Conformité Procedures and Interventions (IHE-PCC) -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.13.2.11"/>
+          <!-- Conformité FR-Actes-et-interventions (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.118"/>
+          <id root="E52A7B75-3B12-44DF-80B3-3DEA64E25B4B" />
+          <code code="29554-3" displayName="Actes" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+          <title>Actes notables des suites de couches</title>
+          <text>
+            <table border="0">
+              <thead>
+                <tr>
+                  <th>Actes et interventions réalisés</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><content ID="scm001">Révision de la cavité de l'utérus après délivrance naturelle</content></td>                  
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <!-- [1..*] Entrée FR-Acte : Acte Suites de couches -->
+          <entry>
+            <procedure classCode="PROC" moodCode="EVN" negationInd="false">
+              <!-- Conformité Procedure activity (CCD) car acte réalisée -->
+              <templateId root="2.16.840.1.113883.10.20.1.29"/>
+              <!-- Conformité Procedure Entry (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+              <!-- Conformité FR-Acte (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.62"/>
+              <id root="D3DCE1E0-EB52-47CB-8507-D33F0041D138" />
+              <!-- code de l'acte -->
+              <code code="JNMD002" displayName="Révision de la cavité de l'utérus après délivrance naturelle" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM">
+                <originalText><reference value="#scm0001" /></originalText>
+              </code>
+              <text><reference value="scm0001" /></text>
+              <statusCode code="completed" />
+              <effectiveTime>
+                <low nullFlavor="NA" />
+              </effectiveTime>
+            </procedure>
+          </entry>
+        </section>
+      </component>
+      
+      <!-- [1..1] Section FR-Resultats-evenements -->
+      <component>
+        <section>
+          <!-- Conformité Event Outcomes (IHE PCC) -->
+          <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.21.2.9"/>
+          <!-- Conformité Coded Event Outcomes (IHE PCC) -->
+          <templateId root="1.3.6.1.4.1.19376.1.7.3.1.1.13.7"/>
+          <!-- Conformité FR-Resultats-evenements (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.163"/>
+          <id root="E52A7B75-3B12-44DF-80B3-3DEA64E25B4B" />
+          <code code="42545-4" displayName="Evènements observés" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+          <title>Problèmes de suites de couches / Mode de sortie de la mère</title>
+          <text>
+            <table border="0">
+              <thead>
+                <tr>
+                  <th>Problèmes de suites de couches</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>                  
+                  <td><content ID="dechirure">Déchirure obstétricale du col de l'utérus</content></td>     
+                </tr>
+                <tr>
+                  <td><content ID="hypertension">Hypertension secondaire préexistante compliquant la grossesse, l'accouchement et la puerpéralité</content></td>
+                </tr>                
+              </tbody>
+            </table>
+            <br/>
+            <table border="0">
+              <thead>
+                <tr>
+                  <th colspan="3">Sortie de la mère</th>
+                </tr>
+              </thead>
+              <tbody>                
+                <tr>
+                  <td>28/04/2023</td>     
+                  <td><content ID="sortie">Transfert du patient</content></td>                
+                  <td><content ID="destination">Clinique du Belvédère</content></td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          
+          <!-- [1..*] Entrée FR-Probleme : Déchirure obstétricale du col de l'utérus -->
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Conformité Problem observation (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.28"/>
+              <!-- Conformité Problem Entry (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+              <!-- Conformité FR-Probleme (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.37"/>
+              <id root="7AB08573-C3A1-4946-923A-F6AAF33B2C8E" />
+              <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+              <text><reference value="#dechirure" /></text>
+              <statusCode code="completed" />
+              <effectiveTime>
+                <low nullFlavor="UNK" />
+              </effectiveTime>
+              <value xsi:type="CD" code="O71.3" displayName="Déchirure obstétricale du col de l'utérus" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM 10">
+                <originalText><reference value="#dechirure"/></originalText>
+              </value>
+            </observation>
+          </entry>
+          
+          <!-- [1..*] Entrée FR-Probleme : Hypertension secondaire préexistante compliquant la grossesse, l'accouchement et la puerpéralité -->
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Conformité Problem observation (CCD) -->
+              <templateId root="2.16.840.1.113883.10.20.1.28"/>
+              <!-- Conformité Problem Entry (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+              <!-- Conformité FR-Probleme (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.37"/>
+              <id root="3A922ACD-407D-42C5-98DB-A837BB3FDB8D" />              
+              <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+              <text><reference value="#suitesCouches" /></text>
+              <statusCode code="completed" />
+              <effectiveTime>
+                <low nullFlavor="UNK" />
+              </effectiveTime>
+              <value xsi:type="CD" code="O10.4" displayName="Hypertension secondaire préexistante compliquant la grossesse, l'accouchement et la puerpéralité" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM 10">
+                <originalText><reference value="#hypertension"/></originalText>
+              </value>
+            </observation>
+          </entry>
+          
+          <!-- [1..1] FR-Simple-Observation : Mode de sortie -->
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Conformité Simple Observation (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13" />
+              <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.48" />
+              <id root="A59E0EBD-018D-4289-B879-0A8D55F64D02" />
+              <code code="ORG-074" displayName="Modalité de sortie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS" />
+              <!-- précision sur la destination -->
+              <text><reference value="#sortie" /></text>
+              <statusCode code="completed" />
+              <effectiveTime value="20230428"/>
+              <!-- Valeur issue du jdv-mode-sortie-obp-scm-cisis (1.2.250.1.213.1.1.5.700) -->
+              <value xsi:type="CD" code="107724000" displayName="transfert du patient" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+            </observation>
+          </entry>
+          
+          <!-- [0..1] Entrée FR-Transfert-du-patient : Destination -->
+          <entry>
+            <act classCode="ACT" moodCode="EVN">
+              <!-- Conformité Patient Transfer (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.25.1.4.1" />
+              <!-- Conformité FR-Transfert-du-patient (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.28" />
+              <id root="A59E0EBD-018D-4289-B879-0A8D55F64F34" />
+              <code code="80413-8" displayName="Transfert du patient" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+              <text><reference value="#destination" /></text>
+              <statusCode code="completed" />
+              <effectiveTime>
+                <low value="20230428140000"/>
+                <high value="20230428141000"/>
+              </effectiveTime>
+              <!-- Destination -->
+              <participant typeCode="DST">
+                <!-- Identifiant de l’établissement de destination -->
+                <templateId root="1.2.250.1.71.4.2.2" extension="1120456789"/>              
+                <participantRole classCode="SDLOC">
+		  <!-- Identifiant de l’entité ayant effectué le transfert -->
+		  <id nullFlavor="UNK"/>
+                  <!-- valeur issue du JDV_J02_XdsHealthcareFacilityTypeCode_CISIS (1.2.250.1.213.1.1.5.3) -->
+                  <code code="SA04" displayName="Etablissement privé non PSPH" codeSystem="1.2.250.1.71.4.2.4"/>                  
+                  <addr>
+                    <houseNumber>142</houseNumber>
+                    <streetName>Rue Belvédère</streetName>
+                    <postalCode>92100</postalCode>
+                    <city>Boulogne-Billancourt</city>
+                  </addr>
+                  <telecom value="tel:0442515151" use="WP" />
+                  <playingEntity classCode="ENT">                        
+                    <!-- Nom de l'établissement -->
+                    <name>Clinique du Belvédère</name>                    
+                  </playingEntity>
+                </participantRole>
+              </participant>              
+            </act>
+          </entry>
+        </section>
+      </component>
+      
+      <!-- [1..1] Section FR-Statut-du-document -->
+      <component>
+        <section>
+          <!-- Conformité FR-Statut-du-document (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.35"/>
+          <id root="40BA1599-AFD6-4625-969E-FBAB97694C99"/>
+          <code code="33557-0" displayName="Etat d'achèvement" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+          <title>Statut du document</title>
+          <text><content ID="statutDocument">approuvé</content></text>
+          <!-- [1..1] Entrée FR-Statut-document -->
+          <entry>
+            <observation classCode="OBS" moodCode="EVN">
+              <!-- Conformité Simple Observation (IHE PCC) -->
+              <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+              <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.48"/>
+              <!-- Conformité FR-Statut-document (CI-SIS)  -->
+              <templateId root="1.2.250.1.213.1.1.3.48.16"/>
+              <id root="878F54EB-D561-4F90-855C-71BF3D97FE1D"/>
+              <code code="GEN-065" displayName="Statut du document"
+                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+              <text><reference value="#statutDocument"/></text>
+              <statusCode code="completed"/>
+              <effectiveTime value="20230425"/>
+              <!-- Valeur isssue du jdv-statut-document-cisis (1.2.250.1.213.1.1.5.93) -->
+              <value xsi:type="CD" code="9571008" displayName="approuvé" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      
+    </structuredBody>
+  </component>
+</ClinicalDocument>
