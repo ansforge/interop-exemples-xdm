@@ -1711,7 +1711,7 @@
               <templateId root="2.16.840.1.113883.10.20.1.29"/>
               <!-- FR-Acte (CI-SIS) -->
               <templateId root="1.2.250.1.213.1.1.3.62"/>
-              <id root="A6BC7FD2-EC3F-4E01-B567-854B087D1D9B"/>
+              <id root="7B95A642-5B55-4874-A73E-647D5472C78F"/>
               <!-- Code de l'acte -->
               <code code="DDAF004"
                 displayName="Dilatation intraluminale de 2 vaisseaux coronaires avec pose d'endoprothèse, par voie artérielle transcutanée"
@@ -1795,7 +1795,7 @@
               <templateId root="2.16.840.1.113883.10.20.1.29"/>
               <!-- FR-Acte (CI-SIS) -->
               <templateId root="1.2.250.1.213.1.1.3.62"/>
-              <id root="A6BC7FD2-EC3F-4E01-B567-854B087D1D9B"/>
+              <id root="C825419D-3173-46CD-B395-EBACC21CE34A"/>
               <!-- Code de l'acte -->
               <code code="GEN-092.04.13" displayName="Autre acte"
                 codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
@@ -2339,8 +2339,8 @@
                   <text><reference value="#effet-indesirable-01-imputabilite"/></text>
                   <statusCode code="completed"/>
                   <!-- valeur du jdv-imputabilite-cisis (1.2.250.1.213.1.1.5.786) -->
-                  <value xsi:type="CD" code="17162000" displayName="certain(e)"
-                         codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT">
+                  <value xsi:type="CD" code="certain" displayName="certain"
+                    codeSystem="2.16.840.1.113883.4.642.4.1254" codeSystemName="HL7_AdverseEventCausalityAssessment">
                     <originalText><reference value="#effet-indesirable-01-imputabilite"/></originalText>
                   </value>
                 </observation>
@@ -2821,7 +2821,7 @@
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.8"/>
               <!-- Conformité Traitement aigu -->
               <templateId root="1.2.250.1.213.1.1.3.42.4"/>
-              <id root="AADC9C14-F1CA-4177-B2C8-A5178D5B3CA0"/>
+              <id root="140BA6A4-2D90-4E3E-942B-A0C14F0790B2"/>
               <code code="DRUG" codeSystem="2.16.840.1.113883.5.4" displayName="Médicament"
                 codeSystemName="HL7_ActCode"/>
               <text><reference value="#med-03"/></text>
@@ -5065,7 +5065,7 @@
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
               <!-- Conformité Traitement aigu -->
               <templateId root="1.2.250.1.213.1.1.3.42.4"/>
-              <id root="AADC9C14-F1CA-4177-B2C8-A5178D5B3CA0"/>
+              <id root="72F79C0C-6E0A-48DF-B9FD-EBE8693DF45E"/>
               <text><reference value="#plan-med-01-code"/></text>
               <statusCode code="completed"/>
               <!-- Produit de santé -->
@@ -5123,7 +5123,7 @@
               <templateId root="1.2.250.1.213.1.1.3.42.3"/>
               <!-- Conformité Traitement aigu -->
               <templateId root="1.2.250.1.213.1.1.3.42.4"/>
-              <id root="AADC9C14-F1CA-4177-B2C8-A5178D5B3CA0"/>
+              <id root="05F1A242-28EC-45A8-B6C4-3F39646041A6"/>
               <text><reference value="#plan-med-02-code"/></text>
               <statusCode code="completed"/>
               <!-- Produit de santé -->
@@ -5255,7 +5255,7 @@
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
               <!-- Conformité FR-Acte (CI-SIS) -->
               <templateId root="1.2.250.1.213.1.1.3.62"/>
-              <id root="A6BC7FD2-EC3F-4E01-B567-854B087D1D9B"/>
+              <id root="F35AFED9-648D-4FBF-BFEF-10EE623EA3A4"/>
               <!-- Code de l'acte -->
               <code code="103735009"
                 displayName="Soins palliatifs"
@@ -5295,7 +5295,7 @@
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
               <!-- Conformité FR-Acte (CI-SIS) -->
               <templateId root="1.2.250.1.213.1.1.3.62"/>
-              <id root="A6BC7FD2-EC3F-4E01-B567-854B087D1D9B"/>
+              <id root="70423E14-50FD-4519-9FEC-9CCE34E7F5E0"/>
               <!-- Code de l'acte -->
               <code code="CBLA001"
                 displayName="Pose d'une prothèse auditive implantable dans l'oreille moyenne"
@@ -5335,7 +5335,7 @@
               <templateId root="2.16.840.1.113883.10.20.1.29"/>
               <!-- Conformité FR-Acte (CI-SIS) -->
               <templateId root="1.2.250.1.213.1.1.3.62"/>
-              <id root="A6BC7FD2-EC3F-4E01-B567-854B087D1D9B"/>
+              <id root="9238A472-60DF-4747-8D63-9398FCE6B522"/>
               <!-- Code de l'acte -->
               <code code="GEN-092.04.13" displayName="Autre acte"
                 codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
@@ -6392,8 +6392,8 @@
                   <text><reference value="#doc1"/></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NA"/>
-                  <value xsi:type="CD" code="DLU_006" displayName="Attestation de la carte vitale"
-                    codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                  <value xsi:type="CD" code="ATTEST-DROITS-AM" displayName="Attestation de droits à l’assurance maladie"
+                    codeSystem="1.2.250.1.213.1.1.4.12" codeSystemName="TRE_A05-TypeDocComplementaire"/>
                 </observation>
               </component>
               <!-- [1..1] Entrée ObservationMedia -->
@@ -6429,8 +6429,8 @@
                   <text><reference value="#doc2"/></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NA"/>
-                  <value xsi:type="CD" code="DLU_007" displayName="Attestation de mutuelle"
-                    codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                  <value xsi:type="CD" code="ATTEST-ASS-COMPL" displayName="Attestation assurance complémentaire"
+                    codeSystem="1.2.250.1.213.1.1.4.12" codeSystemName="TRE_A05-TypeDocComplementaire"/>
                 </observation>
               </component>
               <!-- [1..1] Entrée ObservationMedia -->

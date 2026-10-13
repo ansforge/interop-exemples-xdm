@@ -438,10 +438,10 @@
 									</playingEntity>
 								</participantRole>
 							</participant>
-							<participant typeCode="ORG">
+<!--							<participant typeCode="ORG">
 								<time nullFlavor="NAV"/>
 								<participantRole classCode="ROL">
-									<!-- Numéro FINESS de l'ES  -->
+									<!-\- Numéro FINESS de l'ES  -\->
 									<id root="1.2.250.1.71.4.2.2" extension="101765376"/>
 									<addr>
 										<houseNumber>22</houseNumber>
@@ -458,7 +458,7 @@
 							<participant typeCode="DST">
 								<time nullFlavor="NAV"/>
 								<participantRole classCode="ROL">
-									<!-- Numéro FINESS de l'ES  -->
+									<!-\- Numéro FINESS de l'ES  -\->
 									<id root="1.2.250.1.71.4.2.2" extension="101765376"/>
 									<addr>
 										<houseNumber>22</houseNumber>
@@ -471,7 +471,7 @@
 										<name>EHPAD DE BOULOGNE-BILLANCOURT</name>
 									</playingEntity>
 								</participantRole>
-							</participant>
+							</participant>-->
 						</act>
 					</entry>
 				</section>
@@ -1740,10 +1740,10 @@
 									<text><reference value="#doc1"/></text>
 									<statusCode code="completed"/>
 									<effectiveTime nullFlavor="NA"/>
-									<value xsi:type="CD" code="DLU_006"
-										displayName="Attestation de la carte vitale"
-										codeSystem="1.2.250.1.213.1.1.4.322"
-										codeSystemName="TerminologieCISIS"/>
+									<value xsi:type="CD" code="ATTEST-DROITS-AM"
+										displayName="Attestation de droits à l’assurance maladie"
+										codeSystem="1.2.250.1.213.1.1.4.12"
+										codeSystemName="TRE_A05-TypeDocComplementaire"/>
 								</observation>
 							</component>
 							<!-- [1..1] Entrée ObservationMedia -->
@@ -1779,10 +1779,10 @@
 									<text><reference value="#doc2"/></text>
 									<statusCode code="completed"/>
 									<effectiveTime nullFlavor="NA"/>
-									<value xsi:type="CD" code="DLU_007"
-										displayName="Attestation de mutuelle"
-										codeSystem="1.2.250.1.213.1.1.4.322"
-										codeSystemName="TerminologieCISIS"/>
+									<value xsi:type="CD" code="ATTEST-ASS-COMPL"
+										displayName="Attestation assurance complémentaire"
+										codeSystem="1.2.250.1.213.1.1.4.12"
+										codeSystemName="TRE_A05-TypeDocComplementaire"/>
 								</observation>
 							</component>
 							<!-- [1..1] Entrée ObservationMedia -->

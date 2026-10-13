@@ -2385,8 +2385,8 @@
                   <text><reference value="#effet-indesirable-01-imputabilite"/></text>
                   <statusCode code="completed"/>
                   <!-- valeur du jdv-imputabilite-cisis (1.2.250.1.213.1.1.5.786) -->
-                  <value xsi:type="CD" code="17162000" displayName="certain(e)"
-                         codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT">
+                  <value xsi:type="CD" code="certain" displayName="certain"
+                    codeSystem="2.16.840.1.113883.4.642.4.1254" codeSystemName="HL7_AdverseEventCausalityAssessment">
                     <originalText><reference value="#effet-indesirable-01-imputabilite"/></originalText>
                   </value>
                 </observation>
@@ -5409,8 +5409,8 @@
                   <text><reference value="#doc1"/></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NA"/>
-                  <value xsi:type="CD" code="DLU_006" displayName="Attestation de la carte vitale"
-                    codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                  <value xsi:type="CD" code="ATTEST-DROITS-AM" displayName="Attestation de droits à l’assurance maladie"
+                    codeSystem="1.2.250.1.213.1.1.4.12" codeSystemName="TRE_A05-TypeDocComplementaire"/>
                 </observation>
               </component>
               <!-- [1..1] Entrée ObservationMedia -->
@@ -5446,8 +5446,8 @@
                   <text><reference value="#doc2"/></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NA"/>
-                  <value xsi:type="CD" code="DLU_007" displayName="Attestation de mutuelle"
-                    codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                  <value xsi:type="CD" code="ATTEST-ASS-COMPL" displayName="Attestation assurance complémentaire"
+                    codeSystem="1.2.250.1.213.1.1.4.12" codeSystemName="TRE_A05-TypeDocComplementaire"/>
                 </observation>
               </component>
               <!-- [1..1] Entrée ObservationMedia -->

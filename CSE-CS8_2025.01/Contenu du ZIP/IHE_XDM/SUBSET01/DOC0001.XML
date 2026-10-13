@@ -571,8 +571,8 @@
                      <text><reference value="#act_pro_mere"/></text>
                      <statusCode code="completed"/>
                      <effectiveTime nullFlavor="NA"/>
-                     <value xsi:type="CD" code="PAT-040" displayName="Activité salariée"
-                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                     <value xsi:type="CD" code="224363007" displayName="employé(e)"
+                        codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
                      <!-- Elément Sujet : mère de naissance -->
                      <subject typeCode="SBJ">
                         <!-- Conformité IHE PCC Subject participation -->
@@ -705,8 +705,8 @@
                      <text><reference value="#act_pro_pere"/></text>
                      <statusCode code="completed"/>
                      <effectiveTime nullFlavor="NA"/>
-                     <value xsi:type="CD" code="PAT-040" displayName="Activité salariée"
-                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                     <value xsi:type="CD" code="224363007" displayName="employé(e)"
+                        codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
                      <!-- Elément Sujet : père -->
                      <subject typeCode="SBJ">
                         <!-- Conformité IHE PCC Subject participation -->
@@ -1554,9 +1554,9 @@
                      <!-- Conformité FR-Batterie-Examens-et-surveillance-prenataux (CI-SIS) -->
                      <templateId root="1.2.250.1.213.1.1.3.98"/>
                      <id root="582BB12C-7B63-11EB-9439-0242AC130034"/>
-                     <code code="XX-ANTENATALTESTINGBATTERY"
-                        displayName="ANTENATAL TESTING AND SURVEILLANCE BATTERY"
-                        codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                     <code code="MED-1354"
+                        displayName="Batterie d'examens et surveillance prénataux"
+                        codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
                      <statusCode code="completed"/>
                      <effectiveTime>
                         <low nullFlavor="NA"/>
@@ -1570,8 +1570,8 @@
                            <!-- Conformité FR-Simple-Observation (CI-SIS) -->
                            <templateId root="1.2.250.1.213.1.1.3.48" />
                            <id root="582BB12C-7B63-11EB-9439-0242AC130035"/>
-                           <code code="GEN-078" displayName="Dépistage de la trisomie 21"
-                              codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
+                           <code code="315115008" displayName="dépistage de la trisomie 21"
+                              codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
                            <text><reference value="#depistageBio"/></text>
                            <statusCode code="completed"/>
                            <effectiveTime nullFlavor="UNK"/>

@@ -1999,7 +1999,7 @@
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
               <id root="D408C376-8BE1-4994-A8D2-CCB0F507DB8D"/>
               <code code="DRUG" displayName="Médicament" codeSystem="2.16.840.1.113883.5.4"
-                codeSystemName="HL7:ActCode"/>
+                codeSystemName="HL7_ActCode"/>
               <text><reference value="#Trait-01"/></text>
               <statusCode code="completed"/>
               <!-- Durée du traitement -->
@@ -2060,7 +2060,7 @@
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
               <id root="0304035E-5CE9-497C-AF21-C420E77098B4"/>
               <code code="DRUG" displayName="Médicament" codeSystem="2.16.840.1.113883.5.4"
-                codeSystemName="HL7:ActCode"/>
+                codeSystemName="HL7_ActCode"/>
               <text><reference value="#Trait-02"/></text>
               <statusCode code="completed"/>
               <!-- Durée du traitement -->
@@ -2122,7 +2122,7 @@
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
               <id root="9DD931ED-81D5-471B-84C1-86641B3B96E5"/>
               <code code="DRUG" displayName="Médicament" codeSystem="2.16.840.1.113883.5.4"
-                codeSystemName="HL7:ActCode"/>
+                codeSystemName="HL7_ActCode"/>
               <text><reference value="#Trait-03"/></text>
               <statusCode code="completed"/>
               <!-- Durée du traitement -->
@@ -2460,8 +2460,8 @@
                         <low value="20200319"/>
                       </effectiveTime>
                       <!-- valeur provenant de jdv-type-produit-sanguin-labile-cisis (1.2.250.1.213.1.1.5.587) -->
-                      <value xsi:type="CD" code="C15366" codeSystem="2.16.840.1.113883.3.26.1.1"
-                        codeSystemName="NCIT" displayName="Transfusion de plaquettes">
+                      <value xsi:type="CD" code="12719002" codeSystem="2.16.840.1.113883.6.96"
+                        codeSystemName="SNOMED_CT" displayName="transfusion plaquettaire">
                         <originalText><reference value="#type-produit-sanguin-labile"/></originalText>
                       </value>
                     </observation>
@@ -3258,7 +3258,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.29"/>
                       <code code="SEV" displayName="Sévérité" codeSystem="2.16.840.1.113883.5.4"
-                        codeSystemName="HL7:ActCode"/>
+                        codeSystemName="HL7_ActCode"/>
                       <text><reference value="#NVPO-severite"/></text>
                       <statusCode code="completed"/>
                       <!-- Valeur issue du jdv-nvpo-cisis (1.2.250.1.213.1.1.5.498) -->
@@ -3298,7 +3298,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.29"/>
                       <code code="SEV" displayName="Sévérité" codeSystem="2.16.840.1.113883.5.4"
-                        codeSystemName="HL7:ActCode"/>
+                        codeSystemName="HL7_ActCode"/>
                       <text><reference value="#douleur-severite"/></text>
                       <statusCode code="completed"/>
                       <!-- Valeur issue du jdv-evaluation-douleur-cisis (1.2.250.1.213.1.1.5.499) -->
@@ -3525,7 +3525,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.29"/>
                   <code code="SEV" displayName="Sévérité" codeSystem="2.16.840.1.113883.5.4"
-                    codeSystemName="HL7:ActCode"/>
+                    codeSystemName="HL7_ActCode"/>
                   <text><reference value="#complication-medicament-01-severite"/></text>
                   <statusCode code="completed"/>
                   <!-- Valeur issue du jdv-classification-ring-messmer-cisis (1.2.250.1.213.1.1.5.497) -->
@@ -3585,7 +3585,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.29"/>
                   <code code="SEV" displayName="Sévérité" codeSystem="2.16.840.1.113883.5.4"
-                    codeSystemName="HL7:ActCode"/>
+                    codeSystemName="HL7_ActCode"/>
                   <text><reference value="#complication-medicament-02-severite"/></text>
                   <statusCode code="completed"/>
                   <!-- Valeur issue du jdv-classification-ring-messmer-cisis (1.2.250.1.213.1.1.5.497) -->

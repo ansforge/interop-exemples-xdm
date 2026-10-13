@@ -999,7 +999,7 @@
               <effectiveTime>
                 <low nullFlavor="UNK" />
               </effectiveTime>
-              <value xsi:type="CD" code="MED-333" displayName="Trouble de l'élimination urinaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
+              <value xsi:type="CD" code="R39.8" displayName="Symptômes et signes relatifs à l'appareil urinaire, autres et non précisés" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10FRPMSI">
                 <originalText><reference value="#troubleUrinaire"/></originalText>
               </value>
             </observation>
@@ -1020,7 +1020,7 @@
               <effectiveTime>
                 <low nullFlavor="UNK" />
               </effectiveTime>
-              <value xsi:type="CD" code="MED-334" displayName="Trouble de l'élimination fécale" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS">
+              <value xsi:type="CD" code="R19.8" displayName="Autres symptômes et signes précisés relatifs à l'appareil digestif et à l'abdomen" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10FRPMSI">
                 <originalText><reference value="#troubleFecale"/></originalText>
               </value>
             </observation>
@@ -2625,7 +2625,7 @@
               <text><reference value="#prevoir2"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NASK" />
-              <value xsi:type="CD" code="255" displayName="Maison d'Accueil Spécialisée (M.A.S.)" codeSystem="1.2.250.1.213.1.6.1.8" codeSystemName="TRE_R66-CategorieEtablissement" />
+              <value xsi:type="CD" code="255" displayName="Maison d'Accueil Spécialisée (M.A.S.)" codeSystem="1.2.250.1.213.1.6.1.378" codeSystemName="tre-r397-categorie-entite-geographique-exercice" />
             </observation>
           </entry>
           <!-- Traitement / Prévoir / Maison d'accueil spécialisé (MAS) / Hospitalisation complète -->
@@ -2659,7 +2659,7 @@
               <text><reference value="#prevoir4"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NASK" />
-              <value xsi:type="CD" code="127" displayName="Hospitalisation à Domicile" codeSystem="1.2.250.1.213.1.6.1.8" codeSystemName="TRE_R66-CategorieEtablissement" />
+              <value xsi:type="CD" code="127" displayName="Hospitalisation à Domicile" codeSystem="1.2.250.1.213.1.6.1.378" codeSystemName="tre-r397-categorie-entite-geographique-exercice" />
             </observation>
           </entry>
           <!-- Traitement / Prévoir / Maison d'accueil spécialisé (MAS) / Hôpital de jour (HDJ) -->
@@ -2693,7 +2693,7 @@
               <text><reference value="#prevoir1"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="NASK" />
-              <value xsi:type="CD" code="354" displayName="Service de Soins Infirmiers A Domicile (S.S.I.A.D)" codeSystem="1.2.250.1.213.1.6.1.8" codeSystemName="TRE_R66-CategorieEtablissement" />
+              <value xsi:type="CD" code="354" displayName="Service de Soins Infirmiers A Domicile (S.S.I.A.D)" codeSystem="1.2.250.1.213.1.6.1.378" codeSystemName="tre-r397-categorie-entite-geographique-exercice" />
             </observation>
           </entry>
         </section>

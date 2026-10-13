@@ -848,7 +848,7 @@
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NAV"/>
                   <!-- jdv-traitement-soins-frcp-cisis (1.2.250.1.213.1.1.5.596) -->
-                  <value xsi:type="CD" code="C15747" displayName="Soins de support" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCIT" />
+                  <value xsi:type="CD" code="243114000" displayName="soin de support" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT" />
                   <!-- Entrée FR-Simple-Observation [1..1] : RCP de Recours (O/N) -->
                   <entryRelationship typeCode="REFR">
                     <observation classCode="OBS" moodCode="EVN">
@@ -2743,6 +2743,7 @@
             <organizer classCode="CLUSTER" moodCode="EVN">
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.7"/>
+              <id root="BF60E8C6-6698-4BD2-9F3B-92BAD3A4B4E5"/>
               <code code="GEN-099" displayName="Information FRCP"
                 codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TerminologieCISIS"/>
               <statusCode code="completed"/>
@@ -3027,8 +3028,8 @@
               <templateId root="1.2.250.1.213.1.1.3.62"/>
               <id root="194AE3B0-FA7D-49D6-8C90-86139E9AF5BE"/>
               <!-- Code du traitement : jdv-type-traitement-frcp-cisis (1.2.250.1.213.1.1.5.595) -->
-              <code code="C15313" displayName="Radiothérapie" 
-                    codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCIT">
+              <code code="1287742003" displayName="radiothérapie" 
+                codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT">
                 <originalText><reference value="#traitement-1-01"/></originalText>
                   <!-- numéro séquentiel du traitement -->
                  <!-- <priorityNumber xmlns="urn:hl7-org:sdtc" value="1"/> -->
@@ -3083,8 +3084,8 @@
               <templateId root="1.2.250.1.213.1.1.3.62"/>
               <id root="194AE3B0-FA7D-49D6-8C90-86139E9AF5BE"/>
               <!-- Code du traitement : jdv-type-traitement-frcp-cisis (1.2.250.1.213.1.1.5.595) -->
-              <code code="C15632" displayName="Chimiothérapie conventionnelle"
-                codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCIT">
+              <code code="367336001" displayName="chimiothérapie"
+                codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT">
                 <originalText><reference value="#traitement-2-02"/></originalText>
                   <!-- numéro séquentiel du traitement -->
                    <!-- <priorityNumber xmlns="urn:hl7-org:sdtc" value="3"/> -->
