@@ -3657,32 +3657,58 @@
                   <value xsi:type="INT" value="2"/>
                 </observation>
               </entryRelationship>
-              <!-- Entrée FR-Probleme : Réaction observée-->
+              <!-- Entrée FR-Effet-indesirable : Réaction observée-->
               <entryRelationship typeCode="CAUS" inversionInd="false">
                 <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité  Alert observation (CCD) -->
+                  <templateId root="2.16.840.1.113883.10.20.1.18"/>
                   <!-- Conformité Problem observation (CCD) -->
                   <templateId root="2.16.840.1.113883.10.20.1.28"/>
                   <!-- Conformité Problem Entry (IHE PCC) -->
                   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
-                  <!-- Conformité Reaction (IHE PCC) -->
-                  <templateId root="2.16.840.1.113883.10.20.1.54"/>
-                  <!-- Conformité FR-Probleme (FR CI-SIS) -->
-                  <templateId root="1.2.250.1.213.1.1.3.37"/>
+                  <!-- Conformité FR-Effet-indesirable (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.210"/>
                   <id root="F9E020E2-D219-43D4-8BF8-6B275E1F726D"/>
-                  <code code="418799008"
-                    displayName="symptôme rapporté par le patient ou le répondant"
+                  <code code="79899007"
+                    displayName="interaction médicamenteuse"
                     codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
                   <text><reference value="#vaccin-02-reaction"/></text>
                   <statusCode code="completed"/>
                   <effectiveTime>
                     <low value="20090928"/>
                   </effectiveTime>
-                  <value xsi:type="CD" code="R50.2" displayName="Fièvre due à des médicaments"
-                    codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10FRPMSI">
+                  <value xsi:type="CD">
                     <originalText>
-                      <reference value="#vaccin-02-reaction"/>
+                      <reference value="vaccin-01-reaction"/>
                     </originalText>
                   </value>
+                  <entryRelationship typeCode="MFST" inversionInd="false">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <!-- Conformité  Reaction observation (CCD) -->
+                      <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                      <!-- Conformité Problem observation (CCD) -->
+                      <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                      <!-- Conformité Problem Entry (IHE PCC) -->
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                      <!-- Conformité FR-Probleme (CI-SIS) -->
+                      <templateId root="1.2.250.1.213.1.1.3.37"/>
+                      <id root="F9E020E2-D219-43D4-8BF8-6B275E1F726D"/>
+                      <code code="418799008"
+                        displayName="symptôme rapporté par le patient ou le répondant"
+                        codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED_CT"/>
+                      <text><reference value="#vaccin-02-reaction"/></text>
+                      <statusCode code="completed"/>
+                      <effectiveTime>
+                        <low value="20090928"/>
+                      </effectiveTime>
+                      <value xsi:type="CD" code="R50.2" displayName="Fièvre due à des médicaments"
+                        codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10FRPMSI">
+                        <originalText>
+                          <reference value="#vaccin-02-reaction"/>
+                        </originalText>
+                      </value>
+                    </observation>
+                  </entryRelationship>
                 </observation>
               </entryRelationship>
               <!-- Entrée FR-Commentaire-ER -->
